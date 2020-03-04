@@ -2,16 +2,16 @@
 
 ## Things I do
 
-- perform music
-  - mandolin
-  - viola
-  - singing
+- **perform music**
+  - _mandolin_
+  - _viola_
+  - _singing_
 
-- teach music
-  - theory
-  - mandolin/viola/violin
+- **teach music**
+  - _theory_
+  - _mandolin / viola / violin_
 
-- live sound engineering
+- _live sound engineering_
 
 ## Things I build
 
