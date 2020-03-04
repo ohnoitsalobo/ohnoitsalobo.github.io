@@ -2,25 +2,25 @@
 
 ## Things I do
 
-- **perform music**
-  - _mandolin_
-  - _viola_
-  - _singing_
+- **perform music** 
+  - _mandolin_ 
+  - _viola_ 
+  - _singing_ 
 
 
-- **teach music**
-  - _theory_
-  - _mandolin / viola / violin_
+- **teach music** 
+  - _theory_ 
+  - _mandolin / viola / violin_ 
 
-- _live sound engineering_
+-**live sound engineering** 
 
-## Things I build
+## Things I build 
 
-- contact microphones
+- **contact microphones** 
 
-- full-color LED strips
-  - sound-reactive
-  - MIDI-controlled)
+- **full-color LED strips** 
+  - _sound-reactive_ 
+  - _MIDI-controlled_ 
 
 <!--- ## Welcome to GitHub Pages
 
