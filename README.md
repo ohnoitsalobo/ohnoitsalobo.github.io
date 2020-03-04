@@ -7,6 +7,7 @@
   - _viola_
   - _singing_
 
+
 - **teach music**
   - _theory_
   - _mandolin / viola / violin_
@@ -21,7 +22,7 @@
   - sound-reactive
   - MIDI-controlled)
 
-## Welcome to GitHub Pages
+<!--- ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/ohnoitsalobo/ohnoitsalobo.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
@@ -58,3 +59,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+--->
