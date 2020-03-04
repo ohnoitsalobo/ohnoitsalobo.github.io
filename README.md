@@ -1,27 +1,25 @@
 # Hi, I'm Anand Lobo and this is my website.
 
-## Things I play
+## Things I do
 
-- Mandolin
-- Viola
+- perform music
+  - mandolin
+  - viola
+  - singing
+
+- teach music
+  - theory
+  - mandolin/viola/violin
+
+- live sound engineering
 
 ## Things I build
 
 - contact microphones
-- full-color LED strips (sound-reactive and MIDI-controlled)
 
-## Things I do
-
-- perform music
--- mandolin
--- viola
--- singing
-
-- teach music
--- theory
--- mandolin/viola/violin
-
-- sound engineering
+- full-color LED strips
+  - sound-reactive
+  - MIDI-controlled)
 
 ## Welcome to GitHub Pages
 
