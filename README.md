@@ -12,7 +12,7 @@
   - _theory_ 
   - _mandolin / viola / violin_ 
 
--**live sound engineering** 
+- **live sound engineering** 
 
 ## Things I build 
 
