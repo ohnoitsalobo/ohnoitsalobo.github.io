@@ -9,89 +9,103 @@
 		<title>Photo gallery</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/nanogallery2.min.css" />
+        <script src="assets/js/jquery.min.js"></script>
+		<link href="assets/css/nanogallery2.min.css" rel="stylesheet" />
+		<link href="assets/css/main.css" rel="stylesheet" />
+        <script src="assets/js/jquery.nanogallery2.min.js"></script>
+        <!-- <script src="assets/js/jquery.poptrox.min.js"></script> -->
+        <!-- <script src="assets/js/skel.min.js"></script> -->
+        <!-- <script src="assets/js/main.js"></script> -->
 	</head>
 	<body>
+        <div id="wrapper">
+            <header id="header">
+                <span class="avatar"><a href="#"><img src="../images/avatar.jpg" alt="" onclick="history.back()"/></a></span>
+                <h6>Click photo to go back to main page</h6>
+                <!-- <ul class="icons">
+                    <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
+                    <li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                </ul> -->
+            </header>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+            <section id="main">
+                <h1><strong>Gallery</strong></h1>
+                <div ID="gallery_section" data-nanogallery2 = '{
+                    "thumbnailWidth":   450,
+                    "thumbnailHeight":  "auto",
+                    "itemsBaseURL":     "../gallery/"
+                    }'>
 
-				<!-- Header -->
-					<header id="header">
-						<span class="avatar"><a href="#"><img src="../images/avatar.jpg" alt="" onclick="history.back()"/></a></span>
-						<!-- <ul class="icons">
-							<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
-							<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-						</ul> -->
-					</header>
+                    <!-- ### gallery content ### -->
+                    <a href="66599926_1223424274448022_708434866697404416_o.jpg"   data-ngthumb="66599926_1223424274448022_708434866697404416_o.jpg"  > </a>
+                    <a href="67085979_1233687003421749_5444815605477670912_o.jpg"  data-ngthumb="67085979_1233687003421749_5444815605477670912_o.jpg" > </a>
+                    <a href="67119021_1233687583421691_6102418056758165504_o.jpg"  data-ngthumb="67119021_1233687583421691_6102418056758165504_o.jpg" > </a>
+                    <a href="67193067_1232962333494216_34611419156578304_o.jpg"    data-ngthumb="67193067_1232962333494216_34611419156578304_o.jpg"   > </a>
+                    <a href="67200994_1242873969169719_500684408076894208_o.jpg"   data-ngthumb="67200994_1242873969169719_500684408076894208_o.jpg"  > </a>
+                    <a href="67274264_1233687070088409_1082112629360558080_o.jpg"  data-ngthumb="67274264_1233687070088409_1082112629360558080_o.jpg" > </a>
+                    <a href="67454565_1242875102502939_8511166347785273344_o.jpg"  data-ngthumb="67454565_1242875102502939_8511166347785273344_o.jpg" > </a>
+                    <a href="67493629_1253354921454957_521579080374550528_o.jpg"   data-ngthumb="67493629_1253354921454957_521579080374550528_o.jpg"  > </a>
+                    <a href="67505326_1253352921455157_969380887575658496_o.jpg"   data-ngthumb="67505326_1253352921455157_969380887575658496_o.jpg"  > </a>
+                    <a href="67574058_1254683647988751_7511143239374602240_o.jpg"  data-ngthumb="67574058_1254683647988751_7511143239374602240_o.jpg" > </a>
+                    <a href="67598407_1242875422502907_8041939847847346176_o.jpg"  data-ngthumb="67598407_1242875422502907_8041939847847346176_o.jpg" > </a>
+                    <a href="67949604_1264902866966829_1549203770343161856_o.jpg"  data-ngthumb="67949604_1264902866966829_1549203770343161856_o.jpg" > </a>
+                    <a href="68459120_1254684171322032_6123866045397598208_o.jpg"  data-ngthumb="68459120_1254684171322032_6123866045397598208_o.jpg" > </a>
+                    <a href="68619943_1285474044909711_6507403549733814272_o.jpg"  data-ngthumb="68619943_1285474044909711_6507403549733814272_o.jpg" > </a>
+                    <a href="69312088_1285472784909837_4490027693923893248_o.jpg"  data-ngthumb="69312088_1285472784909837_4490027693923893248_o.jpg" > </a>
+                    <a href="69313567_1295614473895668_5742610272502153216_o.jpg"  data-ngthumb="69313567_1295614473895668_5742610272502153216_o.jpg" > </a>
+                    <a href="69411144_1295615023895613_3226804969524953088_o.jpg"  data-ngthumb="69411144_1295615023895613_3226804969524953088_o.jpg" > </a>
+                    <a href="69455112_1285481461575636_6153701890417754112_o.jpg"  data-ngthumb="69455112_1285481461575636_6153701890417754112_o.jpg" > </a>
+                    <a href="69509129_1285473351576447_7543208112291840_o.jpg"     data-ngthumb="69509129_1285473351576447_7543208112291840_o.jpg"    > </a>
+                    <a href="69780130_1285474184909697_3690394518160408576_o.jpg"  data-ngthumb="69780130_1285474184909697_3690394518160408576_o.jpg" > </a>
+                    <a href="69960743_1316188888504893_8890246234413989888_o.jpg"  data-ngthumb="69960743_1316188888504893_8890246234413989888_o.jpg" > </a>
+                    <a href="70458686_1316194468504335_6986513469499506688_o.jpg"  data-ngthumb="70458686_1316194468504335_6986513469499506688_o.jpg" > </a>
+                    <a href="71279188_1325713747552407_4428609627231354880_o.jpg"  data-ngthumb="71279188_1325713747552407_4428609627231354880_o.jpg" > </a>
+                    <a href="72844593_1369618966495218_7448400802336473088_o.jpg"  data-ngthumb="72844593_1369618966495218_7448400802336473088_o.jpg" > </a>
+                    <a href="74959934_1399779550145826_6177266997286404096_o.jpg"  data-ngthumb="74959934_1399779550145826_6177266997286404096_o.jpg" > </a>
+                    <a href="75521967_1415692611887853_2318143640930615296_o.jpg"  data-ngthumb="75521967_1415692611887853_2318143640930615296_o.jpg" > </a>
+                    <a href="79540659_1461452923978488_102555461022121984_o.jpg"   data-ngthumb="79540659_1461452923978488_102555461022121984_o.jpg"  > </a>
+                    <a href="81929045_1513618548761925_182203967374098432_o.jpg"   data-ngthumb="81929045_1513618548761925_182203967374098432_o.jpg"  > </a>
+                    <a href="82296579_1520693391387774_7424567930026721280_o.jpg"  data-ngthumb="82296579_1520693391387774_7424567930026721280_o.jpg" > </a>
+                    <a href="82335379_1525760444214402_6719801699839508480_o.jpg"  data-ngthumb="82335379_1525760444214402_6719801699839508480_o.jpg" > </a>
+                    <a href="82473360_1520691001388013_6393407601505206272_o.jpg"  data-ngthumb="82473360_1520691001388013_6393407601505206272_o.jpg" > </a>
+                    <a href="82545469_1520692981387815_4046603119822372864_o.jpg"  data-ngthumb="82545469_1520692981387815_4046603119822372864_o.jpg" > </a>
+                    <a href="82765884_1532347900222323_4188203832179687424_o.jpg"  data-ngthumb="82765884_1532347900222323_4188203832179687424_o.jpg" > </a>
+                    <a href="82767752_1520693574721089_72216275899645952_o.jpg"    data-ngthumb="82767752_1520693574721089_72216275899645952_o.jpg"   > </a>
+                    <a href="82834803_1532347886888991_390170754907373568_o.jpg"   data-ngthumb="82834803_1532347886888991_390170754907373568_o.jpg"  > </a>
+                    <a href="82946651_1525760277547752_6202179482640449536_o.jpg"  data-ngthumb="82946651_1525760277547752_6202179482640449536_o.jpg" > </a>
+                    <a href="83943211_1552986074825172_6353898734220214272_o.jpg"  data-ngthumb="83943211_1552986074825172_6353898734220214272_o.jpg" > </a>
+                    <a href="84028687_1552989941491452_5700885653063991296_o.jpg"  data-ngthumb="84028687_1552989941491452_5700885653063991296_o.jpg" > </a>
+                    <a href="84699087_1552985698158543_8619681423822946304_o.jpg"  data-ngthumb="84699087_1552985698158543_8619681423822946304_o.jpg" > </a>
+                    <a href="85028849_1567592913364488_1798407303389511680_o.jpg"  data-ngthumb="85028849_1567592913364488_1798407303389511680_o.jpg" > </a>
+                    <a href="85053744_1567586920031754_2486698825008283648_o.jpg"  data-ngthumb="85053744_1567586920031754_2486698825008283648_o.jpg" > </a>
+                    <a href="85079482_1552988601491586_361440941275348992_o.jpg"   data-ngthumb="85079482_1552988601491586_361440941275348992_o.jpg"  > </a>
+                    <a href="85083696_1567591270031319_4179877445370904576_o.jpg"  data-ngthumb="85083696_1567591270031319_4179877445370904576_o.jpg" > </a>
+                    <a href="86498997_1567592583364521_1149958479683780608_o.jpg"  data-ngthumb="86498997_1567592583364521_1149958479683780608_o.jpg" > </a>
+                    <a href="86627235_1567588160031630_6288945170708692992_o.jpg"  data-ngthumb="86627235_1567588160031630_6288945170708692992_o.jpg" > </a>
+                    <a href="86831277_1580469765410136_8226385972833550336_o.jpg"  data-ngthumb="86831277_1580469765410136_8226385972833550336_o.jpg" > </a>
+                    <a href="86870658_1580468465410266_74989845520318464_o.jpg"    data-ngthumb="86870658_1580468465410266_74989845520318464_o.jpg"   > </a>
+                    <a href="86933484_1580468762076903_7867371164094431232_o.jpg"  data-ngthumb="86933484_1580468762076903_7867371164094431232_o.jpg" > </a>
+                    <a href="87022543_1580468552076924_2457728652121473024_o.jpg"  data-ngthumb="87022543_1580468552076924_2457728652121473024_o.jpg" > </a>
+                    <a href="_DSC5339.jpg"                                         data-ngthumb="_DSC5339.jpg"                                        > </a>
+                    <a href="_DSC5436.jpg"                                         data-ngthumb="_DSC5436.jpg"                                        > </a>
+                    <a href="_DSC5440.jpg"                                         data-ngthumb="_DSC5440.jpg"                                        > </a>
+                    <a href="_DSC5489.jpg"                                         data-ngthumb="_DSC5489.jpg"                                        > </a>
+                    <a href="_DSC5490.jpg"                                         data-ngthumb="_DSC5490.jpg"                                        > </a>
+                    <a href="_DSC5647.jpg"                                         data-ngthumb="_DSC5647.jpg"                                        > </a>
+                    <a href="_DSC9178.jpg"                                         data-ngthumb="_DSC9178.jpg"                                        > </a>
+                    <a href="_DSC9265.jpg"                                         data-ngthumb="_DSC9265.jpg"                                        > </a>
+                    <a href="_DSC9314.jpg"                                         data-ngthumb="_DSC9314.jpg"                                        > </a>
+                    <!--  -->
+                </div>
+            </section>
 
-				<!-- Main -->
-					<section id="main">
-						<h1><strong>Gallery</strong></h1>
-                        <div data-nanogallery2 = '{
-                            "thumbnailWidth":   600,
-                            "thumbnailHeight":  "auto",
-                            "itemsBaseURL":     "../gallery/"
-                            }'>
+            <footer id="footer">
+                <p>&copy; Anand Lobo. All rights reserved.<br />Design: <a href="http://templated.co">TEMPLATED</a>.</p>
+            </footer>
 
-                            <!-- ### gallery content ### -->
-                            <a href="66599926_1223424274448022_708434866697404416_o.jpg"  data-ngthumb="66599926_1223424274448022_708434866697404416_o.jpg" > </a>
-                            <a href="67085979_1233687003421749_5444815605477670912_o.jpg" data-ngthumb="67085979_1233687003421749_5444815605477670912_o.jpg"> </a>
-                            <a href="67119021_1233687583421691_6102418056758165504_o.jpg" data-ngthumb="67119021_1233687583421691_6102418056758165504_o.jpg"> </a>
-                            <a href="67193067_1232962333494216_34611419156578304_o.jpg"   data-ngthumb="67193067_1232962333494216_34611419156578304_o.jpg"  > </a>
-                            <a href="67200994_1242873969169719_500684408076894208_o.jpg"  data-ngthumb="67200994_1242873969169719_500684408076894208_o.jpg" > </a>
-                            <a href="67274264_1233687070088409_1082112629360558080_o.jpg" data-ngthumb="67274264_1233687070088409_1082112629360558080_o.jpg"> </a>
-                            <a href="67454565_1242875102502939_8511166347785273344_o.jpg" data-ngthumb="67454565_1242875102502939_8511166347785273344_o.jpg"> </a>
-                            <a href="67493629_1253354921454957_521579080374550528_o.jpg"  data-ngthumb="67493629_1253354921454957_521579080374550528_o.jpg" > </a>
-                            <a href="67505326_1253352921455157_969380887575658496_o.jpg"  data-ngthumb="67505326_1253352921455157_969380887575658496_o.jpg" > </a>
-                            <a href="67574058_1254683647988751_7511143239374602240_o.jpg" data-ngthumb="67574058_1254683647988751_7511143239374602240_o.jpg"> </a>
-                            <a href="67598407_1242875422502907_8041939847847346176_o.jpg" data-ngthumb="67598407_1242875422502907_8041939847847346176_o.jpg"> </a>
-                            <a href="67949604_1264902866966829_1549203770343161856_o.jpg" data-ngthumb="67949604_1264902866966829_1549203770343161856_o.jpg"> </a>
-                            <a href="68459120_1254684171322032_6123866045397598208_o.jpg" data-ngthumb="68459120_1254684171322032_6123866045397598208_o.jpg"> </a>
-                            <a href="68619943_1285474044909711_6507403549733814272_o.jpg" data-ngthumb="68619943_1285474044909711_6507403549733814272_o.jpg"> </a>
-                            <a href="69159361_1285473151576467_4783923484126347264_o.jpg" data-ngthumb="69159361_1285473151576467_4783923484126347264_o.jpg"> </a>
-                            <a href="69312088_1285472784909837_4490027693923893248_o.jpg" data-ngthumb="69312088_1285472784909837_4490027693923893248_o.jpg"> </a>
-                            <a href="69313567_1295614473895668_5742610272502153216_o.jpg" data-ngthumb="69313567_1295614473895668_5742610272502153216_o.jpg"> </a>
-                            <a href="69411144_1295615023895613_3226804969524953088_o.jpg" data-ngthumb="69411144_1295615023895613_3226804969524953088_o.jpg"> </a>
-                            <a href="69455112_1285481461575636_6153701890417754112_o.jpg" data-ngthumb="69455112_1285481461575636_6153701890417754112_o.jpg"> </a>
-                            <a href="69509129_1285473351576447_7543208112291840_o.jpg"    data-ngthumb="69509129_1285473351576447_7543208112291840_o.jpg"   > </a>
-                            <a href="69780130_1285474184909697_3690394518160408576_o.jpg" data-ngthumb="69780130_1285474184909697_3690394518160408576_o.jpg"> </a>
-                            <a href="69960743_1316188888504893_8890246234413989888_o.jpg" data-ngthumb="69960743_1316188888504893_8890246234413989888_o.jpg"> </a>
-                            <a href="70458686_1316194468504335_6986513469499506688_o.jpg" data-ngthumb="70458686_1316194468504335_6986513469499506688_o.jpg"> </a>
-                            <a href="71279188_1325713747552407_4428609627231354880_o.jpg" data-ngthumb="71279188_1325713747552407_4428609627231354880_o.jpg"> </a>
-                            <a href="72844593_1369618966495218_7448400802336473088_o.jpg" data-ngthumb="72844593_1369618966495218_7448400802336473088_o.jpg"> </a>
-                            <a href="74959934_1399779550145826_6177266997286404096_o.jpg" data-ngthumb="74959934_1399779550145826_6177266997286404096_o.jpg"> </a>
-                            <a href="75521967_1415692611887853_2318143640930615296_o.jpg" data-ngthumb="75521967_1415692611887853_2318143640930615296_o.jpg"> </a>
-                            <a href="79540659_1461452923978488_102555461022121984_o.jpg"  data-ngthumb="79540659_1461452923978488_102555461022121984_o.jpg" > </a>
-                            <a href="_DSC5339.jpg"                                        data-ngthumb="_DSC5339.jpg"                                       > </a>
-                            <a href="_DSC5436.jpg"                                        data-ngthumb="_DSC5436.jpg"                                       > </a>
-                            <a href="_DSC5440.jpg"                                        data-ngthumb="_DSC5440.jpg"                                       > </a>
-                            <a href="_DSC5489.jpg"                                        data-ngthumb="_DSC5489.jpg"                                       > </a>
-                            <a href="_DSC5490.jpg"                                        data-ngthumb="_DSC5490.jpg"                                       > </a>
-                            <a href="_DSC5647.jpg"                                        data-ngthumb="_DSC5647.jpg"                                       > </a>
-                            <a href="_DSC9178.jpg"                                        data-ngthumb="_DSC9178.jpg"                                       > </a>
-                            <a href="_DSC9265.jpg"                                        data-ngthumb="_DSC9265.jpg"                                       > </a>
-                            <a href="_DSC9314.jpg"                                        data-ngthumb="_DSC9314.jpg"                                       > </a>
-                        </div>
-					</section>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p>&copy; Anand Lobo. All rights reserved.<br />Design: <a href="http://templated.co">TEMPLATED</a>.</p>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/main.js"></script>
-            <script src="assets/js/jquery.nanogallery2.min.js"></script>
-
+        </div>
 	</body>
 </html>
