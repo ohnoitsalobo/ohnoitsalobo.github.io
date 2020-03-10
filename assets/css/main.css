@@ -2616,7 +2616,7 @@
 
 /* One */
 
-    #one:before {
+    #about:before {
         background-image: url("../../images/banner.jpg");
         background-position: center center;
         background-repeat: no-repeat;
