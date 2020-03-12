@@ -1591,7 +1591,7 @@
 
         a:hover {
             border-bottom-color: transparent;
-            color: #256554 !important;
+            color: #123327 !important;
         }
 
     strong, b {
@@ -1743,7 +1743,7 @@
     }
 
     header.major h2 {
-        color: #256554;
+        color: #123327;
         font-size: 3.5em;
     }
 
@@ -1806,7 +1806,7 @@
         input[type="email"]:focus,
         select:focus,
         textarea:focus {
-            border-color: #256554;
+            border-color: #123327;
         }
 
     .select-wrapper {
@@ -1916,7 +1916,7 @@
 
         input[type="checkbox"]:focus + label:before,
         input[type="radio"]:focus + label:before {
-            border-color: #256554;
+            border-color: #123327;
         }
 
     input[type="checkbox"] + label:before {
@@ -2109,7 +2109,7 @@
                 }
 
                 ul.feature-icons li:before {
-                    background: #256554;
+                    background: #123327;
                     border-radius: 100%;
                     color: #ffffff;
                     display: block;
@@ -2396,7 +2396,7 @@
         input[type="reset"].special,
         input[type="button"].special,
         .button.special {
-            background-color: #256554;
+            background-color: #123327;
             color: #ffffff !important;
         }
 
@@ -2478,7 +2478,7 @@
         -webkit-justify-content: space-between;
         -ms-justify-content: space-between;
         justify-content: space-between;
-        background: #256554;
+        background: #123327;
         color: #d1f1e9;
         height: 100%;
         overflow-y: auto;
@@ -2567,7 +2567,7 @@
             }
 
                 #header > nav ul li {
-                    border-top: solid 2px #256554;
+                    border-top: solid 2px #123327;
                     display: block;
                     padding: 0;
                 }
@@ -2586,7 +2586,7 @@
 
                         #header > nav ul li a.active {
                             background: #fff;
-                            color: #256554 !important;
+                            color: #123327 !important;
                         }
 
                     #header > nav ul li:first-child {
@@ -2865,7 +2865,7 @@
                     }
 
                     #titleBar .toggle:before {
-                        background: #256554;
+                        background: #123327;
                         color: #ffffff;
                         content: '\f0c9';
                         display: block;
