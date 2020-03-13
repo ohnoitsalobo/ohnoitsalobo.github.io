@@ -9,14 +9,15 @@
 /* @import url("https://fonts.googleapis.com/css?family=Marmelad:400,400italic,700,700italic"); */
 /* @import url("https://fonts.googleapis.com/css?family=Overlock:400,400italic,700,700italic"); */
 /* @import url("https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,400italic,700,700italic"); */
-/* @import url("https://fonts.googleapis.com/css?family=Bellota:400,400italic,700,700italic"); */
+@import url("https://fonts.googleapis.com/css?family=Bellota:400,400italic,700,700italic");
 /* @import url("https://fonts.googleapis.com/css?family=Sniglet:400,400italic,700,700italic"); */
 /* @import url("https://fonts.googleapis.com/css?family=Coda:400,400italic,700,700italic"); */
 /* @import url("https://fonts.googleapis.com/css?family=Fondamento:400,400italic,700,700italic"); */
+/* @import url("https://fonts.googleapis.com/css?family=Pangolin:400,400italic,700,700italic"); */
 /* @import url("https://fonts.googleapis.com/css?family=Kelly+Slab:400,400italic,700,700italic"); */
 /* @import url("https://fonts.googleapis.com/css?family=Mirza:400,400italic,700,700italic"); */
 /* @import url("https://fonts.googleapis.com/css?family=Expletus+Sans:400,400italic,700,700italic"); */
-@import url("https://fonts.googleapis.com/css?family=Voces:400,400italic,700,700italic");
+/* @import url("https://fonts.googleapis.com/css?family=Voces:400,400italic,700,700italic"); */
 
 /*
     Read Only by HTML5 UP
@@ -1582,7 +1583,7 @@
         /* font-family: "Marmelad", sans-serif; */
         /* font-family: "Overlock", sans-serif; */
         /* font-family: "Baloo Chettan 2", sans-serif; */
-        /* font-family: "Bellota", sans-serif; */
+        font-family: "Bellota", sans-serif;
         /* font-family: "Sniglet", sans-serif; */
         /* font-family: "Coda", sans-serif; */
         /* font-family: "Fondamento", sans-serif; */
@@ -1590,7 +1591,7 @@
         /* font-family: "Kelly Slab", sans-serif; */
         /* font-family: "Mirza", sans-serif; */
         /* font-family: "Expletus Sans", sans-serif; */
-        font-family: "Voces", sans-serif;
+        /* font-family: "Voces", sans-serif; */
         font-size: 16pt;
         font-weight: 400;
         line-height: 1.75em;
