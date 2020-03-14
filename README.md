@@ -1,4 +1,8 @@
-# Hi, I'm Anand Lobo and this is my website.
+# Visit the website at 
+
+# [ohnoitsalobo.github.io](https://ohnoitsalobo.github.io)
+
+<!---# Hi, I'm Anand Lobo and this is my website.
 
 ## Things I do
 
@@ -22,7 +26,7 @@
   - _sound-reactive_ 
   - _MIDI-controlled_ 
 
-<!--- ## Welcome to GitHub Pages
+ ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/ohnoitsalobo/ohnoitsalobo.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
