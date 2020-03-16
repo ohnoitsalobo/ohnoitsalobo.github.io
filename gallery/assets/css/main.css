@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url(font-awesome.min.css);
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200");
+@import url("https://fonts.googleapis.com/css?family=Bellota:400,400italic,700,700italic");
 
 /*
 	Visualize by TEMPLATED
@@ -1430,7 +1431,8 @@
 
 	body, input, select, textarea {
 		color: rgba(255, 255, 255, 0.65);
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		/* font-family: "Source Sans Pro", Helvetica, sans-serif; */
+        font-family: "Bellota", sans-serif;
 		font-size: 13pt;
 		font-weight: 200;
 		line-height: 1.65;
@@ -1614,7 +1616,7 @@
 	header p {
 		color: rgba(255, 255, 255, 0.35);
 		position: relative;
-		margin: 0 0 1.5em 0;
+		margin: -2em 0 1.5em 0;
 	}
 
 	header h2 + p {
