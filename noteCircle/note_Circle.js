@@ -203,8 +203,8 @@ function draw() {
 }
 
 function keyTyped(){
-    if(key == '='){ offset +=   PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
-    if(key == '-'){ offset -=   PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
+    if(key == '-'){ offset +=   PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
+    if(key == '='){ offset -=   PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
     if(key == '_'){ offset += 7*PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.498307; }
     if(key == '+'){ offset -= 7*PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.498307; }
     if(key == ','){ offset -= TWO_PI; for(var j = 0; j < 13; j++) tone[j] /= 2; }
