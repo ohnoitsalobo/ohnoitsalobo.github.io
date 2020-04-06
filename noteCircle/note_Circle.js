@@ -1,5 +1,18 @@
-var synth; // sound var for Tone.js
-/*            C     C#/Db     D     D#/Eb     E       F     F#/Gb     G     G#/Ab    A   A#/Bb     B       C'    */
+// var synth = new Tone.Synth().toMaster(); // sound var for Tone.js
+var synth = new Tone.Synth({
+  oscillator: {
+    type: 'sine',
+    // modulationType: 'sawtooth',
+    // modulationIndex: 3,
+    // harmonicity: 3.4
+  },
+  envelope: {
+    attack: 0.01,
+    decay: 0.1,
+    sustain: 0.1,
+    release: 0.1
+  }
+}).toMaster()/*            C     C#/Db     D     D#/Eb     E       F     F#/Gb     G     G#/Ab    A   A#/Bb     B       C'    */
 var tone = [523.25, 554.37, 587.33, 622.25, 659.25, 698.46, 739.99, 783.99, 830.61, 880, 932.32, 987.76, 1046.5];
 var notes = []; // var lastplayed0=0; var lastplayed1=0; var lastplayed2=0;
 var lines = [1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1];
@@ -14,7 +27,7 @@ var currPos = 0, nextPos = 0;
 function setup() {
     createCanvas(1000, 600);
     frameRate(10);
-    synth = new Tone.Synth().toMaster();
+    // synth = new Tone.Synth().toMaster();
     for(var i = 0; i < 12; i++){
         notes[i] = p5.Vector.fromAngle(-PI/2+i*PI/6);
         notes[i].x *= 0.75*300;
@@ -27,30 +40,30 @@ function draw() {
     translate(300, 300);
     
     fill(visible ? 150 : 125);
-    ellipse(0, 0, 0.9*600, 0.9*600);
+    ellipse(0, 0, 0.9*600, 0.9*600);              // draw main circle
 
     textAlign(CENTER);
     textFont('Times New Roman'); fill(0);
     push();    
-        rotate(-PI/2+offset);
-        arc(0, -0.9*300, 30, 30, -PI, 0);
+        rotate(-PI/2+offset); //fill('rgba(255,   0,   0, 1)'); 
+        arc(0, -0.9*300, 30, 30, -PI, 0);                  // marker circle on the edge
         for(var i = 0; i < 12; i++){
             var d = -0.69*300;
             textSize(55); fill(constellation ? 0 : 255);
-            if(i==0) { text('A', 0, d); }
-            if(i==2) { text('B', 0, d); }
-            if(i==3) { text('C', 0, d); }
-            if(i==5) { text('D', 0, d); }
-            if(i==7) { text('E', 0, d); }
-            if(i==8) { text('F', 0, d); }
-            if(i==10){ text('G', 0, d); }
+            if(i==0) { text('A', 0, d); }                                 // DRAW NOTE LETTERS
+            if(i==2) { text('B', 0, d); }                                 //
+            if(i==3) { text('C', 0, d); }                                 //
+            if(i==5) { text('D', 0, d); }                                 // 'natural' notes
+            if(i==7) { text('E', 0, d); }                                 // are larger
+            if(i==8) { text('F', 0, d); }                                 //
+            if(i==10){ text('G', 0, d); }                                 //
 
-            textSize(35); fill(0);
-            if(i==1) { text('A#', -10, d-22); text('Bb', 10, d+10); }
-            if(i==4) { text('C#', -10, d-22); text('Db', 10, d+10); }
-            if(i==6) { text('D#', -10, d-22); text('Eb', 10, d+10); }
-            if(i==9) { text('F#', -10, d-22); text('Gb', 10, d+10); }
-            if(i==11){ text('G#', -10, d-22); text('Ab', 10, d+10); }
+            textSize(35); fill(0);                                        //
+            if(i==1) { text('A#', -10, d-22); text('Bb', 10, d+10); }     //
+            if(i==4) { text('C#', -10, d-22); text('Db', 10, d+10); }     // 'sharps / flats'
+            if(i==6) { text('D#', -10, d-22); text('Eb', 10, d+10); }     // 
+            if(i==9) { text('F#', -10, d-22); text('Gb', 10, d+10); }     //
+            if(i==11){ text('G#', -10, d-22); text('Ab', 10, d+10); }     //
             
             rotate(PI/6);
         }
@@ -58,6 +71,7 @@ function draw() {
         rectMode(CENTER);
         rotate(-offset)
         rotate(offset1)
+        // arc(0, -0.9*300, 30, 30, -PI, 0); // marker circle
         if(!constellation){
             if(visible){
                 for(var i = 0; i < 12; i++){
@@ -95,7 +109,9 @@ function draw() {
                     noStroke(); fill(150); ellipse(0, 0, d*1.95, d*1.95);
                     
                     if(i==0 || i==2 || i==3 || i==5 || i==7 || i==8 || i==10){
-                        noFill(); stroke(0); strokeWeight(1.5);
+                        fill('#ffffff22'); stroke(0); strokeWeight(1.5);
+                        if(i==3)
+                            fill('#ff000022');
                     }
                     if(i==1 || i==4 || i==6 || i==9 || i==11){
                         fill(150); noStroke();
@@ -203,8 +219,8 @@ function draw() {
 }
 
 function keyTyped(){
-    if(key == '-'){ offset +=   PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
-    if(key == '='){ offset -=   PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
+    if(key == '='){ offset +=   PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
+    if(key == '-'){ offset -=   PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
     if(key == '_'){ offset += 7*PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.498307; }
     if(key == '+'){ offset -= 7*PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.498307; }
     if(key == ','){ offset -= TWO_PI; for(var j = 0; j < 13; j++) tone[j] /= 2; }
