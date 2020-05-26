@@ -205,7 +205,7 @@ function draw() {
     }
     fill(mouseIsPressed ? 0 : 100);
     ellipse(mouseX-300, mouseY-300, 10, 10);
-    textSize(20); text("ROOT", 0, -height/2+20);
+    textSize(30); text("ROOT", 0, -height/2+20);
     textFont("Courier New");
     textSize(14); textAlign(LEFT); strokeWeight(0.5); stroke(0);
     text("Click note positions\nto hear tones.", -300, -height/2+20);
