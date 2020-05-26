@@ -120,6 +120,22 @@ function draw() {
                     rotate(PI/6);
                 }
             }
+            fill(0); 
+            rotate(PI/2);
+            text("Ionian / Major", 600, 250);
+            rotate(PI/3);
+            text("Dorian",         600, 250);
+            rotate(PI/3);
+            text("Phrygian",       600, 250);
+            rotate(PI/6);
+            text("Lydian",         600, 250);
+            rotate(PI/3);
+            text("Mixolydian",     600, 250);
+            rotate(PI/3);
+            text("Aeolian / Minor",600, 250);
+            rotate(PI/3);
+            text("Locrian",        600, 250);
+            rotate(-7*PI/3);
             rotate(-offset1);
             rotate(offset);
             for(var i = 0; i < 12; i++){
@@ -162,6 +178,7 @@ function draw() {
             rotate(-offset1);
         }
     pop();
+    noStroke(); fill(255); rect(550, -135, 200, 100);
     if(constellation){
         noFill(); stroke(175);
         ellipse(0, 0, 300, 300);
@@ -188,10 +205,11 @@ function draw() {
     }
     fill(mouseIsPressed ? 0 : 100);
     ellipse(mouseX-300, mouseY-300, 10, 10);
+    textSize(20); text("ROOT", 0, -height/2+20);
     textFont("Courier New");
-    textSize(18); textAlign(LEFT); strokeWeight(0.5); stroke(0);
-    text("Click note positions to hear tones.", -300, -height/2+20);
-    text("Click center to hide\noverlay.", -300, -height/2+45);
+    textSize(14); textAlign(LEFT); strokeWeight(0.5); stroke(0);
+    text("Click note positions\nto hear tones.", -300, -height/2+20);
+    text("Click center to hide\noverlay.", -300, -height/2+60);
     var f = 16;
     textSize(f); textAlign(RIGHT); fill(0); var t = 1;
     text("= ~> bottom layer clockwise        ", width/2+10, -height/2+f*t++);
@@ -216,21 +234,23 @@ function draw() {
     text("7 ~> play 6#/7b         ", width/2+10, -height/2+f*t++);
     text("u ~> play 7             ", width/2+10, -height/2+f*t++);
     text("i ~> play 7#/1b         ", width/2+10, -height/2+f*t++);
+
+    textSize(40);text("MODE: ", width/2+20, height/2-50);
 }
 
 function keyTyped(){
     if(key == '='){ offset +=   PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
     if(key == '-'){ offset -=   PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
-    if(key == '_'){ offset += 7*PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.498307; }
-    if(key == '+'){ offset -= 7*PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.498307; }
-    if(key == ','){ offset -= TWO_PI; for(var j = 0; j < 13; j++) tone[j] /= 2; }
-    if(key == '.'){ offset += TWO_PI; for(var j = 0; j < 13; j++) tone[j] *= 2; }
+    // if(key == '_'){ offset += 7*PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.498307; }
+    // if(key == '+'){ offset -= 7*PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.498307; }
+    // if(key == ','){ offset -= TWO_PI; for(var j = 0; j < 13; j++) tone[j] /= 2; }
+    // if(key == '.'){ offset += TWO_PI; for(var j = 0; j < 13; j++) tone[j] *= 2; }
     if(key == '['){ offset1 -= PI/6; }
     if(key == ']'){ offset1 += PI/6; }
     if(key == 'v' || key == 'V'){ visible = !visible; }
-    if(key == 's'){ solfege = !solfege; sargam  = false;  }
-    if(key == 'S'){ sargam  = !sargam;  solfege = false; }
-    if(key == 'c'){ constellation  = !constellation; }
+    if(key == 's') { solfege = !solfege; sargam  = false;  }
+    if(key == 'S') { sargam  = !sargam;  solfege = false; }
+    if(key == 'c') { constellation  = !constellation; }
     if(key == 'q') { playTone(0); }
     if(key == '2') { playTone(1); }
     if(key == 'w') { playTone(2); }
