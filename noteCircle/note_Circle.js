@@ -241,13 +241,13 @@ function draw() {
 function keyPressed(){
     if(keyCode === RIGHT_ARROW){ offset += PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
     if(keyCode === LEFT_ARROW) { offset -= PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
-    if(keyCode === UP_ARROW)   { offset1+= PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
-    if(keyCode === DOWN_ARROW) { offset1-= PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
+    if(keyCode === UP_ARROW)   { offset1+= PI/6; }
+    if(keyCode === DOWN_ARROW) { offset1-= PI/6; }
 }
 
 function keyTyped(){
-    if(key == '='){ offset +=   PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
-    if(key == '-'){ offset -=   PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
+    // if(key == '='){ offset +=   PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
+    // if(key == '-'){ offset -=   PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
     // if(key == '_'){ offset += 7*PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.498307; }
     // if(key == '+'){ offset -= 7*PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.498307; }
     // if(key == ','){ offset -= TWO_PI; for(var j = 0; j < 13; j++) tone[j] /= 2; }
@@ -276,24 +276,6 @@ function keyTyped(){
 
 function playTone(t){
     synth.triggerAttackRelease(tone[t], "8n");
-    // if(t!=12){
-        // lastplayed2 = lastplayed1;
-        // lastplayed1 = lastplayed0;
-        // lastplayed0 = t;
-    // }
-    
-    // if((lastplayed0 == 11 || lastplayed0 == 0) && lastplayed1 > lastplayed2 && lastplayed2 > 8){
-        // for(var j = 0; j <= 12; j++){
-            // tone[j] *= 2;
-        // }
-    // }
-    // if(lastplayed0 == 0 && lastplayed1 < lastplayed2 && lastplayed2 < 5){
-        // for(var j = 0; j <= 12; j++){
-            // tone[j] /= 2;
-        // }
-    // }
-    // fill(0);
-    // ellipse(mouseX, mouseY, 100, 100);
 }
 
 function mouseReleased(){
