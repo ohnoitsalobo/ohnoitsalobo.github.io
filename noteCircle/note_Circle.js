@@ -19,8 +19,8 @@ var tone = [523.25, 554.37, 587.33, 622.25, 659.25, 698.46, 739.99, 783.99, 830.
 var notes = []; // var lastplayed0=0; var lastplayed1=0; var lastplayed2=0;
 var lines = [1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1];
 
-var offset = 0, offset1 = 0;
-var visible = 1;
+var offset = 0, offset1 = 0, off1 = 0;
+var visible = 0, vis = 0;
 var sargam = 0;
 var solfege = 0;
 var constellation = 0;
@@ -38,7 +38,7 @@ function setup() {
 }
 
 function draw() {
-    // if(!visible) { if (millis() > 2000) { visible = 1; } }
+    if(!visible) { if (millis() > 2000 && !vis) { visible = 1; vis = 1; } }
     background(255);
     translate(300, 300);
     
@@ -323,3 +323,10 @@ function mousePressed(){
     // return false;
 // }
 
+// function mouseDragged(){
+    // var dy = mouseY-pmouseY;
+    // if(mouseX < width/2) dy = -dy;
+    // var dx = mouseX-pmouseX;
+    // if(mouseY > height/2) dx = -dx;
+    // off1 += abs(dx)>abs(dy) ? dx : dy;
+// }
