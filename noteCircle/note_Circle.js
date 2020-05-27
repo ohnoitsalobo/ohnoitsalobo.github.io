@@ -12,7 +12,9 @@ var synth = new Tone.Synth({
     sustain: 0.1,
     release: 0.1
   }
-}).toMaster()/*            C     C#/Db     D     D#/Eb     E       F     F#/Gb     G     G#/Ab    A   A#/Bb     B       C'    */
+}).toMaster()
+
+/*            C     C#/Db     D     D#/Eb     E       F     F#/Gb     G     G#/Ab    A   A#/Bb     B       C'    */
 var tone = [523.25, 554.37, 587.33, 622.25, 659.25, 698.46, 739.99, 783.99, 830.61, 880, 932.32, 987.76, 1046.5];
 var notes = []; // var lastplayed0=0; var lastplayed1=0; var lastplayed2=0;
 var lines = [1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1];
@@ -260,19 +262,19 @@ function keyTyped(){
     // if(key == 's') { solfege = !solfege; sargam  = false;  }
     // if(key == 'S') { sargam  = !sargam;  solfege = false; }
     // if(key == 'c') { constellation  = !constellation; }
-    if(key == 'q') { playTone(0); }
-    if(key == '2') { playTone(1); }
-    if(key == 'w') { playTone(2); }
-    if(key == '3') { playTone(3); }
-    if(key == 'e') { playTone(4); }
-    if(key == 'r') { playTone(5); }
-    if(key == '5') { playTone(6); }
-    if(key == 't') { playTone(7); }
-    if(key == '6') { playTone(8); }
-    if(key == 'y') { playTone(9); }
-    if(key == '7') { playTone(10); }
-    if(key == 'u') { playTone(11); }
-    if(key == 'i') { playTone(12); }
+    if(key == 'q') { playTone(0);                   rect(-35, -260, 70, 70); }
+    if(key == '2') { playTone(1);  rotate( 1*PI/6); rect(-35, -260, 70, 70); rotate(- 1*PI/6); }
+    if(key == 'w') { playTone(2);  rotate( 2*PI/6); rect(-35, -260, 70, 70); rotate(- 2*PI/6); }
+    if(key == '3') { playTone(3);  rotate( 3*PI/6); rect(-35, -260, 70, 70); rotate(- 3*PI/6); }
+    if(key == 'e') { playTone(4);  rotate( 4*PI/6); rect(-35, -260, 70, 70); rotate(- 4*PI/6); }
+    if(key == 'r') { playTone(5);  rotate( 5*PI/6); rect(-35, -260, 70, 70); rotate(- 5*PI/6); }
+    if(key == '5') { playTone(6);  rotate( 6*PI/6); rect(-35, -260, 70, 70); rotate(- 6*PI/6); }
+    if(key == 't') { playTone(7);  rotate( 7*PI/6); rect(-35, -260, 70, 70); rotate(- 7*PI/6); }
+    if(key == '6') { playTone(8);  rotate( 8*PI/6); rect(-35, -260, 70, 70); rotate(- 8*PI/6); }
+    if(key == 'y') { playTone(9);  rotate( 9*PI/6); rect(-35, -260, 70, 70); rotate(- 9*PI/6); }
+    if(key == '7') { playTone(10); rotate(10*PI/6); rect(-35, -260, 70, 70); rotate(-10*PI/6); }
+    if(key == 'u') { playTone(11); rotate(11*PI/6); rect(-35, -260, 70, 70); rotate(-11*PI/6); }
+    if(key == 'i') { playTone(12);                  rect(-35, -260, 70, 70); }
     return false;
 }
 
@@ -280,7 +282,7 @@ function playTone(t){
     synth.triggerAttackRelease(tone[t], "8n");
 }
 
-function mouseReleased(){
+function mousePressed(){
     var d = 80;
     for(var i = 0; i < 12; i++){
         if(!constellation){
@@ -288,6 +290,7 @@ function mouseReleased(){
             var dy = notes[i].y+300;
             if(mouseX > dx-d/2 && mouseX < dx+d/2 && mouseY > dy-d/2 && mouseY < dy+d/2){
                 playTone(i);
+                // if (i == 0) playTone(12);
             }
         }else{
             var dx = notes[i].x/1.5+300;
@@ -302,4 +305,18 @@ function mouseReleased(){
         visible = !visible;
     return false;
 }
+
+// function mouseReleased(){
+    // var d = 80;
+    // for(var i = 0; i < 12; i++){
+        // if(!constellation){
+            // var dx = notes[i].x+300;
+            // var dy = notes[i].y+300;
+            // if(mouseX > dx-d/2 && mouseX < dx+d/2 && mouseY > dy-d/2 && mouseY < dy+d/2){
+                // if (i == 0) playTone(12);
+            // }
+        // }
+    // }
+    // return false;
+// }
 
