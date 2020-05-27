@@ -38,6 +38,7 @@ function setup() {
 }
 
 function draw() {
+    // if(!visible) { if (millis() > 2000) { visible = 1; } }
     background(255);
     translate(300, 300);
     
@@ -245,8 +246,10 @@ function draw() {
 function keyPressed(){
     if(keyCode === RIGHT_ARROW){ offset += PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
     if(keyCode === LEFT_ARROW) { offset -= PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
-    if(keyCode === UP_ARROW)   { offset1+= PI/6; }
-    if(keyCode === DOWN_ARROW) { offset1-= PI/6; }
+    if(visible){
+        if(keyCode === UP_ARROW)   { offset1+= PI/6; }
+        if(keyCode === DOWN_ARROW) { offset1-= PI/6; }
+    }
 }
 
 function keyTyped(){
