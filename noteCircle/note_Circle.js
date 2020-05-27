@@ -38,7 +38,7 @@ function setup() {
 }
 
 function draw() {
-    if(!visible) { if (millis() > 2000 && !vis) { visible = 1; vis = 1; } }
+    if(!visible) { if (millis() > 3000 && !vis) { visible = 1; vis = 1; } }
     background(255);
     translate(300, 300);
     
