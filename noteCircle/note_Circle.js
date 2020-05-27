@@ -121,21 +121,23 @@ function draw() {
                 }
             }
             fill(0); 
-            rotate(PI/2);
-            text("Ionian / Major", 600, 250);
-            rotate(PI/3);
-            text("Dorian",         600, 250);
-            rotate(PI/3);
-            text("Phrygian",       600, 250);
-            rotate(PI/6);
-            text("Lydian",         600, 250);
-            rotate(PI/3);
-            text("Mixolydian",     600, 250);
-            rotate(PI/3);
-            text("Aeolian / Minor",600, 250);
-            rotate(PI/3);
-            text("Locrian",        600, 250);
-            rotate(-7*PI/3);
+            if (visible){
+                rotate(PI/2);
+                text("Ionian / Major", 600, 250);
+                rotate(PI/3);
+                text("Dorian",         600, 250);
+                rotate(PI/3);
+                text("Phrygian",       600, 250);
+                rotate(PI/6);
+                text("Lydian",         600, 250);
+                rotate(PI/3);
+                text("Mixolydian",     600, 250);
+                rotate(PI/3);
+                text("Aeolian / Minor",600, 250);
+                rotate(PI/3);
+                text("Locrian",        600, 250);
+                rotate(-7*PI/3);
+            }
             rotate(-offset1);
             rotate(offset);
             for(var i = 0; i < 12; i++){
@@ -203,9 +205,8 @@ function draw() {
         }
         rotate(-offset1);
     }
-    fill(mouseIsPressed ? 0 : 100);
-    ellipse(mouseX-300, mouseY-300, 10, 10);
-    textSize(30); text("ROOT", 0, -height/2+20);
+    fill(0);
+    textSize(30); if(visible) text("ROOT", 0, -height/2+20);
     textFont("Courier New");
     textSize(14); textAlign(LEFT); strokeWeight(0.5); stroke(0);
     text("Click note positions\nto hear tones.", -300, -height/2+20);
@@ -236,7 +237,7 @@ function draw() {
     text("u ~> play 7           ", width/2+10, -height/2+f*t++);
     text("i ~> play 7#/1b       ", width/2+10, -height/2+f*t++);
 
-    textSize(40);text("MODE: ", width/2+20, height/2-50);
+    textSize(40); if(visible) text("MODE: ", width/2+20, height/2-50);
 }
 
 function keyPressed(){
