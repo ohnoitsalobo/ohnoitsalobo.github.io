@@ -212,28 +212,29 @@ function draw() {
     text("Click center to hide\noverlay.", -300, -height/2+60);
     var f = 16;
     textSize(f); textAlign(RIGHT); fill(0); var t = 1;
-    text("RIGHT ~> bottom layer clockwise        ", width/2+10, -height/2+f*t++);
-    text("LEFT ~> bottom layer counterclockwise ", width/2+10, -height/2+f*t++);
-    text("UP ~> top layer clockwise           ", width/2+10, -height/2+f*t++);
-    text("DOWN ~> top layer counterclockwise    ", width/2+10, -height/2+f*t++);
+    text("RIGHT ~> bottom layer clockwise       ", width/2+10, -height/2+f*t++);
+    text("LEFT ~> bottom layer counterclockwise", width/2+10, -height/2+f*t++);
+    text("UP ~> top layer clockwise          ", width/2+10, -height/2+f*t++);
+    text("DOWN ~> top layer counterclockwise   ", width/2+10, -height/2+f*t++);
+                                                           t++
     // text(", ~> increase one octave", width/2+10, -height/2+f*t++);
     // text(". ~> decrease one octave", width/2+10, -height/2+f*t++);
-    text("v ~> toggle overlay       ", width/2+10, -height/2+f*t++);
+    text("v ~> toggle overlay   ", width/2+10, -height/2+f*t++);
     // text("s ~> toggle interval names", width/2+10, -height/2+f*t++);
-                                                             t++;
-    text("q ~> play 1             ", width/2+10, -height/2+f*t++);
-    text("2 ~> play 1#/2b         ", width/2+10, -height/2+f*t++);
-    text("w ~> play 2             ", width/2+10, -height/2+f*t++);
-    text("3 ~> play 2#/3b         ", width/2+10, -height/2+f*t++);
-    text("e ~> play 3             ", width/2+10, -height/2+f*t++);
-    text("r ~> play 4             ", width/2+10, -height/2+f*t++);
-    text("5 ~> play 4#/5b         ", width/2+10, -height/2+f*t++);
-    text("t ~> play 5             ", width/2+10, -height/2+f*t++);
-    text("6 ~> play 5#/6b         ", width/2+10, -height/2+f*t++);
-    text("y ~> play 6             ", width/2+10, -height/2+f*t++);
-    text("7 ~> play 6#/7b         ", width/2+10, -height/2+f*t++);
-    text("u ~> play 7             ", width/2+10, -height/2+f*t++);
-    text("i ~> play 7#/1b         ", width/2+10, -height/2+f*t++);
+                                                           t++;
+    text("q ~> play 1           ", width/2+10, -height/2+f*t++);
+    text("2 ~> play 1#/2b       ", width/2+10, -height/2+f*t++);
+    text("w ~> play 2           ", width/2+10, -height/2+f*t++);
+    text("3 ~> play 2#/3b       ", width/2+10, -height/2+f*t++);
+    text("e ~> play 3           ", width/2+10, -height/2+f*t++);
+    text("r ~> play 4           ", width/2+10, -height/2+f*t++);
+    text("5 ~> play 4#/5b       ", width/2+10, -height/2+f*t++);
+    text("t ~> play 5           ", width/2+10, -height/2+f*t++);
+    text("6 ~> play 5#/6b       ", width/2+10, -height/2+f*t++);
+    text("y ~> play 6           ", width/2+10, -height/2+f*t++);
+    text("7 ~> play 6#/7b       ", width/2+10, -height/2+f*t++);
+    text("u ~> play 7           ", width/2+10, -height/2+f*t++);
+    text("i ~> play 7#/1b       ", width/2+10, -height/2+f*t++);
 
     textSize(40);text("MODE: ", width/2+20, height/2-50);
 }
