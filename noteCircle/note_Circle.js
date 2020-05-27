@@ -252,8 +252,8 @@ function keyTyped(){
     // if(key == '+'){ offset -= 7*PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.498307; }
     // if(key == ','){ offset -= TWO_PI; for(var j = 0; j < 13; j++) tone[j] /= 2; }
     // if(key == '.'){ offset += TWO_PI; for(var j = 0; j < 13; j++) tone[j] *= 2; }
-    if(key == '['){ offset1 -= PI/6; }
-    if(key == ']'){ offset1 += PI/6; }
+    if(key == ','){ offset1 -= PI/6; }
+    if(key == '.'){ offset1 += PI/6; }
     if(key == 'v' || key == 'V'){ visible = !visible; }
     // if(key == 's') { solfege = !solfege; sargam  = false;  }
     // if(key == 'S') { sargam  = !sargam;  solfege = false; }
