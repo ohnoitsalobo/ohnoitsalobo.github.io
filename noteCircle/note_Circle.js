@@ -212,14 +212,14 @@ function draw() {
     text("Click center to hide\noverlay.", -300, -height/2+60);
     var f = 16;
     textSize(f); textAlign(RIGHT); fill(0); var t = 1;
-    text("= ~> bottom layer clockwise        ", width/2+10, -height/2+f*t++);
-    text("- ~> bottom layer counterclockwise ", width/2+10, -height/2+f*t++);
-    text("] ~> top layer clockwise           ", width/2+10, -height/2+f*t++);
-    text("[ ~> top layer counterclockwise    ", width/2+10, -height/2+f*t++);
+    text("RIGHT ~> bottom layer clockwise        ", width/2+10, -height/2+f*t++);
+    text("LEFT ~> bottom layer counterclockwise ", width/2+10, -height/2+f*t++);
+    text("UP ~> top layer clockwise           ", width/2+10, -height/2+f*t++);
+    text("DOWN ~> top layer counterclockwise    ", width/2+10, -height/2+f*t++);
     // text(", ~> increase one octave", width/2+10, -height/2+f*t++);
     // text(". ~> decrease one octave", width/2+10, -height/2+f*t++);
     text("v ~> toggle overlay       ", width/2+10, -height/2+f*t++);
-    text("s ~> toggle interval names", width/2+10, -height/2+f*t++);
+    // text("s ~> toggle interval names", width/2+10, -height/2+f*t++);
                                                              t++;
     text("q ~> play 1             ", width/2+10, -height/2+f*t++);
     text("2 ~> play 1#/2b         ", width/2+10, -height/2+f*t++);
@@ -238,6 +238,13 @@ function draw() {
     textSize(40);text("MODE: ", width/2+20, height/2-50);
 }
 
+function keyPressed(){
+    if(keyCode === RIGHT_ARROW){ offset += PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
+    if(keyCode === LEFT_ARROW) { offset -= PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
+    if(keyCode === UP_ARROW)   { offset1+= PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
+    if(keyCode === DOWN_ARROW) { offset1-= PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
+}
+
 function keyTyped(){
     if(key == '='){ offset +=   PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
     if(key == '-'){ offset -=   PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
@@ -248,9 +255,9 @@ function keyTyped(){
     if(key == '['){ offset1 -= PI/6; }
     if(key == ']'){ offset1 += PI/6; }
     if(key == 'v' || key == 'V'){ visible = !visible; }
-    if(key == 's') { solfege = !solfege; sargam  = false;  }
-    if(key == 'S') { sargam  = !sargam;  solfege = false; }
-    if(key == 'c') { constellation  = !constellation; }
+    // if(key == 's') { solfege = !solfege; sargam  = false;  }
+    // if(key == 'S') { sargam  = !sargam;  solfege = false; }
+    // if(key == 'c') { constellation  = !constellation; }
     if(key == 'q') { playTone(0); }
     if(key == '2') { playTone(1); }
     if(key == 'w') { playTone(2); }
