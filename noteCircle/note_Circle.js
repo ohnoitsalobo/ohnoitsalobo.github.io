@@ -223,7 +223,7 @@ function draw() {
                                                            t++
     // text(", ~> increase one octave", width/2+10, -height/2+f*t++);
     // text(". ~> decrease one octave", width/2+10, -height/2+f*t++);
-    text("v ~> toggle overlay   ", width/2+10, -height/2+f*t++);
+    text("v ~> toggle top layer ", width/2+10, -height/2+f*t++);
     // text("s ~> toggle interval names", width/2+10, -height/2+f*t++);
                                                            t++;
     text("q ~> play 1           ", width/2+10, -height/2+f*t++);
