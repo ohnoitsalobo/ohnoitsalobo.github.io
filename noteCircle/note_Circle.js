@@ -73,9 +73,10 @@ function draw() {
         }
 
         rectMode(CENTER);
-        rotate(-offset)
-        rotate(offset1)
-        // arc(0, -0.9*300, 30, 30, -PI, 0); // marker circle
+        rotate(-offset);
+        rotate(offset1);
+        fill(100);
+        arc(0.9*300, 0, 20, 20, -PI/2, PI/2); // marker circle
         if(!constellation){
             if(visible){
                 for(var i = 0; i < 12; i++){
@@ -249,8 +250,8 @@ function draw() {
 }
 
 function keyPressed(){
-     stroke(0); strokeWeight(4);
-   if(keyCode === RIGHT_ARROW){ 
+    stroke(0); strokeWeight(5);
+    if(keyCode === RIGHT_ARROW){ 
         offset += PI/6; 
         for(var j = 0; j < 13; j++) 
             tone[j] /= 1.059463;
