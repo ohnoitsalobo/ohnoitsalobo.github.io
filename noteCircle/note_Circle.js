@@ -249,7 +249,7 @@ function draw() {
     // text("7 ~> play 6#/7b       ", width/2+10, -height/2+f*t++);
     // text("u ~> play 7           ", width/2+10, -height/2+f*t++);
     // text("i ~> play 7#/1b       ", width/2+10, -height/2+f*t++);
-    textAlign(LEFT); textSize(20); text("Click center to\ntoggle overlay", -300, -height/2+20);
+    textAlign(LEFT); textSize(20); text("Click center to\ntoggle\noverlay", -300, -height/2+15);
     if(visible){
         textAlign(CENTER);
         fill('#00000055'); 
