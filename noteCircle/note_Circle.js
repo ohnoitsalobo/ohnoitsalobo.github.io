@@ -28,7 +28,7 @@ var currPos = 0, nextPos = 0;
 
 function setup() {
     createCanvas(1000, 600);
-    frameRate(10);
+    frameRate(5);
     // synth = new Tone.Synth().toMaster();
     for(var i = 0; i < 12; i++){
         notes[i] = p5.Vector.fromAngle(-PI/2+i*PI/6);
