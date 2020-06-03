@@ -214,58 +214,58 @@ function draw() {
         rotate(-offset1);
     }
     fill(0);
-    textSize(30); if(visible) text("ROOT", 0, -height/2+20);
+    textSize(28); if(visible) {
+        text("ROOT", 0, -height/2+22);
+    }
     textFont("Courier New");
     textSize(40);  if(visible) text("MODE: ", width/2-50, height/2-50);
     textSize(14); textAlign(LEFT); strokeWeight(0.5); stroke(0);
-    text("Click note positions\nto hear tones.", -300, -height/2+20);
-    text("Click center to hide\noverlay.", -300, -height/2+60);
+    // text("Click note positions\nto hear tones.", -300, -height/2+20);
+    // text("Click center to hide\noverlay.", -300, -height/2+60);
     noStroke(); fill(255); rect(400, -300, 300, 520); rect(400, 265, 300, 50);
      if (visible) { stroke(0); fill('rgba(255,   0,   0, 0)'); rect(497, 220, 202, 45); fill(255);}
     var f = 16;
     textSize(f); textAlign(RIGHT); fill(0); var t = 1;
-    text("RIGHT ~> bottom layer clockwise       ", width/2+10, -height/2+f*t++);
-    text("LEFT ~> bottom layer counterclockwise", width/2+10, -height/2+f*t++);
-    text("UP ~> top layer clockwise          ", width/2+10, -height/2+f*t++);
-    text("DOWN ~> top layer counterclockwise   ", width/2+10, -height/2+f*t++);
+    // text("RIGHT ~> bottom layer clockwise       ", width/2+10, -height/2+f*t++);
+    // text("LEFT ~> bottom layer counterclockwise", width/2+10, -height/2+f*t++);
+    // text("UP ~> top layer clockwise          ", width/2+10, -height/2+f*t++);
+    // text("DOWN ~> top layer counterclockwise   ", width/2+10, -height/2+f*t++);
                                                            t++
     // text(", ~> increase one octave", width/2+10, -height/2+f*t++);
     // text(". ~> decrease one octave", width/2+10, -height/2+f*t++);
-    text("v ~> toggle top layer ", width/2+10, -height/2+f*t++);
+    // text("v ~> toggle top layer ", width/2+10, -height/2+f*t++);
     // text("s ~> toggle interval names", width/2+10, -height/2+f*t++);
                                                            t++;
-    text("q ~> play 1           ", width/2+10, -height/2+f*t++);
-    text("2 ~> play 1#/2b       ", width/2+10, -height/2+f*t++);
-    text("w ~> play 2           ", width/2+10, -height/2+f*t++);
-    text("3 ~> play 2#/3b       ", width/2+10, -height/2+f*t++);
-    text("e ~> play 3           ", width/2+10, -height/2+f*t++);
-    text("r ~> play 4           ", width/2+10, -height/2+f*t++);
-    text("5 ~> play 4#/5b       ", width/2+10, -height/2+f*t++);
-    text("t ~> play 5           ", width/2+10, -height/2+f*t++);
-    text("6 ~> play 5#/6b       ", width/2+10, -height/2+f*t++);
-    text("y ~> play 6           ", width/2+10, -height/2+f*t++);
-    text("7 ~> play 6#/7b       ", width/2+10, -height/2+f*t++);
-    text("u ~> play 7           ", width/2+10, -height/2+f*t++);
-    text("i ~> play 7#/1b       ", width/2+10, -height/2+f*t++);
-
+    // text("q ~> play 1           ", width/2+10, -height/2+f*t++);
+    // text("2 ~> play 1#/2b       ", width/2+10, -height/2+f*t++);
+    // text("w ~> play 2           ", width/2+10, -height/2+f*t++);
+    // text("3 ~> play 2#/3b       ", width/2+10, -height/2+f*t++);
+    // text("e ~> play 3           ", width/2+10, -height/2+f*t++);
+    // text("r ~> play 4           ", width/2+10, -height/2+f*t++);
+    // text("5 ~> play 4#/5b       ", width/2+10, -height/2+f*t++);
+    // text("t ~> play 5           ", width/2+10, -height/2+f*t++);
+    // text("6 ~> play 5#/6b       ", width/2+10, -height/2+f*t++);
+    // text("y ~> play 6           ", width/2+10, -height/2+f*t++);
+    // text("7 ~> play 6#/7b       ", width/2+10, -height/2+f*t++);
+    // text("u ~> play 7           ", width/2+10, -height/2+f*t++);
+    // text("i ~> play 7#/1b       ", width/2+10, -height/2+f*t++);
+    if(visible){
+        fill('#00000055'); 
+        rect(350, -35, 70, 70); rect(450, -35, 70, 70);
+        fill (0); textSize(100);
+        text("-", 415, 28);
+        text("+", 515, 28);
+        textSize(30); textFont("Georgia");
+        text("Click to change key", 560, -50);
+        text("Drag the circle to change mode", 560, -height/2+40);
+        text("Tap/click the highlighted\nnotes to hear tones", 560, -height/2+90);
+    }
 }
 
 function keyPressed(){
     stroke(0); strokeWeight(5);
-    if(keyCode === RIGHT_ARROW){ 
-        offset += PI/6; 
-        for(var j = 0; j < 13; j++) 
-            tone[j] /= 1.059463;
-        line(50, -290, 150, -250);
-        line(150, -250, 130, -270);
-    }
-    if(keyCode === LEFT_ARROW) {
-        offset -= PI/6;
-        for(var j = 0; j < 13; j++)
-            tone[j] *= 1.059463;
-        line(-50, -290, -150, -250);
-        line(-150, -250, -130, -270);
-    }
+    if(keyCode === RIGHT_ARROW) { keyUp(); }
+    if(keyCode === LEFT_ARROW) { keyDown(); }
     if(visible){
         if(keyCode === UP_ARROW){
             offset1+= PI/6; 
@@ -341,9 +341,30 @@ function mousePressed(){
     }
     if(mouseX>300-25 && mouseX<300+25 && mouseY>300-25 && mouseY<300+25)
         visible = !visible;
+    if(mouseX>650 && mouseX<720 && mouseY>265 && mouseY<335)
+        keyUp();
+    if(mouseX>750 && mouseX<820 && mouseY>265 && mouseY<335)
+        keyDown();
     return false;
 }
 
+function keyUp(){
+    offset += PI/6; 
+    for(var j = 0; j < 13; j++) 
+        tone[j] /= 1.059463;
+    stroke(0); strokeWeight(5);
+    line(50, -290, 150, -250);
+    line(150, -250, 130, -270);
+}
+
+function keyDown(){
+    offset -= PI/6;
+    for(var j = 0; j < 13; j++)
+        tone[j] *= 1.059463;
+    stroke(0); strokeWeight(5);
+    line(-50, -290, -150, -250);
+    line(-150, -250, -130, -270);
+}
 // function mouseReleased(){
     // var d = 80;
     // for(var i = 0; i < 12; i++){
