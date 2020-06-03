@@ -43,6 +43,7 @@ function draw() {
     translate(300, 300);
     
     fill(visible ? 150 : 125);
+    strokeWeight(1);
     ellipse(0, 0, 0.9*600, 0.9*600);              // draw main circle
 
     textAlign(CENTER);
@@ -113,8 +114,6 @@ function draw() {
                     
                     if(i==0 || i==2 || i==3 || i==5 || i==7 || i==8 || i==10){
                         fill('#ffffff22'); stroke(0); strokeWeight(1.5);
-                        if(i==3)
-                            fill('#ff000022');
                     }
                     if(i==1 || i==4 || i==6 || i==9 || i==11){
                         fill(150); noStroke();
@@ -170,6 +169,12 @@ function draw() {
                 for(var i = 0; i < 12; i++){
                     var d = -0.36*300;
 
+                    if(i==3){
+                        rotate(-offset1);
+                        fill('#ff000022'); noStroke();
+                        rect(0, d-118, 70, 70);
+                        rotate(offset1);
+                    }
                     fill(150); noStroke();
                     if(i==1) { rect(0, d, 33, 76); }
                     if(i==4) { rect(0, d, 33, 76); }
@@ -244,11 +249,32 @@ function draw() {
 }
 
 function keyPressed(){
-    if(keyCode === RIGHT_ARROW){ offset += PI/6; for(var j = 0; j < 13; j++) tone[j] /= 1.059463; }
-    if(keyCode === LEFT_ARROW) { offset -= PI/6; for(var j = 0; j < 13; j++) tone[j] *= 1.059463; }
+     stroke(0); strokeWeight(4);
+   if(keyCode === RIGHT_ARROW){ 
+        offset += PI/6; 
+        for(var j = 0; j < 13; j++) 
+            tone[j] /= 1.059463;
+        line(50, -290, 150, -250);
+        line(150, -250, 130, -270);
+    }
+    if(keyCode === LEFT_ARROW) {
+        offset -= PI/6;
+        for(var j = 0; j < 13; j++)
+            tone[j] *= 1.059463;
+        line(-50, -290, -150, -250);
+        line(-150, -250, -130, -270);
+    }
     if(visible){
-        if(keyCode === UP_ARROW)   { offset1+= PI/6; }
-        if(keyCode === DOWN_ARROW) { offset1-= PI/6; }
+        if(keyCode === UP_ARROW){
+            offset1+= PI/6; 
+            line(50, -290, 150, -250);
+            line(150, -250, 130, -270);
+        }
+        if(keyCode === DOWN_ARROW) {
+            offset1-= PI/6;
+            line(-50, -290, -150, -250);
+            line(-150, -250, -130, -270);
+        }
     }
 }
 
@@ -265,20 +291,26 @@ function keyTyped(){
     // if(key == 's') { solfege = !solfege; sargam  = false;  }
     // if(key == 'S') { sargam  = !sargam;  solfege = false; }
     // if(key == 'c') { constellation  = !constellation; }
-    if(key == 'q') { playTone(0);                   rect(-35, -260, 70, 70); }
-    if(key == '2') { playTone(1);  rotate( 1*PI/6); rect(-35, -260, 70, 70); rotate(- 1*PI/6); }
-    if(key == 'w') { playTone(2);  rotate( 2*PI/6); rect(-35, -260, 70, 70); rotate(- 2*PI/6); }
-    if(key == '3') { playTone(3);  rotate( 3*PI/6); rect(-35, -260, 70, 70); rotate(- 3*PI/6); }
-    if(key == 'e') { playTone(4);  rotate( 4*PI/6); rect(-35, -260, 70, 70); rotate(- 4*PI/6); }
-    if(key == 'r') { playTone(5);  rotate( 5*PI/6); rect(-35, -260, 70, 70); rotate(- 5*PI/6); }
-    if(key == '5') { playTone(6);  rotate( 6*PI/6); rect(-35, -260, 70, 70); rotate(- 6*PI/6); }
-    if(key == 't') { playTone(7);  rotate( 7*PI/6); rect(-35, -260, 70, 70); rotate(- 7*PI/6); }
-    if(key == '6') { playTone(8);  rotate( 8*PI/6); rect(-35, -260, 70, 70); rotate(- 8*PI/6); }
-    if(key == 'y') { playTone(9);  rotate( 9*PI/6); rect(-35, -260, 70, 70); rotate(- 9*PI/6); }
-    if(key == '7') { playTone(10); rotate(10*PI/6); rect(-35, -260, 70, 70); rotate(-10*PI/6); }
-    if(key == 'u') { playTone(11); rotate(11*PI/6); rect(-35, -260, 70, 70); rotate(-11*PI/6); }
-    if(key == 'i') { playTone(12);                  rect(-35, -260, 70, 70); }
+    if(key == 'q') { playTone(0);  playedHighlight(0);  }
+    if(key == '2') { playTone(1);  playedHighlight(1);  }
+    if(key == 'w') { playTone(2);  playedHighlight(2);  }
+    if(key == '3') { playTone(3);  playedHighlight(3);  }
+    if(key == 'e') { playTone(4);  playedHighlight(4);  }
+    if(key == 'r') { playTone(5);  playedHighlight(5);  }
+    if(key == '5') { playTone(6);  playedHighlight(6);  }
+    if(key == 't') { playTone(7);  playedHighlight(7);  }
+    if(key == '6') { playTone(8);  playedHighlight(8);  }
+    if(key == 'y') { playTone(9);  playedHighlight(9);  }
+    if(key == '7') { playTone(10); playedHighlight(10); }
+    if(key == 'u') { playTone(11); playedHighlight(11); }
+    if(key == 'i') { playTone(12); playedHighlight(12); }
     return false;
+}
+
+function playedHighlight(x){
+    rotate(x*PI/6);
+    rect(-35, -260, 70, 70);
+    rotate(-x*PI/6);
 }
 
 function playTone(t){
