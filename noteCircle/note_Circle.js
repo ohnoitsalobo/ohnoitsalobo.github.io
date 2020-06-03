@@ -74,7 +74,7 @@ function draw() {
 
         rectMode(CENTER);
         rotate(-offset);
-        rotate(offset1);
+        rotate(offset1+0.0005*off1);
         fill(100);
         arc(0.9*300, 0, 20, 20, -PI/2, PI/2); // marker circle
         if(!constellation){
@@ -126,7 +126,7 @@ function draw() {
             fill(0); 
             if (visible){
                 rotate(PI/2);
-                text("Ionian / Major", 600, 250);
+                text("Ionian (Major)", 600, 250);
                 rotate(PI/3);
                 text("Dorian",         600, 250);
                 rotate(PI/3);
@@ -136,13 +136,13 @@ function draw() {
                 rotate(PI/3);
                 text("Mixolydian",     600, 250);
                 rotate(PI/3);
-                text("Aeolian / Minor",600, 250);
+                text("Aeolian (Minor)",600, 250);
                 rotate(PI/3);
                 text("Locrian",        600, 250);
                 rotate(-7*PI/3);
             }
             rotate(-offset1);
-            rotate(offset);
+            rotate(offset-0.0005*off1);
             for(var i = 0; i < 12; i++){
                 var d = -0.36*300;
                 fill(255); noStroke();
@@ -163,7 +163,7 @@ function draw() {
                     
                 rotate(PI/6);
             }
-            rotate(-offset);
+            rotate(-offset+0.0005*off1);
 
             rotate(offset1);
             if(visible){
@@ -171,10 +171,10 @@ function draw() {
                     var d = -0.36*300;
 
                     if(i==3){
-                        rotate(-offset1);
+                        rotate(-offset1-0.0005*off1);
                         fill('#ff000022'); noStroke();
                         rect(0, d-118, 70, 70);
-                        rotate(offset1);
+                        rotate(offset1+0.0005*off1);
                     }
                     fill(150); noStroke();
                     if(i==1) { rect(0, d, 33, 76); }
@@ -189,7 +189,6 @@ function draw() {
             rotate(-offset1);
         }
     pop();
-    noStroke(); fill(255); rect(550, -135, 200, 100);
     if(constellation){
         noFill(); stroke(175);
         ellipse(0, 0, 300, 300);
@@ -217,9 +216,12 @@ function draw() {
     fill(0);
     textSize(30); if(visible) text("ROOT", 0, -height/2+20);
     textFont("Courier New");
+    textSize(40);  if(visible) text("MODE: ", width/2-50, height/2-50);
     textSize(14); textAlign(LEFT); strokeWeight(0.5); stroke(0);
     text("Click note positions\nto hear tones.", -300, -height/2+20);
     text("Click center to hide\noverlay.", -300, -height/2+60);
+    noStroke(); fill(255); rect(400, -300, 300, 520); rect(400, 265, 300, 50);
+     if (visible) { stroke(0); fill('rgba(255,   0,   0, 0)'); rect(497, 220, 202, 45); fill(255);}
     var f = 16;
     textSize(f); textAlign(RIGHT); fill(0); var t = 1;
     text("RIGHT ~> bottom layer clockwise       ", width/2+10, -height/2+f*t++);
@@ -246,7 +248,6 @@ function draw() {
     text("u ~> play 7           ", width/2+10, -height/2+f*t++);
     text("i ~> play 7#/1b       ", width/2+10, -height/2+f*t++);
 
-    textSize(40); if(visible) text("MODE: ", width/2+20, height/2-50);
 }
 
 function keyPressed(){
@@ -310,6 +311,7 @@ function keyTyped(){
 
 function playedHighlight(x){
     rotate(x*PI/6);
+    strokeWeight(1); fill('#00000055');
     rect(-35, -260, 70, 70);
     rotate(-x*PI/6);
 }
@@ -356,10 +358,14 @@ function mousePressed(){
     // return false;
 // }
 
-// function mouseDragged(){
-    // var dy = mouseY-pmouseY;
-    // if(mouseX < width/2) dy = -dy;
-    // var dx = mouseX-pmouseX;
-    // if(mouseY > height/2) dx = -dx;
-    // off1 += abs(dx)>abs(dy) ? dx : dy;
-// }
+function mouseDragged(){
+    frameRate(20);
+    var dy = mouseY-pmouseY;
+    if(mouseX < width/2-150) dy = -dy;
+    var dx = mouseX-pmouseX;
+    if(mouseY > height/2) dx = -dx;
+    off1 += abs(dx)>abs(dy) ? dx : dy;
+    frameRate(5);
+    // rotate(off1);
+    // console.log(off1);
+}
