@@ -249,17 +249,20 @@ function draw() {
     // text("7 ~> play 6#/7b       ", width/2+10, -height/2+f*t++);
     // text("u ~> play 7           ", width/2+10, -height/2+f*t++);
     // text("i ~> play 7#/1b       ", width/2+10, -height/2+f*t++);
-    if(visible){
+    // if(visible){
+        textAlign(CENTER);
         fill('#00000055'); 
-        rect(350, -35, 70, 70); rect(450, -35, 70, 70);
+        rect(350, 55, 70, 70); rect(450, 55, 70, 70);
+        rect(350, -120, 70, 70); rect(450, -120, 70, 70);
         fill (0); textSize(100);
-        text("-", 415, 28);
-        text("+", 515, 28);
+        text("-", 385, 120); text("+", 485, 120);
+        text("<", 385, -55); text(">", 485, -55);
         textSize(30); textFont("Georgia");
-        text("Click to change key", 560, -50);
-        text("Drag the circle to change mode", 560, -height/2+40);
-        text("Tap/click the highlighted\nnotes to hear tones", 560, -height/2+90);
-    }
+        text("Click to change key",  440, 35);
+        text("Click to change mode", 440, -140);
+        // text("Drag the circle to change mode", 560, -height/2+40);
+        text("Tap/click the highlighted\n       notes to hear tones", 400, -height/2+50);
+    // }
 }
 
 function keyPressed(){
@@ -339,12 +342,25 @@ function mousePressed(){
             }
         }
     }
+    console.log(mouseX);
+    console.log(mouseY);
     if(mouseX>300-25 && mouseX<300+25 && mouseY>300-25 && mouseY<300+25)
         visible = !visible;
-    if(mouseX>650 && mouseX<720 && mouseY>265 && mouseY<335)
+    if(mouseX>650 && mouseX<720 && mouseY>355 && mouseY<425)
         keyUp();
-    if(mouseX>750 && mouseX<820 && mouseY>265 && mouseY<335)
+    if(mouseX>750 && mouseX<820 && mouseY>355 && mouseY<425)
         keyDown();
+    stroke(0); strokeWeight(5);
+    if(mouseX>750 && mouseX<820 && mouseY>180 && mouseY<250){
+        offset1+= PI/6; 
+        line(50, -290, 150, -250);
+        line(150, -250, 130, -270);
+    }
+    if(mouseX>650 && mouseX<720 && mouseY>180 && mouseY<250){
+        offset1-= PI/6; 
+        line(-50, -290, -150, -250);
+        line(-150, -250, -130, -270);
+    }
     return false;
 }
 
@@ -379,14 +395,12 @@ function keyDown(){
     // return false;
 // }
 
-function mouseDragged(){
-    frameRate(20);
-    var dy = mouseY-pmouseY;
-    if(mouseX < width/2-150) dy = -dy;
-    var dx = mouseX-pmouseX;
-    if(mouseY > height/2) dx = -dx;
-    off1 += abs(dx)>abs(dy) ? dx : dy;
-    frameRate(5);
-    // rotate(off1);
-    // console.log(off1);
-}
+// function mouseDragged(){
+    // frameRate(20);
+    // var dy = mouseY-pmouseY;
+    // if(mouseX < width/2-150) dy = -dy;
+    // var dx = mouseX-pmouseX;
+    // if(mouseY > height/2) dx = -dx;
+    // off1 += abs(dx)>abs(dy) ? dx : dy;
+    // frameRate(5);
+// }
