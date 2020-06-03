@@ -250,7 +250,7 @@ function draw() {
     // text("u ~> play 7           ", width/2+10, -height/2+f*t++);
     // text("i ~> play 7#/1b       ", width/2+10, -height/2+f*t++);
     textAlign(LEFT); textSize(20); text("Click center to\ntoggle\noverlay", -300, -height/2+15);
-    if(visible){
+    // if(visible){
         textAlign(CENTER);
         fill('#00000055'); 
         rect(350, 55, 70, 70); rect(450, 55, 70, 70);
@@ -263,7 +263,7 @@ function draw() {
         text("Click to change mode", 440, -140);
         // text("Drag the circle to change mode", 560, -height/2+40);
         text("Tap/click the highlighted\n       notes to hear tones", 400, -height/2+50);
-    }
+    // }
 }
 
 function keyPressed(){
@@ -352,15 +352,17 @@ function mousePressed(){
     if(mouseX>750 && mouseX<820 && mouseY>355 && mouseY<425)
         keyUp();
     stroke(0); strokeWeight(5);
-    if(mouseX>750 && mouseX<820 && mouseY>180 && mouseY<250){
-        offset1+= PI/6; 
-        line(50, -290, 150, -250);
-        line(150, -250, 130, -270);
-    }
-    if(mouseX>650 && mouseX<720 && mouseY>180 && mouseY<250){
-        offset1-= PI/6; 
-        line(-50, -290, -150, -250);
-        line(-150, -250, -130, -270);
+    if(visible){
+        if(mouseX>750 && mouseX<820 && mouseY>180 && mouseY<250){
+            offset1+= PI/6; 
+            line(50, -290, 150, -250);
+            line(150, -250, 130, -270);
+        }
+        if(mouseX>650 && mouseX<720 && mouseY>180 && mouseY<250){
+            offset1-= PI/6; 
+            line(-50, -290, -150, -250);
+            line(-150, -250, -130, -270);
+        }
     }
     return false;
 }
