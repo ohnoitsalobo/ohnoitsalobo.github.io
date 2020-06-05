@@ -330,9 +330,21 @@ function mousePressed(){
         if(!constellation){
             var dx = notes[i].x+300;
             var dy = notes[i].y+300;
-            if(mouseX > dx-d/2 && mouseX < dx+d/2 && mouseY > dy-d/2 && mouseY < dy+d/2){
+            if(i == 0){
+                if(mouseY > dy-d/2 && mouseY < dy+d/2){
+                    if(mouseX > dx && mouseX < dx+d/2){
+                        playTone(0);
+                    }
+                    if(mouseX > dx-d/2 && mouseX < dx){
+                        playTone(12);
+                    }
+                    playedHighlight(i);
+                }
+            }
+            else if(mouseX > dx-d/2 && mouseX < dx+d/2 && mouseY > dy-d/2 && mouseY < dy+d/2){
                 playTone(i);
-                // if (i == 0) playTone(12);
+                // rect(dx-300, dy-340, -40, 80);
+                playedHighlight(i);
             }
         }else{
             var dx = notes[i].x/1.5+300;
@@ -343,8 +355,6 @@ function mousePressed(){
             }
         }
     }
-    console.log(mouseX);
-    console.log(mouseY);
     if(mouseX>300-25 && mouseX<300+25 && mouseY>300-25 && mouseY<300+25)
         visible = !visible;
     if(mouseX>650 && mouseX<720 && mouseY>355 && mouseY<425)
