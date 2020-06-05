@@ -315,7 +315,7 @@ function keyTyped(){
 
 function playedHighlight(x){
     rotate(x*PI/6);
-    strokeWeight(1); fill('#00000055');
+    strokeWeight(1); fill('#00000077');
     rect(-35, -260, 70, 70);
     rotate(-x*PI/6);
 }
