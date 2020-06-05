@@ -297,31 +297,38 @@ function keyTyped(){
     // if(key == 's') { solfege = !solfege; sargam  = false;  }
     // if(key == 'S') { sargam  = !sargam;  solfege = false; }
     // if(key == 'c') { constellation  = !constellation; }
-    if(key == 'q') { playTone(0);  playedHighlight(0);  }
-    if(key == '2') { playTone(1);  playedHighlight(1);  }
-    if(key == 'w') { playTone(2);  playedHighlight(2);  }
-    if(key == '3') { playTone(3);  playedHighlight(3);  }
-    if(key == 'e') { playTone(4);  playedHighlight(4);  }
-    if(key == 'r') { playTone(5);  playedHighlight(5);  }
-    if(key == '5') { playTone(6);  playedHighlight(6);  }
-    if(key == 't') { playTone(7);  playedHighlight(7);  }
-    if(key == '6') { playTone(8);  playedHighlight(8);  }
-    if(key == 'y') { playTone(9);  playedHighlight(9);  }
-    if(key == '7') { playTone(10); playedHighlight(10); }
-    if(key == 'u') { playTone(11); playedHighlight(11); }
-    if(key == 'i') { playTone(12); playedHighlight(12); }
+    if(key == 'q') { playTone(0);  }
+    if(key == '2') { playTone(1);  }
+    if(key == 'w') { playTone(2);  }
+    if(key == '3') { playTone(3);  }
+    if(key == 'e') { playTone(4);  }
+    if(key == 'r') { playTone(5);  }
+    if(key == '5') { playTone(6);  }
+    if(key == 't') { playTone(7);  }
+    if(key == '6') { playTone(8);  }
+    if(key == 'y') { playTone(9);  }
+    if(key == '7') { playTone(10); }
+    if(key == 'u') { playTone(11); }
+    if(key == 'i') { playTone(12); }
     return false;
 }
 
 function playedHighlight(x){
-    rotate(x*PI/6);
     strokeWeight(1); fill('#00000077');
-    rect(-35, -260, 70, 70);
-    rotate(-x*PI/6);
+    if(x==0)
+        rect(0, -260, 35, 70);
+    else if(x==12)
+        rect(-35, -260, 35, 70);
+    else{
+        rotate(x*PI/6);
+        rect(-35, -260, 70, 70);
+        rotate(-x*PI/6);
+    }
 }
 
 function playTone(t){
     synth.triggerAttackRelease(tone[t], "8n");
+    playedHighlight(t);
 }
 
 function mousePressed(){
@@ -335,16 +342,14 @@ function mousePressed(){
                     if(mouseX > dx && mouseX < dx+d/2){
                         playTone(0);
                     }
-                    if(mouseX > dx-d/2 && mouseX < dx){
+                    else if(mouseX > dx-d/2 && mouseX < dx){
                         playTone(12);
                     }
-                    playedHighlight(i);
                 }
             }
             else if(mouseX > dx-d/2 && mouseX < dx+d/2 && mouseY > dy-d/2 && mouseY < dy+d/2){
                 playTone(i);
                 // rect(dx-300, dy-340, -40, 80);
-                playedHighlight(i);
             }
         }else{
             var dx = notes[i].x/1.5+300;
