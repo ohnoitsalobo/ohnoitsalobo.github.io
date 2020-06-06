@@ -27,7 +27,7 @@ var constellation = 0;
 var currPos = 0, nextPos = 0;
 
 function setup() {
-    createCanvas(1000, 600);
+    createCanvas(1000, 620);
     frameRate(5);
     // synth = new Tone.Synth().toMaster();
     for(var i = 0; i < 12; i++){
@@ -40,7 +40,7 @@ function setup() {
 function draw() {
     if(!visible) { if (millis() > 3000 && !vis) { visible = 1; vis = 1; } }
     background(255);
-    translate(300, 300);
+    translate(310, 310);
     
     fill(visible ? 150 : 125);
     strokeWeight(1);
@@ -124,25 +124,25 @@ function draw() {
                 }
             }
             fill(0); 
-            if (visible){
+            if (visible){ var xx = 590, yy = 250;
                 rotate(PI/2);
-                text("Ionian (Major)", 600, 250);
+                text("Ionian (Major)", xx, yy);
                 rotate(PI/3);
-                text("Dorian",         600, 250);
+                text("Dorian",         xx, yy);
                 rotate(PI/3);
-                text("Phrygian",       600, 250);
+                text("Phrygian",       xx, yy);
                 rotate(PI/6);
-                text("Lydian",         600, 250);
+                text("Lydian",         xx, yy);
                 rotate(PI/3);
-                text("Mixolydian",     600, 250);
+                text("Mixolydian",     xx, yy);
                 rotate(PI/3);
-                text("Aeolian (Minor)",600, 250);
+                text("Aeolian (Minor)",xx, yy);
                 rotate(PI/3);
-                text("Locrian",        600, 250);
+                text("Locrian",        xx, yy);
                 rotate(-7*PI/3);
             }
             rotate(-offset1);
-            rotate(offset-0.0005*off1);
+            rotate(offset);
             for(var i = 0; i < 12; i++){
                 var d = -0.36*300;
                 fill(255); noStroke();
@@ -163,7 +163,7 @@ function draw() {
                     
                 rotate(PI/6);
             }
-            rotate(-offset+0.0005*off1);
+            rotate(-offset);
 
             rotate(offset1);
             if(visible){
@@ -218,38 +218,36 @@ function draw() {
         text("ROOT", 0, -height/2+22);
     }
     textFont("Courier New");
-    textSize(40);  if(visible) text("MODE: ", width/2-50, height/2-50);
+    textSize(40);  if(visible) text("MODE: ", width/2-60, height/2-60);
     textSize(14); textAlign(LEFT); strokeWeight(0.5); stroke(0);
-    // text("Click note positions\nto hear tones.", -300, -height/2+20);
-    // text("Click center to hide\noverlay.", -300, -height/2+60);
     noStroke(); fill(255); rect(400, -300, 300, 520); rect(400, 265, 300, 50);
-    if (visible) { stroke(0); fill('rgba(255,   0,   0, 0)'); rect(497, 220, 202, 45); fill(255);}
-    // var f = 16;   textSize(f); 
+    if (visible) { stroke(0); fill('rgba(0,   0,   0, 0)'); rect(490, 220, 198, 45); fill(255);}
     fill(0); var t = 1;
-    // text("RIGHT ~> bottom layer clockwise       ", width/2+10, -height/2+f*t++);
-    // text("LEFT ~> bottom layer counterclockwise", width/2+10, -height/2+f*t++);
-    // text("UP ~> top layer clockwise          ", width/2+10, -height/2+f*t++);
-    // text("DOWN ~> top layer counterclockwise   ", width/2+10, -height/2+f*t++);
-                                                           t++
-    // text(", ~> increase one octave", width/2+10, -height/2+f*t++);
-    // text(". ~> decrease one octave", width/2+10, -height/2+f*t++);
-    // text("v ~> toggle top layer ", width/2+10, -height/2+f*t++);
-    // text("s ~> toggle interval names", width/2+10, -height/2+f*t++);
-                                                           t++;
-    // text("q ~> play 1           ", width/2+10, -height/2+f*t++);
-    // text("2 ~> play 1#/2b       ", width/2+10, -height/2+f*t++);
-    // text("w ~> play 2           ", width/2+10, -height/2+f*t++);
-    // text("3 ~> play 2#/3b       ", width/2+10, -height/2+f*t++);
-    // text("e ~> play 3           ", width/2+10, -height/2+f*t++);
-    // text("r ~> play 4           ", width/2+10, -height/2+f*t++);
-    // text("5 ~> play 4#/5b       ", width/2+10, -height/2+f*t++);
-    // text("t ~> play 5           ", width/2+10, -height/2+f*t++);
-    // text("6 ~> play 5#/6b       ", width/2+10, -height/2+f*t++);
-    // text("y ~> play 6           ", width/2+10, -height/2+f*t++);
-    // text("7 ~> play 6#/7b       ", width/2+10, -height/2+f*t++);
-    // text("u ~> play 7           ", width/2+10, -height/2+f*t++);
-    // text("i ~> play 7#/1b       ", width/2+10, -height/2+f*t++);
-    textAlign(LEFT); textSize(20); text("Click center to\ntoggle\noverlay", -300, -height/2+15);
+    textFont("Times New Roman"); textSize(20); textAlign(CENTER);
+    for(var i = 0; i < 12; i++){
+        fill('#00000033');
+        if (i != 0) rect(-10, -305, 20, 20);
+        else{
+            rect(-63, -295, 20, 20);
+            rect( 43, -295, 20, 20);
+        }
+        fill(0);
+        var d = -0.69*300 - 82;
+        if(i==0) { text('I', -53, d+10); text('Q', 53, d+10); }
+        if(i==1) { text('2', 0, d); }
+        if(i==2) { text('W', 0, d); }
+        if(i==3) { text('3', 0, d); }
+        if(i==4) { text('E', 0, d); }
+        if(i==5) { text('R', 0, d); }
+        if(i==6) { text('5', 0, d); }
+        if(i==7) { text('T', 0, d); }
+        if(i==8) { text('6', 0, d); }
+        if(i==9) { text('Y', 0, d); }
+        if(i==10){ text('7', 0, d); }
+        if(i==11){ text('U', 0, d); }
+        rotate(PI/6);
+    }
+    textAlign(LEFT); textSize(20); text("Click center to\ntoggle overlay", -300, -height/2+15);
     // if(visible){
         textAlign(CENTER);
         fill('#00000055'); 
@@ -262,7 +260,9 @@ function draw() {
         text("Click to change key",  440, 35);
         text("Click to change mode", 440, -140);
         // text("Drag the circle to change mode", 560, -height/2+40);
-        text("Tap/click the highlighted\n       notes to hear tones", 400, -height/2+50);
+        text("DIATONIC MODE CHEAT SHEET", 400, -height/2+30);
+        textSize(20);
+        text("Tap/click the highlighted\n  notes to hear tones\n  or use the keyboard", 400, -height/2+60);
     // }
 }
 
