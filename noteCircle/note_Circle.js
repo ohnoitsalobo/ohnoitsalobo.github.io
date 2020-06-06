@@ -220,7 +220,7 @@ function draw() {
     textFont("Courier New");
     textSize(40);  if(visible) text("MODE: ", width/2-60, height/2-60);
     textSize(14); textAlign(LEFT); strokeWeight(0.5); stroke(0);
-    noStroke(); fill(255); rect(400, -300, 300, 520); rect(400, 265, 300, 50);
+    noStroke(); fill(255); stroke(1);rect(400, -320, 300, 540); rect(400, 265, 300, 50);
     if (visible) { stroke(0); fill('rgba(0,   0,   0, 0)'); rect(490, 220, 198, 45); fill(255);}
     fill(0); var t = 1;
     textFont("Times New Roman"); textSize(20); textAlign(CENTER);
