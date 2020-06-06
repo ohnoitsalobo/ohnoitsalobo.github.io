@@ -55,11 +55,11 @@ function draw() {
             var d = -0.69*300;
             textSize(55); fill(constellation ? 0 : 255);
             if(i==0) { text('A', 0, d); }                                      // DRAW NOTE LETTERS
-            if(i==2) { text('B', 0, d); textSize(18); text('Cb',  20, d+12); } //
-            if(i==3) { text('C', 0, d); textSize(18); text('B#', -20, d-37); } //
+            if(i==2) { text('B', 0, d); textSize(18); text('Cb',  20, d-37); } //
+            if(i==3) { text('C', 0, d); textSize(18); text('B#', -20, d+12); } //
             if(i==5) { text('D', 0, d); }                                      // 'natural' notes
-            if(i==7) { text('E', 0, d); textSize(18); text('Fb',  20, d+12); } // are larger
-            if(i==8) { text('F', 0, d); textSize(18); text('E#', -20, d-37); } //
+            if(i==7) { text('E', 0, d); textSize(18); text('Fb',  20, d-37); } // are larger
+            if(i==8) { text('F', 0, d); textSize(18); text('E#', -20, d+12); } //
             if(i==10){ text('G', 0, d); }                                      //
 
             textSize(35); fill(0);                                             //
