@@ -254,8 +254,8 @@ function draw() {
         rect(350, 55, 70, 70); rect(450, 55, 70, 70);
         rect(350, -120, 70, 70); rect(450, -120, 70, 70);
         fill (0); textSize(100);
-        text("+", 385, 120); text("-", 485, 120);
-        text("<", 385, -55); text(">", 485, -55);
+        text("+", 385, 122); text("-", 485, 115);
+        text("<", 385, -53); text(">", 485, -53);
         textSize(30); textFont("Georgia");
         text("Click to change key",  440, 35);
         text("Click to change mode", 440, -140);
