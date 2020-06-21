@@ -31,7 +31,7 @@ function setup() {
   for (var i = 0; i < 500; i++) {
     particles[i] = new Particle();
   }
-  background(15);
+  background(0);
 }
 
 function draw() {
