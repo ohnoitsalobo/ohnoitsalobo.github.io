@@ -2461,6 +2461,8 @@
         /* border-top: solid 3px #000011; */
         margin-bottom: 2.25em;
         padding-top: 2.25em;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
         .features article:first-child {
@@ -2484,8 +2486,6 @@
             display: inline-block;
             vertical-align: middle;
             width: 50%;
-            padding-left: 1em;
-            padding-right: 1em;
         }
 
             .features article .inner > :last-child {
