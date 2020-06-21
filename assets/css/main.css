@@ -2660,7 +2660,7 @@
         }
 
 /* One */
-
+/* * /
     #about:before {
         background-image: url("../../images/banner.jpg");
         background-position: center center;
@@ -2671,7 +2671,7 @@
         height: 15em;
         width: 100%;
     }
-
+/* */
 /* Footer */
 
     #footer {
