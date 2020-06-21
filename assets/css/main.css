@@ -2972,6 +2972,10 @@
                 font-size: 1em;
             }
 
+            br{
+               display:block !important;
+            }
+            
         /* Image */
 
             .image.left {
