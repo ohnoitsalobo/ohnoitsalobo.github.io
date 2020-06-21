@@ -2688,6 +2688,7 @@
         color: #c0c0c0;
         overflow: hidden;
         padding: 4em 0 2em 0;
+        background: url("../../images/background.jpg");
     }
 
         #footer .copyright {
