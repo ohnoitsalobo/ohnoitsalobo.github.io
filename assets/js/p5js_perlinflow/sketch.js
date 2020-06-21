@@ -15,7 +15,7 @@ var particles = [];
 
 var flowfield;
 
-var loopCount = 0, loops = 10;
+var loopCount = 0, loops = 15;
 
 function setup() {
   // canvas = createCanvas(400, 400);
@@ -37,7 +37,7 @@ function setup() {
 function draw() {
     loopCount++;
     if(loopCount > loops){
-        background(0, 8);
+        background(0, 10);
         loopCount = 0;
     }else{
         background(0, 1);
