@@ -19,7 +19,7 @@ var loopCount = 0, loops = 10;
 
 function setup() {
   // canvas = createCanvas(400, 400);
-    var canvas = createCanvas(window.innerWidth*0.9, window.innerHeight*0.4);
+    var canvas = createCanvas(window.innerWidth, window.innerHeight*0.3);
     canvas.parent('sketch-holder');
   colorMode(HSB, 255);
   cols = floor(width / scl);
