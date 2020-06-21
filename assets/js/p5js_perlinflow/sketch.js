@@ -26,13 +26,14 @@ function setup() {
 
   flowfield = new Array(cols * rows);
 
-  for (var i = 0; i < 300; i++) {
+  for (var i = 0; i < 500; i++) {
     particles[i] = new Particle();
   }
   background(15);
 }
 
 function draw() {
+  // background(0, 1);
   var yoff = 0;
   for (var y = 0; y < rows; y++) {
     var xoff = 0;
