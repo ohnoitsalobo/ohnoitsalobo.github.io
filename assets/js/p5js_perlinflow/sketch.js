@@ -9,7 +9,7 @@ var cols, rows;
 
 var zoff = 0;
 
-var fr;
+// var fr;
 
 var particles = [];
 
@@ -22,7 +22,7 @@ function setup() {
   colorMode(HSB, 255);
   cols = floor(width / scl);
   rows = floor(height / scl);
-  fr = createP('');
+  // fr = createP('');
 
   flowfield = new Array(cols * rows);
 
@@ -63,5 +63,5 @@ function draw() {
     particles[i].show();
   }
 
-  fr.html(floor(frameRate()));
+  // fr.html(floor(frameRate()));
 }

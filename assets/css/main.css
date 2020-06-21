@@ -1573,7 +1573,7 @@
 /* Basic */
 
     body {
-        background: #000209;
+        background: #000011;
     }
 
     body, input, select, textarea {
@@ -1830,7 +1830,7 @@
         input[type="email"]:focus,
         select:focus,
         textarea:focus {
-            border-color: #000209;
+            border-color: #000011;
         }
 
     .select-wrapper {
@@ -1940,7 +1940,7 @@
 
         input[type="checkbox"]:focus + label:before,
         input[type="radio"]:focus + label:before {
-            border-color: #000209;
+            border-color: #000011;
         }
 
     input[type="checkbox"] + label:before {
@@ -2423,7 +2423,7 @@
         input[type="reset"].special,
         input[type="button"].special,
         .button.special {
-            background-color: #000209;
+            background-color: #000011;
             color: #ffffff !important;
         }
 
@@ -2458,7 +2458,7 @@
 /* Features */
 
     .features article {
-        /* border-top: solid 3px #000209; */
+        /* border-top: solid 3px #000011; */
         margin-bottom: 2.25em;
         padding-top: 2.25em;
     }
@@ -2505,7 +2505,7 @@
         -webkit-justify-content: space-between;
         -ms-justify-content: space-between;
         justify-content: space-between;
-        background: #000209;
+        background: #000011;
         color: #d1f1e9;
         height: 100%;
         overflow-y: auto;
@@ -2603,7 +2603,7 @@
             }
 
                 #header > nav ul li {
-                    border-top: solid 2px #000209;
+                    border-top: solid 2px #000011;
                     display: block;
                     padding: 0;
                     -webkit-transition-duration: 0.3s;
@@ -2645,15 +2645,16 @@
 
     #wrapper {
         /* background: #fff; */
-        /* background: #000209; */
-        background-image: radial-gradient(circle, #333344, #111122, #000011);
+        /* background: #000011; */
+        /* background-image: radial-gradient(circle, #333344, #111122, #000011); */
         padding-right: 23em;
+        background: url("../../images/background3.jpg");
     }
 
 /* Main */
 
     #main > section {
-        /* border-top: solid 6px #000209; */
+        /* border-top: solid 6px #000011; */
     }
 
         #main > section > .container {
@@ -2680,7 +2681,7 @@
 /* Footer */
 
     #footer {
-        background: #000209;
+        background: #000011;
         border-top: 0;
         color: #c0c0c0;
         overflow: hidden;
@@ -2915,7 +2916,7 @@
                     }
 
                     #titleBar .toggle:before {
-                        background: #000209;
+                        background: #000011;
                         color: #ffffff;
                         content: '\f0c9';
                         display: block;
