@@ -33,7 +33,7 @@ function setup() {
 }
 
 function draw() {
-  // background(0, 1);
+  background(0, 1);
   var yoff = 0;
   for (var y = 0; y < rows; y++) {
     var xoff = 0;
