@@ -79,7 +79,10 @@
     .container {
         margin-left: auto;
         margin-right: auto;
-        background: #ffffff03;
+        /* background: #ffffff03; */
+        background: #0000005f;
+        /* background-image: linear-gradient(#000011, #111122, #333344, #111122, #000011); */
+        /* background-image: radial-gradient(#333344, #111122, #000011); */
     }
 
     .container.\31 25\25 {
@@ -1648,6 +1651,7 @@
         color: #ccc;
         font-size: 1.75em;
         line-height: 1.5em;
+        text-align:center;
     }
 
     h4 {
@@ -1763,12 +1767,12 @@
     }
 
     header.major h2 {
-        color: #ccc;
+        color: #ffffffef;
         font-size: 3.5em;
     }
 
         header.major h2 + p {
-            color: #ffffff8f;
+            color: #ffffffbf;
             font-size: 1.75em;
             font-weight: 700;
             margin-top: -0.75em;
@@ -2454,7 +2458,7 @@
 /* Features */
 
     .features article {
-        border-top: solid 3px #000209;
+        /* border-top: solid 3px #000209; */
         margin-bottom: 2.25em;
         padding-top: 2.25em;
     }
@@ -2641,14 +2645,15 @@
 
     #wrapper {
         /* background: #fff; */
-        background: #000209;
+        /* background: #000209; */
+        background-image: radial-gradient(circle, #333344, #111122, #000011);
         padding-right: 23em;
     }
 
 /* Main */
 
     #main > section {
-        border-top: solid 6px #000209;
+        /* border-top: solid 6px #000209; */
     }
 
         #main > section > .container {
@@ -2660,7 +2665,7 @@
         }
 
 /* One */
-/* * /
+/* */
     #about:before {
         background-image: url("../../images/banner.jpg");
         background-position: center center;
