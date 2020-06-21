@@ -15,6 +15,8 @@ var particles = [];
 
 var flowfield;
 
+var loopCount = 0, loops = 10;
+
 function setup() {
   // canvas = createCanvas(400, 400);
     var canvas = createCanvas(window.innerWidth*0.9, window.innerHeight*0.4);
@@ -33,7 +35,14 @@ function setup() {
 }
 
 function draw() {
-  background(0, 1);
+    loopCount++;
+    if(loopCount > loops){
+        background(0, 8);
+        loopCount = 0;
+    }else{
+        background(0, 1);
+    }
+
   var yoff = 0;
   for (var y = 0; y < rows; y++) {
     var xoff = 0;
