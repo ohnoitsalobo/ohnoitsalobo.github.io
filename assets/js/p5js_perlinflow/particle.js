@@ -38,7 +38,7 @@ function Particle() {
         if (this.h > 255) {
             this.h = 0;
         }
-        if(this.s<100)
+        if(this.s<175)
             this.sdir = 1;
         if(this.s>255)
             this.sdir = 0;
