@@ -4,7 +4,7 @@
 // Code for: https://youtu.be/BjoM9oKOAKY
 
 var inc = 0.1;
-var scl = 20;
+var scl = 12;
 var cols, rows;
 
 var zoff = 0;
@@ -65,7 +65,7 @@ function draw() {
         }
         yoff += inc;
 
-        zoff += 0.0004;
+        zoff += 0.0003;
     }
 
     for (var i = 0; i < particles.length; i++) {
