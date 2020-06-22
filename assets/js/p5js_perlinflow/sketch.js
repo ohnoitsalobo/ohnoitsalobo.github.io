@@ -86,5 +86,5 @@ function draw() {
     // stroke(0,10);  strokeWeight(0.1);
     noStroke();
     fill(255, 2); 
-    text("Perlin noise smoke\nGenerated using p5.js", 5, height-2*textSize());
+    text("Perlin noise flow\nGenerated using p5.js", 5, height-2*textSize());
 }
