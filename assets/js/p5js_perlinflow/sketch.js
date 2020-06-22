@@ -18,24 +18,25 @@ var flowfield;
 var loopCount = 0, loops = 15;
 
 function setup() {
-  // canvas = createCanvas(400, 400);
+    // canvas = createCanvas(400, 400);
     var canvas = createCanvas(window.innerWidth, window.innerHeight*0.3);
     canvas.parent('sketch-holder');
     frameRate(25);
-  colorMode(HSB, 255);
-  cols = floor(width / scl);
-  rows = floor(height / scl);
-  // fr = createP('');
+    colorMode(HSB, 255);
+    cols = floor(width / scl);
+    rows = floor(height / scl);
+    // fr = createP('');
 
-  flowfield = new Array(cols * rows);
+    flowfield = new Array(cols * rows);
 
-  for (var i = 0; i < 500; i++) {
-    particles[i] = new Particle();
-  }
-  background(0);
+    for (var i = 0; i < 500; i++) {
+        particles[i] = new Particle();
+    }
+    background(0);
 }
 
 function draw() {
+    strokeWeight(1);
     loopCount++;
     if(loopCount > loops){
         background(0, 10);
@@ -44,35 +45,45 @@ function draw() {
         background(0, 1);
     }
 
-  var yoff = 0;
-  for (var y = 0; y < rows; y++) {
-    var xoff = 0;
-    for (var x = 0; x < cols; x++) {
-      var index = x + y * cols;
-      var angle = noise(xoff, yoff, zoff) * TWO_PI * 4;
-      var v = p5.Vector.fromAngle(angle);
-      v.setMag(1);
-      flowfield[index] = v;
-      xoff += inc;
-      stroke(0, 50);
-      // push();
-      // translate(x * scl, y * scl);
-      // rotate(v.heading());
-      // strokeWeight(1);
-      // line(0, 0, scl, 0);
-      // pop();
+    var yoff = 0;
+    for (var y = 0; y < rows; y++) {
+        var xoff = 0;
+        for (var x = 0; x < cols; x++) {
+            var index = x + y * cols;
+            var angle = noise(xoff, yoff, zoff) * TWO_PI * 4;
+            var v = p5.Vector.fromAngle(angle);
+            v.setMag(1);
+            flowfield[index] = v;
+            xoff += inc;
+            stroke(0, 50);
+            // push();
+            // translate(x * scl, y * scl);
+            // rotate(v.heading());
+            // strokeWeight(1);
+            // line(0, 0, scl, 0);
+            // pop();
+        }
+        yoff += inc;
+
+        zoff += 0.0003;
     }
-    yoff += inc;
 
-    zoff += 0.0003;
-  }
+    for (var i = 0; i < particles.length; i++) {
+        particles[i].follow(flowfield);
+        particles[i].update();
+        particles[i].edges();
+        particles[i].show();
+    }
 
-  for (var i = 0; i < particles.length; i++) {
-    particles[i].follow(flowfield);
-    particles[i].update();
-    particles[i].edges();
-    particles[i].show();
-  }
-
-  // fr.html(floor(frameRate()));
+    // fr.html(floor(frameRate()));
+    var scale = 0.2;
+    textFont("Bellota");
+    textSize(height*scale); textAlign(LEFT);
+    fill(10, 10); 
+    noStroke();
+    // stroke(0,0); strokeWeight(1);
+    text("ohnoitsalobo", 10, height*scale);
+    textSize(10); textAlign(LEFT);
+    fill(200, 15); 
+    text("\"Perlin noise smoke\"\ngenerated using p5.js", 5, height-20);
 }
