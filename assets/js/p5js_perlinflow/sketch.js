@@ -21,6 +21,7 @@ function setup() {
   // canvas = createCanvas(400, 400);
     var canvas = createCanvas(window.innerWidth, window.innerHeight*0.3);
     canvas.parent('sketch-holder');
+    frameRate(25);
   colorMode(HSB, 255);
   cols = floor(width / scl);
   rows = floor(height / scl);
