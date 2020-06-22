@@ -4,7 +4,7 @@
 // Code for: https://youtu.be/BjoM9oKOAKY
 
 var inc = 0.1;
-var scl = 10;
+var scl = 20;
 var cols, rows;
 
 var zoff = 0;
@@ -65,7 +65,7 @@ function draw() {
         }
         yoff += inc;
 
-        zoff += 0.0003;
+        zoff += 0.0004;
     }
 
     for (var i = 0; i < particles.length; i++) {
@@ -80,7 +80,7 @@ function draw() {
     textFont("Bellota");
     textSize(height*scale); textAlign(LEFT);
     fill(10, 10); 
-    stroke(255,1); strokeWeight(1);
+    stroke(255,1); strokeWeight(2);
     text("@ohnoitsalobo", 0.01*scale*width, height*scale);
     textSize(0.25*scale*height); textAlign(LEFT);
     // stroke(0,10);  strokeWeight(0.1);
