@@ -19,7 +19,7 @@ var loopCount = 0, loops = 15;
 
 function setup() {
     // canvas = createCanvas(400, 400);
-    var canvas = createCanvas(window.innerWidth, window.innerHeight*0.3);
+    var canvas = createCanvas(window.innerWidth, floor(window.innerHeight/4));
     canvas.parent('sketch-holder');
     frameRate(25);
     colorMode(HSB, 255);
@@ -81,7 +81,7 @@ function draw() {
     textSize(height*scale); textAlign(LEFT);
     fill(10, 10); 
     stroke(255,1); strokeWeight(1);
-    text("@ohnoitsalobo", 0.1*scale*width, height*scale);
+    text("@ohnoitsalobo", 0.01*scale*width, height*scale);
     textSize(0.3*scale*height); textAlign(LEFT);
     // stroke(0,10);  strokeWeight(0.1);
     noStroke();
