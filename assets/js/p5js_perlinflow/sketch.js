@@ -32,7 +32,7 @@ function setup() {
     for (var i = 0; i < 500; i++) {
         particles[i] = new Particle();
     }
-    background(0);
+    // background(0);
 }
 
 function draw() {
@@ -83,7 +83,8 @@ function draw() {
     stroke(255,1); strokeWeight(1);
     text("@ohnoitsalobo", 0.1*scale*width, height*scale);
     textSize(0.25*scale*height); textAlign(LEFT);
-    stroke(0,10);  strokeWeight(0.1); // noStroke();
-    fill(200, 15); 
+    // stroke(0,10);  strokeWeight(0.1);
+    noStroke();
+    fill(255, 1); 
     text("Perlin noise smoke\nGenerated using p5.js", 5, height-2*textSize());
 }
