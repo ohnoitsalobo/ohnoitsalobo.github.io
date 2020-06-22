@@ -9,7 +9,7 @@ function Particle() {
   this.acc = createVector(0, 0);
   this.maxspeed = 4;
   this.h = random(175, 255);
-  this.s = 255;
+  this.s = 255; this.sdir = 1;
 
   this.prevPos = this.pos.copy();
 
@@ -35,13 +35,13 @@ function Particle() {
   this.show = function() {
     stroke(this.h, this.s, 255, 25);
     this.h = this.h + 1;
-    this.s = this.s - 1;
     if (this.h > 255) {
       this.h = 0;
     }
-    if (this.s < 175) {
-      this.s = 255;
-    }
+    if(this.s<100)  this.sdir = 1;
+    if(this.s>255)  this.sdir = 0;
+    if (this.sdir)  this.s++;
+    else  this.s--;
     strokeWeight(1);
     line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
     this.updatePrev();
