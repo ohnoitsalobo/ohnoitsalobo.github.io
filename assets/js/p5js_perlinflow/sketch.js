@@ -85,5 +85,5 @@ function draw() {
     textSize(0.25*scale*height); textAlign(LEFT);
     noStroke();
     fill(200, 15); 
-    text("\"Perlin noise smoke\"\ngenerated using p5.js", 5, height-2*textSize());
+    text("Perlin noise smoke\nGenerated using p5.js", 5, height-2*textSize());
 }
