@@ -80,10 +80,10 @@ function draw() {
     textFont("Bellota");
     textSize(height*scale); textAlign(LEFT);
     fill(10, 10); 
-    stroke(10,10); strokeWeight(1);
+    stroke(255,1); strokeWeight(1);
     text("ohnoitsalobo", 0.1*scale*width, height*scale);
     textSize(0.25*scale*height); textAlign(LEFT);
-    noStroke();
+    stroke(0,10);  strokeWeight(0.1); // noStroke();
     fill(200, 15); 
     text("Perlin noise smoke\nGenerated using p5.js", 5, height-2*textSize());
 }
