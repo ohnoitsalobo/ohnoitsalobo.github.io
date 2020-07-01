@@ -32,14 +32,14 @@ function draw(){
 
 function createNoteCircle(){
     fill(125); noStroke();
-    Size = 0.95*shortAxis;
+    Size = 0.97*shortAxis;
     ellipse(0, 0, Size, Size);
     Size = 0.093*shortAxis;
     textAlign(CENTER, CENTER); textFont('Times New Roman');
     rectMode(CENTER);
     push();
         rotate(PI/2);
-        textSize(Size*0.5); fill(0); text('ROOT', 0, -3.2*Size);
+        textSize(Size*0.5); fill(0); text('ROOT', 0, -3.05*Size);
     pop();
     push();
         currentNoteRotation = lerp(currentNoteRotation, noteRotation[noteIndex%12], 0.2);
@@ -48,6 +48,7 @@ function createNoteCircle(){
         push();
             rotate(noteRotation[i]);
             translate(0, -4.1*Size);
+            rotate(-noteRotation[i]+currentNoteRotation+PI/2);
             // rect(0, -Size*0.3, Size*1.3, Size*1.3);
             textSize(Size); fill(pianoColors ? 255 : 255);
             if(i==0) { text('A', 0, 0); } 
@@ -66,6 +67,7 @@ function createNoteCircle(){
             if(i==11){ text('G#', -0.2*Size, -0.4*Size); text('Ab', 0.2*Size, 0.2*Size); }
 
             if(pianoColors){
+            rotate(noteRotation[i]-currentNoteRotation-PI/2);
             translate(0, 1.9*Size);
             fill(255); noStroke();
                 if(i==0) { rect(0, 0, 0.5*Size, 1.3*Size); }
@@ -98,7 +100,7 @@ function createScaleCircle(){
         push();
             noFill();
             rotate(noteRotation[i]);
-            translate(0, -3.9*Size);
+            translate(0, -3.9*Size); 
             if(i==0 || i==2 || i==3 || i==5 || i==7 || i==8 || i==10){
                 // noFill; stroke(0); strokeWeight(1.5);
                 fill(255, 40); stroke(0); strokeWeight(1.5);
@@ -107,7 +109,7 @@ function createScaleCircle(){
                 fill(125); noStroke();
                 rect(0, Size*1.7, 0.6*Size, 1.5*Size);
             }
-            rect(0, -Size*0.3, Size*1.3, Size*1.3);
+            rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
             fill(0); textSize(pianoColors ? Size*0.6 : Size*0.9);
         push();
