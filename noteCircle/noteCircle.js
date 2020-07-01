@@ -1,6 +1,6 @@
 let PI_ = 3.141592653589793;
 let noteRotation  = [ 0*PI_/6, 1*PI_/6, 2*PI_/6, 3*PI_/6, 4*PI_/6, 5*PI_/6, 6*PI_/6, 7*PI_/6, 8*PI_/6, 9*PI_/6, 10*PI_/6, 11*PI_/6 ];
-let modeRotation  = [ 0*PI_/6, 1*PI_/6, 2*PI_/6, 3*PI_/6, 4*PI_/6, 5*PI_/6, 6*PI_/6, 7*PI_/6, 8*PI_/6, 9*PI_/6, 10*PI_/6, 11*PI_/6 ];
+// let noteRotation  = [ 0*PI_/6, 1*PI_/6, 2*PI_/6, 3*PI_/6, 4*PI_/6, 5*PI_/6, 6*PI_/6, 7*PI_/6, 8*PI_/6, 9*PI_/6, 10*PI_/6, 11*PI_/6 ];
 let noteIndex = 0, modeIndex = 0, currentNoteRotation = 0, currentScaleRotation = 0;
 let doEvery = 30;
 let shortAxis, Size;
@@ -92,12 +92,12 @@ function createScaleCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        currentScaleRotation = lerp(currentScaleRotation, modeRotation[modeIndex%12], 0.2);
+        currentScaleRotation = lerp(currentScaleRotation, noteRotation[modeIndex%12], 0.2);
         rotate(-currentScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
             noFill();
-            rotate(modeRotation[i]);
+            rotate(noteRotation[i]);
             translate(0, -3.9*Size);
             if(i==0 || i==2 || i==3 || i==5 || i==7 || i==8 || i==10){
                 noFill; stroke(0); strokeWeight(1.5);
@@ -125,6 +125,8 @@ function createScaleCircle(){
 
 let modeSelect, keySelect, pianoSelect;
 let modeList = ["Ionian\n(Major)", "Dorian", "Lydian", "Phrygian", "Mixolydian", "Aeolian\n(Minor)", "Locrian"];
+let melodicMinorModeList = ["Ionian\n(Major)", "Dorian b2\n(Phrygian #6)", "Lydian augmented", "Lydian dominant (overtone scale)", "Mixolydian b6", "Aeolian b5\n(Locrian #2)", "Altered scale\n(Super Locrian)"];
+let harmonicMinorModeList = ["Ionian\n(Major)", "Dorian", "Lydian", "Phrygian", "Mixolydian", "Aeolian\n(Minor)", "Locrian"];
 let keyList = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"];
 let pianoMode = ["Piano keys on", " Piano keys off"];
 
