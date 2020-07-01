@@ -100,7 +100,8 @@ function createScaleCircle(){
             rotate(noteRotation[i]);
             translate(0, -3.9*Size);
             if(i==0 || i==2 || i==3 || i==5 || i==7 || i==8 || i==10){
-                noFill; stroke(0); strokeWeight(1.5);
+                // noFill; stroke(0); strokeWeight(1.5);
+                fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==1 || i==4 || i==6 || i==9 || i==11){
                 fill(125); noStroke();
