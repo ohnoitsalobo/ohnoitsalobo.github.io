@@ -127,7 +127,7 @@ function createScaleCircle(){
 }
 
 let modeSelect, keySelect, pianoSelect;
-let modeList = ["Ionian\n(Major)", "Dorian", "Lydian", "Phrygian", "Mixolydian", "Aeolian\n(Minor)", "Locrian"];
+let modeList = ["Ionian\n(Major)", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolian\n(Minor)", "Locrian"];
 let melodicMinorModeList = ["Ionian\n(Major)", "Dorian b2\n(Phrygian #6)", "Lydian augmented", "Lydian dominant (overtone scale)", "Mixolydian b6", "Aeolian b5\n(Locrian #2)", "Altered scale\n(Super Locrian)"];
 let harmonicMinorModeList = ["Ionian\n(Major)", "Dorian", "Lydian", "Phrygian", "Mixolydian", "Aeolian\n(Minor)", "Locrian"];
 let keyList = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"];
