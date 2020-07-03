@@ -5,7 +5,7 @@ let noteIndex = 0, currentNoteRotation = 0, scaleRotation = 0;
 let majorModeIndex = 0;
 let minorModeIndex = 0;
 let doEvery = 30;
-let shortAxis, Size;
+let shortAxis, Size, speed = 0.3;
 let pianoColors = true;
 let majorMinorOther = 0;
 
@@ -59,7 +59,7 @@ function createNoteCircle(){
         text(keyList[noteIndex%12], 0.85*shortAxis, -0.2*shortAxis);
     pop();
     push();
-        currentNoteRotation = lerp(currentNoteRotation, noteRotation[noteIndex%12], 0.2);
+        currentNoteRotation = lerp(currentNoteRotation, noteRotation[noteIndex%12], speed);
         rotate(-currentNoteRotation);
         textFont('Times New Roman');
         for(var i = 0; i < noteRotation.length; i++){
@@ -113,7 +113,7 @@ function createMajorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        scaleRotation = lerp(scaleRotation, noteRotation[majorModeIndex%12], 0.15);
+        scaleRotation = lerp(scaleRotation, noteRotation[majorModeIndex%12], speed*0.75);
         rotate(-scaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -150,7 +150,7 @@ function createMinorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        scaleRotation = lerp(scaleRotation, noteRotation[minorModeIndex%12], 0.15);
+        scaleRotation = lerp(scaleRotation, noteRotation[minorModeIndex%12], speed*0.75);
         rotate(-scaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
