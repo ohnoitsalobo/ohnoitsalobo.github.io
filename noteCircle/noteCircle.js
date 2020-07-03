@@ -1,7 +1,7 @@
 let PI_ = 3.141592653589793;
 let noteRotation  = [ 0*PI_/6, 1*PI_/6, 2*PI_/6, 3*PI_/6, 4*PI_/6, 5*PI_/6, 6*PI_/6, 7*PI_/6, 8*PI_/6, 9*PI_/6, 10*PI_/6, 11*PI_/6 ];
 // let noteRotation  = [ 0*PI_/6, 1*PI_/6, 2*PI_/6, 3*PI_/6, 4*PI_/6, 5*PI_/6, 6*PI_/6, 7*PI_/6, 8*PI_/6, 9*PI_/6, 10*PI_/6, 11*PI_/6 ];
-let noteIndex = 0, modeIndex = 0, currentNoteRotation = 0, currentScaleRotation = 0;
+let noteIndex = 5, modeIndex = 5, currentNoteRotation = 0, currentScaleRotation = 0;
 let doEvery = 30;
 let shortAxis, Size;
 let pianoColors = true;
@@ -10,7 +10,7 @@ let pianoColors = true;
 function setup(){
     // shortAxis = (width > height) ? height : width;
     shortAxis = (windowWidth > windowHeight) ? windowHeight : windowWidth;
-    createCanvas(shortAxis, shortAxis);
+    createCanvas(1.5*shortAxis, shortAxis);
     frameRate(30);
     createMenus();
 }
@@ -18,11 +18,11 @@ function setup(){
 function draw(){
     if(noteIndex < 0) noteIndex += 12;
     if(modeIndex < 0) modeIndex += 12;
-    background(255, 200);
-    translate(width/2, height/2);
+    background(0, 200);
+    translate(shortAxis/2, shortAxis/2);
     rotate(-PI/2);
     createNoteCircle();
-    createScaleCircle();
+    createMajorModeCircle();
     // if (frameCount%doEvery == 0) noteIndex++;
     // if (frameCount%doEvery == 0) modeIndex++;
     // if(modeIndex%12 == 1 || modeIndex%12 == 3 || modeIndex%12 == 6 || modeIndex%12 == 8 || modeIndex%12 == 10)
@@ -60,11 +60,12 @@ function createNoteCircle(){
             if(i==10){ text('G', 0, 0); }
 
             textSize(Size*0.6); fill(pianoColors ? 0 : 255);
-            if(i==1) { text('A#', -0.2*Size, -0.4*Size); text('Bb', 0.2*Size, 0.2*Size); }
-            if(i==4) { text('C#', -0.2*Size, -0.4*Size); text('Db', 0.2*Size, 0.2*Size); }
-            if(i==6) { text('D#', -0.2*Size, -0.4*Size); text('Eb', 0.2*Size, 0.2*Size); }
-            if(i==9) { text('F#', -0.2*Size, -0.4*Size); text('Gb', 0.2*Size, 0.2*Size); }
-            if(i==11){ text('G#', -0.2*Size, -0.4*Size); text('Ab', 0.2*Size, 0.2*Size); }
+            let xpos = 0.2*Size; let ypos = 0.25*Size;
+            if(i==1) { text('A#', -xpos, -ypos); text('Bb', xpos, ypos); }
+            if(i==4) { text('C#', -xpos, -ypos); text('Db', xpos, ypos); }
+            if(i==6) { text('D#', -xpos, -ypos); text('Eb', xpos, ypos); }
+            if(i==9) { text('F#', -xpos, -ypos); text('Gb', xpos, ypos); }
+            if(i==11){ text('G#', -xpos, -ypos); text('Ab', xpos, ypos); }
 
             if(pianoColors){
             rotate(noteRotation[i]-currentNoteRotation-PI/2);
@@ -90,11 +91,11 @@ function createNoteCircle(){
     pop();
 }
 
-function createScaleCircle(){
+function createMajorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        currentScaleRotation = lerp(currentScaleRotation, noteRotation[modeIndex%12], 0.2);
+        currentScaleRotation = lerp(currentScaleRotation, noteRotation[modeIndex%12], 0.15);
         rotate(-currentScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -114,22 +115,22 @@ function createScaleCircle(){
             fill(0); textSize(pianoColors ? Size*0.6 : Size*0.9);
         push();
             rotate(PI/2+currentScaleRotation);
-            if(modeIndex%12==0 ) text(modeList[0], 0, 0);
-            if(modeIndex%12==2 ) text(modeList[1], 0, 0);
-            if(modeIndex%12==4 ) text(modeList[2], 0, 0);
-            if(modeIndex%12==5 ) text(modeList[3], 0, 0);
-            if(modeIndex%12==7 ) text(modeList[4], 0, 0);
-            if(modeIndex%12==9 ) text(modeList[5], 0, 0);
-            if(modeIndex%12==11) text(modeList[6], 0, 0);
+            if(modeIndex%12==0 ) text(majorModeList[0], 0, 0);
+            if(modeIndex%12==2 ) text(majorModeList[1], 0, 0);
+            if(modeIndex%12==4 ) text(majorModeList[2], 0, 0);
+            if(modeIndex%12==5 ) text(majorModeList[3], 0, 0);
+            if(modeIndex%12==7 ) text(majorModeList[4], 0, 0);
+            if(modeIndex%12==9 ) text(majorModeList[5], 0, 0);
+            if(modeIndex%12==11) text(majorModeList[6], 0, 0);
         pop();
         }
     pop();
 }
 
-let modeSelect, keySelect, pianoSelect;
-let modeList = ["Ionian\n(Major)", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolian\n(Minor)", "Locrian"];
-let melodicMinorModeList = ["Ionian\n(Major)", "Dorian b2\n(Phrygian #6)", "Lydian augmented", "Lydian dominant (overtone scale)", "Mixolydian b6", "Aeolian b5\n(Locrian #2)", "Altered scale\n(Super Locrian)"];
-let harmonicMinorModeList = ["Ionian\n(Major)", "Dorian", "Lydian", "Phrygian", "Mixolydian", "Aeolian\n(Minor)", "Locrian"];
+let keySelect, majorModeSelect, minorModeSelect, otherModeSelect, pianoSelect;
+let majorModeList = ["Ionian\n(Major)", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolian\n(Minor)", "Locrian"];
+let minorModeList = ["Melodic\nminor", "Dorian b2\n(Phrygian #6)", "Lydian\naugmented", "Lydian dominant\n(overtone scale)", "Mixolydian b6", "Aeolian b5\n(Locrian #2)", "Altered scale\n(Super Locrian)"];
+let otherModeList = ["Ionian\n(Major)", "Dorian", "Lydian", "Phrygian", "Mixolydian", "Aeolian\n(Minor)", "Locrian"];
 let keyList = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"];
 let pianoMode = ["Piano keys on", " Piano keys off"];
 
@@ -139,16 +140,16 @@ function createMenus(){
     for(let i = 0; i < keyList.length; i++){
         keySelect.option(keyList[i]);
     }
-    keySelect.selected(keyList[0]);
+    keySelect.selected(keyList[5]);
     keySelect.changed(changeKey);
     
-    modeSelect = createSelect();
-    modeSelect.position(10, 30);
-    for(let i = 0; i < modeList.length; i++){
-        modeSelect.option(modeList[i]);
+    majorModeSelect = createSelect();
+    majorModeSelect.position(10, 30);
+    for(let i = 0; i < majorModeList.length; i++){
+        majorModeSelect.option(majorModeList[i]);
     }
-    modeSelect.selected(modeList[0]);
-    modeSelect.changed(changeMode);
+    majorModeSelect.selected(majorModeList[3]);
+    majorModeSelect.changed(changeMode);
     
     pianoSelect = createSelect();
     pianoSelect.position(10, 50);
@@ -161,14 +162,14 @@ function createMenus(){
 }
 
 function changeMode(){
-    var choice = modeSelect.value();
-    if(choice == modeList[0]) modeIndex = 0 ;
-    if(choice == modeList[1]) modeIndex = 2 ;
-    if(choice == modeList[2]) modeIndex = 4 ;
-    if(choice == modeList[3]) modeIndex = 5 ;
-    if(choice == modeList[4]) modeIndex = 7 ;
-    if(choice == modeList[5]) modeIndex = 9 ;
-    if(choice == modeList[6]) modeIndex = 11;
+    var choice = majorModeSelect.value();
+    if(choice == majorModeList[0]) modeIndex = 0 ;
+    if(choice == majorModeList[1]) modeIndex = 2 ;
+    if(choice == majorModeList[2]) modeIndex = 4 ;
+    if(choice == majorModeList[3]) modeIndex = 5 ;
+    if(choice == majorModeList[4]) modeIndex = 7 ;
+    if(choice == majorModeList[5]) modeIndex = 9 ;
+    if(choice == majorModeList[6]) modeIndex = 11;
 }
 
 function changeKey(){
