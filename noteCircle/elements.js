@@ -526,6 +526,7 @@ function createMenus(){
     for(let i = 0; i < keyList.length; i++){
         keySelect.option(keyList[i]);
     }
+    keySelect.class("form-control");
     keySelect.selected(keyList[noteIndex%12]);
     keySelect.changed(changeKey);
     keySelect.mouseWheel(changeKeyMouse);
