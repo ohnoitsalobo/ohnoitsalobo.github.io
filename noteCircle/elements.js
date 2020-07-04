@@ -9,8 +9,9 @@
     push();
         rotate(PI/2);
         textSize(Size*0.5); fill(0); text('ROOT', 0, -3.05*Size);
-        fill(255); textSize(Size*0.9);
+        fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
         text(keyList[noteIndex%12], 0.85*shortAxis, -0.2*shortAxis);
+        textSize(Size*0.4); text("Tap the highlighted notes\nin sequence to hear the scale", 0.85*shortAxis, 0.4*shortAxis);
     pop();
     push();
         currentNoteRotation = lerp(currentNoteRotation, noteRotation[noteIndex%12], speed);
@@ -66,8 +67,8 @@ function createMajorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        scaleRotation = lerp(scaleRotation, noteRotation[majorModeIndex%12], speed*0.75);
-        rotate(-scaleRotation);
+        majorScaleRotation = lerp(majorScaleRotation, noteRotation[majorModeIndex%12], speed*0.75);
+        rotate(-majorScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
             noFill();
@@ -82,9 +83,9 @@ function createMajorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.9);
+            fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
         push();
-            rotate(PI/2+scaleRotation); translate(0.85*shortAxis, 0);
+            rotate(PI/2+majorScaleRotation); translate(0.85*shortAxis, 0);
             if(majorModeIndex%12==0 ) text(majorModeList[0], 0, 0);
             if(majorModeIndex%12==2 ) text(majorModeList[1], 0, 0);
             if(majorModeIndex%12==4 ) text(majorModeList[2], 0, 0);
@@ -101,8 +102,8 @@ function createMelodicMinorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        scaleRotation = lerp(scaleRotation, noteRotation[melodicMinorModeIndex%12], speed*0.75);
-        rotate(-scaleRotation);
+        melodicMinorScaleRotation = lerp(melodicMinorScaleRotation, noteRotation[melodicMinorModeIndex%12], speed*0.75);
+        rotate(-melodicMinorScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
             noFill();
@@ -117,9 +118,9 @@ function createMelodicMinorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.9);
+            fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
         push();
-            rotate(PI/2+scaleRotation); translate(0.85*shortAxis, 0);
+            rotate(PI/2+melodicMinorScaleRotation); translate(0.85*shortAxis, 0);
             if(melodicMinorModeIndex%12==0 ) text(melodicMinorModeList[0], 0, 0);
             if(melodicMinorModeIndex%12==2 ) text(melodicMinorModeList[1], 0, 0);
             if(melodicMinorModeIndex%12==3 ) text(melodicMinorModeList[2], 0, 0);
@@ -136,8 +137,8 @@ function createHarmonicMinorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        scaleRotation = lerp(scaleRotation, noteRotation[harmonicMinorModeIndex%12], speed*0.75);
-        rotate(-scaleRotation);
+        harmonicMinorRotation = lerp(harmonicMinorRotation, noteRotation[harmonicMinorModeIndex%12], speed*0.75);
+        rotate(-harmonicMinorRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
             noFill();
@@ -152,15 +153,15 @@ function createHarmonicMinorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.9);
+            fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
         push();
-            rotate(PI/2+scaleRotation); translate(0.85*shortAxis, 0);
+            rotate(PI/2+harmonicMinorRotation); translate(0.85*shortAxis, 0);
             if(harmonicMinorModeIndex%12==0 ) text(harmonicMinorModeList[0], 0, 0);
             if(harmonicMinorModeIndex%12==2 ) text(harmonicMinorModeList[1], 0, 0);
             if(harmonicMinorModeIndex%12==3 ) text(harmonicMinorModeList[2], 0, 0);
             if(harmonicMinorModeIndex%12==5 ) text(harmonicMinorModeList[3], 0, 0);
             if(harmonicMinorModeIndex%12==7 ) text(harmonicMinorModeList[4], 0, 0);
-            if(harmonicMinorModeIndex%12==9 ) text(harmonicMinorModeList[5], 0, 0);
+            if(harmonicMinorModeIndex%12==8 ) text(harmonicMinorModeList[5], 0, 0);
             if(harmonicMinorModeIndex%12==11) text(harmonicMinorModeList[6], 0, 0);
         pop();
         }
@@ -171,8 +172,8 @@ function createHarmonicMajorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        scaleRotation = lerp(scaleRotation, noteRotation[harmonicMajorModeIndex%12], speed*0.75);
-        rotate(-scaleRotation);
+        harmonicMajorRotation = lerp(harmonicMajorRotation, noteRotation[harmonicMajorModeIndex%12], speed*0.75);
+        rotate(-harmonicMajorRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
             noFill();
@@ -187,12 +188,12 @@ function createHarmonicMajorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.9);
+            fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
         push();
-            rotate(PI/2+scaleRotation); translate(0.85*shortAxis, 0);
+            rotate(PI/2+harmonicMajorRotation); translate(0.85*shortAxis, 0);
             if(harmonicMajorModeIndex%12==0 ) text(harmonicMajorModeList[0], 0, 0);
             if(harmonicMajorModeIndex%12==2 ) text(harmonicMajorModeList[1], 0, 0);
-            if(harmonicMajorModeIndex%12==3 ) text(harmonicMajorModeList[2], 0, 0);
+            if(harmonicMajorModeIndex%12==4 ) text(harmonicMajorModeList[2], 0, 0);
             if(harmonicMajorModeIndex%12==5 ) text(harmonicMajorModeList[3], 0, 0);
             if(harmonicMajorModeIndex%12==7 ) text(harmonicMajorModeList[4], 0, 0);
             if(harmonicMajorModeIndex%12==8 ) text(harmonicMajorModeList[5], 0, 0);
@@ -206,8 +207,8 @@ function createDoubleHarmonicModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        scaleRotation = lerp(scaleRotation, noteRotation[doubleHarmonicModeIndex%12], speed*0.75);
-        rotate(-scaleRotation);
+        doubleHarmonicScaleRotation = lerp(doubleHarmonicScaleRotation, noteRotation[doubleHarmonicModeIndex%12], speed*0.75);
+        rotate(-doubleHarmonicScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
             noFill();
@@ -222,9 +223,9 @@ function createDoubleHarmonicModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.9);
+            fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
         push();
-            rotate(PI/2+scaleRotation); translate(0.85*shortAxis, 0);
+            rotate(PI/2+doubleHarmonicScaleRotation); translate(0.85*shortAxis, 0);
             if(doubleHarmonicModeIndex%12==0 ) text(doubleHarmonicModeList[0], 0, 0);
             if(doubleHarmonicModeIndex%12==1 ) text(doubleHarmonicModeList[1], 0, 0);
             if(doubleHarmonicModeIndex%12==4 ) text(doubleHarmonicModeList[2], 0, 0);
@@ -242,12 +243,10 @@ function createOtherModeCircle(){
     textFont('Georgia');
     push();
         rotate(PI/2);
-        fill(255); textSize(Size*0.9);
+        fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
         text(otherModeList[otherModeIndex], 0.85*shortAxis, 0);
     pop();
     push();
-        // scaleRotation = lerp(scaleRotation, noteRotation[melodicMinorModeIndex%12], speed*0.75);
-        // rotate(-scaleRotation);
         rotate(PI/2);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -510,7 +509,7 @@ function createOtherModeCircle(){
         pop();
             fill(255); textSize(Size*0.9);
         push();
-            rotate(PI/2+scaleRotation); translate(0.85*shortAxis, 0);
+            rotate(PI/2+majorScaleRotation); translate(0.85*shortAxis, 0);
         pop();
         }
     pop();
@@ -576,7 +575,7 @@ function createMenus(){
         if(harmonicMinorModeIndex%12==3 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[2]);
         if(harmonicMinorModeIndex%12==5 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[3]);
         if(harmonicMinorModeIndex%12==7 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[4]);
-        if(harmonicMinorModeIndex%12==9 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[5]);
+        if(harmonicMinorModeIndex%12==8 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[5]);
         if(harmonicMinorModeIndex%12==11) harmonicMinorModeSelect.selected(harmonicMinorModeList[6]);
         harmonicMinorModeSelect.changed(changeHarmonicMinorMode);
         harmonicMinorModeSelect.mouseWheel(changeHarmonicMinorModeMouse);
@@ -590,10 +589,10 @@ function createMenus(){
         }
         if(harmonicMajorModeIndex%12==0 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[0]);
         if(harmonicMajorModeIndex%12==2 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[1]);
-        if(harmonicMajorModeIndex%12==3 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[2]);
+        if(harmonicMajorModeIndex%12==4 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[2]);
         if(harmonicMajorModeIndex%12==5 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[3]);
         if(harmonicMajorModeIndex%12==7 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[4]);
-        if(harmonicMajorModeIndex%12==9 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[5]);
+        if(harmonicMajorModeIndex%12==8 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[5]);
         if(harmonicMajorModeIndex%12==11) harmonicMajorModeSelect.selected(harmonicMajorModeList[6]);
         harmonicMajorModeSelect.changed(changeHarmonicMajorMode);
         harmonicMajorModeSelect.mouseWheel(changeHarmonicMajorModeMouse);
@@ -606,11 +605,11 @@ function createMenus(){
             doubleHarmonicModeSelect.option(doubleHarmonicModeList[i]);
         }
         if(doubleHarmonicModeIndex%12==0 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[0]);
-        if(doubleHarmonicModeIndex%12==2 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[1]);
-        if(doubleHarmonicModeIndex%12==3 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[2]);
+        if(doubleHarmonicModeIndex%12==1 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[1]);
+        if(doubleHarmonicModeIndex%12==4 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[2]);
         if(doubleHarmonicModeIndex%12==5 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[3]);
         if(doubleHarmonicModeIndex%12==7 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[4]);
-        if(doubleHarmonicModeIndex%12==9 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[5]);
+        if(doubleHarmonicModeIndex%12==8 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[5]);
         if(doubleHarmonicModeIndex%12==11) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[6]);
         doubleHarmonicModeSelect.changed(changeDoubleHarmonicMode);
         doubleHarmonicModeSelect.mouseWheel(changeDoubleHarmonicModeMouse);
