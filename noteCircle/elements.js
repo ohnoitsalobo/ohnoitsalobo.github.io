@@ -544,7 +544,7 @@ function createMenus(){
         if(majorModeIndex%12==9 ) majorModeSelect.selected(majorModeList[5]);
         if(majorModeIndex%12==11) majorModeSelect.selected(majorModeList[6]);
         majorModeSelect.changed(changeMajorMode);
-        majorModeSelect.mouseWheel(changeMajorModeMouse);
+        // majorModeSelect.mouseWheel(changeMajorModeMouse);
     }
     
     if(majorMinorOther == 1){
@@ -561,7 +561,7 @@ function createMenus(){
         if(melodicMinorModeIndex%12==9 ) melodicMinorModeSelect.selected(melodicMinorModeList[5]);
         if(melodicMinorModeIndex%12==11) melodicMinorModeSelect.selected(melodicMinorModeList[6]);
         melodicMinorModeSelect.changed(changeMelodicMinorMode);
-        melodicMinorModeSelect.mouseWheel(changeMelodicMinorModeMouse);
+        // melodicMinorModeSelect.mouseWheel(changeMelodicMinorModeMouse);
     }
     
     if(majorMinorOther == 2){
@@ -578,7 +578,7 @@ function createMenus(){
         if(harmonicMinorModeIndex%12==8 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[5]);
         if(harmonicMinorModeIndex%12==11) harmonicMinorModeSelect.selected(harmonicMinorModeList[6]);
         harmonicMinorModeSelect.changed(changeHarmonicMinorMode);
-        harmonicMinorModeSelect.mouseWheel(changeHarmonicMinorModeMouse);
+        // harmonicMinorModeSelect.mouseWheel(changeHarmonicMinorModeMouse);
     }
     
     if(majorMinorOther == 3){
@@ -595,7 +595,7 @@ function createMenus(){
         if(harmonicMajorModeIndex%12==8 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[5]);
         if(harmonicMajorModeIndex%12==11) harmonicMajorModeSelect.selected(harmonicMajorModeList[6]);
         harmonicMajorModeSelect.changed(changeHarmonicMajorMode);
-        harmonicMajorModeSelect.mouseWheel(changeHarmonicMajorModeMouse);
+        // harmonicMajorModeSelect.mouseWheel(changeHarmonicMajorModeMouse);
     }
     
     if(majorMinorOther == 4){
@@ -612,7 +612,7 @@ function createMenus(){
         if(doubleHarmonicModeIndex%12==8 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[5]);
         if(doubleHarmonicModeIndex%12==11) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[6]);
         doubleHarmonicModeSelect.changed(changeDoubleHarmonicMode);
-        doubleHarmonicModeSelect.mouseWheel(changeDoubleHarmonicModeMouse);
+        // doubleHarmonicModeSelect.mouseWheel(changeDoubleHarmonicModeMouse);
     }
     
     if(majorMinorOther == 5){
@@ -623,7 +623,7 @@ function createMenus(){
         }
         otherModeSelect.selected(otherModeList[otherModeIndex]);
         otherModeSelect.changed(changeOtherMode);
-        otherModeSelect.mouseWheel(changeOtherModeMouse);
+        // otherModeSelect.mouseWheel(changeOtherModeMouse);
     }
     
     modeSelect = createSelect();
@@ -633,7 +633,7 @@ function createMenus(){
     }
     modeSelect.selected(modeList[majorMinorOther]);
     modeSelect.changed(changeMode);
-    modeSelect.mouseWheel(changeModeMouse);
+    // modeSelect.mouseWheel(changeModeMouse);
     
     pianoSelect = createSelect();
     pianoSelect.position(xpos*1.5, ypos);
@@ -642,7 +642,7 @@ function createMenus(){
     }
     pianoSelect.selected(pianoMode[(pianoColors+1)%2]);
     pianoSelect.changed(changePiano);
-    pianoSelect.mouseWheel(changePianoMouse);
+    // pianoSelect.mouseWheel(changePianoMouse);
     
 }
 
