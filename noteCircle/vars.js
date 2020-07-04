@@ -6,7 +6,7 @@ let minorModeIndex = 0;
 let otherModeIndex = 0;
 let doEvery = 30;
 let shortAxis, Size, speed = 0.2;
-let pianoColors = true;
+let pianoColors = 1;
 let majorMinorOther = 0;
 
 let keySelect;

@@ -466,7 +466,7 @@ function createMenus(){
         for(let i = 0; i < otherModeList.length; i++){
             otherModeSelect.option(otherModeList[i]);
         }
-        otherModeSelect.selected(otherModeList[0]);
+        otherModeSelect.selected(otherModeList[otherModeIndex]);
         otherModeSelect.changed(changeOtherMode);
         otherModeSelect.mouseWheel(changeOtherModeMouse);
     }
@@ -485,7 +485,7 @@ function createMenus(){
     for(let i = 0; i < pianoMode.length; i++){
         pianoSelect.option(pianoMode[i]);
     }
-    pianoSelect.selected(pianoMode[0]);
+    pianoSelect.selected(pianoMode[(pianoColors+1)%2]);
     pianoSelect.changed(changePiano);
     pianoSelect.mouseWheel(changePianoMouse);
     
@@ -600,8 +600,8 @@ function changeKeyMouse(event){
 
 function changePiano(){
     var choice = pianoSelect.value();
-    if(choice == pianoMode[0]) pianoColors = true;
-    if(choice == pianoMode[1]) pianoColors = false;
+    if(choice == pianoMode[0]) pianoColors = 1;
+    if(choice == pianoMode[1]) pianoColors = 0;
 }
 function changePianoMouse(event){
     if (event.deltaY > 0) pianoSelect.selected(pianoMode[1]);
