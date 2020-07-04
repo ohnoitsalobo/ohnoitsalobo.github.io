@@ -21,7 +21,6 @@
             rotate(noteRotation[i]);
             translate(0, -4.1*Size);
             rotate(-noteRotation[i]+currentNoteRotation+PI/2);
-            // rect(0, -Size*0.3, Size*1.3, Size*1.3);
             textSize(Size); fill(255);
             if(i==0) { text('A', 0, 0); } 
             if(i==2) { text('B', 0, 0); textSize(Size*0.3); text('Cb',  Size*0.4, -Size*0.5 ); } 
@@ -31,7 +30,7 @@
             if(i==8) { text('F', 0, 0); textSize(Size*0.3); text('E#', -Size*0.4,  Size*0.35); }
             if(i==10){ text('G', 0, 0); }
 
-            textSize(Size*0.6); fill((pianoColors) ? 0 : 255); if(majorMinorOther == 2) fill(0);
+            textSize(Size*0.6); fill (0); //fill((pianoColors) ? 0 : 255); if(majorMinorOther == 2) fill(0);
             let xpos = 0.2*Size; let ypos = 0.25*Size;
             if(i==1) { text('A#', -xpos, -ypos); text('Bb', xpos, ypos); }
             if(i==4) { text('C#', -xpos, -ypos); text('Db', xpos, ypos); }
@@ -75,7 +74,6 @@ function createMajorModeCircle(){
             rotate(noteRotation[i]);
             translate(0, -3.9*Size); 
             if(i==0 || i==2 || i==3 || i==5 || i==7 || i==8 || i==10){
-                // noFill; stroke(0); strokeWeight(1.5);
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==1 || i==4 || i==6 || i==9 || i==11){
@@ -84,7 +82,6 @@ function createMajorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            // fill(0); textSize(pianoColors ? Size*0.5 : Size*0.9);
             fill(255); textSize(Size*0.9);
         push();
             rotate(PI/2+scaleRotation); translate(0.85*shortAxis, 0);
@@ -112,7 +109,6 @@ function createMinorModeCircle(){
             rotate(noteRotation[i]);
             translate(0, -3.9*Size); 
             if(i==0 || i==2 || i==3 || i==5 || i==6 || i==8 || i==10){
-                // noFill; stroke(0); strokeWeight(1.5);
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==1 || i==4 || i==7 || i==9 || i==11){
@@ -121,7 +117,6 @@ function createMinorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            // fill(0); textSize(pianoColors ? Size*0.5 : Size*0.9);
             fill(255); textSize(Size*0.9);
         push();
             rotate(PI/2+scaleRotation); translate(0.85*shortAxis, 0);
@@ -420,7 +415,7 @@ function createOtherModeCircle(){
 function createMenus(){
     removeElements();
     let xpos = shortAxis;
-    let ypos = 20; 
+    let ypos = 30; 
     
     keySelect = createSelect();
     keySelect.position(xpos, ypos);
@@ -477,7 +472,7 @@ function createMenus(){
     }
     
     modeSelect = createSelect();
-    modeSelect.position(xpos-200, ypos);
+    modeSelect.position(xpos*1.15, ypos);
     for(let i = 0; i < modeList.length; i++){
         modeSelect.option(modeList[i]);
     }
@@ -486,7 +481,7 @@ function createMenus(){
     modeSelect.mouseWheel(changeModeMouse);
     
     pianoSelect = createSelect();
-    pianoSelect.position(20, ypos);
+    pianoSelect.position(xpos*1.5, ypos);
     for(let i = 0; i < pianoMode.length; i++){
         pianoSelect.option(pianoMode[i]);
     }
