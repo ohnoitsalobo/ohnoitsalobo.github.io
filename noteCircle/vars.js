@@ -1,8 +1,13 @@
 let PI_ = 3.141592653589793;
 let noteRotation  = [ 0*PI_/6, 1*PI_/6, 2*PI_/6, 3*PI_/6, 4*PI_/6, 5*PI_/6, 6*PI_/6, 7*PI_/6, 8*PI_/6, 9*PI_/6, 10*PI_/6, 11*PI_/6 ];
 let noteIndex = 0, currentNoteRotation = 0, scaleRotation = 0;
+
 let majorModeIndex = 0;
-let minorModeIndex = 0;
+let melodicMinorModeIndex = 0;
+let harmonicMinorModeIndex = 0;
+let harmonicMajorModeIndex = 0;
+let doubleHarmonicModeIndex = 0;
+
 let otherModeIndex = 0;
 let doEvery = 30;
 let shortAxis, Size, speed = 0.2;
@@ -11,14 +16,72 @@ let majorMinorOther = 0;
 
 let keySelect;
 let keyList = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"];
-let majorModeSelect;
-let majorModeList = ["Ionian\n(major)", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolian\n(natural minor)", "Locrian"];
-let minorModeSelect;
-let minorModeList = ["Melodic minor\n(ascending)", "Dorian b2\n(Phrygian #6)", "Lydian\naugmented", "Lydian dominant\n(overtone scale)", "Mixolydian b6", "Aeolian b5\n(Locrian #2)", "Altered scale\n(Super Locrian)"];
 let pianoSelect;;
 let pianoMode = ["Piano keys on", " Piano keys off"];
+
 let modeSelect;
-let modeList = ["Major modes", " Melodic minor modes", "Other scales"];
+let modeList = [
+"Major modes",
+"Melodic minor modes",
+"Harmonic minor modes",
+"Harmonic major modes",
+"Double harmonic modes",
+"Other scales"
+];
+
+let majorModeSelect;
+let majorModeList = ["Ionian\n(major)",
+"Dorian",
+"Phrygian",
+"Lydian",
+"Mixolydian",
+"Aeolian\n(natural Minor)",
+"Locrian"
+];
+
+let melodicMinorModeSelect;
+let melodicMinorModeList = [
+"Melodic minor\n(ascending)",
+"Dorian b2\n(Phrygian #6)",
+"Lydian\naugmented",
+"Lydian dominant\n(overtone scale)",
+"Mixolydian b6",
+"Aeolian b5\n(Locrian #2)",
+"Altered scale\n(Super Locrian)"
+];
+
+let harmonicMinorModeSelect;
+let harmonicMinorModeList = [
+"Harmonic minor",
+"Locrian #6",
+"Ionian #5",
+"Ukrainian Dorian",
+"Phrygian Dominant",
+"Lydian #2",
+"Altered Diminished"
+];
+
+let harmonicMajorModeSelect;
+let harmonicMajorModeList = [
+"Harmonic major",
+"Dorian b5",
+"Phrygian b4",
+"Lydian b3",
+"Mixolydian b2",
+"Lydian\nAugmented #2",
+"Locrian bb7"
+];
+
+let doubleHarmonicModeSelect;
+let doubleHarmonicModeList = [
+"Double harmonic",
+"Lydian #2 #6",
+"Phrygian bb7 b4",
+"Hungarian minor",
+"Mixolydian b5 b2",
+"Ionian #5 #2",
+"Locrian bb3 bb7"
+];
 
 let otherModeSelect;
 let otherModeList = [
@@ -46,7 +109,7 @@ let otherModeList = [
 "Pentatonic major",             // 21  // 0 2 4 7 9
 "Pentatonic minor",             // 22  // 0 3 5 7 10
 "Persian",                      // 23  // 0 1 4 5 6 8 11
-"Phrygian dominant",            // 24  // 0 1 4 5 7 8 10      // harmonic minor 5th mode
+"Phrygian dominant",            // 24  // 0 1 4 5 7 8 10      // harmonic melodicMinor 5th mode
 "Prometheus",                   // 25  // 0 2 4 6 9 10
 "Tritone",                      // 26  // 0 1 4 6 7 10
 "Ukrainian Dorian",             // 27  // 0 2 3 6 7 9 10
