@@ -26,11 +26,11 @@ let pianoMode = ["Piano keys on", " Piano keys off"];
 
 let modeSelect;
 let modeList = [
-"Major modes",
-"Melodic minor modes",
-"Harmonic minor modes",
-"Harmonic major modes",
-"Double harmonic modes",
+"Diatonic\n(major)",
+"Melodic\nminor",
+"Harmonic\nminor",
+"Harmonic\nmajor",
+"Double\nharmonic",
 "Other scales"
 ];
 

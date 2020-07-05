@@ -1,9 +1,11 @@
 
 function setup(){
     shortAxis = 0.95*((windowWidth > windowHeight) ? windowHeight : windowWidth);
-    createCanvas(1.75*shortAxis, shortAxis);
+    var cnv = createCanvas(1.75*shortAxis, shortAxis);
+    cnv.parent('sketch');
     frameRate(30);
     createMenus();
+    changeMode();
 }
 
 function draw(){
@@ -31,4 +33,8 @@ function draw(){
 
     fill(255); noStroke();
     rectMode(CENTER);
+}
+
+function mouseClicked(){
+    return false;
 }
