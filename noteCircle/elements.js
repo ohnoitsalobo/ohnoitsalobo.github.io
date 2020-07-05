@@ -15,7 +15,7 @@ function createNoteCircle(){
         text(keyList[noteIndex%12], xpos, ypos);
         textSize(Size*0.5); fill(255, 175);
         text(modeList[majorMinorOther], xpos/0.62, ypos);
-        fill(255); textSize(Size*0.5); 
+        fill(0, 0, 100); textSize(Size*0.5); 
         text("Cheat sheet for\nscales and modes", 0.85*shortAxis, -0.4*shortAxis);
         fill(0); textSize(Size*0.4); 
         if(majorMinorOther!=5)  text("Use number keys 1 2 3 4 5 6 7 8 to\nplay the highlighted notes, or\ntap/click the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
@@ -38,7 +38,6 @@ function createNoteCircle(){
         line(0.85*shortAxis, 0.1*shortAxis+1.7*Size, 0.85*shortAxis-30, 0.1*shortAxis+1.5*Size);
     pop();
     push();
-        currentNoteRotation = lerp(currentNoteRotation, noteRotation[noteIndex%12], speed);
         rotate(-currentNoteRotation);
         textFont('Times New Roman');
         for(var i = 0; i < noteRotation.length; i++){
@@ -85,13 +84,19 @@ function createNoteCircle(){
         pop();
         }
     pop();
+    currentNoteRotation = lerp(currentNoteRotation, noteRotation[noteIndex%12], speed);
+    majorScaleRotation = lerp(majorScaleRotation, noteRotation[majorModeIndex%12], speed*0.75);
+    melodicMinorScaleRotation = lerp(melodicMinorScaleRotation, noteRotation[melodicMinorModeIndex%12], speed*0.75);
+    harmonicMinorRotation = lerp(harmonicMinorRotation, noteRotation[harmonicMinorModeIndex%12], speed*0.75);
+    harmonicMajorRotation = lerp(harmonicMajorRotation, noteRotation[harmonicMajorModeIndex%12], speed*0.75);
+    doubleHarmonicScaleRotation = lerp(doubleHarmonicScaleRotation, noteRotation[doubleHarmonicModeIndex%12], speed*0.75);
 }
 
 function createMajorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        majorScaleRotation = lerp(majorScaleRotation, noteRotation[majorModeIndex%12], speed*0.75);
+        // majorScaleRotation = lerp(majorScaleRotation, noteRotation[majorModeIndex%12], speed*0.75);
         rotate(-majorScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -126,7 +131,7 @@ function createMelodicMinorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        melodicMinorScaleRotation = lerp(melodicMinorScaleRotation, noteRotation[melodicMinorModeIndex%12], speed*0.75);
+        // melodicMinorScaleRotation = lerp(melodicMinorScaleRotation, noteRotation[melodicMinorModeIndex%12], speed*0.75);
         rotate(-melodicMinorScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -161,7 +166,7 @@ function createHarmonicMinorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        harmonicMinorRotation = lerp(harmonicMinorRotation, noteRotation[harmonicMinorModeIndex%12], speed*0.75);
+        // harmonicMinorRotation = lerp(harmonicMinorRotation, noteRotation[harmonicMinorModeIndex%12], speed*0.75);
         rotate(-harmonicMinorRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -196,7 +201,7 @@ function createHarmonicMajorModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        harmonicMajorRotation = lerp(harmonicMajorRotation, noteRotation[harmonicMajorModeIndex%12], speed*0.75);
+        // harmonicMajorRotation = lerp(harmonicMajorRotation, noteRotation[harmonicMajorModeIndex%12], speed*0.75);
         rotate(-harmonicMajorRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -231,7 +236,7 @@ function createDoubleHarmonicModeCircle(){
     Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
-        doubleHarmonicScaleRotation = lerp(doubleHarmonicScaleRotation, noteRotation[doubleHarmonicModeIndex%12], speed*0.75);
+        // doubleHarmonicScaleRotation = lerp(doubleHarmonicScaleRotation, noteRotation[doubleHarmonicModeIndex%12], speed*0.75);
         rotate(-doubleHarmonicScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -624,9 +629,6 @@ function createMenus(){
     pianoSelect.changed(changePiano);
     pianoSelect.mouseWheel(changePianoMouse);
     
-}
-
-function changeMode(){
     keySelect.hide();
     modeSelect.hide();
     pianoSelect.hide();
@@ -636,6 +638,9 @@ function changeMode(){
     harmonicMajorModeSelect.hide();
     doubleHarmonicModeSelect.hide();
     otherModeSelect.hide();
+}
+
+function changeMode(){
     // var choice = modeSelect.value();
     // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
     // if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
@@ -643,7 +648,14 @@ function changeMode(){
     // if(choice == modeList[3]) { majorMinorOther = 3; harmonicMajorModeSelect.show(); }
     // if(choice == modeList[4]) { majorMinorOther = 4; doubleHarmonicModeSelect.show(); }
     // if(choice == modeList[5]) { majorMinorOther = 5; otherModeSelect.show(); }
-    }
+    var choice = modeSelect.value();
+    if(choice == modeList[0]) majorMinorOther = 0;
+    if(choice == modeList[1]) majorMinorOther = 1;
+    if(choice == modeList[2]) majorMinorOther = 2;
+    if(choice == modeList[3]) majorMinorOther = 3;
+    if(choice == modeList[4]) majorMinorOther = 4;
+    if(choice == modeList[5]) majorMinorOther = 5;
+}
 function changeModeMouse(event){
     var choice = modeSelect.value();
     let i = 0;
@@ -658,13 +670,13 @@ function changeModeMouse(event){
 
 function changeMajorMode(){
     var choice = majorModeSelect.value();
-    if(choice == majorModeList[0]) majorModeIndex = 0 ;
-    if(choice == majorModeList[1]) majorModeIndex = 2 ;
-    if(choice == majorModeList[2]) majorModeIndex = 4 ;
-    if(choice == majorModeList[3]) majorModeIndex = 5 ;
-    if(choice == majorModeList[4]) majorModeIndex = 7 ;
-    if(choice == majorModeList[5]) majorModeIndex = 9 ;
-    if(choice == majorModeList[6]) majorModeIndex = 11;
+    if(choice == majorModeList[0]) { majorModeIndex = 0 ; }
+    if(choice == majorModeList[1]) { majorModeIndex = 2 ; }
+    if(choice == majorModeList[2]) { majorModeIndex = 4 ; }
+    if(choice == majorModeList[3]) { majorModeIndex = 5 ; }
+    if(choice == majorModeList[4]) { majorModeIndex = 7 ; }
+    if(choice == majorModeList[5]) { majorModeIndex = 9 ; }
+    if(choice == majorModeList[6]) { majorModeIndex = 11; }
 }
 function changeMajorModeMouse(event){
     var choice = majorModeSelect.value();
@@ -678,16 +690,15 @@ function changeMajorModeMouse(event){
     changeMajorMode();
 }
 
-
 function changeMelodicMinorMode(){
     var choice = melodicMinorModeSelect.value();
-    if(choice == melodicMinorModeList[0]) melodicMinorModeIndex = 0 ;
-    if(choice == melodicMinorModeList[1]) melodicMinorModeIndex = 2 ;
-    if(choice == melodicMinorModeList[2]) melodicMinorModeIndex = 3 ;
-    if(choice == melodicMinorModeList[3]) melodicMinorModeIndex = 5 ;
-    if(choice == melodicMinorModeList[4]) melodicMinorModeIndex = 7 ;
-    if(choice == melodicMinorModeList[5]) melodicMinorModeIndex = 9 ;
-    if(choice == melodicMinorModeList[6]) melodicMinorModeIndex = 11;
+    if(choice == melodicMinorModeList[0]) { melodicMinorModeIndex = 0 ; }
+    if(choice == melodicMinorModeList[1]) { melodicMinorModeIndex = 2 ; }
+    if(choice == melodicMinorModeList[2]) { melodicMinorModeIndex = 3 ; }
+    if(choice == melodicMinorModeList[3]) { melodicMinorModeIndex = 5 ; }
+    if(choice == melodicMinorModeList[4]) { melodicMinorModeIndex = 7 ; }
+    if(choice == melodicMinorModeList[5]) { melodicMinorModeIndex = 9 ; }
+    if(choice == melodicMinorModeList[6]) { melodicMinorModeIndex = 11; }
 }
 function changeMelodicMinorModeMouse(event){
     var choice = melodicMinorModeSelect.value();
@@ -703,13 +714,13 @@ function changeMelodicMinorModeMouse(event){
 
 function changeHarmonicMinorMode(){
     var choice = harmonicMinorModeSelect.value();
-    if(choice == harmonicMinorModeList[0]) harmonicMinorModeIndex = 0 ;
-    if(choice == harmonicMinorModeList[1]) harmonicMinorModeIndex = 2 ;
-    if(choice == harmonicMinorModeList[2]) harmonicMinorModeIndex = 3 ;
-    if(choice == harmonicMinorModeList[3]) harmonicMinorModeIndex = 5 ;
-    if(choice == harmonicMinorModeList[4]) harmonicMinorModeIndex = 7 ;
-    if(choice == harmonicMinorModeList[5]) harmonicMinorModeIndex = 8 ;
-    if(choice == harmonicMinorModeList[6]) harmonicMinorModeIndex = 11;
+    if(choice == harmonicMinorModeList[0]) { harmonicMinorModeIndex = 0 ; }
+    if(choice == harmonicMinorModeList[1]) { harmonicMinorModeIndex = 2 ; }
+    if(choice == harmonicMinorModeList[2]) { harmonicMinorModeIndex = 3 ; }
+    if(choice == harmonicMinorModeList[3]) { harmonicMinorModeIndex = 5 ; }
+    if(choice == harmonicMinorModeList[4]) { harmonicMinorModeIndex = 7 ; }
+    if(choice == harmonicMinorModeList[5]) { harmonicMinorModeIndex = 8 ; }
+    if(choice == harmonicMinorModeList[6]) { harmonicMinorModeIndex = 11; }
 }
 function changeHarmonicMinorModeMouse(event){
     var choice = harmonicMinorModeSelect.value();
@@ -725,13 +736,13 @@ function changeHarmonicMinorModeMouse(event){
 
 function changeHarmonicMajorMode(){
     var choice = harmonicMajorModeSelect.value();
-    if(choice == harmonicMajorModeList[0]) harmonicMajorModeIndex = 0 ;
-    if(choice == harmonicMajorModeList[1]) harmonicMajorModeIndex = 2 ;
-    if(choice == harmonicMajorModeList[2]) harmonicMajorModeIndex = 4 ;
-    if(choice == harmonicMajorModeList[3]) harmonicMajorModeIndex = 5 ;
-    if(choice == harmonicMajorModeList[4]) harmonicMajorModeIndex = 7 ;
-    if(choice == harmonicMajorModeList[5]) harmonicMajorModeIndex = 8 ;
-    if(choice == harmonicMajorModeList[6]) harmonicMajorModeIndex = 11;
+    if(choice == harmonicMajorModeList[0]) { harmonicMajorModeIndex = 0 ; }
+    if(choice == harmonicMajorModeList[1]) { harmonicMajorModeIndex = 2 ; }
+    if(choice == harmonicMajorModeList[2]) { harmonicMajorModeIndex = 4 ; }
+    if(choice == harmonicMajorModeList[3]) { harmonicMajorModeIndex = 5 ; }
+    if(choice == harmonicMajorModeList[4]) { harmonicMajorModeIndex = 7 ; }
+    if(choice == harmonicMajorModeList[5]) { harmonicMajorModeIndex = 8 ; }
+    if(choice == harmonicMajorModeList[6]) { harmonicMajorModeIndex = 11; }
 }
 function changeHarmonicMajorModeMouse(event){
     var choice = harmonicMajorModeSelect.value();
@@ -747,13 +758,13 @@ function changeHarmonicMajorModeMouse(event){
 
 function changeDoubleHarmonicMode(){
     var choice = doubleHarmonicModeSelect.value();
-    if(choice == doubleHarmonicModeList[0]) doubleHarmonicModeIndex = 0 ;
-    if(choice == doubleHarmonicModeList[1]) doubleHarmonicModeIndex = 1 ;
-    if(choice == doubleHarmonicModeList[2]) doubleHarmonicModeIndex = 4 ;
-    if(choice == doubleHarmonicModeList[3]) doubleHarmonicModeIndex = 5 ;
-    if(choice == doubleHarmonicModeList[4]) doubleHarmonicModeIndex = 7 ;
-    if(choice == doubleHarmonicModeList[5]) doubleHarmonicModeIndex = 8 ;
-    if(choice == doubleHarmonicModeList[6]) doubleHarmonicModeIndex = 11;
+    if(choice == doubleHarmonicModeList[0]) { doubleHarmonicModeIndex = 0 ; }
+    if(choice == doubleHarmonicModeList[1]) { doubleHarmonicModeIndex = 1 ; }
+    if(choice == doubleHarmonicModeList[2]) { doubleHarmonicModeIndex = 4 ; }
+    if(choice == doubleHarmonicModeList[3]) { doubleHarmonicModeIndex = 5 ; }
+    if(choice == doubleHarmonicModeList[4]) { doubleHarmonicModeIndex = 7 ; }
+    if(choice == doubleHarmonicModeList[5]) { doubleHarmonicModeIndex = 8 ; }
+    if(choice == doubleHarmonicModeList[6]) { doubleHarmonicModeIndex = 11; }
 }
 function changeDoubleHarmonicModeMouse(event){
     var choice = doubleHarmonicModeSelect.value();
@@ -784,7 +795,6 @@ function changeOtherModeMouse(event){
     if (event.deltaY < 0) otherModeSelect.selected(otherModeList[(i+28)%29]);
     changeOtherMode();
 }
-
 
 function changeKey(){
     var choice = keySelect.value();
@@ -817,3 +827,4 @@ function changePianoMouse(event){
     if (event.deltaY < 0) pianoSelect.selected(pianoMode[0]);
     changePiano();
 }
+
