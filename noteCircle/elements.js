@@ -1,5 +1,6 @@
- function createNoteCircle(){
-    fill(125); noStroke();
+let fillcolor = 100;
+function createNoteCircle(){
+    fill(fillcolor); noStroke();
     Size = 0.97*shortAxis;
     ellipse(0, 0, Size, Size);
     Size = 0.093*shortAxis;
@@ -17,7 +18,7 @@
         textSize(Size*0.4); 
         if(majorMinorOther!=5)  text("Use number keys 1 2 3 4 5 6 7 8 to\nplay the highlighted notes, or\ntap/click the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
         else  text("Tap/click the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
-        stroke(255, 200); strokeWeight(5);
+        stroke(255, 255); strokeWeight(5);
         line(xpos, ypos-1.2*Size, xpos+30, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-30, ypos-Size);
         line(xpos, ypos+1.2*Size, xpos+30, ypos+Size);
@@ -98,7 +99,7 @@ function createMajorModeCircle(){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==1 || i==4 || i==6 || i==9 || i==11){
-                fill(125); noStroke();
+                fill(fillcolor); noStroke();
                 rect(0, Size*1.7, 0.6*Size, 1.5*Size);
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
@@ -133,7 +134,7 @@ function createMelodicMinorModeCircle(){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==1 || i==4 || i==7 || i==9 || i==11){
-                fill(125); noStroke();
+                fill(fillcolor); noStroke();
                 rect(0, Size*1.7, 0.6*Size, 1.5*Size);
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
@@ -168,7 +169,7 @@ function createHarmonicMinorModeCircle(){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==0 || i==1 || i==4 || i==7 || i==9){
-                fill(125); noStroke();
+                fill(fillcolor); noStroke();
                 rect(0, Size*1.7, 0.6*Size, 1.5*Size);
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
@@ -203,7 +204,7 @@ function createHarmonicMajorModeCircle(){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==0 || i==1 || i==4 || i==6 || i==9){
-                fill(125); noStroke();
+                fill(fillcolor); noStroke();
                 rect(0, Size*1.7, 0.6*Size, 1.5*Size);
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
@@ -238,7 +239,7 @@ function createDoubleHarmonicModeCircle(){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==0 || i==1 || i==5 || i==6 || i==9){
-                fill(125); noStroke();
+                fill(fillcolor); noStroke();
                 rect(0, Size*1.7, 0.6*Size, 1.5*Size);
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
@@ -273,7 +274,7 @@ function createOtherModeCircle(){
             noFill();
             rotate(noteRotation[i]);
             translate(0, -3.9*Size); 
-            fill(125); noStroke();
+            fill(fillcolor); noStroke();
             if(i==0){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
