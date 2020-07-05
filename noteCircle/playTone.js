@@ -23,6 +23,33 @@ function playTone(t){
     synth.triggerAttackRelease(tone[t]*transpose/2, "8n");
 }
 
+function keyPressed(){
+    if(key == 'q' || key == 'Q'){
+        playTone(0);
+    }
+    if(key == 'w' || key == 'W'){
+        // if(majorModeIndex)
+    }
+    if(key == 'e' || key == 'E'){
+        
+    }
+    if(key == 'r' || key == 'R'){
+        
+    }
+    if(key == 't' || key == 'T'){
+        
+    }
+    if(key == 'y' || key == 'Y'){
+        
+    }
+    if(key == 'u' || key == 'U'){
+        
+    }
+    if(key == 'i' || key == 'I'){
+        playTone(12);
+    }
+}
+
 function mouseReleased(){
     let xpos, ypos, ypos1, offset = 0.07*shortAxis;
     xpos = 0.5*shortAxis;
