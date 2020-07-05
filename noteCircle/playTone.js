@@ -154,7 +154,6 @@ function mouseReleased(){
             changeMajorMode();
         }
     }
-    console.log(mouseX/shortAxis + "," + mouseY/shortAxis, majorMinorOther);
     ////// CHANGE MELODIC MINOR MODE
     if(majorMinorOther == 1){
         var choice = melodicMinorModeSelect.value();
