@@ -38,6 +38,8 @@
             rotate(noteRotation[i]);
             translate(0, -4.1*Size);
             rotate(-noteRotation[i]+currentNoteRotation+PI/2);
+            // textSize(0.5*Size); fill(0);
+            // text((i+9)%12, -30, 0)
             textSize(Size); fill(255);
             if(i==0) { text('A', 0, 0); } 
             if(i==2) { text('B', 0, 0); textSize(Size*0.3); text('Cb',  Size*0.4, -Size*0.5 ); } 
