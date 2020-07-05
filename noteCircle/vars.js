@@ -115,7 +115,7 @@ let otherModeList = [
 "Pentatonic major",             // 21  // 0 2 4 7 9
 "Pentatonic minor",             // 22  // 0 3 5 7 10
 "Persian",                      // 23  // 0 1 4 5 6 8 11
-"Phrygian\ndominant",           // 24  // 0 1 4 5 7 8 10      // harmonic melodicMinor 5th mode
+"Phrygian\ndominant",           // 24  // 0 1 4 5 7 8 10      // harmonic minor 5th mode
 "Prometheus",                   // 25  // 0 2 4 6 9 10
 "Tritone",                      // 26  // 0 1 4 6 7 10
 "Ukrainian Dorian",             // 27  *// 0 2 3 6 7 9 10
