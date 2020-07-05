@@ -292,7 +292,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
@@ -316,7 +316,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
@@ -337,7 +337,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
@@ -361,7 +361,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
@@ -386,7 +386,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
@@ -409,7 +409,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
@@ -438,7 +438,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
@@ -463,7 +463,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
@@ -479,7 +479,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
@@ -502,7 +502,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
@@ -522,7 +522,7 @@ function createOtherModeCircle(){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
                 else{
-                    fill(125); noStroke();
+                    fill(fillcolor); noStroke();
                     rect(0, Size*1.7, 0.6*Size, 1.5*Size);
                 }
             }
