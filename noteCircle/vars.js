@@ -15,7 +15,7 @@ let doubleHarmonicModeIndex = 0;
 
 let otherModeIndex = 0;
 let doEvery = 30;
-let shortAxis, Size, speed = 0.3;
+let shortAxis, Size, speed = 0.5;
 let pianoColors = 1;
 let majorMinorOther = 0;
 
