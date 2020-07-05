@@ -20,6 +20,9 @@ function createNoteCircle(){
         fill(0); textSize(Size*0.4); 
         if(majorMinorOther!=5)  text("Use number keys 1 2 3 4 5 6 7 8 to\nplay the highlighted notes, or\ntap/click the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
         else  text("Tap/click the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
+        // text("+Key", 0.85*xpos, 1.5*ypos);
+        // text("-Key", 0.85*xpos, ypos);
+        // text("Scale", 1.5*xpos, ypos);
         stroke(255, 255); strokeWeight(5);
         line(xpos, ypos-1.2*Size, xpos+30, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-30, ypos-Size);
@@ -43,8 +46,6 @@ function createNoteCircle(){
             rotate(noteRotation[i]);
             translate(0, -4.1*Size);
             rotate(-noteRotation[i]+currentNoteRotation+PI/2);
-            // textSize(0.5*Size); fill(0);
-            // text((i+9)%12, -30, 0)
             textSize(Size); fill(255);
             if(i==0) { text('A', 0, 0); } 
             if(i==2) { text('B', 0, 0); textSize(Size*0.3); text('Cb',  Size*0.4, -Size*0.5 ); } 
