@@ -250,6 +250,5 @@ function mouseReleased(){
             changeOtherMode();
         }
     }
-    console.log(mouseX/shortAxis + "," + mouseY/shortAxis, majorMinorOther);
     return false;
 }
