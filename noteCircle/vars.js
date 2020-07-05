@@ -17,7 +17,7 @@ let otherModeIndex = 0;
 let doEvery = 30;
 let shortAxis, Size, speed = 0.5;
 let pianoColors = 1;
-let majorMinorOther = 4;
+let majorMinorOther = 0;
 
 let keySelect;
 let keyList = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"];
