@@ -99,7 +99,7 @@ function createMajorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
+            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
         push();
             rotate(PI/2+majorScaleRotation); translate(0.85*shortAxis, 0.1*shortAxis);
             if(majorModeIndex%12==0 ) text(majorModeList[0], 0, 0);
@@ -134,7 +134,7 @@ function createMelodicMinorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
+            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
         push();
             rotate(PI/2+melodicMinorScaleRotation); translate(0.85*shortAxis, 0.1*shortAxis);
             if(melodicMinorModeIndex%12==0 ) text(melodicMinorModeList[0], 0, 0);
@@ -169,7 +169,7 @@ function createHarmonicMinorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
+            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
         push();
             rotate(PI/2+harmonicMinorRotation); translate(0.85*shortAxis, 0.1*shortAxis);
             if(harmonicMinorModeIndex%12==0 ) text(harmonicMinorModeList[0], 0, 0);
@@ -204,7 +204,7 @@ function createHarmonicMajorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
+            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
         push();
             rotate(PI/2+harmonicMajorRotation); translate(0.85*shortAxis, 0.1*shortAxis);
             if(harmonicMajorModeIndex%12==0 ) text(harmonicMajorModeList[0], 0, 0);
@@ -239,7 +239,7 @@ function createDoubleHarmonicModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
+            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
         push();
             rotate(PI/2+doubleHarmonicScaleRotation); translate(0.85*shortAxis, 0.1*shortAxis);
             if(doubleHarmonicModeIndex%12==0 ) text(doubleHarmonicModeList[0], 0, 0);
@@ -259,7 +259,7 @@ function createOtherModeCircle(){
     textFont('Georgia');
     push();
         rotate(PI/2);
-        fill(255); textSize(Size*0.9); stroke(0); strokeWeight(1);
+        fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
         text(otherModeList[otherModeIndex], 0.85*shortAxis, 0.1*shortAxis);
     pop();
     push();

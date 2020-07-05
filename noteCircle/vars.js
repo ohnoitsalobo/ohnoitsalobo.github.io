@@ -12,12 +12,12 @@ let melodicMinorModeIndex = 0;
 let harmonicMinorModeIndex = 0;
 let harmonicMajorModeIndex = 0;
 let doubleHarmonicModeIndex = 0;
-
 let otherModeIndex = 0;
+
 let doEvery = 30;
 let shortAxis, Size, speed = 0.5;
 let pianoColors = 1;
-let majorMinorOther = 0;
+let majorMinorOther = 3;
 
 let keySelect;
 let keyList = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"];
@@ -35,57 +35,58 @@ let modeList = [
 ];
 
 let majorModeSelect;
-let majorModeList = ["Ionian\n(major)",
-"Dorian",
-"Phrygian",
-"Lydian",
-"Mixolydian",
-"Aeolian\n(natural Minor)",
-"Locrian"
+let majorModeList = [
+"I\nIonian (major)",
+"II\nDorian",
+"III\nPhrygian",
+"IV\nLydian",
+"V\nMixolydian",
+"VI - Aeolian\n(natural minor)",
+"VII\nLocrian"
 ];
 
 let melodicMinorModeSelect;
 let melodicMinorModeList = [
-"Melodic minor\n(ascending)",
-"Dorian b2\n(Phrygian #6)",
-"Lydian\naugmented",
-"Lydian dominant\n(overtone scale)",
-"Mixolydian b6",
-"Aeolian b5\n(Locrian #2)",
-"Altered scale\n(Super Locrian)"
+"I - Melodic minor\n(ascending)",
+"II - Dorian b2\n(Phrygian #6)",
+"III\nLydian augmented",
+"IV - Lydian dominant\n(overtone scale)",
+"V\nMixolydian b6",
+"VI - Aeolian b5\n(Locrian #2)",
+"VII - Altered scale\n(Super Locrian)"
 ];
 
 let harmonicMinorModeSelect;
 let harmonicMinorModeList = [
-"Harmonic minor",
-"Locrian #6",
-"Ionian #5",
-"Ukrainian Dorian",
-"Phrygian Dominant",
-"Lydian #2",
-"Altered Diminished"
+"I\nHarmonic minor",
+"II\nLocrian #6",
+"III\nIonian #5",
+"IV\nUkrainian Dorian",
+"V\nPhrygian Dominant",
+"VI\nLydian #2",
+"VII\nAltered Diminished"
 ];
 
 let harmonicMajorModeSelect;
 let harmonicMajorModeList = [
-"Harmonic major",
-"Dorian b5",
-"Phrygian b4",
-"Lydian b3",
-"Mixolydian b2",
-"Lydian\nAugmented #2",
-"Locrian bb7"
+"I\nHarmonic major",
+"II\nDorian b5",
+"III\nPhrygian b4",
+"IV\nLydian b3",
+"V\nMixolydian b2",
+"VI\nLydian augmented #2",
+"VII\nLocrian bb7"
 ];
 
 let doubleHarmonicModeSelect;
 let doubleHarmonicModeList = [
-"Double harmonic",
-"Lydian #2 #6",
-"Phrygian bb7 b4",
-"Hungarian minor",
-"Mixolydian b5 b2",
-"Ionian #5 #2",
-"Locrian bb3 bb7"
+"I\nDouble harmonic",
+"II\nLydian #2 #6",
+"III\nPhrygian bb7 b4",
+"IV\nHungarian minor",
+"V\nMixolydian b5 b2",
+"VI\nIonian #5 #2",
+"VII\nLocrian bb3 bb7"
 ];
 
 let otherModeSelect;
