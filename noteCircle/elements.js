@@ -13,7 +13,7 @@ function createNoteCircle(){
         textSize(Size*0.5); fill(0); text('ROOT', 0, -3.05*Size);
         textSize(Size); fill(255); stroke(0); strokeWeight(1);
         text(keyList[noteIndex%12], xpos, ypos);
-        textSize(Size*0.5); fill(255, 175);
+        textSize(Size*0.5); fill(255);
         text(modeList[majorMinorOther], xpos/0.62, ypos);
         fill(0, 0, 100); textSize(Size*0.65); 
         text("Cheat sheet for scales and modes", 0.8*shortAxis, -0.45*shortAxis);
