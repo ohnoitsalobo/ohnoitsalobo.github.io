@@ -21,7 +21,7 @@ function playTone(t){
     var transpose = 1;
     for(var i = 0; i < (noteIndex%12); i++)
         transpose *= 1.059463;
-    synth.triggerAttackRelease(tone[t]*transpose, "8n");
+    synth.triggerAttackRelease(tone[t]*transpose/2, "8n");
     // playedHighlight(t);
 }
 
