@@ -502,7 +502,9 @@ function keyPressed(){
     }
     // return false;
 }
+
 function mouseReleased(){
+    console.log(mouseX/shortAxis + "," + mouseY/shortAxis);
     let xpos, ypos, ypos1, offset = 0.07*shortAxis;
     xpos = 0.5*shortAxis;
     ypos = 0.11*shortAxis;
@@ -728,11 +730,17 @@ function mouseReleased(){
             changeOtherMode();
         }
     }
+    xpos = 0.5*shortAxis;
+    ypos = 0.5*shortAxis;
+    offset = 0.1*shortAxis;
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        pianoColors = !pianoColors;
+    }
     return false;
 }
 
 function mouseWheel(event){
-    console.log(mouseX/shortAxis + "," + mouseY/shortAxis);
     let xpos, ypos, offset = 0.07*shortAxis;
     xpos  = 1.15*shortAxis;
     ypos  = 0.3*shortAxis;
