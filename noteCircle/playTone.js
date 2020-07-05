@@ -24,7 +24,7 @@ function playTone(t){
 }
 
 function keyPressed(){
-    console.log(doubleHarmonicModeIndex);
+    if(majorMinorOther != 5){
     if(key == '1'){ // 0
         playTone(0);
     }
@@ -458,6 +458,7 @@ function keyPressed(){
     }
     if(key == '8'){ // 7
         playTone(12);
+    }
     }
 }
 
