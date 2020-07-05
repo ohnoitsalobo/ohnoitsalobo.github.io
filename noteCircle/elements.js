@@ -3,7 +3,7 @@ function createNoteCircle(){
     fill(fillcolor); noStroke();
     Size = 0.97*shortAxis;
     ellipse(0, 0, Size, Size);
-    Size = 0.093*shortAxis;
+    Size = 0.09*shortAxis;
     textAlign(CENTER, CENTER);
     rectMode(CENTER);
     textFont('Georgia');
@@ -15,11 +15,13 @@ function createNoteCircle(){
         text(keyList[noteIndex%12], xpos, ypos);
         textSize(Size*0.5); fill(255, 175);
         text(modeList[majorMinorOther], xpos/0.62, ypos);
-        fill(0, 0, 100); textSize(Size*0.5); 
-        text("Cheat sheet for\nscales and modes", 0.85*shortAxis, -0.4*shortAxis);
+        fill(0, 0, 100); textSize(Size*0.65); 
+        text("Cheat sheet for scales and modes", 0.8*shortAxis, -0.45*shortAxis);
+        fill(0); textSize(Size*0.3);
+        text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*shortAxis, -0.375*shortAxis);
         fill(0); textSize(Size*0.4); 
-        if(majorMinorOther!=5)  text("Use number keys 1 2 3 4 5 6 7 8 to\nplay the highlighted notes, or\ntap/click the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
-        else  text("Tap/click the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
+        if(majorMinorOther!=5)  text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
+        else  text("Click/tap the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
         // text("+Key", 0.85*xpos, 1.5*ypos);
         // text("-Key", 0.85*xpos, ypos);
         // text("Scale", 1.5*xpos, ypos);
@@ -93,7 +95,6 @@ function createNoteCircle(){
 }
 
 function createMajorModeCircle(){
-    Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
         // majorScaleRotation = lerp(majorScaleRotation, noteRotation[majorModeIndex%12], speed*0.75);
@@ -128,7 +129,6 @@ function createMajorModeCircle(){
 }
 
 function createMelodicMinorModeCircle(){
-    Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
         // melodicMinorScaleRotation = lerp(melodicMinorScaleRotation, noteRotation[melodicMinorModeIndex%12], speed*0.75);
@@ -163,7 +163,6 @@ function createMelodicMinorModeCircle(){
 }
 
 function createHarmonicMinorModeCircle(){
-    Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
         // harmonicMinorRotation = lerp(harmonicMinorRotation, noteRotation[harmonicMinorModeIndex%12], speed*0.75);
@@ -198,7 +197,6 @@ function createHarmonicMinorModeCircle(){
 }
 
 function createHarmonicMajorModeCircle(){
-    Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
         // harmonicMajorRotation = lerp(harmonicMajorRotation, noteRotation[harmonicMajorModeIndex%12], speed*0.75);
@@ -233,7 +231,6 @@ function createHarmonicMajorModeCircle(){
 }
 
 function createDoubleHarmonicModeCircle(){
-    Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
         // doubleHarmonicScaleRotation = lerp(doubleHarmonicScaleRotation, noteRotation[doubleHarmonicModeIndex%12], speed*0.75);
@@ -268,7 +265,6 @@ function createDoubleHarmonicModeCircle(){
 }
 
 function createOtherModeCircle(){
-    Size = 0.093*shortAxis;
     textFont('Georgia');
     push();
         rotate(PI/2);
