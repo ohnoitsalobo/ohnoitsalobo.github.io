@@ -14,7 +14,7 @@ function draw(){
     if(majorModeIndex < 0) majorModeIndex += 12;
     if(melodicMinorModeIndex < 0) melodicMinorModeIndex += 12;
     
-    background(fillcolor, 200);
+    background(fillcolor*0.9, 200);
     translate(shortAxis/2, shortAxis/2);
     rotate(-PI/2);
     createNoteCircle();
