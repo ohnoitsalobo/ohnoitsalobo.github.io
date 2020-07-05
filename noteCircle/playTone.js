@@ -25,10 +25,10 @@ function playTone(t){
 
 function keyPressed(){
     console.log(doubleHarmonicModeIndex);
-    if(key == 'q' || key == 'Q'){ // 0
+    if(key == '1'){ // 0
         playTone(0);
     }
-    if(key == 'w' || key == 'W'){ // 1
+    if(key == '2'){ // 1
         if(majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 2 ||
@@ -100,7 +100,7 @@ function keyPressed(){
                     playTone(2);
         }
     }
-    if(key == 'e' || key == 'E'){ // 2
+    if(key == '3'){ // 2
         if(majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 1 ||
@@ -165,7 +165,7 @@ function keyPressed(){
                     playTone(3);
         }
     }
-    if(key == 'r' || key == 'R'){ // 3
+    if(key == '4'){ // 3
         if(majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 2 ||
@@ -240,7 +240,7 @@ function keyPressed(){
                     playTone(6);
         }
     }
-    if(key == 't' || key == 'T'){ // 4
+    if(key == '5'){ // 4
         if(majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 2 ||
@@ -319,7 +319,7 @@ function keyPressed(){
                     playTone(8);
         }
     }
-    if(key == 'y' || key == 'Y'){ // 5
+    if(key == '6'){ // 5
         if(majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 2 ||
@@ -384,7 +384,7 @@ function keyPressed(){
                     playTone(9);
         }
     }
-    if(key == 'u' || key == 'U'){ // 6
+    if(key == '7'){ // 6
         if(majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 1 ||
@@ -456,7 +456,7 @@ function keyPressed(){
                     playTone(10);
         }
     }
-    if(key == 'i' || key == 'I'){ // 7
+    if(key == '8'){ // 7
         playTone(12);
     }
 }

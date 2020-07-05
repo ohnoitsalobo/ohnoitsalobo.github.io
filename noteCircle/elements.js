@@ -14,7 +14,9 @@
         text(keyList[noteIndex%12], xpos, ypos);
         textSize(Size*0.5); fill(255, 175);
         text(modeList[majorMinorOther], xpos/0.62, ypos);
-        textSize(Size*0.4); text("Tap the highlighted notes\nin sequence to hear the scale", 0.85*shortAxis, 0.4*shortAxis);
+        textSize(Size*0.4); 
+        if(majorMinorOther!=5)  text("Use number keys 1 2 3 4 5 6 7 8 to\nplay the highlighted notes, or\ntap/click the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
+        else  text("Tap/click the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
         stroke(255, 200); strokeWeight(5);
         line(xpos, ypos-1.2*Size, xpos+30, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-30, ypos-Size);
