@@ -1,6 +1,6 @@
 var synth = new Tone.Synth({
   oscillator: {
-    type: 'sine',
+    type: 'triangle',
     // modulationType: 'sawtooth',
     // modulationIndex: 3,
     // harmonicity: 3.4
