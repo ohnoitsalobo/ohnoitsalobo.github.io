@@ -540,7 +540,7 @@ function createMenus(){
     for(let i = 0; i < keyList.length; i++){
         keySelect.option(keyList[i]);
     }
-    keySelect.selected(keyList[noteIndex%12]);
+    keySelect.selected(keyList[0]);
     keySelect.changed(changeKey);
     keySelect.mouseWheel(changeKeyMouse);
 
@@ -549,13 +549,7 @@ function createMenus(){
     for(let i = 0; i < majorModeList.length; i++){
         majorModeSelect.option(majorModeList[i]);
     }
-    if(majorModeIndex%12==0 ) majorModeSelect.selected(majorModeList[0]);
-    if(majorModeIndex%12==2 ) majorModeSelect.selected(majorModeList[1]);
-    if(majorModeIndex%12==4 ) majorModeSelect.selected(majorModeList[2]);
-    if(majorModeIndex%12==5 ) majorModeSelect.selected(majorModeList[3]);
-    if(majorModeIndex%12==7 ) majorModeSelect.selected(majorModeList[4]);
-    if(majorModeIndex%12==9 ) majorModeSelect.selected(majorModeList[5]);
-    if(majorModeIndex%12==11) majorModeSelect.selected(majorModeList[6]);
+    majorModeSelect.selected(majorModeList[0]);
     majorModeSelect.changed(changeMajorMode);
     majorModeSelect.mouseWheel(changeMajorModeMouse);
 
@@ -564,13 +558,7 @@ function createMenus(){
     for(let i = 0; i < melodicMinorModeList.length; i++){
         melodicMinorModeSelect.option(melodicMinorModeList[i]);
     }
-    if(melodicMinorModeIndex%12==0 ) melodicMinorModeSelect.selected(melodicMinorModeList[0]);
-    if(melodicMinorModeIndex%12==2 ) melodicMinorModeSelect.selected(melodicMinorModeList[1]);
-    if(melodicMinorModeIndex%12==3 ) melodicMinorModeSelect.selected(melodicMinorModeList[2]);
-    if(melodicMinorModeIndex%12==5 ) melodicMinorModeSelect.selected(melodicMinorModeList[3]);
-    if(melodicMinorModeIndex%12==7 ) melodicMinorModeSelect.selected(melodicMinorModeList[4]);
-    if(melodicMinorModeIndex%12==9 ) melodicMinorModeSelect.selected(melodicMinorModeList[5]);
-    if(melodicMinorModeIndex%12==11) melodicMinorModeSelect.selected(melodicMinorModeList[6]);
+    melodicMinorModeSelect.selected(melodicMinorModeList[0]);
     melodicMinorModeSelect.changed(changeMelodicMinorMode);
     melodicMinorModeSelect.mouseWheel(changeMelodicMinorModeMouse);
 
@@ -579,13 +567,7 @@ function createMenus(){
     for(let i = 0; i < harmonicMinorModeList.length; i++){
         harmonicMinorModeSelect.option(harmonicMinorModeList[i]);
     }
-    if(harmonicMinorModeIndex%12==0 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[0]);
-    if(harmonicMinorModeIndex%12==2 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[1]);
-    if(harmonicMinorModeIndex%12==3 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[2]);
-    if(harmonicMinorModeIndex%12==5 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[3]);
-    if(harmonicMinorModeIndex%12==7 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[4]);
-    if(harmonicMinorModeIndex%12==8 ) harmonicMinorModeSelect.selected(harmonicMinorModeList[5]);
-    if(harmonicMinorModeIndex%12==11) harmonicMinorModeSelect.selected(harmonicMinorModeList[6]);
+    harmonicMinorModeSelect.selected(harmonicMinorModeList[0]);
     harmonicMinorModeSelect.changed(changeHarmonicMinorMode);
     harmonicMinorModeSelect.mouseWheel(changeHarmonicMinorModeMouse);
 
@@ -594,13 +576,7 @@ function createMenus(){
     for(let i = 0; i < harmonicMajorModeList.length; i++){
         harmonicMajorModeSelect.option(harmonicMajorModeList[i]);
     }
-    if(harmonicMajorModeIndex%12==0 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[0]);
-    if(harmonicMajorModeIndex%12==2 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[1]);
-    if(harmonicMajorModeIndex%12==4 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[2]);
-    if(harmonicMajorModeIndex%12==5 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[3]);
-    if(harmonicMajorModeIndex%12==7 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[4]);
-    if(harmonicMajorModeIndex%12==8 ) harmonicMajorModeSelect.selected(harmonicMajorModeList[5]);
-    if(harmonicMajorModeIndex%12==11) harmonicMajorModeSelect.selected(harmonicMajorModeList[6]);
+    harmonicMajorModeSelect.selected(harmonicMajorModeList[0]);
     harmonicMajorModeSelect.changed(changeHarmonicMajorMode);
     harmonicMajorModeSelect.mouseWheel(changeHarmonicMajorModeMouse);
 
@@ -609,13 +585,7 @@ function createMenus(){
     for(let i = 0; i < doubleHarmonicModeList.length; i++){
         doubleHarmonicModeSelect.option(doubleHarmonicModeList[i]);
     }
-    if(doubleHarmonicModeIndex%12==0 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[0]);
-    if(doubleHarmonicModeIndex%12==1 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[1]);
-    if(doubleHarmonicModeIndex%12==4 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[2]);
-    if(doubleHarmonicModeIndex%12==5 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[3]);
-    if(doubleHarmonicModeIndex%12==7 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[4]);
-    if(doubleHarmonicModeIndex%12==8 ) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[5]);
-    if(doubleHarmonicModeIndex%12==11) doubleHarmonicModeSelect.selected(doubleHarmonicModeList[6]);
+    doubleHarmonicModeSelect.selected(doubleHarmonicModeList[0]);
     doubleHarmonicModeSelect.changed(changeDoubleHarmonicMode);
     doubleHarmonicModeSelect.mouseWheel(changeDoubleHarmonicModeMouse);
 
@@ -624,7 +594,7 @@ function createMenus(){
     for(let i = 0; i < otherModeList.length; i++){
         otherModeSelect.option(otherModeList[i]);
     }
-    otherModeSelect.selected(otherModeList[otherModeIndex]);
+    otherModeSelect.selected(otherModeList[0]);
     otherModeSelect.changed(changeOtherMode);
     otherModeSelect.mouseWheel(changeOtherModeMouse);
     
@@ -633,7 +603,7 @@ function createMenus(){
     for(let i = 0; i < modeList.length; i++){
         modeSelect.option(modeList[i]);
     }
-    modeSelect.selected(modeList[majorMinorOther]);
+    modeSelect.selected(modeList[0]);
     modeSelect.changed(changeMode);
     modeSelect.mouseWheel(changeModeMouse);
     
@@ -642,26 +612,29 @@ function createMenus(){
     for(let i = 0; i < pianoMode.length; i++){
         pianoSelect.option(pianoMode[i]);
     }
-    pianoSelect.selected(pianoMode[(pianoColors+1)%2]);
+    pianoSelect.selected(pianoMode[0]);
     pianoSelect.changed(changePiano);
     pianoSelect.mouseWheel(changePianoMouse);
     
 }
 
 function changeMode(){
+    keySelect.hide();
+    modeSelect.hide();
+    pianoSelect.hide();
     majorModeSelect.hide();
     melodicMinorModeSelect.hide();
     harmonicMinorModeSelect.hide();
     harmonicMajorModeSelect.hide();
     doubleHarmonicModeSelect.hide();
     otherModeSelect.hide();
-    var choice = modeSelect.value();
-    if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
-    if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
-    if(choice == modeList[2]) { majorMinorOther = 2; harmonicMinorModeSelect.show(); }
-    if(choice == modeList[3]) { majorMinorOther = 3; harmonicMajorModeSelect.show(); }
-    if(choice == modeList[4]) { majorMinorOther = 4; doubleHarmonicModeSelect.show(); }
-    if(choice == modeList[5]) { majorMinorOther = 5; otherModeSelect.show(); }
+    // var choice = modeSelect.value();
+    // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
+    // if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
+    // if(choice == modeList[2]) { majorMinorOther = 2; harmonicMinorModeSelect.show(); }
+    // if(choice == modeList[3]) { majorMinorOther = 3; harmonicMajorModeSelect.show(); }
+    // if(choice == modeList[4]) { majorMinorOther = 4; doubleHarmonicModeSelect.show(); }
+    // if(choice == modeList[5]) { majorMinorOther = 5; otherModeSelect.show(); }
     }
 function changeModeMouse(event){
     var choice = modeSelect.value();
