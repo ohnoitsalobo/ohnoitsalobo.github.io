@@ -1,15 +1,15 @@
 var synth = new Tone.Synth({
   oscillator: {
     type: 'triangle',
-    // modulationType: 'sawtooth',
+    // modulationType: 'triangle',
     // modulationIndex: 3,
     // harmonicity: 3.4
   },
   envelope: {
-    attack: 0.01,
-    decay: 0.1,
+    attack: 0.05,
+    decay: 0.4,
     sustain: 0.1,
-    release: 0.1
+    release: 0.3
   }
 }).toMaster()
 

@@ -34,7 +34,7 @@ function createNoteCircle(){
         // text("+Key", 0.85*xpos, 1.5*ypos);
         // text("-Key", 0.85*xpos, ypos);
         // text("Scale", 1.5*xpos, ypos);
-        stroke(255, 255); strokeWeight(5);
+        stroke(255, 255); strokeWeight(5*scale);
         line(xpos, ypos-1.2*Size, xpos+30, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-30, ypos-Size);
         line(xpos, ypos+1.2*Size, xpos+30, ypos+Size);
