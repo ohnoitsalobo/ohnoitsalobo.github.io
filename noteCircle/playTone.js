@@ -1,6 +1,7 @@
 var synth = new Tone.Synth({
   oscillator: {
     type: 'triangle',
+    // volume: -25
     // modulationType: 'triangle',
     // modulationIndex: 3,
     // harmonicity: 3.4
@@ -765,6 +766,7 @@ function doubleClicked(){
         harmonicMinorModeSelect.selected(harmonicMinorModeList[0]);
         harmonicMajorModeSelect.selected(harmonicMajorModeList[0]);
         doubleHarmonicModeSelect.selected(doubleHarmonicModeList[0]);
+        otherModeSelect.selected(otherModeList[0]);
     }
     
     // return false;

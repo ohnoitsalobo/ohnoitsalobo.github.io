@@ -771,7 +771,15 @@ function changeDoubleHarmonicModeMouse(event){
 function changeOtherMode(){
     var choice = otherModeSelect.value();
         for(let i = 0; i < otherModeList.length; i++){
-            if(choice == otherModeList[i]) otherModeIndex = i;
+            // if( i != 2 ||
+                // i != 7 ||
+                // i !=11 ||
+                // i !=12 ||
+                // i !=27 ){
+                    // i++;
+                // }
+                if(choice == otherModeList[i]) otherModeIndex = i;
+
         }
 }
 function changeOtherModeMouse(event){
