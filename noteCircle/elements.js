@@ -1,27 +1,36 @@
 let fillcolor = 100;
+
+function hideRect(){
+    fill(fillcolor); noStroke();
+    rect(0, Size*1.6, 0.7*Size, 1.5*Size);
+}
+
 function createNoteCircle(){
     fill(fillcolor); noStroke();
-    Size = 0.97*shortAxis;
+    Size = 0.97*(shortAxis*scale);
     ellipse(0, 0, Size, Size);
-    Size = 0.09*shortAxis;
+    Size = 0.088*(shortAxis*scale);
     textAlign(CENTER, CENTER);
     rectMode(CENTER);
     textFont('Georgia');
-    let xpos = 0.65*shortAxis, ypos = -0.2*shortAxis;
+    let xpos = 0.65*(shortAxis*scale), ypos = -0.2*(shortAxis*scale);
     push();
         rotate(PI/2);
-        textSize(Size*0.5); fill(0); text('ROOT', 0, -3.05*Size);
-        textSize(Size); fill(255); stroke(0); strokeWeight(1);
-        text(keyList[noteIndex%12], xpos, ypos);
+        textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
+        textSize(Size*0.6); fill(255); noStroke(); //stroke(0); strokeWeight(1);
+        text("Key:\n" + keyList[noteIndex%12], xpos, ypos);
         textSize(Size*0.5); fill(255);
-        text(modeList[majorMinorOther], xpos/0.62, ypos);
+        if(majorMinorOther != 5)
+            text("Base pattern:\n" + modeList[majorMinorOther], xpos/0.62, ypos);
+        else
+            text(modeList[majorMinorOther], xpos/0.62, ypos);
         fill(0, 0, 100); textSize(Size*0.65); 
-        text("Cheat sheet for scales and modes", 0.8*shortAxis, -0.45*shortAxis);
+        text("Cheat sheet for scales and modes", 0.8*(shortAxis*scale), -0.45*(shortAxis*scale));
         fill(0); textSize(Size*0.3);
-        text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*shortAxis, -0.375*shortAxis);
+        text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*(shortAxis*scale), -0.375*(shortAxis*scale));
         fill(0); textSize(Size*0.4); 
-        if(majorMinorOther!=5)  text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
-        else  text("Click/tap the highlighted notes\nin sequence to hear the scale.", 0.85*shortAxis, 0.4*shortAxis);
+        if(majorMinorOther!=5)  text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
+        else  text("Click/tap the highlighted notes\nin sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
         // text("+Key", 0.85*xpos, 1.5*ypos);
         // text("-Key", 0.85*xpos, ypos);
         // text("Scale", 1.5*xpos, ypos);
@@ -34,10 +43,10 @@ function createNoteCircle(){
         line(xpos/0.62, ypos-1.2*Size, xpos/0.62-30, ypos-Size);
         line(xpos/0.62, ypos+1.2*Size, xpos/0.62+30, ypos+Size);
         line(xpos/0.62, ypos+1.2*Size, xpos/0.62-30, ypos+Size);
-        line(0.85*shortAxis, 0.1*shortAxis-1.7*Size, 0.85*shortAxis+30, 0.1*shortAxis-1.5*Size);
-        line(0.85*shortAxis, 0.1*shortAxis-1.7*Size, 0.85*shortAxis-30, 0.1*shortAxis-1.5*Size);
-        line(0.85*shortAxis, 0.1*shortAxis+1.7*Size, 0.85*shortAxis+30, 0.1*shortAxis+1.5*Size);
-        line(0.85*shortAxis, 0.1*shortAxis+1.7*Size, 0.85*shortAxis-30, 0.1*shortAxis+1.5*Size);
+        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)-1.7*Size, 0.85*(shortAxis*scale)+30, 0.1*(shortAxis*scale)-1.5*Size);
+        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)-1.7*Size, 0.85*(shortAxis*scale)-30, 0.1*(shortAxis*scale)-1.5*Size);
+        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)+1.7*Size, 0.85*(shortAxis*scale)+30, 0.1*(shortAxis*scale)+1.5*Size);
+        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)+1.7*Size, 0.85*(shortAxis*scale)-30, 0.1*(shortAxis*scale)+1.5*Size);
     pop();
     push();
         rotate(-currentNoteRotation);
@@ -45,7 +54,7 @@ function createNoteCircle(){
         for(var i = 0; i < noteRotation.length; i++){
         push();
             rotate(noteRotation[i]);
-            translate(0, -4.1*Size);
+            translate(0, -4.2*Size);
             rotate(-noteRotation[i]+currentNoteRotation+PI/2);
             textSize(Size); fill(255);
             if(i==0) { text('A', 0, 0); } 
@@ -65,9 +74,9 @@ function createNoteCircle(){
             if(i==11){ text('G#', -xpos, -ypos); text('Ab', xpos, ypos); }
 
             if(pianoColors){
-            rotate(noteRotation[i]-currentNoteRotation-PI/2);
-            translate(0, 1.9*Size);
-            fill(255); noStroke();
+                rotate(noteRotation[i]-currentNoteRotation-PI/2);
+                translate(0, 1.9*Size);
+                fill(255); noStroke();
                 if(i==0) { rect(0, 0, 0.5*Size, 1.3*Size); }
                 if(i==2) { rect(0, 0, 0.5*Size, 1.3*Size); }
                 if(i==3) { rect(0, 0, 0.5*Size, 1.3*Size); }
@@ -97,7 +106,6 @@ function createNoteCircle(){
 function createMajorModeCircle(){
     textFont('Georgia');
     push();
-        // majorScaleRotation = lerp(majorScaleRotation, noteRotation[majorModeIndex%12], speed*0.75);
         rotate(-majorScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -108,14 +116,13 @@ function createMajorModeCircle(){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==1 || i==4 || i==6 || i==9 || i==11){
-                fill(fillcolor); noStroke();
-                rect(0, Size*1.7, 0.6*Size, 1.5*Size);
+                hideRect();
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
+            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
         push();
-            rotate(PI/2+majorScaleRotation); translate(0.85*shortAxis, 0.1*shortAxis);
+            rotate(PI/2+majorScaleRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(majorModeIndex%12==0 ) text(majorModeList[0], 0, 0);
             if(majorModeIndex%12==2 ) text(majorModeList[1], 0, 0);
             if(majorModeIndex%12==4 ) text(majorModeList[2], 0, 0);
@@ -131,7 +138,6 @@ function createMajorModeCircle(){
 function createMelodicMinorModeCircle(){
     textFont('Georgia');
     push();
-        // melodicMinorScaleRotation = lerp(melodicMinorScaleRotation, noteRotation[melodicMinorModeIndex%12], speed*0.75);
         rotate(-melodicMinorScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -142,14 +148,13 @@ function createMelodicMinorModeCircle(){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==1 || i==4 || i==7 || i==9 || i==11){
-                fill(fillcolor); noStroke();
-                rect(0, Size*1.7, 0.6*Size, 1.5*Size);
+                hideRect();
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
+            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
         push();
-            rotate(PI/2+melodicMinorScaleRotation); translate(0.85*shortAxis, 0.1*shortAxis);
+            rotate(PI/2+melodicMinorScaleRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(melodicMinorModeIndex%12==0 ) text(melodicMinorModeList[0], 0, 0);
             if(melodicMinorModeIndex%12==2 ) text(melodicMinorModeList[1], 0, 0);
             if(melodicMinorModeIndex%12==3 ) text(melodicMinorModeList[2], 0, 0);
@@ -165,7 +170,6 @@ function createMelodicMinorModeCircle(){
 function createHarmonicMinorModeCircle(){
     textFont('Georgia');
     push();
-        // harmonicMinorRotation = lerp(harmonicMinorRotation, noteRotation[harmonicMinorModeIndex%12], speed*0.75);
         rotate(-harmonicMinorRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -176,14 +180,13 @@ function createHarmonicMinorModeCircle(){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==0 || i==1 || i==4 || i==7 || i==9){
-                fill(fillcolor); noStroke();
-                rect(0, Size*1.7, 0.6*Size, 1.5*Size);
+                hideRect();
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
+            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
         push();
-            rotate(PI/2+harmonicMinorRotation); translate(0.85*shortAxis, 0.1*shortAxis);
+            rotate(PI/2+harmonicMinorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(harmonicMinorModeIndex%12==0 ) text(harmonicMinorModeList[0], 0, 0);
             if(harmonicMinorModeIndex%12==2 ) text(harmonicMinorModeList[1], 0, 0);
             if(harmonicMinorModeIndex%12==3 ) text(harmonicMinorModeList[2], 0, 0);
@@ -199,7 +202,6 @@ function createHarmonicMinorModeCircle(){
 function createHarmonicMajorModeCircle(){
     textFont('Georgia');
     push();
-        // harmonicMajorRotation = lerp(harmonicMajorRotation, noteRotation[harmonicMajorModeIndex%12], speed*0.75);
         rotate(-harmonicMajorRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -210,14 +212,13 @@ function createHarmonicMajorModeCircle(){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==0 || i==1 || i==4 || i==6 || i==9){
-                fill(fillcolor); noStroke();
-                rect(0, Size*1.7, 0.6*Size, 1.5*Size);
+                hideRect();
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
+            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
         push();
-            rotate(PI/2+harmonicMajorRotation); translate(0.85*shortAxis, 0.1*shortAxis);
+            rotate(PI/2+harmonicMajorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(harmonicMajorModeIndex%12==0 ) text(harmonicMajorModeList[0], 0, 0);
             if(harmonicMajorModeIndex%12==2 ) text(harmonicMajorModeList[1], 0, 0);
             if(harmonicMajorModeIndex%12==4 ) text(harmonicMajorModeList[2], 0, 0);
@@ -233,7 +234,6 @@ function createHarmonicMajorModeCircle(){
 function createDoubleHarmonicModeCircle(){
     textFont('Georgia');
     push();
-        // doubleHarmonicScaleRotation = lerp(doubleHarmonicScaleRotation, noteRotation[doubleHarmonicModeIndex%12], speed*0.75);
         rotate(-doubleHarmonicScaleRotation);
         for(var i = 0; i < noteRotation.length; i++){
         push();
@@ -244,14 +244,13 @@ function createDoubleHarmonicModeCircle(){
                 fill(255, 40); stroke(0); strokeWeight(1.5);
             }
             if(i==0 || i==1 || i==5 || i==6 || i==9){
-                fill(fillcolor); noStroke();
-                rect(0, Size*1.7, 0.6*Size, 1.5*Size);
+                hideRect();
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
+            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
         push();
-            rotate(PI/2+doubleHarmonicScaleRotation); translate(0.85*shortAxis, 0.1*shortAxis);
+            rotate(PI/2+doubleHarmonicScaleRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(doubleHarmonicModeIndex%12==0 ) text(doubleHarmonicModeList[0], 0, 0);
             if(doubleHarmonicModeIndex%12==1 ) text(doubleHarmonicModeList[1], 0, 0);
             if(doubleHarmonicModeIndex%12==4 ) text(doubleHarmonicModeList[2], 0, 0);
@@ -268,8 +267,8 @@ function createOtherModeCircle(){
     textFont('Georgia');
     push();
         rotate(PI/2);
-        fill(255); textSize(Size*0.75); stroke(0); strokeWeight(1);
-        text(otherModeList[otherModeIndex], 0.85*shortAxis, 0.1*shortAxis);
+        fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
+        text(otherModeList[otherModeIndex], 0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
     pop();
     push();
         rotate(PI/2);
@@ -295,10 +294,8 @@ function createOtherModeCircle(){
                    otherModeIndex == 26 ){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             if(i==2){
                 if(otherModeIndex ==  0 || 
@@ -319,10 +316,8 @@ function createOtherModeCircle(){
                    otherModeIndex == 28){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             if(i==3){
                 if(otherModeIndex ==  3 || 
@@ -340,10 +335,8 @@ function createOtherModeCircle(){
                    otherModeIndex == 27){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             if(i==4){
                 if(otherModeIndex ==  0 || 
@@ -364,10 +357,8 @@ function createOtherModeCircle(){
                    otherModeIndex == 15 ){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             if(i==5){
                 if(otherModeIndex ==  6 || 
@@ -389,10 +380,8 @@ function createOtherModeCircle(){
                    otherModeIndex == 24 ){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             if(i==6){
                 if(otherModeIndex ==  0 || 
@@ -412,10 +401,8 @@ function createOtherModeCircle(){
                    otherModeIndex == 23 ){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             if(i==7){
                 if(otherModeIndex ==  3 || 
@@ -441,10 +428,8 @@ function createOtherModeCircle(){
                    otherModeIndex == 15 ){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             if(i==8){
                 if(otherModeIndex ==  3 || 
@@ -466,10 +451,8 @@ function createOtherModeCircle(){
                    otherModeIndex == 24 ){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             if(i==9){
                 if(otherModeIndex == 21 || 
@@ -482,10 +465,8 @@ function createOtherModeCircle(){
                    otherModeIndex == 20 ){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             if(i==10){
                 if(otherModeIndex == 14 || 
@@ -505,10 +486,8 @@ function createOtherModeCircle(){
                    otherModeIndex == 27 ){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             if(i==11){
                 if(otherModeIndex ==  3 || 
@@ -525,23 +504,17 @@ function createOtherModeCircle(){
                    otherModeIndex == 20 ){
                     fill(255, 40); stroke(0); strokeWeight(1.5);
                 }
-                else{
-                    fill(fillcolor); noStroke();
-                    rect(0, Size*1.7, 0.6*Size, 1.5*Size);
-                }
+                else
+                    hideRect();
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
-        pop();
-            fill(255); textSize(Size*0.9);
-        push();
-            rotate(PI/2+majorScaleRotation); translate(0.85*shortAxis, 0);
         pop();
         }
     pop();
 }
 
 function createMenus(){
-    let xpos = shortAxis;
+    let xpos = (shortAxis*scale);
     let ypos = 30; 
     
     keySelect = createSelect();

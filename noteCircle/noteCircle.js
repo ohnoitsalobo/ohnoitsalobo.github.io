@@ -1,7 +1,7 @@
 
 function setup(){
-    shortAxis = 0.95*((windowWidth > windowHeight) ? windowHeight : windowWidth);
-    var cnv = createCanvas(1.75*shortAxis, shortAxis);
+    shortAxis = ((windowWidth > windowHeight) ? windowHeight : windowWidth);
+    var cnv = createCanvas(1.75*(shortAxis*scale), (shortAxis*scale));
     cnv.parent('sketch');
     frameRate(30);
     createMenus();
@@ -15,7 +15,7 @@ function draw(){
     if(melodicMinorModeIndex < 0) melodicMinorModeIndex += 12;
     
     background(fillcolor*0.9, 200);
-    translate(shortAxis/2, shortAxis/2);
+    translate((shortAxis*scale)/2, (shortAxis*scale)/2);
     rotate(-PI/2);
     createNoteCircle();
     if(majorMinorOther == 0)

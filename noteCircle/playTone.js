@@ -22,43 +22,43 @@ function playTone(t){
         transpose *= 1.059463;
     synth.triggerAttackRelease(tone[t]*transpose/2, "8n");
     // fill(0, 20); stroke(0); strokeWeight(2);
-    // let xpos, ypos, offset = 0.07*shortAxis;
+    // let xpos, ypos, offset = 0.07*(shortAxis*scale);
     // if(t == 0 || t == 12){
-        // xpos = 0.5*shortAxis;
-        // ypos = 0.11*shortAxis;
+        // xpos = 0.5*(shortAxis*scale);
+        // ypos = 0.11*(shortAxis*scale);
     // }if(t == 1){
-        // xpos = 0.69*shortAxis;
-        // ypos = 0.17*shortAxis;
+        // xpos = 0.69*(shortAxis*scale);
+        // ypos = 0.17*(shortAxis*scale);
     // }if(t == 2){
-        // xpos = 0.83*shortAxis;
-        // ypos = 0.31*shortAxis;
+        // xpos = 0.83*(shortAxis*scale);
+        // ypos = 0.31*(shortAxis*scale);
     // }if(t == 3){
-        // xpos = 0.88*shortAxis;
-        // ypos = 0.5*shortAxis;
+        // xpos = 0.88*(shortAxis*scale);
+        // ypos = 0.5*(shortAxis*scale);
     // }if(t == 4){
-        // xpos = 0.83*shortAxis;
-        // ypos = 0.69*shortAxis;
+        // xpos = 0.83*(shortAxis*scale);
+        // ypos = 0.69*(shortAxis*scale);
     // }if(t == 5){
-        // xpos = 0.69*shortAxis;
-        // ypos = 0.83*shortAxis;
+        // xpos = 0.69*(shortAxis*scale);
+        // ypos = 0.83*(shortAxis*scale);
     // }if(t == 6){
-        // xpos = 0.5*shortAxis;
-        // ypos = 0.88*shortAxis;
+        // xpos = 0.5*(shortAxis*scale);
+        // ypos = 0.88*(shortAxis*scale);
     // }if(t == 7){
-        // xpos = 0.31*shortAxis;
-        // ypos = 0.83*shortAxis;
+        // xpos = 0.31*(shortAxis*scale);
+        // ypos = 0.83*(shortAxis*scale);
     // }if(t == 8){
-        // xpos = 0.17*shortAxis;
-        // ypos = 0.69*shortAxis;
+        // xpos = 0.17*(shortAxis*scale);
+        // ypos = 0.69*(shortAxis*scale);
     // }if(t == 9){
-        // xpos = 0.11*shortAxis;
-        // ypos = 0.5*shortAxis;
+        // xpos = 0.11*(shortAxis*scale);
+        // ypos = 0.5*(shortAxis*scale);
     // }if(t == 10){
-        // xpos = 0.17*shortAxis;
-        // ypos = 0.31*shortAxis;
+        // xpos = 0.17*(shortAxis*scale);
+        // ypos = 0.31*(shortAxis*scale);
     // }if(t == 11){
-        // xpos = 0.31*shortAxis;
-        // ypos = 0.17*shortAxis;
+        // xpos = 0.31*(shortAxis*scale);
+        // ypos = 0.17*(shortAxis*scale);
     // }
     // ellipse(xpos-1.5*offset, ypos-1.5*offset, 2*offset, 2*offset);
 }
@@ -504,10 +504,10 @@ function keyPressed(){
 }
 
 function mouseReleased(){
-    console.log(mouseX/shortAxis + "," + mouseY/shortAxis);
-    let xpos, ypos, ypos1, offset = 0.07*shortAxis;
-    xpos = 0.5*shortAxis;
-    ypos = 0.11*shortAxis;
+    // console.log(mouseX/(shortAxis*scale) + "," + mouseY/(shortAxis*scale));
+    let xpos, ypos, ypos1, offset = 0.07*(shortAxis*scale);
+    xpos = 0.5*(shortAxis*scale);
+    ypos = 0.11*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos        &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(12);
@@ -516,76 +516,76 @@ function mouseReleased(){
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(0);
     }
-    xpos = 0.69*shortAxis;
-    ypos = 0.17*shortAxis;
+    xpos = 0.69*(shortAxis*scale);
+    ypos = 0.17*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(1);
     }
-    xpos = 0.83*shortAxis;
-    ypos = 0.31*shortAxis;
+    xpos = 0.83*(shortAxis*scale);
+    ypos = 0.31*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(2);
     }
-    xpos = 0.88*shortAxis;
-    ypos = 0.5*shortAxis;
+    xpos = 0.88*(shortAxis*scale);
+    ypos = 0.5*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(3);
     }
-    xpos = 0.83*shortAxis;
-    ypos = 0.69*shortAxis;
+    xpos = 0.83*(shortAxis*scale);
+    ypos = 0.69*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(4);
     }
-    xpos = 0.69*shortAxis;
-    ypos = 0.83*shortAxis;
+    xpos = 0.69*(shortAxis*scale);
+    ypos = 0.83*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(5);
     }
-    xpos = 0.5*shortAxis;
-    ypos = 0.88*shortAxis;
+    xpos = 0.5*(shortAxis*scale);
+    ypos = 0.88*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(6);
     }
-    xpos = 0.31*shortAxis;
-    ypos = 0.83*shortAxis;
+    xpos = 0.31*(shortAxis*scale);
+    ypos = 0.83*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(7);
     }
-    xpos = 0.17*shortAxis;
-    ypos = 0.69*shortAxis;
+    xpos = 0.17*(shortAxis*scale);
+    ypos = 0.69*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(8);
     }
-    xpos = 0.11*shortAxis;
-    ypos = 0.5*shortAxis;
+    xpos = 0.11*(shortAxis*scale);
+    ypos = 0.5*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(9);
     }
-    xpos = 0.17*shortAxis;
-    ypos = 0.31*shortAxis;
+    xpos = 0.17*(shortAxis*scale);
+    ypos = 0.31*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(10);
     }
-    xpos = 0.31*shortAxis;
-    ypos = 0.17*shortAxis;
+    xpos = 0.31*(shortAxis*scale);
+    ypos = 0.17*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(11);
     }
     ////// CHANGE KEY
-    xpos  = 1.15*shortAxis;
-    ypos  = 0.19*shortAxis;
-    ypos1 = 0.41*shortAxis;
+    xpos  = 1.15*(shortAxis*scale);
+    ypos  = 0.19*(shortAxis*scale);
+    ypos1 = 0.41*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         noteIndex = (noteIndex + 1)%12;
@@ -597,9 +597,9 @@ function mouseReleased(){
         keySelect.selected(keyList[noteIndex]);
     }
     ////// CHANGE PATTERN
-    xpos  = 1.55*shortAxis;
-    ypos  = 0.19*shortAxis; 
-    ypos1 = 0.41*shortAxis;
+    xpos  = 1.55*(shortAxis*scale);
+    ypos  = 0.19*(shortAxis*scale); 
+    ypos1 = 0.41*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         majorMinorOther = (majorMinorOther + 5)%6;
@@ -613,9 +613,9 @@ function mouseReleased(){
         changeMode();
     }
     
-    xpos  = 1.35*shortAxis;
-    ypos  = 0.44*shortAxis; 
-    ypos1 = 0.76*shortAxis;
+    xpos  = 1.35*(shortAxis*scale);
+    ypos  = 0.44*(shortAxis*scale); 
+    ypos1 = 0.76*(shortAxis*scale);
     ////// CHANGE MAJOR MODE
     if(majorMinorOther == 0){
         var choice = majorModeSelect.value();
@@ -730,9 +730,9 @@ function mouseReleased(){
             changeOtherMode();
         }
     }
-    xpos = 0.5*shortAxis;
-    ypos = 0.5*shortAxis;
-    offset = 0.1*shortAxis;
+    xpos = 0.5*(shortAxis*scale);
+    ypos = 0.5*(shortAxis*scale);
+    offset = 0.1*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         pianoColors = !pianoColors;
@@ -741,23 +741,23 @@ function mouseReleased(){
 }
 
 function mouseWheel(event){
-    let xpos, ypos, offset = 0.07*shortAxis;
-    xpos  = 1.15*shortAxis;
-    ypos  = 0.3*shortAxis;
+    let xpos, ypos, offset = 0.07*(shortAxis*scale);
+    xpos  = 1.15*(shortAxis*scale);
+    ypos  = 0.3*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         changeKeyMouse(event);
     }
    
-    xpos  = 1.55*shortAxis;
-    ypos  = 0.3*shortAxis;
+    xpos  = 1.55*(shortAxis*scale);
+    ypos  = 0.3*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         changeModeMouse(event);
     }
     
-    xpos  = 1.35*shortAxis;
-    ypos  = 0.6*shortAxis;
+    xpos  = 1.35*(shortAxis*scale);
+    ypos  = 0.6*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         if(majorMinorOther == 0) changeMajorModeMouse(event);
