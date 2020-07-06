@@ -637,15 +637,20 @@ function changeModeMouse(event){
     changeMode();
 }
 
+let modeSelected = 0;
 function changeMajorMode(){
     var choice = majorModeSelect.value();
-    if(choice == majorModeList[0]) { majorModeIndex = 0 ; }
-    if(choice == majorModeList[1]) { majorModeIndex = 2 ; }
-    if(choice == majorModeList[2]) { majorModeIndex = 4 ; }
-    if(choice == majorModeList[3]) { majorModeIndex = 5 ; }
-    if(choice == majorModeList[4]) { majorModeIndex = 7 ; }
-    if(choice == majorModeList[5]) { majorModeIndex = 9 ; }
-    if(choice == majorModeList[6]) { majorModeIndex = 11; }
+    if(choice == majorModeList[0]) { majorModeIndex = 0 ; melodicMinorModeIndex = 0 ; harmonicMinorModeIndex = 0 ; harmonicMajorModeIndex = 0 ; doubleHarmonicModeIndex = 0 ; modeSelected = 0; }
+    if(choice == majorModeList[1]) { majorModeIndex = 2 ; melodicMinorModeIndex = 2 ; harmonicMinorModeIndex = 2 ; harmonicMajorModeIndex = 2 ; doubleHarmonicModeIndex = 1 ; modeSelected = 1; }
+    if(choice == majorModeList[2]) { majorModeIndex = 4 ; melodicMinorModeIndex = 3 ; harmonicMinorModeIndex = 3 ; harmonicMajorModeIndex = 4 ; doubleHarmonicModeIndex = 4 ; modeSelected = 2; }
+    if(choice == majorModeList[3]) { majorModeIndex = 5 ; melodicMinorModeIndex = 5 ; harmonicMinorModeIndex = 5 ; harmonicMajorModeIndex = 5 ; doubleHarmonicModeIndex = 5 ; modeSelected = 3; }
+    if(choice == majorModeList[4]) { majorModeIndex = 7 ; melodicMinorModeIndex = 7 ; harmonicMinorModeIndex = 7 ; harmonicMajorModeIndex = 7 ; doubleHarmonicModeIndex = 7 ; modeSelected = 4; }
+    if(choice == majorModeList[5]) { majorModeIndex = 9 ; melodicMinorModeIndex = 9 ; harmonicMinorModeIndex = 8 ; harmonicMajorModeIndex = 8 ; doubleHarmonicModeIndex = 8 ; modeSelected = 5; }
+    if(choice == majorModeList[6]) { majorModeIndex = 11; melodicMinorModeIndex = 11; harmonicMinorModeIndex = 11; harmonicMajorModeIndex = 11; doubleHarmonicModeIndex = 11; modeSelected = 6; }
+    melodicMinorModeSelect.selected(melodicMinorModeList[modeSelected]);
+    harmonicMinorModeSelect.selected(harmonicMinorModeList[modeSelected]);
+    harmonicMajorModeSelect.selected(harmonicMajorModeList[modeSelected]);
+    doubleHarmonicModeSelect.selected(doubleHarmonicModeList[modeSelected]);
 }
 function changeMajorModeMouse(event){
     var choice = majorModeSelect.value();
@@ -661,13 +666,17 @@ function changeMajorModeMouse(event){
 
 function changeMelodicMinorMode(){
     var choice = melodicMinorModeSelect.value();
-    if(choice == melodicMinorModeList[0]) { melodicMinorModeIndex = 0 ; }
-    if(choice == melodicMinorModeList[1]) { melodicMinorModeIndex = 2 ; }
-    if(choice == melodicMinorModeList[2]) { melodicMinorModeIndex = 3 ; }
-    if(choice == melodicMinorModeList[3]) { melodicMinorModeIndex = 5 ; }
-    if(choice == melodicMinorModeList[4]) { melodicMinorModeIndex = 7 ; }
-    if(choice == melodicMinorModeList[5]) { melodicMinorModeIndex = 9 ; }
-    if(choice == melodicMinorModeList[6]) { melodicMinorModeIndex = 11; }
+    if(choice == melodicMinorModeList[0]) { melodicMinorModeIndex = 0 ; majorModeIndex = 0 ; harmonicMinorModeIndex = 0 ; harmonicMajorModeIndex = 0 ; doubleHarmonicModeIndex = 0 ; modeSelected = 0; }
+    if(choice == melodicMinorModeList[1]) { melodicMinorModeIndex = 2 ; majorModeIndex = 2 ; harmonicMinorModeIndex = 2 ; harmonicMajorModeIndex = 2 ; doubleHarmonicModeIndex = 1 ; modeSelected = 1; }
+    if(choice == melodicMinorModeList[2]) { melodicMinorModeIndex = 3 ; majorModeIndex = 4 ; harmonicMinorModeIndex = 3 ; harmonicMajorModeIndex = 4 ; doubleHarmonicModeIndex = 4 ; modeSelected = 2; }
+    if(choice == melodicMinorModeList[3]) { melodicMinorModeIndex = 5 ; majorModeIndex = 5 ; harmonicMinorModeIndex = 5 ; harmonicMajorModeIndex = 5 ; doubleHarmonicModeIndex = 5 ; modeSelected = 3; }
+    if(choice == melodicMinorModeList[4]) { melodicMinorModeIndex = 7 ; majorModeIndex = 7 ; harmonicMinorModeIndex = 7 ; harmonicMajorModeIndex = 7 ; doubleHarmonicModeIndex = 7 ; modeSelected = 4; }
+    if(choice == melodicMinorModeList[5]) { melodicMinorModeIndex = 9 ; majorModeIndex = 9 ; harmonicMinorModeIndex = 8 ; harmonicMajorModeIndex = 8 ; doubleHarmonicModeIndex = 8 ; modeSelected = 5; }
+    if(choice == melodicMinorModeList[6]) { melodicMinorModeIndex = 11; majorModeIndex = 11; harmonicMinorModeIndex = 11; harmonicMajorModeIndex = 11; doubleHarmonicModeIndex = 11; modeSelected = 6; }
+    majorModeSelect.selected(majorModeList[modeSelected]);
+    harmonicMinorModeSelect.selected(harmonicMinorModeList[modeSelected]);
+    harmonicMajorModeSelect.selected(harmonicMajorModeList[modeSelected]);
+    doubleHarmonicModeSelect.selected(doubleHarmonicModeList[modeSelected]);
 }
 function changeMelodicMinorModeMouse(event){
     var choice = melodicMinorModeSelect.value();
@@ -683,13 +692,17 @@ function changeMelodicMinorModeMouse(event){
 
 function changeHarmonicMinorMode(){
     var choice = harmonicMinorModeSelect.value();
-    if(choice == harmonicMinorModeList[0]) { harmonicMinorModeIndex = 0 ; }
-    if(choice == harmonicMinorModeList[1]) { harmonicMinorModeIndex = 2 ; }
-    if(choice == harmonicMinorModeList[2]) { harmonicMinorModeIndex = 3 ; }
-    if(choice == harmonicMinorModeList[3]) { harmonicMinorModeIndex = 5 ; }
-    if(choice == harmonicMinorModeList[4]) { harmonicMinorModeIndex = 7 ; }
-    if(choice == harmonicMinorModeList[5]) { harmonicMinorModeIndex = 8 ; }
-    if(choice == harmonicMinorModeList[6]) { harmonicMinorModeIndex = 11; }
+    if(choice == harmonicMinorModeList[0]) { harmonicMinorModeIndex = 0 ; majorModeIndex = 0 ; melodicMinorModeIndex = 0 ; harmonicMajorModeIndex = 0 ; doubleHarmonicModeIndex = 0 ; modeSelected = 0; }
+    if(choice == harmonicMinorModeList[1]) { harmonicMinorModeIndex = 2 ; majorModeIndex = 2 ; melodicMinorModeIndex = 2 ; harmonicMajorModeIndex = 2 ; doubleHarmonicModeIndex = 1 ; modeSelected = 1; }
+    if(choice == harmonicMinorModeList[2]) { harmonicMinorModeIndex = 3 ; majorModeIndex = 4 ; melodicMinorModeIndex = 3 ; harmonicMajorModeIndex = 4 ; doubleHarmonicModeIndex = 4 ; modeSelected = 2; }
+    if(choice == harmonicMinorModeList[3]) { harmonicMinorModeIndex = 5 ; majorModeIndex = 5 ; melodicMinorModeIndex = 5 ; harmonicMajorModeIndex = 5 ; doubleHarmonicModeIndex = 5 ; modeSelected = 3; }
+    if(choice == harmonicMinorModeList[4]) { harmonicMinorModeIndex = 7 ; majorModeIndex = 7 ; melodicMinorModeIndex = 7 ; harmonicMajorModeIndex = 7 ; doubleHarmonicModeIndex = 7 ; modeSelected = 4; }
+    if(choice == harmonicMinorModeList[5]) { harmonicMinorModeIndex = 8 ; majorModeIndex = 9 ; melodicMinorModeIndex = 9 ; harmonicMajorModeIndex = 8 ; doubleHarmonicModeIndex = 8 ; modeSelected = 5; }
+    if(choice == harmonicMinorModeList[6]) { harmonicMinorModeIndex = 11; majorModeIndex = 11; melodicMinorModeIndex = 11; harmonicMajorModeIndex = 11; doubleHarmonicModeIndex = 11; modeSelected = 6; }
+    majorModeSelect.selected(majorModeList[modeSelected]);
+    melodicMinorModeSelect.selected(melodicMinorModeList[modeSelected]);
+    harmonicMajorModeSelect.selected(harmonicMajorModeList[modeSelected]);
+    doubleHarmonicModeSelect.selected(doubleHarmonicModeList[modeSelected]);
 }
 function changeHarmonicMinorModeMouse(event){
     var choice = harmonicMinorModeSelect.value();
@@ -705,13 +718,17 @@ function changeHarmonicMinorModeMouse(event){
 
 function changeHarmonicMajorMode(){
     var choice = harmonicMajorModeSelect.value();
-    if(choice == harmonicMajorModeList[0]) { harmonicMajorModeIndex = 0 ; }
-    if(choice == harmonicMajorModeList[1]) { harmonicMajorModeIndex = 2 ; }
-    if(choice == harmonicMajorModeList[2]) { harmonicMajorModeIndex = 4 ; }
-    if(choice == harmonicMajorModeList[3]) { harmonicMajorModeIndex = 5 ; }
-    if(choice == harmonicMajorModeList[4]) { harmonicMajorModeIndex = 7 ; }
-    if(choice == harmonicMajorModeList[5]) { harmonicMajorModeIndex = 8 ; }
-    if(choice == harmonicMajorModeList[6]) { harmonicMajorModeIndex = 11; }
+    if(choice == harmonicMajorModeList[0]) { harmonicMajorModeIndex = 0 ; majorModeIndex = 0 ; melodicMinorModeIndex = 0 ; harmonicMinorModeIndex = 0 ; doubleHarmonicModeIndex = 0 ; modeSelected = 0; }
+    if(choice == harmonicMajorModeList[1]) { harmonicMajorModeIndex = 2 ; majorModeIndex = 2 ; melodicMinorModeIndex = 2 ; harmonicMinorModeIndex = 2 ; doubleHarmonicModeIndex = 1 ; modeSelected = 1; }
+    if(choice == harmonicMajorModeList[2]) { harmonicMajorModeIndex = 4 ; majorModeIndex = 4 ; melodicMinorModeIndex = 3 ; harmonicMinorModeIndex = 3 ; doubleHarmonicModeIndex = 4 ; modeSelected = 2; }
+    if(choice == harmonicMajorModeList[3]) { harmonicMajorModeIndex = 5 ; majorModeIndex = 5 ; melodicMinorModeIndex = 5 ; harmonicMinorModeIndex = 5 ; doubleHarmonicModeIndex = 5 ; modeSelected = 3; }
+    if(choice == harmonicMajorModeList[4]) { harmonicMajorModeIndex = 7 ; majorModeIndex = 7 ; melodicMinorModeIndex = 7 ; harmonicMinorModeIndex = 7 ; doubleHarmonicModeIndex = 7 ; modeSelected = 4; }
+    if(choice == harmonicMajorModeList[5]) { harmonicMajorModeIndex = 8 ; majorModeIndex = 9 ; melodicMinorModeIndex = 9 ; harmonicMinorModeIndex = 8 ; doubleHarmonicModeIndex = 8 ; modeSelected = 5; }
+    if(choice == harmonicMajorModeList[6]) { harmonicMajorModeIndex = 11; majorModeIndex = 11; melodicMinorModeIndex = 11; harmonicMinorModeIndex = 11; doubleHarmonicModeIndex = 11; modeSelected = 6; }
+    majorModeSelect.selected(majorModeList[modeSelected]);
+    melodicMinorModeSelect.selected(melodicMinorModeList[modeSelected]);
+    harmonicMinorModeSelect.selected(harmonicMinorModeList[modeSelected]);
+    doubleHarmonicModeSelect.selected(doubleHarmonicModeList[modeSelected]);
 }
 function changeHarmonicMajorModeMouse(event){
     var choice = harmonicMajorModeSelect.value();
@@ -727,13 +744,17 @@ function changeHarmonicMajorModeMouse(event){
 
 function changeDoubleHarmonicMode(){
     var choice = doubleHarmonicModeSelect.value();
-    if(choice == doubleHarmonicModeList[0]) { doubleHarmonicModeIndex = 0 ; }
-    if(choice == doubleHarmonicModeList[1]) { doubleHarmonicModeIndex = 1 ; }
-    if(choice == doubleHarmonicModeList[2]) { doubleHarmonicModeIndex = 4 ; }
-    if(choice == doubleHarmonicModeList[3]) { doubleHarmonicModeIndex = 5 ; }
-    if(choice == doubleHarmonicModeList[4]) { doubleHarmonicModeIndex = 7 ; }
-    if(choice == doubleHarmonicModeList[5]) { doubleHarmonicModeIndex = 8 ; }
-    if(choice == doubleHarmonicModeList[6]) { doubleHarmonicModeIndex = 11; }
+    if(choice == doubleHarmonicModeList[0]) { doubleHarmonicModeIndex = 0 ; majorModeIndex = 0 ; melodicMinorModeIndex = 0 ; harmonicMinorModeIndex = 0 ; harmonicMajorModeIndex = 0 ; modeSelected = 0; }
+    if(choice == doubleHarmonicModeList[1]) { doubleHarmonicModeIndex = 1 ; majorModeIndex = 2 ; melodicMinorModeIndex = 2 ; harmonicMinorModeIndex = 2 ; harmonicMajorModeIndex = 2 ; modeSelected = 1; }
+    if(choice == doubleHarmonicModeList[2]) { doubleHarmonicModeIndex = 4 ; majorModeIndex = 4 ; melodicMinorModeIndex = 3 ; harmonicMinorModeIndex = 3 ; harmonicMajorModeIndex = 4 ; modeSelected = 2; }
+    if(choice == doubleHarmonicModeList[3]) { doubleHarmonicModeIndex = 5 ; majorModeIndex = 5 ; melodicMinorModeIndex = 5 ; harmonicMinorModeIndex = 5 ; harmonicMajorModeIndex = 5 ; modeSelected = 3; }
+    if(choice == doubleHarmonicModeList[4]) { doubleHarmonicModeIndex = 7 ; majorModeIndex = 7 ; melodicMinorModeIndex = 7 ; harmonicMinorModeIndex = 7 ; harmonicMajorModeIndex = 7 ; modeSelected = 4; }
+    if(choice == doubleHarmonicModeList[5]) { doubleHarmonicModeIndex = 8 ; majorModeIndex = 9 ; melodicMinorModeIndex = 9 ; harmonicMinorModeIndex = 8 ; harmonicMajorModeIndex = 8 ; modeSelected = 5; }
+    if(choice == doubleHarmonicModeList[6]) { doubleHarmonicModeIndex = 11; majorModeIndex = 11; melodicMinorModeIndex = 11; harmonicMinorModeIndex = 11; harmonicMajorModeIndex = 11; modeSelected = 6; }
+    majorModeSelect.selected(majorModeList[modeSelected]);
+    melodicMinorModeSelect.selected(melodicMinorModeList[modeSelected]);
+    harmonicMinorModeSelect.selected(harmonicMinorModeList[modeSelected]);
+    harmonicMajorModeSelect.selected(harmonicMajorModeList[modeSelected]);
 }
 function changeDoubleHarmonicModeMouse(event){
     var choice = doubleHarmonicModeSelect.value();
