@@ -10,7 +10,7 @@ function setup(){
 
 function draw(){
 
-    if(noteIndex < 0) noteIndex += 12;
+    if(keyIndex < 0) keyIndex += 12;
     if(majorModeIndex < 0) majorModeIndex += 12;
     if(melodicMinorModeIndex < 0) melodicMinorModeIndex += 12;
     

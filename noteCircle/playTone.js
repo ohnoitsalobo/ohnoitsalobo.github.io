@@ -18,7 +18,7 @@ var tone = [523.25, 554.37, 587.33, 622.25, 659.25, 698.46, 739.99, 783.99, 830.
 
 function playTone(t){
     var transpose = 1;
-    for(var i = 0; i < (noteIndex%12); i++)
+    for(var i = 0; i < (keyIndex%12); i++)
         transpose *= 1.059463;
     synth.triggerAttackRelease(tone[t]*transpose/2, "8n");
 }
@@ -548,13 +548,13 @@ function mouseReleased(){
     ypos1 = 0.41*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
-        noteIndex = (noteIndex + 1)%12;
-        keySelect.selected(keyList[noteIndex]);
+        keyIndex = (keyIndex + 1)%12;
+        keySelect.selected(keyList[keyIndex]);
     }
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos1-offset && mouseY<ypos1+offset){
-        noteIndex = (noteIndex + 11)%12;
-        keySelect.selected(keyList[noteIndex]);
+        keyIndex = (keyIndex + 11)%12;
+        keySelect.selected(keyList[keyIndex]);
     }
     ////// CHANGE PATTERN
     xpos  = 1.55*(shortAxis*scale);
@@ -726,6 +726,45 @@ function mouseWheel(event){
         if(majorMinorOther == 3) changeHarmonicMajorModeMouse(event);
         if(majorMinorOther == 4) changeDoubleHarmonicModeMouse(event);
         if(majorMinorOther == 5) changeOtherModeMouse(event);
+    }
+    
+    // return false;
+}
+
+function doubleClicked(){
+    let xpos, ypos, offset = 0.07*(shortAxis*scale);
+    xpos  = 1.15*(shortAxis*scale);
+    ypos  = 0.3*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        keyIndex = 0;
+        keySelect.selected(keyList[0]);
+    }
+   
+    xpos  = 1.55*(shortAxis*scale);
+    ypos  = 0.3*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        majorMinorOther = 0;
+        modeSelect.selected(modeList[0]);
+        changeMode();
+    }
+    
+    xpos  = 1.35*(shortAxis*scale);
+    ypos  = 0.6*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        majorModeIndex = 0;
+        melodicMinorModeIndex = 0;
+        harmonicMinorModeIndex = 0;
+        harmonicMajorModeIndex = 0;
+        doubleHarmonicModeIndex = 0;
+        otherModeIndex = 0;
+        majorModeSelect.selected(majorModeList[0]);
+        melodicMinorModeSelect.selected(melodicMinorModeList[0]);
+        harmonicMinorModeSelect.selected(harmonicMinorModeList[0]);
+        harmonicMajorModeSelect.selected(harmonicMajorModeList[0]);
+        doubleHarmonicModeSelect.selected(doubleHarmonicModeList[0]);
     }
     
     // return false;

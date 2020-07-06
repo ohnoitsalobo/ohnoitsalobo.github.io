@@ -18,7 +18,7 @@ function createNoteCircle(){
         rotate(PI/2);
         textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
         textSize(Size*0.6); fill(255); noStroke(); //stroke(0); strokeWeight(1);
-        text("Key:\n" + keyList[noteIndex%12], xpos, ypos);
+        text("Key:\n" + keyList[keyIndex%12], xpos, ypos);
         textSize(Size*0.5); fill(255);
         if(majorMinorOther != 5)
             text("Base pattern:\n" + modeList[majorMinorOther], xpos/0.62, ypos);
@@ -95,7 +95,7 @@ function createNoteCircle(){
         pop();
         }
     pop();
-    currentNoteRotation = lerp(currentNoteRotation, noteRotation[noteIndex%12], speed);
+    currentNoteRotation = lerp(currentNoteRotation, noteRotation[keyIndex%12], speed);
     majorScaleRotation = lerp(majorScaleRotation, noteRotation[majorModeIndex%12], speed*0.75);
     melodicMinorScaleRotation = lerp(melodicMinorScaleRotation, noteRotation[melodicMinorModeIndex%12], speed*0.75);
     harmonicMinorRotation = lerp(harmonicMinorRotation, noteRotation[harmonicMinorModeIndex%12], speed*0.75);
@@ -788,22 +788,22 @@ function changeOtherModeMouse(event){
 
 function changeKey(){
     var choice = keySelect.value();
-    if(choice == keyList[0 ]) noteIndex = 0 ;
-    if(choice == keyList[1 ]) noteIndex = 1 ;
-    if(choice == keyList[2 ]) noteIndex = 2 ;
-    if(choice == keyList[3 ]) noteIndex = 3 ;
-    if(choice == keyList[4 ]) noteIndex = 4 ;
-    if(choice == keyList[5 ]) noteIndex = 5 ;
-    if(choice == keyList[6 ]) noteIndex = 6 ;
-    if(choice == keyList[7 ]) noteIndex = 7 ;
-    if(choice == keyList[8 ]) noteIndex = 8 ;
-    if(choice == keyList[9 ]) noteIndex = 9 ;
-    if(choice == keyList[10]) noteIndex = 10;
-    if(choice == keyList[11]) noteIndex = 11;
+    if(choice == keyList[0 ]) keyIndex = 0 ;
+    if(choice == keyList[1 ]) keyIndex = 1 ;
+    if(choice == keyList[2 ]) keyIndex = 2 ;
+    if(choice == keyList[3 ]) keyIndex = 3 ;
+    if(choice == keyList[4 ]) keyIndex = 4 ;
+    if(choice == keyList[5 ]) keyIndex = 5 ;
+    if(choice == keyList[6 ]) keyIndex = 6 ;
+    if(choice == keyList[7 ]) keyIndex = 7 ;
+    if(choice == keyList[8 ]) keyIndex = 8 ;
+    if(choice == keyList[9 ]) keyIndex = 9 ;
+    if(choice == keyList[10]) keyIndex = 10;
+    if(choice == keyList[11]) keyIndex = 11;
 }
 function changeKeyMouse(event){
-    if (event.deltaY > 0) keySelect.selected(keyList[(noteIndex+1 )%12]);
-    if (event.deltaY < 0) keySelect.selected(keyList[(noteIndex+11)%12]);
+    if (event.deltaY > 0) keySelect.selected(keyList[(keyIndex+1 )%12]);
+    if (event.deltaY < 0) keySelect.selected(keyList[(keyIndex+11)%12]);
     changeKey();
 }
 
