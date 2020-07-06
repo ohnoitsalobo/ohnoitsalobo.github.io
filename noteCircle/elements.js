@@ -120,7 +120,7 @@ function createMajorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
+        fill(255); textSize(Size*0.6); stroke(0); strokeWeight(0.5);
         push();
             rotate(PI/2+majorScaleRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(majorModeIndex%12==0 ) text(majorModeList[0], 0, 0);
@@ -152,7 +152,7 @@ function createMelodicMinorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
+        fill(255); textSize(Size*0.6); stroke(0); strokeWeight(0.5);
         push();
             rotate(PI/2+melodicMinorScaleRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(melodicMinorModeIndex%12==0 ) text(melodicMinorModeList[0], 0, 0);

@@ -21,46 +21,6 @@ function playTone(t){
     for(var i = 0; i < (noteIndex%12); i++)
         transpose *= 1.059463;
     synth.triggerAttackRelease(tone[t]*transpose/2, "8n");
-    // fill(0, 20); stroke(0); strokeWeight(2);
-    // let xpos, ypos, offset = 0.07*(shortAxis*scale);
-    // if(t == 0 || t == 12){
-        // xpos = 0.5*(shortAxis*scale);
-        // ypos = 0.11*(shortAxis*scale);
-    // }if(t == 1){
-        // xpos = 0.69*(shortAxis*scale);
-        // ypos = 0.17*(shortAxis*scale);
-    // }if(t == 2){
-        // xpos = 0.83*(shortAxis*scale);
-        // ypos = 0.31*(shortAxis*scale);
-    // }if(t == 3){
-        // xpos = 0.88*(shortAxis*scale);
-        // ypos = 0.5*(shortAxis*scale);
-    // }if(t == 4){
-        // xpos = 0.83*(shortAxis*scale);
-        // ypos = 0.69*(shortAxis*scale);
-    // }if(t == 5){
-        // xpos = 0.69*(shortAxis*scale);
-        // ypos = 0.83*(shortAxis*scale);
-    // }if(t == 6){
-        // xpos = 0.5*(shortAxis*scale);
-        // ypos = 0.88*(shortAxis*scale);
-    // }if(t == 7){
-        // xpos = 0.31*(shortAxis*scale);
-        // ypos = 0.83*(shortAxis*scale);
-    // }if(t == 8){
-        // xpos = 0.17*(shortAxis*scale);
-        // ypos = 0.69*(shortAxis*scale);
-    // }if(t == 9){
-        // xpos = 0.11*(shortAxis*scale);
-        // ypos = 0.5*(shortAxis*scale);
-    // }if(t == 10){
-        // xpos = 0.17*(shortAxis*scale);
-        // ypos = 0.31*(shortAxis*scale);
-    // }if(t == 11){
-        // xpos = 0.31*(shortAxis*scale);
-        // ypos = 0.17*(shortAxis*scale);
-    // }
-    // ellipse(xpos-1.5*offset, ypos-1.5*offset, 2*offset, 2*offset);
 }
 
 function keyPressed(){
