@@ -1,3 +1,5 @@
+let played = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; 
+
 let PI_ = 3.141592653589793;
 let noteRotation  = [ 0*PI_/6, 1*PI_/6, 2*PI_/6, 3*PI_/6, 4*PI_/6, 5*PI_/6, 6*PI_/6, 7*PI_/6, 8*PI_/6, 9*PI_/6, 10*PI_/6, 11*PI_/6 ];
 let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0;
