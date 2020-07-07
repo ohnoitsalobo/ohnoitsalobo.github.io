@@ -1140,8 +1140,18 @@ function mouseReleased(){
     offset = 0.1*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
-        pianoColors = !pianoColors;
-        // playScale();
+        if(!lockNotes){
+            speed = 1;
+            if(majorMinorOther == 0) keyIndex = keyIndex + (12 - majorModeIndex         )%12;
+            if(majorMinorOther == 1) keyIndex = keyIndex + (12 - melodicMinorModeIndex  )%12;
+            if(majorMinorOther == 2) keyIndex = keyIndex + (12 - harmonicMinorModeIndex )%12;
+            if(majorMinorOther == 3) keyIndex = keyIndex + (12 - harmonicMajorModeIndex )%12;
+            if(majorMinorOther == 4) keyIndex = keyIndex + (12 - doubleHarmonicModeIndex)%12; 
+        }else{
+            speed = 0.4;
+            keyIndex = notesAreLocked();
+        }
+        lockNotes = !lockNotes;
     }
     return false;
 }
