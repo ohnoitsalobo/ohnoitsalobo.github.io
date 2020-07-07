@@ -1176,6 +1176,7 @@ function mouseWheel(event){
     
     xpos  = 1.35*(shortAxis*scale);
     ypos  = 0.6*(shortAxis*scale);
+    offset = offset*1.5;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         if(majorMinorOther == 0) changeMajorModeMouse(event);
