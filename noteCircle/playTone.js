@@ -1026,7 +1026,7 @@ function mouseReleased(){
         var choice = majorModeSelect.value();
         let i = 0;
         for(let k = 0; k < majorModeList.length; k++){
-            if (choice === majorModeList[k])
+            if (choice == majorModeList[k])
                 i = k;
         }
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
@@ -1045,7 +1045,7 @@ function mouseReleased(){
         var choice = melodicMinorModeSelect.value();
         let i = 0;
         for(let k = 0; k < melodicMinorModeList.length; k++){
-            if (choice === melodicMinorModeList[k])
+            if (choice == melodicMinorModeList[k])
                 i = k;
         }
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
@@ -1064,7 +1064,7 @@ function mouseReleased(){
         var choice = harmonicMinorModeSelect.value();
         let i = 0;
         for(let k = 0; k < harmonicMinorModeList.length; k++){
-            if (choice === harmonicMinorModeList[k])
+            if (choice == harmonicMinorModeList[k])
                 i = k;
         }
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
@@ -1083,7 +1083,7 @@ function mouseReleased(){
         var choice = harmonicMajorModeSelect.value();
         let i = 0;
         for(let k = 0; k < harmonicMajorModeList.length; k++){
-            if (choice === harmonicMajorModeList[k])
+            if (choice == harmonicMajorModeList[k])
                 i = k;
         }
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
@@ -1102,7 +1102,7 @@ function mouseReleased(){
         var choice = doubleHarmonicModeSelect.value();
         let i = 0;
         for(let k = 0; k < doubleHarmonicModeList.length; k++){
-            if (choice === doubleHarmonicModeList[k])
+            if (choice == doubleHarmonicModeList[k])
                 i = k;
         }
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
