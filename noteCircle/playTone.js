@@ -1,6 +1,6 @@
 var synth = new Tone.Synth({
   oscillator: {
-    type: 'triangle',
+    type: 'sine',
     // volume: -25
     // modulationType: 'triangle',
     // modulationIndex: 3,
