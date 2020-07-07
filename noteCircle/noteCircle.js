@@ -2,7 +2,7 @@
 function setup(){
     shortAxis = ((windowWidth > windowHeight) ? windowHeight : windowWidth);
     var cnv = createCanvas(1.75*(shortAxis*scale), (shortAxis*scale));
-    cnv.parent('sketch');
+    cnv.parent('noteCircle');
     frameRate(30);
     createMenus();
     changeMode();
