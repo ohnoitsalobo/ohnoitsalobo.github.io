@@ -7,10 +7,10 @@ var synth = new Tone.Synth({
     // harmonicity: 3.4
   },
   envelope: {
-    attack: 0.05,
-    decay: 0.4,
-    sustain: 0.99,
-    release: 0.3
+    attack: 0.1,
+    decay: 0.2,
+    sustain: 0.7,
+    release: 0.2
   }
 }).toMaster()
 
@@ -19,7 +19,7 @@ var tone = [523.25, 554.37, 587.33, 622.25, 659.25, 698.46, 739.99, 783.99, 830.
 
 function playTone(t){
     var transpose = 1;
-    for(var i = 0; i < (keyIndex%12); i++)
+    for(var i = 0; i < notesAreLocked(); i++)
         transpose *= 1.059463;
     synth.triggerAttackRelease(tone[t]*transpose/2, "8n");
 }
@@ -993,13 +993,13 @@ function mouseReleased(){
     ypos1 = 0.41*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
-        keyIndex = (keyIndex + 1)%12;
-        keySelect.selected(keyList[keyIndex]);
+        keySelect.selected(keyList[(keyIndex + 1)%12]);
+        changeKey();
     }
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos1-offset && mouseY<ypos1+offset){
-        keyIndex = (keyIndex + 11)%12;
-        keySelect.selected(keyList[keyIndex]);
+        keySelect.selected(keyList[(keyIndex + 11)%12]);
+        changeKey();
     }
     ////// CHANGE PATTERN
     xpos  = 1.55*(shortAxis*scale);
@@ -1140,18 +1140,20 @@ function mouseReleased(){
     offset = 0.1*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
-        if(!lockNotes){
-            speed = 1;
-            if(majorMinorOther == 0) keyIndex = keyIndex + (12 - majorModeIndex         )%12;
-            if(majorMinorOther == 1) keyIndex = keyIndex + (12 - melodicMinorModeIndex  )%12;
-            if(majorMinorOther == 2) keyIndex = keyIndex + (12 - harmonicMinorModeIndex )%12;
-            if(majorMinorOther == 3) keyIndex = keyIndex + (12 - harmonicMajorModeIndex )%12;
-            if(majorMinorOther == 4) keyIndex = keyIndex + (12 - doubleHarmonicModeIndex)%12; 
-        }else{
-            speed = 0.4;
-            keyIndex = notesAreLocked();
+        if(majorMinorOther != 5){
+            if(!lockNotes){
+                speed = 1;
+                if(majorMinorOther == 0) keyIndex = keyIndex + (12 - majorModeIndex         )%12;
+                if(majorMinorOther == 1) keyIndex = keyIndex + (12 - melodicMinorModeIndex  )%12;
+                if(majorMinorOther == 2) keyIndex = keyIndex + (12 - harmonicMinorModeIndex )%12;
+                if(majorMinorOther == 3) keyIndex = keyIndex + (12 - harmonicMajorModeIndex )%12;
+                if(majorMinorOther == 4) keyIndex = keyIndex + (12 - doubleHarmonicModeIndex)%12; 
+            }else{
+                speed = 0.4;
+                keyIndex = notesAreLocked();
+            }
+            lockNotes = !lockNotes;
         }
-        lockNotes = !lockNotes;
     }
     return false;
 }
@@ -1210,18 +1212,18 @@ function doubleClicked(){
     ypos  = 0.6*(shortAxis*scale);
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
-        majorModeIndex = 0;
-        melodicMinorModeIndex = 0;
-        harmonicMinorModeIndex = 0;
-        harmonicMajorModeIndex = 0;
-        doubleHarmonicModeIndex = 0;
-        otherModeIndex = 0;
         majorModeSelect.selected(majorModeList[0]);
         melodicMinorModeSelect.selected(melodicMinorModeList[0]);
         harmonicMinorModeSelect.selected(harmonicMinorModeList[0]);
         harmonicMajorModeSelect.selected(harmonicMajorModeList[0]);
         doubleHarmonicModeSelect.selected(doubleHarmonicModeList[0]);
         otherModeSelect.selected(otherModeList[0]);
+        changeMajorMode();
+        changeMelodicMinorMode();
+        changeHarmonicMinorMode();
+        changeHarmonicMajorMode();
+        changeDoubleHarmonicMode();
+        changeOtherMode();
     }
     
     // return false;

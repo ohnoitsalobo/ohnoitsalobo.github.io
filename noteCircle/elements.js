@@ -32,7 +32,7 @@ function createNoteCircle(){
     push();
         rotate(PI/2);
         textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
-        textSize(Size*0.6); fill(255); noStroke(); //stroke(0); strokeWeight(1);
+        textSize(Size*0.6); fill((lockNotes && majorMinorOther != 5) ? 0 : 255); noStroke(); //stroke(0); strokeWeight(1);
         text("Key:\n" + keyList[notesAreLocked()%12], xpos, ypos);
         textSize(Size*0.5); fill(255);
         if(majorMinorOther != 5)
@@ -44,14 +44,18 @@ function createNoteCircle(){
         fill(0); textSize(Size*0.3);
         text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*(shortAxis*scale), -0.375*(shortAxis*scale));
         fill(0); textSize(Size*0.4); 
-        if(majorMinorOther!=5)  text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
-        else  text("Click/tap the highlighted notes\nin sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
-        textSize(Size*0.3);
-        if(!lockNotes){
-            text("Tap here to lock\nthe visible notes\nin the pattern", 0*(shortAxis*scale), 0*(shortAxis*scale));
-        }else{
-            text("Mode rotation\nlocked together", 0*(shortAxis*scale), 0*(shortAxis*scale));
+        if(majorMinorOther!=5) {
+            text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
+            textSize(Size*0.4);
+            if(!lockNotes){
+                text("Tap here to lock\nthe visible notes\nin the pattern", 0*(shortAxis*scale), 0*(shortAxis*scale));
+            }else{
+                fill(255);
+                text("Mode rotation\nlocked together", 0*(shortAxis*scale), 0*(shortAxis*scale));
+            }
         }
+        else 
+            text("Click/tap the highlighted notes\nin sequence to hear the scale.\n(Keyboard keys not assigned)", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
         stroke(255, 255); strokeWeight(5*scale);
         line(xpos, ypos-1.2*Size, xpos+30, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-30, ypos-Size);
@@ -138,8 +142,9 @@ function createMajorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-        fill(255); textSize(Size*0.6); stroke(0); strokeWeight(0.5);
         push();
+            textSize(Size*0.69); stroke(0); strokeWeight(0.5);
+            fill(lockNotes ? 0 : 255);
             rotate(PI/2+majorScaleRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(majorModeIndex%12==0 ) text(majorModeList[0], 0, 0);
             if(majorModeIndex%12==2 ) text(majorModeList[1], 0, 0);
@@ -170,8 +175,9 @@ function createMelodicMinorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-        fill(255); textSize(Size*0.6); stroke(0); strokeWeight(0.5);
         push();
+            textSize(Size*0.69); stroke(0); strokeWeight(0.5);
+            fill(lockNotes ? 0 : 255);
             rotate(PI/2+melodicMinorScaleRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(melodicMinorModeIndex%12==0 ) text(melodicMinorModeList[0], 0, 0);
             if(melodicMinorModeIndex%12==2 ) text(melodicMinorModeList[1], 0, 0);
@@ -202,8 +208,9 @@ function createHarmonicMinorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
         push();
+            textSize(Size*0.69); stroke(0); strokeWeight(0.5);
+            fill(lockNotes ? 0 : 255);
             rotate(PI/2+harmonicMinorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(harmonicMinorModeIndex%12==0 ) text(harmonicMinorModeList[0], 0, 0);
             if(harmonicMinorModeIndex%12==2 ) text(harmonicMinorModeList[1], 0, 0);
@@ -234,8 +241,9 @@ function createHarmonicMajorModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
         push();
+            textSize(Size*0.69); stroke(0); strokeWeight(0.5);
+            fill(lockNotes ? 0 : 255);
             rotate(PI/2+harmonicMajorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(harmonicMajorModeIndex%12==0 ) text(harmonicMajorModeList[0], 0, 0);
             if(harmonicMajorModeIndex%12==2 ) text(harmonicMajorModeList[1], 0, 0);
@@ -266,8 +274,9 @@ function createDoubleHarmonicModeCircle(){
             }
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
-            fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
         push();
+            textSize(Size*0.69); stroke(0); strokeWeight(0.5);
+            fill(lockNotes ? 0 : 255);
             rotate(PI/2+doubleHarmonicScaleRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(doubleHarmonicModeIndex%12==0 ) text(doubleHarmonicModeList[0], 0, 0);
             if(doubleHarmonicModeIndex%12==1 ) text(doubleHarmonicModeList[1], 0, 0);
@@ -658,7 +667,7 @@ function changeModeMouse(event){
 let modeSelected = 0;
 function changeMajorMode(){
     var choice = majorModeSelect.value();
-    if(choice == majorModeList[0 ] && majorModeIndex == 11)
+    if(choice == majorModeList[0] && majorModeIndex == 11)
         majorScaleRotation -= 2*PI;
     if(choice == majorModeList[6] && majorModeIndex == 0)
         majorScaleRotation += 2*PI;
