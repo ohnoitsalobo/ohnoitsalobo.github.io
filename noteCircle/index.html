@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">      <title>Circle of Notes (modes cheat sheet)</title>
+        <!-- <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"> -->
+        <title>Circle of Notes (modes cheat sheet)</title>
         <script src="tone.js"></script>
         <script src="p5.js"></script>
         <!-- <script src="note_Circle.js"></script> -->
@@ -10,49 +11,29 @@
         <script src="playTone.js"></script>
         <script src="noteCircle.js"></script>
     </head>
-    <!--  -- >
+    <!--  -->
     <style>
-    canvas{
-        z-index: 0;
-    }
-    select {
-        -webkit-backface-visibility: visible;
-        -webkit-appearance: button;
-        -moz-appearance: button;
-        -webkit-user-select: none;
-        -moz-user-select: none;
- /* * /  -webkit-padding-end: 20px; /* */
- /* * /  -moz-padding-end: 20px; /* */
- /* * /  -webkit-padding-start: 2px; /* */
- /* * /  -moz-padding-start: 2px; /* */
- /* * /  background-color: #F07575; /* Fallback color if gradients are not supported */
- /* * /  background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
- /* * /  background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Firefox (3.6 to 15) */
- /* * /  background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of Internet Explorer  10*/
- /* * /  background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */
- /* * /  background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
- /* * /  background-position: center right; /* */
- /* * /  background-repeat: no-repeat; /* */
-        border: 1px solid #AAA;
-        border-radius: 2px;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-        color: #000;
-        font-size: inherit;
-        margin: 0;
-        overflow: visible;
- /* * /  padding-top: 2px; /* */
- /* * /  padding-bottom: 2px; /* */
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        z-index: 3;
-    }    
-    </style>   <!-- -->
+        p {
+            color : black;
+        }
+    </style>
+    <!-- -->
     <body style="background-color:#777">
         <div id="menus">
         </div>
         <div id="noteCircle">
         </div>
-        <p style="color:black;">If you found this app useful, please consider helping me out by sending in a donation at <a href="https://paypal.me/anandlobo">https://paypal.me/anandlobo</a>. :-)</p>
+        <!--  -- >
+        <p>
+            This "cheat-sheet" is a visual and auditory representation of scales and modes in the 12-tone equal-temperament system of Western music.<br />
+            A musical "scale" is simply a pattern of 7 notes (plus the octave) that have a certain "colour" due to the relationships between the notes.<br />
+            A "mode" is very literally just another variation of a scale, using the same base pattern but starting at a different point in the pattern, as the app will show.<br />
+            On a computer, the keyboard keys 1 - 8 will play the correct highlighted notes for whichever mode is displayed. Press multiple keys to build chords.
+        </p>
+        <!--  -->
+        <p>
+            If you found this app useful, please consider helping me out by sending in a donation at <a href="https://paypal.me/anandlobo">https://paypal.me/anandlobo</a>. :-)
+        </p>
     </body>
 </html>
 
