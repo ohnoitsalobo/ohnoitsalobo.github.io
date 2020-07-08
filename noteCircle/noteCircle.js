@@ -33,38 +33,5 @@ function draw(){
 
     fill(255); noStroke();
     rectMode(CENTER);
-    // createMarkers();
 }
-
-function createMarkers(){
-    let t = 0.5, a = 200; 
-    let fade = a-a*(frameCount/(t*frameRate()));
-    fade = (frameCount < t*frameRate()) ? fade : 0;
-    fill (255, fade);
-    stroke(0, fade); strokeWeight(2);
-            rect(0, 0, 1.75*Size, 1.75*Size);
-    // for(let i = 0; i < played.length; i++){
-        // if(played[i] > 0){
-            // fill(255, played[i]);
-        // }
-    // }
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -52,11 +52,12 @@ function createNoteCircle(){
         text("Cheat sheet for scales and modes", 0.8*(shortAxis*scale), -0.45*(shortAxis*scale));
         fill(0); textSize(Size*0.3);
         text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*(shortAxis*scale), -0.375*(shortAxis*scale));
-        fill(0); textSize(Size*0.4); 
+        textSize(Size*0.4); 
         if(majorMinorOther!=5) {
             text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
             textSize(Size*0.35);
             if(!lockNotes){
+                fill(0, fillalpha);
                 text("Tap here to lock\nthe visible notes\nin the pattern", 0*(shortAxis*scale), 0*(shortAxis*scale));
             }else{
                 fill(255);
