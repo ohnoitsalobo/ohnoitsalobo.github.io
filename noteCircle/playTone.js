@@ -26,15 +26,11 @@ function playTone(t){
     playedAlpha[t] = 100;
 }
 
-
-function keyPressed(){
-    if(majorMinorOther == 5)
-        return;
-    else{
-        if(key == '1'){ // 0
-            playTone(0);
+function modeCheck(t){
+        if(t == 1){ // 0
+            return 0;
         }
-        if(key == '2'){ // 1
+        if(t == 2){ // 1
             if(majorMinorOther == 0){
                 if(majorModeIndex == 0 || 
                    majorModeIndex == 2 ||
@@ -43,9 +39,9 @@ function keyPressed(){
                    majorModeIndex == 7 || 
                    majorModeIndex == 9 || 
                    majorModeIndex ==10 )
-                    playTone(2);
+                    return 2;
                 else
-                    playTone(1);
+                    return 1;
             }
             if(majorMinorOther == 1){
                 if(melodicMinorModeIndex == 0 || 
@@ -55,9 +51,9 @@ function keyPressed(){
                    melodicMinorModeIndex == 7 || 
                    melodicMinorModeIndex == 9 || 
                    melodicMinorModeIndex ==10 )
-                    playTone(2);
+                    return 2;
                 else
-                    playTone(1);
+                    return 1;
             }
             if(majorMinorOther == 2){
                 if(harmonicMinorModeIndex == 0 || 
@@ -67,12 +63,12 @@ function keyPressed(){
                    harmonicMinorModeIndex == 6 || 
                    harmonicMinorModeIndex == 9 || 
                    harmonicMinorModeIndex ==10 )
-                    playTone(2);
+                    return 2;
                 else
                     if(harmonicMinorModeIndex == 8)
-                        playTone(3);
+                        return 3;
                     else
-                        playTone(1);
+                        return 1;
             }
             if(majorMinorOther == 3){
                 if(harmonicMajorModeIndex == 0 || 
@@ -82,12 +78,12 @@ function keyPressed(){
                    harmonicMajorModeIndex == 6 || 
                    harmonicMajorModeIndex == 9 || 
                    harmonicMajorModeIndex ==10 )
-                    playTone(2);
+                    return 2;
                 else
                     if(harmonicMajorModeIndex == 8)
-                        playTone(3);
+                        return 3;
                     else
-                        playTone(1);
+                        return 1;
             }
             if(majorMinorOther == 4){
                 if(doubleHarmonicModeIndex == 0 || 
@@ -97,16 +93,16 @@ function keyPressed(){
                    doubleHarmonicModeIndex == 7 || 
                    doubleHarmonicModeIndex ==10 || 
                    doubleHarmonicModeIndex ==11 )
-                    playTone(1);
+                    return 1;
                 else
                     if(doubleHarmonicModeIndex == 1 || 
                        doubleHarmonicModeIndex == 8)
-                        playTone(3);
+                        return 3;
                     else
-                        playTone(2);
+                        return 2;
             }
         }
-        if(key == '3'){ // 2
+        if(t == 3){ // 2
             if(majorMinorOther == 0){
                 if(majorModeIndex == 0 || 
                    majorModeIndex == 1 ||
@@ -115,9 +111,9 @@ function keyPressed(){
                    majorModeIndex == 7 || 
                    majorModeIndex == 8 || 
                    majorModeIndex ==10 )
-                    playTone(4);
+                    return 4;
                 else
-                    playTone(3);
+                    return 3;
             }
             if(majorMinorOther == 1){
                 if(melodicMinorModeIndex == 0 || 
@@ -127,9 +123,9 @@ function keyPressed(){
                    melodicMinorModeIndex == 8 || 
                    melodicMinorModeIndex == 9 || 
                    melodicMinorModeIndex ==11 )
-                    playTone(3);
+                    return 3;
                 else
-                    playTone(4);
+                    return 4;
             }
             if(majorMinorOther == 2){
                 if(harmonicMinorModeIndex == 0 || 
@@ -139,9 +135,9 @@ function keyPressed(){
                    // harmonicMinorModeIndex == 8 || 
                    harmonicMinorModeIndex == 9 || 
                    harmonicMinorModeIndex ==11 )
-                    playTone(3);
+                    return 3;
                 else
-                    playTone(4);
+                    return 4;
             }
             if(majorMinorOther == 3){
                 if(harmonicMajorModeIndex == 0 || 
@@ -151,9 +147,9 @@ function keyPressed(){
                    harmonicMajorModeIndex == 7 || 
                    harmonicMajorModeIndex == 8 || 
                    harmonicMajorModeIndex ==10 )
-                    playTone(4);
+                    return 4;
                 else
-                    playTone(3);
+                    return 3;
             }
             if(majorMinorOther == 4){
                 if(doubleHarmonicModeIndex == 0 || 
@@ -163,15 +159,15 @@ function keyPressed(){
                    doubleHarmonicModeIndex == 7 || 
                    doubleHarmonicModeIndex == 8 || 
                    doubleHarmonicModeIndex == 9 )
-                    playTone(4);
+                    return 4;
                 else
                     if(doubleHarmonicModeIndex == 11)
-                        playTone(2);
+                        return 2;
                     else
-                        playTone(3);
+                        return 3;
             }
         }
-        if(key == '4'){ // 3
+        if(t == 4){ // 3
             if(majorMinorOther == 0){
                 if(majorModeIndex == 0 || 
                    majorModeIndex == 2 ||
@@ -180,9 +176,9 @@ function keyPressed(){
                    majorModeIndex == 7 || 
                    majorModeIndex == 9 || 
                    majorModeIndex ==11 )
-                    playTone(5);
+                    return 5;
                 else
-                    playTone(6);
+                    return 6;
             }
             if(majorMinorOther == 1){
                 if(melodicMinorModeIndex == 0 || 
@@ -192,12 +188,12 @@ function keyPressed(){
                    melodicMinorModeIndex == 7 || 
                    melodicMinorModeIndex == 9 || 
                    melodicMinorModeIndex ==10 )
-                    playTone(5);
+                    return 5;
                 else{
                     if(melodicMinorModeIndex == 11)
-                        playTone(4);
+                        return 4;
                     else
-                        playTone(6);
+                        return 6;
                 }
             }
             if(majorMinorOther == 2){
@@ -208,12 +204,12 @@ function keyPressed(){
                    harmonicMinorModeIndex == 7 || 
                    harmonicMinorModeIndex == 9 || 
                    harmonicMinorModeIndex ==10 )
-                    playTone(5);
+                    return 5;
                 else
                     if(harmonicMinorModeIndex == 11)
-                        playTone(4);
+                        return 4;
                     else
-                        playTone(6);
+                        return 6;
             }
             if(majorMinorOther == 3){
                 if(harmonicMajorModeIndex == 0 || 
@@ -223,12 +219,12 @@ function keyPressed(){
                    harmonicMajorModeIndex == 7 || 
                    harmonicMajorModeIndex == 9 || 
                    harmonicMajorModeIndex ==11 )
-                    playTone(5);
+                    return 5;
                 else
                     if(harmonicMajorModeIndex == 4)
-                        playTone(4);
+                        return 4;
                     else
-                        playTone(6);
+                        return 6;
             }
             if(majorMinorOther == 4){
                 if(doubleHarmonicModeIndex == 0 || 
@@ -238,15 +234,15 @@ function keyPressed(){
                    doubleHarmonicModeIndex == 7 || 
                    doubleHarmonicModeIndex == 8 || 
                    doubleHarmonicModeIndex == 11 )
-                    playTone(5);
+                    return 5;
                 else
                     if(doubleHarmonicModeIndex == 4)
-                        playTone(4);
+                        return 4;
                     else
-                        playTone(6);
+                        return 6;
             }
         }
-        if(key == '5'){ // 4
+        if(t == 5){ // 4
             if(majorMinorOther == 0){
                 if(majorModeIndex == 0 || 
                    majorModeIndex == 2 ||
@@ -255,9 +251,9 @@ function keyPressed(){
                    majorModeIndex == 7 || 
                    majorModeIndex == 9 || 
                    majorModeIndex ==10 )
-                    playTone(7);
+                    return 7;
                 else
-                    playTone(6);
+                    return 6;
             }
             if(majorMinorOther == 1){ 
                 if(melodicMinorModeIndex == 0 || 
@@ -267,13 +263,13 @@ function keyPressed(){
                    melodicMinorModeIndex == 7 || 
                    melodicMinorModeIndex == 8 || 
                    melodicMinorModeIndex ==10 )
-                    playTone(7);
+                    return 7;
                 else{
                     if(melodicMinorModeIndex == 9 ||
                        melodicMinorModeIndex ==11 )
-                        playTone(6);
+                        return 6;
                     else
-                        playTone(8);
+                        return 8;
                 }
             }
             if(majorMinorOther == 2){
@@ -284,13 +280,13 @@ function keyPressed(){
                    harmonicMinorModeIndex == 7 || 
                    harmonicMinorModeIndex == 8 || 
                    harmonicMinorModeIndex ==10 )
-                    playTone(7);
+                    return 7;
                 else
                     if(harmonicMinorModeIndex == 2 ||
                        harmonicMinorModeIndex ==11 )
-                        playTone(6);
+                        return 6;
                     else
-                        playTone(8);
+                        return 8;
             }
             if(majorMinorOther == 3){
                 if(harmonicMajorModeIndex == 0 || 
@@ -300,13 +296,13 @@ function keyPressed(){
                    harmonicMajorModeIndex == 7 || 
                    harmonicMajorModeIndex == 9 || 
                    harmonicMajorModeIndex ==10 )
-                    playTone(7);
+                    return 7;
                 else
                     if(harmonicMajorModeIndex == 2 ||
                        harmonicMajorModeIndex ==11 )
-                        playTone(6);
+                        return 6;
                     else
-                        playTone(8);
+                        return 8;
             }
             if(majorMinorOther == 4){
                 if(doubleHarmonicModeIndex == 0 || 
@@ -316,16 +312,16 @@ function keyPressed(){
                    doubleHarmonicModeIndex == 6 || 
                    doubleHarmonicModeIndex == 9 || 
                    doubleHarmonicModeIndex == 10 )
-                    playTone(7);
+                    return 7;
                 else
                     if(doubleHarmonicModeIndex == 7 ||
                        doubleHarmonicModeIndex ==11 )
-                        playTone(6);
+                        return 6;
                     else
-                        playTone(8);
+                        return 8;
             }
         }
-        if(key == '6'){ // 5
+        if(t == 6){ // 5
             if(majorMinorOther == 0){
                 if(majorModeIndex == 0 || 
                    majorModeIndex == 2 ||
@@ -334,9 +330,9 @@ function keyPressed(){
                    majorModeIndex == 7 || 
                    majorModeIndex == 8 || 
                    majorModeIndex ==10 )
-                    playTone(9);
+                    return 9;
                 else
-                    playTone(8);
+                    return 8;
             }
             if(majorMinorOther == 1){
                 if(melodicMinorModeIndex == 0 || 
@@ -346,9 +342,9 @@ function keyPressed(){
                    melodicMinorModeIndex == 6 || 
                    melodicMinorModeIndex == 8 || 
                    melodicMinorModeIndex ==10 )
-                    playTone(9);
+                    return 9;
                 else
-                    playTone(8);
+                    return 8;
             }
             if(majorMinorOther == 2){
                 if(harmonicMinorModeIndex == 0 || 
@@ -358,9 +354,9 @@ function keyPressed(){
                    harmonicMinorModeIndex == 7 || 
                    harmonicMinorModeIndex == 9 || 
                    harmonicMinorModeIndex ==11 )
-                    playTone(8);
+                    return 8;
                 else
-                    playTone(9);
+                    return 9;
             }
             if(majorMinorOther == 3){
                 if(harmonicMajorModeIndex == 0 || 
@@ -370,9 +366,9 @@ function keyPressed(){
                    // harmonicMajorModeIndex == 8 || 
                    harmonicMajorModeIndex == 9 || 
                    harmonicMajorModeIndex ==11 )
-                    playTone(8);
+                    return 8;
                 else
-                    playTone(9);
+                    return 9;
             }
             if(majorMinorOther == 4){
                 if(doubleHarmonicModeIndex == 0 || 
@@ -382,15 +378,15 @@ function keyPressed(){
                    // doubleHarmonicModeIndex == 8 || 
                    doubleHarmonicModeIndex == 9 || 
                    doubleHarmonicModeIndex == 11 )
-                    playTone(8);
+                    return 8;
                 else
                     if(doubleHarmonicModeIndex == 1 )
-                        playTone(10);
+                        return 10;
                     else
-                        playTone(9);
+                        return 9;
             }
         }
-        if(key == '7'){ // 6
+        if(t == 7){ // 6
             if(majorMinorOther == 0){
                 if(majorModeIndex == 0 || 
                    majorModeIndex == 1 ||
@@ -399,9 +395,9 @@ function keyPressed(){
                    majorModeIndex == 6 || 
                    majorModeIndex == 8 || 
                    majorModeIndex ==10 ){
-                    playTone(11);
+                    return 11;
                 }else
-                    playTone(10);
+                    return 10;
             }
             if(majorMinorOther == 1){
                 if(melodicMinorModeIndex == 0 || 
@@ -411,9 +407,9 @@ function keyPressed(){
                    melodicMinorModeIndex == 6 || 
                    melodicMinorModeIndex == 8 || 
                    melodicMinorModeIndex ==10 )
-                    playTone(11);
+                    return 11;
                 else
-                    playTone(10);
+                    return 10;
             }
             if(majorMinorOther == 2){
                 if(harmonicMinorModeIndex == 0 || 
@@ -423,12 +419,12 @@ function keyPressed(){
                    // harmonicMinorModeIndex == 5 || 
                    harmonicMinorModeIndex == 8 || 
                    harmonicMinorModeIndex == 9 )
-                    playTone(11);
+                    return 11;
                 else
                     if(harmonicMinorModeIndex ==11 )
-                        playTone(9);
+                        return 9;
                     else
-                        playTone(10);
+                        return 10;
             }
             if(majorMinorOther == 3){
                 if(harmonicMajorModeIndex == 0 || 
@@ -438,12 +434,12 @@ function keyPressed(){
                    harmonicMajorModeIndex == 6 || 
                    harmonicMajorModeIndex == 8 || 
                    harmonicMajorModeIndex == 9 )
-                    playTone(11);
+                    return 11;
                 else
                     if(harmonicMajorModeIndex ==11 )
-                        playTone(9);
+                        return 9;
                     else
-                        playTone(10);
+                        return 10;
             }
             if(majorMinorOther == 4){
                 if(doubleHarmonicModeIndex == 0 || 
@@ -453,18 +449,32 @@ function keyPressed(){
                    doubleHarmonicModeIndex == 6 || 
                    doubleHarmonicModeIndex == 8 || 
                    doubleHarmonicModeIndex == 9 )
-                    playTone(11);
+                    return 11;
                 else
                     if(doubleHarmonicModeIndex == 4 ||
                        doubleHarmonicModeIndex ==11 )
-                        playTone(9);
+                        return 9;
                     else
-                        playTone(10);
+                        return 10;
             }
         }
-        if(key == '8'){ // 7
-            playTone(12);
+        if(t == 8){ // 7
+            return 12;
         }
+}
+
+function keyPressed(){
+    if(majorMinorOther == 5)
+        return;
+    else{
+        if(key == '1') playTone(modeCheck(1));
+        if(key == '2') playTone(modeCheck(2));
+        if(key == '3') playTone(modeCheck(3));
+        if(key == '4') playTone(modeCheck(4));
+        if(key == '5') playTone(modeCheck(5));
+        if(key == '6') playTone(modeCheck(6));
+        if(key == '7') playTone(modeCheck(7));
+        if(key == '8') playTone(modeCheck(8));
     }
     // return false;
 }

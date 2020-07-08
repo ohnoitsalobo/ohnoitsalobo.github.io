@@ -35,7 +35,6 @@ function draw(){
 }
 
 function playedHighlight(){
-    
     for(var i = 0; i < 13; i++){
         if(playedAlpha[i] > 1){
         push();
@@ -52,5 +51,14 @@ function playedHighlight(){
         pop();
         }
     }
-    
+    fill(0); textSize(0.4*Size);
+    for(var i = 1; i < 8; i++){
+        push();
+            let t = modeCheck(i);
+            rotate(t*PI/6);
+            translate(0.425*(shortAxis*scale), -0.6*Size);
+            rotate(-t*PI/6+PI/2);
+            text(i, 0, 0);
+        pop()
+    }
 }
