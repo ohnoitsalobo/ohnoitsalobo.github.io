@@ -6,7 +6,7 @@ var synth = new Tone.PolySynth(6, Tone.Synth,
         volume  : -10,
     },
     envelope: {
-        attack  : 0.1,
+        attack  : 0.01,
         decay   : 0.01,
         sustain : 0.9,
         release : 0.1
