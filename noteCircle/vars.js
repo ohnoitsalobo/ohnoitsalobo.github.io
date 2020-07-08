@@ -70,7 +70,7 @@ let harmonicMinorModeList = [               //_0_1_2_3_4_5_6_
 "Mode: II\nLocrian \u266F6",                     // 0 1 3 5 6 9 10  w
 "Mode: III\nMajor augmented\n(Ionian \u266F5)",  // 0 2 4 5 8 9 11  e
 "Mode: IV\nLydian minor",                   // 0 2 3 6 7 9 10  r
-"Mode: V\nPhrygian Dominant",               // 0 1 4 5 7 8 10  t
+"Mode: V\nPhrygian dominant",               // 0 1 4 5 7 8 10  t
 "Mode: VI\nLydian \u266F2",                      // 0 3 4 6 7 9 11  y
 "Mode: VII\nAltered diminished\n(Ultra-Locrian)"             // 0 1 3 4 6 8 9   u
 ];

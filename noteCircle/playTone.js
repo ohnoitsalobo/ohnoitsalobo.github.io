@@ -1,16 +1,13 @@
-var synth = new Tone.Synth({
+var synth = new Tone.PolySynth(6, Tone.Synth, {
   oscillator: {
-    type: 'sine',
-    // volume: -25
-    // modulationType: 'triangle',
-    // modulationIndex: 3,
-    // harmonicity: 3.4
+    type    : 'triangle8',
+    volume  : -10,
   },
   envelope: {
-    attack: 0.05,
-    decay: 0.2,
-    sustain: 0.7,
-    release: 0.2
+    attack  : 0.05,
+    decay   : 0.2,
+    sustain : 0.7,
+    release : 0.2
   }
 }).toMaster()
 
