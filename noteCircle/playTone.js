@@ -469,7 +469,90 @@ function keyPressed(){
     // return false;
 }
 
-function mouseReleased(){
+/*
+function mouseDragged(){
+    if
+    let xpos, ypos, ypos1, offset = 0.08*(shortAxis*scale);
+    xpos = 0.5*(shortAxis*scale);
+    ypos = 0.11*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos        &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(12);
+    }
+    if(mouseX>xpos        && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(0);
+    }
+    xpos = 0.69*(shortAxis*scale);
+    ypos = 0.17*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(1);
+    }
+    xpos = 0.83*(shortAxis*scale);
+    ypos = 0.31*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(2);
+    }
+    xpos = 0.88*(shortAxis*scale);
+    ypos = 0.5*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(3);
+    }
+    xpos = 0.83*(shortAxis*scale);
+    ypos = 0.69*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(4);
+    }
+    xpos = 0.69*(shortAxis*scale);
+    ypos = 0.83*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(5);
+    }
+    xpos = 0.5*(shortAxis*scale);
+    ypos = 0.88*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(6);
+    }
+    xpos = 0.31*(shortAxis*scale);
+    ypos = 0.83*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(7);
+    }
+    xpos = 0.17*(shortAxis*scale);
+    ypos = 0.69*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(8);
+    }
+    xpos = 0.11*(shortAxis*scale);
+    ypos = 0.5*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(9);
+    }
+    xpos = 0.17*(shortAxis*scale);
+    ypos = 0.31*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(10);
+    }
+    xpos = 0.31*(shortAxis*scale);
+    ypos = 0.17*(shortAxis*scale);
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        playTone(11);
+    }
+}
+*/
+
+function mousePressed(){
     // console.log(mouseX/(shortAxis*scale) + "," + mouseY/(shortAxis*scale));
     let xpos, ypos, ypos1, offset = 0.08*(shortAxis*scale);
     xpos = 0.5*(shortAxis*scale);
@@ -548,6 +631,7 @@ function mouseReleased(){
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(11);
     }
+    
     ////// CHANGE KEY
     xpos  = 1.15*(shortAxis*scale);
     ypos  = 0.19*(shortAxis*scale);
