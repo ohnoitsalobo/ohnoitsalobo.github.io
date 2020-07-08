@@ -31,7 +31,26 @@ function draw(){
     if(majorMinorOther == 5)
         createOtherModeCircle();
 
-    fill(255); noStroke();
-    rectMode(CENTER);
+    playedHighlight();
 }
 
+function playedHighlight(){
+    
+    for(var i = 0; i < 13; i++){
+        if(playedAlpha[i] > 1){
+        push();
+            rotate(i*PI/6);
+            fill(0, playedAlpha[i]); stroke(0, playedAlpha[i]); strokeWeight(3);
+            var x = 0.335*shortAxis, y = 0, w = Size*1.75, l = Size*1.75;
+            if(i == 0)
+                rect(x, y+l/4, w, l/2);
+            else if(i == 12)
+                rect(x, y-l/4, w, l/2);
+            else
+                rect(x, y, w, l);
+            playedAlpha[i] = lerp(playedAlpha[i], 0, 0.1);
+        pop();
+        }
+    }
+    
+}
