@@ -710,7 +710,7 @@ function mouseReleased(){
                 if(majorMinorOther == 3) keyIndex = keyIndex + (12 - harmonicMajorModeIndex )%12;
                 if(majorMinorOther == 4) keyIndex = keyIndex + (12 - doubleHarmonicModeIndex)%12; 
             }else{
-                speed = 0.4;
+                speed = 0.5;
                 keyIndex = notesAreLocked();
             }
             lockNotes = !lockNotes;
