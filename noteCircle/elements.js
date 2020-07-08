@@ -46,7 +46,7 @@ function createNoteCircle(){
         fill(0); textSize(Size*0.4); 
         if(majorMinorOther!=5) {
             text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
-            textSize(Size*0.4);
+            textSize(Size*0.35);
             if(!lockNotes){
                 text("Tap here to lock\nthe visible notes\nin the pattern", 0*(shortAxis*scale), 0*(shortAxis*scale));
             }else{

@@ -469,7 +469,9 @@ while(now < playLength){
 }
 
 function keyPressed(){
-    if(majorMinorOther != 5){
+    if(majorMinorOther == 5)
+        return;
+    else{
         if(key == '1'){ // 0
             playTone(0);
         }
