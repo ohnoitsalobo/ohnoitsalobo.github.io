@@ -1,29 +1,5 @@
 let fillcolor = 100, fillalpha = 0;
 
-function hideRect(){
-    fill(fillcolor, fillalpha); noStroke();
-    rect(0, Size*1.6, 0.7*Size, 1.5*Size);
-}
-
-function highlightRect(){
-    fill(255, fillalpha*0.2); stroke(0, fillalpha); strokeWeight(1.5);
-}
-
-function notesAreLocked(){
-    let _rotation;
-    if(lockNotes){
-        if(majorMinorOther == 0) _rotation = keyIndex + majorModeIndex         ;
-        if(majorMinorOther == 1) _rotation = keyIndex + melodicMinorModeIndex  ;
-        if(majorMinorOther == 2) _rotation = keyIndex + harmonicMinorModeIndex ;
-        if(majorMinorOther == 3) _rotation = keyIndex + harmonicMajorModeIndex ;
-        if(majorMinorOther == 4) _rotation = keyIndex + doubleHarmonicModeIndex;
-        if(majorMinorOther == 5) _rotation = keyIndex;
-    }else
-        _rotation = keyIndex;
-    keySelect.selected(_rotation%12);
-    return _rotation%12;
-}
-
 function createNoteCircle(){
     if(frameCount > 50){
         let x = 1;
@@ -90,20 +66,20 @@ function createNoteCircle(){
             rotate(-noteRotation[i]+currentNoteRotation+PI/2);
             textSize(Size); fill(255);
             if(i==0) { text('A', 0, 0); } 
-            if(i==2) { text('B', 0, 0); textSize(Size*0.3); text('Cb',  Size*0.4, -Size*0.5 ); } 
-            if(i==3) { text('C', 0, 0); textSize(Size*0.3); text('B#', -Size*0.4,  Size*0.35); }
+            if(i==2) { text('B', 0, 0); textSize(Size*0.3); text('C\u266D',  Size*0.4, -Size*0.5 ); } 
+            if(i==3) { text('C', 0, 0); textSize(Size*0.3); text('B\u266F', -Size*0.4,  Size*0.35); }
             if(i==5) { text('D', 0, 0); }
-            if(i==7) { text('E', 0, 0); textSize(Size*0.3); text('Fb',  Size*0.4, -Size*0.5 ); } 
-            if(i==8) { text('F', 0, 0); textSize(Size*0.3); text('E#', -Size*0.4,  Size*0.35); }
+            if(i==7) { text('E', 0, 0); textSize(Size*0.3); text('F\u266D',  Size*0.4, -Size*0.5 ); } 
+            if(i==8) { text('F', 0, 0); textSize(Size*0.3); text('E\u266F', -Size*0.4,  Size*0.35); }
             if(i==10){ text('G', 0, 0); }
 
             textSize(Size*0.6); fill (0); //fill((pianoColors) ? 0 : 255); if(majorMinorOther == 2) fill(0);
             let xpos = 0.2*Size; let ypos = 0.25*Size;
-            if(i==1) { text('A#', -xpos, -ypos); text('Bb', xpos, ypos); }
-            if(i==4) { text('C#', -xpos, -ypos); text('Db', xpos, ypos); }
-            if(i==6) { text('D#', -xpos, -ypos); text('Eb', xpos, ypos); }
-            if(i==9) { text('F#', -xpos, -ypos); text('Gb', xpos, ypos); }
-            if(i==11){ text('G#', -xpos, -ypos); text('Ab', xpos, ypos); }
+            if(i==1) { text('A\u266F', -xpos, -ypos); text('B\u266D', xpos, ypos); }
+            if(i==4) { text('C\u266F', -xpos, -ypos); text('D\u266D', xpos, ypos); }
+            if(i==6) { text('D\u266F', -xpos, -ypos); text('E\u266D', xpos, ypos); }
+            if(i==9) { text('F\u266F', -xpos, -ypos); text('G\u266D', xpos, ypos); }
+            if(i==11){ text('G\u266F', -xpos, -ypos); text('A\u266D', xpos, ypos); }
 
             if(pianoColors){
                 rotate(noteRotation[i]-currentNoteRotation-PI/2);
@@ -889,3 +865,26 @@ function changePianoMouse(event){
     changePiano();
 }
 
+function hideRect(){
+    fill(fillcolor, fillalpha); noStroke();
+    rect(0, Size*1.6, 0.7*Size, 1.5*Size);
+}
+
+function highlightRect(){
+    fill(255, fillalpha*0.2); stroke(0, fillalpha); strokeWeight(1.5);
+}
+
+function notesAreLocked(){
+    let _rotation;
+    if(lockNotes){
+        if(majorMinorOther == 0) _rotation = keyIndex + majorModeIndex         ;
+        if(majorMinorOther == 1) _rotation = keyIndex + melodicMinorModeIndex  ;
+        if(majorMinorOther == 2) _rotation = keyIndex + harmonicMinorModeIndex ;
+        if(majorMinorOther == 3) _rotation = keyIndex + harmonicMajorModeIndex ;
+        if(majorMinorOther == 4) _rotation = keyIndex + doubleHarmonicModeIndex;
+        if(majorMinorOther == 5) _rotation = keyIndex;
+    }else
+        _rotation = keyIndex;
+    keySelect.selected(_rotation%12);
+    return _rotation%12;
+}

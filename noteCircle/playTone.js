@@ -7,7 +7,7 @@ var synth = new Tone.Synth({
     // harmonicity: 3.4
   },
   envelope: {
-    attack: 0.1,
+    attack: 0.05,
     decay: 0.2,
     sustain: 0.7,
     release: 0.2

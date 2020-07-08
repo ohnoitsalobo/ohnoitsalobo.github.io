@@ -1,5 +1,5 @@
-
 let PI_ = 3.141592653589793;
+
 let noteRotation  = [ 0*PI_/6, 1*PI_/6, 2*PI_/6, 3*PI_/6, 4*PI_/6, 5*PI_/6, 6*PI_/6, 7*PI_/6, 8*PI_/6, 9*PI_/6, 10*PI_/6, 11*PI_/6 ];
 let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0;
 let majorRotation = 0;
@@ -21,8 +21,14 @@ let scale = 0.9;
 let pianoColors = 1;
 let majorMinorOther = 0;
 
+// flat    \u266D
+// natural \u266E
+// sharp   \u266F
+// double sharp \u{1D12A}
+// double flat  \u{1D12B}
+
 let keySelect;
-let keyList = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"];
+let keyList = ["C", "C\u266F/D\u266D", "D", "D\u266F/E\u266D", "E", "F", "F\u266F/G\u266D", "G", "G\u266F/A\u266D", "A", "A\u266F/B\u266D", "B"];
 let pianoSelect;;
 let pianoMode = ["Piano keys on", " Piano keys off"];
 
@@ -38,7 +44,7 @@ let modeList = [
 
 let majorModeSelect;
 let majorModeList = [                      //_0_1_2_3_4_5_6_
-"Mode: I\nIonian\n(major)",                // 0 2 4 5 7 9 11  q
+"Mode: I\nIonian (major)",                // 0 2 4 5 7 9 11  q
 "Mode: II\nDorian",                        // 0 2 3 5 7 9 10  w
 "Mode: III\nPhrygian",                     // 0 1 3 5 7 8 10  e
 "Mode: IV\nLydian",                        // 0 2 4 6 7 9 11  r
@@ -50,45 +56,45 @@ let majorModeList = [                      //_0_1_2_3_4_5_6_
 let melodicMinorModeSelect;
 let melodicMinorModeList = [                    //_0_1_2_3_4_5_6_
 "Mode: I\nMelodic minor\n(ascending)",          // 0 2 3 5 7 9 11  q
-"Mode: II\nDorian b2\n(Phrygian #6)",           // 0 1 3 5 7 9 10  w
-"Mode: III\nLydian augmented",                  // 0 2 4 6 8 9 11  e
+"Mode: II\nDorian \u266D2\n(Phrygian \u266F6)",           // 0 1 3 5 7 9 10  w
+"Mode: III\nLydian augmented (\u266F5)",                  // 0 2 4 6 8 9 11  e
 "Mode: IV\nLydian dominant\n(overtone scale)",  // 0 2 4 6 7 9 10  r
-"Mode: V\nMixolydian b6",                       // 0 2 4 5 7 8 10  t
-"Mode: VI\nAeolian b5\n(Locrian #2)",           // 0 2 3 5 6 8 10  y
-"Mode: VII\nAltered scale\n(Super Locrian)"     // 0 1 3 4 6 8 10  u
+"Mode: V\nAeolian dominant",                       // 0 2 4 5 7 8 10  t
+"Mode: VI\nLocrian \u266E2\n(Aeolian \u266F5)",           // 0 2 3 5 6 8 10  y
+"Mode: VII\nAltered\n(Super-Locrian)"     // 0 1 3 4 6 8 10  u
 ];
 
 let harmonicMinorModeSelect;
-let harmonicMinorModeList = [          //_0_1_2_3_4_5_6_
-"Mode: I\nHarmonic minor",             // 0 2 3 5 7 8 11  q
-"Mode: II\nLocrian #6",                // 0 1 3 5 6 9 10  w
-"Mode: III\nIonian #5",                // 0 2 4 5 8 9 11  e
-"Mode: IV\nUkrainian Dorian",          // 0 2 3 6 7 9 10  r
-"Mode: V\nPhrygian Dominant",          // 0 1 4 5 7 8 10  t
-"Mode: VI\nLydian #2",                 // 0 3 4 6 7 9 11  y
-"Mode: VII\nAltered Diminished"        // 0 1 3 4 6 8 9   u
+let harmonicMinorModeList = [               //_0_1_2_3_4_5_6_
+"Mode: I\nHarmonic minor",                  // 0 2 3 5 7 8 11  q
+"Mode: II\nLocrian \u266F6",                     // 0 1 3 5 6 9 10  w
+"Mode: III\nMajor augmented\n(Ionian \u266F5)",  // 0 2 4 5 8 9 11  e
+"Mode: IV\nLydian minor",                   // 0 2 3 6 7 9 10  r
+"Mode: V\nPhrygian Dominant",               // 0 1 4 5 7 8 10  t
+"Mode: VI\nLydian \u266F2",                      // 0 3 4 6 7 9 11  y
+"Mode: VII\nAltered diminished\n(Ultra-Locrian)"             // 0 1 3 4 6 8 9   u
 ];
 
 let harmonicMajorModeSelect;
 let harmonicMajorModeList = [          //_0_1_2_3_4_5_6_
 "Mode: I\nHarmonic major",             // 0 2 4 5 7 8 11  q
-"Mode: II\nDorian b5",                 // 0 2 3 5 6 9 10  w
-"Mode: III\nPhrygian b4",              // 0 1 3 4 7 8 10  e
-"Mode: IV\nLydian b3",                 // 0 2 3 6 7 9 11  r
-"Mode: V\nMixolydian b2",              // 0 1 4 5 7 9 10  t
-"Mode: VI\nLydian augmented #2",       // 0 3 4 6 8 9 11  y
-"Mode: VII\nLocrian bb7"               // 0 1 3 5 6 8 9   u
+"Mode: II\nDorian \u266D5",                 // 0 2 3 5 6 9 10  w
+"Mode: III\nPhrygian \u266D4",              // 0 1 3 4 7 8 10  e
+"Mode: IV\nLydian \u266D3",                 // 0 2 3 6 7 9 11  r
+"Mode: V\nMixolydian \u266D2",              // 0 1 4 5 7 9 10  t
+"Mode: VI\nLydian augmented \u266F2",       // 0 3 4 6 8 9 11  y
+"Mode: VII\nLocrian \u{1D12B}7"          // 0 1 3 5 6 8 9   u
 ];
 
 let doubleHarmonicModeSelect;
 let doubleHarmonicModeList = [         //_0_1_2_3_4_5__6_
 "Mode: I\nDouble harmonic",            // 0 1 4 5 7 8  11  q
-"Mode: II\nLydian #2 #6",              // 0 3 4 6 7 10 11  w
-"Mode: III\nPhrygian bb7 b4",          // 0 1 3 4 7 8  9   e
+"Mode: II\nLydian \u266F2 \u266F6",              // 0 3 4 6 7 10 11  w
+"Mode: III\nPhrygian \u266D7 \u266D4",          // 0 1 3 4 7 8  9   e
 "Mode: IV\nHungarian minor",           // 0 2 3 6 7 8  11  r
-"Mode: V\nMixolydian b5 b2",           // 0 1 4 5 6 9  10  t
-"Mode: VI\nIonian #5 #2",              // 0 3 4 5 8 9  11  y
-"Mode: VII\nLocrian bb3 bb7"           // 0 1 2 5 6 8  9   u
+"Mode: V\nMixolydian \u266D5 \u266D2",           // 0 1 4 5 6 9  10  t
+"Mode: VI\nIonian \u266F5 \u266F2",              // 0 3 4 5 8 9  11  y
+"Mode: VII\nLocrian \u{1D12B}3 \u{1D12B}7"           // 0 1 2 5 6 8  9   u
 ];
 
 let otherModeSelect;

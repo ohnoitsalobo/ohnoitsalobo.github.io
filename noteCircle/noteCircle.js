@@ -41,7 +41,7 @@ function playedHighlight(){
         push();
             rotate(i*PI/6);
             fill(0, playedAlpha[i]); stroke(0, playedAlpha[i]); strokeWeight(3);
-            var x = 0.335*shortAxis, y = 0, w = Size*1.75, l = Size*1.75;
+            var x = 0.333*shortAxis, y = 0, w = Size*1.74, l = Size*1.74;
             if(i == 0)
                 rect(x, y+l/4, w, l/2);
             else if(i == 12)
