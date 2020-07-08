@@ -1,8 +1,12 @@
-let fillcolor = 100;
+let fillcolor = 100, fillalpha = 0;
 
 function hideRect(){
-    fill(fillcolor); noStroke();
+    fill(fillcolor, fillalpha); noStroke();
     rect(0, Size*1.6, 0.7*Size, 1.5*Size);
+}
+
+function highlightRect(){
+    fill(255, fillalpha*0.2); stroke(0, fillalpha); strokeWeight(1.5);
 }
 
 function notesAreLocked(){
@@ -21,7 +25,12 @@ function notesAreLocked(){
 }
 
 function createNoteCircle(){
-    fill(fillcolor); noStroke();
+    if(frameCount > 50){
+        let x = 1;
+        if(fillalpha < 255*x) fillalpha = lerp(fillalpha, 255*x, 0.08);
+        
+    }
+    fill(fillcolor, fillalpha); noStroke();
     Size = 0.97*(shortAxis*scale);
     ellipse(0, 0, Size, Size);
     Size = 0.088*(shortAxis*scale);
@@ -117,12 +126,12 @@ function createNoteCircle(){
         pop();
         }
     pop();
-    currentNoteRotation         = lerp(currentNoteRotation        , noteRotation[notesAreLocked()       %12], speed);
-    majorRotation          = lerp(majorRotation         , noteRotation[majorModeIndex         %12], speed);
-    melodicMinorRotation   = lerp(melodicMinorRotation  , noteRotation[melodicMinorModeIndex  %12], speed);
-    harmonicMinorRotation       = lerp(harmonicMinorRotation      , noteRotation[harmonicMinorModeIndex %12], speed);
-    harmonicMajorRotation       = lerp(harmonicMajorRotation      , noteRotation[harmonicMajorModeIndex %12], speed);
-    doubleHarmonicRotation = lerp(doubleHarmonicRotation, noteRotation[doubleHarmonicModeIndex%12], speed);
+    currentNoteRotation     = lerp(currentNoteRotation,    noteRotation[notesAreLocked()       %12], speed);
+    majorRotation           = lerp(majorRotation,          noteRotation[majorModeIndex         %12], speed);
+    melodicMinorRotation    = lerp(melodicMinorRotation,   noteRotation[melodicMinorModeIndex  %12], speed);
+    harmonicMinorRotation   = lerp(harmonicMinorRotation,  noteRotation[harmonicMinorModeIndex %12], speed);
+    harmonicMajorRotation   = lerp(harmonicMajorRotation,  noteRotation[harmonicMajorModeIndex %12], speed);
+    doubleHarmonicRotation  = lerp(doubleHarmonicRotation, noteRotation[doubleHarmonicModeIndex%12], speed);
 }
 
 function createMajorModeCircle(){
@@ -135,7 +144,7 @@ function createMajorModeCircle(){
             rotate(noteRotation[i]);
             translate(0, -3.9*Size); 
             if(i==0 || i==2 || i==3 || i==5 || i==7 || i==8 || i==10){
-                fill(255, 40); stroke(0); strokeWeight(1.5);
+                highlightRect();
             }
             if(i==1 || i==4 || i==6 || i==9 || i==11){
                 hideRect();
@@ -168,7 +177,7 @@ function createMelodicMinorModeCircle(){
             rotate(noteRotation[i]);
             translate(0, -3.9*Size); 
             if(i==0 || i==2 || i==3 || i==5 || i==6 || i==8 || i==10){
-                fill(255, 40); stroke(0); strokeWeight(1.5);
+                highlightRect();
             }
             if(i==1 || i==4 || i==7 || i==9 || i==11){
                 hideRect();
@@ -201,7 +210,7 @@ function createHarmonicMinorModeCircle(){
             rotate(noteRotation[i]);
             translate(0, -3.9*Size); 
             if(i==2 || i==3 || i==5 || i==6 || i==8 || i==10 || i==11){
-                fill(255, 40); stroke(0); strokeWeight(1.5);
+                highlightRect();
             }
             if(i==0 || i==1 || i==4 || i==7 || i==9){
                 hideRect();
@@ -234,7 +243,7 @@ function createHarmonicMajorModeCircle(){
             rotate(noteRotation[i]);
             translate(0, -3.9*Size); 
             if(i==2 || i==3 || i==5 || i==7 || i==8 || i==10 || i==11){
-                fill(255, 40); stroke(0); strokeWeight(1.5);
+                highlightRect();
             }
             if(i==0 || i==1 || i==4 || i==6 || i==9){
                 hideRect();
@@ -267,7 +276,7 @@ function createDoubleHarmonicModeCircle(){
             rotate(noteRotation[i]);
             translate(0, -3.9*Size); 
             if(i==2 || i==3 || i==4 || i==7 || i==8 || i==10 || i==11){
-                fill(255, 40); stroke(0); strokeWeight(1.5);
+                highlightRect();
             }
             if(i==0 || i==1 || i==5 || i==6 || i==9){
                 hideRect();
@@ -304,9 +313,9 @@ function createOtherModeCircle(){
             noFill();
             rotate(noteRotation[i]);
             translate(0, -3.9*Size); 
-            fill(fillcolor); noStroke();
+            fill(fillcolor, fillalpha); noStroke();
             if(i==0){
-                fill(255, 40); stroke(0); strokeWeight(1.5);
+                highlightRect();
             }
             if(i==1){
                 if(otherModeIndex ==  7 || 
@@ -319,7 +328,7 @@ function createOtherModeCircle(){
                    otherModeIndex == 23 ||
                    otherModeIndex == 24 ||
                    otherModeIndex == 26 ){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
@@ -341,7 +350,7 @@ function createOtherModeCircle(){
                    otherModeIndex == 25 ||
                    otherModeIndex == 27 ||
                    otherModeIndex == 28){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
@@ -360,7 +369,7 @@ function createOtherModeCircle(){
                    otherModeIndex == 19 ||
                    otherModeIndex == 20 ||
                    otherModeIndex == 27){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
@@ -382,7 +391,7 @@ function createOtherModeCircle(){
                    otherModeIndex == 26 ||
                    otherModeIndex == 28 ||
                    otherModeIndex == 15 ){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
@@ -405,7 +414,7 @@ function createOtherModeCircle(){
                    otherModeIndex == 20 ||
                    otherModeIndex == 23 ||
                    otherModeIndex == 24 ){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
@@ -426,7 +435,7 @@ function createOtherModeCircle(){
                    otherModeIndex == 17 ||
                    otherModeIndex == 20 ||
                    otherModeIndex == 23 ){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
@@ -453,7 +462,7 @@ function createOtherModeCircle(){
                    otherModeIndex == 26 ||
                    otherModeIndex == 27 ||
                    otherModeIndex == 15 ){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
@@ -476,7 +485,7 @@ function createOtherModeCircle(){
                    otherModeIndex == 20 ||
                    otherModeIndex == 23 ||
                    otherModeIndex == 24 ){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
@@ -490,7 +499,7 @@ function createOtherModeCircle(){
                    otherModeIndex == 27 ||
                    otherModeIndex ==  5 ||
                    otherModeIndex == 20 ){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
@@ -511,7 +520,7 @@ function createOtherModeCircle(){
                    otherModeIndex == 17 ||
                    otherModeIndex == 24 ||
                    otherModeIndex == 27 ){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
@@ -529,7 +538,7 @@ function createOtherModeCircle(){
                    otherModeIndex ==  4 ||
                    otherModeIndex ==  5 ||
                    otherModeIndex == 20 ){
-                    fill(255, 40); stroke(0); strokeWeight(1.5);
+                    highlightRect();
                 }
                 else
                     hideRect();
