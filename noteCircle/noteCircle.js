@@ -52,13 +52,15 @@ function playedHighlight(){
         }
     }
     fill(0); textSize(0.4*Size);
-    for(var i = 1; i < 8; i++){
-        push();
-            let t = modeCheck(i);
-            rotate(t*PI/6);
-            translate(0.425*(shortAxis*scale), -0.6*Size);
-            rotate(-t*PI/6+PI/2);
-            text(i, 0, 0);
-        pop()
+    if(majorMinorOther != 5){
+        for(var i = 1; i < 8; i++){
+            push();
+                let t = modeCheck(i);
+                rotate(t*PI/6);
+                translate(0.31*(shortAxis*scale), -0.6*Size);
+                rotate(-t*PI/6+PI/2);
+                text(i, 0, 0);
+            pop()
+        }
     }
 }
