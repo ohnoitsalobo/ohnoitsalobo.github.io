@@ -131,9 +131,9 @@ function createNoteCircle(){
         rotate(PI/2);
         textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
         textSize(Size*0.6); fill((lockNotes && majorMinorOther != 5) ? 0 : 255); noStroke(); //stroke(0); strokeWeight(1);
-        if(showEnharmonic == 0) text("Key:\n" + keyList     [notesAreLocked()%12], xpos, ypos);
-        if(showEnharmonic == 1) text("Key:\n" + keySharpList[notesAreLocked()%12], xpos, ypos);
-        if(showEnharmonic == 2) text("Key:\n" + keyFlatList [notesAreLocked()%12], xpos, ypos);
+        if      (showEnharmonic == 1)   text("Key:\n" + keySharpList[notesAreLocked()%12], xpos, ypos);
+        else if (showEnharmonic == 2)   text("Key:\n" + keyFlatList [notesAreLocked()%12], xpos, ypos);
+        else                            text("Key:\n" + keyList     [notesAreLocked()%12], xpos, ypos);
         textSize(Size*0.5); fill(255);
         if(majorMinorOther != 5)
             text("Base pattern:\n" + modeList[majorMinorOther], xpos/0.62, ypos);
@@ -184,7 +184,17 @@ function createNoteCircle(){
             if(i==3) { textSize(Size*0.3); text('B\u266F', -Size*0.4,  Size*0.35); textSize(Size); }
             if(i==7) { textSize(Size*0.3); text('F\u266D',  Size*0.4, -Size*0.5 ); textSize(Size); } 
             if(i==8) { textSize(Size*0.3); text('E\u266F', -Size*0.4,  Size*0.35); textSize(Size); }
-            if(showEnharmonic == 0){
+            if(showEnharmonic == 1){
+                if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
+                    fill(0); 
+                text(keySharpList[(i+9)%12], 0, 0); 
+            }
+            else if(showEnharmonic == 2){
+                if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
+                    fill(0); 
+                text(keyFlatList[(i+9)%12], 0, 0); 
+            }
+            else{
                 if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 ){
                     fill(0); textSize(Size*0.6);
                     let xpos = 0.2*Size; let ypos = 0.25*Size;
@@ -193,16 +203,6 @@ function createNoteCircle(){
                 }else{
                     text(keyList[(i+9)%12], 0, 0); 
                 }
-            }
-            if(showEnharmonic == 1){
-                if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
-                    fill(0); 
-                text(keySharpList[(i+9)%12], 0, 0); 
-            }
-            if(showEnharmonic == 2){
-                if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
-                    fill(0); 
-                text(keyFlatList[(i+9)%12], 0, 0); 
             }
 
             if(pianoColors){

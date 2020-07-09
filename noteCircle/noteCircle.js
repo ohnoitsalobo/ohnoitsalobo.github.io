@@ -51,7 +51,7 @@ function playedHighlight(){
         pop();
         }
     }
-    fill(0); textSize(0.4*Size);
+    fill(0, fillalpha); textSize(0.4*Size);
     if(majorMinorOther != 5){
         for(var i = 1; i < 8; i++){
             push();
