@@ -180,6 +180,10 @@ function createNoteCircle(){
             translate(0, -4.2*Size);
             rotate(-noteRotation[i]+currentNoteRotation+PI/2);
             textSize(Size); fill(255);
+            if(i==2) { textSize(Size*0.3); text('C\u266D',  Size*0.4, -Size*0.5 ); textSize(Size); } 
+            if(i==3) { textSize(Size*0.3); text('B\u266F', -Size*0.4,  Size*0.35); textSize(Size); }
+            if(i==7) { textSize(Size*0.3); text('F\u266D',  Size*0.4, -Size*0.5 ); textSize(Size); } 
+            if(i==8) { textSize(Size*0.3); text('E\u266F', -Size*0.4,  Size*0.35); textSize(Size); }
             if(showEnharmonic == 0){
                 if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 ){
                     fill(0); textSize(Size*0.6);
