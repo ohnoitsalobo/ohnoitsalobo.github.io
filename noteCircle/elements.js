@@ -114,11 +114,6 @@ function createNoteCircle(){
 
 /*  */
 function createNoteCircle(){
-    if(frameCount > 50){
-        let x = 1;
-        if(fillalpha < 255*x) fillalpha = lerp(fillalpha, 255*x, 0.08);
-        
-    }
     fill(fillcolor, fillalpha); noStroke();
     Size = 0.97*(shortAxis*scale);
     ellipse(0, 0, Size, Size);
