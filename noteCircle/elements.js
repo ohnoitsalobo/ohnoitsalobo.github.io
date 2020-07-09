@@ -1,5 +1,5 @@
 let fillcolor = 100, fillalpha = 0;
-
+/* * /
 function createNoteCircle(){
     if(frameCount > 50){
         let x = 1;
@@ -18,7 +18,7 @@ function createNoteCircle(){
         rotate(PI/2);
         textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
         textSize(Size*0.6); fill((lockNotes && majorMinorOther != 5) ? 0 : 255); noStroke(); //stroke(0); strokeWeight(1);
-        text("Key:\n" + keyList[notesAreLocked()%12], xpos, ypos);
+        text("Key:\n" + keyFlatList[notesAreLocked()%12], xpos, ypos);
         textSize(Size*0.5); fill(255);
         if(majorMinorOther != 5)
             text("Base pattern:\n" + modeList[majorMinorOther], xpos/0.62, ypos);
@@ -110,6 +110,127 @@ function createNoteCircle(){
     harmonicMajorRotation   = lerp(harmonicMajorRotation,  noteRotation[harmonicMajorModeIndex %12], speed);
     doubleHarmonicRotation  = lerp(doubleHarmonicRotation, noteRotation[doubleHarmonicModeIndex%12], speed);
 }
+/* */
+
+/*  */
+function createNoteCircle(){
+    if(frameCount > 50){
+        let x = 1;
+        if(fillalpha < 255*x) fillalpha = lerp(fillalpha, 255*x, 0.08);
+        
+    }
+    fill(fillcolor, fillalpha); noStroke();
+    Size = 0.97*(shortAxis*scale);
+    ellipse(0, 0, Size, Size);
+    Size = 0.088*(shortAxis*scale);
+    textAlign(CENTER, CENTER);
+    rectMode(CENTER);
+    textFont('Georgia');
+    let xpos = 0.65*(shortAxis*scale), ypos = -0.2*(shortAxis*scale);
+    push();
+        rotate(PI/2);
+        textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
+        textSize(Size*0.6); fill((lockNotes && majorMinorOther != 5) ? 0 : 255); noStroke(); //stroke(0); strokeWeight(1);
+        if(showEnharmonic == 0) text("Key:\n" + keyList     [notesAreLocked()%12], xpos, ypos);
+        if(showEnharmonic == 1) text("Key:\n" + keySharpList[notesAreLocked()%12], xpos, ypos);
+        if(showEnharmonic == 2) text("Key:\n" + keyFlatList [notesAreLocked()%12], xpos, ypos);
+        textSize(Size*0.5); fill(255);
+        if(majorMinorOther != 5)
+            text("Base pattern:\n" + modeList[majorMinorOther], xpos/0.62, ypos);
+        else
+            text(modeList[majorMinorOther], xpos/0.62, ypos);
+        fill(0, 0, 100); textSize(Size*0.65); 
+        text("Cheat sheet for scales and modes", 0.8*(shortAxis*scale), -0.45*(shortAxis*scale));
+        fill(0); textSize(Size*0.3);
+        text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*(shortAxis*scale), -0.375*(shortAxis*scale));
+        textSize(Size*0.4); 
+        if(majorMinorOther!=5) {
+            text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
+            textSize(Size*0.35);
+            if(!lockNotes){
+                fill(0, fillalpha);
+                text("Tap here to lock\nthe visible notes\nin the pattern", 0*(shortAxis*scale), 0*(shortAxis*scale));
+            }else{
+                fill(255);
+                text("Mode rotation\nlocked together", 0*(shortAxis*scale), 0*(shortAxis*scale));
+            }
+        }
+        else 
+            text("Click/tap the highlighted notes\nin sequence to hear the scale.\n(Keyboard keys not assigned)", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
+        stroke(255, 255); strokeWeight(5*scale);
+        line(xpos, ypos-1.2*Size, xpos+0.6*Size, ypos-Size);
+        line(xpos, ypos-1.2*Size, xpos-0.6*Size, ypos-Size);
+        line(xpos, ypos+1.2*Size, xpos+0.6*Size, ypos+Size);
+        line(xpos, ypos+1.2*Size, xpos-0.6*Size, ypos+Size);
+        line(xpos/0.62, ypos-1.2*Size, xpos/0.62+0.6*Size, ypos-Size);
+        line(xpos/0.62, ypos-1.2*Size, xpos/0.62-0.6*Size, ypos-Size);
+        line(xpos/0.62, ypos+1.2*Size, xpos/0.62+0.6*Size, ypos+Size);
+        line(xpos/0.62, ypos+1.2*Size, xpos/0.62-0.6*Size, ypos+Size);
+        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)-1.7*Size, 0.85*(shortAxis*scale)+0.6*Size, 0.1*(shortAxis*scale)-1.5*Size);
+        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)-1.7*Size, 0.85*(shortAxis*scale)-0.6*Size, 0.1*(shortAxis*scale)-1.5*Size);
+        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)+1.7*Size, 0.85*(shortAxis*scale)+0.6*Size, 0.1*(shortAxis*scale)+1.5*Size);
+        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)+1.7*Size, 0.85*(shortAxis*scale)-0.6*Size, 0.1*(shortAxis*scale)+1.5*Size);
+    pop();
+    push();
+        rotate(-currentNoteRotation);
+        textFont('Times New Roman');
+        for(var i = 0; i < noteRotation.length; i++){
+        push();
+            rotate(noteRotation[i]);
+            translate(0, -4.2*Size);
+            rotate(-noteRotation[i]+currentNoteRotation+PI/2);
+            textSize(Size); fill(255);
+            if(showEnharmonic == 0){
+                if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 ){
+                    fill(0); textSize(Size*0.6);
+                    let xpos = 0.2*Size; let ypos = 0.25*Size;
+                    text(keyList[(i+9)%12].substr(0, 2), -xpos, -ypos); 
+                    text(keyList[(i+9)%12].substr(3, 2),  xpos,  ypos); 
+                }else{
+                    text(keyList[(i+9)%12], 0, 0); 
+                }
+            }
+            if(showEnharmonic == 1){
+                if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
+                    fill(0); 
+                text(keySharpList[(i+9)%12], 0, 0); 
+            }
+            if(showEnharmonic == 2){
+                if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
+                    fill(0); 
+                text(keyFlatList[(i+9)%12], 0, 0); 
+            }
+
+            if(pianoColors){
+                rotate(noteRotation[i]-currentNoteRotation-PI/2);
+                translate(0, 1.9*Size);
+                fill(255); noStroke();
+                if(i==0) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                if(i==2) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                if(i==3) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                if(i==5) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                if(i==7) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                if(i==8) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                if(i==10){ rect(0, 0, 0.5*Size, 1.3*Size); }
+
+                fill(0);
+                if(i==1) { rect(0, 0, 0.3*Size, 1.3*Size); }
+                if(i==4) { rect(0, 0, 0.3*Size, 1.3*Size); }
+                if(i==6) { rect(0, 0, 0.3*Size, 1.3*Size); }
+                if(i==9) { rect(0, 0, 0.3*Size, 1.3*Size); }
+                if(i==11){ rect(0, 0, 0.3*Size, 1.3*Size); }
+            }
+        pop();
+        }
+    pop();
+    currentNoteRotation     = lerp(currentNoteRotation,    noteRotation[notesAreLocked()       %12], speed);
+    majorRotation           = lerp(majorRotation,          noteRotation[majorModeIndex         %12], speed);
+    melodicMinorRotation    = lerp(melodicMinorRotation,   noteRotation[melodicMinorModeIndex  %12], speed);
+    harmonicMinorRotation   = lerp(harmonicMinorRotation,  noteRotation[harmonicMinorModeIndex %12], speed);
+    harmonicMajorRotation   = lerp(harmonicMajorRotation,  noteRotation[harmonicMajorModeIndex %12], speed);
+    doubleHarmonicRotation  = lerp(doubleHarmonicRotation, noteRotation[doubleHarmonicModeIndex%12], speed);
+}
+/*  */
 
 function createMajorModeCircle(){
     textFont('Georgia');
@@ -871,7 +992,7 @@ function hideRect(){
 }
 
 function highlightRect(){
-    fill(255, fillalpha*0.2); stroke(0, fillalpha); strokeWeight(1.5);
+    fill(255, fillalpha*0.1); stroke(0, fillalpha); strokeWeight(1.5);
 }
 
 function notesAreLocked(){

@@ -1,7 +1,7 @@
 let PI_ = 3.141592653589793;
 
 let noteRotation  = [ 0*PI_/6, 1*PI_/6, 2*PI_/6, 3*PI_/6, 4*PI_/6, 5*PI_/6, 6*PI_/6, 7*PI_/6, 8*PI_/6, 9*PI_/6, 10*PI_/6, 11*PI_/6 ];
-let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0;
+let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0, showEnharmonic = 0;
 let majorRotation = 0;
 let melodicMinorRotation = 0;
 let harmonicMinorRotation = 0;
@@ -42,7 +42,36 @@ let keyList = [
 "G\u266F/A\u266D",
 "A",
 "A\u266F/B\u266D",
-"B"];
+"B"
+];
+let keySharpList = [
+"B\u266F",
+"C\u266F",
+"D",
+"D\u266F",
+"E",
+"E\u266F",
+"F\u266F",
+"G",
+"G\u266F",
+"A",
+"A\u266F",
+"B"
+];
+let keyFlatList = [
+"C",
+"D\u266D",
+"D",
+"E\u266D",
+"F\u266D",
+"F",
+"G\u266D",
+"G",
+"A\u266D",
+"A",
+"B\u266D",
+"C\u266D"
+];
 
 let modeSelect;
 let modeList = [
