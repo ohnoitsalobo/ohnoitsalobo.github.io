@@ -131,7 +131,7 @@ function createNoteCircle(){
         else if (showEnharmonic == 3)   text("Key:\n" + keyFlatList    [notesAreLocked()%12], xpos, ypos);
         else if (showEnharmonic == 4)   text("Key:\n" + keyFlatterList [notesAreLocked()%12], xpos, ypos);
         else                            text("Key:\n" + keyList        [notesAreLocked()%12], xpos, ypos);
-        textSize(Size*0.5); fill(255, fillalpha);
+        textSize(Size*0.5); fill(255);
         if(majorMinorOther == 5)
             text(modeList[majorMinorOther], xpos/0.62, ypos);
         else
@@ -145,13 +145,15 @@ function createNoteCircle(){
         text("Tap here to hide/show\nthe pattern\noverlay", -0.49*(shortAxis*scale), -0.49*(shortAxis*scale));
         textAlign(LEFT, BOTTOM); 
         text("Tap here\nto cycle through\nenharmonic note names", -0.49*(shortAxis*scale), 0.49*(shortAxis*scale));
-        textSize(0.7*Size);
+        textSize(0.75*Size); 
+        if(showEnharmonic != 0) { stroke(255, 150); strokeWeight(3); }
         let _xpos = -0.49*(shortAxis*scale), _ypos = 0.375*(shortAxis*scale);
              if(showEnharmonic == 1) text("\u266F",           _xpos, _ypos);
         else if(showEnharmonic == 2) text("\u266F \u{1D12A}", _xpos, _ypos);
         else if(showEnharmonic == 3) text("\u266D",           _xpos, _ypos);
         else if(showEnharmonic == 4) text("\u266D \u{1D12B}", _xpos, _ypos);
         else                         text("\u266F \u266D",    _xpos, _ypos);
+        noStroke();
         textAlign(CENTER, CENTER);
         textSize(Size*0.4); 
         if(majorMinorOther!=5) {
@@ -273,8 +275,8 @@ function createMajorModeCircle(){
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
         push();
-            textSize(Size*0.69); //stroke(0, fillalpha); strokeWeight(0.5);
-            fill(lockNotes ? 0 : 255, (fillalpha*fillalpha)/(255));
+            textSize(Size*0.69); stroke(0, fillalpha); strokeWeight(0.5);
+            fill(lockNotes ? 0 : 255);
             rotate(PI/2+majorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(majorModeIndex%12==0 ) text(majorModeList[0], 0, 0);
             if(majorModeIndex%12==2 ) text(majorModeList[1], 0, 0);
@@ -306,8 +308,8 @@ function createMelodicMinorModeCircle(){
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
         push();
-            textSize(Size*0.69); //stroke(0, fillalpha); strokeWeight(0.5);
-            fill(lockNotes ? 0 : 255, (fillalpha*fillalpha)/(255));
+            textSize(Size*0.69); stroke(0); strokeWeight(0.5);
+            fill(lockNotes ? 0 : 255);
             rotate(PI/2+melodicMinorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(melodicMinorModeIndex%12==0 ) text(melodicMinorModeList[0], 0, 0);
             if(melodicMinorModeIndex%12==2 ) text(melodicMinorModeList[1], 0, 0);
@@ -339,8 +341,8 @@ function createHarmonicMinorModeCircle(){
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
         push();
-            textSize(Size*0.69); //stroke(0, fillalpha); strokeWeight(0.5);
-            fill(lockNotes ? 0 : 255, (fillalpha*fillalpha)/(255));
+            textSize(Size*0.69); stroke(0); strokeWeight(0.5);
+            fill(lockNotes ? 0 : 255);
             rotate(PI/2+harmonicMinorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(harmonicMinorModeIndex%12==0 ) text(harmonicMinorModeList[0], 0, 0);
             if(harmonicMinorModeIndex%12==2 ) text(harmonicMinorModeList[1], 0, 0);
@@ -372,8 +374,8 @@ function createHarmonicMajorModeCircle(){
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
         push();
-            textSize(Size*0.69); //stroke(0, fillalpha); strokeWeight(0.5);
-            fill(lockNotes ? 0 : 255, (fillalpha*fillalpha)/(255));
+            textSize(Size*0.69); stroke(0); strokeWeight(0.5);
+            fill(lockNotes ? 0 : 255);
             rotate(PI/2+harmonicMajorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(harmonicMajorModeIndex%12==0 ) text(harmonicMajorModeList[0], 0, 0);
             if(harmonicMajorModeIndex%12==2 ) text(harmonicMajorModeList[1], 0, 0);
@@ -405,8 +407,8 @@ function createDoubleHarmonicModeCircle(){
             rect(0, -Size*0.3, Size*1.75, Size*1.75);
         pop();
         push();
-            textSize(Size*0.69); //stroke(0, fillalpha); strokeWeight(0.5);
-            fill(lockNotes ? 0 : 255, (fillalpha*fillalpha)/(255));
+            textSize(Size*0.69); stroke(0); strokeWeight(0.5);
+            fill(lockNotes ? 0 : 255);
             rotate(PI/2+doubleHarmonicRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
             if(doubleHarmonicModeIndex%12==0 ) text(doubleHarmonicModeList[0], 0, 0);
             if(doubleHarmonicModeIndex%12==1 ) text(doubleHarmonicModeList[1], 0, 0);
@@ -424,8 +426,7 @@ function createOtherModeCircle(){
     textFont('Georgia');
     push();
         rotate(PI/2);
-        textSize(Size*0.75); // stroke(0); strokeWeight(0.5);
-        fill(255, fillalpha);
+        fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
         text(otherModeList[otherModeIndex], 0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
     pop();
     push();
