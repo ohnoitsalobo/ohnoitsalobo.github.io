@@ -47,12 +47,12 @@ let keyList = [
 "B"
 ];
 let keySharpList = [
-"B\u266F",
+"C",
 "C\u266F",
 "D",
 "D\u266F",
 "E",
-"E\u266F",
+"F",
 "F\u266F",
 "G",
 "G\u266F",
@@ -65,14 +65,14 @@ let keyFlatList = [
 "D\u266D",
 "D",
 "E\u266D",
-"F\u266D",
+"E",
 "F",
 "G\u266D",
 "G",
 "A\u266D",
 "A",
 "B\u266D",
-"C\u266D"
+"B"
 ];
 let keySharperList = [
 "B\u266F",
