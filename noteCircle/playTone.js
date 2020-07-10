@@ -480,7 +480,7 @@ function keyPressed(){
 }
 
 function mousePressed(){
-    console.log(mouseX/(shortAxis*scale) + "," + mouseY/(shortAxis*scale));
+    // console.log(mouseX/(shortAxis*scale) + "," + mouseY/(shortAxis*scale));
     let xpos, ypos, ypos1, offset = 0.08*(shortAxis*scale);
     xpos = 0.5*(shortAxis*scale);
     ypos = 0.11*(shortAxis*scale);
