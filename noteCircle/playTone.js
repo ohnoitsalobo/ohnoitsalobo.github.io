@@ -480,7 +480,7 @@ function keyPressed(){
 }
 
 function mousePressed(){
-    // console.log(mouseX/(shortAxis*scale) + "," + mouseY/(shortAxis*scale));
+    console.log(mouseX/(shortAxis*scale) + "," + mouseY/(shortAxis*scale));
     let xpos, ypos, ypos1, offset = 0.08*(shortAxis*scale);
     xpos = 0.5*(shortAxis*scale);
     ypos = 0.11*(shortAxis*scale);
@@ -726,6 +726,19 @@ function mousePressed(){
             }
             lockNotes = !lockNotes;
         }
+    }
+    xpos = 0.1*(shortAxis*scale);
+    let offsetx = 0.1*(shortAxis*scale);
+    ypos = 0.05*(shortAxis*scale);
+    let offsety = 0.05*(shortAxis*scale);
+    if(mouseX>xpos-offsetx && mouseX<xpos+offsetx &&
+       mouseY>ypos-offsety && mouseY<ypos+offsety){
+        showOverlay = !showOverlay;
+    }
+    ypos = 0.95*(shortAxis*scale);
+    if(mouseX>xpos-offsetx && mouseX<xpos+offsetx &&
+       mouseY>ypos-offsety && mouseY<ypos+offsety){
+        showEnharmonic = (showEnharmonic + 1)%3;
     }
     return false;
 }

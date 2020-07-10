@@ -1,7 +1,7 @@
 let PI_ = 3.141592653589793;
 
 let noteRotation  = [ 0*PI_/6, 1*PI_/6, 2*PI_/6, 3*PI_/6, 4*PI_/6, 5*PI_/6, 6*PI_/6, 7*PI_/6, 8*PI_/6, 9*PI_/6, 10*PI_/6, 11*PI_/6 ];
-let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0, showEnharmonic = 5;
+let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0;
 let majorRotation = 0;
 let melodicMinorRotation = 0;
 let harmonicMinorRotation = 0;
@@ -20,6 +20,8 @@ let shortAxis, Size, speed = 0.5;
 let scale = 0.9;
 let pianoColors = 1;
 let majorMinorOther = 0;
+let showEnharmonic = 0;
+let showOverlay = 1;
 
 // flat    \u266D
 // natural \u266E
@@ -45,12 +47,12 @@ let keyList = [
 "B"
 ];
 let keySharpList = [
-"B\u266F",
+"C",
 "C\u266F",
 "D",
 "D\u266F",
 "E",
-"E\u266F",
+"F",
 "F\u266F",
 "G",
 "G\u266F",
@@ -63,14 +65,14 @@ let keyFlatList = [
 "D\u266D",
 "D",
 "E\u266D",
-"F\u266D",
+"E",
 "F",
 "G\u266D",
 "G",
 "A\u266D",
 "A",
 "B\u266D",
-"C\u266D"
+"B"
 ];
 
 let modeSelect;

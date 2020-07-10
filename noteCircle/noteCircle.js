@@ -16,7 +16,8 @@ function draw(){
     
     if(frameCount > 50){
         let x = 1;
-        if(fillalpha < 255*x) fillalpha = lerp(fillalpha, 255*x, 0.08);
+        if(fillalpha < 255*x &&  showOverlay) fillalpha = lerp(fillalpha, 255*x, 0.08);
+        if(fillalpha > 0     && !showOverlay) fillalpha = lerp(fillalpha, 0    , 0.08);
     }
     
     background(fillcolor*0.9, 200);

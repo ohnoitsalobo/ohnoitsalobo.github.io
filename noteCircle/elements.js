@@ -138,6 +138,11 @@ function createNoteCircle(){
         text("Cheat sheet for scales and modes", 0.8*(shortAxis*scale), -0.45*(shortAxis*scale));
         fill(0); textSize(Size*0.3);
         text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*(shortAxis*scale), -0.375*(shortAxis*scale));
+        textAlign(LEFT, TOP); // textSize(Size*0.3);
+        text("Tap here to hide/show\nthe pattern\noverlay", -0.49*(shortAxis*scale), -0.49*(shortAxis*scale));
+        textAlign(LEFT, BOTTOM); // textSize(Size*0.25);
+        text("Tap here\nto cycle through\nenharmonic note names", -0.49*(shortAxis*scale), 0.49*(shortAxis*scale));
+        textAlign(CENTER, CENTER);
         textSize(Size*0.4); 
         if(majorMinorOther!=5) {
             text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
@@ -151,7 +156,7 @@ function createNoteCircle(){
             }
         }
         else 
-            text("Click/tap the highlighted notes\nin sequence to hear the scale.\n(Keyboard keys not assigned)", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
+            text("Tap the highlighted notes\nin sequence to hear the scale.\n(Keyboard keys not assigned)", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
         stroke(255, 255); strokeWeight(5*scale);
         line(xpos, ypos-1.2*Size, xpos+0.6*Size, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-0.6*Size, ypos-Size);
@@ -175,28 +180,30 @@ function createNoteCircle(){
             translate(0, -4.2*Size);
             rotate(-noteRotation[i]+currentNoteRotation+PI/2);
             textSize(Size); fill(255);
-            if(i==2) { textSize(Size*0.3); text('C\u266D',  Size*0.4, -Size*0.5 ); textSize(Size); } 
-            if(i==3) { textSize(Size*0.3); text('B\u266F', -Size*0.4,  Size*0.35); textSize(Size); }
-            if(i==7) { textSize(Size*0.3); text('F\u266D',  Size*0.4, -Size*0.5 ); textSize(Size); } 
-            if(i==8) { textSize(Size*0.3); text('E\u266F', -Size*0.4,  Size*0.35); textSize(Size); }
+            if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
+                fill(0); textSize(Size*0.8);
             if(showEnharmonic == 1){
-                if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
-                    fill(0); 
-                text(keySharpList[(i+9)%12], 0, 0); 
+                text(keySharpList[(i+9)%12], 0, 0);
+                if(i==3) { textSize(Size*0.3); text('B\u266F', -Size*0.4, -Size*0.5); }
+                if(i==8) { textSize(Size*0.3); text('E\u266F', -Size*0.4, -Size*0.5); }
             }
             else if(showEnharmonic == 2){
-                if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
-                    fill(0); 
-                text(keyFlatList[(i+9)%12], 0, 0); 
+                text(keyFlatList[(i+9)%12], 0, 0);
+                if(i==2) { textSize(Size*0.3); text('C\u266D',  Size*0.4, Size*0.35 ); } 
+                if(i==7) { textSize(Size*0.3); text('F\u266D',  Size*0.4, Size*0.35 ); } 
             }
             else{
                 if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 ){
-                    fill(0); textSize(Size*0.6);
+                    textSize(Size*0.6);
                     let xpos = 0.2*Size; let ypos = 0.25*Size;
                     text(keyList[(i+9)%12].substr(0, 2), -xpos, -ypos); 
                     text(keyList[(i+9)%12].substr(3, 2),  xpos,  ypos); 
                 }else{
                     text(keyList[(i+9)%12], 0, 0); 
+                    if(i==2) { textSize(Size*0.3); text('C\u266D',  Size*0.4,  Size*0.35 ); } 
+                    if(i==3) { textSize(Size*0.3); text('B\u266F', -Size*0.4, -Size*0.5); }
+                    if(i==7) { textSize(Size*0.3); text('F\u266D',  Size*0.4,  Size*0.35 ); } 
+                    if(i==8) { textSize(Size*0.3); text('E\u266F', -Size*0.4, -Size*0.5); }
                 }
             }
 
