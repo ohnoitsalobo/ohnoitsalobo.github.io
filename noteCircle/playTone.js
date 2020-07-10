@@ -727,15 +727,15 @@ function mousePressed(){
             lockNotes = !lockNotes;
         }
     }
-    xpos = 0.11*(shortAxis*scale);
-    ypos = 0.07*(shortAxis*scale);
+    xpos = 0.1*(shortAxis*scale);
+    ypos = 0.06*(shortAxis*scale);
     offset = ypos;
     if(mouseX>xpos-xpos && mouseX<xpos+xpos &&
        mouseY>ypos-ypos && mouseY<ypos+ypos){
         showOverlay = !showOverlay;
     }
-    ypos = 0.95*(shortAxis*scale);
-    if(mouseX>xpos-xpos    && mouseX<xpos+xpos &&
+    ypos = 0.94*(shortAxis*scale);
+    if(mouseX>xpos-xpos   && mouseX<xpos+xpos &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         showEnharmonic = (showEnharmonic + 1)%5;
     }

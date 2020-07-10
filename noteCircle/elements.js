@@ -140,7 +140,7 @@ function createNoteCircle(){
         text("Cheat sheet for scales and modes", 0.8*(shortAxis*scale), -0.45*(shortAxis*scale));
         fill(0); textSize(Size*0.3);
         text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*(shortAxis*scale), -0.375*(shortAxis*scale));
-        textSize(Size*0.375);
+        textSize(Size*0.36);
         textAlign(LEFT, TOP); 
         text("Tap here to hide/show\nthe pattern\noverlay", -0.49*(shortAxis*scale), -0.49*(shortAxis*scale));
         textAlign(LEFT, BOTTOM); 
