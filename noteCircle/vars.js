@@ -47,12 +47,12 @@ let keyList = [
 "B"
 ];
 let keySharpList = [
-"C",
+"B\u266F",
 "C\u266F",
 "D",
 "D\u266F",
 "E",
-"F",
+"E\u266F",
 "F\u266F",
 "G",
 "G\u266F",
@@ -65,14 +65,42 @@ let keyFlatList = [
 "D\u266D",
 "D",
 "E\u266D",
-"E",
+"F\u266D",
 "F",
 "G\u266D",
 "G",
 "A\u266D",
 "A",
 "B\u266D",
-"B"
+"C\u266D"
+];
+let keySharperList = [
+"B\u266F",
+"C\u266F",
+"C\u{1D12A}",
+"D\u266F",
+"D\u{1D12A}",
+"E\u266F",
+"F\u266F",
+"F\u{1D12A}",
+"G\u266F",
+"G\u{1D12A}",
+"A\u266F",
+"A\u{1D12A}"
+];
+let keyFlatterList = [
+"D\u{1D12B}",
+"D\u266D",
+"D",
+"E\u266D",
+"F\u266D",
+"G\u{1D12B}",
+"G\u266D",
+"A\u{1D12B}",
+"A\u266D",
+"B\u{1D12B}",
+"B\u266D",
+"C\u266D"
 ];
 
 let modeSelect;

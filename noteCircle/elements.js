@@ -126,9 +126,11 @@ function createNoteCircle(){
         rotate(PI/2);
         textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
         textSize(Size*0.6); fill((lockNotes && majorMinorOther != 5) ? 0 : 255); noStroke(); //stroke(0); strokeWeight(1);
-        if      (showEnharmonic == 1)   text("Key:\n" + keySharpList[notesAreLocked()%12], xpos, ypos);
-        else if (showEnharmonic == 2)   text("Key:\n" + keyFlatList [notesAreLocked()%12], xpos, ypos);
-        else                            text("Key:\n" + keyList     [notesAreLocked()%12], xpos, ypos);
+        if      (showEnharmonic == 1)   text("Key:\n" + keySharpList   [notesAreLocked()%12], xpos, ypos);
+        else if (showEnharmonic == 2)   text("Key:\n" + keySharperList [notesAreLocked()%12], xpos, ypos);
+        else if (showEnharmonic == 3)   text("Key:\n" + keyFlatList    [notesAreLocked()%12], xpos, ypos);
+        else if (showEnharmonic == 4)   text("Key:\n" + keyFlatterList [notesAreLocked()%12], xpos, ypos);
+        else                            text("Key:\n" + keyList        [notesAreLocked()%12], xpos, ypos);
         textSize(Size*0.5); fill(255);
         if(majorMinorOther != 5)
             text("Base pattern:\n" + modeList[majorMinorOther], xpos/0.62, ypos);
@@ -138,10 +140,18 @@ function createNoteCircle(){
         text("Cheat sheet for scales and modes", 0.8*(shortAxis*scale), -0.45*(shortAxis*scale));
         fill(0); textSize(Size*0.3);
         text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*(shortAxis*scale), -0.375*(shortAxis*scale));
-        textAlign(LEFT, TOP); // textSize(Size*0.3);
+        textSize(Size*0.375);
+        textAlign(LEFT, TOP); 
         text("Tap here to hide/show\nthe pattern\noverlay", -0.49*(shortAxis*scale), -0.49*(shortAxis*scale));
-        textAlign(LEFT, BOTTOM); // textSize(Size*0.25);
+        textAlign(LEFT, BOTTOM); 
         text("Tap here\nto cycle through\nenharmonic note names", -0.49*(shortAxis*scale), 0.49*(shortAxis*scale));
+        textSize(0.7*Size);
+        let _xpos = -0.49*(shortAxis*scale), _ypos = 0.375*(shortAxis*scale);
+             if(showEnharmonic == 1) text("\u266F",           _xpos, _ypos);
+        else if(showEnharmonic == 2) text("\u266F \u{1D12A}", _xpos, _ypos);
+        else if(showEnharmonic == 3) text("\u266D",           _xpos, _ypos);
+        else if(showEnharmonic == 4) text("\u266D \u{1D12B}", _xpos, _ypos);
+        else                         text("\u266F \u266D",    _xpos, _ypos);
         textAlign(CENTER, CENTER);
         textSize(Size*0.4); 
         if(majorMinorOther!=5) {
@@ -182,16 +192,14 @@ function createNoteCircle(){
             textSize(Size); fill(255);
             if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
                 fill(0); textSize(Size*0.8);
-            if(showEnharmonic == 1){
+            if(showEnharmonic == 1)
                 text(keySharpList[(i+9)%12], 0, 0);
-                if(i==3) { textSize(Size*0.3); text('B\u266F', -Size*0.4, -Size*0.5); }
-                if(i==8) { textSize(Size*0.3); text('E\u266F', -Size*0.4, -Size*0.5); }
-            }
-            else if(showEnharmonic == 2){
+            else if(showEnharmonic == 2)
+                text(keySharperList[(i+9)%12], 0, 0);
+            else if(showEnharmonic == 3)
                 text(keyFlatList[(i+9)%12], 0, 0);
-                if(i==2) { textSize(Size*0.3); text('C\u266D',  Size*0.4, Size*0.35 ); } 
-                if(i==7) { textSize(Size*0.3); text('F\u266D',  Size*0.4, Size*0.35 ); } 
-            }
+            else if(showEnharmonic == 4)
+                text(keyFlatterList[(i+9)%12], 0, 0);
             else{
                 if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 ){
                     textSize(Size*0.6);
@@ -200,10 +208,10 @@ function createNoteCircle(){
                     text(keyList[(i+9)%12].substr(3, 2),  xpos,  ypos); 
                 }else{
                     text(keyList[(i+9)%12], 0, 0); 
-                    if(i==2) { textSize(Size*0.3); text('C\u266D',  Size*0.4,  Size*0.35 ); } 
-                    if(i==3) { textSize(Size*0.3); text('B\u266F', -Size*0.4, -Size*0.5); }
-                    if(i==7) { textSize(Size*0.3); text('F\u266D',  Size*0.4,  Size*0.35 ); } 
-                    if(i==8) { textSize(Size*0.3); text('E\u266F', -Size*0.4, -Size*0.5); }
+                    if(i==2) { textSize(Size*0.3); text('C\u266D',  Size*0.4,  Size*0.35); } 
+                    if(i==3) { textSize(Size*0.3); text('B\u266F', -Size*0.4, -Size*0.5 ); }
+                    if(i==7) { textSize(Size*0.3); text('F\u266D',  Size*0.4,  Size*0.35); } 
+                    if(i==8) { textSize(Size*0.3); text('E\u266F', -Size*0.4, -Size*0.5 ); }
                 }
             }
 
@@ -211,20 +219,20 @@ function createNoteCircle(){
                 rotate(noteRotation[i]-currentNoteRotation-PI/2);
                 translate(0, 1.9*Size);
                 fill(255); noStroke();
-                if(i==0) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                if(i==2) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                if(i==3) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                if(i==5) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                if(i==7) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                if(i==8) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                if(i==10){ rect(0, 0, 0.5*Size, 1.3*Size); }
+                     if(i==0) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                else if(i==2) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                else if(i==3) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                else if(i==5) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                else if(i==7) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                else if(i==8) { rect(0, 0, 0.5*Size, 1.3*Size); }
+                else if(i==10){ rect(0, 0, 0.5*Size, 1.3*Size); }
 
                 fill(0);
-                if(i==1) { rect(0, 0, 0.3*Size, 1.3*Size); }
-                if(i==4) { rect(0, 0, 0.3*Size, 1.3*Size); }
-                if(i==6) { rect(0, 0, 0.3*Size, 1.3*Size); }
-                if(i==9) { rect(0, 0, 0.3*Size, 1.3*Size); }
-                if(i==11){ rect(0, 0, 0.3*Size, 1.3*Size); }
+                     if(i==1) { rect(0, 0, 0.3*Size, 1.3*Size); }
+                else if(i==4) { rect(0, 0, 0.3*Size, 1.3*Size); }
+                else if(i==6) { rect(0, 0, 0.3*Size, 1.3*Size); }
+                else if(i==9) { rect(0, 0, 0.3*Size, 1.3*Size); }
+                else if(i==11){ rect(0, 0, 0.3*Size, 1.3*Size); }
             }
         pop();
         }
