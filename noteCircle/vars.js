@@ -91,7 +91,7 @@ let keySharperList = [
 let keyFlatterList = [
 "D\u{1D12B}",
 "D\u266D",
-"D",
+"E\u{1D12B}",
 "E\u266D",
 "F\u266D",
 "G\u{1D12B}",
