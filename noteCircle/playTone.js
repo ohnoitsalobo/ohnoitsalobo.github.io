@@ -573,158 +573,160 @@ function mousePressed(){
         keySelect.selected(keyList[(keyIndex + 11)%12]);
         changeKey();
     }
-    ////// CHANGE PATTERN
-    xpos  = 1.55*(shortAxis*scale);
-    ypos  = 0.19*(shortAxis*scale); 
-    ypos1 = 0.41*(shortAxis*scale);
-    if(mouseX>xpos-offset && mouseX<xpos+offset &&
-       mouseY>ypos-offset && mouseY<ypos+offset){
-        majorMinorOther = (majorMinorOther + 5)%6;
-        modeSelect.selected(modeList[majorMinorOther]);
-        changeMode();
-    }
-    if(mouseX>xpos-offset && mouseX<xpos+offset &&
-       mouseY>ypos1-offset && mouseY<ypos1+offset){
-        majorMinorOther = (majorMinorOther + 1)%6;
-        modeSelect.selected(modeList[majorMinorOther]);
-        changeMode();
-    }
-    
-    xpos  = 1.35*(shortAxis*scale);
-    ypos  = 0.44*(shortAxis*scale); 
-    ypos1 = 0.76*(shortAxis*scale);
-    ////// CHANGE MAJOR MODE
-    if(majorMinorOther == 0){
-        var choice = majorModeSelect.value();
-        let i = 0;
-        for(let k = 0; k < majorModeList.length; k++){
-            if (choice == majorModeList[k])
-                i = k;
-        }
+    if(showOverlay){
+        ////// CHANGE PATTERN
+        xpos  = 1.55*(shortAxis*scale);
+        ypos  = 0.19*(shortAxis*scale); 
+        ypos1 = 0.41*(shortAxis*scale);
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
            mouseY>ypos-offset && mouseY<ypos+offset){
-            majorModeSelect.selected(majorModeList[(i+1)%7]);
-            changeMajorMode();
+            majorMinorOther = (majorMinorOther + 5)%6;
+            modeSelect.selected(modeList[majorMinorOther]);
+            changeMode();
         }
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
            mouseY>ypos1-offset && mouseY<ypos1+offset){
-            majorModeSelect.selected(majorModeList[(i+6)%7]);
-            changeMajorMode();
+            majorMinorOther = (majorMinorOther + 1)%6;
+            modeSelect.selected(modeList[majorMinorOther]);
+            changeMode();
         }
-    }
-    ////// CHANGE MELODIC MINOR MODE
-    if(majorMinorOther == 1){
-        var choice = melodicMinorModeSelect.value();
-        let i = 0;
-        for(let k = 0; k < melodicMinorModeList.length; k++){
-            if (choice == melodicMinorModeList[k])
-                i = k;
-        }
-        if(mouseX>xpos-offset && mouseX<xpos+offset &&
-           mouseY>ypos-offset && mouseY<ypos+offset){
-            melodicMinorModeSelect.selected(melodicMinorModeList[(i+1)%7]);
-            changeMelodicMinorMode();
-        }
-        if(mouseX>xpos-offset && mouseX<xpos+offset &&
-           mouseY>ypos1-offset && mouseY<ypos1+offset){
-            melodicMinorModeSelect.selected(melodicMinorModeList[(i+6)%7]);
-            changeMelodicMinorMode();
-        }
-    }
-    ////// CHANGE HARMONIC MINOR MODE
-    if(majorMinorOther == 2){
-        var choice = harmonicMinorModeSelect.value();
-        let i = 0;
-        for(let k = 0; k < harmonicMinorModeList.length; k++){
-            if (choice == harmonicMinorModeList[k])
-                i = k;
-        }
-        if(mouseX>xpos-offset && mouseX<xpos+offset &&
-           mouseY>ypos-offset && mouseY<ypos+offset){
-            harmonicMinorModeSelect.selected(harmonicMinorModeList[(i+1)%7]);
-            changeHarmonicMinorMode();
-        }
-        if(mouseX>xpos-offset && mouseX<xpos+offset &&
-           mouseY>ypos1-offset && mouseY<ypos1+offset){
-            harmonicMinorModeSelect.selected(harmonicMinorModeList[(i+6)%7]);
-            changeHarmonicMinorMode();
-        }
-    }
-    ////// CHANGE HARMONIC MAJOR MODE
-    if(majorMinorOther == 3){
-        var choice = harmonicMajorModeSelect.value();
-        let i = 0;
-        for(let k = 0; k < harmonicMajorModeList.length; k++){
-            if (choice == harmonicMajorModeList[k])
-                i = k;
-        }
-        if(mouseX>xpos-offset && mouseX<xpos+offset &&
-           mouseY>ypos-offset && mouseY<ypos+offset){
-            harmonicMajorModeSelect.selected(harmonicMajorModeList[(i+1)%7]);
-            changeHarmonicMajorMode();
-        }
-        if(mouseX>xpos-offset && mouseX<xpos+offset &&
-           mouseY>ypos1-offset && mouseY<ypos1+offset){
-            harmonicMajorModeSelect.selected(harmonicMajorModeList[(i+6)%7]);
-            changeHarmonicMajorMode();
-        }
-    }
-    ////// CHANGE DOUBLE HARMONIC MODE
-    if(majorMinorOther == 4){
-        var choice = doubleHarmonicModeSelect.value();
-        let i = 0;
-        for(let k = 0; k < doubleHarmonicModeList.length; k++){
-            if (choice == doubleHarmonicModeList[k])
-                i = k;
-        }
-        if(mouseX>xpos-offset && mouseX<xpos+offset &&
-           mouseY>ypos-offset && mouseY<ypos+offset){
-            doubleHarmonicModeSelect.selected(doubleHarmonicModeList[(i+1)%7]);
-            changeDoubleHarmonicMode();
-        }
-        if(mouseX>xpos-offset && mouseX<xpos+offset &&
-           mouseY>ypos1-offset && mouseY<ypos1+offset){
-            doubleHarmonicModeSelect.selected(doubleHarmonicModeList[(i+6)%7]);
-            changeDoubleHarmonicMode();
-        }
-    }
-    ////// CHANGE OTHER MODE
-    if(majorMinorOther == 5){
-        var choice = otherModeSelect.value();
-        let i = 0;
-        for(let k = 0; k < otherModeList.length; k++){
-            if (choice === otherModeList[k])
-                i = k;
-        }
-        if(mouseX>xpos-offset && mouseX<xpos+offset &&
-           mouseY>ypos-offset && mouseY<ypos+offset){
-            otherModeSelect.selected(otherModeList[(i+28)%29]);
-            changeOtherMode();
-        }
-        if(mouseX>xpos-offset && mouseX<xpos+offset &&
-           mouseY>ypos1-offset && mouseY<ypos1+offset){
-            otherModeSelect.selected(otherModeList[(i+1)%29]);
-            changeOtherMode();
-        }
-    }
-    xpos = 0.5*(shortAxis*scale);
-    ypos = 0.5*(shortAxis*scale);
-    offset = 0.1*(shortAxis*scale);
-    if(mouseX>xpos-offset && mouseX<xpos+offset &&
-       mouseY>ypos-offset && mouseY<ypos+offset){
-        if(majorMinorOther != 5){
-            if(!lockNotes){
-                speed = 1;
-                if(majorMinorOther == 0) keyIndex = keyIndex + (12 - majorModeIndex         )%12;
-                if(majorMinorOther == 1) keyIndex = keyIndex + (12 - melodicMinorModeIndex  )%12;
-                if(majorMinorOther == 2) keyIndex = keyIndex + (12 - harmonicMinorModeIndex )%12;
-                if(majorMinorOther == 3) keyIndex = keyIndex + (12 - harmonicMajorModeIndex )%12;
-                if(majorMinorOther == 4) keyIndex = keyIndex + (12 - doubleHarmonicModeIndex)%12; 
-            }else{
-                speed = 0.5;
-                keyIndex = notesAreLocked();
+        
+        xpos  = 1.35*(shortAxis*scale);
+        ypos  = 0.44*(shortAxis*scale); 
+        ypos1 = 0.76*(shortAxis*scale);
+        ////// CHANGE MAJOR MODE
+        if(majorMinorOther == 0){
+            var choice = majorModeSelect.value();
+            let i = 0;
+            for(let k = 0; k < majorModeList.length; k++){
+                if (choice == majorModeList[k])
+                    i = k;
             }
-            lockNotes = !lockNotes;
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos-offset && mouseY<ypos+offset){
+                majorModeSelect.selected(majorModeList[(i+1)%7]);
+                changeMajorMode();
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos1-offset && mouseY<ypos1+offset){
+                majorModeSelect.selected(majorModeList[(i+6)%7]);
+                changeMajorMode();
+            }
+        }
+        ////// CHANGE MELODIC MINOR MODE
+        if(majorMinorOther == 1){
+            var choice = melodicMinorModeSelect.value();
+            let i = 0;
+            for(let k = 0; k < melodicMinorModeList.length; k++){
+                if (choice == melodicMinorModeList[k])
+                    i = k;
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos-offset && mouseY<ypos+offset){
+                melodicMinorModeSelect.selected(melodicMinorModeList[(i+1)%7]);
+                changeMelodicMinorMode();
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos1-offset && mouseY<ypos1+offset){
+                melodicMinorModeSelect.selected(melodicMinorModeList[(i+6)%7]);
+                changeMelodicMinorMode();
+            }
+        }
+        ////// CHANGE HARMONIC MINOR MODE
+        if(majorMinorOther == 2){
+            var choice = harmonicMinorModeSelect.value();
+            let i = 0;
+            for(let k = 0; k < harmonicMinorModeList.length; k++){
+                if (choice == harmonicMinorModeList[k])
+                    i = k;
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos-offset && mouseY<ypos+offset){
+                harmonicMinorModeSelect.selected(harmonicMinorModeList[(i+1)%7]);
+                changeHarmonicMinorMode();
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos1-offset && mouseY<ypos1+offset){
+                harmonicMinorModeSelect.selected(harmonicMinorModeList[(i+6)%7]);
+                changeHarmonicMinorMode();
+            }
+        }
+        ////// CHANGE HARMONIC MAJOR MODE
+        if(majorMinorOther == 3){
+            var choice = harmonicMajorModeSelect.value();
+            let i = 0;
+            for(let k = 0; k < harmonicMajorModeList.length; k++){
+                if (choice == harmonicMajorModeList[k])
+                    i = k;
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos-offset && mouseY<ypos+offset){
+                harmonicMajorModeSelect.selected(harmonicMajorModeList[(i+1)%7]);
+                changeHarmonicMajorMode();
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos1-offset && mouseY<ypos1+offset){
+                harmonicMajorModeSelect.selected(harmonicMajorModeList[(i+6)%7]);
+                changeHarmonicMajorMode();
+            }
+        }
+        ////// CHANGE DOUBLE HARMONIC MODE
+        if(majorMinorOther == 4){
+            var choice = doubleHarmonicModeSelect.value();
+            let i = 0;
+            for(let k = 0; k < doubleHarmonicModeList.length; k++){
+                if (choice == doubleHarmonicModeList[k])
+                    i = k;
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos-offset && mouseY<ypos+offset){
+                doubleHarmonicModeSelect.selected(doubleHarmonicModeList[(i+1)%7]);
+                changeDoubleHarmonicMode();
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos1-offset && mouseY<ypos1+offset){
+                doubleHarmonicModeSelect.selected(doubleHarmonicModeList[(i+6)%7]);
+                changeDoubleHarmonicMode();
+            }
+        }
+        ////// CHANGE OTHER MODE
+        if(majorMinorOther == 5){
+            var choice = otherModeSelect.value();
+            let i = 0;
+            for(let k = 0; k < otherModeList.length; k++){
+                if (choice === otherModeList[k])
+                    i = k;
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos-offset && mouseY<ypos+offset){
+                otherModeSelect.selected(otherModeList[(i+28)%29]);
+                changeOtherMode();
+            }
+            if(mouseX>xpos-offset && mouseX<xpos+offset &&
+               mouseY>ypos1-offset && mouseY<ypos1+offset){
+                otherModeSelect.selected(otherModeList[(i+1)%29]);
+                changeOtherMode();
+            }
+        }
+        xpos = 0.5*(shortAxis*scale);
+        ypos = 0.5*(shortAxis*scale);
+        offset = 0.1*(shortAxis*scale);
+        if(mouseX>xpos-offset && mouseX<xpos+offset &&
+           mouseY>ypos-offset && mouseY<ypos+offset){
+            if(majorMinorOther != 5){
+                if(!lockNotes){
+                    speed = 1;
+                    if(majorMinorOther == 0) keyIndex = keyIndex + (12 - majorModeIndex         )%12;
+                    if(majorMinorOther == 1) keyIndex = keyIndex + (12 - melodicMinorModeIndex  )%12;
+                    if(majorMinorOther == 2) keyIndex = keyIndex + (12 - harmonicMinorModeIndex )%12;
+                    if(majorMinorOther == 3) keyIndex = keyIndex + (12 - harmonicMajorModeIndex )%12;
+                    if(majorMinorOther == 4) keyIndex = keyIndex + (12 - doubleHarmonicModeIndex)%12; 
+                }else{
+                    speed = 0.5;
+                    keyIndex = notesAreLocked();
+                }
+                lockNotes = !lockNotes;
+            }
         }
     }
     xpos = 0.1*(shortAxis*scale);
@@ -739,9 +741,9 @@ function mousePressed(){
        mouseY>ypos-offset && mouseY<ypos+offset){
         showEnharmonic = (showEnharmonic + 1)%5;
         if(showEnharmonic == 0){
-            fillalpha = 150
-            // for (var i = 0; i < 12; i++)
-                // playedAlpha[i] = 40;
+            // fillalpha = 150
+            for (var i = 0; i < 13; i++)
+                playedAlpha[i] = 40;
         }
     }
     return false;
@@ -755,25 +757,27 @@ function mouseWheel(event){
        mouseY>ypos-offset && mouseY<ypos+offset){
         changeKeyMouse(event);
     }
-   
-    xpos  = 1.55*(shortAxis*scale);
-    ypos  = 0.3*(shortAxis*scale);
-    if(mouseX>xpos-offset && mouseX<xpos+offset &&
-       mouseY>ypos-offset && mouseY<ypos+offset){
-        changeModeMouse(event);
-    }
     
-    xpos  = 1.35*(shortAxis*scale);
-    ypos  = 0.6*(shortAxis*scale);
-    offset = offset*1.5;
-    if(mouseX>xpos-offset && mouseX<xpos+offset &&
-       mouseY>ypos-offset && mouseY<ypos+offset){
-        if(majorMinorOther == 0) changeMajorModeMouse(event);
-        if(majorMinorOther == 1) changeMelodicMinorModeMouse(event);
-        if(majorMinorOther == 2) changeHarmonicMinorModeMouse(event);
-        if(majorMinorOther == 3) changeHarmonicMajorModeMouse(event);
-        if(majorMinorOther == 4) changeDoubleHarmonicModeMouse(event);
-        if(majorMinorOther == 5) changeOtherModeMouse(event);
+    if(showOverlay){
+        xpos  = 1.55*(shortAxis*scale);
+        ypos  = 0.3*(shortAxis*scale);
+        if(mouseX>xpos-offset && mouseX<xpos+offset &&
+           mouseY>ypos-offset && mouseY<ypos+offset){
+            changeModeMouse(event);
+        }
+        
+        xpos  = 1.35*(shortAxis*scale);
+        ypos  = 0.6*(shortAxis*scale);
+        offset = offset*1.5;
+        if(mouseX>xpos-offset && mouseX<xpos+offset &&
+           mouseY>ypos-offset && mouseY<ypos+offset){
+            if(majorMinorOther == 0) changeMajorModeMouse(event);
+            if(majorMinorOther == 1) changeMelodicMinorModeMouse(event);
+            if(majorMinorOther == 2) changeHarmonicMinorModeMouse(event);
+            if(majorMinorOther == 3) changeHarmonicMajorModeMouse(event);
+            if(majorMinorOther == 4) changeDoubleHarmonicModeMouse(event);
+            if(majorMinorOther == 5) changeOtherModeMouse(event);
+        }
     }
     
     // return false;
