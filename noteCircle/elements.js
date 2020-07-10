@@ -191,19 +191,25 @@ function createNoteCircle(){
             rotate(-noteRotation[i]+currentNoteRotation+PI/2);
             textSize(Size); fill(255);
             if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 )
-                fill(0); textSize(Size*0.8);
-            if(showEnharmonic == 1)
+                fill(0); textSize(Size*0.85);
+            if(showEnharmonic == 1){
                 text(keySharpList[(i+9)%12], 0, 0);
+                if(i==3) { textSize(Size*0.3); text('B\u266F', -Size*0.4, -Size*0.5 ); }
+                if(i==8) { textSize(Size*0.3); text('E\u266F', -Size*0.4, -Size*0.5 ); }
+            }
             else if(showEnharmonic == 2)
                 text(keySharperList[(i+9)%12], 0, 0);
-            else if(showEnharmonic == 3)
+            else if(showEnharmonic == 3){
                 text(keyFlatList[(i+9)%12], 0, 0);
+                if(i==2) { textSize(Size*0.3); text('C\u266D',  Size*0.4,  Size*0.35); } 
+                if(i==7) { textSize(Size*0.3); text('F\u266D',  Size*0.4,  Size*0.35); } 
+            }
             else if(showEnharmonic == 4)
                 text(keyFlatterList[(i+9)%12], 0, 0);
             else{
                 if( i == 1 || i == 4 || i == 6 || i == 9 || i == 11 ){
-                    textSize(Size*0.6);
-                    let xpos = 0.2*Size; let ypos = 0.25*Size;
+                    textSize(Size*0.7);
+                    let xpos = 0.2*Size; let ypos = 0.3*Size;
                     text(keyList[(i+9)%12].substr(0, 2), -xpos, -ypos); 
                     text(keyList[(i+9)%12].substr(3, 2),  xpos,  ypos); 
                 }else{

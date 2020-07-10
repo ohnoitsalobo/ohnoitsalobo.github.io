@@ -738,6 +738,11 @@ function mousePressed(){
     if(mouseX>xpos-xpos   && mouseX<xpos+xpos &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         showEnharmonic = (showEnharmonic + 1)%5;
+        if(showEnharmonic == 0){
+            fillalpha = 150
+            // for (var i = 0; i < 12; i++)
+                // playedAlpha[i] = 40;
+        }
     }
     return false;
 }
