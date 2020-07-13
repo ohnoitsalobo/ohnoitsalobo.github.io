@@ -2,9 +2,10 @@ let scales = [];
 
 function setupImg(){
     let i;
-    for(i = 0; i < 7; i++){
-        // scales[i] = loadImage("http://127.0.0.1/major/A_"+i+".png");
-        scales[i] = loadImage("modes/major/A_"+i+".png");
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    for(i = 1; i <= 7; i++){
+        // scales[i] = loadImage(proxyurl+"http://127.0.0.1/major/A_"+i+".png");
+        scales[i] = loadImage(proxyurl+"https://ohnoitsalobo.github.io/noteCircle/modes/major/A_"+i+".png");
     }
 }
 
