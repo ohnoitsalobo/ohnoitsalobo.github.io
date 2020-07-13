@@ -37,7 +37,7 @@ function playTone(t){
     for(var i = 0; i < notesAreLocked(); i++)
         transpose *= 1.059463;
     synth.triggerAttackRelease(tone[t%13]*transpose, "8n");
-    if(keyIsPressed && (t == 0 || t == 12)){
+    if(keyIsPressed && (t%13)%12 == 0 ){
         playedAlpha[ 0] = 100;
         playedAlpha[12] = 100;
     }else
@@ -503,18 +503,21 @@ function keyPressed(){
     if(majorMinorOther == 5)
         return;
     else{
-             if(key == '1') playTone(modeCheck(1));
-        else if(key == '2') playTone(modeCheck(2));
-        else if(key == '3') playTone(modeCheck(3));
-        else if(key == '4') playTone(modeCheck(4));
-        else if(key == '5') playTone(modeCheck(5));
-        else if(key == '6') playTone(modeCheck(6));
-        else if(key == '7') playTone(modeCheck(7));
-        else if(key == '8') playTone(modeCheck(8));
-        else if(key == '9') playTone(modeCheck(2)+13);
-        else if(key == '0') playTone(modeCheck(3)+13);
-        else if(key == '-') playTone(modeCheck(4)+13);
-        else if(key == '=') playTone(modeCheck(5)+13);
+             if(key == '1' ) playTone(modeCheck(1));
+        else if(key == '2' ) playTone(modeCheck(2));
+        else if(key == '3' ) playTone(modeCheck(3));
+        else if(key == '4' ) playTone(modeCheck(4));
+        else if(key == '5' ) playTone(modeCheck(5));
+        else if(key == '6' ) playTone(modeCheck(6));
+        else if(key == '7' ) playTone(modeCheck(7));
+        else if(key == '8' ) playTone(modeCheck(8));
+        else if(key == '9' ) playTone(modeCheck(2)+13);
+        else if(key == '0' ) playTone(modeCheck(3)+13);
+        else if(key == '-' ) playTone(modeCheck(4)+13);
+        else if(key == '=' ) playTone(modeCheck(5)+13);
+        else if(key == '[' ) playTone(modeCheck(6)+13);
+        else if(key == ']' ) playTone(modeCheck(7)+13);
+        else if(key == '\\') playTone(modeCheck(8)+13);
     }
     // return false;
 }
@@ -786,7 +789,7 @@ function mousePressed(){
                 playedAlpha[i] = 40;
         }
     }
-    return false;
+    // return false;
 }
 
 function mouseWheel(event){
