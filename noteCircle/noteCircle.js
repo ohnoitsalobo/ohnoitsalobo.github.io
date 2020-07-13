@@ -3,6 +3,7 @@ let scaled;
 function setup(){
     shortAxis = ((windowWidth > windowHeight) ? windowHeight : windowWidth);
     scaled = shortAxis*scale;
+    // var cnv = createCanvas(1.75*scaled, 2*scaled);
     var cnv = createCanvas(1.75*scaled, scaled);
     cnv.parent('noteCircle');
     frameRate(30);
@@ -40,8 +41,8 @@ function draw(){
         createOtherModeCircle();
 
     playedHighlight();
-    // rotate(PI/2);
-    // translate(0, scaled);
+    rotate(PI/2);
+    translate(0, scaled);
     // drawNotes();
 }
 

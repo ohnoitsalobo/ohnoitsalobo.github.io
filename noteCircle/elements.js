@@ -1,21 +1,16 @@
-let scales = [];
+let majorScale = [];
 
 function setupImg(){
     let i;
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     for(i = 1; i <= 7; i++){
-        // scales[i] = loadImage(proxyurl+"http://127.0.0.1/major/A_"+i+".png");
-        scales[i] = loadImage(proxyurl+"https://ohnoitsalobo.github.io/noteCircle/modes/major/A_"+i+".png");
+        majorScale[i] = loadImage("http://127.0.0.1/modes/major/A_"+i+".png");
+        // majorScale[i] = loadImage(proxyurl+"https://ohnoitsalobo.github.io/noteCircle/modes/major/A_"+i+".png");
     }
 }
 
 function drawNotes(){
-    // fill(0); stroke(0); strokeWeight(3);
-    // rect(0, 0, Size*2, Size*2);
-    // for(var i = 0; i < 5; i++){
-        // let x1 = 0, y1 = i*10, x2 = 100, y2 = i*10;
-        // line(x1, y1, x2, y2);
-    // }
+    image(majorScale[0], 0, 0, 50, 50);
 }
 
 let playedAlpha = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; 
