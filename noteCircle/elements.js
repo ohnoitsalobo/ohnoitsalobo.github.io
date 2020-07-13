@@ -1,3 +1,22 @@
+let scales = [];
+
+function setupImg(){
+    let i;
+    for(i = 0; i < 7; i++){
+        // scales[i] = loadImage("http://127.0.0.1/major/A_"+i+".png");
+        scales[i] = loadImage("modes/major/A_"+i+".png");
+    }
+}
+
+function drawNotes(){
+    // fill(0); stroke(0); strokeWeight(3);
+    // rect(0, 0, Size*2, Size*2);
+    // for(var i = 0; i < 5; i++){
+        // let x1 = 0, y1 = i*10, x2 = 100, y2 = i*10;
+        // line(x1, y1, x2, y2);
+    // }
+}
+
 let playedAlpha = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; 
 let fillcolor = 100, fillalpha = 0;
 /* * /
@@ -8,13 +27,13 @@ function createNoteCircle(){
         
     }
     fill(fillcolor, fillalpha); noStroke();
-    Size = 0.97*(shortAxis*scale);
+    Size = 0.97*scaled;
     ellipse(0, 0, Size, Size);
-    Size = 0.088*(shortAxis*scale);
+    Size = 0.088*scaled;
     textAlign(CENTER, CENTER);
     rectMode(CENTER);
     textFont('Georgia');
-    let xpos = 0.65*(shortAxis*scale), ypos = -0.2*(shortAxis*scale);
+    let xpos = 0.65*scaled, ypos = -0.2*scaled;
     push();
         rotate(PI/2);
         textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
@@ -26,23 +45,23 @@ function createNoteCircle(){
         else
             text(modeList[majorMinorOther], xpos/0.62, ypos);
         fill(0, 0, 100); textSize(Size*0.65); 
-        text("Cheat sheet for scales and modes", 0.8*(shortAxis*scale), -0.45*(shortAxis*scale));
+        text("Cheat sheet for scales and modes", 0.8*scaled, -0.45*scaled);
         fill(0); textSize(Size*0.3);
-        text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*(shortAxis*scale), -0.375*(shortAxis*scale));
+        text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*scaled, -0.375*scaled);
         textSize(Size*0.4); 
         if(majorMinorOther!=5) {
-            text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
+            text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*scaled, 0.4*scaled);
             textSize(Size*0.35);
             if(!lockNotes){
                 fill(0, fillalpha);
-                text("Tap here to lock\nthe visible notes\nin the pattern", 0*(shortAxis*scale), 0*(shortAxis*scale));
+                text("Tap here to lock\nthe visible notes\nin the pattern", 0*scaled, 0*scaled);
             }else{
                 fill(255);
-                text("Mode rotation\nlocked together", 0*(shortAxis*scale), 0*(shortAxis*scale));
+                text("Mode rotation\nlocked together", 0*scaled, 0*scaled);
             }
         }
         else 
-            text("Click/tap the highlighted notes\nin sequence to hear the scale.\n(Keyboard keys not assigned)", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
+            text("Click/tap the highlighted notes\nin sequence to hear the scale.\n(Keyboard keys not assigned)", 0.85*scaled, 0.4*scaled);
         stroke(255, 255); strokeWeight(5*scale);
         line(xpos, ypos-1.2*Size, xpos+0.6*Size, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-0.6*Size, ypos-Size);
@@ -52,10 +71,10 @@ function createNoteCircle(){
         line(xpos/0.62, ypos-1.2*Size, xpos/0.62-0.6*Size, ypos-Size);
         line(xpos/0.62, ypos+1.2*Size, xpos/0.62+0.6*Size, ypos+Size);
         line(xpos/0.62, ypos+1.2*Size, xpos/0.62-0.6*Size, ypos+Size);
-        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)-1.7*Size, 0.85*(shortAxis*scale)+0.6*Size, 0.1*(shortAxis*scale)-1.5*Size);
-        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)-1.7*Size, 0.85*(shortAxis*scale)-0.6*Size, 0.1*(shortAxis*scale)-1.5*Size);
-        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)+1.7*Size, 0.85*(shortAxis*scale)+0.6*Size, 0.1*(shortAxis*scale)+1.5*Size);
-        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)+1.7*Size, 0.85*(shortAxis*scale)-0.6*Size, 0.1*(shortAxis*scale)+1.5*Size);
+        line(0.85*scaled, 0.1*scaled-1.7*Size, 0.85*scaled+0.6*Size, 0.1*scaled-1.5*Size);
+        line(0.85*scaled, 0.1*scaled-1.7*Size, 0.85*scaled-0.6*Size, 0.1*scaled-1.5*Size);
+        line(0.85*scaled, 0.1*scaled+1.7*Size, 0.85*scaled+0.6*Size, 0.1*scaled+1.5*Size);
+        line(0.85*scaled, 0.1*scaled+1.7*Size, 0.85*scaled-0.6*Size, 0.1*scaled+1.5*Size);
     pop();
     push();
         rotate(-currentNoteRotation);
@@ -116,13 +135,13 @@ function createNoteCircle(){
 /*  */
 function createNoteCircle(){
     fill(fillcolor, fillalpha); noStroke();
-    Size = 0.97*(shortAxis*scale);
+    Size = 0.97*scaled;
     ellipse(0, 0, Size, Size);
-    Size = 0.088*(shortAxis*scale);
+    Size = 0.088*scaled;
     textAlign(CENTER, CENTER);
     rectMode(CENTER);
     textFont('Georgia');
-    let xpos = 0.65*(shortAxis*scale), ypos = -0.2*(shortAxis*scale);
+    let xpos = 0.65*scaled, ypos = -0.2*scaled;
     push();
         rotate(PI/2);
         textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
@@ -138,17 +157,17 @@ function createNoteCircle(){
         else
             text("Base pattern:\n" + modeList[majorMinorOther], xpos/0.62, ypos);
         fill(0, 0, 100); textSize(Size*0.65); 
-        text("Cheat sheet for scales and modes", 0.8*(shortAxis*scale), -0.45*(shortAxis*scale));
+        text("Cheat sheet for scales and modes", 0.8*scaled, -0.45*scaled);
         fill(0); textSize(Size*0.3);
-        text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*(shortAxis*scale), -0.375*(shortAxis*scale));
+        text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*scaled, -0.375*scaled);
         textSize(Size*0.36);
         textAlign(LEFT, TOP); 
-        text("Tap here to hide/show\nthe pattern\noverlay", -0.49*(shortAxis*scale), -0.49*(shortAxis*scale));
+        text("Tap here to hide/show\nthe pattern\noverlay", -0.49*scaled, -0.49*scaled);
         textAlign(LEFT, BOTTOM); 
-        text("Tap here\nto cycle through\nenharmonic note names", -0.49*(shortAxis*scale), 0.49*(shortAxis*scale));
+        text("Tap here\nto cycle through\nenharmonic note names", -0.49*scaled, 0.49*scaled);
         textSize(0.75*Size); 
         if(showEnharmonic != 0) { stroke(255, 150); strokeWeight(3); }
-        let _xpos = -0.49*(shortAxis*scale), _ypos = 0.375*(shortAxis*scale);
+        let _xpos = -0.49*scaled, _ypos = 0.375*scaled;
              if(showEnharmonic == 1) text("\u266F",           _xpos, _ypos);
         else if(showEnharmonic == 2) text("\u266F \u{1D12A}", _xpos, _ypos);
         else if(showEnharmonic == 3) text("\u266D",           _xpos, _ypos);
@@ -158,20 +177,20 @@ function createNoteCircle(){
         textAlign(CENTER, CENTER);
         textSize(Size*0.4); 
         if(majorMinorOther!=5) {
-            text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
+            text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*scaled, 0.4*scaled);
             if(showOverlay){
                 if(!lockNotes){
                     fill(0, fillalpha);
-                    text("Tap here to lock\nthe visible notes\nin the pattern", 0*(shortAxis*scale), 0*(shortAxis*scale));
+                    text("Tap here to lock\nthe visible notes\nin the pattern", 0*scaled, 0*scaled);
                 }else{
                     fill(255);
-                    text("Mode rotation\nlocked together", 0*(shortAxis*scale), 0*(shortAxis*scale));
+                    text("Mode rotation\nlocked together", 0*scaled, 0*scaled);
                 }
             }
             textSize(Size*0.35);
         }
         else 
-            text("Tap the highlighted notes\nin sequence to hear the scale.\n(Keyboard keys not assigned)", 0.85*(shortAxis*scale), 0.4*(shortAxis*scale));
+            text("Tap the highlighted notes\nin sequence to hear the scale.\n(Keyboard keys not assigned)", 0.85*scaled, 0.4*scaled);
         stroke(255); strokeWeight(5*scale);
         line(xpos, ypos-1.2*Size, xpos+0.6*Size, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-0.6*Size, ypos-Size);
@@ -182,10 +201,10 @@ function createNoteCircle(){
         line(xpos/0.62, ypos-1.2*Size, xpos/0.62-0.6*Size, ypos-Size);
         line(xpos/0.62, ypos+1.2*Size, xpos/0.62+0.6*Size, ypos+Size);
         line(xpos/0.62, ypos+1.2*Size, xpos/0.62-0.6*Size, ypos+Size);
-        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)-1.7*Size, 0.85*(shortAxis*scale)+0.6*Size, 0.1*(shortAxis*scale)-1.5*Size);
-        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)-1.7*Size, 0.85*(shortAxis*scale)-0.6*Size, 0.1*(shortAxis*scale)-1.5*Size);
-        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)+1.7*Size, 0.85*(shortAxis*scale)+0.6*Size, 0.1*(shortAxis*scale)+1.5*Size);
-        line(0.85*(shortAxis*scale), 0.1*(shortAxis*scale)+1.7*Size, 0.85*(shortAxis*scale)-0.6*Size, 0.1*(shortAxis*scale)+1.5*Size);
+        line(0.85*scaled, 0.1*scaled-1.7*Size, 0.85*scaled+0.6*Size, 0.1*scaled-1.5*Size);
+        line(0.85*scaled, 0.1*scaled-1.7*Size, 0.85*scaled-0.6*Size, 0.1*scaled-1.5*Size);
+        line(0.85*scaled, 0.1*scaled+1.7*Size, 0.85*scaled+0.6*Size, 0.1*scaled+1.5*Size);
+        line(0.85*scaled, 0.1*scaled+1.7*Size, 0.85*scaled-0.6*Size, 0.1*scaled+1.5*Size);
     pop();
     push();
         rotate(-currentNoteRotation);
@@ -278,7 +297,7 @@ function createMajorModeCircle(){
         push();
             textSize(Size*0.69); stroke(0, fillalpha); strokeWeight(0.5);
             fill(lockNotes ? 0 : 255);
-            rotate(PI/2+majorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
+            rotate(PI/2+majorRotation); translate(0.85*scaled, 0.1*scaled);
             if(majorModeIndex%12==0 ) text(majorModeList[0], 0, 0);
             if(majorModeIndex%12==2 ) text(majorModeList[1], 0, 0);
             if(majorModeIndex%12==4 ) text(majorModeList[2], 0, 0);
@@ -311,7 +330,7 @@ function createMelodicMinorModeCircle(){
         push();
             textSize(Size*0.69); stroke(0); strokeWeight(0.5);
             fill(lockNotes ? 0 : 255);
-            rotate(PI/2+melodicMinorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
+            rotate(PI/2+melodicMinorRotation); translate(0.85*scaled, 0.1*scaled);
             if(melodicMinorModeIndex%12==0 ) text(melodicMinorModeList[0], 0, 0);
             if(melodicMinorModeIndex%12==2 ) text(melodicMinorModeList[1], 0, 0);
             if(melodicMinorModeIndex%12==3 ) text(melodicMinorModeList[2], 0, 0);
@@ -344,7 +363,7 @@ function createHarmonicMinorModeCircle(){
         push();
             textSize(Size*0.69); stroke(0); strokeWeight(0.5);
             fill(lockNotes ? 0 : 255);
-            rotate(PI/2+harmonicMinorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
+            rotate(PI/2+harmonicMinorRotation); translate(0.85*scaled, 0.1*scaled);
             if(harmonicMinorModeIndex%12==0 ) text(harmonicMinorModeList[0], 0, 0);
             if(harmonicMinorModeIndex%12==2 ) text(harmonicMinorModeList[1], 0, 0);
             if(harmonicMinorModeIndex%12==3 ) text(harmonicMinorModeList[2], 0, 0);
@@ -377,7 +396,7 @@ function createHarmonicMajorModeCircle(){
         push();
             textSize(Size*0.69); stroke(0); strokeWeight(0.5);
             fill(lockNotes ? 0 : 255);
-            rotate(PI/2+harmonicMajorRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
+            rotate(PI/2+harmonicMajorRotation); translate(0.85*scaled, 0.1*scaled);
             if(harmonicMajorModeIndex%12==0 ) text(harmonicMajorModeList[0], 0, 0);
             if(harmonicMajorModeIndex%12==2 ) text(harmonicMajorModeList[1], 0, 0);
             if(harmonicMajorModeIndex%12==4 ) text(harmonicMajorModeList[2], 0, 0);
@@ -410,7 +429,7 @@ function createDoubleHarmonicModeCircle(){
         push();
             textSize(Size*0.69); stroke(0); strokeWeight(0.5);
             fill(lockNotes ? 0 : 255);
-            rotate(PI/2+doubleHarmonicRotation); translate(0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
+            rotate(PI/2+doubleHarmonicRotation); translate(0.85*scaled, 0.1*scaled);
             if(doubleHarmonicModeIndex%12==0 ) text(doubleHarmonicModeList[0], 0, 0);
             if(doubleHarmonicModeIndex%12==1 ) text(doubleHarmonicModeList[1], 0, 0);
             if(doubleHarmonicModeIndex%12==4 ) text(doubleHarmonicModeList[2], 0, 0);
@@ -428,7 +447,7 @@ function createOtherModeCircle(){
     push();
         rotate(PI/2);
         fill(255); textSize(Size*0.75); stroke(0); strokeWeight(0.5);
-        text(otherModeList[otherModeIndex], 0.85*(shortAxis*scale), 0.1*(shortAxis*scale));
+        text(otherModeList[otherModeIndex], 0.85*scaled, 0.1*scaled);
     pop();
     push();
         rotate(PI/2);
@@ -674,7 +693,7 @@ function createOtherModeCircle(){
 }
 
 function createMenus(){
-    let xpos = (shortAxis*scale);
+    let xpos = scaled;
     let ypos = 30; 
     
     keySelect = createSelect();

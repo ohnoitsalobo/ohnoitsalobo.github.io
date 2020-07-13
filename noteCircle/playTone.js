@@ -523,11 +523,11 @@ function keyPressed(){
 }
 
 function mousePressed(){
-    // console.log(mouseX/(shortAxis*scale) + "," + mouseY/(shortAxis*scale));
+    // console.log(mouseX/scaled + "," + mouseY/scaled);
     ////// PLAY TONES
-    let xpos, ypos, ypos1, offset = 0.08*(shortAxis*scale);
-    xpos = 0.5*(shortAxis*scale);
-    ypos = 0.11*(shortAxis*scale);
+    let xpos, ypos, ypos1, offset = 0.08*scaled;
+    xpos = 0.5*scaled;
+    ypos = 0.11*scaled;
     if(mouseX>xpos-offset && mouseX<xpos        &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(12);
@@ -536,77 +536,77 @@ function mousePressed(){
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(0);
     }
-    xpos = 0.69*(shortAxis*scale);
-    ypos = 0.17*(shortAxis*scale);
+    xpos = 0.69*scaled;
+    ypos = 0.17*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(1);
     }
-    xpos = 0.83*(shortAxis*scale);
-    ypos = 0.31*(shortAxis*scale);
+    xpos = 0.83*scaled;
+    ypos = 0.31*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(2);
     }
-    xpos = 0.88*(shortAxis*scale);
-    ypos = 0.5*(shortAxis*scale);
+    xpos = 0.88*scaled;
+    ypos = 0.5*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(3);
     }
-    xpos = 0.83*(shortAxis*scale);
-    ypos = 0.69*(shortAxis*scale);
+    xpos = 0.83*scaled;
+    ypos = 0.69*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(4);
     }
-    xpos = 0.69*(shortAxis*scale);
-    ypos = 0.83*(shortAxis*scale);
+    xpos = 0.69*scaled;
+    ypos = 0.83*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(5);
     }
-    xpos = 0.5*(shortAxis*scale);
-    ypos = 0.88*(shortAxis*scale);
+    xpos = 0.5*scaled;
+    ypos = 0.88*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(6);
     }
-    xpos = 0.31*(shortAxis*scale);
-    ypos = 0.83*(shortAxis*scale);
+    xpos = 0.31*scaled;
+    ypos = 0.83*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(7);
     }
-    xpos = 0.17*(shortAxis*scale);
-    ypos = 0.69*(shortAxis*scale);
+    xpos = 0.17*scaled;
+    ypos = 0.69*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(8);
     }
-    xpos = 0.11*(shortAxis*scale);
-    ypos = 0.5*(shortAxis*scale);
+    xpos = 0.11*scaled;
+    ypos = 0.5*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(9);
     }
-    xpos = 0.17*(shortAxis*scale);
-    ypos = 0.31*(shortAxis*scale);
+    xpos = 0.17*scaled;
+    ypos = 0.31*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(10);
     }
-    xpos = 0.31*(shortAxis*scale);
-    ypos = 0.17*(shortAxis*scale);
+    xpos = 0.31*scaled;
+    ypos = 0.17*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         playTone(11);
     }
     
     ////// CHANGE KEY
-    xpos  = 1.15*(shortAxis*scale);
-    ypos  = 0.19*(shortAxis*scale);
-    ypos1 = 0.41*(shortAxis*scale);
+    xpos  = 1.15*scaled;
+    ypos  = 0.19*scaled;
+    ypos1 = 0.41*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         keySelect.selected(keyList[(keyIndex + 1)%12]);
@@ -619,9 +619,9 @@ function mousePressed(){
     }
     if(showOverlay){
         ////// CHANGE PATTERN
-        xpos  = 1.55*(shortAxis*scale);
-        ypos  = 0.19*(shortAxis*scale); 
-        ypos1 = 0.41*(shortAxis*scale);
+        xpos  = 1.55*scaled;
+        ypos  = 0.19*scaled; 
+        ypos1 = 0.41*scaled;
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
            mouseY>ypos-offset && mouseY<ypos+offset){
             majorMinorOther = (majorMinorOther + 5)%6;
@@ -635,9 +635,9 @@ function mousePressed(){
             changeMode();
         }
         
-        xpos  = 1.35*(shortAxis*scale);
-        ypos  = 0.44*(shortAxis*scale); 
-        ypos1 = 0.76*(shortAxis*scale);
+        xpos  = 1.35*scaled;
+        ypos  = 0.44*scaled; 
+        ypos1 = 0.76*scaled;
         ////// CHANGE MAJOR MODE
         if(majorMinorOther == 0){
             var choice = majorModeSelect.value();
@@ -752,9 +752,9 @@ function mousePressed(){
                 changeOtherMode();
             }
         }
-        xpos = 0.5*(shortAxis*scale);
-        ypos = 0.5*(shortAxis*scale);
-        offset = 0.1*(shortAxis*scale);
+        xpos = 0.5*scaled;
+        ypos = 0.5*scaled;
+        offset = 0.1*scaled;
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
            mouseY>ypos-offset && mouseY<ypos+offset){
             if(majorMinorOther != 5){
@@ -773,14 +773,14 @@ function mousePressed(){
             }
         }
     }
-    xpos = 0.1*(shortAxis*scale);
-    ypos = 0.06*(shortAxis*scale);
+    xpos = 0.1*scaled;
+    ypos = 0.06*scaled;
     offset = ypos;
     if(mouseX>xpos-xpos && mouseX<xpos+xpos &&
        mouseY>ypos-ypos && mouseY<ypos+ypos){
         showOverlay = !showOverlay;
     }
-    ypos = 0.94*(shortAxis*scale);
+    ypos = 0.94*scaled;
     if(mouseX>xpos-xpos   && mouseX<xpos+xpos &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         showEnharmonic = (showEnharmonic + 1)%5;
@@ -793,24 +793,24 @@ function mousePressed(){
 }
 
 function mouseWheel(event){
-    let xpos, ypos, offset = 0.07*(shortAxis*scale);
-    xpos  = 1.15*(shortAxis*scale);
-    ypos  = 0.3*(shortAxis*scale);
+    let xpos, ypos, offset = 0.07*scaled;
+    xpos  = 1.15*scaled;
+    ypos  = 0.3*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         changeKeyMouse(event);
     }
     
     if(showOverlay){
-        xpos  = 1.55*(shortAxis*scale);
-        ypos  = 0.3*(shortAxis*scale);
+        xpos  = 1.55*scaled;
+        ypos  = 0.3*scaled;
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
            mouseY>ypos-offset && mouseY<ypos+offset){
             changeModeMouse(event);
         }
         
-        xpos  = 1.35*(shortAxis*scale);
-        ypos  = 0.6*(shortAxis*scale);
+        xpos  = 1.35*scaled;
+        ypos  = 0.6*scaled;
         offset = offset*1.5;
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
            mouseY>ypos-offset && mouseY<ypos+offset){
@@ -823,21 +823,21 @@ function mouseWheel(event){
         }
     }
     
-    // return false;
+    return false;
 }
 
 function doubleClicked(){
-    let xpos, ypos, offset = 0.07*(shortAxis*scale);
-    xpos  = 1.15*(shortAxis*scale);
-    ypos  = 0.3*(shortAxis*scale);
+    let xpos, ypos, offset = 0.07*scaled;
+    xpos  = 1.15*scaled;
+    ypos  = 0.3*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         keyIndex = 0;
         keySelect.selected(keyList[0]);
     }
    
-    xpos  = 1.55*(shortAxis*scale);
-    ypos  = 0.3*(shortAxis*scale);
+    xpos  = 1.55*scaled;
+    ypos  = 0.3*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         majorMinorOther = 0;
@@ -845,8 +845,8 @@ function doubleClicked(){
         changeMode();
     }
     
-    xpos  = 1.35*(shortAxis*scale);
-    ypos  = 0.6*(shortAxis*scale);
+    xpos  = 1.35*scaled;
+    ypos  = 0.6*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         majorModeSelect.selected(majorModeList[0]);

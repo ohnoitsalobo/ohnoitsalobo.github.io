@@ -1,11 +1,14 @@
+let scaled;
 
 function setup(){
     shortAxis = ((windowWidth > windowHeight) ? windowHeight : windowWidth);
-    var cnv = createCanvas(1.75*(shortAxis*scale), (shortAxis*scale));
+    scaled = shortAxis*scale;
+    var cnv = createCanvas(1.75*scaled, scaled);
     cnv.parent('noteCircle');
     frameRate(30);
     createMenus();
     changeMode();
+    setupImg();
 }
 
 function draw(){
@@ -20,7 +23,7 @@ function draw(){
     }
     
     background(fillcolor*0.9, 200);
-    translate((shortAxis*scale)/2, (shortAxis*scale)/2);
+    translate(scaled/2, scaled/2);
     rotate(-PI/2);
     createNoteCircle();
     if(majorMinorOther == 0)
@@ -37,6 +40,9 @@ function draw(){
         createOtherModeCircle();
 
     playedHighlight();
+    // rotate(PI/2);
+    // translate(0, scaled);
+    // drawNotes();
 }
 
 function playedHighlight(){
@@ -45,7 +51,7 @@ function playedHighlight(){
         push();
             rotate(i*PI/6);
             fill(0, playedAlpha[i]); stroke(0, playedAlpha[i]); strokeWeight(2);
-            var x = 0.37*(shortAxis*scale), y = 0, w = Size*1.74, l = Size*1.74;
+            var x = 0.37*scaled, y = 0, w = Size*1.74, l = Size*1.74;
             if(i == 0)
                 rect(x, y+l/4, w, l/2);
             else if(i == 12)
@@ -63,7 +69,7 @@ function playedHighlight(){
             push();
                 let t = modeCheck(i);
                 rotate(t*PI/6);
-                translate(0.315*(shortAxis*scale), -0.62*Size);
+                translate(0.315*scaled, -0.62*Size);
                 rotate(-t*PI/6+PI/2);
                 text(i, 0, 0);
             pop()
