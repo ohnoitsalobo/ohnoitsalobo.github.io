@@ -14,473 +14,514 @@ var synth = new Tone.PolySynth(6, Tone.Synth,
 }
 ).toMaster()
 
+let root2_12 = 1.059463;
 /*            C     C#/Db     D     D#/Eb     E       F     F#/Gb     G     G#/Ab    A   A#/Bb     B       C'    */
-var tone = [523.25, 554.37, 587.33, 622.25, 659.25, 698.46, 739.99, 783.99, 830.61, 880, 932.32, 987.76, 1046.5];
-let playedAlpha = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; 
+var tone = [
+/* C  */ 440/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12,
+/* C# */ 440/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12,
+/* D  */ 440/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12,
+/* Eb */ 440/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12,
+/* E  */ 440/root2_12/root2_12/root2_12/root2_12/root2_12,
+/* F  */ 440/root2_12/root2_12/root2_12/root2_12,
+/* F# */ 440/root2_12/root2_12/root2_12,
+/* G  */ 440/root2_12/root2_12,
+/* G# */ 440/root2_12,
+/* A  */ 440,
+/* Bb */ 440*root2_12,
+/* B  */ 440*root2_12*root2_12,
+/* C' */ 440*root2_12*root2_12*root2_12,
+];
 
 function playTone(t){
-    var transpose = 1;
+    var transpose = floor(t/13+1);
     for(var i = 0; i < notesAreLocked(); i++)
         transpose *= 1.059463;
-    synth.triggerAttackRelease(tone[t]*transpose/2, "8n");
-    playedAlpha[t] = 100;
+    synth.triggerAttackRelease(tone[t%13]*transpose, "8n");
+    if(keyIsPressed && (t == 0 || t == 12)){
+        playedAlpha[ 0] = 100;
+        playedAlpha[12] = 100;
+    }else
+        playedAlpha[t%13] = 100;
 }
 
+/*  */
 function modeCheck(t){
-        if(t == 1){ // 0
-            return 0;
+    if     (t == 1){ // 0
+        return 0;
+    }
+    else if(t == 2){ // 1
+        if(majorMinorOther == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 2 ||
+               majorModeIndex == 3 || 
+               majorModeIndex == 5 || 
+               majorModeIndex == 7 || 
+               majorModeIndex == 9 || 
+               majorModeIndex ==10 )
+                return 2;
+            else
+                return 1;
         }
-        if(t == 2){ // 1
-            if(majorMinorOther == 0){
-                if(majorModeIndex == 0 || 
-                   majorModeIndex == 2 ||
-                   majorModeIndex == 3 || 
-                   majorModeIndex == 5 || 
-                   majorModeIndex == 7 || 
-                   majorModeIndex == 9 || 
-                   majorModeIndex ==10 )
-                    return 2;
+        if(majorMinorOther == 1){
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 1 ||
+               melodicMinorModeIndex == 3 || 
+               melodicMinorModeIndex == 5 || 
+               melodicMinorModeIndex == 7 || 
+               melodicMinorModeIndex == 9 || 
+               melodicMinorModeIndex ==10 )
+                return 2;
+            else
+                return 1;
+        }
+        if(majorMinorOther == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               harmonicMinorModeIndex == 1 ||
+               harmonicMinorModeIndex == 3 || 
+               harmonicMinorModeIndex == 5 || 
+               harmonicMinorModeIndex == 6 || 
+               harmonicMinorModeIndex == 9 || 
+               harmonicMinorModeIndex ==10 )
+                return 2;
+            else {
+                if(harmonicMinorModeIndex == 8)
+                    return 3;
                 else
                     return 1;
-            }
-            if(majorMinorOther == 1){
-                if(melodicMinorModeIndex == 0 || 
-                   melodicMinorModeIndex == 1 ||
-                   melodicMinorModeIndex == 3 || 
-                   melodicMinorModeIndex == 5 || 
-                   melodicMinorModeIndex == 7 || 
-                   melodicMinorModeIndex == 9 || 
-                   melodicMinorModeIndex ==10 )
-                    return 2;
-                else
-                    return 1;
-            }
-            if(majorMinorOther == 2){
-                if(harmonicMinorModeIndex == 0 || 
-                   harmonicMinorModeIndex == 1 ||
-                   harmonicMinorModeIndex == 3 || 
-                   harmonicMinorModeIndex == 5 || 
-                   harmonicMinorModeIndex == 6 || 
-                   harmonicMinorModeIndex == 9 || 
-                   harmonicMinorModeIndex ==10 )
-                    return 2;
-                else
-                    if(harmonicMinorModeIndex == 8)
-                        return 3;
-                    else
-                        return 1;
-            }
-            if(majorMinorOther == 3){
-                if(harmonicMajorModeIndex == 0 || 
-                   harmonicMajorModeIndex == 2 ||
-                   harmonicMajorModeIndex == 3 || 
-                   harmonicMajorModeIndex == 5 || 
-                   harmonicMajorModeIndex == 6 || 
-                   harmonicMajorModeIndex == 9 || 
-                   harmonicMajorModeIndex ==10 )
-                    return 2;
-                else
-                    if(harmonicMajorModeIndex == 8)
-                        return 3;
-                    else
-                        return 1;
-            }
-            if(majorMinorOther == 4){
-                if(doubleHarmonicModeIndex == 0 || 
-                   doubleHarmonicModeIndex == 3 ||
-                   doubleHarmonicModeIndex == 4 || 
-                   doubleHarmonicModeIndex == 6 || 
-                   doubleHarmonicModeIndex == 7 || 
-                   doubleHarmonicModeIndex ==10 || 
-                   doubleHarmonicModeIndex ==11 )
-                    return 1;
-                else
-                    if(doubleHarmonicModeIndex == 1 || 
-                       doubleHarmonicModeIndex == 8)
-                        return 3;
-                    else
-                        return 2;
             }
         }
-        if(t == 3){ // 2
-            if(majorMinorOther == 0){
-                if(majorModeIndex == 0 || 
-                   majorModeIndex == 1 ||
-                   majorModeIndex == 3 || 
-                   majorModeIndex == 5 || 
-                   majorModeIndex == 7 || 
-                   majorModeIndex == 8 || 
-                   majorModeIndex ==10 )
-                    return 4;
+        if(majorMinorOther == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 2 ||
+               harmonicMajorModeIndex == 3 || 
+               harmonicMajorModeIndex == 5 || 
+               harmonicMajorModeIndex == 6 || 
+               harmonicMajorModeIndex == 9 || 
+               harmonicMajorModeIndex ==10 )
+                return 2;
+            else {
+                if(harmonicMajorModeIndex == 8)
+                    return 3;
+                else
+                    return 1;
+            }
+        }
+        if(majorMinorOther == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 3 ||
+               doubleHarmonicModeIndex == 4 || 
+               doubleHarmonicModeIndex == 6 || 
+               doubleHarmonicModeIndex == 7 || 
+               doubleHarmonicModeIndex ==10 || 
+               doubleHarmonicModeIndex ==11 )
+                return 1;
+            else {
+                if(doubleHarmonicModeIndex == 1 || 
+                   doubleHarmonicModeIndex == 8)
+                    return 3;
+                else
+                    return 2;
+            }
+        }
+    }
+    else if(t == 3){ // 2
+        if(majorMinorOther == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 1 ||
+               majorModeIndex == 3 || 
+               majorModeIndex == 5 || 
+               majorModeIndex == 7 || 
+               majorModeIndex == 8 || 
+               majorModeIndex ==10 )
+                return 4;
+            else
+                return 3;
+        }
+        if(majorMinorOther == 1){
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 2 ||
+               melodicMinorModeIndex == 4 || 
+               melodicMinorModeIndex == 6 || 
+               melodicMinorModeIndex == 8 || 
+               melodicMinorModeIndex == 9 || 
+               melodicMinorModeIndex ==11 )
+                return 3;
+            else
+                return 4;
+        }
+        if(majorMinorOther == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               harmonicMinorModeIndex == 2 ||
+               harmonicMinorModeIndex == 4 || 
+               harmonicMinorModeIndex == 5 || 
+               // harmonicMinorModeIndex == 8 || 
+               harmonicMinorModeIndex == 9 || 
+               harmonicMinorModeIndex ==11 )
+                return 3;
+            else
+                return 4;
+        }
+        if(majorMinorOther == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 1 ||
+               harmonicMajorModeIndex == 3 || 
+               // harmonicMajorModeIndex == 4 || 
+               harmonicMajorModeIndex == 7 || 
+               harmonicMajorModeIndex == 8 || 
+               harmonicMajorModeIndex ==10 )
+                return 4;
+            else
+                return 3;
+        }
+        if(majorMinorOther == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 1 ||
+               doubleHarmonicModeIndex == 3 || 
+               // doubleHarmonicModeIndex == 4 || 
+               doubleHarmonicModeIndex == 7 || 
+               doubleHarmonicModeIndex == 8 || 
+               doubleHarmonicModeIndex == 9 )
+                return 4;
+            else {
+                if(doubleHarmonicModeIndex == 11)
+                    return 2;
                 else
                     return 3;
             }
-            if(majorMinorOther == 1){
-                if(melodicMinorModeIndex == 0 || 
-                   melodicMinorModeIndex == 2 ||
-                   melodicMinorModeIndex == 4 || 
-                   melodicMinorModeIndex == 6 || 
-                   melodicMinorModeIndex == 8 || 
-                   melodicMinorModeIndex == 9 || 
+        }
+    }
+    else if(t == 4){ // 3
+        if(majorMinorOther == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 2 ||
+               majorModeIndex == 4 || 
+               majorModeIndex == 6 || 
+               majorModeIndex == 7 || 
+               majorModeIndex == 9 || 
+               majorModeIndex ==11 )
+                return 5;
+            else
+                return 6;
+        }
+        if(majorMinorOther == 1){
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 2 ||
+               melodicMinorModeIndex == 4 || 
+               melodicMinorModeIndex == 6 || 
+               melodicMinorModeIndex == 7 || 
+               melodicMinorModeIndex == 9 || 
+               melodicMinorModeIndex ==10 )
+                return 5;
+            else {
+                if(melodicMinorModeIndex == 11)
+                    return 4;
+                else
+                    return 6;
+            }
+        }
+        if(majorMinorOther == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               harmonicMinorModeIndex == 2 ||
+               harmonicMinorModeIndex == 3 || 
+               harmonicMinorModeIndex == 6 || 
+               harmonicMinorModeIndex == 7 || 
+               harmonicMinorModeIndex == 9 || 
+               harmonicMinorModeIndex ==10 )
+                return 5;
+            else {
+                if(harmonicMinorModeIndex == 11)
+                    return 4;
+                else
+                    return 6;
+            }
+        }
+        if(majorMinorOther == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 2 ||
+               harmonicMajorModeIndex == 3 || 
+               harmonicMajorModeIndex == 6 || 
+               harmonicMajorModeIndex == 7 || 
+               harmonicMajorModeIndex == 9 || 
+               harmonicMajorModeIndex ==11 )
+                return 5;
+            else {
+                if(harmonicMajorModeIndex == 4)
+                    return 4;
+                else
+                    return 6;
+            }
+        }
+        if(majorMinorOther == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 2 ||
+               doubleHarmonicModeIndex == 3 || 
+               doubleHarmonicModeIndex == 6 || 
+               doubleHarmonicModeIndex == 7 || 
+               doubleHarmonicModeIndex == 8 || 
+               doubleHarmonicModeIndex == 11 )
+                return 5;
+            else {
+                if(doubleHarmonicModeIndex == 4)
+                    return 4;
+                else
+                    return 6;
+            }
+        }
+    }
+    else if(t == 5){ // 4
+        if(majorMinorOther == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 2 ||
+               majorModeIndex == 4 || 
+               majorModeIndex == 5 || 
+               majorModeIndex == 7 || 
+               majorModeIndex == 9 || 
+               majorModeIndex ==10 )
+                return 7;
+            else
+                return 6;
+        }
+        if(majorMinorOther == 1){ 
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 2 ||
+               melodicMinorModeIndex == 4 || 
+               melodicMinorModeIndex == 5 || 
+               melodicMinorModeIndex == 7 || 
+               melodicMinorModeIndex == 8 || 
+               melodicMinorModeIndex ==10 )
+                return 7;
+            else {
+                if(melodicMinorModeIndex == 9 ||
                    melodicMinorModeIndex ==11 )
-                    return 3;
-                else
-                    return 4;
-            }
-            if(majorMinorOther == 2){
-                if(harmonicMinorModeIndex == 0 || 
-                   harmonicMinorModeIndex == 2 ||
-                   harmonicMinorModeIndex == 4 || 
-                   harmonicMinorModeIndex == 5 || 
-                   // harmonicMinorModeIndex == 8 || 
-                   harmonicMinorModeIndex == 9 || 
-                   harmonicMinorModeIndex ==11 )
-                    return 3;
-                else
-                    return 4;
-            }
-            if(majorMinorOther == 3){
-                if(harmonicMajorModeIndex == 0 || 
-                   harmonicMajorModeIndex == 1 ||
-                   harmonicMajorModeIndex == 3 || 
-                   // harmonicMajorModeIndex == 4 || 
-                   harmonicMajorModeIndex == 7 || 
-                   harmonicMajorModeIndex == 8 || 
-                   harmonicMajorModeIndex ==10 )
-                    return 4;
-                else
-                    return 3;
-            }
-            if(majorMinorOther == 4){
-                if(doubleHarmonicModeIndex == 0 || 
-                   doubleHarmonicModeIndex == 1 ||
-                   doubleHarmonicModeIndex == 3 || 
-                   // doubleHarmonicModeIndex == 4 || 
-                   doubleHarmonicModeIndex == 7 || 
-                   doubleHarmonicModeIndex == 8 || 
-                   doubleHarmonicModeIndex == 9 )
-                    return 4;
-                else
-                    if(doubleHarmonicModeIndex == 11)
-                        return 2;
-                    else
-                        return 3;
-            }
-        }
-        if(t == 4){ // 3
-            if(majorMinorOther == 0){
-                if(majorModeIndex == 0 || 
-                   majorModeIndex == 2 ||
-                   majorModeIndex == 4 || 
-                   majorModeIndex == 6 || 
-                   majorModeIndex == 7 || 
-                   majorModeIndex == 9 || 
-                   majorModeIndex ==11 )
-                    return 5;
-                else
                     return 6;
-            }
-            if(majorMinorOther == 1){
-                if(melodicMinorModeIndex == 0 || 
-                   melodicMinorModeIndex == 2 ||
-                   melodicMinorModeIndex == 4 || 
-                   melodicMinorModeIndex == 6 || 
-                   melodicMinorModeIndex == 7 || 
-                   melodicMinorModeIndex == 9 || 
-                   melodicMinorModeIndex ==10 )
-                    return 5;
-                else{
-                    if(melodicMinorModeIndex == 11)
-                        return 4;
-                    else
-                        return 6;
-                }
-            }
-            if(majorMinorOther == 2){
-                if(harmonicMinorModeIndex == 0 || 
-                   harmonicMinorModeIndex == 2 ||
-                   harmonicMinorModeIndex == 3 || 
-                   harmonicMinorModeIndex == 6 || 
-                   harmonicMinorModeIndex == 7 || 
-                   harmonicMinorModeIndex == 9 || 
-                   harmonicMinorModeIndex ==10 )
-                    return 5;
-                else
-                    if(harmonicMinorModeIndex == 11)
-                        return 4;
-                    else
-                        return 6;
-            }
-            if(majorMinorOther == 3){
-                if(harmonicMajorModeIndex == 0 || 
-                   harmonicMajorModeIndex == 2 ||
-                   harmonicMajorModeIndex == 3 || 
-                   harmonicMajorModeIndex == 6 || 
-                   harmonicMajorModeIndex == 7 || 
-                   harmonicMajorModeIndex == 9 || 
-                   harmonicMajorModeIndex ==11 )
-                    return 5;
-                else
-                    if(harmonicMajorModeIndex == 4)
-                        return 4;
-                    else
-                        return 6;
-            }
-            if(majorMinorOther == 4){
-                if(doubleHarmonicModeIndex == 0 || 
-                   doubleHarmonicModeIndex == 2 ||
-                   doubleHarmonicModeIndex == 3 || 
-                   doubleHarmonicModeIndex == 6 || 
-                   doubleHarmonicModeIndex == 7 || 
-                   doubleHarmonicModeIndex == 8 || 
-                   doubleHarmonicModeIndex == 11 )
-                    return 5;
-                else
-                    if(doubleHarmonicModeIndex == 4)
-                        return 4;
-                    else
-                        return 6;
-            }
-        }
-        if(t == 5){ // 4
-            if(majorMinorOther == 0){
-                if(majorModeIndex == 0 || 
-                   majorModeIndex == 2 ||
-                   majorModeIndex == 4 || 
-                   majorModeIndex == 5 || 
-                   majorModeIndex == 7 || 
-                   majorModeIndex == 9 || 
-                   majorModeIndex ==10 )
-                    return 7;
-                else
-                    return 6;
-            }
-            if(majorMinorOther == 1){ 
-                if(melodicMinorModeIndex == 0 || 
-                   melodicMinorModeIndex == 2 ||
-                   melodicMinorModeIndex == 4 || 
-                   melodicMinorModeIndex == 5 || 
-                   melodicMinorModeIndex == 7 || 
-                   melodicMinorModeIndex == 8 || 
-                   melodicMinorModeIndex ==10 )
-                    return 7;
-                else{
-                    if(melodicMinorModeIndex == 9 ||
-                       melodicMinorModeIndex ==11 )
-                        return 6;
-                    else
-                        return 8;
-                }
-            }
-            if(majorMinorOther == 2){
-                if(harmonicMinorModeIndex == 0 || 
-                   harmonicMinorModeIndex == 1 ||
-                   harmonicMinorModeIndex == 4 || 
-                   harmonicMinorModeIndex == 5 || 
-                   harmonicMinorModeIndex == 7 || 
-                   harmonicMinorModeIndex == 8 || 
-                   harmonicMinorModeIndex ==10 )
-                    return 7;
-                else
-                    if(harmonicMinorModeIndex == 2 ||
-                       harmonicMinorModeIndex ==11 )
-                        return 6;
-                    else
-                        return 8;
-            }
-            if(majorMinorOther == 3){
-                if(harmonicMajorModeIndex == 0 || 
-                   harmonicMajorModeIndex == 1 ||
-                   harmonicMajorModeIndex == 4 || 
-                   harmonicMajorModeIndex == 5 || 
-                   harmonicMajorModeIndex == 7 || 
-                   harmonicMajorModeIndex == 9 || 
-                   harmonicMajorModeIndex ==10 )
-                    return 7;
-                else
-                    if(harmonicMajorModeIndex == 2 ||
-                       harmonicMajorModeIndex ==11 )
-                        return 6;
-                    else
-                        return 8;
-            }
-            if(majorMinorOther == 4){
-                if(doubleHarmonicModeIndex == 0 || 
-                   doubleHarmonicModeIndex == 1 ||
-                   doubleHarmonicModeIndex == 4 || 
-                   doubleHarmonicModeIndex == 5 || 
-                   doubleHarmonicModeIndex == 6 || 
-                   doubleHarmonicModeIndex == 9 || 
-                   doubleHarmonicModeIndex == 10 )
-                    return 7;
-                else
-                    if(doubleHarmonicModeIndex == 7 ||
-                       doubleHarmonicModeIndex ==11 )
-                        return 6;
-                    else
-                        return 8;
-            }
-        }
-        if(t == 6){ // 5
-            if(majorMinorOther == 0){
-                if(majorModeIndex == 0 || 
-                   majorModeIndex == 2 ||
-                   majorModeIndex == 3 || 
-                   majorModeIndex == 5 || 
-                   majorModeIndex == 7 || 
-                   majorModeIndex == 8 || 
-                   majorModeIndex ==10 )
-                    return 9;
                 else
                     return 8;
             }
-            if(majorMinorOther == 1){
-                if(melodicMinorModeIndex == 0 || 
-                   melodicMinorModeIndex == 2 ||
-                   melodicMinorModeIndex == 3 || 
-                   melodicMinorModeIndex == 5 || 
-                   melodicMinorModeIndex == 6 || 
-                   melodicMinorModeIndex == 8 || 
-                   melodicMinorModeIndex ==10 )
-                    return 9;
-                else
-                    return 8;
-            }
-            if(majorMinorOther == 2){
-                if(harmonicMinorModeIndex == 0 || 
-                   // harmonicMinorModeIndex == 3 ||
-                   harmonicMinorModeIndex == 4 || 
-                   harmonicMinorModeIndex == 6 || 
-                   harmonicMinorModeIndex == 7 || 
-                   harmonicMinorModeIndex == 9 || 
+        }
+        if(majorMinorOther == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               harmonicMinorModeIndex == 1 ||
+               harmonicMinorModeIndex == 4 || 
+               harmonicMinorModeIndex == 5 || 
+               harmonicMinorModeIndex == 7 || 
+               harmonicMinorModeIndex == 8 || 
+               harmonicMinorModeIndex ==10 )
+                return 7;
+            else {
+                if(harmonicMinorModeIndex == 2 ||
                    harmonicMinorModeIndex ==11 )
-                    return 8;
+                    return 6;
                 else
-                    return 9;
-            }
-            if(majorMinorOther == 3){
-                if(harmonicMajorModeIndex == 0 || 
-                   harmonicMajorModeIndex == 3 ||
-                   harmonicMajorModeIndex == 4 || 
-                   harmonicMajorModeIndex == 6 || 
-                   // harmonicMajorModeIndex == 8 || 
-                   harmonicMajorModeIndex == 9 || 
-                   harmonicMajorModeIndex ==11 )
                     return 8;
-                else
-                    return 9;
-            }
-            if(majorMinorOther == 4){
-                if(doubleHarmonicModeIndex == 0 || 
-                   doubleHarmonicModeIndex == 3 ||
-                   doubleHarmonicModeIndex == 4 || 
-                   doubleHarmonicModeIndex == 5 || 
-                   // doubleHarmonicModeIndex == 8 || 
-                   doubleHarmonicModeIndex == 9 || 
-                   doubleHarmonicModeIndex == 11 )
-                    return 8;
-                else
-                    if(doubleHarmonicModeIndex == 1 )
-                        return 10;
-                    else
-                        return 9;
             }
         }
-        if(t == 7){ // 6
-            if(majorMinorOther == 0){
-                if(majorModeIndex == 0 || 
-                   majorModeIndex == 1 ||
-                   majorModeIndex == 3 || 
-                   majorModeIndex == 5 || 
-                   majorModeIndex == 6 || 
-                   majorModeIndex == 8 || 
-                   majorModeIndex ==10 ){
-                    return 11;
-                }else
+        if(majorMinorOther == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 1 ||
+               harmonicMajorModeIndex == 4 || 
+               harmonicMajorModeIndex == 5 || 
+               harmonicMajorModeIndex == 7 || 
+               harmonicMajorModeIndex == 9 || 
+               harmonicMajorModeIndex ==10 )
+                return 7;
+            else {
+                if(harmonicMajorModeIndex == 2 ||
+                   harmonicMajorModeIndex ==11 )
+                    return 6;
+                else
+                    return 8;
+            }
+        }
+        if(majorMinorOther == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 1 ||
+               doubleHarmonicModeIndex == 4 || 
+               doubleHarmonicModeIndex == 5 || 
+               doubleHarmonicModeIndex == 6 || 
+               doubleHarmonicModeIndex == 9 || 
+               doubleHarmonicModeIndex == 10 )
+                return 7;
+            else {
+                if(doubleHarmonicModeIndex == 7 ||
+                   doubleHarmonicModeIndex ==11 )
+                    return 6;
+                else
+                    return 8;
+            }
+        }
+    }
+    else if(t == 6){ // 5
+        if(majorMinorOther == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 2 ||
+               majorModeIndex == 3 || 
+               majorModeIndex == 5 || 
+               majorModeIndex == 7 || 
+               majorModeIndex == 8 || 
+               majorModeIndex ==10 )
+                return 9;
+            else
+                return 8;
+        }
+        if(majorMinorOther == 1){
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 2 ||
+               melodicMinorModeIndex == 3 || 
+               melodicMinorModeIndex == 5 || 
+               melodicMinorModeIndex == 6 || 
+               melodicMinorModeIndex == 8 || 
+               melodicMinorModeIndex ==10 )
+                return 9;
+            else
+                return 8;
+        }
+        if(majorMinorOther == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               // harmonicMinorModeIndex == 3 ||
+               harmonicMinorModeIndex == 4 || 
+               harmonicMinorModeIndex == 6 || 
+               harmonicMinorModeIndex == 7 || 
+               harmonicMinorModeIndex == 9 || 
+               harmonicMinorModeIndex ==11 )
+                return 8;
+            else
+                return 9;
+        }
+        if(majorMinorOther == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 3 ||
+               harmonicMajorModeIndex == 4 || 
+               harmonicMajorModeIndex == 6 || 
+               // harmonicMajorModeIndex == 8 || 
+               harmonicMajorModeIndex == 9 || 
+               harmonicMajorModeIndex ==11 )
+                return 8;
+            else
+                return 9;
+        }
+        if(majorMinorOther == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 3 ||
+               doubleHarmonicModeIndex == 4 || 
+               doubleHarmonicModeIndex == 5 || 
+               // doubleHarmonicModeIndex == 8 || 
+               doubleHarmonicModeIndex == 9 || 
+               doubleHarmonicModeIndex == 11 )
+                return 8;
+            else {
+                if(doubleHarmonicModeIndex == 1 )
                     return 10;
+                else
+                    return 9;
             }
-            if(majorMinorOther == 1){
-                if(melodicMinorModeIndex == 0 || 
-                   melodicMinorModeIndex == 1 ||
-                   melodicMinorModeIndex == 3 || 
-                   melodicMinorModeIndex == 4 || 
-                   melodicMinorModeIndex == 6 || 
-                   melodicMinorModeIndex == 8 || 
-                   melodicMinorModeIndex ==10 )
-                    return 11;
+        }
+    }
+    else if(t == 7){ // 6
+        if(majorMinorOther == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 1 ||
+               majorModeIndex == 3 || 
+               majorModeIndex == 5 || 
+               majorModeIndex == 6 || 
+               majorModeIndex == 8 || 
+               majorModeIndex ==10 )
+                return 11;
+            else
+                return 10;
+        }
+        if(majorMinorOther == 1){
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 1 ||
+               melodicMinorModeIndex == 3 || 
+               melodicMinorModeIndex == 4 || 
+               melodicMinorModeIndex == 6 || 
+               melodicMinorModeIndex == 8 || 
+               melodicMinorModeIndex ==10 )
+                return 11;
+            else
+                return 10;
+        }
+        if(majorMinorOther == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               harmonicMinorModeIndex == 1 ||
+               harmonicMinorModeIndex == 3 || 
+               harmonicMinorModeIndex == 4 || 
+               // harmonicMinorModeIndex == 5 || 
+               harmonicMinorModeIndex == 8 || 
+               harmonicMinorModeIndex == 9 )
+                return 11;
+            else {
+                if(harmonicMinorModeIndex ==11 )
+                    return 9;
                 else
                     return 10;
             }
-            if(majorMinorOther == 2){
-                if(harmonicMinorModeIndex == 0 || 
-                   harmonicMinorModeIndex == 1 ||
-                   harmonicMinorModeIndex == 3 || 
-                   harmonicMinorModeIndex == 4 || 
-                   // harmonicMinorModeIndex == 5 || 
-                   harmonicMinorModeIndex == 8 || 
-                   harmonicMinorModeIndex == 9 )
-                    return 11;
+        }
+        if(majorMinorOther == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 1 ||
+               harmonicMajorModeIndex == 3 || 
+               harmonicMajorModeIndex == 5 || 
+               harmonicMajorModeIndex == 6 || 
+               harmonicMajorModeIndex == 8 || 
+               harmonicMajorModeIndex == 9 )
+                return 11;
+            else {
+                if(harmonicMajorModeIndex ==11 )
+                    return 9;
                 else
-                    if(harmonicMinorModeIndex ==11 )
-                        return 9;
-                    else
-                        return 10;
-            }
-            if(majorMinorOther == 3){
-                if(harmonicMajorModeIndex == 0 || 
-                   harmonicMajorModeIndex == 1 ||
-                   harmonicMajorModeIndex == 3 || 
-                   harmonicMajorModeIndex == 5 || 
-                   harmonicMajorModeIndex == 6 || 
-                   harmonicMajorModeIndex == 8 || 
-                   harmonicMajorModeIndex == 9 )
-                    return 11;
-                else
-                    if(harmonicMajorModeIndex ==11 )
-                        return 9;
-                    else
-                        return 10;
-            }
-            if(majorMinorOther == 4){
-                if(doubleHarmonicModeIndex == 0 || 
-                   doubleHarmonicModeIndex == 1 ||
-                   doubleHarmonicModeIndex == 2 || 
-                   doubleHarmonicModeIndex == 5 || 
-                   doubleHarmonicModeIndex == 6 || 
-                   doubleHarmonicModeIndex == 8 || 
-                   doubleHarmonicModeIndex == 9 )
-                    return 11;
-                else
-                    if(doubleHarmonicModeIndex == 4 ||
-                       doubleHarmonicModeIndex ==11 )
-                        return 9;
-                    else
-                        return 10;
+                    return 10;
             }
         }
-        if(t == 8){ // 7
-            return 12;
+        if(majorMinorOther == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 1 ||
+               doubleHarmonicModeIndex == 2 || 
+               doubleHarmonicModeIndex == 5 || 
+               doubleHarmonicModeIndex == 6 || 
+               doubleHarmonicModeIndex == 8 || 
+               doubleHarmonicModeIndex == 9 )
+                return 11;
+            else {
+                if(doubleHarmonicModeIndex == 4 ||
+                   doubleHarmonicModeIndex ==11 )
+                    return 9;
+                else
+                    return 10;
+            }
         }
+    }
+    else if(t == 8){ // 7
+        return 12;
+    }
+    else
+        return 0;
 }
+/*  */
 
 function keyPressed(){
     if(majorMinorOther == 5)
         return;
     else{
-        if(key == '1') playTone(modeCheck(1));
-        if(key == '2') playTone(modeCheck(2));
-        if(key == '3') playTone(modeCheck(3));
-        if(key == '4') playTone(modeCheck(4));
-        if(key == '5') playTone(modeCheck(5));
-        if(key == '6') playTone(modeCheck(6));
-        if(key == '7') playTone(modeCheck(7));
-        if(key == '8') playTone(modeCheck(8));
+             if(key == '1') playTone(modeCheck(1));
+        else if(key == '2') playTone(modeCheck(2));
+        else if(key == '3') playTone(modeCheck(3));
+        else if(key == '4') playTone(modeCheck(4));
+        else if(key == '5') playTone(modeCheck(5));
+        else if(key == '6') playTone(modeCheck(6));
+        else if(key == '7') playTone(modeCheck(7));
+        else if(key == '8') playTone(modeCheck(8));
+        else if(key == '9') playTone(modeCheck(2)+13);
+        else if(key == '0') playTone(modeCheck(3)+13);
+        else if(key == '-') playTone(modeCheck(4)+13);
+        else if(key == '=') playTone(modeCheck(5)+13);
     }
     // return false;
 }
 
 function mousePressed(){
     // console.log(mouseX/(shortAxis*scale) + "," + mouseY/(shortAxis*scale));
+    ////// PLAY TONES
     let xpos, ypos, ypos1, offset = 0.08*(shortAxis*scale);
     xpos = 0.5*(shortAxis*scale);
     ypos = 0.11*(shortAxis*scale);
@@ -741,7 +782,6 @@ function mousePressed(){
        mouseY>ypos-offset && mouseY<ypos+offset){
         showEnharmonic = (showEnharmonic + 1)%5;
         if(showEnharmonic == 0){
-            // fillalpha = 150
             for (var i = 0; i < 13; i++)
                 playedAlpha[i] = 40;
         }

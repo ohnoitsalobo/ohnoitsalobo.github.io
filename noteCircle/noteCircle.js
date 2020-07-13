@@ -15,9 +15,8 @@ function draw(){
     if(melodicMinorModeIndex < 0) melodicMinorModeIndex += 12;
     
     if(frameCount > 50){
-        let x = 1;
-        if(fillalpha < 255*x &&  showOverlay) fillalpha = lerp(fillalpha, 255*x, 0.1);
-        if(fillalpha > 0     && !showOverlay) fillalpha = lerp(fillalpha, 0    , 0.1);
+        if(fillalpha < 255 &&  showOverlay) fillalpha = lerp(fillalpha, 255, 0.1);
+        if(fillalpha > 0   && !showOverlay) fillalpha = lerp(fillalpha, 0  , 0.1);
     }
     
     background(fillcolor*0.9, 200);

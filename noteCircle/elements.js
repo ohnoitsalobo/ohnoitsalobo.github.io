@@ -1,3 +1,4 @@
+let playedAlpha = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; 
 let fillcolor = 100, fillalpha = 0;
 /* * /
 function createNoteCircle(){
