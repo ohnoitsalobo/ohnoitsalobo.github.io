@@ -9,7 +9,6 @@ function setup(){
     frameRate(30);
     createMenus();
     changeMode();
-    setupImg();
 }
 
 function draw(){
@@ -41,8 +40,7 @@ function draw(){
         createOtherModeCircle();
 
     playedHighlight();
-    rotate(PI/2);
-    translate(0, scaled);
+    
     // drawNotes();
 }
 

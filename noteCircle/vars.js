@@ -17,7 +17,7 @@ let otherModeIndex = 0;
 
 let doEvery = 30;
 let shortAxis, Size, speed = 0.5;
-let scale = 0.9;
+let scale = 0.8;
 let pianoColors = 1;
 let majorMinorOther = 0;
 let showEnharmonic = 0;

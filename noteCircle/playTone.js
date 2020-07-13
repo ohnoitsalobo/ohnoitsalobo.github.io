@@ -823,7 +823,7 @@ function mouseWheel(event){
         }
     }
     
-    return false;
+    // return false;
 }
 
 function doubleClicked(){

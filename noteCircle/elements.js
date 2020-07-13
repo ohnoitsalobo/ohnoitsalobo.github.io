@@ -1,17 +1,50 @@
+/*  * /
 let majorScale = [];
+let melodicMinorScale = [];
+let harmonicMinorScale = [];
+let harmonicMajorScale = [];
+let doubleHarmonicScale = [];
 
-function setupImg(){
+function preload(){
     let i;
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    for(i = 1; i <= 7; i++){
-        majorScale[i] = loadImage("http://127.0.0.1/modes/major/A_"+i+".png");
-        // majorScale[i] = loadImage(proxyurl+"https://ohnoitsalobo.github.io/noteCircle/modes/major/A_"+i+".png");
+    for(i = 0; i < 7; i++){
+        majorScale[i+( 0*7)] = loadImage("modes/major/thumbs/C_" +(i+1)+".png");
+        majorScale[i+( 1*7)] = loadImage("modes/major/thumbs/D_" +(i+1)+".png");
+        majorScale[i+( 2*7)] = loadImage("modes/major/thumbs/E_" +(i+1)+".png");
+        majorScale[i+( 3*7)] = loadImage("modes/major/thumbs/F_" +(i+1)+".png");
+        majorScale[i+( 4*7)] = loadImage("modes/major/thumbs/G_" +(i+1)+".png");
+        majorScale[i+( 5*7)] = loadImage("modes/major/thumbs/A_" +(i+1)+".png");
+        majorScale[i+( 6*7)] = loadImage("modes/major/thumbs/B_" +(i+1)+".png");
+        majorScale[i+( 7*7)] = loadImage("modes/major/thumbs/Cs_"+(i+1)+".png");
+        majorScale[i+( 8*7)] = loadImage("modes/major/thumbs/Ds_"+(i+1)+".png");
+        majorScale[i+( 9*7)] = loadImage("modes/major/thumbs/Fs_"+(i+1)+".png");
+        majorScale[i+(10*7)] = loadImage("modes/major/thumbs/Gs_"+(i+1)+".png");
+        majorScale[i+(11*7)] = loadImage("modes/major/thumbs/As_"+(i+1)+".png");
+        majorScale[i+(12*7)] = loadImage("modes/major/thumbs/Db_"+(i+1)+".png");
+        majorScale[i+(13*7)] = loadImage("modes/major/thumbs/Eb_"+(i+1)+".png");
+        majorScale[i+(14*7)] = loadImage("modes/major/thumbs/Gb_"+(i+1)+".png");
+        majorScale[i+(15*7)] = loadImage("modes/major/thumbs/Ab_"+(i+1)+".png");
+        majorScale[i+(16*7)] = loadImage("modes/major/thumbs/Bb_"+(i+1)+".png");
     }
 }
 
 function drawNotes(){
-    image(majorScale[0], 0, 0, 50, 50);
+    rotate(PI/2);
+    translate(0, scaled);
+    imageMode(CENTER);
+    let index = floor((frameCount/5)%(17*7));
+    let w = majorScale[index].width*scale;
+    let h = majorScale[index].height*scale;
+    let _x = -Size;
+    let _y = -Size*3;
+    image(majorScale[index], _x, _y, w, h);
+    if(majorMinorOther == 0){
+        if(majorModeSelect.selected == majorModeList[0]){
+            
+        }
+    }
 }
+/*  */
 
 let playedAlpha = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; 
 let fillcolor = 100, fillalpha = 0;
