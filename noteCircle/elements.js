@@ -30,6 +30,11 @@ function loadMajorScale(){
 function drawNotes(){
     rotate(PI/2);
     translate(scaled/4, scaled);
+    if(frameCount < 40){
+        fill(0); stroke(125); strokeWeight(4);
+        textSize(Size);
+        text("Please wait.\nApp might be slow while images load", 0, -scaled-Size/2);
+    }
     imageMode(CENTER);
     // let index = floor((frameCount/5)%(17*7));
     let index = notesAreLocked();
@@ -43,11 +48,6 @@ function drawNotes(){
     else if(index == 6 ) image(majorScale[14*7+currentlySelectedMode], 0, h/2, w, h);
     else if(index == 8 ) image(majorScale[15*7+currentlySelectedMode], 0, h/2, w, h);
     else if(index == 10) image(majorScale[16*7+currentlySelectedMode], 0, h/2, w, h);
-    // if(majorMinorOther == 0){
-        // if(majorModeSelect.selected == majorModeList[0]){
-            // image(majorScale[keyIndex*7], 0, -h/2);
-        // }
-    // }
 }
 /*  */
 
