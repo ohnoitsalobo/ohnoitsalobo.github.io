@@ -789,7 +789,7 @@ function mousePressed(){
                 playedAlpha[i] = 40;
         }
     }
-    // return false;
+    return false;
 }
 
 function mouseWheel(event){
@@ -823,7 +823,7 @@ function mouseWheel(event){
         }
     }
     
-    return false;
+    // return false;
 }
 
 function doubleClicked(){

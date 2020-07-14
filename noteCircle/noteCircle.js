@@ -47,7 +47,7 @@ function draw(){
         drawNotes();
     else if (majorMinorOther != 5){
         rotate(PI/2);
-        translate(0, scaled);
+        translate(scaled/4, scaled);
         fill(0); noStroke();
         textSize(Size);
         text("Under construction", 0, 0);

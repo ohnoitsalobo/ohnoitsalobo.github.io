@@ -29,7 +29,7 @@ function loadMajorScale(){
 
 function drawNotes(){
     rotate(PI/2);
-    translate(0, scaled);
+    translate(scaled/4, scaled);
     imageMode(CENTER);
     // let index = floor((frameCount/5)%(17*7));
     let index = notesAreLocked();
