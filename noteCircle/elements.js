@@ -8,21 +8,21 @@ let doubleHarmonicScale = [];
 function loadMajorScale(){
     for(let i = 0; i < 7; i++){
         majorScale[i+( 0*7)] = loadImage("modes/major/thumbs/C_" +(i+1)+".png");
-        majorScale[i+( 1*7)] = loadImage("modes/major/thumbs/Cs_"+(i+1)+".png");
+        majorScale[i+( 1*7)] = loadImage("modes/major/thumbs/Db_"+(i+1)+".png");
         majorScale[i+( 2*7)] = loadImage("modes/major/thumbs/D_" +(i+1)+".png");
         majorScale[i+( 3*7)] = loadImage("modes/major/thumbs/Eb_"+(i+1)+".png");
         majorScale[i+( 4*7)] = loadImage("modes/major/thumbs/E_" +(i+1)+".png");
         majorScale[i+( 5*7)] = loadImage("modes/major/thumbs/F_" +(i+1)+".png");
         majorScale[i+( 6*7)] = loadImage("modes/major/thumbs/Fs_"+(i+1)+".png");
         majorScale[i+( 7*7)] = loadImage("modes/major/thumbs/G_" +(i+1)+".png");
-        majorScale[i+( 8*7)] = loadImage("modes/major/thumbs/Gs_"+(i+1)+".png");
+        majorScale[i+( 8*7)] = loadImage("modes/major/thumbs/Ab_"+(i+1)+".png");
         majorScale[i+( 9*7)] = loadImage("modes/major/thumbs/A_" +(i+1)+".png");
         majorScale[i+(10*7)] = loadImage("modes/major/thumbs/Bb_"+(i+1)+".png");
         majorScale[i+(11*7)] = loadImage("modes/major/thumbs/B_" +(i+1)+".png");
-        majorScale[i+(12*7)] = loadImage("modes/major/thumbs/Db_"+(i+1)+".png");
+        majorScale[i+(12*7)] = loadImage("modes/major/thumbs/Cs_"+(i+1)+".png");
         majorScale[i+(13*7)] = loadImage("modes/major/thumbs/Ds_"+(i+1)+".png");
         majorScale[i+(14*7)] = loadImage("modes/major/thumbs/Gb_"+(i+1)+".png");
-        majorScale[i+(15*7)] = loadImage("modes/major/thumbs/Ab_"+(i+1)+".png");
+        majorScale[i+(15*7)] = loadImage("modes/major/thumbs/Gs_"+(i+1)+".png");
         majorScale[i+(16*7)] = loadImage("modes/major/thumbs/As_"+(i+1)+".png");
     }
 }
@@ -33,7 +33,7 @@ function drawNotes(){
     if(frameCount < 40){
         fill(0); stroke(125); strokeWeight(4);
         textSize(Size);
-        text("Please wait.\nApp might be slow while images load", 0, -scaled-Size/2);
+        text("Please wait.\nApp might be slow while images load.", 0, -scaled-Size/2);
     }
     imageMode(CENTER);
     // let index = floor((frameCount/5)%(17*7));
