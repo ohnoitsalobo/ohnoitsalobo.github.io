@@ -766,7 +766,7 @@ function mousePressed(){
                     if(majorMinorOther == 3) keyIndex = keyIndex + (12 - harmonicMajorModeIndex )%12;
                     if(majorMinorOther == 4) keyIndex = keyIndex + (12 - doubleHarmonicModeIndex)%12; 
                 }else{
-                    speed = 0.5;
+                    speed = 0.4;
                     keyIndex = notesAreLocked();
                 }
                 lockNotes = !lockNotes;
@@ -823,7 +823,7 @@ function mouseWheel(event){
         }
     }
     
-    // return false;
+    return false;
 }
 
 function doubleClicked(){

@@ -14,10 +14,11 @@ let harmonicMinorModeIndex = 0;
 let harmonicMajorModeIndex = 0;
 let doubleHarmonicModeIndex = 0;
 let otherModeIndex = 0;
+let currentlySelectedMode = 0;
 
 let doEvery = 30;
-let shortAxis, Size, speed = 0.5;
-let scale = 0.9;
+let shortAxis, Size, speed = 0.4;
+let scale = 0.6;
 let pianoColors = 1;
 let majorMinorOther = 0;
 let showEnharmonic = 0;

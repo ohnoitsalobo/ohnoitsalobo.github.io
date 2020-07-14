@@ -3,12 +3,14 @@ let scaled;
 function setup(){
     shortAxis = ((windowWidth > windowHeight) ? windowHeight : windowWidth);
     scaled = shortAxis*scale;
-    // var cnv = createCanvas(1.75*scaled, 2*scaled);
-    var cnv = createCanvas(1.75*scaled, scaled);
+    var cnv = createCanvas(1.75*scaled, 2*scaled);
+    // var cnv = createCanvas(1.75*scaled, scaled);
     cnv.parent('noteCircle');
     frameRate(30);
     createMenus();
     changeMode();
+    
+    loadMajorScale();
 }
 
 function draw(){
@@ -41,7 +43,15 @@ function draw(){
 
     playedHighlight();
     
-    // drawNotes();
+    if(majorMinorOther == 0)
+        drawNotes();
+    else if (majorMinorOther != 5){
+        rotate(PI/2);
+        translate(0, scaled);
+        fill(0); noStroke();
+        textSize(Size);
+        text("Under construction", 0, 0);
+    }
 }
 
 function playedHighlight(){
