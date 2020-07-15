@@ -78,7 +78,7 @@ function drawNotes(){
     if(frameCount < 100){
         fill(0); stroke(125); strokeWeight(4);
         textSize(Size);
-        text("Please wait.\nApp might be slow while images load.", -scaled*1.8, 0);
+        text("Please wait while images load.", -scaled*1.8, 0);
     }
     else{
         fill(0); noStroke(); // stroke(125); strokeWeight(1);
