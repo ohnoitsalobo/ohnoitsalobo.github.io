@@ -10,6 +10,7 @@ function setup(){
     createMenus();
     changeMode();
     
+///////// LOAD IMAGES
     loadMajorScale();
     loadMelodicMinorScale();
     loadHarmonicMinorScale();
@@ -32,17 +33,18 @@ function draw(){
     translate(scaled/2, scaled/2);
     rotate(-PI/2);
     createNoteCircle();
+///////// CREATE PATTERNS
     if(majorMinorOther == 0)
         createMajorModeCircle();
-    if(majorMinorOther == 1)
+    else if(majorMinorOther == 1)
         createMelodicMinorModeCircle();
-    if(majorMinorOther == 2)
+    else if(majorMinorOther == 2)
         createHarmonicMinorModeCircle();
-    if(majorMinorOther == 3)
+    else if(majorMinorOther == 3)
         createHarmonicMajorModeCircle();
-    if(majorMinorOther == 4)
+    else if(majorMinorOther == 4)
         createDoubleHarmonicModeCircle();
-    if(majorMinorOther == 5)
+    else if(majorMinorOther == 5)
         createOtherModeCircle();
 
     playedHighlight();
@@ -52,6 +54,7 @@ function draw(){
 }
 
 function playedHighlight(){
+///////// HIGHLIGHT NOTES PLAYED
     for(var i = 0; i < 13; i++){
         if(playedAlpha[i] > 1){
         push();
@@ -68,6 +71,7 @@ function playedHighlight(){
         pop();
         }
     }
+///////// SHOW SCALE NUMBERS
     fill(0, fillalpha); stroke(200, fillalpha*0.8); strokeWeight(3);
     textSize(0.4*Size);
     if(majorMinorOther != 5){

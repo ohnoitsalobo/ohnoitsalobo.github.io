@@ -35,7 +35,6 @@ function loadMajorScale(){
         }
     }
 }                                                          
-
 function loadMelodicMinorScale(){
     let path = "modes/melodicminor/melodicminor (", ext = ").png";
     for(let j = 0; j < 17; j++){
@@ -44,7 +43,6 @@ function loadMelodicMinorScale(){
         }
     }
 }
-
 function loadHarmonicMinorScale(){
     let path = "modes/harmonicminor/harmonicminor (", ext = ").png";
     for(let j = 0; j < 17; j++){
@@ -53,7 +51,6 @@ function loadHarmonicMinorScale(){
         }
     }
 }
-
 function loadHarmonicMajorScale(){
     let path = "modes/harmonicmajor/harmonicmajor (", ext = ").png";
     for(let j = 0; j < 17; j++){
@@ -62,7 +59,6 @@ function loadHarmonicMajorScale(){
         }
     }
 }
-
 function loadDoubleHarmonicScale(){
     let path = "modes/doubleharmonic/doubleharmonic (", ext = ").png";
     for(let j = 0; j < 17; j++){
@@ -145,7 +141,7 @@ function createNoteCircle(){
     push();
         rotate(PI/2);
         textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
-        textSize(Size*0.6); fill((lockNotes && majorMinorOther != 5) ? 0 : 255); noStroke(); //stroke(0); strokeWeight(1);
+        textSize(Size*0.6); fill((lockNotes && majorMinorOther != 5) ? 0 : 255); noStroke();
         if      (showEnharmonic == 1)   text("Key:\n" + keySharpList   [notesAreLocked()%12], xpos, ypos);
         else if (showEnharmonic == 2)   text("Key:\n" + keySharperList [notesAreLocked()%12], xpos, ypos);
         else if (showEnharmonic == 3)   text("Key:\n" + keyFlatList    [notesAreLocked()%12], xpos, ypos);
@@ -969,17 +965,9 @@ function changeDoubleHarmonicModeMouse(event){
 
 function changeOtherMode(){
     var choice = otherModeSelect.value();
-        for(let i = 0; i < otherModeList.length; i++){
-            // if( i != 2 ||
-                // i != 7 ||
-                // i !=11 ||
-                // i !=12 ||
-                // i !=27 ){
-                    // i++;
-                // }
-                if(choice == otherModeList[i]) otherModeIndex = i;
-
-        }
+    for(let i = 0; i < otherModeList.length; i++){
+        if(choice == otherModeList[i]) otherModeIndex = i;
+    }
 }
 function changeOtherModeMouse(event){
     var choice = otherModeSelect.value();
