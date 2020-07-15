@@ -8,66 +8,66 @@ let doubleHarmonicScale = [];
 function loadMajorScale(){
     for(let i = 0; i < 7; i++){
         majorScale[i+( 0*7)] = loadImage("modes/major/C (" +(i+1)+").png");
-        majorScale[i+( 1*7)] = loadImage("modes/major/Db ("+(i+1)+").png");
+        majorScale[i+( 1*7)] = loadImage("modes/major/Cs ("+(i+1)+").png");
         majorScale[i+( 2*7)] = loadImage("modes/major/D (" +(i+1)+").png");
-        majorScale[i+( 3*7)] = loadImage("modes/major/Eb ("+(i+1)+").png");
+        majorScale[i+( 3*7)] = loadImage("modes/major/Ds ("+(i+1)+").png");
         majorScale[i+( 4*7)] = loadImage("modes/major/E (" +(i+1)+").png");
         majorScale[i+( 5*7)] = loadImage("modes/major/F (" +(i+1)+").png");
         majorScale[i+( 6*7)] = loadImage("modes/major/Fs ("+(i+1)+").png");
         majorScale[i+( 7*7)] = loadImage("modes/major/G (" +(i+1)+").png");
-        majorScale[i+( 8*7)] = loadImage("modes/major/Ab ("+(i+1)+").png");
+        majorScale[i+( 8*7)] = loadImage("modes/major/Gs ("+(i+1)+").png");
         majorScale[i+( 9*7)] = loadImage("modes/major/A (" +(i+1)+").png");
-        majorScale[i+(10*7)] = loadImage("modes/major/Bb ("+(i+1)+").png");
+        majorScale[i+(10*7)] = loadImage("modes/major/As ("+(i+1)+").png");
         majorScale[i+(11*7)] = loadImage("modes/major/B (" +(i+1)+").png");
-        majorScale[i+(12*7)] = loadImage("modes/major/Cs ("+(i+1)+").png");
-        majorScale[i+(13*7)] = loadImage("modes/major/Ds ("+(i+1)+").png");
+        majorScale[i+(12*7)] = loadImage("modes/major/Db ("+(i+1)+").png");
+        majorScale[i+(13*7)] = loadImage("modes/major/Eb ("+(i+1)+").png");
         majorScale[i+(14*7)] = loadImage("modes/major/Gb ("+(i+1)+").png");
-        majorScale[i+(15*7)] = loadImage("modes/major/Gs ("+(i+1)+").png");
-        majorScale[i+(16*7)] = loadImage("modes/major/As ("+(i+1)+").png");
+        majorScale[i+(15*7)] = loadImage("modes/major/Ab ("+(i+1)+").png");
+        majorScale[i+(16*7)] = loadImage("modes/major/Bb ("+(i+1)+").png");
     }
 }
 
 function loadMelodicMinorScale(){
     for(let i = 0; i < 7; i++){
         melodicMinorScale[i+( 0*7)] = loadImage("modes/melodicminor/C (" +(i+1)+").png");
-        melodicMinorScale[i+( 1*7)] = loadImage("modes/melodicminor/Db ("+(i+1)+").png");
+        melodicMinorScale[i+( 1*7)] = loadImage("modes/melodicminor/Cs ("+(i+1)+").png");
         melodicMinorScale[i+( 2*7)] = loadImage("modes/melodicminor/D (" +(i+1)+").png");
-        melodicMinorScale[i+( 3*7)] = loadImage("modes/melodicminor/Eb ("+(i+1)+").png");
+        melodicMinorScale[i+( 3*7)] = loadImage("modes/melodicminor/Ds ("+(i+1)+").png");
         melodicMinorScale[i+( 4*7)] = loadImage("modes/melodicminor/E (" +(i+1)+").png");
         melodicMinorScale[i+( 5*7)] = loadImage("modes/melodicminor/F (" +(i+1)+").png");
         melodicMinorScale[i+( 6*7)] = loadImage("modes/melodicminor/Fs ("+(i+1)+").png");
         melodicMinorScale[i+( 7*7)] = loadImage("modes/melodicminor/G (" +(i+1)+").png");
-        melodicMinorScale[i+( 8*7)] = loadImage("modes/melodicminor/Ab ("+(i+1)+").png");
+        melodicMinorScale[i+( 8*7)] = loadImage("modes/melodicminor/Gs ("+(i+1)+").png");
         melodicMinorScale[i+( 9*7)] = loadImage("modes/melodicminor/A (" +(i+1)+").png");
-        melodicMinorScale[i+(10*7)] = loadImage("modes/melodicminor/Bb ("+(i+1)+").png");
+        melodicMinorScale[i+(10*7)] = loadImage("modes/melodicminor/As ("+(i+1)+").png");
         melodicMinorScale[i+(11*7)] = loadImage("modes/melodicminor/B (" +(i+1)+").png");
-        melodicMinorScale[i+(12*7)] = loadImage("modes/melodicminor/Cs ("+(i+1)+").png");
-        melodicMinorScale[i+(13*7)] = loadImage("modes/melodicminor/Ds ("+(i+1)+").png");
+        melodicMinorScale[i+(12*7)] = loadImage("modes/melodicminor/Db ("+(i+1)+").png");
+        melodicMinorScale[i+(13*7)] = loadImage("modes/melodicminor/Eb ("+(i+1)+").png");
         melodicMinorScale[i+(14*7)] = loadImage("modes/melodicminor/Gb ("+(i+1)+").png");
-        melodicMinorScale[i+(15*7)] = loadImage("modes/melodicminor/Gs ("+(i+1)+").png");
-        melodicMinorScale[i+(16*7)] = loadImage("modes/melodicminor/As ("+(i+1)+").png");
+        melodicMinorScale[i+(15*7)] = loadImage("modes/melodicminor/Ab ("+(i+1)+").png");
+        melodicMinorScale[i+(16*7)] = loadImage("modes/melodicminor/Bb ("+(i+1)+").png");
     }
 }
 
 function loadHarmonicMinorScale(){
     for(let i = 0; i < 7; i++){
         harmonicMinorScale[i+( 0*7)] = loadImage("modes/harmonicminor/C (" +(i+1)+").png");
-        harmonicMinorScale[i+( 1*7)] = loadImage("modes/harmonicminor/Db ("+(i+1)+").png");
+        harmonicMinorScale[i+( 1*7)] = loadImage("modes/harmonicminor/Cs ("+(i+1)+").png");
         harmonicMinorScale[i+( 2*7)] = loadImage("modes/harmonicminor/D (" +(i+1)+").png");
-        harmonicMinorScale[i+( 3*7)] = loadImage("modes/harmonicminor/Eb ("+(i+1)+").png");
+        harmonicMinorScale[i+( 3*7)] = loadImage("modes/harmonicminor/Ds ("+(i+1)+").png");
         harmonicMinorScale[i+( 4*7)] = loadImage("modes/harmonicminor/E (" +(i+1)+").png");
         harmonicMinorScale[i+( 5*7)] = loadImage("modes/harmonicminor/F (" +(i+1)+").png");
         harmonicMinorScale[i+( 6*7)] = loadImage("modes/harmonicminor/Fs ("+(i+1)+").png");
         harmonicMinorScale[i+( 7*7)] = loadImage("modes/harmonicminor/G (" +(i+1)+").png");
-        harmonicMinorScale[i+( 8*7)] = loadImage("modes/harmonicminor/Ab ("+(i+1)+").png");
+        harmonicMinorScale[i+( 8*7)] = loadImage("modes/harmonicminor/Gs ("+(i+1)+").png");
         harmonicMinorScale[i+( 9*7)] = loadImage("modes/harmonicminor/A (" +(i+1)+").png");
-        harmonicMinorScale[i+(10*7)] = loadImage("modes/harmonicminor/Bb ("+(i+1)+").png");
+        harmonicMinorScale[i+(10*7)] = loadImage("modes/harmonicminor/As ("+(i+1)+").png");
         harmonicMinorScale[i+(11*7)] = loadImage("modes/harmonicminor/B (" +(i+1)+").png");
-        harmonicMinorScale[i+(12*7)] = loadImage("modes/harmonicminor/Cs ("+(i+1)+").png");
-        harmonicMinorScale[i+(13*7)] = loadImage("modes/harmonicminor/Ds ("+(i+1)+").png");
+        harmonicMinorScale[i+(12*7)] = loadImage("modes/harmonicminor/Db ("+(i+1)+").png");
+        harmonicMinorScale[i+(13*7)] = loadImage("modes/harmonicminor/Eb ("+(i+1)+").png");
         harmonicMinorScale[i+(14*7)] = loadImage("modes/harmonicminor/Gb ("+(i+1)+").png");
-        harmonicMinorScale[i+(15*7)] = loadImage("modes/harmonicminor/Gs ("+(i+1)+").png");
-        harmonicMinorScale[i+(16*7)] = loadImage("modes/harmonicminor/As ("+(i+1)+").png");
+        harmonicMinorScale[i+(15*7)] = loadImage("modes/harmonicminor/Ab ("+(i+1)+").png");
+        harmonicMinorScale[i+(16*7)] = loadImage("modes/harmonicminor/Bb ("+(i+1)+").png");
     }
 }
 
