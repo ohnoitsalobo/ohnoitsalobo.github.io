@@ -106,7 +106,7 @@ let doubleHarmonicModeList = [                                      //_0_1_2_3_4
 "Mode: I\nDouble harmonic"                                      ,   // 0 1 4 5 7 8  11  q
 "Mode: II\nLydian \u266F2 \u266F6"                              ,   // 0 3 4 6 7 10 11  w
 "Mode: III\nPhrygian \u266D4 \u{1D12B}7"                        ,   // 0 1 3 4 7 8  9   e
-"Mode: IV\nHungarian minor",                                    ,   // 0 2 3 6 7 8  11  r
+"Mode: IV\nHungarian minor"                                     ,   // 0 2 3 6 7 8  11  r
 "Mode: V\nMixolydian \u266D2 \u266D5\n(Locrian \u266E3 \u266E6)",   // 0 1 4 5 6 9  10  t
 "Mode: VI\nIonian \u266F2 \u266F5"                              ,   // 0 3 4 5 8 9  11  y
 "Mode: VII\nLocrian \u{1D12B}3 \u{1D12B}7"                          // 0 1 2 5 6 8  9   u
