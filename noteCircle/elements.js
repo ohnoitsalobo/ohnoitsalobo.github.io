@@ -23,7 +23,7 @@ let harmonicMajorScale = [];
 let doubleHarmonicScale = [];
 
 function loadMajorScale(){
-    let path = "modes/imageMagick/major/major (", ext = ").png";
+    let path = "modes/major/major (", ext = ").png";
     for(let i = 0; i < 7; i++){
         majorScale[i+( 0*7)] = loadImage(path + (i+(C *7)+1) + ext);
         majorScale[i+( 1*7)] = loadImage(path + (i+(Cs*7)+1) + ext);
@@ -46,7 +46,7 @@ function loadMajorScale(){
 }                                                          
 
 function loadMelodicMinorScale(){
-    let path = "modes/imageMagick/melodicminor/melodicminor (", ext = ").png";
+    let path = "modes/melodicminor/melodicminor (", ext = ").png";
     for(let i = 0; i < 7; i++){
         melodicMinorScale[i+( 0*7)] = loadImage(path + (i+(C *7)+1) + ext);
         melodicMinorScale[i+( 1*7)] = loadImage(path + (i+(Cs*7)+1) + ext);
@@ -69,7 +69,7 @@ function loadMelodicMinorScale(){
 }
 
 function loadHarmonicMinorScale(){
-    let path = "modes/imageMagick/harmonicminor/harmonicminor (", ext = ").png";
+    let path = "modes/harmonicminor/harmonicminor (", ext = ").png";
     for(let i = 0; i < 7; i++){
         harmonicMinorScale[i+( 0*7)] = loadImage(path + (i+(C *7)+1) + ext);
         harmonicMinorScale[i+( 1*7)] = loadImage(path + (i+(Cs*7)+1) + ext);
@@ -92,7 +92,7 @@ function loadHarmonicMinorScale(){
 }
 
 function loadHarmonicMajorScale(){
-    let path = "modes/imageMagick/harmonicmajor/harmonicmajor (", ext = ").png";
+    let path = "modes/harmonicmajor/harmonicmajor (", ext = ").png";
     for(let i = 0; i < 7; i++){
         harmonicMajorScale[i+( 0*7)] = loadImage(path + (i+(C *7)+1) + ext);
         harmonicMajorScale[i+( 1*7)] = loadImage(path + (i+(Cs*7)+1) + ext);
@@ -115,7 +115,7 @@ function loadHarmonicMajorScale(){
 }
 
 function loadDoubleHarmonicScale(){
-    let path = "modes/imageMagick/doubleharmonic/doubleharmonic (", ext = ").png";
+    let path = "modes/doubleharmonic/doubleharmonic (", ext = ").png";
     for(let i = 0; i < 7; i++){
         doubleHarmonicScale[i+( 0*7)] = loadImage(path + (i+(C *7)+1) + ext);
         doubleHarmonicScale[i+( 1*7)] = loadImage(path + (i+(Cs*7)+1) + ext);
