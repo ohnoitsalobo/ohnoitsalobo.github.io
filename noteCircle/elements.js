@@ -1,4 +1,4 @@
-/*  */
+/*  * /
 let majorScale = [];
 let melodicMinorScale = [];
 let harmonicMinorScale = [];
@@ -29,7 +29,7 @@ function loadMajorScale(){
 
 function drawNotes(){
     rotate(PI/2);
-    translate(scaled/4, scaled);
+    translate(scaled/3, scaled);
     if(frameCount < 40){
         fill(0); stroke(125); strokeWeight(4);
         textSize(Size);
@@ -40,14 +40,14 @@ function drawNotes(){
     let index = notesAreLocked();
     let w = majorScale[index].width *scale;
     let h = majorScale[index].height*scale;
-    let _x = -Size;
-    let _y = -Size*3;
-    image(majorScale[index*7+currentlySelectedMode], 0, -h/2, w, h);
-    if     (index == 1 ) image(majorScale[12*7+currentlySelectedMode], 0, h/2, w, h);
-    else if(index == 3 ) image(majorScale[13*7+currentlySelectedMode], 0, h/2, w, h);
-    else if(index == 6 ) image(majorScale[14*7+currentlySelectedMode], 0, h/2, w, h);
-    else if(index == 8 ) image(majorScale[15*7+currentlySelectedMode], 0, h/2, w, h);
-    else if(index == 10) image(majorScale[16*7+currentlySelectedMode], 0, h/2, w, h);
+    let _x = w/2;
+    let _y = 0;
+    image(majorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
+    if     (index == 1 ) image(majorScale[12*7+currentlySelectedMode], _x+Size, _y, w, h);
+    else if(index == 3 ) image(majorScale[13*7+currentlySelectedMode], _x+Size, _y, w, h);
+    else if(index == 6 ) image(majorScale[14*7+currentlySelectedMode], _x+Size, _y, w, h);
+    else if(index == 8 ) image(majorScale[15*7+currentlySelectedMode], _x+Size, _y, w, h);
+    else if(index == 10) image(majorScale[16*7+currentlySelectedMode], _x+Size, _y, w, h);
 }
 /*  */
 
