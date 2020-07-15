@@ -15,6 +15,10 @@ const A  = 13; // 13
 const As = 14; // 14
 const Bb = 15; // 15
 const B  = 16; // 16
+// const Bs
+// const Cb
+// const Es
+// const Fb
 /*  */
 let majorScale = [];
 let melodicMinorScale = [];
