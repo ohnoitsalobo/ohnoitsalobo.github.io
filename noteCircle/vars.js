@@ -116,34 +116,34 @@ let doubleHarmonicModeList = [                                      //_0_1_2_3_4
 
 let otherModeSelect;
 let otherModeList = [
-"Acoustic",                     // 00  // 0  2  4  6  7  9
-"Adonai malakh",                // 01  // 0  2  4  5  7  8  10
+"Acoustic"                   ,  // 00  // 0  2  4  6  7  9
+"Adonai malakh"              ,  // 01  // 0  2  4  5  7  8  10
 "Algerian\n(Hungarian gypsy)",  // 02 *// 0  2  3  6  7  8  11
-"Augmented",                    // 03  // 0  3  4  7  8  11
-"Bebop dominant",               // 04  // 0  2  4  5  7  9  10 11
-"Bebop major",                  // 05  // 0  2  4  5  7  8  9  11
-"Blues",                        // 06  // 0  3  5  6  7  10
+"Augmented"                  ,  // 03  // 0  3  4  7  8  11
+"Bebop dominant"             ,  // 04  // 0  2  4  5  7  9  10 11
+"Bebop major"                ,  // 05  // 0  2  4  5  7  8  9  11
+"Blues"                      ,  // 06  // 0  3  5  6  7  10
 "Double harmonic\n(Flamenco)",  // 07 *// 0  1  4  5  7  8  11
-"Enigmatic",                    // 08  // 0  1  4  6  8  10 11
-"Gypsy",                        // 09  // 0  2  3  6  7  8  10
-"Half diminished",              // 10  // 0  2  3  5  6  8  10
-"Harmonic major",               // 11 *// 0  2  4  5  7  8  11
-"Harmonic minor",               // 12 *// 0  2  3  5  7  8  11
-"Hirajoshi",                    // 13  // 0  2  3  7  8  
-"Insen",                        // 14  // 0  1  5  7  10 
-"Istrian",                      // 15  // 0  1  3  4  6  7
-"Iwato",                        // 16  // 0  1  5  6  10 
-"Locrian major",                // 17  // 0  2  4  5  6  8  10       // Neapolitan 5th mode
-"Neapolitan major",             // 18  // 0  1  3  5  7  9  11
-"Neapolitan minor",             // 19  // 0  1  3  5  7  8  11
-"Octatonic",                    // 20  // 0  2  3  5  6  8  9  11
-"Pentatonic major",             // 21  // 0  2  4  7  9  
-"Pentatonic minor",             // 22  // 0  3  5  7  10 
-"Persian",                      // 23  // 0  1  4  5  6  8  11
-"Phrygian\ndominant",           // 24  // 0  1  4  5  7  8  10      // harmonic minor 5th mode
-"Prometheus",                   // 25  // 0  2  4  6  9  10
-"Tritone",                      // 26  // 0  1  4  6  7  10
-"Ukrainian Dorian",             // 27 *// 0  2  3  6  7  9  10
+"Enigmatic"                  ,  // 08  // 0  1  4  6  8  10 11
+"Gypsy"                      ,  // 09  // 0  2  3  6  7  8  10
+"Half diminished"            ,  // 10  // 0  2  3  5  6  8  10
+"Harmonic major"             ,  // 11 *// 0  2  4  5  7  8  11
+"Harmonic minor"             ,  // 12 *// 0  2  3  5  7  8  11
+"Hirajoshi"                  ,  // 13  // 0  2  3  7  8  
+"Insen"                      ,  // 14  // 0  1  5  7  10 
+"Istrian"                    ,  // 15  // 0  1  3  4  6  7
+"Iwato"                      ,  // 16  // 0  1  5  6  10 
+"Locrian major"              ,  // 17  // 0  2  4  5  6  8  10       // Neapolitan 5th mode
+"Neapolitan major"           ,  // 18  // 0  1  3  5  7  9  11
+"Neapolitan minor"           ,  // 19  // 0  1  3  5  7  8  11
+"Octatonic"                  ,  // 20  // 0  2  3  5  6  8  9  11
+"Pentatonic major"           ,  // 21  // 0  2  4  7  9  
+"Pentatonic minor"           ,  // 22  // 0  3  5  7  10 
+"Persian"                    ,  // 23  // 0  1  4  5  6  8  11
+"Phrygian\ndominant"         ,  // 24  // 0  1  4  5  7  8  10      // harmonic minor 5th mode
+"Prometheus"                 ,  // 25  // 0  2  4  6  9  10
+"Tritone"                    ,  // 26  // 0  1  4  6  7  10
+"Ukrainian Dorian"           ,  // 27 *// 0  2  3  6  7  9  10
 "Whole tone"                    // 28  // 0  2  4  6  8  10
 ];
 /* 
