@@ -88,10 +88,10 @@ function drawNotes(){
     else if(index == 6 ) offset = 14;
     else if(index == 8 ) offset = 15;
     else if(index == 10) offset = 16;
-
+    let s = 0.95;
     if (majorMinorOther == 0){
-        let w = majorScale[index].width *scale*0.8;
-        let h = majorScale[index].height*scale*0.8;
+        let w = majorScale[index].width *scale*s;
+        let h = majorScale[index].height*scale*s;
         let _x = w/2;
         let _y = 0;
         image(majorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
@@ -99,8 +99,8 @@ function drawNotes(){
             image(majorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
     }
     else if(majorMinorOther == 1){
-        let w = melodicMinorScale[index].width *scale*0.8;
-        let h = melodicMinorScale[index].height*scale*0.8;
+        let w = melodicMinorScale[index].width *scale*s;
+        let h = melodicMinorScale[index].height*scale*s;
         let _x = w/2;
         let _y = 0;
         image(melodicMinorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
@@ -108,8 +108,8 @@ function drawNotes(){
             image(melodicMinorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
     }
     else if(majorMinorOther == 2){
-        let w = harmonicMinorScale[index].width *scale*0.8;
-        let h = harmonicMinorScale[index].height*scale*0.8;
+        let w = harmonicMinorScale[index].width *scale*s;
+        let h = harmonicMinorScale[index].height*scale*s;
         let _x = w/2;
         let _y = 0;
         image(harmonicMinorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
