@@ -73,7 +73,8 @@ function loadHarmonicMinorScale(){
 
 function drawNotes(){
     rotate(PI/2);
-    translate(scaled/3, scaled);
+    // translate(scaled/3, scaled);
+    translate(scaled*2.05, 0);
     if(frameCount < 100){
         fill(0); stroke(125); strokeWeight(4);
         textSize(Size);
@@ -98,24 +99,24 @@ function drawNotes(){
         if(offset > 0) 
             image(majorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
     }
-    // else if(majorMinorOther == 1){
-        // let w = melodicMinorScale[index].width *scale*s;
-        // let h = melodicMinorScale[index].height*scale*s;
-        // let _x = w/2;
-        // let _y = 0;
-        // image(melodicMinorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
-        // if(offset > 0) 
-            // image(melodicMinorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
-    // }
-    // else if(majorMinorOther == 2){
-        // let w = harmonicMinorScale[index].width *scale*s;
-        // let h = harmonicMinorScale[index].height*scale*s;
-        // let _x = w/2;
-        // let _y = 0;
-        // image(harmonicMinorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
-        // if(offset > 0) 
-            // image(harmonicMinorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
-    // }
+    else if(majorMinorOther == 1){
+        let w = melodicMinorScale[index].width *scale*s;
+        let h = melodicMinorScale[index].height*scale*s;
+        let _x = w/2;
+        let _y = 0;
+        image(melodicMinorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
+        if(offset > 0) 
+            image(melodicMinorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
+    }
+    else if(majorMinorOther == 2){
+        let w = harmonicMinorScale[index].width *scale*s;
+        let h = harmonicMinorScale[index].height*scale*s;
+        let _x = w/2;
+        let _y = 0;
+        image(harmonicMinorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
+        if(offset > 0) 
+            image(harmonicMinorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
+    }
 }
 /*  */
 
