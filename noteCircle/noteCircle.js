@@ -72,15 +72,15 @@ function draw(){
 
     playedHighlight();
     
-    // if(majorMinorOther == 0)
+    if(majorMinorOther < 3)
         drawNotes();
-    // else if (majorMinorOther != 5){
-        // rotate(PI/2);
-        // translate(scaled/4, scaled);
-        // fill(0); noStroke();
-        // textSize(Size);
-        // text("Under construction", 0, 0);
-    // }
+    else if (majorMinorOther != 5){
+        rotate(PI/2);
+        translate(scaled/4, scaled);
+        fill(0); noStroke();
+        textSize(Size);
+        text("Under construction", 0, 0);
+    }
 }
 
 function playedHighlight(){

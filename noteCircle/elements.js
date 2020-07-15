@@ -74,7 +74,7 @@ function loadHarmonicMinorScale(){
 function drawNotes(){
     rotate(PI/2);
     translate(scaled/3, scaled);
-    if(frameCount < 40){
+    if(frameCount < 100){
         fill(0); stroke(125); strokeWeight(4);
         textSize(Size);
         text("Please wait.\nApp might be slow while images load.", 0, -scaled-Size/2);
