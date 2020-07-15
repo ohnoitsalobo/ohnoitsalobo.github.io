@@ -148,9 +148,9 @@ function drawNotes(){
     }
     else{
         fill(0); noStroke(); // stroke(125); strokeWeight(1);
-        textSize(Size*0.3);
-        text("Mandolin tab", -scaled*0.375, scaled*0.2);
-        text("Guitar tab"  , -scaled*0.375, scaled*0.425);
+        textSize(Size*0.35);
+        text("Mandolin tab", -scaled*0.375, scaled*0.21);
+        text("Guitar tab"  , -scaled*0.375, scaled*0.45);
     }
     imageMode(CENTER);
     // let index = floor((frameCount/5)%(17*7));
@@ -161,10 +161,10 @@ function drawNotes(){
     else if(index == 6 ) offset = 14;
     else if(index == 8 ) offset = 15;
     else if(index == 10) offset = 16;
-    let s = 0.825;
+    let s = 0.85;
     let w = scaled*s;
     let h = scaled*s*1.1;
-    let _x = w/2;
+    let _x = w*0.45;
     let _y = 0;
     if     (majorMinorOther == 0){
         image(majorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
