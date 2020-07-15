@@ -80,12 +80,12 @@ function drawNotes(){
         textSize(Size);
         text("Please wait.\nApp might be slow while images load.", -scaled*1.8, 0);
     }
-    // else{
+    else{
         fill(0); noStroke(); // stroke(125); strokeWeight(1);
         textSize(Size*0.3);
         text("Mandolin tab", -scaled*0.375, scaled*0.225);
         text("Guitar tab"  , -scaled*0.375, scaled*0.45);
-    // }
+    }
     imageMode(CENTER);
     // let index = floor((frameCount/5)%(17*7));
     let index = notesAreLocked();
