@@ -37,8 +37,8 @@ function setup(){
     changeMode();
     
     loadMajorScale();
-    loadMelodicMinorScale();
-    loadHarmonicMinorScale();
+    // loadMelodicMinorScale();
+    // loadHarmonicMinorScale();
 }
 
 function draw(){
