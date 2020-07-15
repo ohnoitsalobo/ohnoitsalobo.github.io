@@ -13,6 +13,8 @@ function setup(){
     loadMajorScale();
     loadMelodicMinorScale();
     loadHarmonicMinorScale();
+    loadHarmonicMajorScale();
+    loadDoubleHarmonicScale();
 }
 
 function draw(){
@@ -45,15 +47,8 @@ function draw(){
 
     playedHighlight();
     
-    if(majorMinorOther < 3)
+    if(majorMinorOther != 5)
         drawNotes();
-    else if (majorMinorOther != 5){
-        rotate(PI/2);
-        translate(scaled*2.05, 0);
-        fill(0); noStroke();
-        textSize(Size);
-        text("Under construction", 0, 0);
-    }
 }
 
 function playedHighlight(){
