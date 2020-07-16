@@ -523,7 +523,7 @@ function keyPressed(){
     // return false;
 }
 
-function mousePressed(){
+function mouseReleased(){
     interacted();
     // console.log(mouseX/scaled + "," + mouseY/scaled);
     ////// PLAY TONES
@@ -872,6 +872,7 @@ function doubleClicked(){
 
 function interacted(){
     interact = 1;
+    imgLoaded = 0;
     interactCount = frameCount;
     frameRate(30);
     loop();

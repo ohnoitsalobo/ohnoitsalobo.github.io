@@ -1,14 +1,22 @@
 let scaled;
 
+let cnv, img1, img2;
 function setup(){
     shortAxis = ((windowWidth > windowHeight) ? windowHeight : windowWidth);
     scaled = shortAxis*scale;
-    var cnv = createCanvas(3.5*scaled, scaled);
-    // var cnv = createCanvas(1.75*scaled, scaled);
+    // var cnv = createCanvas(3.5*scaled, scaled);
+    cnv = createCanvas(1.75*scaled, scaled);
     cnv.parent('noteCircle');
-    frameRate(1);
+    // frameRate(30);
     createMenus();
     changeMode();
+    
+    // let path = "modes/doubleharmonic/doubleharmonic (8).png";
+    // img1 = createImg(path, "Notation image 1");
+    // img1.parent('img1');
+    // path = "modes/doubleharmonic/doubleharmonic (15).png";
+    // img2 = createImg(path, "Notation image 2");
+    // img2.parent('img2');
     
 ///////// LOAD IMAGES
     loadMajorScale();
@@ -16,6 +24,11 @@ function setup(){
     loadHarmonicMinorScale();
     loadHarmonicMajorScale();
     loadDoubleHarmonicScale();
+    let path = "modes/major/major (1).png";
+    img1 = createImg(path, "Notation image 1");
+    img2 = createImg(path, "Notation image 2");
+    img1.parent('img1');
+    img2.parent('img2');
 }
 
 function draw(){
@@ -48,16 +61,22 @@ function draw(){
         createOtherModeCircle();
 
     playedHighlight();
-    
-    if(majorMinorOther != 5)
-        drawNotes();
-    
-    if(interact){
-        if(frameCount - interactCount > 30){
-            noLoop();
-            interact = !interact;
-        }
+    if(majorMinorOther == 5){
+        img1.hide();
+        img2.hide();
     }
+    if(majorMinorOther != 5 && !imgLoaded){
+        img1.show();
+        img2.show();
+        drawNotes();
+    }
+    
+    // if(interact){
+        // if(frameCount - interactCount > 30){
+            // noLoop();
+            // interact = !interact;
+        // }
+    // }
 }
 
 function playedHighlight(){
