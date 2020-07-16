@@ -72,8 +72,6 @@ function loadDoubleHarmonicScale(){
 function drawNotes(){
     img1.remove();
     img2.remove();
-    let alt1 = "Notation image 1";
-    let alt2 = "Notation image 2";
     let index = notesAreLocked();
     let offset = 0;
     if     (index == 1 ) offset = 12;
@@ -81,6 +79,8 @@ function drawNotes(){
     else if(index == 6 ) offset = 14;
     else if(index == 8 ) offset = 15;
     else if(index == 10) offset = 16;
+    let alt1 = "Key: " + keyList[notesAreLocked()] + "\nMode: " + (currentlySelectedMode+1) + "\nPattern: " + modeList[majorMinorOther]; // "Notation image 1";
+    let alt2 = "Key: " + keyList[notesAreLocked()] + "\nMode: " + (currentlySelectedMode+1) + "\nPattern: " + modeList[majorMinorOther]; // "Notation image 2";
     if     (majorMinorOther == 0){
         img1 = createImg(majorScale[index*7+currentlySelectedMode], alt1);
         if(offset > 0) 
