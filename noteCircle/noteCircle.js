@@ -58,7 +58,6 @@ function draw(){
             interact = !interact;
         }
     }
-    console.log(frameCount);
 }
 
 function playedHighlight(){
