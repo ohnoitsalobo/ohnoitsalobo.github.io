@@ -1,4 +1,5 @@
 let scaled;
+let autoplay = 0, played = 0;
 
 let cnv, img1, img2;
 function setup(){
@@ -73,9 +74,20 @@ function draw(){
     
     if(interact){
         if(frameCount - interactCount > 30){
-            frameRate(5);
+            // frameRate(5);
             interact = !interact;
         }
+    }
+    
+    if(majorMinorOther != 5 && autoplay > 0){
+        let _t = (floor((frameCount-autoplay)/6)%8)+1;
+        if (played != _t){
+            // console.log(_t)
+            playTone(modeCheck(_t));
+            played = _t;
+        }
+        if(_t == 8)
+            autoplay = 0;
     }
 }
 

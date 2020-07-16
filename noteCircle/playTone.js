@@ -775,6 +775,14 @@ function mouseReleased(){
             }
         }
     }
+    xpos  = 1.35*scaled;
+    ypos  = 0.6*scaled;
+    offset = 0.08*scaled
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        if(majorMinorOther != 5)
+            autoplay = frameCount;
+    }
     xpos = 0.1*scaled;
     ypos = 0.06*scaled;
     offset = ypos;
