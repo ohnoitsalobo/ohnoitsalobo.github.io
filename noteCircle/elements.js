@@ -28,7 +28,6 @@ let harmonicMajorScale = [];
 let doubleHarmonicScale = [];
 
 function loadMajorScale(){
-    // let path = "modes/major/major (", ext = ").png";
     let path = "modes/major/major (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
