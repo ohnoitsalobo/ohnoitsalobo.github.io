@@ -71,12 +71,12 @@ function draw(){
         drawNotes();
     }
     
-    // if(interact){
-        // if(frameCount - interactCount > 30){
-            // noLoop();
-            // interact = !interact;
-        // }
-    // }
+    if(interact){
+        if(frameCount - interactCount > 30){
+            frameRate(5);
+            interact = !interact;
+        }
+    }
 }
 
 function playedHighlight(){
