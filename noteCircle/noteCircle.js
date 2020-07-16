@@ -6,7 +6,7 @@ function setup(){
     var cnv = createCanvas(3.5*scaled, scaled);
     // var cnv = createCanvas(1.75*scaled, scaled);
     cnv.parent('noteCircle');
-    frameRate(30);
+    frameRate(1);
     createMenus();
     changeMode();
     
@@ -54,10 +54,11 @@ function draw(){
     
     if(interact){
         if(frameCount - interactCount > 30){
-            frameRate(5);
+            noLoop();
             interact = !interact;
         }
     }
+    console.log(frameCount);
 }
 
 function playedHighlight(){

@@ -874,5 +874,6 @@ function interacted(){
     interact = 1;
     interactCount = frameCount;
     frameRate(30);
+    loop();
     
 }
