@@ -29,7 +29,7 @@ let doubleHarmonicScale = [];
 let imgLoaded = false;
 
 function loadMajorScale(){
-    let path = "modes/imageMagick/major/major (", ext = ").png";
+    let path = "modes/major/major (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             majorScale[i+( j*7)] = path + (i+(imageOrder[j]*7)+1) + ext;
@@ -37,7 +37,7 @@ function loadMajorScale(){
     }
 }                                                          
 function loadMelodicMinorScale(){
-    let path = "modes/imageMagick/melodicminor/melodicminor (", ext = ").png";
+    let path = "modes/melodicminor/melodicminor (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             melodicMinorScale[i+( j*7)] = path + (i+(imageOrder[j]*7)+1) + ext;
@@ -45,7 +45,7 @@ function loadMelodicMinorScale(){
     }
 }
 function loadHarmonicMinorScale(){
-    let path = "modes/imageMagick/harmonicminor/harmonicminor (", ext = ").png";
+    let path = "modes/harmonicminor/harmonicminor (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             harmonicMinorScale[i+( j*7)] = path + (i+(imageOrder[j]*7)+1) + ext;
@@ -53,7 +53,7 @@ function loadHarmonicMinorScale(){
     }
 }
 function loadHarmonicMajorScale(){
-    let path = "modes/imageMagick/harmonicmajor/harmonicmajor (", ext = ").png";
+    let path = "modes/harmonicmajor/harmonicmajor (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             harmonicMajorScale[i+( j*7)] = path + (i+(imageOrder[j]*7)+1) + ext;
@@ -61,7 +61,7 @@ function loadHarmonicMajorScale(){
     }
 }
 function loadDoubleHarmonicScale(){
-    let path = "modes/imageMagick/doubleharmonic/doubleharmonic (", ext = ").png";
+    let path = "modes/doubleharmonic/doubleharmonic (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             doubleHarmonicScale[i+( j*7)] = path + (i+(imageOrder[j]*7)+1) + ext;
