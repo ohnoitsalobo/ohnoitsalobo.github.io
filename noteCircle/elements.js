@@ -29,7 +29,7 @@ let doubleHarmonicScale = [];
 
 function loadMajorScale(){
     // let path = "modes/major/major (", ext = ").png";
-    let path = "modes/major/test/major (", ext = ").png";
+    let path = "modes/major/major (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             majorScale[i+( j*7)] = loadImage(path + (i+(imageOrder[j]*7)+1) + ext);
