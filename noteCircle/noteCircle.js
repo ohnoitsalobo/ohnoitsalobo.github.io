@@ -51,6 +51,13 @@ function draw(){
     
     if(majorMinorOther != 5)
         drawNotes();
+    
+    if(interact){
+        if(frameCount - interactCount > 30){
+            frameRate(5);
+            interact = !interact;
+        }
+    }
 }
 
 function playedHighlight(){

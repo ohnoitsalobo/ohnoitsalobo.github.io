@@ -500,6 +500,7 @@ function modeCheck(t){
 /*  */
 
 function keyPressed(){
+    interacted();
     if(majorMinorOther == 5)
         return;
     else{
@@ -523,6 +524,7 @@ function keyPressed(){
 }
 
 function mousePressed(){
+    interacted();
     // console.log(mouseX/scaled + "," + mouseY/scaled);
     ////// PLAY TONES
     let xpos, ypos, ypos1, offset = 0.08*scaled;
@@ -793,6 +795,7 @@ function mousePressed(){
 }
 
 function mouseWheel(event){
+    interacted();
     let xpos, ypos, offset = 0.07*scaled;
     xpos  = 1.15*scaled;
     ypos  = 0.3*scaled;
@@ -827,6 +830,7 @@ function mouseWheel(event){
 }
 
 function doubleClicked(){
+    interacted();
     let xpos, ypos, offset = 0.07*scaled;
     xpos  = 1.15*scaled;
     ypos  = 0.3*scaled;
@@ -864,4 +868,11 @@ function doubleClicked(){
     }
     
     // return false;
+}
+
+function interacted(){
+    interact = 1;
+    interactCount = frameCount;
+    frameRate(30);
+    
 }
