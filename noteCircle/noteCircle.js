@@ -80,7 +80,7 @@ function draw(){
     }
     
     if(majorMinorOther != 5 && autoplay > 0){
-        let _t = (floor((frameCount-autoplay)/6)%8)+1;
+        let _t = (floor((millis()-autoplay)/250)%8)+1;
         if (played != _t){
             // console.log(_t)
             playTone(modeCheck(_t));

@@ -781,7 +781,7 @@ function mouseReleased(){
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
         if(majorMinorOther != 5)
-            autoplay = frameCount;
+            autoplay = millis();
     }
     xpos = 0.1*scaled;
     ypos = 0.06*scaled;
