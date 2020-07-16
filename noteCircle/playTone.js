@@ -50,7 +50,7 @@ function modeCheck(t){
         return 0;
     }
     else if(t == 2){ // 1
-        if(majorMinorOther == 0){
+        if     (majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 2 ||
                majorModeIndex == 3 || 
@@ -62,7 +62,7 @@ function modeCheck(t){
             else
                 return 1;
         }
-        if(majorMinorOther == 1){
+        else if(majorMinorOther == 1){
             if(melodicMinorModeIndex == 0 || 
                melodicMinorModeIndex == 1 ||
                melodicMinorModeIndex == 3 || 
@@ -74,7 +74,7 @@ function modeCheck(t){
             else
                 return 1;
         }
-        if(majorMinorOther == 2){
+        else if(majorMinorOther == 2){
             if(harmonicMinorModeIndex == 0 || 
                harmonicMinorModeIndex == 1 ||
                harmonicMinorModeIndex == 3 || 
@@ -90,7 +90,7 @@ function modeCheck(t){
                     return 1;
             }
         }
-        if(majorMinorOther == 3){
+        else if(majorMinorOther == 3){
             if(harmonicMajorModeIndex == 0 || 
                harmonicMajorModeIndex == 2 ||
                harmonicMajorModeIndex == 3 || 
@@ -106,7 +106,7 @@ function modeCheck(t){
                     return 1;
             }
         }
-        if(majorMinorOther == 4){
+        else if(majorMinorOther == 4){
             if(doubleHarmonicModeIndex == 0 || 
                doubleHarmonicModeIndex == 3 ||
                doubleHarmonicModeIndex == 4 || 
@@ -125,7 +125,7 @@ function modeCheck(t){
         }
     }
     else if(t == 3){ // 2
-        if(majorMinorOther == 0){
+        if     (majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 1 ||
                majorModeIndex == 3 || 
@@ -137,7 +137,7 @@ function modeCheck(t){
             else
                 return 3;
         }
-        if(majorMinorOther == 1){
+        else if(majorMinorOther == 1){
             if(melodicMinorModeIndex == 0 || 
                melodicMinorModeIndex == 2 ||
                melodicMinorModeIndex == 4 || 
@@ -149,7 +149,7 @@ function modeCheck(t){
             else
                 return 4;
         }
-        if(majorMinorOther == 2){
+        else if(majorMinorOther == 2){
             if(harmonicMinorModeIndex == 0 || 
                harmonicMinorModeIndex == 2 ||
                harmonicMinorModeIndex == 4 || 
@@ -161,7 +161,7 @@ function modeCheck(t){
             else
                 return 4;
         }
-        if(majorMinorOther == 3){
+        else if(majorMinorOther == 3){
             if(harmonicMajorModeIndex == 0 || 
                harmonicMajorModeIndex == 1 ||
                harmonicMajorModeIndex == 3 || 
@@ -173,7 +173,7 @@ function modeCheck(t){
             else
                 return 3;
         }
-        if(majorMinorOther == 4){
+        else if(majorMinorOther == 4){
             if(doubleHarmonicModeIndex == 0 || 
                doubleHarmonicModeIndex == 1 ||
                doubleHarmonicModeIndex == 3 || 
@@ -191,7 +191,7 @@ function modeCheck(t){
         }
     }
     else if(t == 4){ // 3
-        if(majorMinorOther == 0){
+        if     (majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 2 ||
                majorModeIndex == 4 || 
@@ -203,7 +203,7 @@ function modeCheck(t){
             else
                 return 6;
         }
-        if(majorMinorOther == 1){
+        else if(majorMinorOther == 1){
             if(melodicMinorModeIndex == 0 || 
                melodicMinorModeIndex == 2 ||
                melodicMinorModeIndex == 4 || 
@@ -219,7 +219,7 @@ function modeCheck(t){
                     return 6;
             }
         }
-        if(majorMinorOther == 2){
+        else if(majorMinorOther == 2){
             if(harmonicMinorModeIndex == 0 || 
                harmonicMinorModeIndex == 2 ||
                harmonicMinorModeIndex == 3 || 
@@ -235,7 +235,7 @@ function modeCheck(t){
                     return 6;
             }
         }
-        if(majorMinorOther == 3){
+        else if(majorMinorOther == 3){
             if(harmonicMajorModeIndex == 0 || 
                harmonicMajorModeIndex == 2 ||
                harmonicMajorModeIndex == 3 || 
@@ -251,7 +251,7 @@ function modeCheck(t){
                     return 6;
             }
         }
-        if(majorMinorOther == 4){
+        else if(majorMinorOther == 4){
             if(doubleHarmonicModeIndex == 0 || 
                doubleHarmonicModeIndex == 2 ||
                doubleHarmonicModeIndex == 3 || 
@@ -269,7 +269,7 @@ function modeCheck(t){
         }
     }
     else if(t == 5){ // 4
-        if(majorMinorOther == 0){
+        if     (majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 2 ||
                majorModeIndex == 4 || 
@@ -281,7 +281,7 @@ function modeCheck(t){
             else
                 return 6;
         }
-        if(majorMinorOther == 1){ 
+        else if(majorMinorOther == 1){ 
             if(melodicMinorModeIndex == 0 || 
                melodicMinorModeIndex == 2 ||
                melodicMinorModeIndex == 4 || 
@@ -298,7 +298,7 @@ function modeCheck(t){
                     return 8;
             }
         }
-        if(majorMinorOther == 2){
+        else if(majorMinorOther == 2){
             if(harmonicMinorModeIndex == 0 || 
                harmonicMinorModeIndex == 1 ||
                harmonicMinorModeIndex == 4 || 
@@ -315,7 +315,7 @@ function modeCheck(t){
                     return 8;
             }
         }
-        if(majorMinorOther == 3){
+        else if(majorMinorOther == 3){
             if(harmonicMajorModeIndex == 0 || 
                harmonicMajorModeIndex == 1 ||
                harmonicMajorModeIndex == 4 || 
@@ -332,7 +332,7 @@ function modeCheck(t){
                     return 8;
             }
         }
-        if(majorMinorOther == 4){
+        else if(majorMinorOther == 4){
             if(doubleHarmonicModeIndex == 0 || 
                doubleHarmonicModeIndex == 1 ||
                doubleHarmonicModeIndex == 4 || 
@@ -351,7 +351,7 @@ function modeCheck(t){
         }
     }
     else if(t == 6){ // 5
-        if(majorMinorOther == 0){
+        if     (majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 2 ||
                majorModeIndex == 3 || 
@@ -363,7 +363,7 @@ function modeCheck(t){
             else
                 return 8;
         }
-        if(majorMinorOther == 1){
+        else if(majorMinorOther == 1){
             if(melodicMinorModeIndex == 0 || 
                melodicMinorModeIndex == 2 ||
                melodicMinorModeIndex == 3 || 
@@ -375,7 +375,7 @@ function modeCheck(t){
             else
                 return 8;
         }
-        if(majorMinorOther == 2){
+        else if(majorMinorOther == 2){
             if(harmonicMinorModeIndex == 0 || 
                // harmonicMinorModeIndex == 3 ||
                harmonicMinorModeIndex == 4 || 
@@ -387,7 +387,7 @@ function modeCheck(t){
             else
                 return 9;
         }
-        if(majorMinorOther == 3){
+        else if(majorMinorOther == 3){
             if(harmonicMajorModeIndex == 0 || 
                harmonicMajorModeIndex == 3 ||
                harmonicMajorModeIndex == 4 || 
@@ -399,7 +399,7 @@ function modeCheck(t){
             else
                 return 9;
         }
-        if(majorMinorOther == 4){
+        else if(majorMinorOther == 4){
             if(doubleHarmonicModeIndex == 0 || 
                doubleHarmonicModeIndex == 3 ||
                doubleHarmonicModeIndex == 4 || 
@@ -417,7 +417,7 @@ function modeCheck(t){
         }
     }
     else if(t == 7){ // 6
-        if(majorMinorOther == 0){
+        if     (majorMinorOther == 0){
             if(majorModeIndex == 0 || 
                majorModeIndex == 1 ||
                majorModeIndex == 3 || 
@@ -429,7 +429,7 @@ function modeCheck(t){
             else
                 return 10;
         }
-        if(majorMinorOther == 1){
+        else if(majorMinorOther == 1){
             if(melodicMinorModeIndex == 0 || 
                melodicMinorModeIndex == 1 ||
                melodicMinorModeIndex == 3 || 
@@ -441,7 +441,7 @@ function modeCheck(t){
             else
                 return 10;
         }
-        if(majorMinorOther == 2){
+        else if(majorMinorOther == 2){
             if(harmonicMinorModeIndex == 0 || 
                harmonicMinorModeIndex == 1 ||
                harmonicMinorModeIndex == 3 || 
@@ -457,7 +457,7 @@ function modeCheck(t){
                     return 10;
             }
         }
-        if(majorMinorOther == 3){
+        else if(majorMinorOther == 3){
             if(harmonicMajorModeIndex == 0 || 
                harmonicMajorModeIndex == 1 ||
                harmonicMajorModeIndex == 3 || 
@@ -473,7 +473,7 @@ function modeCheck(t){
                     return 10;
             }
         }
-        if(majorMinorOther == 4){
+        else if(majorMinorOther == 4){
             if(doubleHarmonicModeIndex == 0 || 
                doubleHarmonicModeIndex == 1 ||
                doubleHarmonicModeIndex == 2 || 
