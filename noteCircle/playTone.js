@@ -782,7 +782,7 @@ function mouseReleased(){
        mouseY>ypos-offset && mouseY<ypos+offset){
         if(majorMinorOther != 5){
             autoplay = millis();
-            mouseOverText.html("Tap the mode name to hear what it sounds like.");
+            mouseOverText.html(mouseOver);
         }
     }
 ////// SHOW / HIDE TIPS

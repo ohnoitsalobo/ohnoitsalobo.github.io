@@ -11,7 +11,8 @@ function setup(){
     cnv.parent('noteCircle');
     mouseOverText = createDiv('');
     mouseOverText.parent('mouseOverText');
-    mouseOverText.style('font-size', '1.3em');
+    // mouseOverText.style('font-size', '1.2em');
+    mouseOverText.style('font-family', 'Georgia');
     mouseOverText.size(scaled);
     createMenus();
     changeMode();

@@ -784,6 +784,7 @@ function changeModeMouse(event){
     changeMode();
 }
 
+let mouseOver = "Tap the mode name to hear what it sounds like.<br />On computer, try playing multiple numbers together at a time to build up chords you may have heard of such as the <i>II chord</i>, <i>V chord</i> <i>VI chord</i> etc";
 function changeMajorMode(){
     showImg = false;
     var choice = majorModeSelect.value();
@@ -802,7 +803,7 @@ function changeMajorMode(){
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    mouseOverText.html("Tap the mode name to hear what it sounds like.");
+    mouseOverText.html(mouseOver);
 }
 function changeMajorModeMouse(event){
     var choice = majorModeSelect.value();
@@ -834,7 +835,7 @@ function changeMelodicMinorMode(){
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    mouseOverText.html("Tap the mode name to hear what it sounds like.");
+    mouseOverText.html(mouseOver);
 }
 function changeMelodicMinorModeMouse(event){
     var choice = melodicMinorModeSelect.value();
@@ -866,7 +867,7 @@ function changeHarmonicMinorMode(){
     melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    mouseOverText.html("Tap the mode name to hear what it sounds like.");
+    mouseOverText.html(mouseOver);
 }
 function changeHarmonicMinorModeMouse(event){
     var choice = harmonicMinorModeSelect.value();
@@ -899,7 +900,7 @@ function changeHarmonicMajorMode(){
     melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    mouseOverText.html("Tap the mode name to hear what it sounds like.");
+    mouseOverText.html(mouseOver);
 }
 function changeHarmonicMajorModeMouse(event){
     var choice = harmonicMajorModeSelect.value();
@@ -931,7 +932,7 @@ function changeDoubleHarmonicMode(){
     melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
-    mouseOverText.html("Tap the mode name to hear what it sounds like.");
+    mouseOverText.html(mouseOver);
 }
 function changeDoubleHarmonicModeMouse(event){
     var choice = doubleHarmonicModeSelect.value();
