@@ -26,6 +26,7 @@ let melodicMinorScale = [];
 let harmonicMinorScale = [];
 let harmonicMajorScale = [];
 let doubleHarmonicScale = [];
+let loadImg = false;
 
 function loadScales(){
     let ext = ".png";
@@ -87,6 +88,7 @@ function drawNotes(){
     img1.parent('img1');
     if(offset > 0)
         img2.parent('img2');
+    loadImg = true;
 }
 /*  */
 
@@ -750,13 +752,7 @@ function createMenus(){
 }
 
 function changeMode(){
-    // var choice = modeSelect.value();
-    // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
-    // if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
-    // if(choice == modeList[2]) { majorMinorOther = 2; harmonicMinorModeSelect.show(); }
-    // if(choice == modeList[3]) { majorMinorOther = 3; harmonicMajorModeSelect.show(); }
-    // if(choice == modeList[4]) { majorMinorOther = 4; doubleHarmonicModeSelect.show(); }
-    // if(choice == modeList[5]) { majorMinorOther = 5; otherModeSelect.show(); }
+    showImg = false;
     var choice = modeSelect.value();
     if     (choice == modeList[0]) majorMinorOther = 0;
     else if(choice == modeList[1]) majorMinorOther = 1;
@@ -764,6 +760,14 @@ function changeMode(){
     else if(choice == modeList[3]) majorMinorOther = 3;
     else if(choice == modeList[4]) majorMinorOther = 4;
     else if(choice == modeList[5]) majorMinorOther = 5;
+    mouseOverText.html("There are many types of patterns in Western (and other) music. The most common set of modes is based on the <b><i>major</i></b> or <b><i>'Ionian'</i></b> scale. Also shown in detail are the <b><i>melodic minor</i></b>, <b><i>harmonic minor</i></b>, <b><i>harmonic major</i></b>, and <b><i>double harmonic</i></b> scales. If you know the pattern of a given scale, you can construct modes out of it by simply applying the pattern in different ways, as shown here.");
+    // var choice = modeSelect.value();
+    // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
+    // if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
+    // if(choice == modeList[2]) { majorMinorOther = 2; harmonicMinorModeSelect.show(); }
+    // if(choice == modeList[3]) { majorMinorOther = 3; harmonicMajorModeSelect.show(); }
+    // if(choice == modeList[4]) { majorMinorOther = 4; doubleHarmonicModeSelect.show(); }
+    // if(choice == modeList[5]) { majorMinorOther = 5; otherModeSelect.show(); }
 }
 function changeModeMouse(event){
     var choice = modeSelect.value();
@@ -778,6 +782,7 @@ function changeModeMouse(event){
 }
 
 function changeMajorMode(){
+    showImg = false;
     var choice = majorModeSelect.value();
     if(choice == majorModeList[0] && majorModeIndex == 11)
         majorRotation -= 2*PI;
@@ -794,6 +799,7 @@ function changeMajorMode(){
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
+    mouseOverText.html("Under construction!");
 }
 function changeMajorModeMouse(event){
     var choice = majorModeSelect.value();
@@ -808,6 +814,7 @@ function changeMajorModeMouse(event){
 }
 
 function changeMelodicMinorMode(){
+    showImg = false;
     var choice = melodicMinorModeSelect.value();
     if(choice == melodicMinorModeList[0 ] && melodicMinorModeIndex == 11)
         melodicMinorRotation -= 2*PI;
@@ -824,6 +831,7 @@ function changeMelodicMinorMode(){
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
+    mouseOverText.html("Under construction!");
 }
 function changeMelodicMinorModeMouse(event){
     var choice = melodicMinorModeSelect.value();
@@ -838,6 +846,7 @@ function changeMelodicMinorModeMouse(event){
 }
 
 function changeHarmonicMinorMode(){
+    showImg = false;
     var choice = harmonicMinorModeSelect.value();
     if(choice == harmonicMinorModeList[0 ] && harmonicMinorModeIndex == 11)
         harmonicMinorRotation -= 2*PI;
@@ -854,6 +863,7 @@ function changeHarmonicMinorMode(){
     melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
+    mouseOverText.html("Under construction!");
 }
 function changeHarmonicMinorModeMouse(event){
     var choice = harmonicMinorModeSelect.value();
@@ -868,6 +878,7 @@ function changeHarmonicMinorModeMouse(event){
 }
 
 function changeHarmonicMajorMode(){
+    showImg = false;
     var choice = harmonicMajorModeSelect.value();
     if(choice == harmonicMajorModeList[0] && harmonicMajorModeIndex == 11)
         harmonicMajorRotation -= 2*PI;
@@ -885,6 +896,7 @@ function changeHarmonicMajorMode(){
     melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
+    mouseOverText.html("Under construction!");
 }
 function changeHarmonicMajorModeMouse(event){
     var choice = harmonicMajorModeSelect.value();
@@ -899,6 +911,7 @@ function changeHarmonicMajorModeMouse(event){
 }
 
 function changeDoubleHarmonicMode(){
+    showImg = false;
     var choice = doubleHarmonicModeSelect.value();
     if(choice == doubleHarmonicModeList[0 ] && doubleHarmonicModeIndex == 11)
         doubleHarmonicRotation -= 2*PI;
@@ -915,6 +928,7 @@ function changeDoubleHarmonicMode(){
     melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
+    mouseOverText.html("Under construction!");
 }
 function changeDoubleHarmonicModeMouse(event){
     var choice = doubleHarmonicModeSelect.value();
@@ -947,6 +961,7 @@ function changeOtherModeMouse(event){
 }
 
 function changeKey(){
+    showImg = false;
     var choice = keySelect.value();
     if(choice == keyList[0 ] && keyIndex == 11)
         currentNoteRotation -= 2*PI;
@@ -964,6 +979,12 @@ function changeKey(){
     else if(choice == keyList[9 ]) keyIndex = 9 ;
     else if(choice == keyList[10]) keyIndex = 10;
     else if(choice == keyList[11]) keyIndex = 11;
+    mouseOverText.html("\
+    <b><i>Key</i></b>, <b><i>root</i></b>, and <b><i>tonic</i></b> are all commonly used to refer to the 'central' note of any scale\
+    - the note (or chord) which feels most like 'home' in any given arrangement of notes.<br /><br />\
+    Most common Western-based music today is based on 12 equal divisions of the scale, known as <i>12-tone equal temperament</i>, \
+    and that is the system that I am using in this app.\
+    ");
 }
 function changeKeyMouse(event){
     if (event.deltaY > 0) keySelect.selected(keyList[(keyIndex+1 )%12]);

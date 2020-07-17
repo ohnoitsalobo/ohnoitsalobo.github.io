@@ -523,6 +523,7 @@ function keyPressed(){
 }
 
 function mouseReleased(){
+    mouseOverText.html('');
     // console.log(mouseX/scaled + "," + mouseY/scaled);
     ////// PLAY TONES
     let xpos, ypos, ypos1, offset = 0.08*scaled;
@@ -765,6 +766,7 @@ function mouseReleased(){
                     if(majorMinorOther == 2) keyIndex = keyIndex + (12 - harmonicMinorModeIndex )%12;
                     if(majorMinorOther == 3) keyIndex = keyIndex + (12 - harmonicMajorModeIndex )%12;
                     if(majorMinorOther == 4) keyIndex = keyIndex + (12 - doubleHarmonicModeIndex)%12; 
+                    mouseOverText.html("With the rotation locked together, the notes currently highlighted for a given mode will remain highlighted until this option is turned off. However, you can still adjust the key independently.");
                 }else{
                     speed = 0.4;
                     keyIndex = notesAreLocked();
@@ -787,6 +789,10 @@ function mouseReleased(){
     if(mouseX>xpos-xpos && mouseX<xpos+xpos &&
        mouseY>ypos-ypos && mouseY<ypos+ypos){
         showOverlay = !showOverlay;
+        if(!showOverlay)
+            mouseOverText.html("The <b><i>chromatic scale</i></b> is simply all possible notes in sequence. Here you see the notes represented like piano keys wrapped around a circle instead of lying flat. The majority of modern music is built out of patterns and permutations of these 12 notes in different octaves, and this utility shows 5 basic patterns in detail.<br /><br />However, there are a few other patterns that you can explore here (see 'Other scales') and elsewhere online.");
+        else
+            mouseOverText.html("Change / rotate the pattern on top to explore various modes, or rotate the chromatic circle beneath to change the 'key' or starting note.");
     }
     ypos = 0.94*scaled;
     if(mouseX>xpos-xpos   && mouseX<xpos+xpos &&
@@ -830,7 +836,6 @@ function mouseWheel(event){
             if(majorMinorOther == 5) changeOtherModeMouse(event);
         }
     }
-    
     return false;
 }
 
@@ -870,7 +875,5 @@ function doubleClicked(){
         changeDoubleHarmonicMode();
         changeOtherMode();
     }
-    
-    // return false;
 }
 

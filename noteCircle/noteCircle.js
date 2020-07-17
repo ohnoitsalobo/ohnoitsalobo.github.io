@@ -1,24 +1,20 @@
-let scaled;
-let autoplay = 0, played = 0;
+let scaled; // scaled size
+let autoplay = 0, played = 0; // control auto scale player
 
-let cnv, img1, img2;
+let cnv, img1, img2, mouseOverText; // html elements
+var showImg = true;
+
 function setup(){
     shortAxis = ((windowWidth > windowHeight) ? windowHeight : windowWidth);
     scaled = shortAxis*scale;
-    // var cnv = createCanvas(3.5*scaled, scaled);
     cnv = createCanvas(1.75*scaled, scaled);
     cnv.parent('noteCircle');
-    // frameRate(30);
+    mouseOverText = createDiv('');
+    mouseOverText.parent('mouseOverText');
     createMenus();
     changeMode();
     
-    // let path = "modes/doubleharmonic/doubleharmonic (8).png";
-    // img1 = createImg(path, "Notation image 1");
-    // img1.parent('img1');
-    // path = "modes/doubleharmonic/doubleharmonic (15).png";
-    // img2 = createImg(path, "Notation image 2");
-    // img2.parent('img2');
-    
+    mouseOverText.html('Text will appear here when you click on things!');
 ///////// LOAD IMAGES
     loadScales();
     let path = "modes/all/major-001.png";
@@ -33,7 +29,7 @@ function draw(){
     if(keyIndex < 0) keyIndex += 12;
     if(majorModeIndex < 0) majorModeIndex += 12;
     if(melodicMinorModeIndex < 0) melodicMinorModeIndex += 12;
-    
+///////// CONTROL FADE IN / OUT
     if(frameCount > 50){
         if(fillalpha < 255 &&  showOverlay) fillalpha = lerp(fillalpha, 255, 0.1);
         if(fillalpha > 0   && !showOverlay) fillalpha = lerp(fillalpha, 0  , 0.1);
@@ -58,14 +54,21 @@ function draw(){
         createOtherModeCircle();
 
     playedHighlight();
+///////// LOAD IMAGES
     if(majorMinorOther == 5){
-        img1.hide();
-        img2.hide();
+        if(showImg){
+            img1.hide();
+            img2.hide();
+            showImg = false;
+        }
     }
-    if(majorMinorOther != 5){
-        img1.show();
-        img2.show();
-        drawNotes();
+    else {
+        if(!showImg){
+            img1.show();
+            img2.show();
+            drawNotes();
+            showImg = true;
+        }
     }
         
     if(majorMinorOther != 5 && autoplay > 0){
@@ -78,6 +81,7 @@ function draw(){
         if(_t == 8)
             autoplay = 0;
     }
+    
 }
 
 function playedHighlight(){
