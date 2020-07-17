@@ -784,7 +784,7 @@ function changeModeMouse(event){
     changeMode();
 }
 
-let mouseOver = "Tap the mode name to hear what it sounds like.<br />On computer, try playing multiple numbers together at a time to build up chords you may have heard of such as the <i>II chord</i>, <i>V chord</i> <i>VI chord</i> etc";
+let mouseOver = "Tap the mode name to hear what it sounds like.<br />On computer, try playing multiple numbers together at a time to build up chords you may have heard of such as the <i>II chord</i>, <i>V chord</i>, <i>VI chord</i> etc";
 function changeMajorMode(){
     showImg = false;
     var choice = majorModeSelect.value();
