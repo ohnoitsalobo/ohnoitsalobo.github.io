@@ -12,8 +12,9 @@ function setup(){
     
     mouseOverText = createDiv('');
     mouseOverText.parent('mouseOverText');
-    mouseOverText.style('font-family', 'Georgia');
     mouseOverText.size(scaled);
+    mouseOverText.style('font-family', 'Georgia');
+    mouseOverText.style('font-size', '25px');
     createMenus();
     changeMode();
     
