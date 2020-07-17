@@ -25,7 +25,7 @@ function setup(){
     loadHarmonicMinorScale();
     loadHarmonicMajorScale();
     loadDoubleHarmonicScale();
-    let path = "modes/major/major (1).png";
+    let path = "modes/all/major-001.png";
     img1 = createImg(path, "Notation image 1");
     img2 = createImg(path, "Notation image 2");
     img1.parent('img1');
