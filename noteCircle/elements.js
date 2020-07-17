@@ -189,7 +189,7 @@ function createNoteCircle(){
             textSize(Size*0.35);
         }
         else 
-            text("Tap the highlighted notes\nin sequence to hear the scale.\n(Keyboard keys not assigned)", 0.85*scaled, 0.4*scaled);
+            text("To hear these alterative scales,\ntap the highlighted note names.", 0.85*scaled, 0.4*scaled);
         stroke(255); strokeWeight(5*scale);
         line(xpos, ypos-1.2*Size, xpos+0.6*Size, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-0.6*Size, ypos-Size);
