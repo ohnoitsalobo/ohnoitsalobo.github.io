@@ -523,8 +523,7 @@ function keyPressed(){
 }
 
 function mouseReleased(){
-    mouseOverText.html('');
-    // console.log(mouseX/scaled + "," + mouseY/scaled);
+    mouseOverText.html("Tap here to enable / disable tips.");
     ////// PLAY TONES
     let xpos, ypos, ypos1, offset = 0.08*scaled;
     xpos = 0.5*scaled;
@@ -766,7 +765,7 @@ function mouseReleased(){
                     if(majorMinorOther == 2) keyIndex = keyIndex + (12 - harmonicMinorModeIndex )%12;
                     if(majorMinorOther == 3) keyIndex = keyIndex + (12 - harmonicMajorModeIndex )%12;
                     if(majorMinorOther == 4) keyIndex = keyIndex + (12 - doubleHarmonicModeIndex)%12; 
-                    mouseOverText.html("With the rotation locked together, the notes currently highlighted for a given mode will remain highlighted until this option is turned off. However, you can still adjust the key independently.");
+                    mouseOverText.html("With the rotation locked together, the notes currently highlighted for a given mode will remain highlighted until this option is turned off.<br /><br />However, you can still adjust the key independently.");
                 }else{
                     speed = 0.4;
                     keyIndex = notesAreLocked();
@@ -775,14 +774,26 @@ function mouseReleased(){
             }
         }
     }
+////// AUTOPLAY SCALE
     xpos  = 1.35*scaled;
     ypos  = 0.6*scaled;
     offset = 0.08*scaled
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
-        if(majorMinorOther != 5)
+        if(majorMinorOther != 5){
             autoplay = millis();
+            mouseOverText.html("Tap the mode name to hear what it sounds like.");
+        }
     }
+////// SHOW / HIDE TIPS
+    xpos = 1.75*scaled;
+    ypos = 0.5*scaled;
+    offset = 0.05*scaled;
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+           hideTips();
+        }
+
     xpos = 0.1*scaled;
     ypos = 0.06*scaled;
     offset = ypos;
@@ -790,9 +801,8 @@ function mouseReleased(){
        mouseY>ypos-ypos && mouseY<ypos+ypos){
         showOverlay = !showOverlay;
         if(!showOverlay)
-            mouseOverText.html("The <b><i>chromatic scale</i></b> is simply all possible notes in sequence. Here you see the notes represented like piano keys wrapped around a circle instead of lying flat. The majority of modern music is built out of patterns and permutations of these 12 notes in different octaves, and this utility shows 5 basic patterns in detail.<br /><br />However, there are a few other patterns that you can explore here (see 'Other scales') and elsewhere online.");
-        else
-            mouseOverText.html("Change / rotate the pattern on top to explore various modes, or rotate the chromatic circle beneath to change the 'key' or starting note.");
+            mouseOverText.html("The <b><i>chromatic scale</i></b> is simply all possible notes in sequence. Here you see the 12 notes represented like piano keys wrapped around a circle instead of lying flat. The majority of modern music is built out of patterns and permutations of these 12 notes in different octaves, and this utility shows 5 of those patterns in detail.<br /><br />\
+            However, there are a few other patterns that you can explore here (see 'Other scales') and elsewhere online.");
     }
     ypos = 0.94*scaled;
     if(mouseX>xpos-xpos   && mouseX<xpos+xpos &&
@@ -802,6 +812,14 @@ function mouseReleased(){
             for (var i = 0; i < 13; i++)
                 playedAlpha[i] = 40;
         }
+        mouseOverText.html("<b><i>Enharmonic notes</i></b> are basically another way of saying <i>\"the same note, but 'spelled' differently\"</i> - usually to make it easier to read. It is analogous to saying 6 = 5 + 1 vs 6 = 3 + 3; it doesn't change the end result much, but can be useful when you're trying to understand the source material.<br />\
+        In most common Western music,<br />\
+        <big>\u266F</big> = +1 semitone <small>(sharp)</small><br />\
+        <big>\u266D</big> = -1 semitone <small>(flat)</small><br />\
+        <big>\u{1D12A}</big> = +2 semitones <small>(double sharp)</small><br />\
+        <big>\u{1D12B}</big> = -2 semitones <small>(double flat)</small><br />\
+        The 'double' modifiers are commonly used to avoid repeating a letter name when constructing scales (see the images below; no notes are repeated, so there is less visual confusion when reading).<br /><br />\
+        <small>A caveat is that this 'rule' does not directly apply in <i>all</i> systems of music - that is to say, F\u266F is not <i>always</i> the same as G\u266D <i>everywhere</i> - but for most purposes in Western music, enharmonically 're-spelled' notes are the same notes.</small>");
     }
     return false;
 }

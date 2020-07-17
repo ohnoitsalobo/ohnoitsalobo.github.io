@@ -2,7 +2,7 @@ let scaled; // scaled size
 let autoplay = 0, played = 0; // control auto scale player
 
 let cnv, img1, img2, mouseOverText; // html elements
-var showImg = true;
+var showImg = true, showTips = true;
 
 function setup(){
     shortAxis = ((windowWidth > windowHeight) ? windowHeight : windowWidth);
@@ -11,10 +11,12 @@ function setup(){
     cnv.parent('noteCircle');
     mouseOverText = createDiv('');
     mouseOverText.parent('mouseOverText');
+    mouseOverText.size(scaled/2);
     createMenus();
     changeMode();
     
-    mouseOverText.html('Text will appear here when you click on things!');
+    mouseOverText.html("Tap here to enable / disable tips.");
+    mouseOverText.mouseClicked(hideTips);
 ///////// LOAD IMAGES
     loadScales();
     let path = "modes/all/major-001.png";
@@ -81,7 +83,8 @@ function draw(){
         if(_t == 8)
             autoplay = 0;
     }
-    
+    fill(0, fillalpha*0.3); noStroke();
+    ellipse(0, 1.25*scaled, Size, Size);
 }
 
 function playedHighlight(){
@@ -115,5 +118,16 @@ function playedHighlight(){
                 text(i, 0, 0);
             pop()
         }
+    }
+}
+
+function hideTips(){
+    if(showTips){
+        mouseOverText.hide();
+        showTips = !showTips;
+    }
+    else{
+        mouseOverText.show();
+        showTips = !showTips;
     }
 }
