@@ -86,8 +86,11 @@ function drawNotes(){
             img2 = createImg(doubleHarmonicScale[offset*7+currentlySelectedMode], alt2);
     }
     img1.parent('img1');
-    if(offset > 0)
+    img1.elt.title = alt1;
+    if(offset > 0){
         img2.parent('img2');
+        img2.elt.title = alt2;
+    }
     loadImg = true;
 }
 /*  */
