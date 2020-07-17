@@ -62,19 +62,12 @@ function draw(){
         img1.hide();
         img2.hide();
     }
-    if(majorMinorOther != 5 && !imgLoaded){
+    if(majorMinorOther != 5){
         img1.show();
         img2.show();
         drawNotes();
     }
-    
-    if(interact){
-        if(frameCount - interactCount > 30){
-            // frameRate(5);
-            interact = !interact;
-        }
-    }
-    
+        
     if(majorMinorOther != 5 && autoplay > 0){
         let _t = (floor((millis()-autoplay)/250)%8)+1;
         if (played != _t){
