@@ -17,6 +17,7 @@ function setup(){
     
     mouseOverText.html("Tap here to enable / disable tips.");
     mouseOverText.mouseClicked(hideTips);
+    mouseOverText.style('font-size', '1.2em');
 ///////// LOAD IMAGES
     loadScales();
     let path = "modes/all/major-001.png";
