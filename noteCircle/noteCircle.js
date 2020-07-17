@@ -20,11 +20,7 @@ function setup(){
     // img2.parent('img2');
     
 ///////// LOAD IMAGES
-    loadMajorScale();
-    loadMelodicMinorScale();
-    loadHarmonicMinorScale();
-    loadHarmonicMajorScale();
-    loadDoubleHarmonicScale();
+    loadScales();
     let path = "modes/all/major-001.png";
     img1 = createImg(path, "Notation image 1");
     img2 = createImg(path, "Notation image 2");

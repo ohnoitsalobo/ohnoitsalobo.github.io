@@ -28,61 +28,25 @@ let harmonicMajorScale = [];
 let doubleHarmonicScale = [];
 let imgLoaded = false;
 
-function loadMajorScale(){
+function loadScales(){
+    let ext = ".png";
+    let majorpath          = "modes/all/major-";
+    let melodicminorpath   = "modes/all/melodicminor-";
+    let harmonicminorpath  = "modes/all/harmonicminor-";
+    let harmonicmajorpath  = "modes/all/harmonicmajor-";
+    let doubleharmonicpath = "modes/all/doubleharmonic-";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
-            let path = "modes/all/major-", ext = ".png";
+            let index = i+( j*7);
             let filenum = i+(imageOrder[j]*7)+2;
-            if (filenum < 100) path += "0";
-            if (filenum < 10) path += "0";
-            majorScale[i+( j*7)] = path + filenum + ext;
+            majorScale          [index] = majorpath          + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + ext;
+            melodicMinorScale   [index] = melodicminorpath   + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + ext;
+            harmonicMinorScale  [index] = harmonicminorpath  + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + ext;
+            harmonicMajorScale  [index] = harmonicmajorpath  + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + ext;
+            doubleHarmonicScale [index] = doubleharmonicpath + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + ext;
         }
     }
 }                                                          
-function loadMelodicMinorScale(){
-    for(let j = 0; j < 17; j++){
-        for(let i = 0; i < 7; i++){
-            let path = "modes/all/melodicminor-", ext = ".png";
-            let filenum = i+(imageOrder[j]*7)+2;
-            if (filenum < 100) path += "0";
-            if (filenum < 10) path += "0";
-            melodicMinorScale[i+( j*7)] = path + filenum + ext;
-        }
-    }
-}
-function loadHarmonicMinorScale(){
-    for(let j = 0; j < 17; j++){
-        for(let i = 0; i < 7; i++){
-            let path = "modes/all/harmonicminor-", ext = ".png";
-            let filenum = i+(imageOrder[j]*7)+2;
-            if (filenum < 100) path += "0";
-            if (filenum < 10) path += "0";
-            harmonicMinorScale[i+( j*7)] = path + filenum + ext;
-        }
-    }
-}
-function loadHarmonicMajorScale(){
-    for(let j = 0; j < 17; j++){
-        for(let i = 0; i < 7; i++){
-            let path = "modes/all/harmonicmajor-", ext = ".png";
-            let filenum = i+(imageOrder[j]*7)+2;
-            if (filenum < 100) path += "0";
-            if (filenum < 10) path += "0";
-            harmonicMajorScale[i+( j*7)] = path + filenum + ext;
-        }
-    }
-}
-function loadDoubleHarmonicScale(){
-    for(let j = 0; j < 17; j++){
-        for(let i = 0; i < 7; i++){
-            let path = "modes/all/doubleharmonic-", ext = ".png";
-            let filenum = i+(imageOrder[j]*7)+2;
-            if (filenum < 100) path += "0";
-            if (filenum < 10) path += "0";
-            doubleHarmonicScale[i+( j*7)] = path + filenum + ext;
-        }
-    }
-}
 
 function drawNotes(){
     img1.remove();
