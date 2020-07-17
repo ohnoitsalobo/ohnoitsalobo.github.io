@@ -11,13 +11,13 @@ function setup(){
     cnv.parent('noteCircle');
     mouseOverText = createDiv('');
     mouseOverText.parent('mouseOverText');
+    mouseOverText.style('font-size', '1.3em');
     mouseOverText.size(scaled);
     createMenus();
     changeMode();
     
     mouseOverText.html("Tap here to enable / disable tips.");
     mouseOverText.mouseClicked(hideTips);
-    mouseOverText.style('font-size', '1.5em');
 ///////// LOAD IMAGES
     loadScales();
     let path = "modes/all/major-001.png";
