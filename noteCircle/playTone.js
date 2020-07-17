@@ -523,7 +523,7 @@ function keyPressed(){
 }
 
 function mouseReleased(){
-    mouseOverText.html("Tap here to enable / disable tips.");
+    // mouseOverText.html("Tap here to enable / disable tips.");
     ////// PLAY TONES
     let xpos, ypos, ypos1, offset = 0.08*scaled;
     xpos = 0.5*scaled;
