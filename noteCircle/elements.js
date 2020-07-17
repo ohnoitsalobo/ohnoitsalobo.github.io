@@ -29,42 +29,57 @@ let doubleHarmonicScale = [];
 let imgLoaded = false;
 
 function loadMajorScale(){
-    let path = "modes/major/major (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
-            majorScale[i+( j*7)] = path + (i+(imageOrder[j]*7)+1) + ext;
+            let path = "modes/all/major-", ext = ".png";
+            let filenum = i+(imageOrder[j]*7)+2;
+            if (filenum < 100) path += "0";
+            if (filenum < 10) path += "0";
+            majorScale[i+( j*7)] = path + filenum + ext;
         }
     }
 }                                                          
 function loadMelodicMinorScale(){
-    let path = "modes/melodicminor/melodicminor (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
-            melodicMinorScale[i+( j*7)] = path + (i+(imageOrder[j]*7)+1) + ext;
+            let path = "modes/all/melodicminor-", ext = ".png";
+            let filenum = i+(imageOrder[j]*7)+2;
+            if (filenum < 100) path += "0";
+            if (filenum < 10) path += "0";
+            melodicMinorScale[i+( j*7)] = path + filenum + ext;
         }
     }
 }
 function loadHarmonicMinorScale(){
-    let path = "modes/harmonicminor/harmonicminor (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
-            harmonicMinorScale[i+( j*7)] = path + (i+(imageOrder[j]*7)+1) + ext;
+            let path = "modes/all/harmonicminor-", ext = ".png";
+            let filenum = i+(imageOrder[j]*7)+2;
+            if (filenum < 100) path += "0";
+            if (filenum < 10) path += "0";
+            harmonicMinorScale[i+( j*7)] = path + filenum + ext;
         }
     }
 }
 function loadHarmonicMajorScale(){
-    let path = "modes/harmonicmajor/harmonicmajor (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
-            harmonicMajorScale[i+( j*7)] = path + (i+(imageOrder[j]*7)+1) + ext;
+            let path = "modes/all/harmonicmajor-", ext = ".png";
+            let filenum = i+(imageOrder[j]*7)+2;
+            if (filenum < 100) path += "0";
+            if (filenum < 10) path += "0";
+            harmonicMajorScale[i+( j*7)] = path + filenum + ext;
         }
     }
 }
 function loadDoubleHarmonicScale(){
-    let path = "modes/doubleharmonic/doubleharmonic (", ext = ").png";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
-            doubleHarmonicScale[i+( j*7)] = path + (i+(imageOrder[j]*7)+1) + ext;
+            let path = "modes/all/doubleharmonic-", ext = ".png";
+            let filenum = i+(imageOrder[j]*7)+2;
+            if (filenum < 100) path += "0";
+            if (filenum < 10) path += "0";
+            doubleHarmonicScale[i+( j*7)] = path + filenum + ext;
         }
     }
 }
@@ -79,8 +94,8 @@ function drawNotes(){
     else if(index == 6 ) offset = 14;
     else if(index == 8 ) offset = 15;
     else if(index == 10) offset = 16;
-    let alt1 = "Key: " + keyList[notesAreLocked()] + "\nMode: " + (currentlySelectedMode+1) + "\nPattern: " + modeList[majorMinorOther]; // "Notation image 1";
-    let alt2 = "Key: " + keyList[notesAreLocked()] + "\nMode: " + (currentlySelectedMode+1) + "\nPattern: " + modeList[majorMinorOther]; // "Notation image 2";
+    let alt1 = "Key: " + keySharpList[notesAreLocked()] + "\nMode: " + (currentlySelectedMode+1) + "\nPattern: " + modeList[majorMinorOther]; // "Notation image 1";
+    let alt2 = "Key: " + keyFlatList [notesAreLocked()] + "\nMode: " + (currentlySelectedMode+1) + "\nPattern: " + modeList[majorMinorOther]; // "Notation image 2";
     if     (majorMinorOther == 0){
         img1 = createImg(majorScale[index*7+currentlySelectedMode], alt1);
         if(offset > 0) 
@@ -161,7 +176,7 @@ function createNoteCircle(){
         textAlign(CENTER, CENTER);
         textSize(Size*0.4); 
         if(majorMinorOther!=5) {
-            text("Use number keys 1 - 8\nto play the highlighted notes, or \nclick / tap them in sequence to hear the scale.", 0.85*scaled, 0.4*scaled);
+            text("To hear the highlighted scale:\n- Tap the notes on the circle\n- Use keyboard number keys\n- Tap the mode name above", 0.85*scaled, 0.4*scaled);
             if(showOverlay){
                 if(!lockNotes){
                     fill(0, fillalpha);
@@ -1028,101 +1043,3 @@ function notesAreLocked(){
     keySelect.selected(_rotation%12);
     return _rotation%12;
 }
-
-/*  * /
-function loadMajorScale(){
-    let path = "modes/major/major (", ext = ").png";
-    for(let j = 0; j < 17; j++){
-        for(let i = 0; i < 7; i++){
-            majorScale[i+( j*7)] = loadImage(path + (i+(imageOrder[j]*7)+1) + ext);
-        }
-    }
-}                                                          
-function loadMelodicMinorScale(){
-    let path = "modes/melodicminor/melodicminor (", ext = ").png";
-    for(let j = 0; j < 17; j++){
-        for(let i = 0; i < 7; i++){
-            melodicMinorScale[i+( j*7)] = loadImage(path + (i+(imageOrder[j]*7)+1) + ext);
-        }
-    }
-}
-function loadHarmonicMinorScale(){
-    let path = "modes/harmonicminor/harmonicminor (", ext = ").png";
-    for(let j = 0; j < 17; j++){
-        for(let i = 0; i < 7; i++){
-            harmonicMinorScale[i+( j*7)] = loadImage(path + (i+(imageOrder[j]*7)+1) + ext);
-        }
-    }
-}
-function loadHarmonicMajorScale(){
-    let path = "modes/harmonicmajor/harmonicmajor (", ext = ").png";
-    for(let j = 0; j < 17; j++){
-        for(let i = 0; i < 7; i++){
-            harmonicMajorScale[i+( j*7)] = loadImage(path + (i+(imageOrder[j]*7)+1) + ext);
-        }
-    }
-}
-function loadDoubleHarmonicScale(){
-    let path = "modes/doubleharmonic/doubleharmonic (", ext = ").png";
-    for(let j = 0; j < 17; j++){
-        for(let i = 0; i < 7; i++){
-            doubleHarmonicScale[i+( j*7)] = loadImage(path + (i+(imageOrder[j]*7)+1) + ext);
-        }
-    }
-}
-
-function drawNotes(){
-    rotate(PI/2);
-    translate(scaled*2.05, 0);
-    if(frameCount < 100){
-        fill(0); stroke(125); strokeWeight(4);
-        textSize(Size);
-        text("Please wait while images load.", -scaled*1.8, 0);
-    }
-    else{
-        fill(0); noStroke(); // stroke(125); strokeWeight(1);
-        textSize(Size*0.35);
-        text("Mandolin tab", -scaled*0.375, scaled*0.21);
-        text("Guitar tab"  , -scaled*0.375, scaled*0.45);
-    }
-    imageMode(CENTER);
-    // let index = floor((frameCount/5)%(17*7));
-    let index = notesAreLocked();
-    let offset = 0;
-    if     (index == 1 ) offset = 12;
-    else if(index == 3 ) offset = 13;
-    else if(index == 6 ) offset = 14;
-    else if(index == 8 ) offset = 15;
-    else if(index == 10) offset = 16;
-    let s = 0.85;
-    let w = scaled*s;
-    let h = scaled*s*1.1;
-    let _x = w*0.45;
-    let _y = 0;
-    if     (majorMinorOther == 0){
-        image(majorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
-        if(offset > 0) 
-            image(majorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
-    }
-    else if(majorMinorOther == 1){
-        image(melodicMinorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
-        if(offset > 0) 
-            image(melodicMinorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
-    }
-    else if(majorMinorOther == 2){
-        image(harmonicMinorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
-        if(offset > 0) 
-            image(harmonicMinorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
-    }
-    else if(majorMinorOther == 3){
-        image(harmonicMajorScale[index*7+currentlySelectedMode], -_x, _y, w, h);
-        if(offset > 0) 
-            image(harmonicMajorScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
-    }
-    else if(majorMinorOther == 4){
-        image(doubleHarmonicScale[index*7+currentlySelectedMode], -_x, _y, w, h);
-        if(offset > 0) 
-            image(doubleHarmonicScale[offset*7+currentlySelectedMode], _x+Size, _y, w, h);
-    }
-}
-/*  */
