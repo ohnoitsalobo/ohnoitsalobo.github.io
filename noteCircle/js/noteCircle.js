@@ -9,9 +9,9 @@ function setup(){
     scaled = shortAxis*scale;
     cnv = createCanvas(1.75*scaled, scaled);
     cnv.parent('noteCircle');
+    
     mouseOverText = createDiv('');
     mouseOverText.parent('mouseOverText');
-    // mouseOverText.style('font-size', '1.2em');
     mouseOverText.style('font-family', 'Georgia');
     mouseOverText.size(scaled);
     createMenus();
