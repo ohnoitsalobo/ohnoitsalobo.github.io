@@ -763,7 +763,19 @@ function changeMode(){
     else if(choice == modeList[3]) majorMinorOther = 3;
     else if(choice == modeList[4]) majorMinorOther = 4;
     else if(choice == modeList[5]) majorMinorOther = 5;
-    mouseOverText.html("There are many types of patterns in Western (and other) music. The most common set of modes is based on the <b><i>major</i></b> or <b><i>'Ionian'</i></b> scale. Also shown in detail are the <b><i>melodic minor</i></b>, <b><i>harmonic minor</i></b>, <b><i>harmonic major</i></b>, and <b><i>double harmonic</i></b> scales. If you know the pattern of a given scale, you can construct modes out of it by simply applying the pattern in different ways, as shown.");
+        mouseOverText.html("There are many types of patterns in Western (and other) music. The most common set of modes is based around the         <b><i>major</i></b> or <b><i>'Ionian'</i></b> scale. Also shown here are <b><i>melodic minor</i></b>, <b><i>harmonic minor</i></b>, <b><i>harmonic major</i></b>, and <b><i>double harmonic</i></b> scales. If you know the pattern of a given scale, you can construct modes out of it by simply applying the pattern in different ways, as shown.");
+    let txt = "<br /><br />";
+    if     (majorMinorOther == 0) { txt += "<b><i>Major (Ionian)</i></b> <br /><br />\
+        The major scale on a given root note is defined by the pattern R, 2, 2, 1, 2, 2, 2, 1 showing how many semitones to progress (commonly shown by pressing all the white keys on a piano to play the scale of C major). The <i>natural</i> minor (Aeolian) scale in that key is the 6th mode based on the Ionian pattern.";  }
+    else if(majorMinorOther == 1) { txt += "<b><i>Melodic minor</i></b> <br /><br />\
+        The melodic minor is simply the major scale with the 3rd note lower by one half-step (minor 3rd vs major 3rd). As its name suggests, composers often prefer its sound when creating melodies. The melodic minor is also equivalent to taking the 6th note of the harmonic minor and raising it by a half-step, to avoid the 3-semitone leap between the 6th and 7th notes of the harmonic minor scale. Interestingly, though, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the natural minor scale.";   }
+    else if(majorMinorOther == 2) { txt += "<b><i>Harmonic minor</i></b> <br /><br />\
+        The harmonic minor is a modification of the natural minor (Aeolian mode). As its name suggests, its sound is often preferred for creating harmonies. The harmonic minor is created by taking the 7th note of the natural minor scale and raising it a half-step, to create a stronger feeling of tension and release with the root / octave.";  }
+    else if(majorMinorOther == 3) { txt += "<b><i>Harmonic major</i></b> <br /><br />\
+        The harmonic major is a 'constructed' scale that is used in a few old compositions but is most common in jazz. It is created by raising the 3rd note of the harmonic minor scale and raising it by a half-step.";  }
+    else if(majorMinorOther == 4) { txt += "<b><i>Double harmonic</i></b> <br /><br />\
+        The double harmonic scale is a scale that is generally unfamiliar in Western music. It is also known as the <i>Byzantine scale</i> or <i>Gypsy major</i> and resembles some Arabic scales."; }
+    mouseOverText.html(txt, true);
     // var choice = modeSelect.value();
     // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
     // if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
