@@ -763,17 +763,21 @@ function changeMode(){
     else if(choice == modeList[3]) majorMinorOther = 3;
     else if(choice == modeList[4]) majorMinorOther = 4;
     else if(choice == modeList[5]) majorMinorOther = 5;
-    let txt = "";
-    if     (majorMinorOther == 0) { txt += "<b><i>Major (Ionian)</i></b> <br /><br />\
-        The major scale on a given root note is defined by the pattern R, 2, 2, 1, 2, 2, 2, 1 showing how many semitones to progress (commonly shown by pressing all the white keys on a piano to play the scale of C major). The <i>natural</i> minor (Aeolian) scale in that key is the 6th mode based on the Ionian pattern.";  }
-    else if(majorMinorOther == 1) { txt += "<b><i>Melodic minor</i></b> <br /><br />\
+    let txt;
+    if     (majorMinorOther == 0) { txt = "<b><i>Major (Ionian)</i></b> <br /><br />\
+        The major scale on a given root note is defined by the pattern R, 2, 2, 1, 2, 2, 2, 1 showing how many semitones to progress (commonly shown by pressing all the white keys on a piano to play the scale of C major).<br />\
+        The <i>natural</i> minor (Aeolian) scale in any key is the 6th mode based on the Ionian 'pattern'.<br />\
+        The <i>relative minor</i> scale of any key uses the <i>same</i> notes, but the 6th note is the root.";  }
+    else if(majorMinorOther == 1) { txt = "<b><i>Melodic minor</i></b> <br /><br />\
         The melodic minor is simply the major scale with the 3rd note lower by one half-step (minor 3rd vs major 3rd). As its name suggests, composers often prefer its sound when creating melodies. The melodic minor is also equivalent to taking the 6th note of the harmonic minor and raising it by a half-step, to avoid the 3-semitone leap between the 6th and 7th notes of the harmonic minor scale. Interestingly, though, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the natural minor scale.";   }
-    else if(majorMinorOther == 2) { txt += "<b><i>Harmonic minor</i></b> <br /><br />\
+    else if(majorMinorOther == 2) { txt = "<b><i>Harmonic minor</i></b> <br /><br />\
         The harmonic minor is a modification of the natural minor (Aeolian mode). As its name suggests, its sound is often preferred for creating harmonies. The harmonic minor is created by taking the 7th note of the natural minor scale and raising it a half-step, to create a stronger feeling of tension and release with the root / octave.";  }
-    else if(majorMinorOther == 3) { txt += "<b><i>Harmonic major</i></b> <br /><br />\
+    else if(majorMinorOther == 3) { txt = "<b><i>Harmonic major</i></b> <br /><br />\
         The harmonic major is a 'constructed' scale that is used in a few old compositions but is most common in jazz. It is created by raising the 3rd note of the harmonic minor scale and raising it by a half-step.";  }
-    else if(majorMinorOther == 4) { txt += "<b><i>Double harmonic</i></b> <br /><br />\
+    else if(majorMinorOther == 4) { txt = "<b><i>Double harmonic</i></b> <br /><br />\
         The double harmonic scale is a scale that is generally unfamiliar in Western music. It is also known as the <i>Byzantine scale</i> or <i>Gypsy major</i> and resembles some Arabic scales."; }
+    else if(majorMinorOther == 5) { txt = "<b><i>Other scales</i></b> <br /><br />\
+        Explore other scales by clicking the highlighted notes.<br />These do not auto-play or have keyboard keys assigned yet."; }
     mouseOverText.html(txt);
     // var choice = modeSelect.value();
     // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
@@ -962,7 +966,7 @@ function changeOtherMode(){
     for(let i = 0; i < otherModeList.length; i++){
         if(choice == otherModeList[i]) otherModeIndex = i;
     }
-    mouseOverText.html("Explore various other scales - tap the note names to hear them.");
+    // mouseOverText.html("Explore various other scales - tap the note names to hear them.");
 }
 function changeOtherModeMouse(event){
     var choice = otherModeSelect.value();
