@@ -14,7 +14,7 @@ function setup(){
     mouseOverText.parent('mouseOverText');
     mouseOverText.size(scaled*0.8);
     mouseOverText.style('font-family', 'Georgia');
-    mouseOverText.style('font-size', (scale*1.6)+'em');
+    mouseOverText.style('font-size', (scale*1.9)+'em');
     createMenus();
     changeMode();
     
