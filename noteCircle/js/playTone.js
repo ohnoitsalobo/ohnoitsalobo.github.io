@@ -941,7 +941,7 @@ function mouseReleased(){
             <big>\u{1D12A}</big> = +2 semitones <small>(double sharp)</small><br />\
             <big>\u{1D12B}</big> = -2 semitones <small>(double flat)</small><br />\
             <small>The 'double' modifiers are commonly used to avoid repeating a letter name when constructing scales (see the images below; no notes are repeated, so while it may <i>appear</i> complicated, there is less visual confusion when reading).</small><br /><br />\
-            <small>A caveat is that this 'rule' does not directly apply in <i>all</i> systems of music - that is to say, F\u266F is not <i>always</i> the same as G\u266D <i>everywhere</i> - but for most purposes in Western music, enharmonically 're-spelled' notes are exactly the same notes.</small>"
+            <small>A caveat is that this 'rule' does not directly apply in <i>all</i> systems of music - that is to say, F\u266F is not <i>always</i> the same as G\u266D <i>everywhere</i> - but for the purposes of this app (and most common music derived from Western classical rules), enharmonically 're-spelled' notes are exactly the same notes.</small>"
         );
     }
     return false;
