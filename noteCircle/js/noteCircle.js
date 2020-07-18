@@ -21,8 +21,8 @@ function setup(){
     changeMode();
     
     mouseOverText.html(
-    "Click on things to learn about them in this box.<br /><br />\
-    There are many types of scale patterns in Western (and other) music. The most common set of modes is based around the <b><i>major</i></b> or <b><i>'Ionian'</i></b> scale. Also shown here are <b><i>melodic minor</i></b>, <b><i>harmonic minor</i></b>, <b><i>harmonic major</i></b>, and <b><i>double harmonic</i></b> scales. If you know the pattern of a given scale, you can construct modes out of it by simply applying the pattern in different ways, as shown in this app."
+        "Click on things to learn about them in this box.<br /><br />\
+        There are many types of scale patterns in Western (and other) music. The most common set of modes is based around the <b><i>major</i></b> or <b><i>'Ionian'</i></b> scale. Also shown here are <b><i>melodic minor</i></b>, <b><i>harmonic minor</i></b>, <b><i>harmonic major</i></b>, and <b><i>double harmonic</i></b> scales. If you know the pattern of a given scale, you can construct modes out of it by simply applying the pattern in different ways, as shown in this app."
     );
 
 ///////// LOAD IMAGES

@@ -964,7 +964,6 @@ function changeOtherMode(){
     for(let i = 0; i < otherModeList.length; i++){
         if(choice == otherModeList[i]) otherModeIndex = i;
     }
-    // mouseOverText.html("Explore various other scales - tap the note names to hear them.");
 }
 function changeOtherModeMouse(event){
     var choice = otherModeSelect.value();
@@ -997,10 +996,11 @@ function changeKey(){
     else if(choice == keyList[9 ]) keyIndex = 9 ;
     else if(choice == keyList[10]) keyIndex = 10;
     else if(choice == keyList[11]) keyIndex = 11;
-    mouseOverText.html("\
-    <b><i>Key</i></b>, <b><i>root</i></b>, or <b><i>tonic</i></b> are all commonly used to refer to the 'central' note of any scale - the note (or chord) which feels most like 'home' in any given arrangement of notes.<br /><br />\
-    Most common Western-based music today is based on 12 equal divisions of the scale, known as <i>12-tone equal temperament</i>, and that is the system that I am using in this app.\
-    Each step on the 12 notes is called a <i>semitone</i> or <i>half-step</i>. Moving two steps at a time is called a <i>whole tone</i> or <i>full step</i>. Scales and modes are just different arrangements of tones and semitones.");
+    mouseOverText.html(
+        "<b><i>Key</i></b>, <b><i>root</i></b>, or <b><i>tonic</i></b> are all commonly used to refer to the 'central' note of any scale - the note (or chord) which feels most like 'home' in any given arrangement of notes.<br /><br />\
+        Most common Western-based music today is based on 12 equal divisions of the scale, known as <i>12-tone equal temperament</i>, and that is the system that I am using in this app.\
+        Each step on the 12 notes is called a <i>semitone</i> or <i>half-step</i>. Moving two steps at a time is called a <i>whole tone</i> or <i>full step</i>. Scales and modes are just different arrangements of tones and semitones."
+    );
 }
 function changeKeyMouse(event){
     if (event.deltaY > 0) keySelect.selected(keyList[(keyIndex+1 )%12]);

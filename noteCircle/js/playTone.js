@@ -720,7 +720,7 @@ function mouseReleased(){
             <button onclick=\"playTones(0, 11);\">Click here to hear the M7 interval.</button><br /><br />\
             <small>The major seventh is 11 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>minor second</i>.</small><br /><br />\
-            <button onclick=\"playTones(0   , 1);\">Click here to hear the inverted M7 interval (m2).</button>"
+            <button onclick=\"playTones(0, 1);\">Click here to hear the inverted M7 interval (m2).</button>"
         );
     }
     
