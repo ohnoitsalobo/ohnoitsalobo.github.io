@@ -12,14 +12,17 @@ function setup(){
     
     mouseOverText = createDiv('');
     mouseOverText.parent('mouseOverText');
-    mouseOverText.size(scaled);
+    mouseOverText.size(scaled*0.8);
     mouseOverText.style('font-family', 'Georgia');
-    mouseOverText.style('font-size', '25px');
+    mouseOverText.style('font-size', (scale*1.6)+'em');
     createMenus();
     changeMode();
     
-    mouseOverText.html("Tap here to enable / disable tips.");
-    mouseOverText.mouseClicked(hideTips);
+    mouseOverText.html(
+    "Click on things to learn about them in this box.<br /><br />\
+    There are many types of scale patterns in Western (and other) music. The most common set of modes is based around the <b><i>major</i></b> or <b><i>'Ionian'</i></b> scale. Also shown here are <b><i>melodic minor</i></b>, <b><i>harmonic minor</i></b>, <b><i>harmonic major</i></b>, and <b><i>double harmonic</i></b> scales. If you know the pattern of a given scale, you can construct modes out of it by simply applying the pattern in different ways, as shown in this app."
+    );
+
 ///////// LOAD IMAGES
     loadScales();
     let path = "modes/all/major-001.png";
@@ -77,17 +80,20 @@ function draw(){
     }
         
     if(majorMinorOther != 5 && autoplay > 0){
-        let _t = (floor((millis()-autoplay)/250)%8)+1;
+        let _t = (floor((millis()-autoplay)/225)%16)+1;
         if (played != _t){
-            // console.log(_t)
-            playTone(modeCheck(_t));
+            console.log((_t < 8 ? _t : 16-_t))
+            playTone(modeCheck((_t < 8 ? _t : 16-_t)));
             played = _t;
         }
-        if(_t == 8)
+        if(_t == 15)
             autoplay = 0;
     }
-    fill(0, fillalpha*0.3); noStroke();
-    ellipse(0, 1.25*scaled, Size, Size);
+///////// HIDE/SHOW TIPS
+    fill(0, 150); noStroke();
+    ellipse(0, 1.25*scaled, Size*2, Size*2);
+    fill(255, 150);
+    text(showTips ? ("Hide tips") : ("Show tips"), 0, 1.23*scaled)
 }
 
 function playedHighlight(){

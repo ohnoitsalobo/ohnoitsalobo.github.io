@@ -128,9 +128,9 @@ function createNoteCircle(){
         text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*scaled, -0.375*scaled);
         textSize(Size*0.36);
         textAlign(LEFT, TOP); 
-        text("Tap here to hide/show\nthe pattern\noverlay", -0.49*scaled, -0.49*scaled);
+        text("Tap here to hide/show\nthe pattern\noverlay", -0.5*scaled, -0.49*scaled);
         textAlign(LEFT, BOTTOM); 
-        text("Tap here\nto cycle through\nenharmonic note names", -0.49*scaled, 0.49*scaled);
+        text("Tap here\nto cycle through\nenharmonic note names", -0.5*scaled, 0.49*scaled);
         textSize(0.75*Size); 
         if(showEnharmonic != 0) { stroke(255, 150); strokeWeight(3); }
         let _xpos = -0.49*scaled, _ypos = 0.375*scaled;
@@ -763,8 +763,7 @@ function changeMode(){
     else if(choice == modeList[3]) majorMinorOther = 3;
     else if(choice == modeList[4]) majorMinorOther = 4;
     else if(choice == modeList[5]) majorMinorOther = 5;
-        mouseOverText.html("There are many types of patterns in Western (and other) music. The most common set of modes is based around the         <b><i>major</i></b> or <b><i>'Ionian'</i></b> scale. Also shown here are <b><i>melodic minor</i></b>, <b><i>harmonic minor</i></b>, <b><i>harmonic major</i></b>, and <b><i>double harmonic</i></b> scales. If you know the pattern of a given scale, you can construct modes out of it by simply applying the pattern in different ways, as shown.");
-    let txt = "<br /><br />";
+    let txt = "";
     if     (majorMinorOther == 0) { txt += "<b><i>Major (Ionian)</i></b> <br /><br />\
         The major scale on a given root note is defined by the pattern R, 2, 2, 1, 2, 2, 2, 1 showing how many semitones to progress (commonly shown by pressing all the white keys on a piano to play the scale of C major). The <i>natural</i> minor (Aeolian) scale in that key is the 6th mode based on the Ionian pattern.";  }
     else if(majorMinorOther == 1) { txt += "<b><i>Melodic minor</i></b> <br /><br />\
@@ -775,7 +774,7 @@ function changeMode(){
         The harmonic major is a 'constructed' scale that is used in a few old compositions but is most common in jazz. It is created by raising the 3rd note of the harmonic minor scale and raising it by a half-step.";  }
     else if(majorMinorOther == 4) { txt += "<b><i>Double harmonic</i></b> <br /><br />\
         The double harmonic scale is a scale that is generally unfamiliar in Western music. It is also known as the <i>Byzantine scale</i> or <i>Gypsy major</i> and resembles some Arabic scales."; }
-    mouseOverText.html(txt, true);
+    mouseOverText.html(txt);
     // var choice = modeSelect.value();
     // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
     // if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
