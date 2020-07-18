@@ -934,13 +934,13 @@ function mouseReleased(){
                 playedAlpha[i] = 40;
         }
         mouseOverText.html(
-            "<b><i>Enharmonic notes</i></b> are basically another way of saying <i>\"the same note, but 'spelled' differently\"</i> - usually to make it easier to read. It is analogous to saying <small>(6 = 5 + 1)</small> vs <small>(6 = 3 + 3)</small>; it doesn't change the end result, but can be useful when you're trying to understand the source material. Whether you call something a sharp or a flat note depends on what scale you're working in and how many sharps and flats it needs to be easily readable.<br />\
+            "<b><i>Enharmonic notes</i></b> are basically another way of saying <i>\"the same note, but 'spelled' differently\"</i> - usually to make it easier to read. It is analogous to saying <small>(6 = 5 + 1)</small> vs <small>(6 = 3 + 3)</small>; it doesn't change the end result, but can be useful when you're trying to understand the source material. Whether you call something a sharp or a flat note depends on what scale you're working in and how many sharps and/or flats it needs to be easily readable.<br />\
             In common Western music,<br />\
             <big>\u266F</big> = +1 semitone <small>(sharp)</small><br />\
             <big>\u266D</big> = -1 semitone <small>(flat)</small><br />\
             <big>\u{1D12A}</big> = +2 semitones <small>(double sharp)</small><br />\
             <big>\u{1D12B}</big> = -2 semitones <small>(double flat)</small><br />\
-            <small>The 'double' modifiers are commonly used to avoid repeating a letter name when constructing scales (see the images below; no notes are repeated, so there is less visual confusion when reading).</small><br /><br />\
+            <small>The 'double' modifiers are commonly used to avoid repeating a letter name when constructing scales (see the images below; no notes are repeated, so while it may <i>appear</i> complicated, there is less visual confusion when reading).</small><br /><br />\
             <small>A caveat is that this 'rule' does not directly apply in <i>all</i> systems of music - that is to say, F\u266F is not <i>always</i> the same as G\u266D <i>everywhere</i> - but for most purposes in Western music, enharmonically 're-spelled' notes are exactly the same notes.</small>"
         );
     }
