@@ -935,7 +935,7 @@ function mouseReleased(){
         }
         mouseOverText.html(
             "<b><i>Enharmonic notes</i></b> are basically another way of saying <i>\"the same note, but 'spelled' differently\"</i> - usually to make it easier to read. It is analogous to saying <small>(6 = 5 + 1)</small> vs <small>(6 = 3 + 3)</small>; it doesn't change the end result, but can be useful when you're trying to understand the source material. Whether you call something a sharp or a flat note depends on what scale you're working in and how many sharps and flats it needs to be easily readable.<br />\
-            In most common Western music,<br />\
+            In common Western music,<br />\
             <big>\u266F</big> = +1 semitone <small>(sharp)</small><br />\
             <big>\u266D</big> = -1 semitone <small>(flat)</small><br />\
             <big>\u{1D12A}</big> = +2 semitones <small>(double sharp)</small><br />\
