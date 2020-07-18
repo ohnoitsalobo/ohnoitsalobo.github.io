@@ -26,7 +26,6 @@ let melodicMinorScale = [];
 let harmonicMinorScale = [];
 let harmonicMajorScale = [];
 let doubleHarmonicScale = [];
-let loadImg = false;
 
 function loadScales(){
     let ext = ".png";
@@ -91,7 +90,6 @@ function drawNotes(){
         img2.parent('img2');
         img2.elt.title = alt2;
     }
-    loadImg = true;
 }
 /*  */
 

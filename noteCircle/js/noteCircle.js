@@ -5,16 +5,18 @@ let cnv, img1, img2, mouseOverText; // html elements
 var showImg = true, showTips = true;
 
 function setup(){
+///////// SET UP CANVAS
     shortAxis = ((windowWidth > windowHeight) ? windowHeight : windowWidth);
     scaled = shortAxis*scale;
     cnv = createCanvas(1.75*scaled, scaled);
     cnv.parent('noteCircle');
-    
+///////// SET UP TOOLTIPS
     mouseOverText = createDiv('');
     mouseOverText.parent('mouseOverText');
     mouseOverText.size(scaled*0.8);
     mouseOverText.style('font-family', 'Georgia');
     mouseOverText.style('font-size', (scale*1.9)+'em');
+///////// INITIALIZE
     createMenus();
     changeMode();
     
@@ -47,7 +49,7 @@ function draw(){
     translate(scaled/2, scaled/2);
     rotate(-PI/2);
     createNoteCircle();
-///////// CREATE PATTERNS
+///////// CREATE MODE PATTERNS
     if(majorMinorOther == 0)
         createMajorModeCircle();
     else if(majorMinorOther == 1)
@@ -60,8 +62,9 @@ function draw(){
         createDoubleHarmonicModeCircle();
     else if(majorMinorOther == 5)
         createOtherModeCircle();
-
+///////// HANDLE PLAYED NOTE HIGHLIGHT
     playedHighlight();
+
 ///////// LOAD IMAGES
     if(majorMinorOther == 5){
         if(showImg){
