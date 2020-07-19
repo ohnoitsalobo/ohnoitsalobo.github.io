@@ -87,7 +87,8 @@ function draw(){
         if (played != _t){
             let x = _t < 8 ? _t : 16-_t;
             console.log(x);
-            if(majorMinorOther == 1 && ( _t == 9 || _t == 10 ))
+    ///// correct tones for melodic minor descending
+            if((majorMinorOther == 1 && currentlySelectedMode == 0) && ( _t == 9 || _t == 10 ))
                 playTone(modeCheck(x)-1);
             else
                 playTone(modeCheck(x));
