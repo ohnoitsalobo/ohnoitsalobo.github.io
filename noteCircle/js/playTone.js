@@ -640,11 +640,11 @@ function mouseReleased(){
             "In relation to the root, this interval is variously known as:<br /><br />\
             <b><i>augmented fourth</i></b> (aug4, A4) or <b><i>sharp 4</i></b> (\u266F4)<br />\
             <b><i>diminished fifth</i></b> (dim5, d5), or <b><i>flat 5</i></b> (\u266D5),<br />\
-            the <b><i>tritone</i></b>, or more dramatically the <b><i>devil's interval</i></b>.<br /><br />\
+            the <b><i>tritone</i></b>, or more dramatically,<br />the <b><i>devil's interval</i></b>.<br /><br />\
             <button onclick=\"playTones(0, 6);\">Click here to hear the devil's interval.</button><br /><br />\
             <small>The tritone is 6 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you ... the same interval!<br /><br />\
-            There is a lot of interesting history behind this one interval, but suffice it to say that 'traditional' composers were often very reluctant, or outright refused, to use the 'tritone' interval as a basis in their compositions, due to its perceived dissonance.</small>"
+            There is a lot of interesting history behind this one interval, but suffice it to say that 'traditional' composers were often very reluctant (or outright refused, for example in church music) to use the 'tritone' interval as a theme in their compositions, due to its perceived dissonance.</small>"
         );
     }
     xpos = 0.31*scaled;
