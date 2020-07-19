@@ -1,4 +1,4 @@
-let mouseOver = "Tap the mode name to hear what it sounds like.<br />\
+let mouseOver = "Tap the mode name to hear what it sounds like.<br /><br />\
 On computer, use the numbers 1-8 to play different notes of the scale.<br />\
 Press  <i>Shift</i> + number to hear the chord corresponding to that scale degree i.e. the \u2160 chord, the \u2162 chord, the \u2165 chord, etc  .";
 
