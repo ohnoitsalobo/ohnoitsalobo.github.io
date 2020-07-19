@@ -81,12 +81,16 @@ function draw(){
             showImg = true;
         }
     }
-        
+///////// AUTO-PLAY SCALE
     if(majorMinorOther != 5 && autoplay > 0){
         let _t = (floor((millis()-autoplay)/225)%16)+1;
         if (played != _t){
-            console.log((_t < 8 ? _t : 16-_t))
-            playTone(modeCheck((_t < 8 ? _t : 16-_t)));
+            let x = _t < 8 ? _t : 16-_t;
+            console.log(x);
+            if(majorMinorOther == 1 && ( _t == 9 || _t == 10 ))
+                playTone(modeCheck(x)-1);
+            else
+                playTone(modeCheck(x));
             played = _t;
         }
         if(_t == 15)

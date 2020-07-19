@@ -763,9 +763,8 @@ function changeMode(){
     else if(choice == modeList[5]) majorMinorOther = 5;
     let txt;
     if     (majorMinorOther == 0) { txt = "<b><i>Major (Ionian)</i></b> <br /><br />\
-        The major scale on a given root note is defined by the pattern R, 2, 2, 1, 2, 2, 2, 1 showing how many semitones to progress (commonly shown by pressing all the white keys on a piano to play the scale of C major).<br />\
-        The <i>natural</i> minor (Aeolian) scale in any key is the 6th mode based on the Ionian 'pattern'.<br />\
-        The <i>relative minor</i> scale of any key uses the <i>same</i> notes, but the 6th note is the root.";  }
+        The major scale on a given root note is defined by the pattern R, 2, 2, 1, 2, 2, 2, 1 showing how many semitones to progress around the circle.<br />\
+        The <i>relative minor</i> scale of any key uses the <i>same</i> notes as the major scale, but uses the 6th note as the root instead.";  }
     else if(majorMinorOther == 1) { txt = "<b><i>Melodic minor</i></b> <br /><br />\
         The melodic minor is simply the major scale with the 3rd note lower by one half-step (minor 3rd vs major 3rd). As its name suggests, composers often prefer its sound when creating melodies. The melodic minor is also equivalent to taking the 6th note of the harmonic minor and raising it by a half-step, to avoid the 3-semitone leap between the 6th and 7th notes of the harmonic minor scale. Interestingly, though, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the natural minor scale.";   }
     else if(majorMinorOther == 2) { txt = "<b><i>Harmonic minor</i></b> <br /><br />\
