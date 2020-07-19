@@ -764,15 +764,15 @@ function changeMode(){
     let txt;
     if     (majorMinorOther == 0) { txt = "<b><i>Major (Ionian)</i></b> <br /><br />\
         The major scale on a given root note is defined by the pattern R, 2, 2, 1, 2, 2, 2, 1 showing how many semitones to progress around the circle.<br />\
-        The <i>relative minor</i> scale of any key uses the <i>same</i> notes as the major scale, but uses the 6th note as the root instead.";  }
+        The <i>relative minor</i> scale of any key uses the <i>same</i> notes as the major scale, but uses the 6th note as the root instead.<br /><br />" + mouseOver;  }
     else if(majorMinorOther == 1) { txt = "<b><i>Melodic minor</i></b> <br /><br />\
-        The melodic minor is simply the major scale with the 3rd note lower by one half-step (minor 3rd vs major 3rd). As its name suggests, composers often prefer its sound when creating melodies. The melodic minor is also equivalent to taking the 6th note of the harmonic minor and raising it by a half-step, to avoid the 3-semitone leap between the 6th and 7th notes of the harmonic minor scale. Interestingly, though, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the natural minor scale.";   }
+        The melodic minor is simply the major scale with the 3rd note lower by one half-step (minor 3rd vs major 3rd). As its name suggests, composers often prefer its sound when creating melodies. The melodic minor is also equivalent to taking the 6th note of the harmonic minor and raising it by a half-step, to avoid the 3-semitone leap between the 6th and 7th notes of the harmonic minor scale. Interestingly, though, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the natural minor scale.<br /><br />" + mouseOver;   }
     else if(majorMinorOther == 2) { txt = "<b><i>Harmonic minor</i></b> <br /><br />\
-        The harmonic minor is a modification of the natural minor (Aeolian mode). As its name suggests, its sound is often preferred for creating harmonies. The harmonic minor is created by taking the 7th note of the natural minor scale and raising it a half-step, to create a stronger feeling of tension and release with the root / octave.";  }
+        The harmonic minor is a modification of the natural minor (Aeolian mode). As its name suggests, its sound is often preferred for creating harmonies. The harmonic minor is created by taking the 7th note of the natural minor scale and raising it a half-step, to create a stronger feeling of tension and release with the root / octave.<br /><br />" + mouseOver;  }
     else if(majorMinorOther == 3) { txt = "<b><i>Harmonic major</i></b> <br /><br />\
-        The harmonic major is a 'constructed' scale that is used in a few old compositions but is most common in jazz. It is created by raising the 3rd note of the harmonic minor scale and raising it by a half-step.";  }
+        The harmonic major is a 'constructed' scale that is used in a few old compositions but is most common in jazz. It is created by raising the 3rd note of the harmonic minor scale and raising it by a half-step.<br /><br />" + mouseOver;  }
     else if(majorMinorOther == 4) { txt = "<b><i>Double harmonic</i></b> <br /><br />\
-        The double harmonic scale is a scale that is generally unfamiliar in Western music. It is also known as the <i>Byzantine scale</i> or <i>Gypsy major</i> and resembles some Arabic scales."; }
+        The double harmonic scale is a scale that is generally unfamiliar in Western music. It is also known as the <i>Byzantine scale</i> or <i>Gypsy major</i> and resembles some Arabic scales.<br /><br />" + mouseOver; }
     else if(majorMinorOther == 5) { txt = "<b><i>Other scales</i></b> <br /><br />\
         Explore other scales by clicking the highlighted notes.<br />These do not auto-play or have keyboard keys assigned yet."; }
     mouseOverText.html(txt);
@@ -815,7 +815,7 @@ function changeMajorMode(){
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    mouseOverText.html(mouseOver);
+    // mouseOverText.html(mouseOver);
 }
 function changeMajorModeMouse(event){
     var choice = majorModeSelect.value();
@@ -847,7 +847,7 @@ function changeMelodicMinorMode(){
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    mouseOverText.html(mouseOver);
+    // mouseOverText.html(mouseOver);
 }
 function changeMelodicMinorModeMouse(event){
     var choice = melodicMinorModeSelect.value();
@@ -879,7 +879,7 @@ function changeHarmonicMinorMode(){
     melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    mouseOverText.html(mouseOver);
+    // mouseOverText.html(mouseOver);
 }
 function changeHarmonicMinorModeMouse(event){
     var choice = harmonicMinorModeSelect.value();
@@ -912,7 +912,7 @@ function changeHarmonicMajorMode(){
     melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    mouseOverText.html(mouseOver);
+    // mouseOverText.html(mouseOver);
 }
 function changeHarmonicMajorModeMouse(event){
     var choice = harmonicMajorModeSelect.value();
@@ -944,7 +944,7 @@ function changeDoubleHarmonicMode(){
     melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
     harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
-    mouseOverText.html(mouseOver);
+    // mouseOverText.html(mouseOver);
 }
 function changeDoubleHarmonicModeMouse(event){
     var choice = doubleHarmonicModeSelect.value();
