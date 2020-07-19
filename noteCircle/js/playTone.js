@@ -654,6 +654,15 @@ function mouseReleased(){
         keySelect.selected(keyList[(keyIndex + 11)%12]);
         changeKey();
     }
+    ypos  = 0.3*scaled;
+    if(mouseX>xpos-offset && mouseX<xpos+offset &&
+       mouseY>ypos-offset && mouseY<ypos+offset){
+        mouseOverText.html(
+            "<b><i>Key</i></b>, <b><i>root</i></b>, or <b><i>tonic</i></b> are all commonly used to refer to the 'central' note of any scale - the note (or chord) which feels most like 'home' in any given arrangement of notes.<br /><br />\
+            Most common Western-based music today is based on 12 equal divisions of the scale, known as <i>12-tone equal temperament</i>, and that is the system that I am using in this app.\
+            Each step on the 12 notes is called a <i>semitone</i> or <i>half-step</i>. Moving two steps at a time is called a <i>whole tone</i> or <i>full step</i>. Scales and modes are just different arrangements of tones and semitones."
+        );
+    }
     if(showOverlay){
         ////// CHANGE PATTERN
         xpos  = 1.55*scaled;
@@ -670,6 +679,11 @@ function mouseReleased(){
             majorMinorOther = (majorMinorOther + 1)%6;
             modeSelect.selected(modeList[majorMinorOther]);
             changeMode();
+        }
+        ypos  = 0.3*scaled;
+        if(mouseX>xpos-offset && mouseX<xpos+offset &&
+           mouseY>ypos-offset && mouseY<ypos+offset){
+            mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
         }
         
         xpos  = 1.35*scaled;
@@ -819,7 +833,7 @@ function mouseReleased(){
        mouseY>ypos-offset && mouseY<ypos+offset){
         if(majorMinorOther != 5){
             autoplay = millis();
-            // mouseOverText.html(mouseOver);
+            mouseOverText.html(allModesText[majorMinorOther][currentlySelectedMode]);
         }
     }
 ////// SHOW / HIDE TIPS

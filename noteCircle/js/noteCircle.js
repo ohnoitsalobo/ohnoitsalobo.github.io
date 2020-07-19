@@ -105,8 +105,8 @@ function draw(){
         if(fillalpha > 0   && !showOverlay) fillalpha = lerp(fillalpha, 0  , 0.1);
     }
 ///////// STOP RENDERING IF NO INTERACTION
-    if(interacted > 0){
-        if(frameCount - interacted > 50){
+    if(frameCount > 100 && interacted > 0){
+        if(frameCount - interacted > 40){
             interacted = 0;
             noLoop();
         }

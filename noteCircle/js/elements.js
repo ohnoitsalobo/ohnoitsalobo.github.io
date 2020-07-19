@@ -121,9 +121,9 @@ function createNoteCircle(){
         else
             text("Base pattern:\n" + modeList[majorMinorOther], xpos/0.62, ypos);
         fill(0, 0, 100); textSize(Size*0.65); 
-        text("Cheat sheet for scales and modes", 0.8*scaled, -0.45*scaled);
-        fill(0); textSize(Size*0.3);
-        text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*scaled, -0.375*scaled);
+        text("Cheat sheet for scales and modes", 0.8*scaled, -0.47*scaled);
+        fill(0); textSize(Size*0.35);
+        text("Click/tap the arrows or use the mouse scroll wheel to\nexplore various keys and patterns", 0.85*scaled, -0.39*scaled);
         textSize(Size*0.36);
         textAlign(LEFT, TOP); 
         text("Tap here to hide/show\nthe pattern\noverlay", -0.5*scaled, -0.49*scaled);
@@ -141,7 +141,10 @@ function createNoteCircle(){
         textAlign(CENTER, CENTER);
         textSize(Size*0.4); 
         if(majorMinorOther!=5) {
-            text("To hear the highlighted scale:\n- Tap the notes on the circle\n- Use keyboard number keys\n- Tap the mode name above", 0.85*scaled, 0.4*scaled);
+            if(showTips)
+                text("Tap different elements to\nread about them in\nthe box to the right.", 0.85*scaled, 0.4*scaled);
+            else
+                text("To hear the highlighted scale:\n- Tap the notes on the circle\n- Use keyboard number keys\n- Tap the mode name above", 0.85*scaled, 0.4*scaled);
             if(showOverlay){
                 if(!lockNotes){
                     fill(0, fillalpha);
@@ -153,8 +156,8 @@ function createNoteCircle(){
             }
             textSize(Size*0.35);
         }
-        else 
-            text("To hear these alterative scales,\ntap the highlighted note names.", 0.85*scaled, 0.4*scaled);
+        // else 
+            // text("To hear these alterative scales,\ntap the highlighted note names.", 0.85*scaled, 0.4*scaled);
         stroke(255); strokeWeight(5*scale);
         line(xpos, ypos-1.2*Size, xpos+0.6*Size, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-0.6*Size, ypos-Size);
@@ -752,6 +755,10 @@ function createMenus(){
     otherModeSelect.hide();
 }
 
+let mouseOver = "Tap the mode name to hear what it sounds like.<br />\
+On computer, use the numbers 1-8 to play different notes of the scale.<br />\
+Press  <i>Shift</i> + number to hear the chord corresponding to that scale degree i.e. the I chord, the III chord, the VI chord, etc  .";
+
 function changeMode(){
     showImg = false;
     var choice = modeSelect.value();
@@ -761,22 +768,7 @@ function changeMode(){
     else if(choice == modeList[3]) majorMinorOther = 3;
     else if(choice == modeList[4]) majorMinorOther = 4;
     else if(choice == modeList[5]) majorMinorOther = 5;
-    let txt;
-    if     (majorMinorOther == 0) { txt = "<b><i>Major (Ionian)</i></b> <br /><br />\
-        The major scale on a given root note is defined by the pattern R, 2, 2, 1, 2, 2, 2, 1 showing how many semitones to progress around the circle.<br />\
-        The <i>relative minor</i> scale of any key uses the <i>same</i> notes as the major scale, but uses the 6th note as the root instead.<br /><br />" + mouseOver;  }
-    else if(majorMinorOther == 1) { txt = "<b><i>Melodic minor</i></b> <br /><br />\
-        The melodic minor is simply the major scale with the 3rd note lower by one half-step (minor 3rd vs major 3rd). As its name suggests, composers often prefer its sound when creating melodies. The melodic minor is also equivalent to taking the 6th note of the harmonic minor and raising it by a half-step, to avoid the 3-semitone leap between the 6th and 7th notes of the harmonic minor scale. Interestingly, though, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the natural minor scale.<br /><br />" + mouseOver;   }
-    else if(majorMinorOther == 2) { txt = "<b><i>Harmonic minor</i></b> <br /><br />\
-        The harmonic minor is a modification of the natural minor (Aeolian mode). As its name suggests, its sound is often preferred for creating harmonies. The harmonic minor is created by taking the 7th note of the natural minor scale and raising it a half-step, to create a stronger feeling of tension and release with the root / octave.<br /><br />" + mouseOver;  }
-    else if(majorMinorOther == 3) { txt = "<b><i>Harmonic major</i></b> <br /><br />\
-        The harmonic major is a 'constructed' scale that is used in a few old compositions but is most common in jazz. It is created by raising the 3rd note of the harmonic minor scale and raising it by a half-step.<br /><br />" + mouseOver;  }
-    else if(majorMinorOther == 4) { txt = "<b><i>Double harmonic</i></b> <br /><br />\
-        The double harmonic scale is a scale that is generally unfamiliar in Western music. It is also known as the <i>Byzantine scale</i> or <i>Gypsy major</i> and resembles some Arabic scales.<br /><br />" + mouseOver; }
-    else if(majorMinorOther == 5) { txt = "<b><i>Other scales</i></b> <br /><br />\
-        Explore other scales by clicking the highlighted notes.<br />These do not auto-play or have keyboard keys assigned yet."; }
-    mouseOverText.html(txt);
-    // var choice = modeSelect.value();
+    mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
     // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
     // if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
     // if(choice == modeList[2]) { majorMinorOther = 2; harmonicMinorModeSelect.show(); }
@@ -795,10 +787,6 @@ function changeModeMouse(event){
     if (event.deltaY < 0) modeSelect.selected(modeList[(i+5)%6]);
     changeMode();
 }
-
-let mouseOver = "Tap the mode name to hear what it sounds like.<br />\
-On computer, use the numbers 1-8 to play different notes of the scale.<br />\
-Press  <i>Shift</i> + number to hear the chord corresponding to that number.";
 
 function changeMajorMode(){
     showImg = false;
