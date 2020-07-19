@@ -833,7 +833,7 @@ function mouseReleased(){
        mouseY>ypos-offset && mouseY<ypos+offset){
         if(majorMinorOther != 5){
             autoplay = millis();
-            mouseOverText.html(allModesText[majorMinorOther][currentlySelectedMode]);
+            commonFunction();
         }
     }
 ////// SHOW / HIDE TIPS

@@ -61,20 +61,14 @@ function draw(){
     playedHighlight();
 
 ///////// LOAD IMAGES
-    if(majorMinorOther == 5){
-        if(showImg){
-            img1.hide();
-            img2.hide();
-            showImg = false;
+    if(majorMinorOther != 5){
+        document.getElementById("img").style.display = "block";
+        if(!showImg){
+            drawNotes();
         }
     }
     else {
-        if(!showImg){
-            img1.show();
-            img2.show();
-            drawNotes();
-            showImg = true;
-        }
+        document.getElementById("img").style.display = "none";
     }
 ///////// AUTO-PLAY SCALE
     if(majorMinorOther != 5 && autoplay > 0){

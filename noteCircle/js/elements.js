@@ -57,8 +57,8 @@ function drawNotes(){
     else if(index == 6 ) offset = 14;
     else if(index == 8 ) offset = 15;
     else if(index == 10) offset = 16;
-    let alt1 = "Key: " + keySharpList[notesAreLocked()] + "\nMode: " + (currentlySelectedMode+1) + "\nPattern: " + modeList[majorMinorOther]; // "Notation image 1";
-    let alt2 = "Key: " + keyFlatList [notesAreLocked()] + "\nMode: " + (currentlySelectedMode+1) + "\nPattern: " + modeList[majorMinorOther]; // "Notation image 2";
+    let alt1 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keySharpList[notesAreLocked()] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 1";
+    let alt2 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keyFlatList [notesAreLocked()] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 2";
     if     (majorMinorOther == 0){
         img1 = createImg(majorScale[index*7+currentlySelectedMode], alt1);
         if(offset > 0) 
@@ -90,6 +90,7 @@ function drawNotes(){
         img2.parent('img2');
         img2.elt.title = alt2;
     }
+    showImg = true;
 }
 /*  */
 
@@ -757,10 +758,9 @@ function createMenus(){
 
 let mouseOver = "Tap the mode name to hear what it sounds like.<br />\
 On computer, use the numbers 1-8 to play different notes of the scale.<br />\
-Press  <i>Shift</i> + number to hear the chord corresponding to that scale degree i.e. the I chord, the III chord, the VI chord, etc  .";
+Press  <i>Shift</i> + number to hear the chord corresponding to that scale degree i.e. the \u2160 chord, the \u2162 chord, the \u2165 chord, etc  .";
 
 function changeMode(){
-    showImg = false;
     var choice = modeSelect.value();
     if     (choice == modeList[0]) majorMinorOther = 0;
     else if(choice == modeList[1]) majorMinorOther = 1;
@@ -768,7 +768,7 @@ function changeMode(){
     else if(choice == modeList[3]) majorMinorOther = 3;
     else if(choice == modeList[4]) majorMinorOther = 4;
     else if(choice == modeList[5]) majorMinorOther = 5;
-    mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
+    commonFunction();
     // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
     // if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
     // if(choice == modeList[2]) { majorMinorOther = 2; harmonicMinorModeSelect.show(); }
@@ -789,7 +789,6 @@ function changeModeMouse(event){
 }
 
 function changeMajorMode(){
-    showImg = false;
     var choice = majorModeSelect.value();
     if(choice == majorModeList[0] && majorModeIndex == 11)
         majorRotation -= 2*PI;
@@ -802,11 +801,7 @@ function changeMajorMode(){
     else if(choice == majorModeList[4]) { majorModeIndex = 7 ; melodicMinorModeIndex = 7 ; harmonicMinorModeIndex = 7 ; harmonicMajorModeIndex = 7 ; doubleHarmonicModeIndex = 7 ; currentlySelectedMode = 4; }
     else if(choice == majorModeList[5]) { majorModeIndex = 9 ; melodicMinorModeIndex = 9 ; harmonicMinorModeIndex = 8 ; harmonicMajorModeIndex = 8 ; doubleHarmonicModeIndex = 8 ; currentlySelectedMode = 5; }
     else if(choice == majorModeList[6]) { majorModeIndex = 11; melodicMinorModeIndex = 11; harmonicMinorModeIndex = 11; harmonicMajorModeIndex = 11; doubleHarmonicModeIndex = 11; currentlySelectedMode = 6; }
-    melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
-    harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
-    harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
-    doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    // mouseOverText.html(mouseOver);
+    commonFunction();
 }
 function changeMajorModeMouse(event){
     var choice = majorModeSelect.value();
@@ -821,7 +816,6 @@ function changeMajorModeMouse(event){
 }
 
 function changeMelodicMinorMode(){
-    showImg = false;
     var choice = melodicMinorModeSelect.value();
     if(choice == melodicMinorModeList[0 ] && melodicMinorModeIndex == 11)
         melodicMinorRotation -= 2*PI;
@@ -834,11 +828,7 @@ function changeMelodicMinorMode(){
     else if(choice == melodicMinorModeList[4]) { melodicMinorModeIndex = 7 ; majorModeIndex = 7 ; harmonicMinorModeIndex = 7 ; harmonicMajorModeIndex = 7 ; doubleHarmonicModeIndex = 7 ; currentlySelectedMode = 4; }
     else if(choice == melodicMinorModeList[5]) { melodicMinorModeIndex = 9 ; majorModeIndex = 9 ; harmonicMinorModeIndex = 8 ; harmonicMajorModeIndex = 8 ; doubleHarmonicModeIndex = 8 ; currentlySelectedMode = 5; }
     else if(choice == melodicMinorModeList[6]) { melodicMinorModeIndex = 11; majorModeIndex = 11; harmonicMinorModeIndex = 11; harmonicMajorModeIndex = 11; doubleHarmonicModeIndex = 11; currentlySelectedMode = 6; }
-    majorModeSelect.selected(majorModeList[currentlySelectedMode]);
-    harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
-    harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
-    doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    // mouseOverText.html(mouseOver);
+    commonFunction();
 }
 function changeMelodicMinorModeMouse(event){
     var choice = melodicMinorModeSelect.value();
@@ -853,7 +843,6 @@ function changeMelodicMinorModeMouse(event){
 }
 
 function changeHarmonicMinorMode(){
-    showImg = false;
     var choice = harmonicMinorModeSelect.value();
     if(choice == harmonicMinorModeList[0 ] && harmonicMinorModeIndex == 11)
         harmonicMinorRotation -= 2*PI;
@@ -866,11 +855,7 @@ function changeHarmonicMinorMode(){
     else if(choice == harmonicMinorModeList[4]) { harmonicMinorModeIndex = 7 ; majorModeIndex = 7 ; melodicMinorModeIndex = 7 ; harmonicMajorModeIndex = 7 ; doubleHarmonicModeIndex = 7 ; currentlySelectedMode = 4; }
     else if(choice == harmonicMinorModeList[5]) { harmonicMinorModeIndex = 8 ; majorModeIndex = 9 ; melodicMinorModeIndex = 9 ; harmonicMajorModeIndex = 8 ; doubleHarmonicModeIndex = 8 ; currentlySelectedMode = 5; }
     else if(choice == harmonicMinorModeList[6]) { harmonicMinorModeIndex = 11; majorModeIndex = 11; melodicMinorModeIndex = 11; harmonicMajorModeIndex = 11; doubleHarmonicModeIndex = 11; currentlySelectedMode = 6; }
-    majorModeSelect.selected(majorModeList[currentlySelectedMode]);
-    melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
-    harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
-    doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    // mouseOverText.html(mouseOver);
+    commonFunction();
 }
 function changeHarmonicMinorModeMouse(event){
     var choice = harmonicMinorModeSelect.value();
@@ -885,7 +870,6 @@ function changeHarmonicMinorModeMouse(event){
 }
 
 function changeHarmonicMajorMode(){
-    showImg = false;
     var choice = harmonicMajorModeSelect.value();
     if(choice == harmonicMajorModeList[0] && harmonicMajorModeIndex == 11)
         harmonicMajorRotation -= 2*PI;
@@ -899,11 +883,7 @@ function changeHarmonicMajorMode(){
     else if(choice == harmonicMajorModeList[4]) { harmonicMajorModeIndex = 7 ; majorModeIndex = 7 ; melodicMinorModeIndex = 7 ; harmonicMinorModeIndex = 7 ; doubleHarmonicModeIndex = 7 ; currentlySelectedMode = 4; }
     else if(choice == harmonicMajorModeList[5]) { harmonicMajorModeIndex = 8 ; majorModeIndex = 9 ; melodicMinorModeIndex = 9 ; harmonicMinorModeIndex = 8 ; doubleHarmonicModeIndex = 8 ; currentlySelectedMode = 5; }
     else if(choice == harmonicMajorModeList[6]) { harmonicMajorModeIndex = 11; majorModeIndex = 11; melodicMinorModeIndex = 11; harmonicMinorModeIndex = 11; doubleHarmonicModeIndex = 11; currentlySelectedMode = 6; }
-    majorModeSelect.selected(majorModeList[currentlySelectedMode]);
-    melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
-    harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
-    doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
-    // mouseOverText.html(mouseOver);
+    commonFunction();
 }
 function changeHarmonicMajorModeMouse(event){
     var choice = harmonicMajorModeSelect.value();
@@ -918,7 +898,6 @@ function changeHarmonicMajorModeMouse(event){
 }
 
 function changeDoubleHarmonicMode(){
-    showImg = false;
     var choice = doubleHarmonicModeSelect.value();
     if(choice == doubleHarmonicModeList[0 ] && doubleHarmonicModeIndex == 11)
         doubleHarmonicRotation -= 2*PI;
@@ -931,10 +910,7 @@ function changeDoubleHarmonicMode(){
     else if(choice == doubleHarmonicModeList[4]) { doubleHarmonicModeIndex = 7 ; majorModeIndex = 7 ; melodicMinorModeIndex = 7 ; harmonicMinorModeIndex = 7 ; harmonicMajorModeIndex = 7 ; currentlySelectedMode = 4; }
     else if(choice == doubleHarmonicModeList[5]) { doubleHarmonicModeIndex = 8 ; majorModeIndex = 9 ; melodicMinorModeIndex = 9 ; harmonicMinorModeIndex = 8 ; harmonicMajorModeIndex = 8 ; currentlySelectedMode = 5; }
     else if(choice == doubleHarmonicModeList[6]) { doubleHarmonicModeIndex = 11; majorModeIndex = 11; melodicMinorModeIndex = 11; harmonicMinorModeIndex = 11; harmonicMajorModeIndex = 11; currentlySelectedMode = 6; }
-    majorModeSelect.selected(majorModeList[currentlySelectedMode]);
-    melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
-    harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
-    harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
+    commonFunction();
     // mouseOverText.html(mouseOver);
 }
 function changeDoubleHarmonicModeMouse(event){
@@ -1031,4 +1007,16 @@ function notesAreLocked(){
         _rotation = keyIndex;
     keySelect.selected(_rotation%12);
     return _rotation%12;
+}
+
+function commonFunction(){
+    majorModeSelect.selected(majorModeList[currentlySelectedMode]);
+    melodicMinorModeSelect.selected(melodicMinorModeList[currentlySelectedMode]);
+    harmonicMinorModeSelect.selected(harmonicMinorModeList[currentlySelectedMode]);
+    harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
+    doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
+    
+    mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
+    
+    showImg = false;
 }

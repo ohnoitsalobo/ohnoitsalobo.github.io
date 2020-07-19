@@ -1,4 +1,4 @@
-var modeText = [
+let modeText = [
 "<b><i>Major (Ionian)</i></b><br /><br />\
         The major scale on a given root note is defined by the pattern R, 2, 2, 1, 2, 2, 2, 1 showing how many semitones to progress around the circle.<br />\
         The <i>relative minor</i> scale of any key uses the <i>same</i> notes as the major scale, but uses the 6th note as the root instead.<br /><br />",
@@ -19,7 +19,7 @@ var modeText = [
         Explore other scales by clicking the highlighted notes.<br />These do not auto-play or have keyboard keys assigned yet."
 ];
 
-var majorText = [
+let majorText = [
 "<b><i>Ionian</i></b> - the first mode of the major ",
 "",
 "",
@@ -29,7 +29,7 @@ var majorText = [
 ""
 ];
 
-var melodicMinorText = [
+let melodicMinorText = [
 "",
 "",
 "",
@@ -39,7 +39,7 @@ var melodicMinorText = [
 ""
 ];
 
-var harmonicMinorText = [
+let harmonicMinorText = [
 "",
 "",
 "",
@@ -49,7 +49,7 @@ var harmonicMinorText = [
 ""
 ];
 
-var harmonicMajorText = [
+let harmonicMajorText = [
 "",
 "",
 "",
@@ -59,7 +59,7 @@ var harmonicMajorText = [
 ""
 ];
 
-var doubleHarmonicText = [
+let doubleHarmonicText = [
 "",
 "",
 "",
@@ -69,11 +69,11 @@ var doubleHarmonicText = [
 ""
 ];
 
-var otherModesText = [
+let otherModesText = [
 
 ];
 
-var allModesText = [
+let allModesText = [
 // majorText,
 // melodicMinorText,
 // harmonicMinorText,
@@ -86,7 +86,7 @@ harmonicMajorModeList,
 doubleHarmonicModeList
 ];
 
-var keyText = [
+let keyText = [
 "The <b><i>root</i></b> is the 'home' note of any given scale, also known as <i>tonic</i>, or <i>key</i>. The name <i>root</i> is also commonly used to refer to the chord that is built by playing this first note along with the 3rd and 5th note of the scale - the 'root chord' or 'root triad'.<br />\
             This interval is called a <b><i>unison</i></b> (1) interval, and in certain contexts it is also called a <b><i>diminished second</i></b> (d2).<br /><br />\
             <button onclick=\"playTone(0);\">Click here to hear the interval.</button>",
