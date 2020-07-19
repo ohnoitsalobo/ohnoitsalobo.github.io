@@ -39,11 +39,6 @@ function draw(){
     if(keyIndex < 0) keyIndex += 12;
     if(majorModeIndex < 0) majorModeIndex += 12;
     if(melodicMinorModeIndex < 0) melodicMinorModeIndex += 12;
-///////// CONTROL FADE IN / OUT
-    if(frameCount > 50){
-        if(fillalpha < 255 &&  showOverlay) fillalpha = lerp(fillalpha, 255, 0.1);
-        if(fillalpha > 0   && !showOverlay) fillalpha = lerp(fillalpha, 0  , 0.1);
-    }
     
     background(fillcolor*0.9, 200);
     translate(scaled/2, scaled/2);
@@ -86,13 +81,14 @@ function draw(){
         let _t = (floor((millis()-autoplay)/225)%16)+1;
         if (played != _t){
             let x = _t < 8 ? _t : 16-_t;
-            console.log(x);
-    ///// correct tones for melodic minor descending
+            // console.log(x);
+///// correct tones for melodic minor descending
             if((majorMinorOther == 1 && currentlySelectedMode == 0) && ( _t == 9 || _t == 10 ))
                 playTone(modeCheck(x)-1);
             else
                 playTone(modeCheck(x));
             played = _t;
+            interacted = frameCount;
         }
         if(_t == 15)
             autoplay = 0;
@@ -102,6 +98,19 @@ function draw(){
     ellipse(0, 1.25*scaled, Size*2, Size*2);
     fill(255, 150);
     text(showTips ? ("Hide tips") : ("Show tips"), 0, 1.23*scaled)
+
+///////// CONTROL FADE IN / OUT
+    if(frameCount > 50){
+        if(fillalpha < 255 &&  showOverlay) fillalpha = lerp(fillalpha, 255, 0.1);
+        if(fillalpha > 0   && !showOverlay) fillalpha = lerp(fillalpha, 0  , 0.1);
+    }
+///////// STOP RENDERING IF NO INTERACTION
+    if(interacted > 0){
+        if(frameCount - interacted > 50){
+            interacted = 0;
+            noLoop();
+        }
+    }
 }
 
 function playedHighlight(){

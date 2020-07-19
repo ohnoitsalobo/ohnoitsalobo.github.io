@@ -23,7 +23,7 @@ let pianoColors = 1;
 let majorMinorOther = 0;
 let showEnharmonic = 0;
 let showOverlay = 1;
-
+let interacted = 1;
 
 // \u266D    flat   
 // \u266E    natural

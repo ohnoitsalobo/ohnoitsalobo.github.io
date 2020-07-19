@@ -796,7 +796,10 @@ function changeModeMouse(event){
     changeMode();
 }
 
-let mouseOver = "Tap the mode name to hear what it sounds like.<br />On computer, try playing multiple numbers together at a time to build up chords you may have heard of such as the <i>II chord</i>, <i>V chord</i>, <i>VI chord</i> etc";
+let mouseOver = "Tap the mode name to hear what it sounds like.<br />\
+On computer, use the numbers 1-8 to play different notes of the scale.<br />\
+Press  <i>Shift</i> + number to hear the chord corresponding to that number.";
+
 function changeMajorMode(){
     showImg = false;
     var choice = majorModeSelect.value();
