@@ -63,20 +63,18 @@ function draw(){
 ///////// LOAD IMAGES
     if(majorMinorOther != 5){
         document.getElementById("img").style.display = "block";
-        if(!showImg){
+        if(!showImg)
             drawNotes();
-        }
     }
-    else {
+    else 
         document.getElementById("img").style.display = "none";
-    }
+
 ///////// AUTO-PLAY SCALE
     if(majorMinorOther != 5 && autoplay > 0){
         let _t = (floor((millis()-autoplay)/225)%16)+1;
         if (played != _t){
             let x = _t < 8 ? _t : 16-_t;
-            // console.log(x);
-///// correct tones for melodic minor descending
+    ///// correct tones for melodic minor descending
             if((majorMinorOther == 1 && currentlySelectedMode == 0) && ( _t == 9 || _t == 10 ))
                 playTone(modeCheck(x)-1);
             else
@@ -87,6 +85,7 @@ function draw(){
         if(_t == 15)
             autoplay = 0;
     }
+    
 ///////// HIDE/SHOW TIPS
     fill(0, 150); noStroke();
     ellipse(0, 1.25*scaled, Size*2, Size*2);
@@ -98,6 +97,7 @@ function draw(){
         if(fillalpha < 255 &&  showOverlay) fillalpha = lerp(fillalpha, 255, 0.1);
         if(fillalpha > 0   && !showOverlay) fillalpha = lerp(fillalpha, 0  , 0.1);
     }
+    
 ///////// STOP RENDERING IF NO INTERACTION
     if(frameCount > 100 && interacted > 0){
         if(frameCount - interacted > 40){
