@@ -146,7 +146,7 @@ let keyText = [
             <button onclick=\"playTwo(0, 5);\">Click here to hear the P4 interval.</button><br /><br />\
             <small>Playing a triad with a P4 interval <i>instead</i> of a 3 creates what is known as a <u>suspended</u> (sus4) chord, which is neither major nor minor, but 'takes on the character' of chords that come before it.<br /><br />\
             <button onclick=\"playThree(0, 5, 7);\">Click here to hear a sus4 chord (1 4 5).</button><br /><br />\
-            The 4 can also be added to any other chord, an octave above, creating an <i>add13</i> chord.</small><br /><br />\
+            The 4 can also be added to any other chord, an octave above, creating an <i>add11</i> chord.</small><br /><br />\
             <small>The perfect fourth is 5 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>perfect fifth</i>.",
             // </small><br /><br />\
@@ -191,6 +191,7 @@ let keyText = [
             <button onclick=\"playFour(0, 3, 7, 9);\">Click here to hear a m6 chord (1 \u266D3 5 6).</button><br /><br />\
             <button onclick=\"playFour(0, 4, 7, 9);\">Click here to hear a 6 chord (1 3 5 6).</button><br /><br />\
             <button onclick=\"playFour(0, 3, 6, 9);\">Click here to hear a dim7 chord (1 \u266D3 \u266D5 6).</button><br /><br />\
+            The 6 can also be added to any other chord, an octave above, creating an <i>add13</i> chord.</small><br /><br />\
             <small>The major sixth is 9 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>minor third</i>.</small>",
             // <br /><br />\
