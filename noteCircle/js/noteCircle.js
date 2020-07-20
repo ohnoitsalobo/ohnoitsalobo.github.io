@@ -131,8 +131,8 @@ function playedHighlight(){
         }
     }
 ///////// SHOW SCALE NUMBERS
-    fill(255, fillalpha); stroke(0, fillalpha); strokeWeight(4);
-    textSize(0.4*Size);
+    fill(0, fillalpha); noStroke(); // stroke(255, fillalpha); strokeWeight(1);
+    textSize(0.5*Size);
     if(majorMinorOther != 5){
         for(var i = 1; i < 8; i++){
             let t = modeCheck(i);
@@ -140,7 +140,7 @@ function playedHighlight(){
                 push();
                     rotate(t*PI/6);
                     // translate(0.315*scaled, -0.62*Size);
-                    translate(0.2*scaled, 0);
+                    translate(0.26*scaled, 0);
                     rotate(-t*PI/6+PI/2);
                     text(i, 0, 0);
                 pop()
@@ -149,20 +149,20 @@ function playedHighlight(){
                     push();
                         rotate(t*PI/6);
                         // translate(0.315*scaled, -0.62*Size);
-                        translate(0.2*scaled, 0);
+                        translate(0.26*scaled, 0);
                         rotate(-t*PI/6+PI/2);
                         text(i, 0, 0);
                     pop()
                 }else{
                     push();
                         rotate(t*PI/6);
-                        translate(0.23*scaled, 0);
+                        translate(0.26*scaled, 0);
                         rotate(-t*PI/6+PI/2);
                         text(intervalName(0, t), 0, 0);
                     pop()
                     push();
                         rotate(t*PI/6);
-                        translate(0.18*scaled, 0);
+                        translate(0.21*scaled, 0);
                         rotate(-t*PI/6+PI/2);
                         text(intervalName(1, t), 0, 0);
                     pop()
@@ -187,7 +187,7 @@ function intervalName(x, i){
     if(x == 0){
              if(i == 1){ return "\u266D2"; }
         else if(i == 3){ return "\u266D3"; }
-        else if(i == 4){ return "\u266D4"; }
+        else if(i == 4){ return "3"; }
         else if(i == 5){ return "4"; }
         else if(i == 6){ return "\u266D5"; }
         else if(i == 8){ return "\u266D6"; }
@@ -195,7 +195,7 @@ function intervalName(x, i){
     }else{
              if(i == 1){ return "\u266F1"; }
         else if(i == 3){ return "\u266F2"; }
-        else if(i == 4){ return "3"; }
+        else if(i == 4){ return "\u266D4"; }
         else if(i == 5){ return "\u266F3"; }
         else if(i == 6){ return "\u266F4"; }
         else if(i == 8){ return "\u266F5"; }
