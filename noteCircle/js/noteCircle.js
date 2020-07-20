@@ -131,7 +131,6 @@ function playedHighlight(){
         }
     }
 ///////// SHOW SCALE NUMBERS
-    fill(0, fillalpha); noStroke(); // stroke(255, fillalpha); strokeWeight(1);
     textSize(0.5*Size);
     if(majorMinorOther != 5){
         for(var i = 1; i < 8; i++){
@@ -141,7 +140,10 @@ function playedHighlight(){
                     rotate(t*PI/6);
                     // translate(0.315*scaled, -0.62*Size);
                     translate(0.26*scaled, 0);
+                    noStroke(); fill(fillcolor, fillalpha);
+                    rect(0, 0, 0.7*Size, 0.7*Size);
                     rotate(-t*PI/6+PI/2);
+                    fill(0, fillalpha); 
                     text(i, 0, 0);
                 pop()
             }else{
@@ -150,20 +152,29 @@ function playedHighlight(){
                         rotate(t*PI/6);
                         // translate(0.315*scaled, -0.62*Size);
                         translate(0.26*scaled, 0);
+                        noStroke(); fill(fillcolor, fillalpha);
+                        rect(0, 0, 0.7*Size, 0.7*Size);
                         rotate(-t*PI/6+PI/2);
+                        fill(0, fillalpha); noStroke();
                         text(i, 0, 0);
                     pop()
                 }else{
                     push();
                         rotate(t*PI/6);
                         translate(0.26*scaled, 0);
+                        noStroke(); fill(fillcolor, fillalpha);
+                        rect(0, 0, 0.7*Size, 0.7*Size);
                         rotate(-t*PI/6+PI/2);
+                        fill(0, fillalpha); noStroke();
                         text(intervalName(0, t), 0, 0);
                     pop()
                     push();
                         rotate(t*PI/6);
                         translate(0.21*scaled, 0);
+                        noStroke(); fill(fillcolor, fillalpha);
+                        rect(0, 0, 0.7*Size, 0.7*Size);
                         rotate(-t*PI/6+PI/2);
+                        fill(0, fillalpha); noStroke();
                         text(intervalName(1, t), 0, 0);
                     pop()
                 }

@@ -218,7 +218,7 @@ function createNoteCircle(){
 
             if(pianoColors){
                 rotate(noteRotation[i]-currentNoteRotation-PI/2);
-                translate(0, 1.9*Size);
+                translate(0, 2.1*Size);
                 fill(255); noStroke();
                      if(i==0) { rect(0, 0, 0.5*Size, 1.3*Size); }
                 else if(i==2) { rect(0, 0, 0.5*Size, 1.3*Size); }
@@ -987,7 +987,7 @@ function changePianoMouse(event){
 
 function hideRect(){
     fill(fillcolor, fillalpha); noStroke();
-    rect(0, Size*1.6, 0.7*Size, 1.5*Size);
+    rect(0, Size*1.8, 0.7*Size, 1.5*Size);
 }
 
 function highlightRect(){
