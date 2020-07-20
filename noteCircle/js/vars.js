@@ -42,7 +42,7 @@ let keyFlatterList = [ "D\u{1D12B}", "D\u266D", "E\u{1D12B}", "E\u266D", "F\u266
 
 let modeSelect;
 let modeList = [
-"Diatonic (major)",
+"Major",
 "Melodic minor"   ,
 "Harmonic minor"  ,
 "Harmonic major"  ,
@@ -52,7 +52,7 @@ let modeList = [
 
 let majorModeSelect;
 let majorModeList = [                        //_0_1_2_3_4_5_6_
-"Mode: \u2160\nIonian (major)"           ,   // 0 2 4 5 7 9 11  q
+"Mode: \u2160\nIonian"                   ,   // 0 2 4 5 7 9 11  q
 "Mode: \u2161\nDorian"                   ,   // 0 2 3 5 7 9 10  w
 "Mode: \u2162\nPhrygian"                 ,   // 0 1 3 5 7 8 10  e
 "Mode: \u2163\nLydian"                   ,   // 0 2 4 6 7 9 11  r

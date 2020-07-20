@@ -213,7 +213,7 @@ let keyText = [
             <b><i>major seventh</i></b> (maj7, M7) or just <b>7</b>, or <br />\
             <b><i>diminished octave</i></b> (dim8, d8) or <b><i>flat 8</i></b> (\u266D8).<br /><br />\
             <button onclick=\"playTwo(0, 11);\">Click here to hear the M7 interval.</button><br /><br />\
-            <small>The minor seventh interval can be added to any other triad to create a 'compound' chord.</small><br /><br />\
+            <small>The major seventh interval can be added to any other triad to create a 'compound' chord.</small><br /><br />\
             <button onclick=\"playFour(0, 4, 7, 11);\">Click here to hear a M7 chord (1 3 5 7).</button><br /><br />\
             <button onclick=\"playFour(0, 3, 7, 11);\">Click here to hear a mM7 chord (1 \u266D3 5 7).</button><br /><br />\
             <button onclick=\"playFour(0, 5, 7, 11);\">Click here to hear a M7sus4 chord (1 4 5 7).</button><br /><br />\

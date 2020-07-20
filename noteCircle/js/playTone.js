@@ -48,7 +48,7 @@ function playTwo(a, b){
     playTone(b);
 }
 function playThree(a, b, c){
-    var now, delay = 25;
+    var now, delay = 10;
     now = millis();
     playTone(a);
     while(millis()-now < delay) { }
@@ -57,7 +57,7 @@ function playThree(a, b, c){
     playTone(c);
 }
 function playFour(a, b, c, d){
-    var now, delay = 25;
+    var now, delay = 10;
     now = millis();
     playTone(a);
     while(millis()-now < delay) { }
