@@ -110,8 +110,9 @@ let keyText = [
             <b><i>major second</i></b> (maj2, M2) or just <b>2</b>, or <br />\
             <b><i>diminished third</i></b> (dim3, d3).<br /><br />\
             <button onclick=\"playTwo(0, 2);\">Click here to hear the M2 interval.</button><br /><br />\
-            <small>Playing a triad with a M2 interval <i>instead</i> of a 3 creates what is known as a <u>suspended</u> (sus2) chord, which is neither major nor minor, but 'takes on the character' of chords that come before it.</small><br /><br />\
+            <small>Playing a triad with a M2 interval <i>instead</i> of a 3 creates what is known as a <u>suspended</u> (sus2) chord, which is neither major nor minor, but 'takes on the character' of chords that come before it.<br /><br />\
             <button onclick=\"playThree(0, 2, 7);\">Click here to hear a sus2 chord (1 2 5).</button><br /><br />\
+            The 2 can also be added to any other chord, an octave above, creating an <i>add9</i> chord.</small><br /><br />\
             <small>The major second is 2 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>minor seventh</i>.</small>",
             // <br /><br />\
@@ -143,8 +144,9 @@ let keyText = [
             <b><i>perfect fourth</i></b> (perf4, P4), or<br />\
             <b><i>augmented third</i></b> (aug3, A3) or <b><i>sharp 3</i></b> (\u266F3).<br /><br />\
             <button onclick=\"playTwo(0, 5);\">Click here to hear the P4 interval.</button><br /><br />\
-            <small>Playing a triad with a P4 interval <i>instead</i> of a 3 creates what is known as a <u>suspended</u> (sus4) chord, which is neither major nor minor, but 'takes on the character' of chords that come before it.</small><br /><br />\
+            <small>Playing a triad with a P4 interval <i>instead</i> of a 3 creates what is known as a <u>suspended</u> (sus4) chord, which is neither major nor minor, but 'takes on the character' of chords that come before it.<br /><br />\
             <button onclick=\"playThree(0, 5, 7);\">Click here to hear a sus4 chord (1 4 5).</button><br /><br />\
+            The 4 can also be added to any other chord, an octave above, creating an <i>add13</i> chord.</small><br /><br />\
             <small>The perfect fourth is 5 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>perfect fifth</i>.",
             // </small><br /><br />\

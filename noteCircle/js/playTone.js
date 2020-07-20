@@ -48,16 +48,20 @@ function playTwo(a, b){
     playTone(b);
 }
 function playThree(a, b, c){
-    var now, delay = 10;
+    var now, delay = 200;
     now = millis();
     playTone(a);
-    while(millis()-now < delay) { }
+    while(millis()-now < delay) { loop(); }
     playTone(b);
-    while(millis()-now < delay*2) { }
+    while(millis()-now < delay*2) { loop(); }
+    playTone(c);
+    while(millis()-now < delay*4) { loop(); }
+    playTone(a);
+    playTone(b);
     playTone(c);
 }
 function playFour(a, b, c, d){
-    var now, delay = 10;
+    var now, delay = 200;
     now = millis();
     playTone(a);
     while(millis()-now < delay) { }
@@ -65,6 +69,11 @@ function playFour(a, b, c, d){
     while(millis()-now < delay*2) { }
     playTone(c);
     while(millis()-now < delay*3) { }
+    playTone(d);
+    while(millis()-now < delay*5) { }
+    playTone(a);
+    playTone(b);
+    playTone(c);
     playTone(d);
 }
 function playTriad(a){
