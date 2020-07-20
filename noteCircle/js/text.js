@@ -1,113 +1,231 @@
-let mouseOver = "Tap the mode name to hear what it sounds like.<br /><br />\
+let mouseOver = "<br /><br /><small>Tap the mode name to hear what it sounds like.<br /><br />\
 On computer, use the numbers 1-8 to play different notes of the scale.<br />\
-Press  <i>Shift</i> + number to hear the chord corresponding to that scale degree i.e. the \u2160 chord, the \u2162 chord, the \u2165 chord, etc  .";
+Press  <i>Shift</i> + number to hear the chord corresponding to that scale degree i.e. the \u2160 chord, the \u2162 chord, the \u2165 chord, etc.</small>";
 
 let modeText = [
 "<b><i>Major (Ionian)</i></b><br /><br />\
-        The major scale is one of the most, if not <i>the</i> most, well-known scales.<br />\
-        The <i>relative minor</i> scale of any key uses the <i>same</i> notes as the major scale, but uses the 6th note as the root instead.<br /><br />",
+The major scale is one of the most, if not <i>the</i> most, well-known scales.<br />\
+The <i>relative minor</i> scale of any key uses the <i>same</i> notes as the major scale, but uses the 6th note as the root instead.",
         
 "<b><i>Melodic minor</i></b><br /><br />\
-        The melodic minor is simply the <u>major scale</u> with <u>the 3rd note lowered</u> by one half-step (minor 3rd vs major 3rd).<br />\
-        As its name suggests, composers often prefer its sound when creating melodies, as opposed to the harmonic minor which has a three-semitone jump between its 6th and 7th notes.<br />\
-        Interestingly, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the <i>natural minor</i> scale.<br /><br />",
+The melodic minor is simply the <u>major scale</u> with <u>the 3rd note lowered</u> by one half-step (minor 3rd vs major 3rd).<br />\
+As its name suggests, composers often prefer its sound when creating melodies, as opposed to the harmonic minor which has a three-semitone jump between its 6th and 7th notes.<br />\
+Interestingly, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the <i>natural minor</i> scale.",
 
 "<b><i>Harmonic minor</i></b><br /><br />\
-        The harmonic minor is a modification of the natural minor (Aeolian mode). As its name suggests, its sound is often preferred for creating harmonies. The harmonic minor is created by taking the 7th note of the natural minor scale and raising it a half-step, to create a stronger feeling of tension and release with the root / octave.<br /><br />",
+The harmonic minor is a modification of the natural minor (Aeolian mode). As its name suggests, its sound is often preferred for creating harmonies. The harmonic minor is created by taking the 7th note of the natural minor scale and raising it a half-step, to create a stronger feeling of tension and release with the root / octave.",
 
 "<b><i>Harmonic major</i></b><br /><br />\
-        The harmonic major is a 'constructed' scale that is used in a few old compositions but is most common in jazz. It is created by raising the 3rd note of the harmonic minor scale and raising it by a half-step.<br /><br />",
+The harmonic major is a 'constructed' scale that is used in a few old compositions but is most common in jazz. It is created by raising the 3rd note of the harmonic minor scale and raising it by a half-step.",
 
 "<b><i>Double harmonic</i></b><br /><br />\
-        The double harmonic scale is a scale that is generally unfamiliar in Western music. It is also known as the <i>Byzantine scale</i> or <i>Gypsy major</i> and resembles some Arabic scales.<br /><br />",
+The double harmonic scale is a scale that is generally unfamiliar in Western music. It is also known as the <i>Byzantine scale</i> or <i>Gypsy major</i> and resembles some Arabic scales.",
 
 "<b><i>Other scales</i></b><br /><br />\
-        Explore other scales by clicking the highlighted notes.<br />These do not auto-play or have keyboard keys assigned yet."
+Explore other scales by clicking the highlighted notes.<br />These do not auto-play or have keyboard keys assigned yet."
 ];
 
-let videoLink = "<br /><br /><a href=\"https://www.youtube.com/watch?v=VPWQC4pdEco&list=PLMvVESrbjBWplAcg3pG0TesncGT7qvO06&index=14\"><small>Watch 12ToneVideos' introduction on the subject.</small></a><br /><br />";
+let videoLink = "<br /><br /><a href=\"https://www.youtube.com/watch?v=VPWQC4pdEco&list=PLMvVESrbjBWplAcg3pG0TesncGT7qvO06&index=14\"><small>Watch 12ToneVideos' introduction on the subject of modes.</small></a><br /><br />";
 let majorText = [
-"<b><i>Ionian</i></b> - the first 'modern' scale, in a manner of speaking. The pattern of semitones is<br /><br />\
-<b>(Root) + 2 + 2 + 1 + 2 + 2 + 2 + 1</b><br /><br />\
+videoLink + "<b>Ionian</b>, or major - the first 'modern' scale, in a manner of speaking. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 1 + 2 + 2 + 2 + 1</b><br /><br />\
 The intervals can be notated as<br /><br />\
 <b>1 2 3 4 5 6 7</b><br /><br />\
-<small>The Ionian mode is the most well known scale, but all of its modes are scales in their own right, and serve different emotional purposes in music.</small>" + videoLink,
+<small>The Ionian mode is the most well known scale, but all of its modes are scales in their own right, and serve different emotional purposes in music.</small>",
 
-"<b><i>Dorian</i></b> - the second mode of the major scale. The pattern of semitones is<br /><br />\
-<b>(Root) + 2 + 1 + 2 + 2 + 2 + 1 + 2</b><br /><br />\
+videoLink + "<b>Dorian</b> - the second mode of the major scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 2 + 2 + 2 + 1 + 2</b><br /><br />\
 The intervals can be notated as<br /><br />\
 <b>1 2 \u266D3 4 5 6 \u266D7</b><br /><br />\
-<small>The Dorian mode could be considered two steps 'darker' than Ionian due to its lowered 3rd and 7th intervals.</small>" + videoLink,
+<small>The Dorian mode could be considered two steps 'darker' than Ionian due to its lowered 3rd and 7th intervals.</small>",
 
-"<b><i>Phrygian</i></b> - the third mode of the major scale. The pattern of semitones is<br /><br />\
-<b>(Root) + 1 + 2 + 2 + 2 + 1 + 2 + 2</b><br /><br />\
+videoLink + "<b>Phrygian</b> - the third mode of the major scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 2 + 2 + 1 + 2 + 2</b><br /><br />\
 The intervals can be notated as<br /><br />\
 <b>1 \u266D2 \u266D3 4 5 \u266D6 \u266D7</b><br /><br />\
-<small>The Phrygian mode could be considered four steps 'darker' than Ionian due to its lowered 2nd, 3rd, 6th, and 7th intervals.</small>" + videoLink,
+<small>The Phrygian mode could be considered four steps 'darker' than Ionian due to its lowered 2nd, 3rd, 6th, and 7th intervals.</small>",
 
-"<b><i>Lydian</i></b> - the fourth mode of the major scale. The pattern of semitones is<br /><br />\
-<b>(Root) + 2 + 2 + 2 + 1 + 2 + 2 + 1</b><br /><br />\
+videoLink + "<b>Lydian</b> - the fourth mode of the major scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 2 + 1 + 2 + 2 + 1</b><br /><br />\
 The intervals can be notated as<br /><br />\
 <b>1 2 3 \u266F4 5 6 7</b><br /><br />\
-<small>The Lydian mode could be considered one step 'brighter' than Ionian due to its raised 4th interval.</small>" + videoLink,
+<small>The Lydian mode could be considered one step 'brighter' than Ionian due to its raised 4th interval.</small>",
 
-"<b><i>Mixolydian</i></b> - the fifth mode of the major scale. The pattern of semitones is<br /><br />\
-<b>(Root) + 2 + 2 + 1 + 2 + 2 + 1 + 2</b><br /><br />\
+videoLink + "<b>Mixolydian</b> - the fifth mode of the major scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 1 + 2 + 2 + 1 + 2</b><br /><br />\
 The intervals can be notated as<br /><br />\
 <b>1 2 3 4 5 6 \u266D7</b><br /><br />\
-<small>The Mixolydian mode could be considered one step 'darker' than Ionian due to its lowered 7th interval.</small>" + videoLink,
+<small>The Mixolydian mode could be considered one step 'darker' than Ionian due to its lowered 7th interval.</small>",
 
-"<b><i>Aeolian</i></b> - the sixth mode of the major scale, also called the <i>natural minor</i>. The pattern of semitones is<br /><br />\
-<b>(Root) + 2 + 1 + 2 + 2 + 1 + 2 + 2</b><br /><br />\
+videoLink + "<b>Aeolian</b> - the sixth mode of the major scale, also called the <i>natural minor</i>. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 2 + 2 + 1 + 2 + 2</b><br /><br />\
 The intervals can be notated as<br /><br />\
 <b>1 2 \u266D3 4 5 \u266D6 \u266D7</b><br /><br />\
-<small>The Mixolydian mode could be considered three steps 'darker' than Ionian due to its lowered 3rd, 6th, and 7th intervals.</small>" + videoLink,
+<small>The Aeolian mode could be considered three steps 'darker' than Ionian due to its lowered 3rd, 6th, and 7th intervals.</small>",
 
-"<b><i>Locrian</i></b> - the seventh mode of the major scale. The pattern of semitones is<br /><br />\
-<b>(Root) + 1 + 2 + 2 + 1 + 2 + 2 + 2</b><br /><br />\
+videoLink + "<b>Locrian</b> - the seventh mode of the major scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 2 + 1 + 2 + 2 + 2</b><br /><br />\
 The intervals can be notated as<br /><br />\
 <b>1 \u266D2 \u266D3 4 \u266D5 \u266D6 \u266D7</b><br /><br />\
-<small>The Locrian mode is commonly considered the 'darkest' diatonic mode due to its lowered 2nd, 3rd, 5th, 6th, and 7th intervals.</small>" + videoLink,
+<small>The Locrian mode is commonly considered the 'darkest' diatonic mode due to its lowered 2nd, 3rd, 5th, 6th, and 7th intervals.</small>"
 ];
 
 let melodicMinorText = [
-"",
-"",
-"",
-"",
-"",
-"",
-""
+"<b>Melodic minor</b> (Ionian \u266E3)<br /><br />\
+The melodic minor is simply the <u>major scale</u> with <u>the 3rd note lowered</u> by one half-step (minor 3rd vs major 3rd).<br />\
+The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 2 + 2 + 2 + 2 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 \u266D3 4 5 6 7</b><br /><br />\
+<small>As its name suggests, composers often preferred its sound when creating melodies, as opposed to the harmonic minor which has a three-semitone jump between its 6th and 7th notes.<br />\
+Interestingly, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the <i>natural minor</i> scale.</small>",
+
+"<b>Dorian \u266D2 / Phrygian \u266E6</b> - the second mode of the melodic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 2 + 2 + 2 + 1 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 \u266D3 4 5 6 \u266D7</b>",
+
+"<b>Lydian \u266F5</b> (Lydian augmented) - the third mode of the melodic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 2 + 2 + 1 + 2 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 3 \u266F4 \u266F5 6 7</b>",
+
+"<b>Lydian \u266D7</b> (Lydian dominant / overtone scale) - the fourth mode of the melodic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 2 + 1 + 2 + 1 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 3 \u266F4 5 6 \u266D7</b>",
+
+"<b>Aeolian \u266E3</b> (Aeolian major / Mixolydian \u266D6) - the fifth mode of the melodic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 1 + 2 + 1 + 2 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 3 4 5 \u266D6 \u266D7</b>",
+
+"<b>Aeolian \u266D5</b> (half-diminished) - the sixth mode of the melodic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 2 + 1 + 2 + 2 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 \u266D3 4 \u266D5 \u266D6 \u266D7</b>",
+
+"<b>Locrian \u266D4</b> (Altered dominant / Super Locrian) - the seventh mode of the melodic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 1 + 2 + 2 + 2 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 \u266D3 \u266D4 \u266D5 \u266D6 \u266D7</b>"
 ];
 
 let harmonicMinorText = [
-"",
-"",
-"",
-"",
-"",
-"",
-""
+"<b><i>Harmonic minor</i></b> (Aeolian \u266E7)<br /><br />\
+The harmonic minor is a modification of the natural minor (Aeolian mode) - it is created by taking the 7th note of the natural minor scale and raising it a half-step, to create a stronger feeling of tension and release with the root / octave.<br />\
+The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 2 + 2 + 1 + 3 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 \u266D3 4 5 \u266D6 7</b>",
+
+"<b>Locrian \u266E6</b> - the second mode of the harmonic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 2 + 1 + 3 + 1 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 \u266D3 4 \u266D5 6 \u266D7</b>",
+
+"<b>Ionian \u266F5</b> (augmented major) - the third mode of the harmonic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 1 + 3 + 1 + 2 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 3 4 \u266F5 6 7</b>",
+
+"<b>Dorian \u266F4</b> (Ukrainian Dorian) - the fourth mode of the harmonic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 3 + 1 + 2 + 1 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 \u266D3 \u266F4 5 6 \u266D7</b>",
+
+"<b>Phrygian \u266E3</b> (Phrygian major / dominant) - the fifth mode of the harmonic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 3 + 1 + 2 + 1 + 2 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 3 4 5 \u266D6 \u266D7</b>",
+
+"<b>Lydian \u266F2</b> - the sixth mode of the harmonic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 3 + 1 + 2 + 1 + 2 + 2 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266F2 3 \u266F4 5 6 7</b>",
+
+"<b>Locrian \u266D4 \u{1D12B}7</b> (Altered diminished / Ultra Locrian) - the seventh mode of the harmonic minor scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 1 + 2 + 2 + 1 + 3</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 \u266D3 \u266D4 \u266D5 \u266D6 \u{1D12B}7</b>"
 ];
 
 let harmonicMajorText = [
-"",
-"",
-"",
-"",
-"",
-"",
-""
+"<b><i>Harmonic major</i></b> (Ionian \u266D6)<br /><br />\
+The harmonic major is a 'constructed' scale that is used in a few old compositions but is most common in jazz. It is created by raising the 3rd note of the harmonic minor scale by a half-step, or alternatively by lowering the 6th note of the major scale.<br />\
+The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 1 + 2 + 1 + 3 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 3 4 5 \u266D6 7</b>",
+
+"<b>Dorian \u266D5</b> - the second mode of the harmonic major scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 2 + 1 + 3 + 1 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \2 \u266D3 4 \u266D5 6 \u266D7</b>",
+
+"<b>Phrygian \u266D4</b> - the third mode of the harmonic major scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 1 + 3 + 1 + 2 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 \u266D3 \u266D4 5 \u266D6 \u266D7</b>",
+
+"<b>Lydian \u266D3</b> - the fourth mode of the harmonic major scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 3 + 1 + 2 + 2 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 \u266D3 \u266F4 5 6 7</b>",
+
+"<b>Mixolydian \u266D2</b> - the fifth mode of the harmonic major scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 3 + 1 + 2 + 2 + 1 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 3 4 5 6 \u266D7</b>",
+
+"<b>Lydian \u266F2 \u266F5</b> - the sixth mode of the harmonic major scale. The pattern of semitones is<br /><br />\
+<b>Root + 3 + 1 + 2 + 2 + 1 + 2 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266F2 3 \u266F4 \u266F5 6 7</b>",
+
+"<b>Locrian \u{1D12B}7</b> - the seventh mode of the harmonic major scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 2 + 1 + 2 + 1 + 3</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 \u266D3 4 \u266D5 \u266D6 \u{1D12B}7</b>"
 ];
 
 let doubleHarmonicText = [
-"",
-"",
-"",
-"",
-"",
-"",
-""
+"<b><i>Double harmonic</i></b><br /><br />\
+The double harmonic scale is a scale that is generally unfamiliar in Western music. It is also known as the <i>Byzantine scale</i> or <i>Gypsy major</i> and resembles some Arabic scales.<br />\
+The pattern of semitones is<br /><br />\
+<b>Root + 1 + 3 + 1 + 2 + 1 + 3 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 3 4 5 \u266D6 7</b>",
+
+"<b>Lydian \u266F2 \u266F6</b> - the second mode of the double harmonic scale. The pattern of semitones is<br /><br />\
+<b>Root + 3 + 1 + 2 + 1 + 3 + 1 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266F2 3 \u266F4 5 \u266F6 7</b>",
+
+"<b>Phrygian \u266D4 \u{1D12B}7</b> - the third mode of the double harmonic scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 1 + 3 + 1 + 1 + 3</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>11 \u266D2 \u266D3 \u266D4 5 \u266D6 \u{1D12B}7</b>",
+
+"<b>Lydian \u266D3 \u266D6</b> (Hungarian minor) - the fourth mode of the double harmonic scale. The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 3 + 1 + 1 + 3 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 \u266D3 \u266F4 5 \u266D6 7</b>",
+
+"<b>Mixolydian \u266D2 \u266D5</b> - the fifth mode of the double harmonic scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 3 + 1 + 1 + 3 + 1 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 3 4 \u266D5 6 \u266D7</b>",
+
+"<b>Ionian \u266F2 \u266F5</b> - the sixth mode of the double harmonic scale. The pattern of semitones is<br /><br />\
+<b>Root + 3 + 1 + 1 + 3 + 1 + 2 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266F2 3 4 \u266F5 6 7</b>",
+
+"<b>Locrian \u{1D12B}3 \u{1D12B}7</b> - the seventh mode of the double harmonic scale. The pattern of semitones is<br /><br />\
+<b>Root + 1 + 1 + 3 + 1 + 2 + 1 + 3</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 \u{1D12B}3 4 \u266D5 \u266D6 \u{1D12B}7</b>"
 ];
 
 let otherModesText = [

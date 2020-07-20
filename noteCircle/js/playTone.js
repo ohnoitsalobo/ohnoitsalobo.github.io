@@ -711,7 +711,7 @@ function mouseReleased(){
         ypos  = 0.3*scaled;
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
            mouseY>ypos-offset && mouseY<ypos+offset){
-            mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
+            commonFunction();
         }
         
         xpos  = 1.35*scaled;

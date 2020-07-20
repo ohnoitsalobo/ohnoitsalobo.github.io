@@ -111,11 +111,11 @@ function createNoteCircle(){
         rotate(PI/2);
         textSize(Size*0.4); fill(0); text('ROOT', 0, -5.25*Size);
         textSize(Size*0.6); fill((lockNotes && majorMinorOther != 5) ? 0 : 255); noStroke();
-        if      (showEnharmonic == 1)   text("Key:\n" + keySharpList   [notesAreLocked()%12], xpos, ypos);
-        else if (showEnharmonic == 2)   text("Key:\n" + keySharperList [notesAreLocked()%12], xpos, ypos);
-        else if (showEnharmonic == 3)   text("Key:\n" + keyFlatList    [notesAreLocked()%12], xpos, ypos);
-        else if (showEnharmonic == 4)   text("Key:\n" + keyFlatterList [notesAreLocked()%12], xpos, ypos);
-        else                            text("Key:\n" + keyList        [notesAreLocked()%12], xpos, ypos);
+        if      (showEnharmonic == 1)   text("Key:\n" + keySharpList   [notesAreLocked()], xpos, ypos);
+        else if (showEnharmonic == 2)   text("Key:\n" + keySharperList [notesAreLocked()], xpos, ypos);
+        else if (showEnharmonic == 3)   text("Key:\n" + keyFlatList    [notesAreLocked()], xpos, ypos);
+        else if (showEnharmonic == 4)   text("Key:\n" + keyFlatterList [notesAreLocked()], xpos, ypos);
+        else                            text("Key:\n" + keyList        [notesAreLocked()], xpos, ypos);
         textSize(Size*0.5); fill(255);
         if(majorMinorOther == 5)
             text(modeList[majorMinorOther], xpos/0.62, ypos);
@@ -140,8 +140,8 @@ function createNoteCircle(){
         else                         text("\u266F \u266D",    _xpos, _ypos);
         noStroke();
         textAlign(CENTER, CENTER);
-        textSize(Size*0.35); 
         if(majorMinorOther!=5) {
+        textSize(Size*0.35); 
             if(showTips)
                 text("Tap different elements to\nread about them in\nthe box to the right.", 0.85*scaled, 0.4*scaled);
             else
@@ -157,8 +157,10 @@ function createNoteCircle(){
             }
             textSize(Size*0.35);
         }
-        // else 
-            // text("To hear these alterative scales,\ntap the highlighted note names.", 0.85*scaled, 0.4*scaled);
+        else {
+            textSize(Size*0.4); 
+            text("To hear these alterative scales,\ntap the highlighted note names.", 0.85*scaled, 0.4*scaled);
+        }
         stroke(255); strokeWeight(5*scale);
         line(xpos, ypos-1.2*Size, xpos+0.6*Size, ypos-Size);
         line(xpos, ypos-1.2*Size, xpos-0.6*Size, ypos-Size);
@@ -764,8 +766,8 @@ function changeMode(){
     else if(choice == modeList[3]) majorMinorOther = 3;
     else if(choice == modeList[4]) majorMinorOther = 4;
     else if(choice == modeList[5]) majorMinorOther = 5;
-    mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
-    
+    // mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
+    commonFunction();
     showImg = false;
     // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
     // if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
@@ -960,11 +962,11 @@ function changeKey(){
     else if(choice == keyList[9 ]) keyIndex = 9 ;
     else if(choice == keyList[10]) keyIndex = 10;
     else if(choice == keyList[11]) keyIndex = 11;
-    mouseOverText.html(
-        "<b><i>Key</i></b>, <b><i>root</i></b>, or <b><i>tonic</i></b> are all commonly used to refer to the 'central' note of any scale - the note (or chord) which feels most like 'home' in any given arrangement of notes.<br /><br />\
-        Most common Western-based music today is based on 12 equal divisions of the scale, known as <i>12-tone equal temperament</i>, and that is the system that I am using in this app.\
-        Each step on the 12 notes is called a <i>semitone</i> or <i>half-step</i>. Moving two steps at a time is called a <i>whole tone</i> or <i>full step</i>. Scales and modes are just different arrangements of tones and semitones."
-    );
+    // mouseOverText.html(
+        // "<b><i>Key</i></b>, <b><i>root</i></b>, or <b><i>tonic</i></b> are all commonly used to refer to the 'central' note of any scale - the note (or chord) which feels most like 'home' in any given arrangement of notes.<br /><br />\
+        // Most common Western-based music today is based on 12 equal divisions of the scale, known as <i>12-tone equal temperament</i>, and that is the system that I am using in this app.\
+        // Each step on the 12 notes is called a <i>semitone</i> or <i>half-step</i>. Moving two steps at a time is called a <i>whole tone</i> or <i>full step</i>. Scales and modes are just different arrangements of tones and semitones."
+    // );
 }
 function changeKeyMouse(event){
     if (event.deltaY > 0) keySelect.selected(keyList[(keyIndex+1 )%12]);
@@ -993,18 +995,18 @@ function highlightRect(){
 }
 
 function notesAreLocked(){
-    let _rotation;
     if(lockNotes){
-        if     (majorMinorOther == 0) _rotation = keyIndex + majorModeIndex         ;
-        else if(majorMinorOther == 1) _rotation = keyIndex + melodicMinorModeIndex  ;
-        else if(majorMinorOther == 2) _rotation = keyIndex + harmonicMinorModeIndex ;
-        else if(majorMinorOther == 3) _rotation = keyIndex + harmonicMajorModeIndex ;
-        else if(majorMinorOther == 4) _rotation = keyIndex + doubleHarmonicModeIndex;
-        else if(majorMinorOther == 5) _rotation = keyIndex;
+        if     (majorMinorOther == 0) lockedIndex = keyIndex + majorModeIndex         ;
+        else if(majorMinorOther == 1) lockedIndex = keyIndex + melodicMinorModeIndex  ;
+        else if(majorMinorOther == 2) lockedIndex = keyIndex + harmonicMinorModeIndex ;
+        else if(majorMinorOther == 3) lockedIndex = keyIndex + harmonicMajorModeIndex ;
+        else if(majorMinorOther == 4) lockedIndex = keyIndex + doubleHarmonicModeIndex;
+        else if(majorMinorOther == 5) lockedIndex = keyIndex;
     }else
-        _rotation = keyIndex;
-    keySelect.selected(_rotation%12);
-    return _rotation%12;
+        lockedIndex = keyIndex;
+    lockedIndex = lockedIndex%12;
+    keySelect.selected(lockedIndex);
+    return lockedIndex;
 }
 
 function commonFunction(){
@@ -1014,8 +1016,23 @@ function commonFunction(){
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
     
-    // mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
-    mouseOverText.html(allModesText[majorMinorOther][currentlySelectedMode]);
+    if(majorMinorOther != 5){
+        mouseOverText.html(allModesText[majorMinorOther][currentlySelectedMode]);
+        if(majorMinorOther == 0){
+            if(currentlySelectedMode == 0){
+                mouseOverText.html(
+                "<br /><br /><small>In the key of <b>" + keyList[lockedIndex] + " major</b>,\
+                the <i>relative minor</i> key is <b>" + keyList[(lockedIndex+9)%12] + " minor</b> because it uses the same notes.", true);
+            }else if(currentlySelectedMode == 5){
+                mouseOverText.html(
+                "<br /><br /><small>In the key of <b>" + keyList[lockedIndex] + " minor</b>,\
+                the <i>relative major</i> key is <b>" + keyList[(lockedIndex+3)%12] + " major</b> because it uses the same notes.", true);
+            }
+        }
+    }else{
+        mouseOverText.html('');
+    }
     
     showImg = false;
+    notesAreLocked();
 }

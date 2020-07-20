@@ -70,20 +70,25 @@ function draw(){
         document.getElementById("img").style.display = "none";
 
 ///////// AUTO-PLAY SCALE
-    if(majorMinorOther != 5 && autoplay > 0){
-        let _t = (floor((millis()-autoplay)/225)%16)+1;
-        if (played != _t){
-            let x = _t < 8 ? _t : 16-_t;
-    ///// correct tones for melodic minor descending
-            if((majorMinorOther == 1 && currentlySelectedMode == 0) && ( _t == 9 || _t == 10 ))
-                playTone(modeCheck(x)-1);
-            else
-                playTone(modeCheck(x));
-            played = _t;
-            interacted = frameCount;
-        }
-        if(_t == 15)
+    if(autoplay > 0){
+        if(majorMinorOther == 5){
             autoplay = 0;
+        }else{
+            let _t = (floor((millis()-autoplay)/225)%16)+1;
+            if (played != _t){
+                let x = _t < 8 ? _t : 16-_t;
+        ///// correct tones for melodic minor descending
+                if((majorMinorOther == 1 && currentlySelectedMode == 0) && ( _t == 9 || _t == 10 ))
+                    playTone(modeCheck(x)-1);
+                else
+                    playTone(modeCheck(x));
+                played = _t;
+                interacted = frameCount;
+            }
+            if(_t == 15)
+                autoplay = 0;
+            
+        }
     }
     
 ///////// HIDE/SHOW TIPS
