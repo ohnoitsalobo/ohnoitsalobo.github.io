@@ -131,17 +131,33 @@ function playedHighlight(){
         }
     }
 ///////// SHOW SCALE NUMBERS
-    fill(0, fillalpha); stroke(200, fillalpha*0.8); strokeWeight(3);
+    fill(255, fillalpha); stroke(0, fillalpha); strokeWeight(4);
     textSize(0.4*Size);
     if(majorMinorOther != 5){
         for(var i = 1; i < 8; i++){
-            push();
-                let t = modeCheck(i);
-                rotate(t*PI/6);
-                translate(0.315*scaled, -0.62*Size);
-                rotate(-t*PI/6+PI/2);
-                text(i, 0, 0);
-            pop()
+            let t = modeCheck(i);
+            if(t == 0 || t == 2 || t == 7 || t == 9 || t == 11){
+                push();
+                    rotate(t*PI/6);
+                    // translate(0.315*scaled, -0.62*Size);
+                    translate(0.2*scaled, 0);
+                    rotate(-t*PI/6+PI/2);
+                    text(i, 0, 0);
+                pop()
+            }else{
+                push();
+                    rotate(t*PI/6);
+                    translate(0.23*scaled, 0);
+                    rotate(-t*PI/6+PI/2);
+                    text(intervalName(0, t), 0, 0);
+                pop()
+                push();
+                    rotate(t*PI/6);
+                    translate(0.18*scaled, 0);
+                    rotate(-t*PI/6+PI/2);
+                    text(intervalName(1, t), 0, 0);
+                pop()
+            }
         }
     }
 }
@@ -154,5 +170,25 @@ function hideTips(){
     else{
         mouseOverText.show();
         showTips = !showTips;
+    }
+}
+
+function intervalName(x, i){
+    if(x == 0){
+             if(i == 1){ return "\u266D2"; }
+        else if(i == 3){ return "\u266D3"; }
+        else if(i == 4){ return "\u266D4"; }
+        else if(i == 5){ return "4"; }
+        else if(i == 6){ return "\u266D5"; }
+        else if(i == 8){ return "\u266D6"; }
+        else if(i ==10){ return "\u266D7"; }
+    }else{
+             if(i == 1){ return "\u266F1"; }
+        else if(i == 3){ return "\u266F2"; }
+        else if(i == 4){ return "3"; }
+        else if(i == 5){ return "\u266F3"; }
+        else if(i == 6){ return "\u266F4"; }
+        else if(i == 8){ return "\u266F5"; }
+        else if(i ==10){ return "\u266F6"; }
     }
 }
