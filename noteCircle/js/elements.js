@@ -764,7 +764,9 @@ function changeMode(){
     else if(choice == modeList[3]) majorMinorOther = 3;
     else if(choice == modeList[4]) majorMinorOther = 4;
     else if(choice == modeList[5]) majorMinorOther = 5;
-    commonFunction();
+    mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
+    
+    showImg = false;
     // if(choice == modeList[0]) { majorMinorOther = 0; majorModeSelect.show(); }
     // if(choice == modeList[1]) { majorMinorOther = 1; melodicMinorModeSelect.show(); }
     // if(choice == modeList[2]) { majorMinorOther = 2; harmonicMinorModeSelect.show(); }
@@ -1012,7 +1014,8 @@ function commonFunction(){
     harmonicMajorModeSelect.selected(harmonicMajorModeList[currentlySelectedMode]);
     doubleHarmonicModeSelect.selected(doubleHarmonicModeList[currentlySelectedMode]);
     
-    mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
+    // mouseOverText.html(modeText[majorMinorOther]+(majorMinorOther==5?"":mouseOver));
+    mouseOverText.html(allModesText[majorMinorOther][currentlySelectedMode]);
     
     showImg = false;
 }

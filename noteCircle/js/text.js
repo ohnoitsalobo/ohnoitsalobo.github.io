@@ -4,7 +4,7 @@ Press  <i>Shift</i> + number to hear the chord corresponding to that scale degre
 
 let modeText = [
 "<b><i>Major (Ionian)</i></b><br /><br />\
-        The major scale on a given root note is defined by the pattern R, 2, 2, 1, 2, 2, 2, 1 showing how many semitones to progress around the circle.<br />\
+        The major scale is one of the most, if not <i>the</i> most, well-known scales.<br />\
         The <i>relative minor</i> scale of any key uses the <i>same</i> notes as the major scale, but uses the 6th note as the root instead.<br /><br />",
         
 "<b><i>Melodic minor</i></b><br /><br />\
@@ -25,14 +25,49 @@ let modeText = [
         Explore other scales by clicking the highlighted notes.<br />These do not auto-play or have keyboard keys assigned yet."
 ];
 
+let videoLink = "<br /><br /><a href=\"https://www.youtube.com/watch?v=VPWQC4pdEco&list=PLMvVESrbjBWplAcg3pG0TesncGT7qvO06&index=14\"><small>Watch 12ToneVideos' introduction on the subject.</small></a><br /><br />";
 let majorText = [
-"<b><i>Ionian</i></b> - the <i>first modern scale<i>, as it were.",
-"",
-"",
-"",
-"",
-"",
-""
+"<b><i>Ionian</i></b> - the first 'modern' scale, in a manner of speaking. The pattern of semitones is<br /><br />\
+<b>(Root) + 2 + 2 + 1 + 2 + 2 + 2 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 3 4 5 6 7</b><br /><br />\
+<small>The Ionian mode is the most well known scale, but all of its modes are scales in their own right, and serve different emotional purposes in music.</small>" + videoLink,
+
+"<b><i>Dorian</i></b> - the second mode of the major scale. The pattern of semitones is<br /><br />\
+<b>(Root) + 2 + 1 + 2 + 2 + 2 + 1 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 \u266D3 4 5 6 \u266D7</b><br /><br />\
+<small>The Dorian mode could be considered two steps 'darker' than Ionian due to its lowered 3rd and 7th intervals.</small>" + videoLink,
+
+"<b><i>Phrygian</i></b> - the third mode of the major scale. The pattern of semitones is<br /><br />\
+<b>(Root) + 1 + 2 + 2 + 2 + 1 + 2 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 \u266D3 4 5 \u266D6 \u266D7</b><br /><br />\
+<small>The Phrygian mode could be considered four steps 'darker' than Ionian due to its lowered 2nd, 3rd, 6th, and 7th intervals.</small>" + videoLink,
+
+"<b><i>Lydian</i></b> - the fourth mode of the major scale. The pattern of semitones is<br /><br />\
+<b>(Root) + 2 + 2 + 2 + 1 + 2 + 2 + 1</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 3 \u266F4 5 6 7</b><br /><br />\
+<small>The Lydian mode could be considered one step 'brighter' than Ionian due to its raised 4th interval.</small>" + videoLink,
+
+"<b><i>Mixolydian</i></b> - the fifth mode of the major scale. The pattern of semitones is<br /><br />\
+<b>(Root) + 2 + 2 + 1 + 2 + 2 + 1 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 3 4 5 6 \u266D7</b><br /><br />\
+<small>The Mixolydian mode could be considered one step 'darker' than Ionian due to its lowered 7th interval.</small>" + videoLink,
+
+"<b><i>Aeolian</i></b> - the sixth mode of the major scale, also called the <i>natural minor</i>. The pattern of semitones is<br /><br />\
+<b>(Root) + 2 + 1 + 2 + 2 + 1 + 2 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 2 \u266D3 4 5 \u266D6 \u266D7</b><br /><br />\
+<small>The Mixolydian mode could be considered three steps 'darker' than Ionian due to its lowered 3rd, 6th, and 7th intervals.</small>" + videoLink,
+
+"<b><i>Locrian</i></b> - the seventh mode of the major scale. The pattern of semitones is<br /><br />\
+<b>(Root) + 1 + 2 + 2 + 1 + 2 + 2 + 2</b><br /><br />\
+The intervals can be notated as<br /><br />\
+<b>1 \u266D2 \u266D3 4 \u266D5 \u266D6 \u266D7</b><br /><br />\
+<small>The Locrian mode is commonly considered the 'darkest' diatonic mode due to its lowered 2nd, 3rd, 5th, 6th, and 7th intervals.</small>" + videoLink,
 ];
 
 let melodicMinorText = [
@@ -80,16 +115,16 @@ let otherModesText = [
 ];
 
 let allModesText = [
-// majorText,
-// melodicMinorText,
-// harmonicMinorText,
-// harmonicMajorText,
-// doubleHarmonicText
-majorModeList,
-melodicMinorModeList,
-harmonicMinorModeList,
-harmonicMajorModeList,
-doubleHarmonicModeList
+majorText,
+melodicMinorText,
+harmonicMinorText,
+harmonicMajorText,
+doubleHarmonicText
+// majorModeList,
+// melodicMinorModeList,
+// harmonicMinorModeList,
+// harmonicMajorModeList,
+// doubleHarmonicModeList
 ];
 
 let keyText = [
@@ -217,10 +252,10 @@ let keyText = [
             <b><i>diminished octave</i></b> (dim8, d8) or <b><i>flat 8</i></b> (\u266D8).<br /><br />\
             <button onclick=\"playTwo(0, 11);\">Click here to hear the M7 interval.</button><br /><br />\
             <small>The major seventh interval can be added to any other triad to create a 'compound' chord.</small><br /><br />\
-            <button onclick=\"playFour(0, 4, 7, 11);\">Click here to hear a M7 chord (1 3 5 7).</button><br /><br />\
-            <button onclick=\"playFour(0, 3, 7, 11);\">Click here to hear a mM7 chord (1 \u266D3 5 7).</button><br /><br />\
-            <button onclick=\"playFour(0, 5, 7, 11);\">Click here to hear a M7sus4 chord (1 4 5 7).</button><br /><br />\
-            <button onclick=\"playFour(0, 2, 7, 11);\">Click here to hear a M7sus2 chord (1 2 5 7).</button><br /><br />\
+            <button onclick=\"playFour(0, 4, 7, 11);\">Click here to hear a maj7 chord (1 3 5 7).</button><br /><br />\
+            <button onclick=\"playFour(0, 3, 7, 11);\">Click here to hear a mmaj7 chord (1 \u266D3 5 7).</button><br /><br />\
+            <button onclick=\"playFour(0, 5, 7, 11);\">Click here to hear a maj7sus4 chord (1 4 5 7).</button><br /><br />\
+            <button onclick=\"playFour(0, 2, 7, 11);\">Click here to hear a maj7sus2 chord (1 2 5 7).</button><br /><br />\
             <button onclick=\"playFour(0, 4, 8, 11);\">Click here to hear an augM7 chord (1 3 \u266F5 7).</button><br /><br />\
             <small>The major seventh is 11 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>minor second</i>.</small>",
