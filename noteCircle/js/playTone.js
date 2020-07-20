@@ -545,10 +545,10 @@ function keyPressed(){
         else if(key == '6' ) playTone(modeCheck(6));
         else if(key == '7' ) playTone(modeCheck(7));
         else if(key == '8' ) playTone(modeCheck(8));
-        // else if(key == '9' ) playTone(modeCheck(2)+13);
-        // else if(key == '0' ) playTone(modeCheck(3)+13);
-        // else if(key == '-' ) playTone(modeCheck(4)+13);
-        // else if(key == '=' ) playTone(modeCheck(5)+13);
+        else if(key == '9' ) playTone(modeCheck(2)+13);
+        else if(key == '0' ) playTone(modeCheck(3)+13);
+        else if(key == '-' ) playTone(modeCheck(4)+13);
+        else if(key == '=' ) playTone(modeCheck(5)+13);
         // else if(key == '[' ) playTone(modeCheck(6)+13);
         // else if(key == ']' ) playTone(modeCheck(7)+13);
         // else if(key == '\\') playTone(modeCheck(8)+13);
