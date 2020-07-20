@@ -136,7 +136,7 @@ function playedHighlight(){
     if(majorMinorOther != 5){
         for(var i = 1; i < 8; i++){
             let t = modeCheck(i);
-            if(t == 0 || t == 2 || t == 7 || t == 9 || t == 11){
+            if(showEnharmonic == 0){
                 push();
                     rotate(t*PI/6);
                     // translate(0.315*scaled, -0.62*Size);
@@ -145,18 +145,28 @@ function playedHighlight(){
                     text(i, 0, 0);
                 pop()
             }else{
-                push();
-                    rotate(t*PI/6);
-                    translate(0.23*scaled, 0);
-                    rotate(-t*PI/6+PI/2);
-                    text(intervalName(0, t), 0, 0);
-                pop()
-                push();
-                    rotate(t*PI/6);
-                    translate(0.18*scaled, 0);
-                    rotate(-t*PI/6+PI/2);
-                    text(intervalName(1, t), 0, 0);
-                pop()
+                if(t == 0 || t == 2 || t == 7 || t == 9 || t == 11){
+                    push();
+                        rotate(t*PI/6);
+                        // translate(0.315*scaled, -0.62*Size);
+                        translate(0.2*scaled, 0);
+                        rotate(-t*PI/6+PI/2);
+                        text(i, 0, 0);
+                    pop()
+                }else{
+                    push();
+                        rotate(t*PI/6);
+                        translate(0.23*scaled, 0);
+                        rotate(-t*PI/6+PI/2);
+                        text(intervalName(0, t), 0, 0);
+                    pop()
+                    push();
+                        rotate(t*PI/6);
+                        translate(0.18*scaled, 0);
+                        rotate(-t*PI/6+PI/2);
+                        text(intervalName(1, t), 0, 0);
+                    pop()
+                }
             }
         }
     }
