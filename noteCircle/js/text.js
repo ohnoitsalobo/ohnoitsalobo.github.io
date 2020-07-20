@@ -10,7 +10,7 @@ let modeText = [
 "<b><i>Melodic minor</i></b><br /><br />\
         The melodic minor is simply the <u>major scale</u> with <u>the 3rd note lowered</u> by one half-step (minor 3rd vs major 3rd).<br />\
         As its name suggests, composers often prefer its sound when creating melodies, as opposed to the harmonic minor which has a three-semitone jump between its 6th and 7th notes.<br />\
-        Interestingly, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the natural minor scale.<br /><br />",
+        Interestingly, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the <i>natural minor</i> scale.<br /><br />",
 
 "<b><i>Harmonic minor</i></b><br /><br />\
         The harmonic minor is a modification of the natural minor (Aeolian mode). As its name suggests, its sound is often preferred for creating harmonies. The harmonic minor is created by taking the 7th note of the natural minor scale and raising it a half-step, to create a stronger feeling of tension and release with the root / octave.<br /><br />",

@@ -140,12 +140,12 @@ function createNoteCircle(){
         else                         text("\u266F \u266D",    _xpos, _ypos);
         noStroke();
         textAlign(CENTER, CENTER);
-        textSize(Size*0.4); 
+        textSize(Size*0.35); 
         if(majorMinorOther!=5) {
             if(showTips)
                 text("Tap different elements to\nread about them in\nthe box to the right.", 0.85*scaled, 0.4*scaled);
             else
-                text("To hear the highlighted scale:\n- Tap the notes on the circle\n- Use keyboard number keys\n- Tap the mode name above", 0.85*scaled, 0.4*scaled);
+                text("To hear the highlighted scale:\n- Tap the notes on the circle\n- Tap the mode name above\n- Use keyboard number keys (press Shift to hear chords)", 0.85*scaled, 0.4*scaled);
             if(showOverlay){
                 if(!lockNotes){
                     fill(0, fillalpha);
