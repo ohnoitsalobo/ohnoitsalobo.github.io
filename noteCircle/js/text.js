@@ -112,7 +112,7 @@ The intervals can be notated as<br /><br />\
 ];
 
 let harmonicMinorText = [
-"<b><i>Harmonic minor</i></b> (Aeolian \u266E7)<br /><br />\
+"<b>Harmonic minor</b> (Aeolian \u266E7)<br /><br />\
 The harmonic minor is a modification of the natural minor (Aeolian mode) - it is created by taking the 7th note of the natural minor scale and raising it a half-step, to create a stronger feeling of tension and release with the root / octave.<br />\
 The pattern of semitones is<br /><br />\
 <b>Root + 2 + 1 + 2 + 2 + 1 + 3 + 1</b><br /><br />\
@@ -151,7 +151,7 @@ The intervals can be notated as<br /><br />\
 ];
 
 let harmonicMajorText = [
-"<b><i>Harmonic major</i></b> (Ionian \u266D6)<br /><br />\
+"<b>Harmonic major</b> (Ionian \u266D6)<br /><br />\
 The harmonic major is a 'constructed' scale that is used in a few old compositions but is most common in jazz. It is created by raising the 3rd note of the harmonic minor scale by a half-step, or alternatively by lowering the 6th note of the major scale.<br />\
 The pattern of semitones is<br /><br />\
 <b>Root + 2 + 2 + 1 + 2 + 1 + 3 + 1</b><br /><br />\
@@ -190,7 +190,7 @@ The intervals can be notated as<br /><br />\
 ];
 
 let doubleHarmonicText = [
-"<b><i>Double harmonic</i></b><br /><br />\
+"<b>Double harmonic</b><br /><br />\
 The double harmonic scale is a scale that is generally unfamiliar in Western music. It is also known as the <i>Byzantine scale</i> or <i>Gypsy major</i> and resembles some Arabic scales.<br />\
 The pattern of semitones is<br /><br />\
 <b>Root + 1 + 3 + 1 + 2 + 1 + 3 + 1</b><br /><br />\
