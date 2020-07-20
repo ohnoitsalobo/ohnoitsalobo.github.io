@@ -94,7 +94,7 @@ doubleHarmonicModeList
 
 let keyText = [
 "The <b><i>root</i></b> is the 'home' note of any given scale, also known as <i>tonic</i>, or <i>key</i>. The name <i>root</i> is also commonly used to refer to the chord that is built by playing this first note along with the 3rd and 5th note of the scale - the 'root chord' or 'root triad'.<br />\
-            This interval is called a <b><i>unison</i></b> (1) interval, and in certain contexts it is also called a <b><i>diminished second</i></b> (d2).<br /><br />\
+            This interval is called a <b><i>unison</i></b> (1) interval, and in certain contexts it is also called a <b><i>diminished second</i></b> (d2, \u{1D12B}2).<br /><br />\
             <button onclick=\"playTone(0);\">Click here to hear the interval.</button>",
             
 "In relation to the root, this interval is variously known as (most common first):<br /><br />\
@@ -108,7 +108,7 @@ let keyText = [
             
 "In relation to the root, this interval is variously known as (most common first):<br /><br />\
             <b><i>major second</i></b> (maj2, M2) or just <b>2</b>, or <br />\
-            <b><i>diminished third</i></b> (dim3, d3).<br /><br />\
+            <b><i>diminished third</i></b> (dim3, d3, \u{1D12B}3).<br /><br />\
             <button onclick=\"playTwo(0, 2);\">Click here to hear the M2 interval.</button><br /><br />\
             <small>Playing a triad with a M2 interval <i>instead</i> of a 3 creates what is known as a <u>suspended</u> (sus2) chord, which is neither major nor minor, but 'takes on the character' of chords that come before it.<br /><br />\
             <button onclick=\"playThree(0, 2, 7);\">Click here to hear a sus2 chord (1 2 5).</button><br /><br />\
@@ -185,12 +185,12 @@ let keyText = [
             
 "In relation to the root, this interval is variously known as (most common first):<br /><br />\
             <b><i>major sixth</i></b> (maj6, M6) or just <b>6</b>, or <br />\
-            <b><i>diminished seventh</i></b> (dim7, d7).<br /><br />\
+            <b><i>diminished seventh</i></b> (dim7, d7, \u{1D12B}7).<br /><br />\
             <button onclick=\"playTwo(0, 9);\">Click here to hear the M6 interval.</button><br /><br />\
             <small>The sixth interval can be added to any other triad to create a 'compound' chord.</small><br /><br />\
-            <button onclick=\"playFour(0, 3, 7, 9);\">Click here to hear a m6 chord (1 \u266D3 5 6).</button><br /><br />\
             <button onclick=\"playFour(0, 4, 7, 9);\">Click here to hear a 6 chord (1 3 5 6).</button><br /><br />\
-            <button onclick=\"playFour(0, 3, 6, 9);\">Click here to hear a dim7 chord (1 \u266D3 \u266D5 6).</button><br /><br />\
+            <button onclick=\"playFour(0, 3, 7, 9);\">Click here to hear a m6 chord (1 \u266D3 5 6).</button><br /><br />\
+            <button onclick=\"playFour(0, 3, 6, 9);\">Click here to hear a dim7 chord (1 \u266D3 \u266D5 \u{1D12B}7).</button><br /><br />\
             The 6 can also be added to any other chord, an octave above, creating an <i>add13</i> chord.</small><br /><br />\
             <small>The major sixth is 9 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>minor third</i>.</small>",
