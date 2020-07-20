@@ -43,21 +43,40 @@ function playTone(t){
     }else
         playedAlpha[t%13] = 100;
 }
-function playTones(a, b){
+function playTwo(a, b){
     playTone(a);
     playTone(b);
 }
-function playTriad(a){
-    if     (a == 1){ playTone(modeCheck(1)); playTone(modeCheck(3)   ); playTone(modeCheck(5)   ); }
-    else if(a == 2){ playTone(modeCheck(2)); playTone(modeCheck(4)   ); playTone(modeCheck(6)   ); }
-    else if(a == 3){ playTone(modeCheck(3)); playTone(modeCheck(5)   ); playTone(modeCheck(7)   ); }
-    else if(a == 4){ playTone(modeCheck(4)); playTone(modeCheck(6)   ); playTone(modeCheck(1)+13); }
-    else if(a == 5){ playTone(modeCheck(5)); playTone(modeCheck(7)   ); playTone(modeCheck(2)+13); }
-    else if(a == 6){ playTone(modeCheck(6)); playTone(modeCheck(1)+13); playTone(modeCheck(3)+13); }
-    else if(a == 7){ playTone(modeCheck(7)); playTone(modeCheck(2)+13); playTone(modeCheck(4)+13); }
-    else if(a == 8){ playTone(modeCheck(8)); playTone(modeCheck(3)+13); playTone(modeCheck(5)+13); }
+function playThree(a, b, c){
+    var now, delay = 25;
+    now = millis();
+    playTone(a);
+    while(millis()-now < delay) { }
+    playTone(b);
+    while(millis()-now < delay*2) { }
+    playTone(c);
 }
-
+function playFour(a, b, c, d){
+    var now, delay = 25;
+    now = millis();
+    playTone(a);
+    while(millis()-now < delay) { }
+    playTone(b);
+    while(millis()-now < delay*2) { }
+    playTone(c);
+    while(millis()-now < delay*3) { }
+    playTone(d);
+}
+function playTriad(a){
+    if     (a == 1){ playThree( modeCheck(1), modeCheck(3)   , modeCheck(5)   ); }
+    else if(a == 2){ playThree( modeCheck(2), modeCheck(4)   , modeCheck(6)   ); }
+    else if(a == 3){ playThree( modeCheck(3), modeCheck(5)   , modeCheck(7)   ); }
+    else if(a == 4){ playThree( modeCheck(4), modeCheck(6)   , modeCheck(1)+13); }
+    else if(a == 5){ playThree( modeCheck(5), modeCheck(7)   , modeCheck(2)+13); }
+    else if(a == 6){ playThree( modeCheck(6), modeCheck(1)+13, modeCheck(3)+13); }
+    else if(a == 7){ playThree( modeCheck(7), modeCheck(2)+13, modeCheck(4)+13); }
+    else if(a == 8){ playThree( modeCheck(8), modeCheck(3)+13, modeCheck(5)+13); }
+}
 /*  */
 function modeCheck(t){
     if     (t == 1){ // 0

@@ -13,7 +13,7 @@ function setup(){
 ///////// SET UP TOOLTIPS
     mouseOverText = createDiv('');
     mouseOverText.parent('mouseOverText');
-    mouseOverText.size(scaled*0.8);
+    mouseOverText.size(width*0.45);
     mouseOverText.style('font-family', 'Georgia');
     mouseOverText.style('font-size', (scale*1.5)+'em');
 ///////// INITIALIZE
