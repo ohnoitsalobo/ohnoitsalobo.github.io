@@ -344,7 +344,7 @@ let keyText = [
             <small>The sixth interval can be added to any other triad to create a 'compound' chord.</small><br /><br />\
             <button onclick=\"playFour(0, 4, 7, 9);\">Click here to hear a 6 chord (1 3 5 6).</button><br /><br />\
             <button onclick=\"playFour(0, 3, 7, 9);\">Click here to hear a m6 chord (1 \u266D3 5 6).</button><br /><br />\
-            <small><small>A diminished seventh chord is created by three minor third intervals in succession. The chord is 'symmetric' around the circle, so the it will tend to sound very similar no matter which of the four notes is used as the root.</small></small><br /><br />\
+            <small><small>A <i>diminished seventh</i> (dim7) chord is created by playing a sixth over a diminished triad - musically, it looks like three minor third intervals in succession. The chord is 'symmetric' around the circle, so it will tend to sound very similar no matter which of the four notes is used as the root.</small></small><br /><br />\
             <button onclick=\"playFour(0, 3, 6, 9);\">Click here to hear a dim7 chord (1 \u266D3 \u266D5 \u{1D12B}7).</button><br /><br />\
             <small>The 6 can also be added to any other chord but an octave above, creating an <i>add13</i> chord.</small><br /><br />\
             <small>The major sixth is 9 semitones above the root.<br />\
@@ -362,6 +362,8 @@ let keyText = [
             <button onclick=\"playFour(0, 5, 7, 10);\">Click here to hear a 7sus4 chord (1 4 5 \u266D7).</button><br /><br />\
             <button onclick=\"playFour(0, 2, 7, 10);\">Click here to hear a 7sus2 chord (1 2 5 \u266D7).</button><br /><br />\
             <button onclick=\"playFour(0, 4, 8, 10);\">Click here to hear an aug7 chord (1 3 \u266F5 \u266D7).</button><br /><br />\
+            <small><small>A <i>half-diminished</i> (m7\u266D5) chord is created by playing a dominant seventh over a diminished triad.</small></small><br /><br />\
+            <button onclick=\"playFour(0, 3, 6, 10);\">Click here to hear a m7\u266D5 chord (1 \u266D3 \u266D5 \u266D7).</button><br /><br />\
             <small>The minor seventh is 10 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>major second</i>.</small>",
             // <br /><br />\
