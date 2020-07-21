@@ -1022,7 +1022,7 @@ function commonFunction(){
             if(currentlySelectedMode == 0){
                 mouseOverText.html(
                 "<br /><br /><small>In the key of <b>" + keyList[lockedIndex] + " major</b>,\
-                the <i>relative minor</i> key is <b>" + keyList[(lockedIndex+9)%12] + " minor</b> because it uses the same notes.", true);
+                the <i>relative minor</i> key is <b>" + keyList[(lockedIndex+9)%12] + " minor</b>, the 6th mode, because it uses the same notes.", true);
             }else if(currentlySelectedMode == 5){
                 mouseOverText.html(
                 "<br /><br /><small>In the key of <b>" + keyList[lockedIndex] + " minor</b>,\
