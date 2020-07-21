@@ -145,7 +145,7 @@ function playedHighlight(){
                     rect(0, 0, 0.7*Size, 0.7*Size);
                     rotate(-t*PI/6+PI/2);
                     fill(0, fillalpha); 
-                    text(i, 0, 0);
+                    text(intervalName(0, t), 0, 0);
                 pop()
             }else{
                 if(t == 0 || t == 2 || t == 7 || t == 9 || t == 11){
@@ -162,22 +162,34 @@ function playedHighlight(){
                 }else{
                     push();
                         rotate(t*PI/6);
-                        translate(0.26*scaled, 0.3*Size);
+                        translate(0.26*scaled, 0);
                         noStroke(); fill(fillcolor, fillalpha);
                         rect(0, 0, 0.7*Size, 0.7*Size);
                         rotate(-t*PI/6+PI/2);
                         fill(0, fillalpha); noStroke();
-                        text(intervalName(0, t), 0, 0);
+                        if(showEnharmonic == 1 || showEnharmonic == 2)
+                            text(intervalName(1, t), 0, 0);
+                        else
+                            text(intervalName(2, t), 0, 0);
                     pop()
-                    push();
-                        rotate(t*PI/6);
-                        translate(0.26*scaled, -0.3*Size);
-                        noStroke(); fill(fillcolor, fillalpha);
-                        rect(0, 0, 0.7*Size, 0.7*Size);
-                        rotate(-t*PI/6+PI/2);
-                        fill(0, fillalpha); noStroke();
-                        text(intervalName(1, t), 0, 0);
-                    pop()
+                    // push();
+                        // rotate(t*PI/6);
+                        // translate(0.26*scaled, 0.3*Size);
+                        // noStroke(); fill(fillcolor, fillalpha);
+                        // rect(0, 0, 0.7*Size, 0.7*Size);
+                        // rotate(-t*PI/6+PI/2);
+                        // fill(0, fillalpha); noStroke();
+                        // text(intervalName(2, t), 0, 0);
+                    // pop()
+                    // push();
+                        // rotate(t*PI/6);
+                        // translate(0.26*scaled, -0.3*Size);
+                        // noStroke(); fill(fillcolor, fillalpha);
+                        // rect(0, 0, 0.7*Size, 0.7*Size);
+                        // rotate(-t*PI/6+PI/2);
+                        // fill(0, fillalpha); noStroke();
+                        // text(intervalName(1, t), 0, 0);
+                    // pop()
                 }
             }
         }
@@ -197,20 +209,45 @@ function hideTips(){
 
 function intervalName(x, i){
     if(x == 0){
-             if(i == 1){ return "\u266D2"; }
+             if(i == 0){ return "1";       }
+        else if(i == 1){ return "\u266D2"; }
+        else if(i == 2){ return "2";       }
         else if(i == 3){ return "\u266D3"; }
-        else if(i == 4){ return "\u266D4"; }
-        else if(i == 5){ return "4"; }
+        else if(i == 4){ return "3";       }
+        else if(i == 5){ return "4";       }
         else if(i == 6){ return "\u266D5"; }
+        else if(i == 7){ return "5";       }
         else if(i == 8){ return "\u266D6"; }
+        else if(i == 9){ return "6";       }
         else if(i ==10){ return "\u266D7"; }
-    }else{
-             if(i == 1){ return "\u266F1"; }
+        else if(i ==11){ return "7";       }
+    }
+    else if (x == 1){
+             if(i == 0){ return "1";       }
+        else if(i == 1){ return "\u266F1"; }
+        else if(i == 2){ return "2";       }
         else if(i == 3){ return "\u266F2"; }
-        else if(i == 4){ return "3"; }
+        else if(i == 4){ return "3";       }
         else if(i == 5){ return "\u266F3"; }
         else if(i == 6){ return "\u266F4"; }
+        else if(i == 7){ return "5";       }
         else if(i == 8){ return "\u266F5"; }
+        else if(i == 9){ return "6";       }
         else if(i ==10){ return "\u266F6"; }
+        else if(i ==11){ return "7";       }
+    }
+    else if(x == 2){
+             if(i == 0){ return "1";       }
+        else if(i == 1){ return "\u266D2"; }
+        else if(i == 2){ return "2";       }
+        else if(i == 3){ return "\u266D3"; }
+        else if(i == 4){ return "\u266D4"; }
+        else if(i == 5){ return "4";       }
+        else if(i == 6){ return "\u266D5"; }
+        else if(i == 7){ return "5";       }
+        else if(i == 8){ return "\u266D6"; }
+        else if(i == 9){ return "6";       }
+        else if(i ==10){ return "\u266D7"; }
+        else if(i ==11){ return "7";       }
     }
 }
