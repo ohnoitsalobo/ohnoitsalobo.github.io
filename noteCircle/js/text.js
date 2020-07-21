@@ -266,7 +266,7 @@ let keyText = [
             <button onclick=\"playTwo(0, 2);\">Click here to hear the M2 interval.</button><br /><br />\
             <small>Playing a triad with a M2 interval <i>instead</i> of a 3 creates what is known as a <u>suspended</u> (sus2) chord, which is neither major nor minor, but 'takes on the character' of chords that come before it.<br /><br />\
             <button onclick=\"playThree(0, 2, 7);\">Click here to hear a sus2 chord (1 2 5).</button><br /><br />\
-            The 2 can also be added to any other chord, an octave above, creating an <i>add9</i> chord.</small><br /><br />\
+            The 2 can also be added to any other chord but an octave above, creating an <i>add9</i> chord.</small><br /><br />\
             <small>The major second is 2 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>minor seventh</i>.</small>",
             // <br /><br />\
@@ -300,7 +300,7 @@ let keyText = [
             <button onclick=\"playTwo(0, 5);\">Click here to hear the P4 interval.</button><br /><br />\
             <small>Playing a triad with a P4 interval <i>instead</i> of a 3 creates what is known as a <u>suspended</u> (sus4) chord, which is neither major nor minor, but 'takes on the character' of chords that come before it.<br /><br />\
             <button onclick=\"playThree(0, 5, 7);\">Click here to hear a sus4 chord (1 4 5).</button><br /><br />\
-            The 4 can also be added to any other chord, an octave above, creating an <i>add11</i> chord.</small><br /><br />\
+            The 4 can also be added to any other chord but an octave above, creating an <i>add11</i> chord.</small><br /><br />\
             <small>The perfect fourth is 5 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>perfect fifth</i>.",
             // </small><br /><br />\
@@ -346,7 +346,7 @@ let keyText = [
             <button onclick=\"playFour(0, 3, 7, 9);\">Click here to hear a m6 chord (1 \u266D3 5 6).</button><br /><br />\
             <small><small>A diminished seventh chord is created by three minor third intervals in succession. The chord is 'symmetric' around the circle, so the it will tend to sound very similar no matter which of the four notes is used as the root.</small></small><br /><br />\
             <button onclick=\"playFour(0, 3, 6, 9);\">Click here to hear a dim7 chord (1 \u266D3 \u266D5 \u{1D12B}7).</button><br /><br />\
-            <small>The 6 can also be added to any other chord, an octave above, creating an <i>add13</i> chord.</small><br /><br />\
+            <small>The 6 can also be added to any other chord but an octave above, creating an <i>add13</i> chord.</small><br /><br />\
             <small>The major sixth is 9 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>minor third</i>.</small>",
             // <br /><br />\
