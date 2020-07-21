@@ -342,7 +342,7 @@ let keyText = [
             <b><i>diminished seventh</i></b> (dim7, d7, \u{1D12B}7).<br /><br />\
             <button onclick=\"playTwo(0, 9);\">Click here to hear the M6 interval.</button><br /><br />\
             <small>The sixth interval can be added to any other triad to create a 'compound' chord.</small><br /><br />\
-            <button onclick=\"playFour(0, 4, 7, 9);\">Click here to hear a 6 chord (1 3 5 6).</button><br /><br />\
+            <button onclick=\"playFour(0, 4, 7, 9);\">Click here to hear a 6 chord (1 3 5 6).</button><br />\
             <button onclick=\"playFour(0, 3, 7, 9);\">Click here to hear a m6 chord (1 \u266D3 5 6).</button><br /><br />\
             <small><small>A <i>diminished seventh</i> (dim7) chord is created by playing a sixth over a diminished triad - musically, it looks like three minor third intervals in succession. The chord is 'symmetric' around the circle, so it will tend to sound very similar no matter which of the four notes is used as the root.</small></small><br /><br />\
             <button onclick=\"playFour(0, 3, 6, 9);\">Click here to hear a dim7 chord (1 \u266D3 \u266D5 \u{1D12B}7).</button><br /><br />\
@@ -357,10 +357,10 @@ let keyText = [
             <b><i>augmented sixth</i></b> (aug6, A6) or <b><i>sharp 6</i></b> (\u266F6).<br /><br />\
             <button onclick=\"playTwo(0, 10);\">Click here to hear the m7 interval.</button><br /><br />\
             <small>The minor seventh interval can be added to any other triad to create a 'compound' chord. It is also known as a <i>dominant seventh</i> interval.</small><br /><br />\
-            <button onclick=\"playFour(0, 4, 7, 10);\">Click here to hear a 7 chord (1 3 5 \u266D7).</button><br /><br />\
-            <button onclick=\"playFour(0, 3, 7, 10);\">Click here to hear a m7 chord (1 \u266D3 5 \u266D7).</button><br /><br />\
-            <button onclick=\"playFour(0, 5, 7, 10);\">Click here to hear a 7sus4 chord (1 4 5 \u266D7).</button><br /><br />\
-            <button onclick=\"playFour(0, 2, 7, 10);\">Click here to hear a 7sus2 chord (1 2 5 \u266D7).</button><br /><br />\
+            <button onclick=\"playFour(0, 4, 7, 10);\">Click here to hear a 7 chord (1 3 5 \u266D7).</button><br />\
+            <button onclick=\"playFour(0, 3, 7, 10);\">Click here to hear a m7 chord (1 \u266D3 5 \u266D7).</button><br />\
+            <button onclick=\"playFour(0, 5, 7, 10);\">Click here to hear a 7sus4 chord (1 4 5 \u266D7).</button><br />\
+            <button onclick=\"playFour(0, 2, 7, 10);\">Click here to hear a 7sus2 chord (1 2 5 \u266D7).</button><br />\
             <button onclick=\"playFour(0, 4, 8, 10);\">Click here to hear an aug7 chord (1 3 \u266F5 \u266D7).</button><br /><br />\
             <small><small>A <i>half-diminished</i> (m7\u266D5) chord is created by playing a dominant seventh over a diminished triad.</small></small><br /><br />\
             <button onclick=\"playFour(0, 3, 6, 10);\">Click here to hear a m7\u266D5 chord (1 \u266D3 \u266D5 \u266D7).</button><br /><br />\
@@ -374,10 +374,10 @@ let keyText = [
             <b><i>diminished octave</i></b> (dim8, d8) or <b><i>flat 8</i></b> (\u266D8).<br /><br />\
             <button onclick=\"playTwo(0, 11);\">Click here to hear the M7 interval.</button><br /><br />\
             <small>The major seventh interval can be added to any other triad to create a 'compound' chord.</small><br /><br />\
-            <button onclick=\"playFour(0, 4, 7, 11);\">Click here to hear a maj7 chord (1 3 5 7).</button><br /><br />\
-            <button onclick=\"playFour(0, 3, 7, 11);\">Click here to hear a mmaj7 chord (1 \u266D3 5 7).</button><br /><br />\
-            <button onclick=\"playFour(0, 5, 7, 11);\">Click here to hear a maj7sus4 chord (1 4 5 7).</button><br /><br />\
-            <button onclick=\"playFour(0, 2, 7, 11);\">Click here to hear a maj7sus2 chord (1 2 5 7).</button><br /><br />\
+            <button onclick=\"playFour(0, 4, 7, 11);\">Click here to hear a M7 chord (1 3 5 7).</button><br />\
+            <button onclick=\"playFour(0, 3, 7, 11);\">Click here to hear a mM7 chord (1 \u266D3 5 7).</button><br />\
+            <button onclick=\"playFour(0, 5, 7, 11);\">Click here to hear a M7sus4 chord (1 4 5 7).</button><br />\
+            <button onclick=\"playFour(0, 2, 7, 11);\">Click here to hear a M7sus2 chord (1 2 5 7).</button><br />\
             <button onclick=\"playFour(0, 4, 8, 11);\">Click here to hear an augM7 chord (1 3 \u266F5 7).</button><br /><br />\
             <small>The major seventh is 11 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>minor second</i>.</small>",

@@ -1022,12 +1022,12 @@ function commonFunction(){
         if(majorMinorOther == 0){
             if(currentlySelectedMode == 0){
                 mouseOverText.html(
-                "<br /><br /><small>In the key of <b>" + keyList[lockedIndex] + " major</b>,\
-                the <i>relative minor</i> key is <b>" + keyList[(lockedIndex+9)%12] + " minor</b>, the 6th mode, because it uses the same notes.", true);
+                "<br /><br /><small>In the key of <b>" + keyList[notesAreLocked()] + " major</b>,\
+                the <i>relative minor</i> key is <b>" + keyList[(notesAreLocked()+9)%12] + " minor</b>, the 6th mode, because it uses the same notes.", true);
             }else if(currentlySelectedMode == 5){
                 mouseOverText.html(
-                "<br /><br /><small>In the key of <b>" + keyList[lockedIndex] + " minor</b>,\
-                the <i>relative major</i> key is <b>" + keyList[(lockedIndex+3)%12] + " major</b> because it uses the same notes.", true);
+                "<br /><br /><small>In the key of <b>" + keyList[notesAreLocked()] + " minor</b>,\
+                the <i>relative major</i> key is <b>" + keyList[(notesAreLocked()+3)%12] + " major</b> because it uses the same notes.", true);
             }
         }
     }else{
