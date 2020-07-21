@@ -962,6 +962,7 @@ function changeKey(){
     else if(choice == keyList[9 ]) keyIndex = 9 ;
     else if(choice == keyList[10]) keyIndex = 10;
     else if(choice == keyList[11]) keyIndex = 11;
+    commonFunction();
     // mouseOverText.html(
         // "<b><i>Key</i></b>, <b><i>root</i></b>, or <b><i>tonic</i></b> are all commonly used to refer to the 'central' note of any scale - the note (or chord) which feels most like 'home' in any given arrangement of notes.<br /><br />\
         // Most common Western-based music today is based on 12 equal divisions of the scale, known as <i>12-tone equal temperament</i>, and that is the system that I am using in this app.\
