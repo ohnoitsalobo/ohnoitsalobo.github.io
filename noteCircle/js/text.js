@@ -71,7 +71,7 @@ The intervals can be notated as<br /><br />\
 ];
 
 let melodicMinorText = [
-"<b>Melodic minor</b> (Ionian \u266E3)<br /><br />\
+"<b>Melodic minor</b> (Ionian \u266D3)<br /><br />\
 The melodic minor is simply the <u>major scale</u> with <u>the 3rd note lowered</u> by one half-step (minor 3rd vs major 3rd).<br />\
 The pattern of semitones is<br /><br />\
 <b>Root + 2 + 1 + 2 + 2 + 2 + 2 + 1</b><br /><br />\
