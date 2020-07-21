@@ -312,7 +312,7 @@ let keyText = [
             the <b><i>tritone</i></b>, or more dramatically,<br />the <b><i>devil's interval</i></b>.<br /><br />\
             <button onclick=\"playTwo(0, 6);\">Click here to hear the devil's interval.</button><br /><br />\
             <small>The tritone is 6 semitones above the root.<br />\
-            <small>Playing a triad with a \u266D5 and a \u266D3 creates what is known as a <u>diminished</u> (dim) chord. It can also be described as stacking two m3 intervals on top of each other.</small><br /><br />\
+            <small>Playing a triad with a \u266D5 and a \u266D3 creates what is known as a <u>diminished</u> (dim) chord. It can also be described as two minor third intervals stacked on top of each other.</small><br /><br />\
             <button onclick=\"playThree(0, 3, 6);\">Click here to hear a diminished chord (1 \u266D3 \u266D5).</button><br /><br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you ... the same interval!<br /><br />\
             There is a lot of interesting history behind this one interval, but suffice it to say that 'traditional' composers were often very reluctant (or outright refused, for example in church music) to use the 'tritone' interval as a theme in their compositions, due to its perceived dissonance.</small>",
@@ -330,7 +330,7 @@ let keyText = [
             <b><i>augmented fifth</i></b> (aug5, A5) or <b><i>sharp 5</i></b> (\u266F5), or<br />\
             <b><i>minor sixth</i></b> (min6, m6) or <b><i>flat 6</i></b> (\u266D6).<br /><br />\
             <button onclick=\"playTwo(0, 8);\">Click here to hear the \u266F5 interval.</button><br /><br />\
-            <small>Playing a triad with a \u266F5 and a 3 creates what is known as an <u>augmented</u> (aug) chord. It can also be described as stacking two major third intervals.</small><br /><br />\
+            <small>Playing a triad with a \u266F5 and a 3 creates what is known as an <u>augmented</u> (aug) chord. It can also be described as two major third intervals stacked on top of each other.</small><br /><br />\
             <button onclick=\"playThree(0, 4, 8);\">Click here to hear an augmented chord (1 3 \u266F5).</button><br /><br />\
             <small>The augmented fifth is 8 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>major third</i>.</small>",
@@ -344,8 +344,9 @@ let keyText = [
             <small>The sixth interval can be added to any other triad to create a 'compound' chord.</small><br /><br />\
             <button onclick=\"playFour(0, 4, 7, 9);\">Click here to hear a 6 chord (1 3 5 6).</button><br /><br />\
             <button onclick=\"playFour(0, 3, 7, 9);\">Click here to hear a m6 chord (1 \u266D3 5 6).</button><br /><br />\
+            <small><small>A diminished seventh chord is created by three minor third intervals in succession. The chord is 'symmetric' around the circle, so the it will tend to sound very similar no matter which of the four notes is used as the root.</small></small><br /><br />\
             <button onclick=\"playFour(0, 3, 6, 9);\">Click here to hear a dim7 chord (1 \u266D3 \u266D5 \u{1D12B}7).</button><br /><br />\
-            The 6 can also be added to any other chord, an octave above, creating an <i>add13</i> chord.</small><br /><br />\
+            <small>The 6 can also be added to any other chord, an octave above, creating an <i>add13</i> chord.</small><br /><br />\
             <small>The major sixth is 9 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>minor third</i>.</small>",
             // <br /><br />\
