@@ -95,6 +95,7 @@ function draw(){
     fill(0, 150); noStroke();
     ellipse(0, 1.25*scaled, Size*2, Size*2);
     fill(255, 150);
+    textSize(0.4*Size);
     text(showTips ? ("Hide tips") : ("Show tips"), 0, 1.23*scaled)
 
 ///////// CONTROL FADE IN / OUT
@@ -161,7 +162,7 @@ function playedHighlight(){
                 }else{
                     push();
                         rotate(t*PI/6);
-                        translate(0.26*scaled, 0);
+                        translate(0.26*scaled, 0.3*Size);
                         noStroke(); fill(fillcolor, fillalpha);
                         rect(0, 0, 0.7*Size, 0.7*Size);
                         rotate(-t*PI/6+PI/2);
@@ -170,7 +171,7 @@ function playedHighlight(){
                     pop()
                     push();
                         rotate(t*PI/6);
-                        translate(0.21*scaled, 0);
+                        translate(0.26*scaled, -0.3*Size);
                         noStroke(); fill(fillcolor, fillalpha);
                         rect(0, 0, 0.7*Size, 0.7*Size);
                         rotate(-t*PI/6+PI/2);
@@ -198,7 +199,7 @@ function intervalName(x, i){
     if(x == 0){
              if(i == 1){ return "\u266D2"; }
         else if(i == 3){ return "\u266D3"; }
-        else if(i == 4){ return "3"; }
+        else if(i == 4){ return "\u266D4"; }
         else if(i == 5){ return "4"; }
         else if(i == 6){ return "\u266D5"; }
         else if(i == 8){ return "\u266D6"; }
@@ -206,7 +207,7 @@ function intervalName(x, i){
     }else{
              if(i == 1){ return "\u266F1"; }
         else if(i == 3){ return "\u266F2"; }
-        else if(i == 4){ return "\u266D4"; }
+        else if(i == 4){ return "3"; }
         else if(i == 5){ return "\u266F3"; }
         else if(i == 6){ return "\u266F4"; }
         else if(i == 8){ return "\u266F5"; }
