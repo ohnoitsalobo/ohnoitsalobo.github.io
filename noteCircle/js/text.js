@@ -117,7 +117,8 @@ The harmonic minor is a modification of the natural minor (Aeolian mode) - it is
 The pattern of semitones is<br /><br />\
 <b>Root + 2 + 1 + 2 + 2 + 1 + 3 + 1</b><br /><br />\
 The intervals can be notated as<br /><br />\
-<b>1 2 \u266D3 4 5 \u266D6 7</b>",
+<b>1 2 \u266D3 4 5 \u266D6 7</b><br /><br />\
+<small>As its name suggests, its sound is often preferred for creating harmonies.</small>",
 
 "<b>Locrian \u266E6</b> - the second mode of the harmonic minor scale. The pattern of semitones is<br /><br />\
 <b>Root + 1 + 2 + 2 + 1 + 3 + 1 + 2</b><br /><br />\
