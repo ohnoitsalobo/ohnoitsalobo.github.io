@@ -359,13 +359,13 @@ let keyText = [
             <b><i>minor seventh</i></b> (min7, m7), or <b><i>flat 7</i></b> (\u266D7), or <br />\
             <b><i>augmented sixth</i></b> (aug6, A6) or <b><i>sharp 6</i></b> (\u266F6).<br /><br />\
             <button onclick=\"playTwo(0, 10);\">Click here to hear the m7 interval.</button><br /><br />\
-            <small>The minor seventh interval can be added to any other triad to create a 'compound' chord. It is also known as a <i>dominant seventh</i> interval.</small><br /><br />\
+            <small>The minor seventh interval can be added to any other triad to create a 'compound' chord. It is also sometimes known as a <i>dominant seventh</i> interval.</small><br /><br />\
             <button onclick=\"playFour(0, 4, 7, 10);\">Click here to hear a 7 chord (1 3 5 \u266D7).</button><br />\
             <button onclick=\"playFour(0, 3, 7, 10);\">Click here to hear a m7 chord (1 \u266D3 5 \u266D7).</button><br />\
             <button onclick=\"playFour(0, 5, 7, 10);\">Click here to hear a 7sus4 chord (1 4 5 \u266D7).</button><br />\
             <button onclick=\"playFour(0, 2, 7, 10);\">Click here to hear a 7sus2 chord (1 2 5 \u266D7).</button><br />\
             <button onclick=\"playFour(0, 4, 8, 10);\">Click here to hear an aug7 chord (1 3 \u266F5 \u266D7).</button><br /><br />\
-            <small><small>A <i>half-diminished</i> (m7\u266D5) chord is created by playing a dominant seventh over a diminished triad.</small></small><br /><br />\
+            <small>A <i>half-diminished</i> (m7\u266D5) chord is created by playing a dominant seventh over a diminished triad.</small><br /><br />\
             <button onclick=\"playFour(0, 3, 6, 10);\">Click here to hear a m7\u266D5 chord (1 \u266D3 \u266D5 \u266D7).</button><br /><br />\
             <small>The minor seventh is 10 semitones above the root.<br />\
             <u>Inverting</u> it, or going the same distance in the <i>opposite</i> direction, will give you a <i>major second</i>.</small>",
