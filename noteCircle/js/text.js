@@ -1,4 +1,4 @@
-let mouseOver = "<br /><br /><small>Tap the mode name to hear what it sounds like.<br /><br />\
+let mouseOver = "<br /><br /><small>Tap the mode name to hear what it sounds like.<br />\
 On computer, use the numbers 1-8 to play different notes of the scale.<br />\
 Press  <i>Shift</i> + number to hear the chord corresponding to that scale degree i.e. the \u2160 chord, the \u2162 chord, the \u2165 chord, etc.</small>";
 
@@ -25,48 +25,62 @@ The double harmonic scale is a scale that is generally unfamiliar in Western mus
 Explore other scales by clicking the highlighted notes.<br />These do not auto-play or have keyboard keys assigned yet."
 ];
 
-let videoLink = "<br /><br /><a href=\"https://www.youtube.com/watch?v=VPWQC4pdEco&list=PLMvVESrbjBWplAcg3pG0TesncGT7qvO06&index=14\"><small>Watch 12ToneVideos' introduction on the subject of modes.</small></a><br /><br />";
+// let videoLink = "<br /><br /><a href=\"https://www.youtube.com/watch?v=VPWQC4pdEco&list=PLMvVESrbjBWplAcg3pG0TesncGT7qvO06&index=14\"><small>Watch 12ToneVideos' introduction on the subject of modes.</small></a><br /><br />";
+let videoLink = "";
 let majorText = [
-videoLink + "<b>Ionian</b>, or major - the first 'modern' scale, in a manner of speaking. The pattern of semitones is<br /><br />\
-<b>Root + 2 + 2 + 1 + 2 + 2 + 2 + 1</b><br /><br />\
+videoLink + "<b>Ionian</b>, or major - ostensibly the most well-known musical scale. \
 The intervals can be notated as<br /><br />\
 <b>1 2 3 4 5 6 7</b><br /><br />\
-<small>The Ionian mode is the most well known scale, but all of its modes are scales in their own right, and serve different emotional purposes in music.</small>",
+The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 1 + 2 + 2 + 2 + 1</b><br /><br />\
+<small>Taking the pattern of semitones and <u>inverting</u> it (going around the circle the opposite way) will build the <i>Phrygian</i> scale.</small>",
 
-videoLink + "<b>Dorian</b> - the second mode of the major scale. The pattern of semitones is<br /><br />\
-<b>Root + 2 + 1 + 2 + 2 + 2 + 1 + 2</b><br /><br />\
+videoLink + "<b>Dorian</b> - the second mode of the major scale. \
 The intervals can be notated as<br /><br />\
 <b>1 2 \u266D3 4 5 6 \u266D7</b><br /><br />\
+The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 2 + 2 + 2 + 1 + 2</b><br /><br />\
+<small>Taking the pattern of semitones and <u>inverting</u> it (going around the circle the opposite way) will result in the <i>Dorian</i> scale again! This makes sense from the pattern shown, as the Dorian scale is visually symmetric around its root.</small><br /><br />\
 <small>The Dorian mode could be considered two steps 'darker' than Ionian due to its lowered 3rd and 7th intervals.</small>",
 
-videoLink + "<b>Phrygian</b> - the third mode of the major scale. The pattern of semitones is<br /><br />\
-<b>Root + 1 + 2 + 2 + 2 + 1 + 2 + 2</b><br /><br />\
+videoLink + "<b>Phrygian</b> - the third mode of the major scale. \
 The intervals can be notated as<br /><br />\
 <b>1 \u266D2 \u266D3 4 5 \u266D6 \u266D7</b><br /><br />\
+The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 2 + 2 + 1 + 2 + 2</b><br /><br />\
+<small>Taking the pattern of semitones and <u>inverting</u> it (going around the circle the opposite way) will build the <i>Ionian</i> scale.</small><br /><br />\
 <small>The Phrygian mode could be considered four steps 'darker' than Ionian due to its lowered 2nd, 3rd, 6th, and 7th intervals.</small>",
 
-videoLink + "<b>Lydian</b> - the fourth mode of the major scale. The pattern of semitones is<br /><br />\
-<b>Root + 2 + 2 + 2 + 1 + 2 + 2 + 1</b><br /><br />\
+videoLink + "<b>Lydian</b> - the fourth mode of the major scale. \
 The intervals can be notated as<br /><br />\
 <b>1 2 3 \u266F4 5 6 7</b><br /><br />\
+The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 2 + 1 + 2 + 2 + 1</b><br /><br />\
+<small>Taking the pattern of semitones and <u>inverting</u> it (going around the circle the opposite way) will build the <i>Locrian</i> scale.</small><br /><br />\
 <small>The Lydian mode could be considered one step 'brighter' than Ionian due to its raised 4th interval.</small>",
 
-videoLink + "<b>Mixolydian</b> - the fifth mode of the major scale. The pattern of semitones is<br /><br />\
-<b>Root + 2 + 2 + 1 + 2 + 2 + 1 + 2</b><br /><br />\
+videoLink + "<b>Mixolydian</b> - the fifth mode of the major scale. \
 The intervals can be notated as<br /><br />\
 <b>1 2 3 4 5 6 \u266D7</b><br /><br />\
+The pattern of semitones is<br /><br />\
+<b>Root + 2 + 2 + 1 + 2 + 2 + 1 + 2</b><br /><br />\
+<small>Taking the pattern of semitones and <u>inverting</u> it (going around the circle the opposite way) will build the <i>Aeolian</i> scale.</small><br /><br />\
 <small>The Mixolydian mode could be considered one step 'darker' than Ionian due to its lowered 7th interval.</small>",
 
-videoLink + "<b>Aeolian</b> - the sixth mode of the major scale, also called the <i>natural minor</i>. The pattern of semitones is<br /><br />\
-<b>Root + 2 + 1 + 2 + 2 + 1 + 2 + 2</b><br /><br />\
+videoLink + "<b>Aeolian</b> - the sixth mode of the major scale, also called the <i>natural minor</i>. \
 The intervals can be notated as<br /><br />\
 <b>1 2 \u266D3 4 5 \u266D6 \u266D7</b><br /><br />\
+The pattern of semitones is<br /><br />\
+<b>Root + 2 + 1 + 2 + 2 + 1 + 2 + 2</b><br /><br />\
+<small>Taking the pattern of semitones and <u>inverting</u> it (going around the circle the opposite way) will build the <i>Mixolydian</i> scale.</small><br /><br />\
 <small>The Aeolian mode could be considered three steps 'darker' than Ionian due to its lowered 3rd, 6th, and 7th intervals.</small>",
 
-videoLink + "<b>Locrian</b> - the seventh mode of the major scale. The pattern of semitones is<br /><br />\
-<b>Root + 1 + 2 + 2 + 1 + 2 + 2 + 2</b><br /><br />\
+videoLink + "<b>Locrian</b> - the seventh mode of the major scale. \
 The intervals can be notated as<br /><br />\
 <b>1 \u266D2 \u266D3 4 \u266D5 \u266D6 \u266D7</b><br /><br />\
+The pattern of semitones is<br /><br />\
+<b>Root + 1 + 2 + 2 + 1 + 2 + 2 + 2</b><br /><br />\
+<small>Taking the pattern of semitones and <u>inverting</u> it (going around the circle the opposite way) will build the <i>Lydian</i> scale.</small><br /><br />\
 <small>The Locrian mode is commonly considered the 'darkest' diatonic mode due to its lowered 2nd, 3rd, 5th, 6th, and 7th intervals.</small>"
 ];
 
@@ -78,7 +92,7 @@ The pattern of semitones is<br /><br />\
 The intervals can be notated as<br /><br />\
 <b>1 2 \u266D3 4 5 6 7</b><br /><br />\
 <small>As its name suggests, composers often preferred its sound when creating melodies, as opposed to the harmonic minor which has a three-semitone jump between its 6th and 7th notes.<br />\
-Interestingly, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the <i>natural minor</i> scale.</small>",
+Interestingly, the melodic minor scale is special in that it is played differently while ascending vs descending. When <i>ascending</i> the scale, it is played as you see here, but when <i>descending</i> it usually reverts back to the <i>natural minor</i> scale with a \u266D6 and \u266D7.</small>",
 
 "<b>Dorian \u266D2 / Phrygian \u266E6</b> - the second mode of the melodic minor scale. The pattern of semitones is<br /><br />\
 <b>Root + 1 + 2 + 2 + 2 + 2 + 1 + 2</b><br /><br />\
