@@ -3,7 +3,7 @@ var synth = new Tone.PolySynth(6, Tone.Synth,
 {
     oscillator: {
         type    : 'triangle8',
-        volume  : -10,
+        volume  : -20,
     },
     envelope: {
         attack  : 0.05,
@@ -14,22 +14,22 @@ var synth = new Tone.PolySynth(6, Tone.Synth,
 }
 ).toMaster()
 
-let root2_12 = 1.059463;
+let root12_2 = 1.059463;
 /*            C     C#/Db     D     D#/Eb     E       F     F#/Gb     G     G#/Ab    A   A#/Bb     B       C'    */
 var tone = [
-/* C  */ 440/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12,
-/* C# */ 440/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12,
-/* D  */ 440/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12,
-/* Eb */ 440/root2_12/root2_12/root2_12/root2_12/root2_12/root2_12,
-/* E  */ 440/root2_12/root2_12/root2_12/root2_12/root2_12,
-/* F  */ 440/root2_12/root2_12/root2_12/root2_12,
-/* F# */ 440/root2_12/root2_12/root2_12,
-/* G  */ 440/root2_12/root2_12,
-/* G# */ 440/root2_12,
+/* C  */ 440/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2,
+/* C# */ 440/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2,
+/* D  */ 440/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2,
+/* Eb */ 440/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2,
+/* E  */ 440/root12_2/root12_2/root12_2/root12_2/root12_2,
+/* F  */ 440/root12_2/root12_2/root12_2/root12_2,
+/* F# */ 440/root12_2/root12_2/root12_2,
+/* G  */ 440/root12_2/root12_2,
+/* G# */ 440/root12_2,
 /* A  */ 440,
-/* Bb */ 440*root2_12,
-/* B  */ 440*root2_12*root2_12,
-/* C' */ 440*root2_12*root2_12*root2_12,
+/* Bb */ 440*root12_2,
+/* B  */ 440*root12_2*root12_2,
+/* C' */ 440*root12_2*root12_2*root12_2,
 ];
 
 function playTone(t){
@@ -43,18 +43,29 @@ function playTone(t){
     }else
         playedAlpha[t%13] = 100;
 }
+function playTone1(t){
+    var transpose = floor(t/13+1);
+    for(var i = 0; i < notesAreLocked(); i++)
+        transpose *= 1.059463;
+    synth.triggerAttackRelease(tone[t%13]*transpose, "4n");
+    if(keyIsPressed && (t%13)%12 == 0 ){
+        playedAlpha[ 0] = 100;
+        playedAlpha[12] = 100;
+    }else
+        playedAlpha[t%13] = 100;
+}
 function playTwo(a, b){
-    playTone(a);
-    playTone(b);
+    playTone1(a);
+    playTone1(b);
 }
 function playThree(a, b, c){
     var now, delay = 50;
     now = millis();
-    playTone(a);
+    playTone1(a);
     while(millis()-now < delay) { loop(); }
-    playTone(b);
+    playTone1(b);
     while(millis()-now < delay*2) { loop(); }
-    playTone(c);
+    playTone1(c);
     while(millis()-now < delay*4) { loop(); }
     // playTone(a);
     // playTone(b);
@@ -63,13 +74,13 @@ function playThree(a, b, c){
 function playFour(a, b, c, d){
     var now, delay = 50;
     now = millis();
-    playTone(a);
+    playTone1(a);
     while(millis()-now < delay) { }
-    playTone(b);
+    playTone1(b);
     while(millis()-now < delay*2) { }
-    playTone(c);
+    playTone1(c);
     while(millis()-now < delay*3) { }
-    playTone(d);
+    playTone1(d);
     while(millis()-now < delay*5) { }
     // playTone(a);
     // playTone(b);
