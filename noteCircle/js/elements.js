@@ -28,23 +28,17 @@ let harmonicMajorScale = [];
 let doubleHarmonicScale = [];
 
 function loadScales(){
-    let begin = "<object type=\"image/svg+xml\" data=\"";
-    let end = "\"> </object>";
-    let ext = ".svg" + end;
-    let majorpath          = begin + "modes/svg/major-";
-    let melodicminorpath   = begin + "modes/svg/melodicminor-";
-    let harmonicminorpath  = begin + "modes/svg/harmonicminor-";
-    let harmonicmajorpath  = begin + "modes/svg/harmonicmajor-";
-    let doubleharmonicpath = begin + "modes/svg/doubleharmonic-";
+    let begin = "<object type=\"image/svg+xml\" data=\"modes/svg/";
+    let end = ".svg\"> </object>";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             let index = i+( j*7);
             let filenum = i+(imageOrder[j]*7)+2;
-            majorScale          [index] = majorpath          + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + ext;
-            melodicMinorScale   [index] = melodicminorpath   + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + ext;
-            harmonicMinorScale  [index] = harmonicminorpath  + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + ext;
-            harmonicMajorScale  [index] = harmonicmajorpath  + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + ext;
-            doubleHarmonicScale [index] = doubleharmonicpath + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + ext;
+            majorScale          [index] = begin + "major-"          + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
+            melodicMinorScale   [index] = begin + "melodicminor-"   + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
+            harmonicMinorScale  [index] = begin + "harmonicminor-"  + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
+            harmonicMajorScale  [index] = begin + "harmonicmajor-"  + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
+            doubleHarmonicScale [index] = begin + "doubleharmonic-" + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
         }
     }
 }                                                          
@@ -62,41 +56,26 @@ function drawNotes(){
     let alt1 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keySharpList[notesAreLocked()] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 1";
     let alt2 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keyFlatList [notesAreLocked()] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 2";
     if     (majorMinorOther == 0){
-        // img1 = createImg(majorScale[index*7+currentlySelectedMode], alt1);
-        // if(offset > 0) 
-            // img2 = createImg(majorScale[offset*7+currentlySelectedMode], alt2);
         img1 = createDiv(majorScale[index*7+currentlySelectedMode]);
         if(offset > 0) 
             img2 = createDiv(majorScale[offset*7+currentlySelectedMode]);
     }
     else if(majorMinorOther == 1){
-        // img1 = createImg(melodicMinorScale[index*7+currentlySelectedMode], alt1);
-        // if(offset > 0) 
-            // img2 = createImg(melodicMinorScale[offset*7+currentlySelectedMode], alt2);
         img1 = createDiv(melodicMinorScale[index*7+currentlySelectedMode]);
         if(offset > 0) 
             img2 = createDiv(melodicMinorScale[offset*7+currentlySelectedMode]);
     }
     else if(majorMinorOther == 2){
-        // img1 = createImg(harmonicMinorScale[index*7+currentlySelectedMode], alt1);
-        // if(offset > 0) 
-            // img2 = createImg(harmonicMinorScale[offset*7+currentlySelectedMode], alt2);
         img1 = createDiv(harmonicMinorScale[index*7+currentlySelectedMode]);
         if(offset > 0) 
             img2 = createDiv(harmonicMinorScale[offset*7+currentlySelectedMode]);
     }
     else if(majorMinorOther == 3){
-        // img1 = createImg(harmonicMajorScale[index*7+currentlySelectedMode], alt1);
-        // if(offset > 0) 
-            // img2 = createImg(harmonicMajorScale[offset*7+currentlySelectedMode], alt2);
         img1 = createDiv(harmonicMajorScale[index*7+currentlySelectedMode]);
         if(offset > 0) 
             img2 = createDiv(harmonicMajorScale[offset*7+currentlySelectedMode]);
     }
     else if(majorMinorOther == 4){
-        // img1 = createImg(doubleHarmonicScale[index*7+currentlySelectedMode], alt1);
-        // if(offset > 0) 
-            // img2 = createImg(doubleHarmonicScale[offset*7+currentlySelectedMode], alt2);
         img1 = createDiv(doubleHarmonicScale[index*7+currentlySelectedMode]);
         if(offset > 0) 
             img2 = createDiv(doubleHarmonicScale[offset*7+currentlySelectedMode]);
