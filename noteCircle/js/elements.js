@@ -5,6 +5,8 @@
 // Ds =  4; //  6
 // Eb =  5; //  7
 // E  =  6; //  8
+// Es =   ; //   
+// Fb =   ; //   
 // F  =  7; // 10
 // Fs =  8; // 11
 // Gb =  9; // 13
@@ -15,6 +17,8 @@
 // As = 14; //  9
 // Bb = 15; // 12
 // B  = 16; // 15
+// Bs =   ; // 
+// Cb =   ; // 
 const imageOrder = [ 0, 1, 3, 4, 6, 7, 8, 10, 11, 13, 14, 16, 2, 5, 9, 12, 15];
 // const Bs
 // const Cb
@@ -26,10 +30,11 @@ let melodicMinorScale = [];
 let harmonicMinorScale = [];
 let harmonicMajorScale = [];
 let doubleHarmonicScale = [];
+let _images = [majorScale, melodicMinorScale, harmonicMinorScale, harmonicMajorScale, doubleHarmonicScale];
 
 function loadScales(){
     let begin = "<object type=\"image/svg+xml\" data=\"modes/svg/";
-    let end = ".svg\"> </object>";
+    let end = ".svg\">Please use a web browser with SVG image support to see the image.</object>";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             let index = i+( j*7);
@@ -55,30 +60,10 @@ function drawNotes(){
     else if(index == 10) offset = 16;
     let alt1 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keySharpList[notesAreLocked()] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 1";
     let alt2 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keyFlatList [notesAreLocked()] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 2";
-    if     (majorMinorOther == 0){
-        img1 = createDiv(majorScale[index*7+currentlySelectedMode]);
+    if(majorMinorOther != 5){
+        img1 = createDiv(_images[majorMinorOther][index*7+currentlySelectedMode]);
         if(offset > 0) 
-            img2 = createDiv(majorScale[offset*7+currentlySelectedMode]);
-    }
-    else if(majorMinorOther == 1){
-        img1 = createDiv(melodicMinorScale[index*7+currentlySelectedMode]);
-        if(offset > 0) 
-            img2 = createDiv(melodicMinorScale[offset*7+currentlySelectedMode]);
-    }
-    else if(majorMinorOther == 2){
-        img1 = createDiv(harmonicMinorScale[index*7+currentlySelectedMode]);
-        if(offset > 0) 
-            img2 = createDiv(harmonicMinorScale[offset*7+currentlySelectedMode]);
-    }
-    else if(majorMinorOther == 3){
-        img1 = createDiv(harmonicMajorScale[index*7+currentlySelectedMode]);
-        if(offset > 0) 
-            img2 = createDiv(harmonicMajorScale[offset*7+currentlySelectedMode]);
-    }
-    else if(majorMinorOther == 4){
-        img1 = createDiv(doubleHarmonicScale[index*7+currentlySelectedMode]);
-        if(offset > 0) 
-            img2 = createDiv(doubleHarmonicScale[offset*7+currentlySelectedMode]);
+            img2 = createDiv(_images[majorMinorOther][offset*7+currentlySelectedMode]);
     }
     img1.parent('img1');
     img1.elt.title = alt1;

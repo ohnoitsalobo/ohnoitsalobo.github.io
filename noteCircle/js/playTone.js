@@ -47,7 +47,7 @@ function playTone1(t){
     var transpose = floor(t/13+1);
     for(var i = 0; i < notesAreLocked(); i++)
         transpose *= 1.059463;
-    synth.triggerAttackRelease(tone[t%13]*transpose, "4n");
+    synth.triggerAttackRelease(tone[t%13]*transpose, "5n");
     if(keyIsPressed && (t%13)%12 == 0 ){
         playedAlpha[ 0] = 100;
         playedAlpha[12] = 100;
