@@ -5,7 +5,7 @@
         <style>
             body {
                 text-align: center;
-                font-family: Arial;
+                font-family: Times New Roman;
                 font-size: 1em;
                 background-color:#222;
             }
@@ -17,15 +17,18 @@
             .audio {
                 background-color:#999;
             }
+            .instrument {
+                font-size: 0.9em;
+            }
         </style>
 	</head>
 	<body>
     <center>
+    <!--  -- >
         <table border=1 width=75%>
             <tr>
                 <td colspan=3>
-                    Below are audio clips of my handmade contact microphone and preamplifier.<br />
-                    Apart from a few personal adjustments, the preamp is essentially a conglomeration of two circuits:<br />
+                    This is a demo page of my handmade contact microphone and preamplifier. Apart from some personal adjustments, the preamp was inspired by two circuits:<br />
                     <a href="https://www.richardmudhar.com/blog/piezo-contact-microphone-hi-z-amplifier-low-noise-version/">this op-amp circuit by Richard Mudhar</a> for the piezoelectric input, and <br />
                     <a href="https://sound-au.com/project35.htm">this DI-box circuit by Rod Elliott</a> for phantom power and balanced output.<br />
                 </td>
@@ -38,12 +41,12 @@
                 </td>
             </tr>
             <tr style="font-size: 1.5em;">
-                <td style="font-size: 0.5em;">Please use headphones<br />for best sound</td>
+                <td style="font-size: 0.4em;">Please use headphones<br />for the best sound</td>
                 <td class="audio"><i>Raw piezoelectric signal</i></td>
                 <td class="audio"><i>With preamplifier</i></td>
             </tr>
             <tr>
-                <td><b>Viola</b><br /><small><small><b>C<sub>3</sub> G<sub>3</sub> D<sub>4</sub> A<sub>4</sub></b></small></small></b></td>
+                <td class="instrument"><b>Viola</b><br /><small><small><b>C<sub>3</sub> G<sub>3</sub> D<sub>4</sub> A<sub>4</sub></b></small></small></b></td>
                 <td class="audio">
                     <audio controls>
                         <source src="Viola RAW PIEZO.wav" type="audio/wav">
@@ -62,7 +65,7 @@
                 </td>
             </tr>
             <tr>
-                <td><b>Mandolin</b><br /><small><small><b>G<sub>3</sub> D<sub>4</sub> A<sub>4</sub> E<sub>5</sub></b></small></small></b></td>
+                <td class="instrument"><b>Mandolin</b><br /><small><small><b>G<sub>3</sub> D<sub>4</sub> A<sub>4</sub> E<sub>5</sub></b></small></small></b></td>
                 <td class="audio">
                     <audio controls>
                         <source src="Mandolin RAW PIEZO.wav" type="audio/wav">
@@ -81,7 +84,7 @@
                 </td>
             </tr>
             <tr>
-                <td><b>Classical guitar<br />(nylon strings)</b><br /><small><small><b>E<sub>2</sub> A<sub>2</sub> D<sub>3</sub> G<sub>3</sub> B<sub>3</sub> E<sub>4</sub></b></small></small></b></td>
+                <td class="instrument"><b>Classical guitar<br />(nylon strings)</b><br /><small><small><b>E<sub>2</sub> A<sub>2</sub> D<sub>3</sub> G<sub>3</sub> B<sub>3</sub> E<sub>4</sub></b></small></small></b></td>
                 <td class="audio">
                     <audio controls>
                         <source src="Guitar_classical RAW PIEZO.wav" type="audio/wav">
@@ -100,7 +103,7 @@
                 </td>
             </tr>
             <tr>
-                <td><b>Charango<br />(fingerpicking)</b></td>
+                <td class="instrument"><b>Charango<br />(fingerpicking)</b></td>
                 <td class="audio">
                     <audio controls>
                         <source src="Charango_fingerpick RAW PIEZO.wav" type="audio/wav">
@@ -119,7 +122,7 @@
                 </td>
             </tr>
             <tr>
-                <td><b>Charango<br />(strumming)</b></td>
+                <td class="instrument"><b>Charango<br />(strumming)</b></td>
                 <td class="audio">
                     <audio controls>
                         <source src="Charango_strum RAW PIEZO.wav" type="audio/wav">
@@ -138,7 +141,12 @@
                 </td>
             </tr>
             <tr>
-                <td><b>Guitalele (modified)<br /><small><small><b>C<sub>2</sub> G<sub>2</sub> D<sub>3</sub> A<sub>3</sub> E<sub>4</sub></b></small></small></b></td>
+                <td class="instrument">
+                    <b>Guitalele (modified)<br /><small><small><b>C<sub>2</sub> G<sub>2</sub> D<sub>3</sub> A<sub>3</sub> E<sub>4</sub></b></small></small></b>
+                    <div style="text-align: bottom;">
+                        <small><small>I modified this instrument<br />to emulate a 5-string mandocello.</small></small>
+                    </div>
+                </td>
                 <td class="audio">
                     <audio controls>
                         <source src="Guitalele_nylon_CGDAE RAW PIEZO.wav" type="audio/wav">
@@ -183,7 +191,221 @@
                 </small></small></small>
                 </td>
             </tr>
+        </table> 
+        <!--  -->
+        <table border=1 width=75%>
+            <tr>
+                <td>
+                    This is a demo page of my handmade contact microphone and preamplifier. Apart from some personal adjustments, the preamp was inspired by two circuits:<br />
+                    <a href="https://www.richardmudhar.com/blog/piezo-contact-microphone-hi-z-amplifier-low-noise-version/">this op-amp circuit by Richard Mudhar</a> for the piezoelectric input, and <br />
+                    <a href="https://sound-au.com/project35.htm">this DI-box circuit by Rod Elliott</a> for phantom power and balanced output.<br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    The pickup itself was placed on the body of each instrument, as close as possible to the center of the bridge.<br />
+                    The audio was recorded using a <i>M-Audio Fast Track Ultra</i> interface into REAPER.<br />
+                    More to be added as I get the chance to record them.
+                </td>
+            </tr>
+            <!--  -->
+            <tr>
+                <td>
+                    <table border=1 width=100%>
+                        <tr>
+                            <td style="border: 0;"></td>
+                            <td style="border: 0;" colspan=2>(Use headphones for the cleanest sound)</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 0;"></td>
+                            <td class="audio"><b>Raw piezoelectric signal</b></td>
+                            <td class="audio"><b>With preamplifier</b></td>
+                        </tr>
+                        <tr>
+                            <td class="instrument">
+                                <b>Viola</b>
+                                <!-- <br /><small><small><b>C<sub>3</sub> G<sub>3</sub> D<sub>4</sub> A<sub>4</sub></b></small></small></b> -->
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Viola RAW PIEZO.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Viola RAW PIEZO.wav" download>Download</a>
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Viola PREAMP.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Viola PREAMP.wav" download>Download</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="instrument">
+                                <b>Mandolin</b>
+                                <!-- <br /><small><small><b>G<sub>3</sub> D<sub>4</sub> A<sub>4</sub> E<sub>5</sub></b></small></small></b> -->
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Mandolin RAW PIEZO.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Mandolin RAW PIEZO.wav" download>Download</a>
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Mandolin PREAMP.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Mandolin PREAMP.wav" download>Download</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="instrument">
+                                <b>Classical guitar<br />(nylon strings)</b>
+                                <!-- <br /><small><small><b>E<sub>2</sub> A<sub>2</sub> D<sub>3</sub> G<sub>3</sub> B<sub>3</sub> E<sub>4</sub></b></small></small></b> -->
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Guitar_classical RAW PIEZO.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Guitar_classical RAW PIEZO.wav" download>Download</a>
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Guitar_classical PREAMP.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Guitar_classical PREAMP.wav" download>Download</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="instrument"><b>Charango<br />(fingerpicking)</b></td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Charango_fingerpick RAW PIEZO.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Charango_fingerpick RAW PIEZO.wav" download>Download</a>
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Charango_fingerpick PREAMP.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Charango_fingerpick PREAMP.wav" download>Download</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="instrument"><b>Charango<br />(strumming)</b></td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Charango_strum RAW PIEZO.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Charango_strum RAW PIEZO.wav" download>Download</a>
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Charango_strum PREAMP.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Charango_strum PREAMP.wav" download>Download</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="instrument" rowspan=2;>
+                                <b>Guitalele (modified)</b>
+                                <br /><small><small><b>C<sub>2</sub> G<sub>2</sub> D<sub>3</sub> A<sub>3</sub> E<sub>4</sub></b></small></small>
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Guitalele_nylon_CGDAE RAW PIEZO.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Guitalele_nylon_CGDAE RAW PIEZO.wav" download>Download</a>
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Guitalele_nylon_CGDAE PREAMP.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Guitalele_nylon_CGDAE PREAMP.wav" download>Download</a>
+                            </td>
+                            <tr>
+                                <!-- <td style="border: 0;"></td> -->
+                                <td class="audio" style="border: 0;" colspan = 2>
+                                    <b>^^</b><small> I re-strung this instrument to emulate a 5-string mandocello. </small><b>^^</b>
+                                </td>
+                            </tr>
+                        </tr>
+                        <!--  -- >
+                        <tr>
+                            <td class="instrument"><b>Acoustic guitar</b></td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Guitar_acoustic RAW PIEZO.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Guitar_acoustic RAW PIEZO.wav" download>Download</a>
+                            </td>
+                            <td class="audio">
+                                <audio controls>
+                                    <source src="Guitar_acoustic PREAMP.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br />
+                                <a href="Guitar_acoustic PREAMP.wav" download>Download</a>
+                            </td>
+                        </tr>
+                        <!--  -->
+                    </table>
+                </td>
+            </tr> <!--   -->
+            <tr>
+                <td>
+                    The pickup can be attached to any surface, or the resonating body of any instrument. By its very nature, small changes in location may have a noticeable effect on the sound, and it will unavoidably pick up more handling noise than a standard microphone.<br />
+                    There is no gain/volume/EQ control on the pickup or preamp; all adjustment (if any) must be done at the mixer.<br /><br />
+                    Instruments I have tested on, but not recorded:<br />
+                    <b>
+                    - acoustic guitar 
+                    - guitalele 
+                    - kalimba 
+                    - violin
+                    - cello 
+                    - double bass 
+                    - santoor**
+                    -
+                    </b>
+                    <div style="text-align: left;">
+                        <b>**</b><small> hammered dulcimer from India</small>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <small><small><small>
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="../index.html">Anand Lobo</a>
+                </small></small></small>
+                </td>
+            </tr>
         </table>
+        
         <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/B-jDgNIFP1c/" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
             <div style="padding:16px;">
                 <a href="https://www.instagram.com/p/B-jDgNIFP1c/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
