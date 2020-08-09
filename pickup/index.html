@@ -2,10 +2,26 @@
 <html>
 	<head>
 		<title>DIY piezo contact mic, with and without preamplifier</title>
+        <style>
+            body {
+                text-align: center;
+                font-family: Arial;
+                font-size: 1em;
+                background-color:#222;
+            }
+            table {
+                text-align: center;
+                font-size: 1em;
+                background-color:#BBB;
+            }
+            .audio {
+                background-color:#999;
+            }
+        </style>
 	</head>
-	<body style="text-align: center; font-family: Arial; font-size: 1em; background-color:#222;">
+	<body>
     <center>
-        <table border=1 width=75% style="text-align: center; font-size: 1em; background-color:#BBB;">
+        <table border=1 width=75%>
             <tr>
                 <td colspan=3>
                     Below are audio clips of my handmade contact microphone and preamplifier.<br />
@@ -23,31 +39,12 @@
             </tr>
             <tr style="font-size: 1.5em;">
                 <td></td>
-                <td><i>Raw piezoelectric signal</i></td>
-                <td><i>With preamplifier</i></td>
-            </tr>
-            <tr>
-                <td><b>Mandolin</b></td>
-                <td>
-                    <audio controls>
-                        <source src="Mandolin RAW PIEZO.wav" type="audio/wav">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <br />
-                    <a href="Mandolin RAW PIEZO.wav" download>Download</a>
-                </td>
-                <td>
-                    <audio controls>
-                        <source src="Mandolin PREAMP.wav" type="audio/wav">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <br />
-                    <a href="Mandolin PREAMP.wav" download>Download</a>
-                </td>
+                <td class="audio"><i>Raw piezoelectric signal</i></td>
+                <td class="audio"><i>With preamplifier</i></td>
             </tr>
             <tr>
                 <td><b>Viola</b></td>
-                <td>
+                <td class="audio">
                     <audio controls>
                         <source src="Viola RAW PIEZO.wav" type="audio/wav">
                         Your browser does not support the audio element.
@@ -55,7 +52,7 @@
                     <br />
                     <a href="Viola RAW PIEZO.wav" download>Download</a>
                 </td>
-                <td>
+                <td class="audio">
                     <audio controls>
                         <source src="Viola PREAMP.wav" type="audio/wav">
                         Your browser does not support the audio element.
@@ -65,8 +62,27 @@
                 </td>
             </tr>
             <tr>
+                <td><b>Mandolin</b></td>
+                <td class="audio">
+                    <audio controls>
+                        <source src="Mandolin RAW PIEZO.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <br />
+                    <a href="Mandolin RAW PIEZO.wav" download>Download</a>
+                </td>
+                <td class="audio">
+                    <audio controls>
+                        <source src="Mandolin PREAMP.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <br />
+                    <a href="Mandolin PREAMP.wav" download>Download</a>
+                </td>
+            </tr>
+            <tr>
                 <td><b>Classical guitar<br />(nylon strings)</b></td>
-                <td>
+                <td class="audio">
                     <audio controls>
                         <source src="Guitar_classical RAW PIEZO.wav" type="audio/wav">
                         Your browser does not support the audio element.
@@ -74,7 +90,7 @@
                     <br />
                     <a href="Guitar_classical RAW PIEZO.wav" download>Download</a>
                 </td>
-                <td>
+                <td class="audio">
                     <audio controls>
                         <source src="Guitar_classical PREAMP.wav" type="audio/wav">
                         Your browser does not support the audio element.
@@ -85,7 +101,7 @@
             </tr>
             <tr>
                 <td><b>Charango<br />(fingerpicking)</b></td>
-                <td>
+                <td class="audio">
                     <audio controls>
                         <source src="Charango_fingerpick RAW PIEZO.wav" type="audio/wav">
                         Your browser does not support the audio element.
@@ -93,7 +109,7 @@
                     <br />
                     <a href="Charango_fingerpick RAW PIEZO.wav" download>Download</a>
                 </td>
-                <td>
+                <td class="audio">
                     <audio controls>
                         <source src="Charango_fingerpick PREAMP.wav" type="audio/wav">
                         Your browser does not support the audio element.
@@ -104,7 +120,7 @@
             </tr>
             <tr>
                 <td><b>Charango<br />(strumming)</b></td>
-                <td>
+                <td class="audio">
                     <audio controls>
                         <source src="Charango_strum RAW PIEZO.wav" type="audio/wav">
                         Your browser does not support the audio element.
@@ -112,7 +128,7 @@
                     <br />
                     <a href="Charango_strum RAW PIEZO.wav" download>Download</a>
                 </td>
-                <td>
+                <td class="audio">
                     <audio controls>
                         <source src="Charango_strum PREAMP.wav" type="audio/wav">
                         Your browser does not support the audio element.
@@ -123,7 +139,7 @@
             </tr>
             <tr>
                 <td><b>Guitalele (modified)<br /><small>Tuning: <b>C<sub>2</sub> G<sub>2</sub> D<sub>3</sub> A<sub>3</sub> E<sub>4</sub></b></small></b></td>
-                <td>
+                <td class="audio">
                     <audio controls>
                         <source src="Guitalele_nylon_CGDAE RAW PIEZO.wav" type="audio/wav">
                         Your browser does not support the audio element.
@@ -131,7 +147,7 @@
                     <br />
                     <a href="Guitalele_nylon_CGDAE RAW PIEZO.wav" download>Download</a>
                 </td>
-                <td>
+                <td class="audio">
                     <audio controls>
                         <source src="Guitalele_nylon_CGDAE PREAMP.wav" type="audio/wav">
                         Your browser does not support the audio element.
@@ -142,8 +158,7 @@
             </tr>
             <tr>
                 <td colspan=3>
-                    The pickup can be attached to any surface, or the resonating body of any instrument.<br />
-                    By its very nature, small changes in location may have a noticeable effect on the sound.<br />
+                    The pickup can be attached to any surface, or the resonating body of any instrument. By its very nature, small changes in location may have a noticeable effect on the sound, and it will unavoidably pick up more handling noise than a standard microphone.<br />
                     There is no gain/volume/EQ control on the pickup or preamp; all adjustment (if any) must be done at the mixer.<br /><br />
                     Instruments I have tested on, but not recorded:<br />
                     <b>
