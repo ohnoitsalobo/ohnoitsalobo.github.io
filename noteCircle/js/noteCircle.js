@@ -5,18 +5,18 @@ let cnv, img1, img2, mouseOverText; // html elements
 var showImg = true, showTips = true;
 
 function setup(){
-///////// SET UP CANVAS
+    ///// SET UP CANVAS
     shortAxis = ((windowWidth > windowHeight) ? windowHeight : windowWidth);
     scaled = shortAxis*scale;
     cnv = createCanvas(1.75*scaled, scaled);
     cnv.parent('noteCircle');
-///////// SET UP TOOLTIPS
+    ///// SET UP TOOLTIPS
     mouseOverText = createDiv('');
     mouseOverText.parent('mouseOverText');
     mouseOverText.size(width*0.45);
     mouseOverText.style('font-family', 'Georgia');
     mouseOverText.style('font-size', (scale*1.4)+'em');
-///////// INITIALIZE
+    ///// INITIALIZE
     createMenus();
     changeMode();
     
@@ -24,8 +24,8 @@ function setup(){
         "Click on things to learn about them in this box.<br /><br />\
         There are many types of scale patterns in Western (and other) music. The most common set of modes is based around the <b><i>major</i></b> or <b><i>'Ionian'</i></b> scale. Also shown here are <b><i>melodic minor</i></b>, <b><i>harmonic minor</i></b>, <b><i>harmonic major</i></b>, and <b><i>double harmonic</i></b> scales. If you know the pattern of a given scale, you can construct modes out of it by simply applying the pattern in different ways, as shown in this app."
     );
-
-///////// LOAD IMAGES
+    
+    ///// LOAD IMAGES
     loadScales();
     let path = "modes/all/major-001.png";
     img1 = createImg(path, "Notation image 1");
@@ -35,7 +35,7 @@ function setup(){
 }
 
 function draw(){
-
+    
     if(keyIndex < 0) keyIndex += 12;
     if(majorModeIndex < 0) majorModeIndex += 12;
     if(melodicMinorModeIndex < 0) melodicMinorModeIndex += 12;
@@ -44,7 +44,7 @@ function draw(){
     translate(scaled/2, scaled/2);
     rotate(-PI/2);
     createNoteCircle();
-///////// CREATE MODE PATTERNS
+    ///// CREATE MODE PATTERNS
     if(majorMinorOther == 0)
         createMajorModeCircle();
     else if(majorMinorOther == 1)
@@ -57,10 +57,10 @@ function draw(){
         createDoubleHarmonicModeCircle();
     else if(majorMinorOther == 5)
         createOtherModeCircle();
-///////// HANDLE PLAYED NOTE HIGHLIGHT
+    ///// HANDLE PLAYED NOTE HIGHLIGHT
     playedHighlight();
-
-///////// LOAD IMAGES
+    
+    ///// LOAD IMAGES
     if(majorMinorOther != 5){
         document.getElementById("img").style.display = "block";
         if(!showImg)
@@ -68,15 +68,15 @@ function draw(){
     }
     else 
         document.getElementById("img").style.display = "none";
-
-///////// AUTO-PLAY SCALE
+    
+    ///// AUTO-PLAY SCALE
     if(autoplay > 0){
         if(majorMinorOther == 5){
             autoplay = 0;
         }else{
             let _t = (floor((millis()-autoplay)/225)%16)+1;
             if (played != _t){
-                let x = _t < 8 ? _t : 16-_t;
+                let x = (_t < 8) ? _t : 16-_t;
         ///// correct tones for melodic minor descending
                 if((majorMinorOther == 1 && currentlySelectedMode == 0) && ( _t == 9 || _t == 10 ))
                     playTone(modeCheck(x)-1);
@@ -91,20 +91,20 @@ function draw(){
         }
     }
     
-///////// HIDE/SHOW TIPS
+    ///// HIDE/SHOW TIPS
     fill(0, 150); noStroke();
     ellipse(0, 1.25*scaled, Size*2, Size*2);
     fill(255, 150);
     textSize(0.4*Size);
     text(showTips ? ("Hide tips") : ("Show tips"), 0, 1.23*scaled)
-
-///////// CONTROL FADE IN / OUT
+    
+    ///// CONTROL FADE IN / OUT
     if(frameCount > 50){
         if(fillalpha < 255 &&  showOverlay) fillalpha = lerp(fillalpha, 255, 0.1);
         if(fillalpha > 0   && !showOverlay) fillalpha = lerp(fillalpha, 0  , 0.1);
     }
     
-///////// STOP RENDERING IF NO INTERACTION
+    ///// STOP RENDERING IF NO INTERACTION
     if(frameCount > 100 && interacted > 0){
         if(frameCount - interacted > 40){
             interacted = 0;
@@ -114,7 +114,7 @@ function draw(){
 }
 
 function playedHighlight(){
-///////// HIGHLIGHT NOTES PLAYED
+    ///// HIGHLIGHT NOTES PLAYED
     for(var i = 0; i < 13; i++){
         if(playedAlpha[i] > 1){
         push();
@@ -131,7 +131,7 @@ function playedHighlight(){
         pop();
         }
     }
-///////// SHOW SCALE NUMBERS
+    ///// SHOW SCALE NUMBERS
     textSize(0.5*Size);
     if(majorMinorOther != 5){
         for(var i = 1; i < 8; i++){

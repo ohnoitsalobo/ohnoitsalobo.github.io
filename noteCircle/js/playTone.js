@@ -855,7 +855,11 @@ function mouseReleased(){
                     if(majorMinorOther == 2) keyIndex = keyIndex + (12 - harmonicMinorModeIndex )%12;
                     if(majorMinorOther == 3) keyIndex = keyIndex + (12 - harmonicMajorModeIndex )%12;
                     if(majorMinorOther == 4) keyIndex = keyIndex + (12 - doubleHarmonicModeIndex)%12; 
-                    mouseOverText.html("With the rotation locked together, the notes currently highlighted for a given mode will remain highlighted until this option is turned off.<br /><br />However, you can still adjust the key independently.");
+                    mouseOverText.html(
+                        "With the rotation locked together, the notes <i>and</i> pattern will turn together \
+                        until this option is turned off.<br /><br />\
+                        However, you can still adjust the key independently."
+                    );
                 }else{
                     speed = 0.4;
                     keyIndex = notesAreLocked();
@@ -864,7 +868,7 @@ function mouseReleased(){
             }
         }
     }
-////// AUTOPLAY SCALE
+    // AUTOPLAY SCALE
     xpos  = 1.35*scaled;
     ypos  = 0.6*scaled;
     offset = 0.08*scaled
@@ -875,7 +879,7 @@ function mouseReleased(){
             commonFunction();
         }
     }
-////// SHOW / HIDE TIPS
+    // SHOW / HIDE TIPS
     xpos = 1.75*scaled;
     ypos = 0.5*scaled;
     offset = 0.1*scaled;
