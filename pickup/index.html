@@ -20,7 +20,23 @@
             .instrument {
                 font-size: 0.9em;
             }
+            #piezo_info {
+                display: none;
+            }
         </style>
+        <script>
+            let showInfo = false;
+            function showHidePiezoInfo(){
+                if(!showInfo){
+                    document.getElementById('piezo_info').style.display = 'block';
+                    showInfo = true;
+                }
+                else if (showInfo){
+                    document.getElementById('piezo_info').style.display = 'none';
+                    showInfo = false;
+                }
+            }
+        </script>
 	</head>
 	<body>
     <center>
@@ -43,6 +59,26 @@
                     <p>
                         The pickup itself was placed on the top face of each instrument, as close as possible to the center of the bridge.<br />
                         More instruments will  be added as I get the chance to record them.
+                    </p>
+                    <p>
+                        <button onclick="showHidePiezoInfo();">Click for more information</button>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td id="piezo_info">
+                    <p>
+                        The major complaint about piezoelectric contact microphones is the 'tinny' or 'shrill' sound that is often associated with them (you can hear this in the recordings below). Due to physics, common commercial audio devices are not designed to play well with piezos - what happens is an "impedance mismatch" between the piezoelectric element and the audio input which creates a <i>high pass filter</i>.<br />As a result, a lot of the natural low frequencies of an instrument are irrevocably lost in the wire, changing the sound (often beyond repair).
+                    </p>
+                    <p>
+                        For this reason, instruments that use piezoelectric elements nearly always incorporate some form of circuitry <sup>(the preamplifier)</sup> that stands between the piezo element and audio input, so that they never 'see' each other, but passes the audio signal along. This usually also includes volume and tone controls to amplify and 'shape' the sound.
+                    </p>
+                    <p>
+                        My piezoelectric microphone and preamplifier, in contrast to most commercially available ones, is designed to<br />
+                        1) draw power from the mixer through <a href="https://en.wikipedia.org/wiki/Phantom_power"><i>phantom power</i></a> <sup>(no more need for batteries!)</sup>,<br />
+                        2) output a <a href="https://en.wikipedia.org/wiki/Balanced_audio"><i>balanced signal</i></a>, which rejects electrical interference <sup>(such as mains 'buzz')</sup>, and<br />
+                        3) attach to virtually any surface and pick up sounds as deep as possible, which fixes the main disadvantage of piezo mics in audio.<br />
+                        The microphone could even be used to record sounds underwater, if it is waterproofed first. 
                     </p>
                 </td>
             </tr>
