@@ -54,7 +54,7 @@
                         <u>This is a demo page for my handmade contact microphone and preamplifier.</u>
                     </p>
                     <p>
-                        Apart from some personal adjustments, the preamp was originally inspired by two circuits:<br />
+                        My preamp design was originally inspired by two circuits:<br />
                         <a href="audio/https://www.richardmudhar.com/blog/piezo-contact-microphone-hi-z-amplifier-low-noise-version/" target="_blank">this op-amp circuit by Richard Mudhar</a> for the piezoelectric input, and <br />
                         <a href="audio/https://sound-au.com/project35.htm" target="_blank">this DI-box circuit by Rod Elliott</a> for phantom power and balanced output.
                         <br /><small><small>You can learn even more about piezo mic preamps <a href="audio/https://sound-au.com/project202.htm">here</a></small></small>
@@ -66,26 +66,6 @@
                     <p>
                         The pickup itself was placed on the top face of each instrument, as close as possible to the center of the bridge.<br />
                         More instruments will  be added as I get the chance to record them.
-                    </p>
-                    <p>
-                        <button id="piezo_info_button" onclick="showHidePiezoInfo();">Click for more information</button>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td id="piezo_info">
-                    <p>
-                        The major complaint about piezoelectric contact microphones is the 'tinny' or 'shrill' sound that is often associated with them (you can hear this in the recordings below). Due to physics, common commercial audio devices are not designed to play well with piezos - what happens is an "impedance mismatch" between the piezoelectric element and the audio input which creates a <i>high pass filter</i>.<br />As a result, a lot of the natural low frequencies of an instrument are irrevocably lost in the wire, changing the sound for the worse, in a way that cannot be recovered.
-                    </p>
-                    <p>
-                        For this reason, instruments that use piezoelectric elements nearly always incorporate some form of circuitry <sup>(the preamplifier)</sup> that stands between the piezo element and audio input, so that they never 'see' each other, but passes the audio signal along. This usually also includes volume and tone controls to amplify and 'shape' the sound.
-                    </p>
-                    <p>
-                        My piezoelectric microphone and preamplifier, in contrast to most commercially available ones, is designed to<br />
-                        1) draw power from the mixer through <a href="https://en.wikipedia.org/wiki/Phantom_power"><i>phantom power</i></a> <sup>(no more need for batteries!)</sup>,<br />
-                        2) output a <a href="https://en.wikipedia.org/wiki/Balanced_audio"><i>balanced signal</i></a>, which rejects electrical interference <sup>(such as mains 'buzz')</sup>, and<br />
-                        3) attach to virtually any surface and pick up sounds as deep as possible, which fixes the main disadvantage of piezo mics in audio.<br />
-                        The microphone could even be used to record sounds underwater, if it is waterproofed first. 
                     </p>
                 </td>
             </tr>
@@ -297,13 +277,37 @@
             </tr> <!--   -->
             <tr>
                 <td>
+                    <div>
+                        <button id="piezo_info_button" onclick="showHidePiezoInfo();">Click for more information</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="piezo_info">
                     <p>
-                        This pickup can be attached to any surface, or the resonating body of any instrument.
-                        Properly utilized, the pickup should experience very nearly zero 'mains hum' interference.<br />
+                        The major complaint about piezoelectric contact microphones is the 'tinny' or 'shrill' sound that is often associated with them (you can hear this in the "raw" recordings above). Common commercial audio devices are not designed with piezos in mind - so what happens is an "impedance mismatch" between the piezoelectric element and the audio input which creates a <i>high pass filter</i>.<br />As a result, a lot of the natural low frequencies of an instrument are irrevocably lost in the wire, changing the sound for the worse, in a way that cannot be recovered.
+                    </p>
+                    <p>
+                        For this reason, instruments that use piezoelectric pickups nearly always incorporate some form of circuitry <sup>(the preamplifier)</sup> that stands between the piezo element and audio input, so that they never 'see' each other, but passes the audio signal along. This usually also includes volume and tone controls to amplify and 'shape' the sound.
+                    </p>
+                    <!-- -- >
+                    <p>
+                        My piezoelectric microphone and preamplifier, in contrast to most commercially available ones, is designed to<br />
+                        1) draw power from the mixer through <a href="https://en.wikipedia.org/wiki/Phantom_power"><i>phantom power</i></a> <sup>(no more need for batteries!)</sup>,<br />
+                        2) output a <a href="https://en.wikipedia.org/wiki/Balanced_audio"><i>balanced signal</i></a>, which rejects electrical interference <sup>(such as mains 'buzz')</sup>, and<br />
+                        3) attach to virtually any surface and pick up sounds as deep as possible, which fixes the main disadvantage of piezo mics in audio.<br />
+                        The microphone could even be used to record sounds underwater, if it is waterproofed first. 
+                    </p>
+                    <!--  -->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        This pickup can be attached to any surface, or the resonating body of any instrument. It is powered by "phantom power" readily available on most modern audio interfaces, so there is no need for batteries. Properly utilized, the pickup should experience very nearly zero 'mains hum' interference.<br />
                         There is no gain/volume/EQ control on the pickup or preamp; all adjustment (if any) must be done at the mixer.
                     </p>
                     <p>
-                        <!-- By its very nature, small changes in location may have a noticeable effect on the sound, and it will unavoidably pick up more handling noise than a standard microphone. However, unlike a microphone, it will be more resistant to feedback and ambient noise, providing extremely high dynamic range.<br /> -->
                         Since the microphone is in direct contact with the instrument body, it is much more resistant <sup>(but not immune!)</sup> to feedback and ambient noise. For the same reason, however, it will inevitably pick up more handling noise than a conventional microphone, and a small change in pickup location could potentially have a noticeable effect on the timbre.
                     </p>
                     <p>
