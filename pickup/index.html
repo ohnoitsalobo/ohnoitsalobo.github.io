@@ -25,21 +25,17 @@
                 font-size: 0.9em;
             }
             #piezo_info {
-                display: none;
                 background-color:#999;
             }
         </style>
         <script>
-            let showInfo = false;
             function showHidePiezoInfo(){
-                if(!showInfo){
+                if(document.getElementById('piezo_info').style.display == 'none'){
                     document.getElementById('piezo_info').style.display = 'block';
-                    showInfo = true;
                     document.getElementById('piezo_info_button').innerHTML = 'Click to hide';
                 }
-                else if (showInfo){
+                else if (document.getElementById('piezo_info').style.display = 'block'){
                     document.getElementById('piezo_info').style.display = 'none';
-                    showInfo = false;
                     document.getElementById('piezo_info_button').innerHTML = 'Click for more information';
                 }
             }
@@ -73,6 +69,10 @@
             <tr>
                 <td>
                     <table border=1 width=100%>
+                        <tr>
+                            <td style="border: 0;"></td>
+                            <td style="border: 0;" colspan=2><small><small>Use headphones / good speakers to hear the difference clearly</small></small></td>
+                        </tr>
                         <tr>
                             <td style="border: 0;"></td>
                             <td class="audio"><b>Raw piezoelectric signal</b></td>
@@ -283,13 +283,16 @@
                 </td>
             </tr>
             <tr>
-                <td id="piezo_info">
+                <td id="piezo_info" style="display: none;">
                     <p>
-                        The major complaint about piezoelectric contact microphones is the 'tinny' or 'shrill' sound that is often associated with them (you can hear this in the "raw" recordings above). Common commercial audio devices are not designed with piezos in mind - so what happens is an "impedance mismatch" between the piezoelectric element and the audio input which creates a <i>high pass filter</i>.<br />As a result, a lot of the natural low frequencies of an instrument are irrevocably lost in the wire, changing the sound for the worse, in a way that cannot be recovered.
+                        The major complaint about piezoelectric contact microphones is the 'tinny' or 'shrill' sound that is often associated with them (you can hear this in the "raw" recordings above). Common commercial audio devices are not designed with piezos in mind - so what happens is an <i>impedance mismatch</i>** between the piezoelectric element and the audio input.<br />As a result, a lot of the natural low frequencies of an instrument are irrevocably lost in the wire, changing the sound for the worse, in a way that cannot be recovered.<br />
                     </p>
                     <p>
                         For this reason, instruments that use piezoelectric pickups nearly always incorporate some form of circuitry <sup>(the preamplifier)</sup> that stands between the piezo element and audio input, so that they never 'see' each other, but passes the audio signal along. This usually also includes volume and tone controls to amplify and 'shape' the sound.
                     </p>
+                    <div style="text-align: left; font-size: 0.75em;">
+                        <b>**</b> The piezoelectric disc being a <i>very</i> high-impedance output and most audio inputs being much lower impedance, this mismatch creates a "high pass filter".
+                    </div>
                     <!-- -- >
                     <p>
                         My piezoelectric microphone and preamplifier, in contrast to most commercially available ones, is designed to<br />
@@ -304,7 +307,7 @@
             <tr>
                 <td>
                     <p>
-                        This pickup can be attached to any surface, or the resonating body of any instrument. It is powered by "phantom power" readily available on most modern audio interfaces, so there is no need for batteries. Properly utilized, the pickup should experience very nearly zero 'mains hum' interference.<br />
+                        This pickup can be attached to any surface, or the resonating body of any instrument. (It could even be used to record sounds underwater, with suitable waterproofing). It is powered by "phantom power" readily available on most modern audio interfaces, so there is no need for batteries. Properly utilized, the pickup / preamp combo should experience little to no 'mains hum' interference.<br />
                         There is no gain/volume/EQ control on the pickup or preamp; all adjustment (if any) must be done at the mixer.
                     </p>
                     <p>
