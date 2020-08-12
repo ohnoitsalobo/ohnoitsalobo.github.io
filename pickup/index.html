@@ -39,6 +39,10 @@
                     document.getElementById('piezo_info_button').innerHTML = 'Click for more information';
                 }
             }
+            function showHideCircuitInfo(){
+                document.getElementById('circuit_info').style.display = 'block';
+                document.getElementById('circuit_info_button').style.display = 'none';
+            }
         </script>
 	</head>
 	<body>
@@ -49,7 +53,10 @@
                     <p>
                         <u>Balanced-signal phantom-powered contact microphone and preamplifier</u>
                     </p>
-                    <p style="font-size: 0.75em;">
+                    <p>
+                        <button id="circuit_info_button" onclick="showHideCircuitInfo();">Click here to see where I got the idea from.</button>
+                    </p>
+                    <p id="circuit_info" style="display: none;">
                         My preamp design was originally inspired by two circuits:<br />
                         <a href="audio/https://www.richardmudhar.com/blog/piezo-contact-microphone-hi-z-amplifier-low-noise-version/" target="_blank">this op-amp circuit by Richard Mudhar</a> for the piezoelectric input, and <br />
                         <a href="audio/https://sound-au.com/project35.htm" target="_blank">this DI-box circuit by Rod Elliott</a> for phantom power and balanced output.
@@ -60,6 +67,7 @@
             <tr>
                 <td>
                     <p>
+                        Below are audio recordings of my piezoelectric mic on various instruments, with and without the preamplifier.<br />
                         The pickup itself was placed on the top face of each instrument, as close as possible to the center of the bridge.<br />
                         More instruments will  be added as I get the chance to record them.
                     </p>
@@ -71,7 +79,7 @@
                     <table border=1 width=100%>
                         <tr>
                             <td style="border: 0;"></td>
-                            <td style="border: 0;" colspan=2><small><small>Use headphones / good speakers to hear the difference clearly</small></small></td>
+                            <td style="border: 0;" colspan=2><small>Use headphones / good speakers to hear the difference clearly</small></td>
                         </tr>
                         <tr>
                             <td style="border: 0;"></td>
