@@ -27,7 +27,7 @@ function setup(){
     
     ///// LOAD IMAGES
     loadScales();
-    let path = "modes/all/major-001.png";
+    let path = "modes/all/major-001.svg";
     img1 = createImg(path, "Notation image 1");
     img2 = createImg(path, "Notation image 2");
     img1.parent('img1');
