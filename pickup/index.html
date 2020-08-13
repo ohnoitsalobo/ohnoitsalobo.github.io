@@ -52,6 +52,10 @@
                 document.getElementById('circuit_info').style.display = 'block';
                 document.getElementById('circuit_info_button').style.display = 'none';
             }
+            function showHideProsCons(){
+                document.getElementById('pros_cons').style.display = 'block';
+                document.getElementById('pros_cons_button').style.display = 'none';
+            }
         </script>
 	</head>
 	<body>
@@ -329,7 +333,14 @@
                         </div>
                     </td>
                 </tr>
-                <tr style="display: none;">
+                <tr id="pros_cons_button">
+                    <td>
+                        <div>
+                            <button onclick="showHideProsCons();">Click to show pros / cons</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr id="pros_cons" style="display: none;">
                     <td>
                         <center>
                             <table>
