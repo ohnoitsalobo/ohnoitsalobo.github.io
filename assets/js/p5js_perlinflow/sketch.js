@@ -21,7 +21,7 @@ function setup() {
     // canvas = createCanvas(400, 400);
     var canvas = createCanvas(window.innerWidth, floor(window.innerHeight/3));
     canvas.parent('perlinflow');
-    frameRate(25);
+    frameRate(15);
     colorMode(HSB, 255);
     cols = floor(width / scl);
     rows = floor(height / scl);
