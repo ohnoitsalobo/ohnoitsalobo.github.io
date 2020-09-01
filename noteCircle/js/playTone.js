@@ -876,7 +876,7 @@ function mouseReleased(){
        mouseY>ypos-offset && mouseY<ypos+offset){
         if(majorMinorOther != 5){
             autoplay = millis();
-            commonFunction();
+            // commonFunction();
         }
     }
     // SHOW / HIDE TIPS
