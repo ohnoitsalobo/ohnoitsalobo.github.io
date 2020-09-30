@@ -220,7 +220,7 @@ The intervals can be notated as<br /><br />\
 "<b>Phrygian \u266D4 \u{1D12B}7</b> - the third mode of the double harmonic scale. The pattern of semitones is<br /><br />\
 <b>Root + 1 + 2 + 1 + 3 + 1 + 1 + 3</b><br /><br />\
 The intervals can be notated as<br /><br />\
-<b>11 \u266D2 \u266D3 \u266D4 5 \u266D6 \u{1D12B}7</b>",
+<b>1 \u266D2 \u266D3 \u266D4 5 \u266D6 \u{1D12B}7</b>",
 
 "<b>Lydian \u266D3 \u266D6</b> (Hungarian minor) - the fourth mode of the double harmonic scale. The pattern of semitones is<br /><br />\
 <b>Root + 2 + 1 + 3 + 1 + 1 + 3 + 1</b><br /><br />\
