@@ -1,0 +1,48 @@
+/* @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400"); */
+/* @import url("https://fonts.googleapis.com/css?family=Lato"); */
+/* @import url("https://fonts.googleapis.com/css?family=Oxanium"); */
+/* @import url("https://fonts.googleapis.com/css?family=Chakra+Petch"); */
+/* @import url("https://fonts.googleapis.com/css?family=Ubuntu"); */
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
+/* @import url("https://fonts.googleapis.com/css?family=Neuton"); */
+/* @import url("https://fonts.googleapis.com/css?family=Marmelad"); */
+/* @import url("https://fonts.googleapis.com/css?family=Overlock"); */
+/* @import url("https://fonts.googleapis.com/css?family=Baloo+Chettan+2"); */
+/* @import url("https://fonts.googleapis.com/css?family=Bellota"); */
+/* @import url("https://fonts.googleapis.com/css?family=Sniglet"); */
+/* @import url("https://fonts.googleapis.com/css?family=Coda"); */
+/* @import url("https://fonts.googleapis.com/css?family=Fondamento"); */
+/* @import url("https://fonts.googleapis.com/css?family=Pangolin"); */
+/* @import url("https://fonts.googleapis.com/css?family=Kelly+Slab"); */
+/* @import url("https://fonts.googleapis.com/css?family=Mirza"); */
+/* @import url("https://fonts.googleapis.com/css?family=Expletus+Sans"); */
+/* @import url("https://fonts.googleapis.com/css?family=Voces"); */
+
+html {
+    font-family: "Comfortaa", "Georgia";
+    /* color: white; */
+    background-color: #ffffff;
+    /* background: url(images/instruments.jpg) no-repeat center fixed; */
+    /* background-size: 100%; */
+}
+
+body {
+    font-family: inherit;
+    /* font-size: 20px; */
+}
+
+p {
+    font-style: bold;
+}
+
+.w3-container {
+    /* background: #ffffff22; */
+}
+
+.mySlides {
+    display: block;
+}
+
+.content {
+    /* background: #ffffffdd; */
+}
