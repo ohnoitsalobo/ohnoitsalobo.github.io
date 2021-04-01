@@ -26,13 +26,9 @@ html {
     /* background-size: 100%; */
 }
 
-body {
+body, h1, h2 {
     font-family: inherit;
     /* font-size: 20px; */
-}
-
-p {
-    font-style: bold;
 }
 
 .w3-container {
