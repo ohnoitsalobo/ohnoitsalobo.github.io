@@ -31,14 +31,11 @@ body, h1, h2 {
     /* font-size: 20px; */
 }
 
-.w3-container {
-    /* background: #ffffff22; */
-}
-
 .mySlides {
     display: block;
 }
 
-.content {
-    /* background: #ffffffdd; */
+.personal-photo{
+    /* box-shadow: 0 0 80px 80px white inset; */
+    box-shadow: 0px 0px 10px 10px #777;
 }
