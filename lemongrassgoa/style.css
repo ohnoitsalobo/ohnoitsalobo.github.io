@@ -37,8 +37,6 @@ body, h1, h2 {
 
 .personal-photo{
     /* box-shadow: 0 0 80px 80px white inset; */
-    z-index: 1;
-    margin: auto;
     width: 60%;
     box-shadow: 0px 0px 10px 10px #444;
 }
