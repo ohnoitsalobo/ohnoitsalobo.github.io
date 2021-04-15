@@ -14,36 +14,28 @@
 <div class="w3-top">
     <div class="w3-bar w3-black w3-card">
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#home" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction();">HOME</a>
         <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BAND</a>
-        <!-- <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a> -->
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+        <a href="#repertoire" class="w3-bar-item w3-button w3-padding-large w3-hide-small">REPERTOIRE</a>
         <a href="#media" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MEDIA</a>
-        <!-- <div class="w3-dropdown-hover w3-hide-small"> -->
-            <!-- <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>            -->
-            <!-- <div class="w3-dropdown-content w3-bar-block w3-card-4"> -->
-                <!-- <a href="#" class="w3-bar-item w3-button">Merchandise</a> -->
-                <!-- <a href="#" class="w3-bar-item w3-button">Extras</a> -->
-                <!-- <a href="#" class="w3-bar-item w3-button">Media</a> -->
-            <!-- </div> -->
-        <!-- </div> -->
-        <!-- <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a> -->
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
     </div>
 </div>
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-    <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
-    <!-- <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a> -->
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-    <a href="#media" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MEDIA</a>
+    <!-- <a href="#home" class="w3-bar-item w3-button w3-padding-large">HOME</a> -->
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction();">BAND</a>
+    <a href="#repertoire" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction();">REPERTOIRE</a>
+    <a href="#media" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction();">MEDIA</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction();">CONTACT</a>
 </div>
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
 
     <!-- Automatic Slideshow Images -->
-    <div class="mySlides w3-display-container w3-center">
+    <div class="mySlides w3-display-container w3-center"  id="home">
         <img src="images/lemongrass.jpg" style="width:100%; filter: blur(0.5px);">
         <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
             <!-- <h3>Los Angeles</h3> -->
@@ -68,7 +60,7 @@
     <!-- The Band Section -->
     <div class="w3-container w3-content w3-center w3-padding-32" style="max-width:800px" id="band">
         <h2 class="w3-wide">Lemongrass Acoustic Trio</h2>
-        <p class="w3-opacity"><i>We play music.<br />Three instruments x three voices</i></p>
+        <p class="w3-opacity"><i>We make music, better.<br />Three instruments x three voices</i></p>
         <div class="w3-row w3-padding-32">
             <div class="w3-third">
                 <p><b>Joy Dawson</b></p>
@@ -96,21 +88,25 @@
             Anand Lobo plays the viola and the mandolin, and has used his education in electrical engineering to build some of the equipment that Lemongrass performs with.<br />
             He has built the microphone for his viola and mandolin, a custom triple-microphone stand and portable speaker for Lemongrass' three members to perform with, as well as sound-responsive LED lights that can be seen at all Lemongrass performances.<br /><br />
             Our music ranges from genuine "old" oldies from the 1600s-1700s classical music (Bach, Mozart, Beethoven, Handel, etc), up to '70s and '80s classic rock (3 Doors Down, The Eagles, The Beatles, Eric Clapton, etc.), up to very recent top hits (Coldplay, The Weeknd, Eric Hutchinson, Hozier) - and quite a few jazzy / bluesy numbers to spice things up. Check our repertoire list below (sortable by name, artist, year, and genre!) for our whole selection.
+        </p>
+    </div>
+    <div class="w3-container w3-content w3-center w3-padding-16" style="max-width:800px" id="repertoire">
+        <h2 class="w3-wide">Repertoire</h2>
             <p class="w3-center">
-            <br />
-            Right-click (or long-press on mobile) to sort!<br />
-            <small>
-            Highlighted songs are not yet performance-ready, but are on our to-do list.<br />
-            (If you don't see the list displayed below, then click <a href="https://docs.google.com/spreadsheets/d/1Ko_MAz5OhNXigSaxMIio_02Fy5DEBNfd/view" target="_blank">here</a> to see it.)
-            </small>
+                Right-click (or long-press on mobile) to sort!<br />
+                <small>
+                Highlighted songs are not yet performance-ready, but are on our to-do list.<br />
+                (If you don't see the list displayed below, then click <a href="https://docs.google.com/spreadsheets/d/1Ko_MAz5OhNXigSaxMIio_02Fy5DEBNfd/view" target="_blank">here</a> to see it.)
+                </small>
             </p>
             <!-- <a href="https://docs.google.com/spreadsheets/d/1Ko_MAz5OhNXigSaxMIio_02Fy5DEBNfd/view" target="_blank"> -->
                 <!-- <h2 class="w3-center"><br />Click here for our repertoire list!</h2> -->
             <!-- </a> -->
-        </p>
-        <!-- <iframe id="repertoire" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=E444F019F924639%2166939&authkey=%21ABD0kaVWvVF1h8g&em=2&ActiveCell='Contemporary'!D1&Item='Contemporary'!A1%3AE260&wdHideGridlines=True&wdInConfigurator=True"></iframe> -->
-        <iframe id="repertoire" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=E444F019F924639%2166943&authkey=%21AOnDB1mDuTKlDkM&em=2&wdAllowInteractivity=False&wdHideHeaders=True&wdDownloadButton=False&wdInConfigurator=True&Item='Contemporary'!D1%3AH251"></iframe>    </div>
-
+        <!-- <iframe frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=E444F019F924639%2166939&authkey=%21ABD0kaVWvVF1h8g&em=2&ActiveCell='Contemporary'!D1&Item='Contemporary'!A1%3AE260&wdHideGridlines=True&wdInConfigurator=True"></iframe> -->
+        <iframe id="repertoirelist" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=E444F019F924639%2166943&authkey=%21AOnDB1mDuTKlDkM&em=2&wdAllowInteractivity=False&wdHideHeaders=True&wdDownloadButton=False&wdInConfigurator=True&Item='Contemporary'!D1%3AH251"></iframe>
+        <!-- <iframe src="https://drive.google.com/file/d/1Ko_MAz5OhNXigSaxMIio_02Fy5DEBNfd/preview?headers=false&amp;gid=0&amp;range=D1:I260" style="width: 100%; height: 35em;"></iframe> -->
+        <!-- <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgbyuk3w0sC9wBFFjPtHR9ouqf64NqCVEJVrU7jBkwnK-UfVihj76-3akavjKBaQ/pubhtml?gid=1263297792&amp;single=true&amp;widget=true&amp;headers=false&amp;range=D1:I260" style="width: 100%; height: 35em;"></iframe> -->
+    </div>
     <!-- The Tour Section - ->
     <div class="w3-black" id="tour">
         <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
@@ -178,10 +174,7 @@
     <!-- The Media Section -->
     <div class="w3-container w3-content w3-center w3-padding-32" style="width: 80%" id="media">
         <!-- <h2 class="w3-wide w3-center">MEDIA</h2> -->
-        <!-- <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLvIP4TPnJFf6PoZMxnQTgDQxkwg98d_Hz" frameborder="0" allowfullscreen> -->
         <iframe id="ytplayer" src="https://www.youtube.com/embed/?listType=playlist&list=PLvIP4TPnJFf6PoZMxnQTgDQxkwg98d_Hz" style="width: 100%; height: 40vw;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- <iframe src="https://drive.google.com/file/d/1Ko_MAz5OhNXigSaxMIio_02Fy5DEBNfd/preview?headers=false&amp;gid=0&amp;range=D1:I260" style="width: 100%; height: 35em;"></iframe> -->
-        <!-- <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgbyuk3w0sC9wBFFjPtHR9ouqf64NqCVEJVrU7jBkwnK-UfVihj76-3akavjKBaQ/pubhtml?gid=1263297792&amp;single=true&amp;widget=true&amp;headers=false&amp;range=D1:I260" style="width: 100%; height: 35em;"></iframe> -->
     </div>
     <!-- The Contact Section -->
     <div class="w3-container w3-content w3-padding-32" style="max-width:800px" id="contact">
