@@ -6,7 +6,7 @@ let modeText = [
 "<b><i>Major (Ionian)</i></b><br /><br />\
 The major scale is one of the most, if not <i>the</i> most, well-known scales.<br />\
 The <i>relative minor</i> scale of any key uses the <i>same</i> notes as the major scale, but uses the 6th note as the root instead.",
-        
+
 "<b><i>Melodic minor</i></b><br /><br />\
 The melodic minor is simply the <u>major scale</u> with <u>the 3rd note lowered</u> by one half-step (minor 3rd vs major 3rd).<br />\
 As its name suggests, composers often prefer its sound when creating melodies, as opposed to the harmonic minor which has a three-semitone jump between its 6th and 7th notes.<br />\
@@ -176,7 +176,7 @@ The intervals can be notated as<br /><br />\
 "<b>Dorian \u266D5</b> - the second mode of the harmonic major scale. The pattern of semitones is<br /><br />\
 <b>Root + 2 + 1 + 2 + 1 + 3 + 1 + 2</b><br /><br />\
 The intervals can be notated as<br /><br />\
-<b>1 \2 \u266D3 4 \u266D5 6 \u266D7</b>",
+<b>1 2 \u266D3 4 \u266D5 6 \u266D7</b>",
 
 "<b>Phrygian \u266D4</b> - the third mode of the harmonic major scale. The pattern of semitones is<br /><br />\
 <b>Root + 1 + 2 + 1 + 3 + 1 + 2 + 2</b><br /><br />\
