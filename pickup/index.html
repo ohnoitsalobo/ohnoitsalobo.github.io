@@ -45,17 +45,17 @@
                 }
                 else if (document.getElementById('piezo_info').style.display = 'block'){
                     document.getElementById('piezo_info').style.display = 'none';
-                    document.getElementById('piezo_info_button').innerHTML = 'Click for more information';
+                    document.getElementById('piezo_info_button').innerHTML = 'More information';
                 }
             }
             function showHideCircuitInfo(){
                 document.getElementById('circuit_info').style.display = 'block';
                 document.getElementById('circuit_info_button').style.display = 'none';
             }
-            function showHideProsCons(){
-                document.getElementById('pros_cons').style.display = 'block';
-                document.getElementById('pros_cons_button').style.display = 'none';
-            }
+            <!-- function showHideProsCons(){ -->
+                <!-- document.getElementById('pros_cons').style.display = 'block'; -->
+                <!-- document.getElementById('pros_cons_button').style.display = 'none'; -->
+            <!-- } -->
             document.addEventListener('play',
                 function(e){
                     var audios = document.getElementsByTagName('audio');
@@ -82,7 +82,7 @@
                                     <u><b>Phantom-powered piezoelectric contact microphone and preamplifier</b></u>
                                 </p>
                                 <p>
-                                    <button id="circuit_info_button" onclick="showHideCircuitInfo();">Click here to see where I got the idea from.</button>
+                                    <button id="circuit_info_button" onclick="showHideCircuitInfo();">Click here to see the inspiration</button>
                                 </p>
                                 <p id="circuit_info" style="display: none;">
                                     My preamp design was inspired by two circuits:<br />
@@ -92,9 +92,10 @@
                                 </p>
                             </td>
                             <td width=10%;>
-                                <a href="https://www.instagram.com/p/CLEIeRRgmpE/" target="_blank">
+                                <!-- <a href="https://www.instagram.com/p/CLEIeRRgmpE/" target="_blank"> -->
+                                <a href="gallery/index.html" target="_blank">
                                     <img style="width: 80%" src="insta.jpg" />
-                                    <div style="font-size: 0.75em;">View on Instagram</div>
+                                    <div style="font-size: 0.75em;">Image gallery</div>
                                 </a>
                             </td>
                         </tr>
@@ -336,7 +337,7 @@
                 <tr>
                     <td>
                         <div>
-                            <button id="piezo_info_button" onclick="showHidePiezoInfo();">Click for more information</button>
+                            <button id="piezo_info_button" onclick="showHidePiezoInfo();">More information</button>
                         </div>
                     </td>
                 </tr>
@@ -363,14 +364,14 @@
                         <!--  -->
                     </td>
                 </tr>
-                <tr id="pros_cons_button">
-                    <td>
-                        <div>
-                            <button onclick="showHideProsCons();">Click to show pros / cons</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr id="pros_cons" style="display: none;">
+                <!-- <tr id="pros_cons_button"> -->
+                    <!-- <td> -->
+                        <!-- <div> -->
+                            <!-- <button onclick="showHideProsCons();">Show pros and cons</button> -->
+                        <!-- </div> -->
+                    <!-- </td> -->
+                <!-- </tr> -->
+                <tr id="pros_cons" style="display: block;">
                     <td>
                         <center>
                             <table>
