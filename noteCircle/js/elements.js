@@ -122,11 +122,10 @@ function createNoteCircle(){
         noStroke();
         textAlign(CENTER, CENTER);
         if(majorMinorOther!=5) {
-        textSize(Size*0.35); 
-            if(showTips)
-                text("Tap different elements to\nread about them in\nthe box to the right.", 0.85*scaled, 0.4*scaled);
-            else
-                text("To hear the highlighted scale:\n- Tap the notes on the circle\n- Tap the mode name above\n- Use keyboard number keys (press Shift to hear chords)", 0.85*scaled, 0.4*scaled);
+            textSize(Size*0.4); 
+            var _text = "- Tap different elements to read\n    about them in the box to the right.\n- Tap the mode name above to hear how\n\tit sounds, or use the number keys 1-8.";
+            text(_text, 0.85*scaled, 0.4*scaled);
+            textSize(Size*0.35); 
             if(showOverlay){
                 if(!lockNotes){
                     fill(0, fillalpha);
