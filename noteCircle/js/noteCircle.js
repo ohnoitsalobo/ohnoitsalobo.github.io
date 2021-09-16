@@ -172,24 +172,6 @@ function playedHighlight(){
                         else
                             text(intervalName(2, t), 0, 0);
                     pop()
-                    // push();
-                        // rotate(t*PI/6);
-                        // translate(0.26*scaled, 0.3*Size);
-                        // noStroke(); fill(fillcolor, fillalpha);
-                        // rect(0, 0, 0.7*Size, 0.7*Size);
-                        // rotate(-t*PI/6+PI/2);
-                        // fill(0, fillalpha); noStroke();
-                        // text(intervalName(2, t), 0, 0);
-                    // pop()
-                    // push();
-                        // rotate(t*PI/6);
-                        // translate(0.26*scaled, -0.3*Size);
-                        // noStroke(); fill(fillcolor, fillalpha);
-                        // rect(0, 0, 0.7*Size, 0.7*Size);
-                        // rotate(-t*PI/6+PI/2);
-                        // fill(0, fillalpha); noStroke();
-                        // text(intervalName(1, t), 0, 0);
-                    // pop()
                 }
             }
         }

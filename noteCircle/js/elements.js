@@ -139,7 +139,7 @@ function createNoteCircle(){
         }
         else {
             textSize(Size*0.4); 
-            text("To hear these alterative scales,\ntap the highlighted note names.", 0.85*scaled, 0.4*scaled);
+            text("To hear these alternative scales,\ntap the highlighted note names.", 0.85*scaled, 0.4*scaled);
         }
         stroke(255); strokeWeight(5*scale);
         line(xpos, ypos-1.2*Size, xpos+0.6*Size, ypos-Size);
