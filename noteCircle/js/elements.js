@@ -60,14 +60,14 @@ function drawNotes(){
     else if(index == 10) offset = 16;
     let alt1 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keySharpList[notesAreLocked()] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 1";
     let alt2 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keyFlatList [notesAreLocked()] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 2";
-    if(majorMinorOther != 5){
+    if(majorMinorOther < 5){
         img1 = createDiv(_images[majorMinorOther][index*7+currentlySelectedMode]);
-        if(offset > 0) 
+        if(offset) 
             img2 = createDiv(_images[majorMinorOther][offset*7+currentlySelectedMode]);
     }
     img1.parent('img1');
     img1.elt.title = alt1;
-    if(offset > 0){
+    if(offset){
         img2.parent('img2');
         img2.elt.title = alt2;
     }
