@@ -227,5 +227,28 @@
     <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 <!--  -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAvVMriPYcEdsCPLnyG1Q-ecKBpyRnSls4",
+    authDomain: "lemongrass-goa.firebaseapp.com",
+    projectId: "lemongrass-goa",
+    storageBucket: "lemongrass-goa.appspot.com",
+    messagingSenderId: "406341248167",
+    appId: "1:406341248167:web:8e313acf8e57a7681be782",
+    measurementId: "G-662LL8ZD9F"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </html>
