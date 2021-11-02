@@ -56,8 +56,8 @@ body, h1, h2 {
 	position:fixed;
 	width:200px;
 	height:60px;
-	bottom:60px;
-	right:40px;
+	bottom:20px;
+	right:20px;
 	background-color:#085;
 	color:#FFF;
 	border-radius:50px;
