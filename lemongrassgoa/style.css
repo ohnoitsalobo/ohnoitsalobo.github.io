@@ -58,10 +58,10 @@ body, h1, h2 {
 	height:60px;
 	bottom:60px;
 	right:40px;
-	background-color:#065;
+	background-color:#085;
 	color:#FFF;
 	border-radius:50px;
-	box-shadow: 3px 3px 4px #999;
+	box-shadow: 3px 3px 4px #333;
 }
 
 .my-float{
