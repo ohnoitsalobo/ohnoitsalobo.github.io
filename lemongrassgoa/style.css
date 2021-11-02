@@ -19,7 +19,7 @@
 /* @import url("https://fonts.googleapis.com/css?family=Voces"); */
 
 html {
-    font-family: "Comfortaa", "Georgia";
+    font-family: "Comfortaa", "Georgia" !important;
     background-color: #ffffff;
 }
 
@@ -49,7 +49,6 @@ body, h1, h2 {
     transform: scale(1.1);
 }
 
-
 #repertoirelist {
     width: 100%;
     height: 50vw;
@@ -71,6 +70,7 @@ body, h1, h2 {
 	color:#FFF;
 	border-radius:50px;
 	box-shadow: 3px 3px 4px #333;
+    z-index: 5;
 }
 .button:hover{
 	color:#000;
@@ -83,4 +83,9 @@ body, h1, h2 {
 .my-float{
 	margin-top:22px;
 }
-
+.hovereffect{
+    transition: transform .2s;
+}
+.hovereffect:hover{
+    transform: scale(1.1);
+}
