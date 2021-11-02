@@ -20,34 +20,47 @@
 
 html {
     font-family: "Comfortaa", "Georgia";
-    /* color: white; */
     background-color: #ffffff;
-    /* background: url(images/instruments.jpg) no-repeat center fixed; */
-    /* background-size: 100%; */
 }
 
 body, h1, h2 {
     font-family: inherit;
-    /* font-size: 20px; */
 }
 
 .mySlides {
     display: block;
 }
 
+#banner{
+    transition: filter .5s;
+    width:100%;
+    filter: blur(2px);
+}
+#banner:hover{
+    filter: blur(0px);
+}
+
 .personal-photo{
-    /* box-shadow: 0 0 80px 80px white inset; */
     width: 60%;
-    /* box-shadow: 0px 0px 10px 10px #444; */
     filter: drop-shadow(0px 0px 10px #000);
 }
+.personal-photo:hover{
+    transition: transform .2s;
+    transform: scale(1.1);
+    
+}
+
 
 #repertoirelist {
     width: 100%;
     height: 40vw;
 }
 
-.float{
+a:hover {
+}
+
+.button{
+    transition: transform .2s;
     font-family: "Georgia";
     font-size: 115%;
 	text-align:center;
@@ -63,7 +76,14 @@ body, h1, h2 {
 	border-radius:50px;
 	box-shadow: 3px 3px 4px #333;
 }
-
+.button:hover{
+	color:#000;
+	box-shadow: 5px 5px 7px #000;
+    transform: scale(1.1);
+}
+.button:active{
+    transform: scale(1);
+}
 .my-float{
 	margin-top:22px;
 }
