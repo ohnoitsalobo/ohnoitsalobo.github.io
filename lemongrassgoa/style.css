@@ -96,6 +96,6 @@ body, h1, h2 {
   /* left: 0;  */
 	
   /* Preserve aspect ratio */
-  width: 75px;
+  height: 60px;
   /* height: 10%; */
 }
