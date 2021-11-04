@@ -95,14 +95,9 @@ body, h1, h2 {
     transform: scale(1.1);
 }
 
-#bg {
-  position: fixed; 
-  bottom: 20px;
-  left: 20px;
-  /* top: 0;  */
-  /* left: 0;  */
-	
-  /* Preserve aspect ratio */
-  height: 60px;
-  /* height: 10%; */
+#logo {
+    position: fixed; 
+    bottom: 20px;
+    left: 20px;
+    height: 60px;
 }
