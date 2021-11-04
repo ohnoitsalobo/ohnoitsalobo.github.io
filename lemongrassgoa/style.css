@@ -44,9 +44,9 @@ body, h1, h2 {
 }
 
 .personal-photo{
+    width: 100%;
     transition: filter .2s;
     filter: drop-shadow(0px 0px 1px #000);
-    width: 100%;
     -webkit-mask-image: linear-gradient(to top, transparent 1%, black 15%);
             mask-image: linear-gradient(to top, transparent 1%, black 15%);
 }
