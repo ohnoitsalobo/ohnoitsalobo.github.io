@@ -45,16 +45,15 @@ body, h1, h2 {
 
 .personal-photo{
     width: 100%;
-    /* transition: filter .2s; */
-    /* filter: drop-shadow(0px 0px 1px #000); */
+    transition: filter .2s;
+    filter: drop-shadow(0px 0px 1px #000);
     transform: scale(1.1);
-    filter: drop-shadow(0px 0px 3px #000);
     -webkit-mask-image: linear-gradient(to top, transparent 1%, black 15%);
             mask-image: linear-gradient(to top, transparent 1%, black 15%);
 }
-/* .personal-photo:hover{ */
-    /* filter: drop-shadow(0px 0px 3px #000); */
-/* } */
+.personal-photo:hover{
+    filter: drop-shadow(0px 0px 3px #000);
+}
 
 #repertoirelist {
     width: 100%;
