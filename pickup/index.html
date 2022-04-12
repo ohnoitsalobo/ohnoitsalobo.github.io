@@ -3,40 +3,7 @@
 	<head>
 		<title>Handmade piezoelectric contact mic and preamplifier</title>
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
-        <style>
-            body {
-                font-family: Lato;
-                text-align: center;
-                background-color:#222;
-            }
-            table {
-                width: 100%;
-                text-align: center;
-                background-color:#BBB;
-            }
-            p {
-                padding-left : 1em;
-                padding-right: 1em;
-            }
-            .audio {
-                background-color:#999;
-            }
-            .instrument {
-                
-            }
-            #piezo_info {
-                background-color:#999;
-            }
-            ul {
-                text-align: left;
-            }
-            li {
-                padding-bottom: 0.5em;
-            }
-            small {
-                color: #444;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script>
             function showHidePiezoInfo(){
                 if(document.getElementById('piezo_info').style.display == 'none'){
@@ -106,7 +73,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <p style="font-size: 1em; margin-left: 15em; margin-right: 15em; text-align: justify;">
+                        <p id="intro" style="font-size: 1em; margin-left: 5em; margin-right: 5em; text-align: justify;">
                             Below are audio recordings of my piezoelectric transducer on various instruments, with and without the preamplifier.<br />
                             Unless otherwise indicated, the piezoelectric disc itself was placed on the top face of each instrument, as close as possible to the center of the bridge.<br /><br />
                             More instruments will be added as I get the chance to record them.<br />

@@ -1,0 +1,39 @@
+body {
+    font-family: Lato;
+    text-align: center;
+    background-color:#222;
+}
+table {
+    width: 100%;
+    text-align: center;
+    background-color:#BBB;
+}
+p {
+    padding-left : 1em;
+    padding-right: 1em;
+}
+.audio {
+    background-color:#999;
+}
+.instrument {
+    
+}
+#piezo_info {
+    background-color:#999;
+}
+ul {
+    text-align: left;
+}
+li {
+    padding-bottom: 0.5em;
+}
+small {
+    color: #444;
+}
+
+@media (max-width: 600px) {
+p {
+    padding-left : 0em;
+    padding-right: 0em;
+}
+}
