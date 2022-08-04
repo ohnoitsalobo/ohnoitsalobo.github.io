@@ -1,0 +1,29 @@
+body {
+  font: 13px sans-serif;
+  margin: 0;
+}
+
+label {
+  background: #f0f0f0;
+  border: 1px solid #999;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px 0 0 10px;
+  padding: 5px 20px;
+}
+
+label input {
+  display: none;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+}
+
+.info {
+  display: inline-block;
+  float: right;
+  margin: 10px 20px 0;
+}
