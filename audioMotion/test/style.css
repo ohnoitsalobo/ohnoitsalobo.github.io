@@ -1,0 +1,38 @@
+body {
+  font: 13px sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+audio {
+  display: inline-block;
+  height: 40px;
+  width: 100%;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+}
+
+#container {
+  height: calc( 100vh - 40px );
+}
+#container:-webkit-full-screen {
+  height: 100vh;
+}
+
+#upload {
+  display: none;
+}
+
+.dg.main {
+  position: absolute;
+  top: 0;
+  right: 100px;
+}
+
+.dg.main ul {
+  max-height: calc( 100vh - 20px );
+  overflow-Y: auto;
+}
