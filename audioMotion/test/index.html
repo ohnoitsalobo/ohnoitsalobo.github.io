@@ -1,4 +1,15 @@
-<html><!-- analyzer container -->
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="websockets.js"></script>
+    <script src="audioMotion-analyzer.js"></script>
+    <script type="module" src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- analyzer container -->
 <div id="container"></div>
 
 <div class="flex">
@@ -7,7 +18,7 @@
 
   <div id="fps"></div>
 
-  <div>
+  <div style="display: none;">
     Mode:
     <select id="mode">
       <option value="1">1/24th octave bands</option>
@@ -27,4 +38,5 @@
   </label>
   <div class="info"><a href="https://audiomotion.dev">audioMotion-analyzer</a> <span id="version"></span></div>
 </div>
+</body>
 </html>

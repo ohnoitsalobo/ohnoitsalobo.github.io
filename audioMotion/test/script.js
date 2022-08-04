@@ -1,10 +1,11 @@
+
 /**
  * for documentation and more demos,
  * visit https://audiomotion.dev
  */
 
 // load module from Skypack CDN
-import AudioMotionAnalyzer from 'https://cdn.skypack.dev/audiomotion-analyzer?min';
+import AudioMotionAnalyzer from './audioMotion-analyzer.js';
 
 // container element
 const container = document.getElementById('container');
@@ -14,30 +15,38 @@ const audioEl = document.getElementById('audio');
 
 // instantiate analyzer
 const audioMotion = new AudioMotionAnalyzer( null, {
-  source: audioEl,
-  mode: 2,
-  useCanvas: false, // don't use the canvas
-  onCanvasDraw: instance => {
-    const maxHeight = container.clientHeight;
-    
-    let html = '';
+    source: audioEl,
+    mode: 6,
+    useCanvas: false, // don't use the canvas
+    onCanvasDraw: instance => {
+        const maxHeight = container.clientHeight;
 
-    // get analyzer bars data
-    for ( const bar of instance.getBars() ) {
+        let html = '';
+        let eq_str = "";
+            eq_str += instance.getBars().length;
+        // get analyzer bars data
+        for ( const bar of instance.getBars() ) {
 
-      const value    = bar.value[0],
+            const value    = bar.value[0],
             peak     = bar.peak[0],
             hold     = bar.hold[0],
             isPeakUp = hold > 0 && peak > 0; // if hold < 0 the peak is falling down
-
-      // build our visualization using only DIVs
-      html += `<div class="bar" style="height: ${ value * 100 }%; background: rgba( 255, 255, 255, ${ value } )">
-								<div class="peak" style="bottom: ${ ( peak - value ) * -maxHeight }px; ${ isPeakUp ? 'box-shadow: 0 0 10px 1px #f00' : 'opacity: ' + ( peak > 0 ? .7 : 0 ) }"></div>
-							 </div>`;
+            // build our visualization using only DIVs
+            html += `<div class="bar" style="height: ${ value * 100 }%; background: rgba( 255, 255, 255, ${ value } )">
+                            <div class="peak" style="bottom: ${ ( peak - value ) * -maxHeight }px; ${ isPeakUp ? 'box-shadow: 0 0 10px 1px #f00' : 'opacity: ' + ( peak > 0 ? .7 : 0 ) }"></div>
+                         </div>`;
+            eq_str += ",";
+            eq_str += Math.round(value*255);
+        }
+        if (connection.readyState === WebSocket.OPEN && micButton.checked) {
+            // connection.send(instance.getBars()[0].value[0]);
+            console.log(instance.getBars().length);
+            connection.send(eq_str);
+        }
+        container.innerHTML = html;
+        document.getElementById('fps').innerText = instance.fps.toFixed(1);
     }
-    container.innerHTML = html;
-    document.getElementById('fps').innerText = instance.fps.toFixed(1);
-  }
+  
 });
 
 // visualization mode selection
@@ -75,6 +84,6 @@ micButton.addEventListener( 'change', () => {
   else {
     // disconnect all input audio sources
     audioMotion.disconnectInput();
-    audioMotion.volume = 1;
+    // audioMotion.volume = 1;
   }
 });
