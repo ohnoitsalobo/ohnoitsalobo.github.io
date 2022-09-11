@@ -11,6 +11,14 @@
     <script language="javascript" type="text/javascript" src="assets/js/p5js_perlinflow/particle.js"></script>
     <script language="javascript" type="text/javascript" src="assets/js/p5js_perlinflow/sketch.js"></script> 
 </head>
+<style>
+    #perlinflow{
+        background-color: #001;
+        <!-- width: 100%; -->
+        -webkit-mask-image: linear-gradient(to top, transparent 1%, black 15%);
+                mask-image: linear-gradient(to top, transparent 1%, black 15%);
+    }
+</style>
 <body class="is-preload">
 
     <!-- Nav -->
@@ -22,7 +30,7 @@
             </ul>
         </nav>
 
-    <div id="perlinflow" style="background-color: #001; width: 100%;"> </div>
+    <div id="perlinflow"> </div>
     <!-- Home -->
         <article id="top" class="wrapper style4">
             <div class="container">
