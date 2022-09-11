@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Beats Circle</title>
+      <script src="src/processing.js"></script>
+    </head>
+    <body>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<script type="text/processing" data-processing-target="mycanvas">
+
+///// variables /////
+bool sound = false;
+Audio audio = new Audio();
+
+int RPM = 25;
+int num_of_beats = 1;
+int num_of_minor_beats = 0;
+int offset = 0, timeOffset = 0;
+bool playing = false;
+
+int[] xloc = new int[100];
+int[] yloc = new int[100];
+bool[] visible = new bool[100];
+
+PFont fontA = loadFont("Courier New");
+textFont(fontA, 30);
+
+///// END variables /////
+
+///// setup /////
+void setup() {
+    size(550, 550); // pixel size of sketch
+    smooth();
+    // intialize arrays
+    for(int i = 0; i < 100; i++){
+        xloc[i] = 0;
+        yloc[i] = 0;
+        visible[i] = 1;
+    }
+
+    // initialize audio
+    if (audio.canPlayType && audio.canPlayType("audio/ogg")){
+        fileExt = ".ogg";
+    }else{
+        fileExt = ".mp3";
+    }
+}
+///// END setup /////
+
+///// loop /////
+void draw() {
+    num_of_mbeats = (num_of_minor_beats+1)*num_of_beats;
+    stroke(0);
+    background(255);
+
+    drawCircles(); // draw circles
+
+    // angle of rotating arm
+    float beater = map((playing ? millis()-timeOffset : 0)%(1000*60/RPM), 0, (1000*60/RPM), 0, TWO_PI) - HALF_PI;
+
+    int xx=cos(beater);
+    int yy=sin(beater);
+    // line(width/2, height/2, (0.95*xx*(width/2))+(width/2), (0.95*yy*(height/2))+(height/2));
+    noStroke();
+    fill(0);
+    ellipse(width/2, height/2, 10, 10);
+    triangle(width/2+5, height/2, width/2-5, height/2, (0.95*xx*(width/2))+(width/2), (0.95*yy*(height/2))+(height/2));
+    triangle(width/2, height/2+5, width/2, height/2-5, (0.95*xx*(width/2))+(width/2), (0.95*yy*(height/2))+(height/2));
+    triangle(width/2+3.5, height/2+3.5, width/2-3.5, height/2-3.5, (0.95*xx*(width/2))+(width/2), (0.95*yy*(height/2))+(height/2));
+    triangle(width/2-3.5, height/2+3.5, width/2+3.5, height/2-3.5, (0.95*xx*(width/2))+(width/2), (0.95*yy*(height/2))+(height/2));
+
+    strokeWeight(1);
+    for(int i = 0; i < num_of_beats; i++){
+        float temp = (i*TWO_PI/num_of_beats)-HALF_PI;
+        float temp1 = ((i+1)*TWO_PI/num_of_beats)-HALF_PI;
+        if(beater > temp && beater < temp1){
+            noStroke();
+            fill(0x44ffffff);
+            arc(width/2, height/2, 0.9*width, 0.9*height, temp, temp1);
+            fill(0x44994444);
+            arc(width/2, height/2, 0.7*width, 0.7*height, temp, beater);
+        }
+    }
+    for(int i = 0; i < num_of_mbeats; i++){
+        int minorbeat = i%(num_of_mbeats/num_of_beats);
+        float temp = (i*TWO_PI/num_of_mbeats)-HALF_PI + (!minorbeat ? 0 : offset*0.003);
+        int x_coord = cos(temp);
+        int y_coord = sin(temp);
+        int dot_size = 15; float dd = 0.7;
+        if(visible[i]){
+            stroke(100);
+            fill(100);
+            if(!minorbeat){
+                dot_size = 30; dd = 0.9;
+                strokeWeight(1);
+                fill(0);
+                stroke(0);
+            }
+            if(abs(xx-x_coord) < 0.03 && abs(yy-y_coord) < 0.03 && playing){
+                dot_size *= 2;
+                if(sound) {
+                    if(i==0)
+                        audio.setAttribute("src","src/s0"+fileExt);
+                    else{
+                        if (!minorbeat)
+                            audio.setAttribute("src","src/s1"+fileExt);
+                        else
+                            audio.setAttribute("src","src/s2"+fileExt);
+                    }
+                    audio.play();
+                }
+            }
+            xloc[i] = dd*x_coord*(width/2) + (width/2);
+            yloc[i] = dd*y_coord*(height/2) + (height/2);
+            ellipse(xloc[i], yloc[i], dot_size, dot_size);
+            line(width/2, height/2, xloc[i], yloc[i]);
+        }
+        if(!visible[i]){
+            stroke(170);
+            line(width/2, height/2, xloc[i], yloc[i]);
+        }
+        fill(255);
+        if(!minorbeat)
+            text(num_of_beats/num_of_mbeats * i + 1, x_coord * (width/2)*0.9 + (width/2) + 10, y_coord * (height/2)*0.9 + (height/2) + 10);
+        stroke(0);
+    }
+
+    int t = 20;
+    noStroke();
+    if(playing){
+        fill(0xdd449944);
+        triangle(width/2-t/2, height/2-t, width/2-t/2, height/2+t, width/2+t, height/2);
+    }else{
+        fill(0xdd994444);
+        ellipse(width/2, height/2, t*2, t*2);
+    }
+
+    textFont(fontA, 15);
+    textAlign(CENTER);
+
+    fill(0xffff0000);
+    text("a", width-25, 15);
+    text("z", width-25, 55);
+    text("k", width-25, height-45);
+    text("m", width-25, height-5);
+
+    fill(0);
+    text(playing ? "STOP" : "START", width/2, height/2+5);
+
+
+    textFont(fontA, 30);
+    textAlign(LEFT);
+    text("TEMPO +", 0, 20);
+    text("TEMPO -", 0, 60);
+    text(RPM*num_of_beats, 0, 100);
+
+    text("SOUND", 0, height-40);
+    text(sound ? "ON" : "OFF", 0, height);
+
+    textAlign(RIGHT);
+    text("MAIN BEATS +", width, 20);
+    text("BEATS -", width, 60);
+    text(num_of_beats, width, 100);
+
+    text(num_of_minor_beats+1, width, height-80);
+    text("BEATS +", width, height-40);
+    text("MINOR BEATS -", width, height);
+
+}
+
+void mouseClicked(){
+    if(mouseX>width/2-40 && mouseX<width/2+40 && mouseY>height/2-40 && mouseY<height/2+40){
+        playing = !playing;
+        timeOffset = millis();
+    }
+    if(mouseX>0 && mouseX<130 && mouseY>height-80 && mouseY<height){
+        sound = !sound;
+    }
+    if(mouseX>0 && mouseX<130 && mouseY>0 && mouseY<20){
+        RPM++;
+        timeOffset = millis();
+    }
+    if(mouseX>0 && mouseX<130 && mouseY>40 && mouseY<60){
+        RPM--;
+        timeOffset = millis();
+        if(RPM<0)
+            RPM = 0;
+    }
+    if(mouseX>width-130 && mouseX<width && mouseY>0 && mouseY<20){
+        num_of_beats += num_of_beats>=8 ? 0 : 1;
+        resetVis();
+    }
+    if(mouseX>width-130 && mouseX<width && mouseY>40 && mouseY<60){
+        num_of_beats -= num_of_beats<=0 ? 0 : 1;
+        resetVis();
+    }
+    if(mouseX>width-130 && mouseX<width && mouseY>height-60 && mouseY<height-40){
+        num_of_minor_beats += num_of_minor_beats>=7 ? 0 : 1;
+        resetVis();
+    }
+    if(mouseX>width-130 && mouseX<width && mouseY>height-20 && mouseY<height){
+        num_of_minor_beats -= num_of_minor_beats<=0 ? 0 : 1;
+        resetVis();
+    }
+    for(int i = 0; i < num_of_mbeats; i++){
+        if(mouseX>xloc[i]-15 && mouseX<xloc[i]+15 && mouseY>yloc[i]-15 && mouseY<yloc[i]+15)
+            visible[i] = !visible[i];
+    }
+}
+
+void resetVis(){
+    for(int i = 0; i < 100; i++){
+        visible[i] = 1;
+        offset = 0;
+    }
+}
+
+void mouseDragged(){
+    int dy = mouseY-pmouseY;
+    if(mouseX < width/2) dy = -dy;
+    int dx = mouseX-pmouseX;
+    if(mouseY > height/2) dx = -dx;
+//    offset += abs(dx)>abs(dy) ? dx : dy;
+}
+
+void keyPressed(){
+    if(key == ' '){
+        playing = !playing;
+        timeOffset = millis();
+    }
+    if(key == 's' || key == 'S'){
+        sound = !sound;
+    }
+    if(key == '+' || key == '='){
+        RPM++;
+        timeOffset = millis();
+        if(RPM>40)
+            RPM = 40;
+    }
+    if(key == '-' || key == '_'){
+        RPM--;
+        timeOffset = millis();
+        if(RPM<10)
+            RPM = 10;
+    }
+    if(key == 'a' || key == 'A'){
+        num_of_beats += num_of_beats>=8 ? 0 : 1;
+        resetVis();
+    }
+    if(key == 'z' || key == 'Z'){
+        num_of_beats -= num_of_beats<=0 ? 0 : 1;
+        resetVis();
+    }
+    if(key == 'k' || key == 'K'){
+        num_of_minor_beats += num_of_minor_beats>=7 ? 0 : 1;
+        resetVis();
+    }
+    if(key == 'm' || key == 'M'){
+        num_of_minor_beats -= num_of_minor_beats<=0 ? 0 : 1;
+        resetVis();
+    }
+}
+
+void drawCircles(){  // draw the main circles
+    strokeWeight(1);
+    fill(200);
+    ellipse(width/2, height/2, 0.9*width, 0.9*height);
+
+    fill(175);
+    ellipse(width/2, height/2, 0.7*width, 0.7*height);
+}
+
+
+</script>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <canvas id="mycanvas"></canvas>
+    </body>
+</html>
+

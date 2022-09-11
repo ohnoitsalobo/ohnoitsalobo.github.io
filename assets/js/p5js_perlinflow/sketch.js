@@ -19,7 +19,10 @@ var loopCount = 0, loops = 15;
 
 function setup() {
     // canvas = createCanvas(400, 400);
-    var canvas = createCanvas(window.innerWidth, floor(window.innerHeight/3));
+    // var canvas = createCanvas(window.innerWidth, floor(window.innerHeight/3));
+    var sizeX = document.getElementById("top").clientWidth;
+    var sizeY = floor(window.innerHeight/3);
+    var canvas = createCanvas(sizeX, sizeY);
     canvas.parent('perlinflow');
     frameRate(15);
     colorMode(HSB, 255);

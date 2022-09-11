@@ -1,0 +1,19 @@
+Instructions:
+➊ ➋ ➌ ➍ ➎
+1. Attach the piezoelectric disc ➊ to the instrument or surface you wish to record, using the provided "blue tack" putty *.
+   * Faber-Castell™ "Tack-It" is non-marking and reusable.
+
+2. Secure the connector ➋ to the instrument or surface, such that the wire does not buzz against the surface and does not pull on the piezoelectric disc ➊.
+   - Mounting clamp ➋ⓐ is provided for violin and viola.
+   - For other uses, connector ➋ⓑ can be affixed using non-marking tape or other means.
+
+3. Connect the TRS plug ➌ to the piezoelectric disc connector ➋.
+   - a low-profile 90° plug ➌ⓐ is provided for violin and viola.
+   - For other uses, a straight plug ➌ⓑ is provided.
+
+4. Connect the XLR plug ➍ to the preamplifier ➎.
+
+5. Using a regular microphone cable (XLR - XLR), connect the preamplifier ➎ to an audio interface / mixer.
+ - Turn on "phantom power" (standard on all professional audio equipment).
+
+The microphone is now ready to use.
