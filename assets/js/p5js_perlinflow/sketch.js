@@ -22,6 +22,9 @@ function setup() {
     // var canvas = createCanvas(window.innerWidth, floor(window.innerHeight/3));
     var sizeX = document.getElementById("top").clientWidth;
     var sizeY = floor(window.innerHeight/3);
+    if(sizeX < 600){
+        sizeY = floor(window.innerHeight/5);
+    }
     var canvas = createCanvas(sizeX, sizeY);
     canvas.parent('perlinflow');
     frameRate(15);
@@ -90,4 +93,13 @@ function draw() {
     noStroke();
     fill(255, 2); 
     text("Perlin noise flow\nGenerated using p5.js", 5, height-2*textSize());
+}
+
+function windowResized() {
+    var sizeX = document.getElementById("top").clientWidth;
+    var sizeY = floor(window.innerHeight/3);
+    if(sizeX < 600){
+        sizeY = floor(window.innerHeight/5);
+    }
+    resizeCanvas(sizeX, sizeY);
 }
