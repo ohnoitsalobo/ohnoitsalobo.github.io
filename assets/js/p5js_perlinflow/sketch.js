@@ -88,11 +88,10 @@ function draw() {
     fill(10, 10); 
     stroke(255, 10); strokeWeight(1);
     text("@ohnoitsalobo", 0.01*scale*width, height*scale);
-    textSize(0.25*scale*height); textAlign(LEFT);
-    // stroke(0,10);  strokeWeight(0.1);
+    textSize(0.3*scale*height); textAlign(RIGHT);
     noStroke();
     fill(255, 2); 
-    text("Perlin noise flow\nGenerated using p5.js", 5, height-2*textSize());
+    text("Perlin noise flow\nGenerated using p5.js", width-10, height-2*textSize());
 }
 
 function windowResized() {
