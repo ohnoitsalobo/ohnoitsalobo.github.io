@@ -28,9 +28,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.0289025"
-     inkscape:cx="275.53631"
-     inkscape:cy="184.66278"
+     inkscape:zoom="2.9101757"
+     inkscape:cx="247.75136"
+     inkscape:cy="88.310818"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
@@ -521,7 +521,7 @@
          transform="matrix(0.08650728,0,0,0.08650728,31.015459,35.252828)"><tspan
            x="204.9155"
            y="42.839478"
-           id="tspan15251">Piezoelectric disc</tspan></text>
+           id="tspan760">Piezoelectric disc</tspan></text>
       <text
          xml:space="preserve"
          style="font-size:3.52777px;line-height:1.25;font-family:Bellota;-inkscape-font-specification:Bellota;stroke-width:0.264583"
@@ -590,39 +590,39 @@
          inkscape:label="text19096"><tspan
            x="459.42996"
            y="250.41457"
-           id="tspan15263"><tspan
+           id="tspan772"><tspan
              style="font-weight:bold;font-size:21.3333px;line-height:0.85;-inkscape-font-specification:'Bellota Bold'"
-             id="tspan15253">*</tspan><tspan
+             id="tspan762">*</tspan><tspan
              style="line-height:0.85"
-             id="tspan15255"> The preamplifier </tspan><tspan
+             id="tspan764"> The preamplifier </tspan><tspan
              style="font-weight:bold;line-height:0.85;-inkscape-font-specification:'Bellota Bold'"
-             id="tspan15257">MUST</tspan><tspan
+             id="tspan766">MUST</tspan><tspan
              style="line-height:0.85"
-             id="tspan15259"> be used with</tspan><tspan
+             id="tspan768"> be used with</tspan><tspan
              style="line-height:1.25"
-             id="tspan15261">
+             id="tspan770">
 </tspan></tspan><tspan
            x="459.42996"
            y="267.0812"
-           id="tspan15267"><tspan
+           id="tspan776"><tspan
              style="line-height:1.25"
-             id="tspan15265">   the provided TRS-XLR cable.
+             id="tspan774">   the provided TRS-XLR cable.
 </tspan></tspan><tspan
            x="459.42996"
            y="283.74781"
-           id="tspan15271"><tspan
+           id="tspan780"><tspan
              style="line-height:1.25"
-             id="tspan15269">   Standard guitar cable or TS-XLR 
+             id="tspan778">   Standard guitar cable or TS-XLR 
 </tspan></tspan><tspan
            x="459.42996"
            y="300.41444"
-           id="tspan15279"><tspan
+           id="tspan788"><tspan
              style="line-height:1.25"
-             id="tspan15273">   'adapter' </tspan><tspan
+             id="tspan782">   'adapter' </tspan><tspan
              style="font-weight:bold;-inkscape-font-specification:'Bellota Bold'"
-             id="tspan15275">WILL NOT</tspan><tspan
+             id="tspan784">WILL NOT</tspan><tspan
              style="line-height:1.25"
-             id="tspan15277"> work.</tspan></tspan></text>
+             id="tspan786"> work.</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-size:3.52777px;line-height:0;font-family:Bellota;-inkscape-font-specification:Bellota;stroke-width:0.264583"
@@ -697,7 +697,7 @@
          id="tspan6509"
          style="stroke-width:0.264583"
          x="82.74968"
-         y="32.964676"></tspan></text>
+         y="32.964676" /></text>
     <text
        xml:space="preserve"
        style="font-size:0.705556px;line-height:1.25;font-family:Bellota;-inkscape-font-specification:Bellota;stroke-width:0.264583"
@@ -708,7 +708,7 @@
          id="tspan6563"
          style="stroke-width:0.264583"
          x="88.435326"
-         y="24.6313"></tspan></text>
+         y="24.6313" /></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:1.76389px;line-height:1.25;font-family:Bellota;-inkscape-font-specification:'Bellota Bold';stroke-width:0.264583"
@@ -741,7 +741,7 @@
          id="tspan6575"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:1.76389px;font-family:Bellota;-inkscape-font-specification:'Bellota Bold';stroke-width:0.264583"
          x="79.558617"
-         y="20.942007">S= Sleeve</tspan></text>
+         y="20.942007">S = Sleeve</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:5.29167px;line-height:1.25;font-family:Bellota;-inkscape-font-specification:Bellota;stroke-width:0.264583"
