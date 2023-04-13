@@ -861,7 +861,7 @@ function mouseReleased(){
                         However, you can still adjust the key independently."
                     );
                 }else{
-                    // speed = 0.4;
+                    // speed = 0.3;
                     keyIndex = notesAreLocked();
                 }
                 lockNotes = !lockNotes;
