@@ -201,20 +201,20 @@ function createNoteCircle(){
                 rotate(noteRotation[i]-currentNoteRotation-PI/2);
                 translate(0, 2.1*Size);
                 fill(255); noStroke();
-                     if(i==0) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                else if(i==2) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                else if(i==3) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                else if(i==5) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                else if(i==7) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                else if(i==8) { rect(0, 0, 0.5*Size, 1.3*Size); }
-                else if(i==10){ rect(0, 0, 0.5*Size, 1.3*Size); }
+                     if(i==0) { rect(0, 0, 0.5*Size, Size); }
+                else if(i==2) { rect(0, 0, 0.5*Size, Size); }
+                else if(i==3) { rect(0, 0, 0.5*Size, Size); }
+                else if(i==5) { rect(0, 0, 0.5*Size, Size); }
+                else if(i==7) { rect(0, 0, 0.5*Size, Size); }
+                else if(i==8) { rect(0, 0, 0.5*Size, Size); }
+                else if(i==10){ rect(0, 0, 0.5*Size, Size); }
 
                 fill(0);
-                     if(i==1) { rect(0, 0, 0.3*Size, 1.3*Size); }
-                else if(i==4) { rect(0, 0, 0.3*Size, 1.3*Size); }
-                else if(i==6) { rect(0, 0, 0.3*Size, 1.3*Size); }
-                else if(i==9) { rect(0, 0, 0.3*Size, 1.3*Size); }
-                else if(i==11){ rect(0, 0, 0.3*Size, 1.3*Size); }
+                     if(i==1) { rect(0, 0, 0.3*Size, Size); }
+                else if(i==4) { rect(0, 0, 0.3*Size, Size); }
+                else if(i==6) { rect(0, 0, 0.3*Size, Size); }
+                else if(i==9) { rect(0, 0, 0.3*Size, Size); }
+                else if(i==11){ rect(0, 0, 0.3*Size, Size); }
             }
         pop();
         }

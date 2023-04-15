@@ -197,7 +197,7 @@ function intervalName(x, i){
         else if(i == 3){ return "\u266D3"; }
         else if(i == 4){ return "3";       }
         else if(i == 5){ return "4";       }
-        else if(i == 6){ return "\u266D5"; }
+        else if(i == 6){ return "\u266F4"; }
         else if(i == 7){ return "5";       }
         else if(i == 8){ return "\u266D6"; }
         else if(i == 9){ return "6";       }
