@@ -2,12 +2,12 @@ var synth = new Tone.PolySynth(6, Tone.Synth,
 // var synth = new Tone.Synth(
 {
     oscillator: {
-        type    : 'triangle4',
+        type    : 'triangle8',
         volume  : -20,
     },
     envelope: {
-        attack  : 0.1,
-        decay   : 0.1,
+        attack  : 0.05,
+        decay   : 0.01,
         sustain : 0.9,
         release : 0.1
     }
@@ -849,7 +849,7 @@ function mouseReleased(){
            mouseY>ypos-offset && mouseY<ypos+offset){
             if(majorMinorOther != 5){
                 if(!lockNotes){
-                    // speed = 1;
+                    speed = 1;
                     if(majorMinorOther == 0) keyIndex = keyIndex + (12 - majorModeIndex         )%12;
                     if(majorMinorOther == 1) keyIndex = keyIndex + (12 - melodicMinorModeIndex  )%12;
                     if(majorMinorOther == 2) keyIndex = keyIndex + (12 - harmonicMinorModeIndex )%12;
@@ -861,7 +861,7 @@ function mouseReleased(){
                         However, you can still adjust the key independently."
                     );
                 }else{
-                    // speed = 0.3;
+                    speed = 0.4;
                     keyIndex = notesAreLocked();
                 }
                 lockNotes = !lockNotes;
