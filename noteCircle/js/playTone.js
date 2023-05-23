@@ -14,8 +14,8 @@ var synth = new Tone.PolySynth(6, Tone.Synth,
 }
 ).toMaster()
 
-let root12_2 = 1.059463;
 /*            C     C#/Db     D     D#/Eb     E       F     F#/Gb     G     G#/Ab    A   A#/Bb     B       C'    */
+let root12_2 = 1.059463;
 var tone = [
 /* C  */ 440/(root12_2**9),
 /* C# */ 440/(root12_2**8),
