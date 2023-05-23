@@ -17,19 +17,19 @@ var synth = new Tone.PolySynth(6, Tone.Synth,
 let root12_2 = 1.059463;
 /*            C     C#/Db     D     D#/Eb     E       F     F#/Gb     G     G#/Ab    A   A#/Bb     B       C'    */
 var tone = [
-/* C  */ 440/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2,
-/* C# */ 440/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2,
-/* D  */ 440/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2,
-/* Eb */ 440/root12_2/root12_2/root12_2/root12_2/root12_2/root12_2,
-/* E  */ 440/root12_2/root12_2/root12_2/root12_2/root12_2,
-/* F  */ 440/root12_2/root12_2/root12_2/root12_2,
-/* F# */ 440/root12_2/root12_2/root12_2,
-/* G  */ 440/root12_2/root12_2,
-/* G# */ 440/root12_2,
-/* A  */ 440,
-/* Bb */ 440*root12_2,
-/* B  */ 440*root12_2*root12_2,
-/* C' */ 440*root12_2*root12_2*root12_2,
+/* C  */ 440/(root12_2**9),
+/* C# */ 440/(root12_2**8),
+/* D  */ 440/(root12_2**7),
+/* Eb */ 440/(root12_2**6),
+/* E  */ 440/(root12_2**5),
+/* F  */ 440/(root12_2**4),
+/* F# */ 440/(root12_2**3),
+/* G  */ 440/(root12_2**2),
+/* G# */ 440/(root12_2**1),
+/* A  */ 440*(root12_2**0),
+/* Bb */ 440*(root12_2**1),
+/* B  */ 440*(root12_2**2),
+/* C' */ 440*(root12_2**3)
 ];
 
 function playTone(t){
