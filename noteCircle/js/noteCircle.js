@@ -108,7 +108,8 @@ function draw(){
     if(frameCount > 100 && interacted > 0){
         if(frameCount - interacted > 40){
             interacted = 0;
-            noLoop();
+            // noLoop();
+            frameRate(1);
         }
     }
 }

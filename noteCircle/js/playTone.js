@@ -995,5 +995,6 @@ function doubleClicked(){
 
 function interact(){
     interacted = frameCount;
-    loop();
+    // loop();
+    frameRate(30);
 }
