@@ -147,7 +147,7 @@ function playedHighlight(){
                     rotate(-t*PI/6+PI/2);
                     fill(0, fillalpha); 
                     text(intervalName(0, t), 0, 0);
-                pop()
+                pop();
             }else{
                 if(t == 0 || t == 2 || t == 7 || t == 9 || t == 11){
                     push();
@@ -159,7 +159,7 @@ function playedHighlight(){
                         rotate(-t*PI/6+PI/2);
                         fill(0, fillalpha); noStroke();
                         text(i, 0, 0);
-                    pop()
+                    pop();
                 }else{
                     push();
                         rotate(t*PI/6);
@@ -172,7 +172,7 @@ function playedHighlight(){
                             text(intervalName(1, t), 0, 0);
                         else
                             text(intervalName(2, t), 0, 0);
-                    pop()
+                    pop();
                 }
             }
         }
