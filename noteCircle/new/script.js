@@ -121,6 +121,7 @@ scale_Select.addEventListener("change", event => {
     } else {
         x.style.display = 'none';
         y.style.display = 'none';
+        y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
     }
 });
 
@@ -148,21 +149,22 @@ mode_Select.addEventListener("change", event => {
     _3rot =  harmonicMajorIntervals[event.srcElement.selectedIndex]*-30 + (num_rot*360);
     _4rot = doubleHarmonicIntervals[event.srcElement.selectedIndex]*-30 + (num_rot*360);
     
+    _0.style.transform = "rotate(" + _0rot + "deg)";
+    _1.style.transform = "rotate(" + _1rot + "deg)";
+    _2.style.transform = "rotate(" + _2rot + "deg)";
+    _3.style.transform = "rotate(" + _3rot + "deg)";
+    _4.style.transform = "rotate(" + _4rot + "deg)";
+    
     if(a.selectedIndex == 0){
         x.innerHTML = majorModeList[event.srcElement.selectedIndex];
-        _0.style.transform = "rotate(" + _0rot + "deg)";
     } else if(a.selectedIndex == 1){
         x.innerHTML = melodicMinorModeList[event.srcElement.selectedIndex];
-        _1.style.transform = "rotate(" + _1rot + "deg)";
     } else if(a.selectedIndex == 2){
         x.innerHTML = harmonicMinorModeList[event.srcElement.selectedIndex];
-        _2.style.transform = "rotate(" + _2rot + "deg)";
     } else if(a.selectedIndex == 3){
         x.innerHTML = harmonicMajorModeList[event.srcElement.selectedIndex];
-        _3.style.transform = "rotate(" + _3rot + "deg)";
     } else if(a.selectedIndex == 4){
         x.innerHTML = doubleHarmonicModeList[event.srcElement.selectedIndex];
-        _4.style.transform = "rotate(" + _4rot + "deg)";
     } else {
         x.innerHTML = '';
     }
