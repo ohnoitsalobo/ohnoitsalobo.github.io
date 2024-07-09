@@ -24,7 +24,7 @@ noteCircle.addEventListener("load",function(){
     
 function process(){
     loadSelectors();
-    console.log(notes_base);
+    // console.log(notes_base);
 }
 
 function loadSelectors(){
@@ -52,6 +52,7 @@ function loadSelectors(){
 }
 
 key_Select.addEventListener("wheel", event => { // down +, up -
+    event.preventDefault();
     if(event.deltaY > 0){
         notes_rot -= 30;
         let x = event.srcElement.selectedOptions[0].nextSibling;
@@ -66,14 +67,17 @@ key_Select.addEventListener("wheel", event => { // down +, up -
         // if(x == null){ x = event.srcElement.selectedOptions[0]; notes_rot -= 30;}
         x.selected = true;
     }
-    notes_base.style.transform = " translate(283.60605px, 131.65039px) rotate(" + notes_rot + "deg)";
     event.srcElement.dispatchEvent(optionChanged);
 });
 key_Select.addEventListener("change", event => {
-    // console.info(event.srcElement.selectedOptions[0]);
+    let _t = event.srcElement.selectedOptions[0].index;
+    // console.info(_t);
+    notes_rot = _t*-30;
+    notes_base.style.transform = "translate(283.60605px, 131.65039px) rotate(" + notes_rot + "deg)";
 });
 
 scale_Select.addEventListener("wheel", event => {
+    event.preventDefault();
     if(event.deltaY > 0){
         let x = event.srcElement.selectedOptions[0].nextSibling;
         if(x == null){ x = event.srcElement.selectedOptions[0]; }
@@ -121,6 +125,7 @@ scale_Select.addEventListener("change", event => {
 });
 
 mode_Select.addEventListener("wheel", event => {
+    event.preventDefault();
     if(event.deltaY > 0){
         let x = event.srcElement.selectedOptions[0].nextSibling;
         if(x == null){ x = event.srcElement.firstChild; num_rot -= 1;}

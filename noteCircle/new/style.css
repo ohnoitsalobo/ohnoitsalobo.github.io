@@ -34,6 +34,7 @@ table{
 #noteCircle{
     width: 100%;
     max-width: 400px;
+    font-family: Ubuntu, Georgia;
 }
 
 #circle1 {
