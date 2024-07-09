@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
         <script src="../js/tone.js"></script>
         <script src="../js/p5.js"></script>
-        <script src="../js/vars.js"></script>
-        <script src="../js/elements.js"></script>
+        <script src="vars.js"></script>
+        <!-- <script src="../js/elements.js"></script> -->
         <!-- <script src="../js/playTone.js"></script> -->
         <!-- <script src="../js/noteCircle.js"></script> -->
         <script src="../js/text.js"></script>
@@ -20,6 +20,9 @@
             <img class="pianoImage" src="PianoKeyboard.svg" style="margin-right: -5px; opacity: 0.6;"/>
             <img class="pianoImage" src="PianoKeyboard.svg" style="margin: 0px;"/>
             <img class="pianoImage" src="PianoKeyboard.svg" style="margin-left: -5px; opacity: 0.6;"/>
+        </div>
+        <div>
+            <span id="modeSelectText" style="font-size: 1.2em;"></span>
         </div>
         <div>
             <!-- <img id="chromaticCircle" src="noteCircle.svg" /> -->
@@ -35,18 +38,34 @@
                     <td><select id="keySelect"></select></td>
                     <td><select id="scaleSelect"></select></td>
                 </tr>
-                <tr colspan=2>
-                    <table>
-                        <tr>
-                            <td><select id="modeSelect"></select></td>
-                        </tr>
-                        <tr>
-                            <td id="modeSelectText"></td>
-                        </tr>
-                    </table>
+                <tr>
+                    <td colspan=2><select id="modeSelect"></select></td>
                 </tr>
             </table>
         </div>
+    </div>
+    <div>
+        <table id="img">
+            <tr>
+                <td>
+                    <div style="text-align: right; font-family: Georgia;">
+                        Treble clef (G clef)<br /><br />
+                        Alto clef (C clef)  <br /><br />
+                        Bass clef (F clef)  <br /><br />
+                        Mandolin tablature  <br /><br />
+                        Guitar tablature    <br /><br />
+                    </div>
+                </td>
+                <td>
+                    <div id="img1">
+                    </div>
+                </td>
+                <td>
+                    <div id="img2">
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
     </center>
     <script src="script.js"></script>

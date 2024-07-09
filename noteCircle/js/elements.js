@@ -47,7 +47,7 @@ function loadScales(){
             doubleHarmonicScale [index] = begin + "doubleharmonic-" + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
         }
     }
-}                                                          
+}
 
 function drawNotes(){
     img1.remove();

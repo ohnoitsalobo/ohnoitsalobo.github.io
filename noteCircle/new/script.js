@@ -6,9 +6,10 @@ const optionChanged = new CustomEvent("change");
 let noteCircle = document.getElementById('noteCircle');
 let noteCircleDOM, _0, _1, _2, _3, _4, notes_base, notes_rot = 0;
 let _0rot = 0, _1rot = 0, _2rot = 0, _3rot = 0, _4rot = 0, num_rot = 0;
-noteCircle.addEventListener("load",function(){
 
-    // get the inner DOM of alpha.svg
+noteCircle.addEventListener("load", function(){
+
+    // get the inner DOM of the svg
     noteCircleDOM = noteCircle.contentDocument;
     _0 = noteCircleDOM.getElementById("major");           _0.style.transformOrigin = "-19% 18%";  _0.style.transition = "opacity 100ms, transform 500ms";
     _1 = noteCircleDOM.getElementById("melodicMinor");    _1.style.transformOrigin = "-19% 18%";  _1.style.transition = "opacity 100ms, transform 500ms";
@@ -52,7 +53,7 @@ function loadSelectors(){
 }
 
 key_Select.addEventListener("wheel", event => { // down +, up -
-    event.preventDefault();
+    event.preventDefault(); // prevent page scroll
     if(event.deltaY > 0){
         notes_rot -= 30;
         let x = event.srcElement.selectedOptions[0].nextSibling;
@@ -77,7 +78,7 @@ key_Select.addEventListener("change", event => {
 });
 
 scale_Select.addEventListener("wheel", event => {
-    event.preventDefault();
+    event.preventDefault(); // prevent page scroll
     if(event.deltaY > 0){
         let x = event.srcElement.selectedOptions[0].nextSibling;
         if(x == null){ x = event.srcElement.selectedOptions[0]; }
@@ -126,7 +127,7 @@ scale_Select.addEventListener("change", event => {
 });
 
 mode_Select.addEventListener("wheel", event => {
-    event.preventDefault();
+    event.preventDefault(); // prevent page scroll
     if(event.deltaY > 0){
         let x = event.srcElement.selectedOptions[0].nextSibling;
         if(x == null){ x = event.srcElement.firstChild; num_rot -= 1;}
@@ -141,31 +142,70 @@ mode_Select.addEventListener("wheel", event => {
 });
 mode_Select.addEventListener("change", event => {
     // console.info(event.srcElement.selectedOptions[0]);
+    // calculate rotation for each mode 'mask'
     let a = document.getElementById("scaleSelect");
-    let x = document.getElementById("modeSelectText");
     _0rot =          majorIntervals[event.srcElement.selectedIndex]*-30 + (num_rot*360);
     _1rot =   melodicMinorIntervals[event.srcElement.selectedIndex]*-30 + (num_rot*360);
     _2rot =  harmonicMinorIntervals[event.srcElement.selectedIndex]*-30 + (num_rot*360);
     _3rot =  harmonicMajorIntervals[event.srcElement.selectedIndex]*-30 + (num_rot*360);
     _4rot = doubleHarmonicIntervals[event.srcElement.selectedIndex]*-30 + (num_rot*360);
+    let _temp = "translate(283.60605px, 131.65039px) ";
+    _0.style.transform = _temp + "rotate(" + _0rot + "deg)";
+    _1.style.transform = _temp + "rotate(" + _1rot + "deg)";
+    _2.style.transform = _temp + "rotate(" + _2rot + "deg)";
+    _3.style.transform = _temp + "rotate(" + _3rot + "deg)";
+    _4.style.transform = _temp + "rotate(" + _4rot + "deg)";
     
-    _0.style.transform = "translate(283.60605px, 131.65039px) rotate(" + _0rot + "deg)";
-    _1.style.transform = "translate(283.60605px, 131.65039px) rotate(" + _1rot + "deg)";
-    _2.style.transform = "translate(283.60605px, 131.65039px) rotate(" + _2rot + "deg)";
-    _3.style.transform = "translate(283.60605px, 131.65039px) rotate(" + _3rot + "deg)";
-    _4.style.transform = "translate(283.60605px, 131.65039px) rotate(" + _4rot + "deg)";
-    
-    if(a.selectedIndex == 0){
-        x.innerHTML = majorModeList[event.srcElement.selectedIndex];
-    } else if(a.selectedIndex == 1){
-        x.innerHTML = melodicMinorModeList[event.srcElement.selectedIndex];
-    } else if(a.selectedIndex == 2){
-        x.innerHTML = harmonicMinorModeList[event.srcElement.selectedIndex];
-    } else if(a.selectedIndex == 3){
-        x.innerHTML = harmonicMajorModeList[event.srcElement.selectedIndex];
-    } else if(a.selectedIndex == 4){
-        x.innerHTML = doubleHarmonicModeList[event.srcElement.selectedIndex];
-    } else {
-        x.innerHTML = '';
-    }
+    let x = document.getElementById("modeSelectText");
+    x.innerHTML = allModesList[a.selectedIndex][event.srcElement.selectedIndex];
 });
+
+let majorScale = [];
+let melodicMinorScale = [];
+let harmonicMinorScale = [];
+let harmonicMajorScale = [];
+let doubleHarmonicScale = [];
+let _images = [majorScale, melodicMinorScale, harmonicMinorScale, harmonicMajorScale, doubleHarmonicScale];
+
+function loadScales(){
+    // let begin = "<object width=\"50%\" type=\"image/svg+xml\" data=\"modes/svg/";
+    let begin = "<object type=\"image/svg+xml\" data=\"../modes/svg/";
+    let end = ".svg\">Please use a web browser with SVG image support to see the image.</object>";
+    for(let j = 0; j < 17; j++){
+        for(let i = 0; i < 7; i++){
+            let index = i+( j*7);
+            let filenum = i+(imageOrder[j]*7)+2;
+            majorScale          [index] = begin + "major-"          + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
+            melodicMinorScale   [index] = begin + "melodicminor-"   + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
+            harmonicMinorScale  [index] = begin + "harmonicminor-"  + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
+            harmonicMajorScale  [index] = begin + "harmonicmajor-"  + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
+            doubleHarmonicScale [index] = begin + "doubleharmonic-" + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
+        }
+    }
+}
+
+function drawNotes(){
+    img1.remove();
+    img2.remove();
+    let index = notesAreLocked();
+    let offset = 0;
+    if     (index == 1 ) offset = 12;
+    else if(index == 3 ) offset = 13;
+    else if(index == 6 ) offset = 14;
+    else if(index == 8 ) offset = 15;
+    else if(index == 10) offset = 16;
+    let alt1 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keySharpList[notesAreLocked()] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 1";
+    let alt2 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keyFlatList [notesAreLocked()] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 2";
+    if(majorMinorOther < 5){
+        img1 = createDiv(_images[majorMinorOther][index*7+currentlySelectedMode]);
+        if(offset) 
+            img2 = createDiv(_images[majorMinorOther][offset*7+currentlySelectedMode]);
+    }
+    img1.parent('img1');
+    img1.elt.title = alt1;
+    if(offset){
+        img2.parent('img2');
+        img2.elt.title = alt2;
+    }
+    showImg = true;
+}

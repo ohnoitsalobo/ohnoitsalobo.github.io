@@ -46,3 +46,7 @@ table{
     max-width: 400px;
     max-height: 400px;
 }
+#img {
+    display: none;
+    font-size: 1em;
+}
