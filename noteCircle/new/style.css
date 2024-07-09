@@ -23,6 +23,7 @@ table{
     font-size: 1.2em;
 }
 #container{
+    margin: 0px;
 }
 #pianoKeys{
     width: 100%;
