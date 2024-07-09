@@ -23,6 +23,13 @@ noteCircle.addEventListener("load", function(){
     // add behaviour
 }, false);
 
+let pianoKeysImg1 = document.getElementById('pianoImg1');
+let pianoKeysImg2 = document.getElementById('pianoImg2');
+let pianoKeysImg3 = document.getElementById('pianoImg3');
+let pianoKeysDOM1, pianoKeysDOM2, pianoKeysDOM3;
+pianoKeysImg1.addEventListener("load", function(){ pianoKeysDOM1 = pianoKeysImg1.contentDocument; }, false);
+pianoKeysImg2.addEventListener("load", function(){ pianoKeysDOM2 = pianoKeysImg2.contentDocument; }, false);
+pianoKeysImg3.addEventListener("load", function(){ pianoKeysDOM3 = pianoKeysImg3.contentDocument; }, false);
     
 function process(){
     loadSelectors();
@@ -40,6 +47,10 @@ function loadSelectors(){
         var opt = document.createElement('option');
         opt.value = modeList[x];
         opt.innerHTML = modeList[x];
+        if(x == modeList.length-1){
+            opt.value = "Chromatic";
+            opt.innerHTML = "Chromatic";
+        }
         scale_Select.appendChild(opt);
     }
     for(var x = 0; x < 7; x++){
@@ -254,4 +265,21 @@ function drawNotes(){
         img2.elt.title = alt2;
     }
     showImg = true;
+}
+
+function markPiano(_array){
+    // console.info(pianoKeysDOM1);
+    // console.info(pianoKeysDOM2);
+    // console.info(pianoKeysDOM3);
+    
+    console.info(pianoKeysDOM1.getElementsByTagName("circle"));
+    let _a1 = pianoKeysDOM1.getElementsByTagName("circle");
+    for(var i = 0; i < _a1.length; i++){
+        _a1[i].style.opacity = '0';
+        for(var j = 0; j < _array.length; j++){
+            if(i == _array[j]){
+                _a1[i].style.opacity = '1';
+            }
+        }
+    }
 }

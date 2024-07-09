@@ -738,12 +738,12 @@ function mouseReleased(){
             }
             if(mouseX>xpos-offset && mouseX<xpos+offset &&
                mouseY>ypos-offset && mouseY<ypos+offset){
-                majorModeSelect.selected(majorModeList[(i+1)%7]);
+                majorModeSelect.selected(majorModeList[(i+6)%7]);
                 changeMajorMode();
             }
             if(mouseX>xpos-offset && mouseX<xpos+offset &&
                mouseY>ypos1-offset && mouseY<ypos1+offset){
-                majorModeSelect.selected(majorModeList[(i+6)%7]);
+                majorModeSelect.selected(majorModeList[(i+1)%7]);
                 changeMajorMode();
             }
         }
@@ -757,12 +757,12 @@ function mouseReleased(){
             }
             if(mouseX>xpos-offset && mouseX<xpos+offset &&
                mouseY>ypos-offset && mouseY<ypos+offset){
-                melodicMinorModeSelect.selected(melodicMinorModeList[(i+1)%7]);
+                melodicMinorModeSelect.selected(melodicMinorModeList[(i+6)%7]);
                 changeMelodicMinorMode();
             }
             if(mouseX>xpos-offset && mouseX<xpos+offset &&
                mouseY>ypos1-offset && mouseY<ypos1+offset){
-                melodicMinorModeSelect.selected(melodicMinorModeList[(i+6)%7]);
+                melodicMinorModeSelect.selected(melodicMinorModeList[(i+1)%7]);
                 changeMelodicMinorMode();
             }
         }
@@ -776,12 +776,12 @@ function mouseReleased(){
             }
             if(mouseX>xpos-offset && mouseX<xpos+offset &&
                mouseY>ypos-offset && mouseY<ypos+offset){
-                harmonicMinorModeSelect.selected(harmonicMinorModeList[(i+1)%7]);
+                harmonicMinorModeSelect.selected(harmonicMinorModeList[(i+6)%7]);
                 changeHarmonicMinorMode();
             }
             if(mouseX>xpos-offset && mouseX<xpos+offset &&
                mouseY>ypos1-offset && mouseY<ypos1+offset){
-                harmonicMinorModeSelect.selected(harmonicMinorModeList[(i+6)%7]);
+                harmonicMinorModeSelect.selected(harmonicMinorModeList[(i+1)%7]);
                 changeHarmonicMinorMode();
             }
         }
@@ -795,12 +795,12 @@ function mouseReleased(){
             }
             if(mouseX>xpos-offset && mouseX<xpos+offset &&
                mouseY>ypos-offset && mouseY<ypos+offset){
-                harmonicMajorModeSelect.selected(harmonicMajorModeList[(i+1)%7]);
+                harmonicMajorModeSelect.selected(harmonicMajorModeList[(i+6)%7]);
                 changeHarmonicMajorMode();
             }
             if(mouseX>xpos-offset && mouseX<xpos+offset &&
                mouseY>ypos1-offset && mouseY<ypos1+offset){
-                harmonicMajorModeSelect.selected(harmonicMajorModeList[(i+6)%7]);
+                harmonicMajorModeSelect.selected(harmonicMajorModeList[(i+1)%7]);
                 changeHarmonicMajorMode();
             }
         }
@@ -814,12 +814,12 @@ function mouseReleased(){
             }
             if(mouseX>xpos-offset && mouseX<xpos+offset &&
                mouseY>ypos-offset && mouseY<ypos+offset){
-                doubleHarmonicModeSelect.selected(doubleHarmonicModeList[(i+1)%7]);
+                doubleHarmonicModeSelect.selected(doubleHarmonicModeList[(i+6)%7]);
                 changeDoubleHarmonicMode();
             }
             if(mouseX>xpos-offset && mouseX<xpos+offset &&
                mouseY>ypos1-offset && mouseY<ypos1+offset){
-                doubleHarmonicModeSelect.selected(doubleHarmonicModeList[(i+6)%7]);
+                doubleHarmonicModeSelect.selected(doubleHarmonicModeList[(i+1)%7]);
                 changeDoubleHarmonicMode();
             }
         }

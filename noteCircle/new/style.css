@@ -27,10 +27,10 @@ table{
 }
 #pianoKeys{
     width: 100%;
-    max-width: 600px;
 }
 .pianoImage{
     width: 30%;
+    display: none;
 }
 #noteCircle{
     width: 100%;
