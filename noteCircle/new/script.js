@@ -65,6 +65,7 @@ function loadSelectors(){
     let _x = document.getElementById("modeSelectText");
     _x.innerHTML = majorModeList[0];
     scale_Select.dispatchEvent(optionChanged);
+    markPiano(majorIntervals);
 }
 
 key_Select.addEventListener("wheel", event => { // down +, up -
@@ -128,18 +129,23 @@ scale_Select.addEventListener("change", event => {
     if(a.selectedIndex == 0){
         x.innerHTML = majorModeList[y.selectedIndex];
         _0.style.opacity = 1;
+        markPiano(majorIntervals);
     } else if(a.selectedIndex == 1){
         x.innerHTML = melodicMinorModeList[y.selectedIndex];
         _1.style.opacity = 1;
+        markPiano(melodicMinorIntervals);
     } else if(a.selectedIndex == 2){
         x.innerHTML = harmonicMinorModeList[y.selectedIndex];
         _2.style.opacity = 1;
+        markPiano(harmonicMinorIntervals);
     } else if(a.selectedIndex == 3){
         x.innerHTML = harmonicMajorModeList[y.selectedIndex];
         _3.style.opacity = 1;
+        markPiano(harmonicMajorIntervals);
     } else if(a.selectedIndex == 4){
         x.innerHTML = doubleHarmonicModeList[y.selectedIndex];
         _4.style.opacity = 1;
+        markPiano(doubleHarmonicIntervals);
     } else {
         x.style.display = 'none';
         y.style.display = 'none';
@@ -186,6 +192,11 @@ mode_Select.addEventListener("change", event => {
     
     let x = document.getElementById("modeSelectText");
     x.innerHTML = allModesList[a.selectedIndex][event.srcElement.selectedIndex];
+    console.info((_0rot / 30) % 12);
+    console.info((_1rot / 30) % 12);
+    console.info((_2rot / 30) % 12);
+    console.info((_3rot / 30) % 12);
+    console.info((_4rot / 30) % 12);
 });
 
 other_Mode_Select.addEventListener("wheel", event => {
@@ -264,18 +275,13 @@ function drawNotes(){
 }
 
 function markPiano(_array){
-    // console.info(pianoKeysDOM1);
-    // console.info(pianoKeysDOM2);
-    // console.info(pianoKeysDOM3);
     
-    console.info(pianoKeysDOM1.getElementsByTagName("circle"));
-    let _a1 = pianoKeysDOM1.getElementsByTagName("circle");
+    // console.info(pianoKeysDOM.getElementsByTagName("circle"));
+    let _a1 = pianoKeysDOM.getElementsByTagName("circle");
     for(var i = 0; i < _a1.length; i++){
-        _a1[i].style.opacity = '0';
-        for(var j = 0; j < _array.length; j++){
-            if(i == _array[j]){
-                _a1[i].style.opacity = '1';
-            }
-        }
+        _a1[i].style.display = 'none';
+    }
+    for(var j = 0; j < _array.length; j++){
+        _a1[_array[j]].style.display = '';
     }
 }
