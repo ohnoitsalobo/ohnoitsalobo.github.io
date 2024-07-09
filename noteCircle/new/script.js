@@ -4,7 +4,7 @@ let mode_Select  = document.getElementById("modeSelect");   // get mode selector
 const optionChanged = new CustomEvent("change");
 
 let noteCircle = document.getElementById('noteCircle');
-let noteCircleDOM, _0, _1, _2, _3, _4, notes_base, notes_rot = 0;
+let noteCircleDOM, _0, _1, _2, _3, _4, notes_base, notes_rot = 0, notes_rot_n = 0;
 let _0rot = 0, _1rot = 0, _2rot = 0, _3rot = 0, _4rot = 0, num_rot = 0;
 
 noteCircle.addEventListener("load", function(){
@@ -57,15 +57,21 @@ key_Select.addEventListener("wheel", event => { // down +, up -
     if(event.deltaY > 0){
         notes_rot -= 30;
         let x = event.srcElement.selectedOptions[0].nextSibling;
-        // if(x == null){ x = event.srcElement.firstChild; }
-        if(x == null){ x = event.srcElement.selectedOptions[0]; notes_rot += 30;}
+        if(x == null){ // loop back to first element and increment rotation by 360deg
+            x = event.srcElement.firstChild;
+            notes_rot_n -= 1;
+        }
+        // if(x == null){ x = event.srcElement.selectedOptions[0]; notes_rot += 30;}
         x.selected = true;
     }
     if(event.deltaY < 0){
         notes_rot += 30;
         let x = event.srcElement.selectedOptions[0].previousSibling;
-        // if(x == null){ x = event.srcElement.lastChild; }
-        if(x == null){ x = event.srcElement.selectedOptions[0]; notes_rot -= 30;}
+        if(x == null){ // loop back to last element and decrement rotation by 360deg
+            x = event.srcElement.lastChild;
+            notes_rot_n += 1;
+        }
+        // if(x == null){ x = event.srcElement.selectedOptions[0]; notes_rot -= 30;}
         x.selected = true;
     }
     event.srcElement.dispatchEvent(optionChanged);
@@ -73,7 +79,7 @@ key_Select.addEventListener("wheel", event => { // down +, up -
 key_Select.addEventListener("change", event => {
     let _t = event.srcElement.selectedOptions[0].index;
     // console.info(_t);
-    notes_rot = _t*-30;
+    notes_rot = _t*-30 + notes_rot_n*360;
     notes_base.style.transform = "rotate(" + notes_rot + "deg)";
 });
 
