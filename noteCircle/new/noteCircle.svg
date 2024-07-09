@@ -26,7 +26,7 @@
      showgrid="true"
      inkscape:zoom="0.35355339"
      inkscape:cx="598.21233"
-     inkscape:cy="875.39819"
+     inkscape:cy="649.12402"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
@@ -683,7 +683,7 @@
        inkscape:label="text">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
          x="-91.879936"
          y="-70.313492"
          id="text1"
@@ -692,7 +692,7 @@
            id="tspan286"
            x="-91.879936"
            y="-70.313492"
-           style="stroke-width:1.2;stroke-dasharray:none">C</tspan></text>
+           style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">C</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.05px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.317499;stroke-dasharray:none"
@@ -713,7 +713,7 @@
            style="stroke-width:0.317499;stroke-dasharray:none">D♭</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
          x="10.565248"
          y="-39.813267"
          id="text3"
@@ -723,7 +723,7 @@
            id="tspan281"
            x="10.565248"
            y="-39.813267"
-           style="stroke-width:1.2;stroke-dasharray:none">D</tspan></text>
+           style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">D</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.05px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;stroke-width:0.317499;stroke-dasharray:none"
@@ -744,7 +744,7 @@
            style="stroke-width:0.317499;stroke-dasharray:none">E♭</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
          x="89.866112"
          y="-113.83232"
          id="text5"
@@ -754,10 +754,10 @@
            id="tspan287"
            x="89.866112"
            y="-113.83232"
-           style="stroke-width:1.2;stroke-dasharray:none">E</tspan></text>
+           style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">E</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
          x="91.530922"
          y="-169.43954"
          id="text6"
@@ -767,7 +767,7 @@
            id="tspan288"
            x="91.530922"
            y="-169.43954"
-           style="stroke-width:1.2;stroke-dasharray:none">F</tspan></text>
+           style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">F</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.05px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;stroke-width:0.317499;stroke-dasharray:none"
@@ -788,7 +788,7 @@
            style="stroke-width:0.317499;stroke-dasharray:none">G♭</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
          x="15.936773"
          y="-247.39474"
          id="text221"
@@ -798,7 +798,7 @@
            id="tspan291"
            x="15.936773"
            y="-247.39474"
-           style="stroke-width:1.2;stroke-dasharray:none">G</tspan></text>
+           style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">G</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.05px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;stroke-width:0.317499;stroke-dasharray:none"
@@ -819,7 +819,7 @@
            style="stroke-width:0.317499;stroke-dasharray:none">A♭</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
          x="-88.353058"
          y="-222.23193"
          id="text10"
@@ -829,7 +829,7 @@
            id="tspan294"
            x="-88.353058"
            y="-222.23193"
-           style="stroke-width:1.2;stroke-dasharray:none">A</tspan></text>
+           style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">A</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.05px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;stroke-width:0.317499;stroke-dasharray:none"
@@ -850,7 +850,7 @@
            style="stroke-width:0.317499;stroke-dasharray:none">B♭</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
          x="-117.87661"
          y="-119.18833"
          id="text12"
@@ -860,7 +860,7 @@
            id="tspan297"
            x="-117.87661"
            y="-119.18833"
-           style="stroke-width:1.2;stroke-dasharray:none">B</tspan></text>
+           style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">B</tspan></text>
     </g>
     <g
        id="g1"
