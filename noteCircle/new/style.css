@@ -30,7 +30,7 @@ table{
 }
 .pianoImage{
     width: 30%;
-    display: none;
+    display: ;
 }
 #noteCircle{
     width: 100%;
@@ -45,6 +45,9 @@ table{
     height: 70vw;
     max-width: 400px;
     max-height: 400px;
+}
+#lockNotes {
+    display: none;
 }
 #img {
     display: none;

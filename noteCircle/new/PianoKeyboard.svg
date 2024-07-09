@@ -23,7 +23,7 @@
    showgrid="false"
    inkscape:clip-to-page="false"
    inkscape:zoom="3.1791665"
-   inkscape:cx="94.836179"
+   inkscape:cx="94.836178"
    inkscape:cy="35.072086"
    inkscape:window-width="1366"
    inkscape:window-height="705"
@@ -163,7 +163,8 @@
      id="rect24"
      inkscape:label="key11" /></g><g
    id="markers"
-   inkscape:label="markers"><circle
+   inkscape:label="markers"
+   style="display:none"><circle
      style="fill:#e29616;fill-opacity:1;stroke:#07ccf6;stroke-width:0;stroke-linecap:square;stroke-opacity:1"
      id="circle1"
      cx="10.049843"
