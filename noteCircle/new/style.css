@@ -1,0 +1,44 @@
+html{
+
+}
+body{
+    color: #ccc;
+    background-color: #222;
+    font-family: Ubuntu, Georgia;
+}
+select{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1.2em;
+}
+table{
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    font-size: 1.2em;
+}
+#container{
+}
+#pianoKeys{
+    width: 100%;
+    max-width: 600px;
+}
+.pianoImage{
+    width: 30%;
+}
+#noteCircle{
+    width: 100%;
+    max-width: 400px;
+}
+
+#circle1 {
+    background: lightyellow;
+    border-radius: 50%;
+    width: 70vw;
+    height: 70vw;
+    max-width: 400px;
+    max-height: 400px;
+}

@@ -227,7 +227,7 @@ function createNoteCircle(){
     doubleHarmonicRotation  = lerp(doubleHarmonicRotation, noteRotation[doubleHarmonicModeIndex%12], speed);
 }
 /*  */
-
+var mode_t = "Mode: ";
 function createMajorModeCircle(){
     textFont('Georgia');
     push();
@@ -249,13 +249,13 @@ function createMajorModeCircle(){
             textSize(Size*0.69); stroke(0, fillalpha); strokeWeight(0.5);
             fill(lockNotes ? 0 : 255);
             rotate(PI/2+majorRotation); translate(0.85*scaled, 0.1*scaled);
-            if     (majorModeIndex%12==0 ) text(majorModeList[0], 0, 0);
-            else if(majorModeIndex%12==2 ) text(majorModeList[1], 0, 0);
-            else if(majorModeIndex%12==4 ) text(majorModeList[2], 0, 0);
-            else if(majorModeIndex%12==5 ) text(majorModeList[3], 0, 0);
-            else if(majorModeIndex%12==7 ) text(majorModeList[4], 0, 0);
-            else if(majorModeIndex%12==9 ) text(majorModeList[5], 0, 0);
-            else if(majorModeIndex%12==11) text(majorModeList[6], 0, 0);
+            if     (majorModeIndex%12==0 ) text(mode_t + majorModeList[0], 0, 0);
+            else if(majorModeIndex%12==2 ) text(mode_t + majorModeList[1], 0, 0);
+            else if(majorModeIndex%12==4 ) text(mode_t + majorModeList[2], 0, 0);
+            else if(majorModeIndex%12==5 ) text(mode_t + majorModeList[3], 0, 0);
+            else if(majorModeIndex%12==7 ) text(mode_t + majorModeList[4], 0, 0);
+            else if(majorModeIndex%12==9 ) text(mode_t + majorModeList[5], 0, 0);
+            else if(majorModeIndex%12==11) text(mode_t + majorModeList[6], 0, 0);
         pop();
         }
     pop();
@@ -282,13 +282,13 @@ function createMelodicMinorModeCircle(){
             textSize(Size*0.69); stroke(0); strokeWeight(0.5);
             fill(lockNotes ? 0 : 255);
             rotate(PI/2+melodicMinorRotation); translate(0.85*scaled, 0.1*scaled);
-            if     (melodicMinorModeIndex%12==0 ) text(melodicMinorModeList[0], 0, 0);
-            else if(melodicMinorModeIndex%12==2 ) text(melodicMinorModeList[1], 0, 0);
-            else if(melodicMinorModeIndex%12==3 ) text(melodicMinorModeList[2], 0, 0);
-            else if(melodicMinorModeIndex%12==5 ) text(melodicMinorModeList[3], 0, 0);
-            else if(melodicMinorModeIndex%12==7 ) text(melodicMinorModeList[4], 0, 0);
-            else if(melodicMinorModeIndex%12==9 ) text(melodicMinorModeList[5], 0, 0);
-            else if(melodicMinorModeIndex%12==11) text(melodicMinorModeList[6], 0, 0);
+            if     (melodicMinorModeIndex%12==0 ) text(mode_t + melodicMinorModeList[0], 0, 0);
+            else if(melodicMinorModeIndex%12==2 ) text(mode_t + melodicMinorModeList[1], 0, 0);
+            else if(melodicMinorModeIndex%12==3 ) text(mode_t + melodicMinorModeList[2], 0, 0);
+            else if(melodicMinorModeIndex%12==5 ) text(mode_t + melodicMinorModeList[3], 0, 0);
+            else if(melodicMinorModeIndex%12==7 ) text(mode_t + melodicMinorModeList[4], 0, 0);
+            else if(melodicMinorModeIndex%12==9 ) text(mode_t + melodicMinorModeList[5], 0, 0);
+            else if(melodicMinorModeIndex%12==11) text(mode_t + melodicMinorModeList[6], 0, 0);
         pop();
         }
     pop();
@@ -315,13 +315,13 @@ function createHarmonicMinorModeCircle(){
             textSize(Size*0.69); stroke(0); strokeWeight(0.5);
             fill(lockNotes ? 0 : 255);
             rotate(PI/2+harmonicMinorRotation); translate(0.85*scaled, 0.1*scaled);
-            if     (harmonicMinorModeIndex%12==0 ) text(harmonicMinorModeList[0], 0, 0);
-            else if(harmonicMinorModeIndex%12==2 ) text(harmonicMinorModeList[1], 0, 0);
-            else if(harmonicMinorModeIndex%12==3 ) text(harmonicMinorModeList[2], 0, 0);
-            else if(harmonicMinorModeIndex%12==5 ) text(harmonicMinorModeList[3], 0, 0);
-            else if(harmonicMinorModeIndex%12==7 ) text(harmonicMinorModeList[4], 0, 0);
-            else if(harmonicMinorModeIndex%12==8 ) text(harmonicMinorModeList[5], 0, 0);
-            else if(harmonicMinorModeIndex%12==11) text(harmonicMinorModeList[6], 0, 0);
+            if     (harmonicMinorModeIndex%12==0 ) text(mode_t + harmonicMinorModeList[0], 0, 0);
+            else if(harmonicMinorModeIndex%12==2 ) text(mode_t + harmonicMinorModeList[1], 0, 0);
+            else if(harmonicMinorModeIndex%12==3 ) text(mode_t + harmonicMinorModeList[2], 0, 0);
+            else if(harmonicMinorModeIndex%12==5 ) text(mode_t + harmonicMinorModeList[3], 0, 0);
+            else if(harmonicMinorModeIndex%12==7 ) text(mode_t + harmonicMinorModeList[4], 0, 0);
+            else if(harmonicMinorModeIndex%12==8 ) text(mode_t + harmonicMinorModeList[5], 0, 0);
+            else if(harmonicMinorModeIndex%12==11) text(mode_t + harmonicMinorModeList[6], 0, 0);
         pop();
         }
     pop();
@@ -348,13 +348,13 @@ function createHarmonicMajorModeCircle(){
             textSize(Size*0.69); stroke(0); strokeWeight(0.5);
             fill(lockNotes ? 0 : 255);
             rotate(PI/2+harmonicMajorRotation); translate(0.85*scaled, 0.1*scaled);
-            if     (harmonicMajorModeIndex%12==0 ) text(harmonicMajorModeList[0], 0, 0);
-            else if(harmonicMajorModeIndex%12==2 ) text(harmonicMajorModeList[1], 0, 0);
-            else if(harmonicMajorModeIndex%12==4 ) text(harmonicMajorModeList[2], 0, 0);
-            else if(harmonicMajorModeIndex%12==5 ) text(harmonicMajorModeList[3], 0, 0);
-            else if(harmonicMajorModeIndex%12==7 ) text(harmonicMajorModeList[4], 0, 0);
-            else if(harmonicMajorModeIndex%12==8 ) text(harmonicMajorModeList[5], 0, 0);
-            else if(harmonicMajorModeIndex%12==11) text(harmonicMajorModeList[6], 0, 0);
+            if     (harmonicMajorModeIndex%12==0 ) text(mode_t + harmonicMajorModeList[0], 0, 0);
+            else if(harmonicMajorModeIndex%12==2 ) text(mode_t + harmonicMajorModeList[1], 0, 0);
+            else if(harmonicMajorModeIndex%12==4 ) text(mode_t + harmonicMajorModeList[2], 0, 0);
+            else if(harmonicMajorModeIndex%12==5 ) text(mode_t + harmonicMajorModeList[3], 0, 0);
+            else if(harmonicMajorModeIndex%12==7 ) text(mode_t + harmonicMajorModeList[4], 0, 0);
+            else if(harmonicMajorModeIndex%12==8 ) text(mode_t + harmonicMajorModeList[5], 0, 0);
+            else if(harmonicMajorModeIndex%12==11) text(mode_t + harmonicMajorModeList[6], 0, 0);
         pop();
         }
     pop();
@@ -381,13 +381,13 @@ function createDoubleHarmonicModeCircle(){
             textSize(Size*0.69); stroke(0); strokeWeight(0.5);
             fill(lockNotes ? 0 : 255);
             rotate(PI/2+doubleHarmonicRotation); translate(0.85*scaled, 0.1*scaled);
-            if     (doubleHarmonicModeIndex%12==0 ) text(doubleHarmonicModeList[0], 0, 0);
-            else if(doubleHarmonicModeIndex%12==1 ) text(doubleHarmonicModeList[1], 0, 0);
-            else if(doubleHarmonicModeIndex%12==4 ) text(doubleHarmonicModeList[2], 0, 0);
-            else if(doubleHarmonicModeIndex%12==5 ) text(doubleHarmonicModeList[3], 0, 0);
-            else if(doubleHarmonicModeIndex%12==7 ) text(doubleHarmonicModeList[4], 0, 0);
-            else if(doubleHarmonicModeIndex%12==8 ) text(doubleHarmonicModeList[5], 0, 0);
-            else if(doubleHarmonicModeIndex%12==11) text(doubleHarmonicModeList[6], 0, 0);
+            if     (doubleHarmonicModeIndex%12==0 ) text(mode_t + doubleHarmonicModeList[0], 0, 0);
+            else if(doubleHarmonicModeIndex%12==1 ) text(mode_t + doubleHarmonicModeList[1], 0, 0);
+            else if(doubleHarmonicModeIndex%12==4 ) text(mode_t + doubleHarmonicModeList[2], 0, 0);
+            else if(doubleHarmonicModeIndex%12==5 ) text(mode_t + doubleHarmonicModeList[3], 0, 0);
+            else if(doubleHarmonicModeIndex%12==7 ) text(mode_t + doubleHarmonicModeList[4], 0, 0);
+            else if(doubleHarmonicModeIndex%12==8 ) text(mode_t + doubleHarmonicModeList[5], 0, 0);
+            else if(doubleHarmonicModeIndex%12==11) text(mode_t + doubleHarmonicModeList[6], 0, 0);
         pop();
         }
     pop();
