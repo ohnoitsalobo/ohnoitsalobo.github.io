@@ -1,3 +1,5 @@
+let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0;
+
 let keyList = [ "C", "C\u266F/D\u266D", "D", "D\u266F/E\u266D", "E", "F", "F\u266F/G\u266D", "G", "G\u266F/A\u266D", "A", "A\u266F/B\u266D", "B" ];
 let keySharpList = [ "C", "C\u266F", "D", "D\u266F", "E", "F", "F\u266F", "G", "G\u266F", "A", "A\u266F", "B" ];
 let keyFlatList = [ "C", "D\u266D", "D", "E\u266D", "E", "F", "G\u266D", "G", "A\u266D", "A", "B\u266D", "B" ];
@@ -86,6 +88,7 @@ harmonicMinorModeList,
 harmonicMajorModeList,
 doubleHarmonicModeList
 ];
+
 let allIntervals = [
 majorIntervals,
 melodicMinorIntervals,
@@ -93,4 +96,19 @@ harmonicMinorIntervals,
 harmonicMajorIntervals,
 doubleHarmonicIntervals
 ];
+
+function notesAreLocked(){
+    if(lockNotes){
+        if     (majorMinorOther == 0) lockedIndex = keyIndex + majorModeIndex         ;
+        else if(majorMinorOther == 1) lockedIndex = keyIndex + melodicMinorModeIndex  ;
+        else if(majorMinorOther == 2) lockedIndex = keyIndex + harmonicMinorModeIndex ;
+        else if(majorMinorOther == 3) lockedIndex = keyIndex + harmonicMajorModeIndex ;
+        else if(majorMinorOther == 4) lockedIndex = keyIndex + doubleHarmonicModeIndex;
+        else if(majorMinorOther == 5) lockedIndex = keyIndex;
+    }else
+        lockedIndex = keyIndex;
+    lockedIndex = lockedIndex%12;
+    keySelect.selected(lockedIndex);
+    return lockedIndex;
+}
 

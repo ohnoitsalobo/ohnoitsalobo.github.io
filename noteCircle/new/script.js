@@ -61,7 +61,6 @@ key_Select.addEventListener("wheel", event => { // down +, up -
             x = event.srcElement.firstChild;
             notes_rot_n -= 1;
         }
-        // if(x == null){ x = event.srcElement.selectedOptions[0]; notes_rot += 30;}
         x.selected = true;
     }
     if(event.deltaY < 0){
@@ -71,7 +70,6 @@ key_Select.addEventListener("wheel", event => { // down +, up -
             x = event.srcElement.lastChild;
             notes_rot_n += 1;
         }
-        // if(x == null){ x = event.srcElement.selectedOptions[0]; notes_rot -= 30;}
         x.selected = true;
     }
     event.srcElement.dispatchEvent(optionChanged);
@@ -136,12 +134,18 @@ mode_Select.addEventListener("wheel", event => {
     event.preventDefault(); // prevent page scroll
     if(event.deltaY > 0){
         let x = event.srcElement.selectedOptions[0].nextSibling;
-        if(x == null){ x = event.srcElement.firstChild; num_rot -= 1;}
+        if(x == null){ // loop back to first element and increment rotation by 360deg
+            x = event.srcElement.firstChild;
+            num_rot -= 1;
+        }
         x.selected = true;
     }
     if(event.deltaY < 0){
         let x = event.srcElement.selectedOptions[0].previousSibling;
-        if(x == null){ x = event.srcElement.lastChild; num_rot += 1;}
+        if(x == null){ // loop back to last element and decrement rotation by 360deg
+            x = event.srcElement.lastChild;
+            num_rot += 1;
+        }
         x.selected = true;
     }
     event.srcElement.dispatchEvent(optionChanged);
