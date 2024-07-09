@@ -10,12 +10,12 @@ noteCircle.addEventListener("load",function(){
 
     // get the inner DOM of alpha.svg
     noteCircleDOM = noteCircle.contentDocument;
-    _0 = noteCircleDOM.getElementById("majorCircle");           _0.style.transformOrigin = "-19% 18%";   _0.style.transition = "opacity 10ms, transform 300ms";
-    _1 = noteCircleDOM.getElementById("melodicMinorCircle");    _1.style.transformOrigin = "-19% 18%";   _1.style.transition = "opacity 10ms, transform 300ms";
-    _2 = noteCircleDOM.getElementById("harmonicMinorCircle");   _2.style.transformOrigin = "-19% 18%";   _2.style.transition = "opacity 10ms, transform 300ms";
-    _3 = noteCircleDOM.getElementById("harmonicMajorCircle");   _3.style.transformOrigin = "-19% 18%";   _3.style.transition = "opacity 10ms, transform 300ms";
-    _4 = noteCircleDOM.getElementById("doubleHarmonicCircle");  _4.style.transformOrigin = "-19% 18%";   _4.style.transition = "opacity 10ms, transform 300ms";
-    notes_base = noteCircleDOM.getElementById("notes_base");    notes_base.style.transformOrigin = "-19% 18%"; notes_base.style.transition = "transform 300ms";
+    _0 = noteCircleDOM.getElementById("majorCircle");           _0.style.transformOrigin = "-19% 18%";   _0.style.transition = "opacity 10ms, transform 500ms";
+    _1 = noteCircleDOM.getElementById("melodicMinorCircle");    _1.style.transformOrigin = "-19% 18%";   _1.style.transition = "opacity 10ms, transform 500ms";
+    _2 = noteCircleDOM.getElementById("harmonicMinorCircle");   _2.style.transformOrigin = "-19% 18%";   _2.style.transition = "opacity 10ms, transform 500ms";
+    _3 = noteCircleDOM.getElementById("harmonicMajorCircle");   _3.style.transformOrigin = "-19% 18%";   _3.style.transition = "opacity 10ms, transform 500ms";
+    _4 = noteCircleDOM.getElementById("doubleHarmonicCircle");  _4.style.transformOrigin = "-19% 18%";   _4.style.transition = "opacity 10ms, transform 500ms";
+    notes_base = noteCircleDOM.getElementById("notes_base");    notes_base.style.transformOrigin = "-19% 18%"; notes_base.style.transition = "transform 500ms";
     // get the inner element by id
     // var delta = svgDoc.getElementById("delta");
     // add behaviour
