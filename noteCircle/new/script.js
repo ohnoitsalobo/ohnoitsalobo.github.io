@@ -11,11 +11,11 @@ noteCircle.addEventListener("load", function(){
 
     // get the inner DOM of the svg
     noteCircleDOM = noteCircle.contentDocument;
-    _0 = noteCircleDOM.getElementById("major");           _0.style.transformOrigin = "-19% 18%";  _0.style.transition = "opacity 100ms, transform 500ms";
-    _1 = noteCircleDOM.getElementById("melodicMinor");    _1.style.transformOrigin = "-19% 18%";  _1.style.transition = "opacity 100ms, transform 500ms";
-    _2 = noteCircleDOM.getElementById("harmonicMinor");   _2.style.transformOrigin = "-19% 18%";  _2.style.transition = "opacity 100ms, transform 500ms";
-    _3 = noteCircleDOM.getElementById("harmonicMajor");   _3.style.transformOrigin = "-19% 18%";  _3.style.transition = "opacity 100ms, transform 500ms";
-    _4 = noteCircleDOM.getElementById("doubleHarmonic");  _4.style.transformOrigin = "-19% 18%";  _4.style.transition = "opacity 100ms, transform 500ms";
+    _0 = noteCircleDOM.getElementById("major");           _0.style.transformOrigin = "-19% 18%";  _0.style.transition = "opacity 10ms, transform 500ms";
+    _1 = noteCircleDOM.getElementById("melodicMinor");    _1.style.transformOrigin = "-19% 18%";  _1.style.transition = "opacity 10ms, transform 500ms";
+    _2 = noteCircleDOM.getElementById("harmonicMinor");   _2.style.transformOrigin = "-19% 18%";  _2.style.transition = "opacity 10ms, transform 500ms";
+    _3 = noteCircleDOM.getElementById("harmonicMajor");   _3.style.transformOrigin = "-19% 18%";  _3.style.transition = "opacity 10ms, transform 500ms";
+    _4 = noteCircleDOM.getElementById("doubleHarmonic");  _4.style.transformOrigin = "-19% 18%";  _4.style.transition = "opacity 10ms, transform 500ms";
     notes_base = noteCircleDOM.getElementById("notes_base");    notes_base.style.transformOrigin = "-19% 18%"; notes_base.style.transition = "transform 500ms";
     // get the inner element by id
     // var delta = svgDoc.getElementById("delta");
