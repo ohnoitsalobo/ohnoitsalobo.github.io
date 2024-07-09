@@ -1,6 +1,7 @@
 let key_Select   = document.getElementById("keySelect");    // get key selector
 let scale_Select = document.getElementById("scaleSelect");  // get scale selector
 let mode_Select  = document.getElementById("modeSelect");   // get mode selector
+let other_Mode_Select  = document.getElementById("otherModeSelect");   // get mode selector
 const optionChanged = new CustomEvent("change");
 
 let noteCircle = document.getElementById('noteCircle');
@@ -46,6 +47,13 @@ function loadSelectors(){
         opt.value = x+1;
         opt.innerHTML = "Mode : " + opt.value;
         mode_Select.appendChild(opt);
+    }
+    let _o = document.getElementById("otherModeSelect");
+    for(var x = 0; x < otherModeList.length; x++){
+        var opt = document.createElement('option');
+        opt.value = otherModeList[x];
+        opt.innerHTML = opt.value;
+        _o.appendChild(opt);
     }
     let _x = document.getElementById("modeSelectText");
     _x.innerHTML = majorModeList[0];
@@ -100,8 +108,10 @@ scale_Select.addEventListener("change", event => {
     let a = event.srcElement;
     let x = document.getElementById("modeSelectText");
     let y = document.getElementById("modeSelect");
+    let z = document.getElementById("otherModeSelect");
     x.style.display = '';
     y.style.display = '';
+    z.style.display = 'none';
     _0.style.opacity = '0';
     _1.style.opacity = '0';
     _2.style.opacity = '0';
@@ -126,6 +136,7 @@ scale_Select.addEventListener("change", event => {
     } else {
         x.style.display = 'none';
         y.style.display = 'none';
+        // z.style.display = '';
         y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
     }
 });
@@ -166,6 +177,31 @@ mode_Select.addEventListener("change", event => {
     _3.style.transform = _temp + "rotate(" + _3rot + "deg)";
     _4.style.transform = _temp + "rotate(" + _4rot + "deg)";
     
+    let x = document.getElementById("modeSelectText");
+    x.innerHTML = allModesList[a.selectedIndex][event.srcElement.selectedIndex];
+});
+
+other_Mode_Select.addEventListener("wheel", event => {
+    event.preventDefault(); // prevent page scroll
+    if(event.deltaY > 0){
+        let x = event.srcElement.selectedOptions[0].nextSibling;
+        if(x == null){ // loop back to first element and increment rotation by 360deg
+            x = event.srcElement.firstChild;
+        }
+        x.selected = true;
+    }
+    if(event.deltaY < 0){
+        let x = event.srcElement.selectedOptions[0].previousSibling;
+        if(x == null){ // loop back to last element and decrement rotation by 360deg
+            x = event.srcElement.lastChild;
+        }
+        x.selected = true;
+    }
+    event.srcElement.dispatchEvent(optionChanged);
+});
+other_Mode_Select.addEventListener("change", event => {
+    console.info(event.srcElement.selectedOptions[0]);
+    let a = document.getElementById("scaleSelect");
     let x = document.getElementById("modeSelectText");
     x.innerHTML = allModesList[a.selectedIndex][event.srcElement.selectedIndex];
 });

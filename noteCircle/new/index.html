@@ -16,11 +16,6 @@
 <body onload="process();">
     <center>
     <div class="container">
-        <div id="pianoKeys">
-            <img class="pianoImage" src="PianoKeyboard.svg" style="margin-right: -5px; opacity: 0.6;"/>
-            <img class="pianoImage" src="PianoKeyboard.svg" style="margin: 0px;"/>
-            <img class="pianoImage" src="PianoKeyboard.svg" style="margin-left: -5px; opacity: 0.6;"/>
-        </div>
         <div style="height: 1.5em;">
             <span id="modeSelectText" style="font-size: 1.2em;"></span>
         </div>
@@ -41,7 +36,15 @@
                 <tr>
                     <td colspan=2><select id="modeSelect"></select></td>
                 </tr>
+                <tr>
+                    <td colspan=2><select id="otherModeSelect"></select></td>
+                </tr>
             </table>
+        </div>
+        <div id="pianoKeys">
+            <img class="pianoImage" src="PianoKeyboard.svg" style="margin-right: -5px; opacity: 0.6;"/>
+            <img class="pianoImage" src="PianoKeyboard.svg" style="margin: 0px;"/>
+            <img class="pianoImage" src="PianoKeyboard.svg" style="margin-left: -5px; opacity: 0.6;"/>
         </div>
     </div>
     <div>

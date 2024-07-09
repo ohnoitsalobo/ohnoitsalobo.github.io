@@ -25,14 +25,14 @@
      inkscape:document-units="mm"
      showgrid="true"
      inkscape:zoom="0.5"
-     inkscape:cx="371"
-     inkscape:cy="67"
+     inkscape:cx="594"
+     inkscape:cy="651"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1">
+     inkscape:current-layer="melodicMinor">
     <inkscape:grid
        id="grid1"
        units="px"
@@ -675,7 +675,7 @@
        id="notes_base"
        inkscape:label="notes_base">
       <circle
-         style="display:inline;image-rendering:auto;fill:#818181;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;fill:#818181;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;image-rendering:auto"
          id="circle233"
          cx="-77.914597"
          cy="74.041061"
@@ -696,7 +696,7 @@
              id="tspan286"
              x="-91.879936"
              y="-70.313492"
-             style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">C</tspan></text>
+             style="stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1">C</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.05px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.317499;stroke-dasharray:none"
@@ -727,7 +727,7 @@
              id="tspan281"
              x="10.565248"
              y="-39.813267"
-             style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">D</tspan></text>
+             style="stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1">D</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.05px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;stroke-width:0.317499;stroke-dasharray:none"
@@ -758,7 +758,7 @@
              id="tspan287"
              x="89.866112"
              y="-113.83232"
-             style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">E</tspan></text>
+             style="stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1">E</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
@@ -771,7 +771,7 @@
              id="tspan288"
              x="91.530922"
              y="-169.43954"
-             style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">F</tspan></text>
+             style="stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1">F</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.05px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;stroke-width:0.317499;stroke-dasharray:none"
@@ -802,7 +802,7 @@
              id="tspan291"
              x="15.936773"
              y="-247.39474"
-             style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">G</tspan></text>
+             style="stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1">G</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.05px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;stroke-width:0.317499;stroke-dasharray:none"
@@ -833,7 +833,7 @@
              id="tspan294"
              x="-88.353058"
              y="-222.23193"
-             style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">A</tspan></text>
+             style="stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1">A</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.05px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;stroke-width:0.317499;stroke-dasharray:none"
@@ -864,19 +864,11 @@
              id="tspan297"
              x="-117.87661"
              y="-119.18833"
-             style="stroke-width:0;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">B</tspan></text>
+             style="stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1">B</tspan></text>
       </g>
       <g
          id="g1"
          inkscape:label="pianoKeys">
-        <rect
-           style="display:none;fill:#ffffff;fill-opacity:1;stroke:#fdfdfd;stroke-width:0.00037116;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;image-rendering:auto"
-           id="rect12"
-           width="0.011506095"
-           height="0.011506094"
-           x="-77.920349"
-           y="74.035309"
-           transform="translate(4.7916666e-6)" />
         <rect
            style="fill:#ffffff;fill-opacity:1;stroke:#fdfdfd;stroke-width:1.10654;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
            id="rect1"
@@ -1054,7 +1046,9 @@
            inkscape:transform-center-x="-28.576483"
            inkscape:transform-center-y="-47.555562"><tspan
              sodipodi:role="line"
-             id="tspan147">♭2</tspan></text>
+             id="tspan147"
+             x="-29.220459"
+             y="52.559464">♭2</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
@@ -1462,13 +1456,13 @@
        transform="translate(283.60605,131.65039)"
        inkscape:groupmode="layer">
       <path
-         id="majorCircle"
+         id="path151"
          style="display:inline;fill:#b3b3b3;fill-opacity:1;stroke:#000000;stroke-width:0.9436;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
          inkscape:label="majorCircle"
          d="M -77.942639,-131.17858 A 205.19145,205.19145 0 0 0 -283.13425,74.013026 205.19145,205.19145 0 0 0 -77.942639,279.20412 205.19145,205.19145 0 0 0 127.24845,74.013026 205.19145,205.19145 0 0 0 -77.942639,-131.17858 Z m -24.510131,23.31434 h 49.019746 v 49.019742 h -49.019746 z m -45.20241,12.111917 24.50962,42.452189 -42.45219,24.509615 -24.50962,-42.452189 z m 61.882528,38.736137 h 17.957043 V 9.880506 h -17.957043 z m -48.924658,12.508797 33.44808,57.934449 -15.55099,8.978263 -33.4486,-57.934448 z M 67.312577,-38.151704 91.822192,4.3004848 49.370003,28.8101 24.860388,-13.642089 Z M 31.655322,1.7073615 40.634102,17.25835 -17.300346,50.706955 -26.278609,35.155966 Z M -259.81991,49.502894 h 49.01975 v 49.019747 h -49.01975 z m 50.84754,14.439428 h 66.89669 v 17.957044 h -66.89669 z M -18.420691,99.316907 39.51324,132.76499 30.534977,148.31598 -27.399471,114.8679 Z m 67.790694,19.898523 42.452189,24.51014 -24.509615,42.45219 -42.452189,-24.51014 z m -168.111183,5.34128 15.55099,8.97826 -33.44809,57.93445 -15.55151,-8.97826 z m 79.711928,1.12086 33.4486041,57.93393 -15.5515051,8.97827 -33.448088,-57.93393 z m -126.568498,51.13848 42.45219,24.50962 -24.50962,42.45219 -42.45219,-24.50962 z m 175.3097087,0 24.5101323,42.45219 -42.4521896,24.50962 -24.5101314,-42.45219 z"
          transform="translate(4.7916666e-6)" />
       <g
-         id="g102"
+         id="g157"
          inkscape:label="intervals"
          style="display:inline">
         <text
@@ -1476,12 +1470,12 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
            x="-76.658386"
            y="23.374224"
-           id="text92"
+           id="text151"
            transform="translate(4.7916666e-6)"
            inkscape:transform-center-x="-0.97017917"
            inkscape:transform-center-y="-55.472565"><tspan
              sodipodi:role="line"
-             id="tspan92"
+             id="tspan151"
              style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
              x="-76.658386"
              y="23.374224">1</tspan></text>
@@ -1490,12 +1484,12 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
            x="26.420156"
            y="53.82972"
-           id="text97"
+           id="text152"
            transform="rotate(60)"
            inkscape:transform-center-x="-48.525742"
            inkscape:transform-center-y="-26.896083"><tspan
              sodipodi:role="line"
-             id="tspan103"
+             id="tspan152"
              x="26.420156"
              y="53.82972">2</tspan></text>
         <text
@@ -1503,12 +1497,12 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
            x="104.33466"
            y="-20.211164"
-           id="text98"
+           id="text153"
            transform="rotate(120)"
            inkscape:transform-center-x="-47.555561"
            inkscape:transform-center-y="28.576487"><tspan
              sodipodi:role="line"
-             id="tspan104"
+             id="tspan153"
              x="104.33466"
              y="-20.211164">3</tspan></text>
         <text
@@ -1516,12 +1510,12 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
            x="105.75251"
            y="-75.830696"
-           id="text99"
+           id="text154"
            transform="rotate(150)"
            inkscape:transform-center-x="-26.896078"
            inkscape:transform-center-y="48.525746"><tspan
              sodipodi:role="line"
-             id="tspan105"
+             id="tspan154"
              x="105.75251"
              y="-75.830696">4</tspan></text>
         <text
@@ -1529,12 +1523,12 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
            x="31.711628"
            y="-153.74519"
-           id="text100"
+           id="text155"
            transform="rotate(-150)"
            inkscape:transform-center-x="28.576487"
            inkscape:transform-center-y="47.555554"><tspan
              sodipodi:role="line"
-             id="tspan106"
+             id="tspan155"
              x="31.711628"
              y="-153.74519">5</tspan></text>
         <text
@@ -1542,12 +1536,12 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
            x="-72.784752"
            y="-128.58116"
-           id="text101"
+           id="text156"
            transform="rotate(-90)"
            inkscape:transform-center-x="55.472563"
            inkscape:transform-center-y="-0.97018811"><tspan
              sodipodi:role="line"
-             id="tspan107"
+             id="tspan156"
              x="-72.784752"
              y="-128.58116">6</tspan></text>
         <text
@@ -1555,12 +1549,12 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:1.25;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
            x="-103.24025"
            y="-25.502625"
-           id="text102"
+           id="text157"
            transform="rotate(-30)"
            inkscape:transform-center-x="26.896074"
            inkscape:transform-center-y="-48.525743"><tspan
              sodipodi:role="line"
-             id="tspan108"
+             id="tspan157"
              x="-103.24025"
              y="-25.502625">7</tspan></text>
       </g>
@@ -1568,7 +1562,7 @@
   </g>
   <text
      xml:space="preserve"
-     style="font-size:4.9389px;line-height:1.25;font-family:Bellota;-inkscape-font-specification:Bellota;text-align:center;text-anchor:middle;stroke-width:0.264583"
+     style="font-size:4.9389px;line-height:1.25;font-family:Bellota;-inkscape-font-specification:Bellota;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
      x="205.66315"
      y="20.081978"
      id="text91"
@@ -1576,6 +1570,6 @@
        sodipodi:role="line"
        id="tspan91"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
-       x="205.66315"
-       y="20.081978">ROOT</tspan></text>
+       x="0"
+       y="0">ROOT</tspan></text>
 </svg>
