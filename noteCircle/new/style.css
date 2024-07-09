@@ -28,6 +28,7 @@ table{
 #pianoKeys{
     width: 100%;
 }
+
 .pianoImage{
     display: none;
     max-width: 250px;
