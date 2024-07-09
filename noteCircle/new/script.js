@@ -10,11 +10,11 @@ noteCircle.addEventListener("load",function(){
 
     // get the inner DOM of alpha.svg
     noteCircleDOM = noteCircle.contentDocument;
-    _0 = noteCircleDOM.getElementById("majorCircle");           _0.style.transformOrigin = "-19% 18%";  _0.style.transition = "opacity 100ms, transform 500ms";
-    _1 = noteCircleDOM.getElementById("melodicMinorCircle");    _1.style.transformOrigin = "-19% 18%";  _1.style.transition = "opacity 100ms, transform 500ms";
-    _2 = noteCircleDOM.getElementById("harmonicMinorCircle");   _2.style.transformOrigin = "-19% 18%";  _2.style.transition = "opacity 100ms, transform 500ms";
-    _3 = noteCircleDOM.getElementById("harmonicMajorCircle");   _3.style.transformOrigin = "-19% 18%";  _3.style.transition = "opacity 100ms, transform 500ms";
-    _4 = noteCircleDOM.getElementById("doubleHarmonicCircle");  _4.style.transformOrigin = "-19% 18%";  _4.style.transition = "opacity 100ms, transform 500ms";
+    _0 = noteCircleDOM.getElementById("major");           _0.style.transformOrigin = "-19% 18%";  _0.style.transition = "opacity 100ms, transform 500ms";
+    _1 = noteCircleDOM.getElementById("melodicMinor");    _1.style.transformOrigin = "-19% 18%";  _1.style.transition = "opacity 100ms, transform 500ms";
+    _2 = noteCircleDOM.getElementById("harmonicMinor");   _2.style.transformOrigin = "-19% 18%";  _2.style.transition = "opacity 100ms, transform 500ms";
+    _3 = noteCircleDOM.getElementById("harmonicMajor");   _3.style.transformOrigin = "-19% 18%";  _3.style.transition = "opacity 100ms, transform 500ms";
+    _4 = noteCircleDOM.getElementById("doubleHarmonic");  _4.style.transformOrigin = "-19% 18%";  _4.style.transition = "opacity 100ms, transform 500ms";
     notes_base = noteCircleDOM.getElementById("notes_base");    notes_base.style.transformOrigin = "-19% 18%"; notes_base.style.transition = "transform 500ms";
     // get the inner element by id
     // var delta = svgDoc.getElementById("delta");
@@ -73,7 +73,7 @@ key_Select.addEventListener("change", event => {
     let _t = event.srcElement.selectedOptions[0].index;
     // console.info(_t);
     notes_rot = _t*-30;
-    notes_base.style.transform = "translate(283.60605px, 131.65039px) rotate(" + notes_rot + "deg)";
+    notes_base.style.transform = "rotate(" + notes_rot + "deg)";
 });
 
 scale_Select.addEventListener("wheel", event => {
@@ -149,11 +149,11 @@ mode_Select.addEventListener("change", event => {
     _3rot =  harmonicMajorIntervals[event.srcElement.selectedIndex]*-30 + (num_rot*360);
     _4rot = doubleHarmonicIntervals[event.srcElement.selectedIndex]*-30 + (num_rot*360);
     
-    _0.style.transform = "rotate(" + _0rot + "deg)";
-    _1.style.transform = "rotate(" + _1rot + "deg)";
-    _2.style.transform = "rotate(" + _2rot + "deg)";
-    _3.style.transform = "rotate(" + _3rot + "deg)";
-    _4.style.transform = "rotate(" + _4rot + "deg)";
+    _0.style.transform = "translate(283.60605px, 131.65039px) rotate(" + _0rot + "deg)";
+    _1.style.transform = "translate(283.60605px, 131.65039px) rotate(" + _1rot + "deg)";
+    _2.style.transform = "translate(283.60605px, 131.65039px) rotate(" + _2rot + "deg)";
+    _3.style.transform = "translate(283.60605px, 131.65039px) rotate(" + _3rot + "deg)";
+    _4.style.transform = "translate(283.60605px, 131.65039px) rotate(" + _4rot + "deg)";
     
     if(a.selectedIndex == 0){
         x.innerHTML = majorModeList[event.srcElement.selectedIndex];
