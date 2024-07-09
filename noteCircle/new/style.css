@@ -29,8 +29,8 @@ table{
     width: 100%;
 }
 .pianoImage{
-    width: 30%;
     display: ;
+    max-width: 250px;
 }
 #noteCircle{
     width: 100%;

@@ -23,13 +23,9 @@ noteCircle.addEventListener("load", function(){
     // add behaviour
 }, false);
 
-let pianoKeysImg1 = document.getElementById('pianoImg1');
-let pianoKeysImg2 = document.getElementById('pianoImg2');
-let pianoKeysImg3 = document.getElementById('pianoImg3');
-let pianoKeysDOM1, pianoKeysDOM2, pianoKeysDOM3;
-pianoKeysImg1.addEventListener("load", function(){ pianoKeysDOM1 = pianoKeysImg1.contentDocument; }, false);
-pianoKeysImg2.addEventListener("load", function(){ pianoKeysDOM2 = pianoKeysImg2.contentDocument; }, false);
-pianoKeysImg3.addEventListener("load", function(){ pianoKeysDOM3 = pianoKeysImg3.contentDocument; }, false);
+let pianoKeysImg = document.getElementById('pianoImg1');
+let pianoKeysDOM;
+pianoKeysImg.addEventListener("load", function(){ pianoKeysDOM = pianoKeysImg.contentDocument; }, false);
     
 function process(){
     loadSelectors();
