@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="598.21233"
-     inkscape:cy="649.12402"
+     inkscape:zoom="0.5"
+     inkscape:cx="581"
+     inkscape:cy="277"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
@@ -1070,4 +1070,16 @@
        d="M -77.942639,-131.17858 A 205.19145,205.19145 0 0 0 -283.13425,74.013026 205.19145,205.19145 0 0 0 -77.942639,279.20412 205.19145,205.19145 0 0 0 127.24845,74.013026 205.19145,205.19145 0 0 0 -77.942639,-131.17858 Z m -24.510131,23.31434 h 49.019746 v 49.019742 h -49.019746 z m -45.20241,12.111917 24.50962,42.452189 -42.45219,24.509615 -24.50962,-42.452189 z m 61.882528,38.736137 h 17.957043 V 9.880506 h -17.957043 z m -48.924658,12.508797 33.44808,57.934449 -15.55099,8.978263 -33.4486,-57.934448 z M 67.312577,-38.151704 91.822192,4.3004848 49.370003,28.8101 24.860388,-13.642089 Z M 31.655322,1.7073615 40.634102,17.25835 -17.300346,50.706955 -26.278609,35.155966 Z M -259.81991,49.502894 h 49.01975 v 49.019747 h -49.01975 z m 50.84754,14.439428 h 66.89669 v 17.957044 h -66.89669 z M -18.420691,99.316907 39.51324,132.76499 30.534977,148.31598 -27.399471,114.8679 Z m 67.790694,19.898523 42.452189,24.51014 -24.509615,42.45219 -42.452189,-24.51014 z m -168.111183,5.34128 15.55099,8.97826 -33.44809,57.93445 -15.55151,-8.97826 z m 79.711928,1.12086 33.4486041,57.93393 -15.5515051,8.97827 -33.448088,-57.93393 z m -126.568498,51.13848 42.45219,24.50962 -24.50962,42.45219 -42.45219,-24.50962 z m 175.3097087,0 24.5101323,42.45219 -42.4521896,24.50962 -24.5101314,-42.45219 z"
        transform="translate(4.7916666e-6)" />
   </g>
+  <text
+     xml:space="preserve"
+     style="font-size:4.9389px;line-height:1.25;font-family:Bellota;-inkscape-font-specification:Bellota;text-align:center;text-anchor:middle;stroke-width:0.264583"
+     x="205.66315"
+     y="20.081978"
+     id="text91"
+     inkscape:label="ROOT"><tspan
+       sodipodi:role="line"
+       id="tspan91"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+       x="205.66315"
+       y="20.081978">ROOT</tspan></text>
 </svg>
