@@ -32,6 +32,7 @@ noteCircle.addEventListener("load", function(){
     // console.info(touchArray[0]);
     for(let i = 0; i < touchArray.length; i++){
         touchArray[i].addEventListener("click", playNote, false);
+        touchArray[i].addEventListener("mouseover", playNote, false);
     }
 }, false);
 
@@ -89,28 +90,28 @@ scale_Select.addEventListener("change", event => {
     x.style.display = '';
     y.style.display = '';
     z.style.display = 'none';
-    _0.style.opacity = '0';
-    _1.style.opacity = '0';
-    _2.style.opacity = '0';
-    _3.style.opacity = '0';
-    _4.style.opacity = '0';
+    _0.style.display = 'none';
+    _1.style.display = 'none';
+    _2.style.display = 'none';
+    _3.style.display = 'none';
+    _4.style.display = 'none';
     
     let _t = key_Select.selectedOptions[0].innerHTML + " | ";
     if(a.selectedIndex == 0){
         x.innerHTML = _t + majorModeList[y.selectedIndex];
-        _0.style.opacity = 1;
+        _0.style.display = '';
     } else if(a.selectedIndex == 1){
         x.innerHTML = _t + melodicMinorModeList[y.selectedIndex];
-        _1.style.opacity = 1;
+        _1.style.display = '';
     } else if(a.selectedIndex == 2){
         x.innerHTML = _t + harmonicMinorModeList[y.selectedIndex];
-        _2.style.opacity = 1;
+        _2.style.display = '';
     } else if(a.selectedIndex == 3){
         x.innerHTML = _t + harmonicMajorModeList[y.selectedIndex];
-        _3.style.opacity = 1;
+        _3.style.display = '';
     } else if(a.selectedIndex == 4){
         x.innerHTML = _t + doubleHarmonicModeList[y.selectedIndex];
-        _4.style.opacity = 1;
+        _4.style.display = '';
     } else {
         x.style.display = 'none';
         y.style.display = 'none';
@@ -175,6 +176,10 @@ mode_Select.addEventListener("change", event => {
 
     x.innerHTML = _t + allModesList[a.selectedIndex][event.srcElement.selectedIndex];
 });
+
+document.addEventListener('keydown', event => {
+    console.log(event);
+});
 /*-----------------------------------*\
 
 \*-----------------------------------*/
@@ -234,7 +239,7 @@ function rotateNotes(){
 
 function playNote(event){
     let _id = parseInt(event.srcElement.id.slice(5));
-    console.info(event.srcElement);
+    // console.info(event.srcElement);
     let transpose = 1;
     for(let i = 0; i < keyIndex; i++){
         transpose *= root12_2;
@@ -272,9 +277,9 @@ function loadScales(){
             doubleHarmonicScale [index] = begin + "doubleharmonic-" + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
         }
     }
-    console.info(_images[0][0]);
+    // console.info(_images[0][0]);
     _img1.innerHTML = _images[0][0];
-    console.info(_img1);
-    console.info(_img2);
+    // console.info(_img1);
+    // console.info(_img2);
 }
 

@@ -23,15 +23,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.2421509"
-     inkscape:cx="280.56173"
-     inkscape:cy="315.1791"
+     inkscape:zoom="0.87967836"
+     inkscape:cx="299.5413"
+     inkscape:cy="299.5413"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="allModes" />
+     inkscape:current-layer="touch" />
   <defs
      id="defs1">
      <style>
@@ -340,6 +340,125 @@
                y="-56.713943">B</tspan></text>
         </g>
       </g>
+    </g>
+    <g
+       id="touch"
+       style="display:inline;opacity:1;mix-blend-mode:normal">
+      <rect
+         class="touchanim"
+         style="opacity:0;fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.0984824;stroke-opacity:1"
+         id="touch12"
+         width="8.5"
+         height="47"
+         x="-8.5"
+         y="-72" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch00"
+         width="8.5"
+         height="47"
+         x="0"
+         y="-72" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch01"
+         width="17"
+         height="47"
+         x="-8.6198006"
+         y="-71.882935"
+         transform="rotate(30)" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch02"
+         width="17"
+         height="47"
+         x="-8.6200209"
+         y="-71.882713"
+         transform="rotate(60)" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch03"
+         width="17"
+         height="47"
+         x="-8.6201019"
+         y="-71.882416"
+         transform="rotate(90)" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch04"
+         width="17"
+         height="47"
+         x="-8.6200218"
+         y="-71.882118"
+         transform="rotate(120)" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch05"
+         width="17"
+         height="47"
+         x="-8.6198015"
+         y="-71.881897"
+         transform="rotate(150)" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch06"
+         width="17"
+         height="47"
+         x="-8.6195002"
+         y="-71.881813"
+         transform="scale(-1)" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch07"
+         width="17"
+         height="47"
+         x="-8.6197996"
+         y="-71.881897"
+         transform="rotate(-150)" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch08"
+         width="17"
+         height="47"
+         x="-8.6200199"
+         y="-71.882118"
+         transform="rotate(-120)" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch09"
+         width="17"
+         height="47"
+         x="-8.620101"
+         y="-71.882416"
+         transform="rotate(-90)" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch10"
+         width="17"
+         height="47"
+         x="-8.6200209"
+         y="-71.882713"
+         transform="rotate(-60)" />
+      <rect
+         class="touchanim"
+         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
+         id="touch11"
+         width="17"
+         height="47"
+         x="-8.6198006"
+         y="-71.882935"
+         transform="rotate(-30)" />
     </g>
     <g
        id="allModes"
@@ -850,125 +969,6 @@
                id="tspan22">7</tspan></text>
         </g>
       </g>
-    </g>
-    <g
-       id="touch"
-       style="display:inline;opacity:1;mix-blend-mode:normal">
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch12"
-         width="17"
-         height="25"
-         x="-17"
-         y="-72" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch00"
-         width="17"
-         height="25"
-         x="0"
-         y="-72" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch01"
-         width="17"
-         height="35"
-         x="-8.6198006"
-         y="-71.882935"
-         transform="rotate(30)" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch02"
-         width="17"
-         height="35"
-         x="-8.6200209"
-         y="-71.882713"
-         transform="rotate(60)" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch03"
-         width="17"
-         height="35"
-         x="-8.6201019"
-         y="-71.882416"
-         transform="rotate(90)" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch04"
-         width="17"
-         height="35"
-         x="-8.6200218"
-         y="-71.882118"
-         transform="rotate(120)" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch05"
-         width="17"
-         height="35"
-         x="-8.6198015"
-         y="-71.881897"
-         transform="rotate(150)" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch06"
-         width="17"
-         height="35"
-         x="-8.6195002"
-         y="-71.881813"
-         transform="scale(-1)" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch07"
-         width="17"
-         height="35"
-         x="-8.6197996"
-         y="-71.881897"
-         transform="rotate(-150)" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch08"
-         width="17"
-         height="35"
-         x="-8.6200199"
-         y="-71.882118"
-         transform="rotate(-120)" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch09"
-         width="17"
-         height="35"
-         x="-8.620101"
-         y="-71.882416"
-         transform="rotate(-90)" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch10"
-         width="17"
-         height="35"
-         x="-8.6200209"
-         y="-71.882713"
-         transform="rotate(-60)" />
-      <rect
-         class="touchanim"
-         style="fill:#000000;fill-opacity:0.2;stroke:#000000;stroke-width:0.142081;stroke-opacity:1;opacity:0"
-         id="touch11"
-         width="17"
-         height="35"
-         x="-8.6198006"
-         y="-71.882935"
-         transform="rotate(-30)" />
     </g>
   </g>
   <text
