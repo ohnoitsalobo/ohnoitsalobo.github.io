@@ -227,6 +227,12 @@ function rotateNotes(){
 function playNote(event){
     let _id = parseInt(event.srcElement.id.slice(5));
     console.info(_id);
+    let transpose = 1;
+    for(let i = 0; i < keyIndex; i++){
+        transpose *= root12_2;
+    }
+    
+    synth.triggerAttackRelease(tone[_id]*transpose, "8n");
 }
 
 /*-----------------------------------*\
