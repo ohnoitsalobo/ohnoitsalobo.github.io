@@ -59,6 +59,11 @@ key_Select.addEventListener("change", event => {
     // keyIndex = event.srcElement.selectedOptions[0].value;
     currentNoteRotation = (key_Select.selectedOptions[0].value * -30) + (numOfRotations * 360);
     rotateNotes();
+    
+    let x = document.getElementById("modeSelectText");
+    let _t = key_Select.selectedOptions[0].innerHTML + " | ";
+
+    x.innerHTML = _t + allModesList[scale_Select.selectedIndex][mode_Select.selectedIndex];
 });
 
 scale_Select.addEventListener("wheel", event => {
@@ -90,20 +95,21 @@ scale_Select.addEventListener("change", event => {
     _3.style.opacity = '0';
     _4.style.opacity = '0';
     
+    let _t = key_Select.selectedOptions[0].innerHTML + " | ";
     if(a.selectedIndex == 0){
-        x.innerHTML = majorModeList[y.selectedIndex];
+        x.innerHTML = _t + majorModeList[y.selectedIndex];
         _0.style.opacity = 1;
     } else if(a.selectedIndex == 1){
-        x.innerHTML = melodicMinorModeList[y.selectedIndex];
+        x.innerHTML = _t + melodicMinorModeList[y.selectedIndex];
         _1.style.opacity = 1;
     } else if(a.selectedIndex == 2){
-        x.innerHTML = harmonicMinorModeList[y.selectedIndex];
+        x.innerHTML = _t + harmonicMinorModeList[y.selectedIndex];
         _2.style.opacity = 1;
     } else if(a.selectedIndex == 3){
-        x.innerHTML = harmonicMajorModeList[y.selectedIndex];
+        x.innerHTML = _t + harmonicMajorModeList[y.selectedIndex];
         _3.style.opacity = 1;
     } else if(a.selectedIndex == 4){
-        x.innerHTML = doubleHarmonicModeList[y.selectedIndex];
+        x.innerHTML = _t + doubleHarmonicModeList[y.selectedIndex];
         _4.style.opacity = 1;
     } else {
         x.style.display = 'none';
@@ -165,7 +171,9 @@ mode_Select.addEventListener("change", event => {
         rotateNotes();
     }
     let x = document.getElementById("modeSelectText");
-    x.innerHTML = allModesList[a.selectedIndex][event.srcElement.selectedIndex];
+    let _t = key_Select.selectedOptions[0].innerHTML + " | ";
+
+    x.innerHTML = _t + allModesList[a.selectedIndex][event.srcElement.selectedIndex];
 });
 /*-----------------------------------*\
 
@@ -208,7 +216,7 @@ function loadSelectors(){
         _o.appendChild(opt);
     }
     let _x = document.getElementById("modeSelectText");
-    _x.innerHTML = majorModeList[0];
+    _x.innerHTML = "C | " + majorModeList[0];
     scale_Select.dispatchEvent(optionChanged);
     document.getElementById("lockNotes").addEventListener("click", function (){
         lockNotes = event.srcElement.checked;
