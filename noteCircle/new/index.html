@@ -1,26 +1,22 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circle of Notes</title>
     <link rel="stylesheet" href="style.css">
-        <script src="../js/tone.js"></script>
-        <script src="../js/p5.js"></script>
-        <script src="vars.js"></script>
-        <!-- <script src="../js/elements.js"></script> -->
-        <!-- <script src="../js/playTone.js"></script> -->
-        <!-- <script src="../js/noteCircle.js"></script> -->
-        <script src="../js/text.js"></script>
+
+    <script src="js/vars.js"></script>
+    <script src="../js/tone.js"></script>
+    <script src="../js/playTone.js"></script>
 </head>
 <body onload="process();">
     <center>
     <div class="container">
-        <div style="height: 1.8em;">
-            <span id="modeSelectText" style="font-size: 1.2em;"></span>
+        <div style="height: 2em;">
+            <span id="modeSelectText" ></span>
         </div>
         <div>
-            <!-- <img id="chromaticCircle" src="noteCircle.svg" /> -->
             <object data="noteCircle.svg" type="image/svg+xml" id="noteCircle"> </object>
          </div>
         <div id="options-select-bar">
@@ -37,27 +33,24 @@
                     <td colspan=2><select id="modeSelect"></select></td>
                 </tr>
                 <tr>
-                    <td colspan=2 id="lockNotes"><input type="checkbox" value=""><label for="lockNotes">Lock the visible notes in the pattern</label></td>
+                    <td colspan=2><input id="lockNotes" type="checkbox" value=""><label for="lockNotes">Lock the visible notes in the pattern</label></td>
                 </tr>
                 <tr>
                     <td colspan=2><select id="otherModeSelect"></select></td>
                 </tr>
             </table>
         </div>
-        <div id="pianoKeys">
-            <object data="PianoKeyboard.svg" type="image/svg+xml" id="pianoImg1" class="pianoImage" style="margin: 0px;" ></object>
-        </div>
     </div>
     <div>
-        <table id="img">
+        <table id="img" border=1>
             <tr>
                 <td>
-                    <div style="text-align: right; font-family: Georgia;">
-                        Treble clef (G clef)<br /><br />
-                        Alto clef (C clef)  <br /><br />
-                        Bass clef (F clef)  <br /><br />
-                        Mandolin tablature  <br /><br />
-                        Guitar tablature    <br /><br />
+                    <div style="text-align: right; font-family: Georgia; font-size: 0.7em;">
+                        Treble clef<br />(G clef) <br /><br />
+                        Alto clef<br />(C clef)  <br /><br />
+                        Bass clef<br />(F clef)  <br /><br />
+                        Mandolin<br />tablature  <br /><br />
+                        Guitar<br />tablature    <br /><br />
                     </div>
                 </td>
                 <td>
@@ -72,7 +65,7 @@
         </table>
     </div>
     </center>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
 

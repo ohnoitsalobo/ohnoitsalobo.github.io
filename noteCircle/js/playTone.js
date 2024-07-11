@@ -927,6 +927,7 @@ function mouseWheel(event){
     ypos  = 0.3*scaled;
     if(mouseX>xpos-offset && mouseX<xpos+offset &&
        mouseY>ypos-offset && mouseY<ypos+offset){
+        event.preventDefault();
         changeKeyMouse(event);
     }
     
@@ -935,6 +936,7 @@ function mouseWheel(event){
         ypos  = 0.3*scaled;
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
            mouseY>ypos-offset && mouseY<ypos+offset){
+            event.preventDefault();
             changeModeMouse(event);
         }
         
@@ -943,15 +945,15 @@ function mouseWheel(event){
         offset = offset*1.5;
         if(mouseX>xpos-offset && mouseX<xpos+offset &&
            mouseY>ypos-offset && mouseY<ypos+offset){
-            if(majorMinorOther == 0) changeMajorModeMouse(event);
-            if(majorMinorOther == 1) changeMelodicMinorModeMouse(event);
-            if(majorMinorOther == 2) changeHarmonicMinorModeMouse(event);
-            if(majorMinorOther == 3) changeHarmonicMajorModeMouse(event);
-            if(majorMinorOther == 4) changeDoubleHarmonicModeMouse(event);
-            if(majorMinorOther == 5) changeOtherModeMouse(event);
+            if(majorMinorOther == 0) { event.preventDefault(); changeMajorModeMouse(event);          }
+            if(majorMinorOther == 1) { event.preventDefault(); changeMelodicMinorModeMouse(event);   }
+            if(majorMinorOther == 2) { event.preventDefault(); changeHarmonicMinorModeMouse(event);  }
+            if(majorMinorOther == 3) { event.preventDefault(); changeHarmonicMajorModeMouse(event);  }
+            if(majorMinorOther == 4) { event.preventDefault(); changeDoubleHarmonicModeMouse(event); }
+            if(majorMinorOther == 5) { event.preventDefault(); changeOtherModeMouse(event);          }
         }
     }
-    return false;
+    // return false;
 }
 
 function doubleClicked(){

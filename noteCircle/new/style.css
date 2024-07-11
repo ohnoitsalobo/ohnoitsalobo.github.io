@@ -25,32 +25,21 @@ table{
 #container{
     margin: 0px;
 }
-#pianoKeys{
-    width: 100%;
-}
-
-.pianoImage{
-    display: none;
-    max-width: 250px;
+#modeSelectText{
+    font-size: 1.3em;
 }
 #noteCircle{
+    font-family: Ubuntu, Georgia;
+    margin-top: 0.1em;
     width: 100%;
     max-width: 400px;
-    font-family: Ubuntu, Georgia;
 }
 
-#circle1 {
-    background: lightyellow;
-    border-radius: 50%;
-    width: 70vw;
-    height: 70vw;
-    max-width: 400px;
-    max-height: 400px;
-}
 #lockNotes {
-    display: none;
+    display: ;
 }
-#img {
+#img{
     display: none;
-    font-size: 1em;
+    max-width: 200px;
+    background-color: #bbb;
 }

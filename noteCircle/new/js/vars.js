@@ -1,4 +1,5 @@
 let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0;
+let numOfRotations = 0;
 
 let keyList = [ "C", "C\u266F/D\u266D", "D", "D\u266F/E\u266D", "E", "F", "F\u266F/G\u266D", "G", "G\u266F/A\u266D", "A", "A\u266F/B\u266D", "B" ];
 let keySharpList = [ "C", "C\u266F", "D", "D\u266F", "E", "F", "F\u266F", "G", "G\u266F", "A", "A\u266F", "B" ];
@@ -82,35 +83,66 @@ let doubleHarmonicModeList = [                                      //_0_1_2_3_4
 let doubleHarmonicIntervals = [0, 1, 4, 5, 7, 8, 11];
 
 let otherModeList = [
-"Acoustic"                   ,  // 00  // 0  2  4  6  7  9
-"Adonai malakh"              ,  // 01  // 0  2  4  5  7  8  10
-"Algerian\n(Hungarian gypsy)",  // 02 *// 0  2  3  6  7  8  11
-"Augmented"                  ,  // 03  // 0  3  4  7  8  11
-"Bebop dominant"             ,  // 04  // 0  2  4  5  7  9  10 11
-"Bebop major"                ,  // 05  // 0  2  4  5  7  8  9  11
-"Blues"                      ,  // 06  // 0  3  5  6  7  10
-"Double harmonic\n(Flamenco)",  // 07 *// 0  1  4  5  7  8  11
-"Enigmatic"                  ,  // 08  // 0  1  4  6  8  10 11
-"Gypsy"                      ,  // 09  // 0  2  3  6  7  8  10
-"Half diminished"            ,  // 10  // 0  2  3  5  6  8  10
-"Harmonic major"             ,  // 11 *// 0  2  4  5  7  8  11
-"Harmonic minor"             ,  // 12 *// 0  2  3  5  7  8  11
-"Hirajoshi"                  ,  // 13  // 0  2  3  7  8  
-"Insen"                      ,  // 14  // 0  1  5  7  10 
-"Istrian"                    ,  // 15  // 0  1  3  4  6  7
-"Iwato"                      ,  // 16  // 0  1  5  6  10 
-"Locrian major"              ,  // 17  // 0  2  4  5  6  8  10       // Neapolitan 5th mode
-"Neapolitan major"           ,  // 18  // 0  1  3  5  7  9  11
-"Neapolitan minor"           ,  // 19  // 0  1  3  5  7  8  11
-"Octatonic"                  ,  // 20  // 0  2  3  5  6  8  9  11
-"Pentatonic major"           ,  // 21  // 0  2  4  7  9  
-"Pentatonic minor"           ,  // 22  // 0  3  5  7  10 
-"Persian"                    ,  // 23  // 0  1  4  5  6  8  11
-"Phrygian\ndominant"         ,  // 24  // 0  1  4  5  7  8  10      // harmonic minor 5th mode
-"Prometheus"                 ,  // 25  // 0  2  4  6  9  10
-"Tritone"                    ,  // 26  // 0  1  4  6  7  10
-"Ukrainian Dorian"           ,  // 27 *// 0  2  3  6  7  9  10
-"Whole tone"                    // 28  // 0  2  4  6  8  10
+    ["Acoustic"                   ],   // 00  // 0  2  4  6  7  9
+    ["Adonai malakh"              ],   // 01  // 0  2  4  5  7  8  10
+    ["Algerian\n(Hungarian gypsy)"],   // 02 *// 0  2  3  6  7  8  11
+    ["Augmented"                  ],   // 03  // 0  3  4  7  8  11
+    ["Bebop dominant"             ],   // 04  // 0  2  4  5  7  9  10 11
+    ["Bebop major"                ],   // 05  // 0  2  4  5  7  8  9  11
+    ["Blues"                      ],   // 06  // 0  3  5  6  7  10
+    ["Double harmonic\n(Flamenco)"],   // 07 *// 0  1  4  5  7  8  11
+    ["Enigmatic"                  ],   // 08  // 0  1  4  6  8  10 11
+    ["Gypsy"                      ],   // 09  // 0  2  3  6  7  8  10
+    ["Half diminished"            ],   // 10  // 0  2  3  5  6  8  10
+    ["Harmonic major"             ],   // 11 *// 0  2  4  5  7  8  11
+    ["Harmonic minor"             ],   // 12 *// 0  2  3  5  7  8  11
+    ["Hirajoshi"                  ],   // 13  // 0  2  3  7  8  
+    ["Insen"                      ],   // 14  // 0  1  5  7  10 
+    ["Istrian"                    ],   // 15  // 0  1  3  4  6  7
+    ["Iwato"                      ],   // 16  // 0  1  5  6  10 
+    ["Locrian major"              ],   // 17  // 0  2  4  5  6  8  10       // Neapolitan 5th mode
+    ["Neapolitan major"           ],   // 18  // 0  1  3  5  7  9  11
+    ["Neapolitan minor"           ],   // 19  // 0  1  3  5  7  8  11
+    ["Octatonic"                  ],   // 20  // 0  2  3  5  6  8  9  11
+    ["Pentatonic major"           ],   // 21  // 0  2  4  7  9  
+    ["Pentatonic minor"           ],   // 22  // 0  3  5  7  10 
+    ["Persian"                    ],   // 23  // 0  1  4  5  6  8  11
+    ["Phrygian\ndominant"         ],   // 24  // 0  1  4  5  7  8  10      // harmonic minor 5th mode
+    ["Prometheus"                 ],   // 25  // 0  2  4  6  9  10
+    ["Tritone"                    ],   // 26  // 0  1  4  6  7  10
+    ["Ukrainian Dorian"           ],   // 27 *// 0  2  3  6  7  9  10
+    ["Whole tone"                 ]    // 28  // 0  2  4  6  8  10
+];
+let otherModeIntervals = [
+    [0, 2, 4, 6, 7,  9         ],   // Acoustic
+    [0, 2, 4, 5, 7,  8, 10     ],   // Adonai malakh
+    [0, 2, 3, 6, 7,  8, 11     ],   // Algerian\n(Hungarian gypsy)
+    [0, 3, 4, 7, 8, 11         ],   // Augmented
+    [0, 2, 4, 5, 7,  9, 10, 11 ],   // Bebop dominant
+    [0, 2, 4, 5, 7,  8,  9, 11 ],   // Bebop major
+    [0, 3, 5, 6, 7, 10         ],   // Blues
+    [0, 1, 4, 5, 7,  8, 11     ],   // Double harmonic\n(Flamenco)
+    [0, 1, 4, 6, 8, 10, 11     ],   // Enigmatic
+    [0, 2, 3, 6, 7,  8, 10     ],   // Gypsy
+    [0, 2, 3, 5, 6,  8, 10     ],   // Half diminished
+    [0, 2, 4, 5, 7,  8, 11     ],   // Harmonic major
+    [0, 2, 3, 5, 7,  8, 11     ],   // Harmonic minor
+    [0, 2, 3, 7, 8             ],   // Hirajoshi
+    [0, 1, 5, 7, 10            ],   // Insen
+    [0, 1, 3, 4, 6,  7         ],   // Istrian
+    [0, 1, 5, 6, 10            ],   // Iwato
+    [0, 2, 4, 5, 6,  8, 10     ],   // Locrian major
+    [0, 1, 3, 5, 7,  9, 11     ],   // Neapolitan major
+    [0, 1, 3, 5, 7,  8, 11     ],   // Neapolitan minor
+    [0, 2, 3, 5, 6,  8, 9, 11  ],   // Octatonic
+    [0, 2, 4, 7, 9             ],   // Pentatonic major
+    [0, 3, 5, 7, 10            ],   // Pentatonic minor
+    [0, 1, 4, 5, 6, 8, 11      ],   // Persian
+    [0, 1, 4, 5, 7, 8, 10      ],   // Phrygian\ndominant
+    [0, 2, 4, 6, 9, 10         ],   // Prometheus
+    [0, 1, 4, 6, 7, 10         ],   // Tritone
+    [0, 2, 3, 6, 7, 9, 10      ],   // Ukrainian Dorian
+    [0, 2, 4, 6, 8, 10         ]    // Whole tone
 ];
 
 let allModesList = [
@@ -144,4 +176,8 @@ function notesAreLocked(){
     keySelect.selected(lockedIndex);
     return lockedIndex;
 }
+
+/*-----------------------------------*\
+
+\*-----------------------------------*/
 
