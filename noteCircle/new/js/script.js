@@ -380,9 +380,15 @@ function drawNotes(){
     // let alt2 = "Pattern: " + modeList[_scale] + "\nKey: " + keyFlatList [keyIndex] + "\n" + allModesList[_scale][index]; // "Notation image 2";
     if(_scale < 5){
         img1.innerHTML = _images[_scale][index*7+_mode];
+        setTimeout(function(){
+            img1.childNodes[0].contentDocument.childNodes[0].style.filter = 'invert(1)';
+        }, 50);
         if(offset) {
             img2.innerHTML = _images[_scale][offset*7+_mode];
             img2.parentElement.parentElement.style.display = '';
+            setTimeout(function(){
+                img2.childNodes[0].contentDocument.childNodes[0].style.filter = 'invert(1)';
+            }, 50);
         }
     }
 
