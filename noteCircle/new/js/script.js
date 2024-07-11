@@ -5,6 +5,7 @@ let noteCircle = document.getElementById('noteCircle');
 let noteCircleDOM, _0, _1, _2, _3, _4, noteCircle_base;
 let _0rot = 0, _1rot = 0, _2rot = 0, _3rot = 0, _4rot = 0, num_rot = 0;
 let touchArray, currentNotesIndex;
+let transpose;
 
 let key_Select   = document.getElementById("keySelect");    // get key selector
 let scale_Select = document.getElementById("scaleSelect");  // get scale selector
@@ -18,6 +19,9 @@ const optionChanged = new CustomEvent("change");
 
 noteCircle.addEventListener("load", function(){
     noteCircleDOM = noteCircle.contentDocument;
+    noteCircleDOM.addEventListener('keydown', event => {
+        playKeyboard(event);
+    });
 
     noteCircle_base = noteCircleDOM.getElementById("noteCircle_base");
     noteCircle_base.style.transition = "transform 500ms";
@@ -32,6 +36,11 @@ noteCircle.addEventListener("load", function(){
     // console.info(touchArray);
     for(let i = 0; i < touchArray.length; i++){
         touchArray[i].addEventListener("click", playNote, false);
+        touchArray[i].addEventListener("mouseover", event => {
+            // console.log(event);
+            if(event.buttons == 1)
+                playNote(event);
+        });
     }
 }, false);
 
@@ -182,7 +191,7 @@ mode_Select.addEventListener("change", event => {
 });
 
 document.addEventListener('keydown', event => {
-    console.log(event);
+    playKeyboard(event);
 });
 /*-----------------------------------*\
 
@@ -229,7 +238,7 @@ function loadSelectors(){
     scale_Select.dispatchEvent(optionChanged);
     document.getElementById("lockNotes").addEventListener("click", function (){
         lockNotes = event.srcElement.checked;
-        console.log(lockNotes);
+        // console.log(lockNotes);
     });
 }
 function rotateNotes(){
@@ -238,18 +247,85 @@ function rotateNotes(){
         key_Select.selectedIndex = keyIndex;
     }
     noteCircle_base.style.transform = "rotate(" + currentNoteRotation + "deg)";
-    console.info(currentNoteRotation);
+    // console.info(currentNoteRotation);
 }
 
 function playNote(event){
-    let _id = parseInt(event.srcElement.id.slice(5));
     // console.info(event.srcElement);
+    let _id;
+    
+    if(event.target) 
+        _id = parseInt(event.srcElement.id.slice(5));
+    else 
+        _id = event;
     let transpose = 1;
     for(let i = 0; i < keyIndex; i++){
         transpose *= root12_2;
     }
-    
     synth.triggerAttackRelease(tone[_id]*transpose, "8n");
+}
+
+function playKeyboard(e){
+    // console.info(e.key);
+    if(scale_Select.selectedIndex > 4) return;
+
+         if(e.key == '1' ) { 
+        playNote(0);
+        touchArray[1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[1].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '2' ) { 
+        playNote(modeCheck(2)); 
+        touchArray[modeCheck(2)+1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[modeCheck(2)+1].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '3' ) { 
+        playNote(modeCheck(3)); 
+        touchArray[modeCheck(3)+1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[modeCheck(3)+1].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '4' ) { 
+        playNote(modeCheck(4)); 
+        touchArray[modeCheck(4)+1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[modeCheck(4)+1].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '5' ) { 
+        playNote(modeCheck(5)); 
+        touchArray[modeCheck(5)+1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[modeCheck(5)+1].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '6' ) { 
+        playNote(modeCheck(6)); 
+        touchArray[modeCheck(6)+1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[modeCheck(6)+1].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '7' ) { 
+        playNote(modeCheck(7)); 
+        touchArray[modeCheck(7)+1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[modeCheck(7)+1].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '8' ) { 
+        playNote(12); 
+        touchArray[0].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[0].style.opacity = "0";
+        }, 500);
+    }
+    
 }
 
 /*-----------------------------------*\
@@ -300,17 +376,475 @@ function drawNotes(){
     else if(index == 6 ) offset = 14;
     else if(index == 8 ) offset = 15;
     else if(index == 10) offset = 16;
-    // let alt1 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keySharpList[keyIndex] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 1";
-    // let alt2 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keyFlatList [keyIndex] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 2";
+    // let alt1 = "Pattern: " + modeList[_scale] + "\nKey: " + keySharpList[keyIndex] + "\n" + allModesList[_scale][index]; // "Notation image 1";
+    // let alt2 = "Pattern: " + modeList[_scale] + "\nKey: " + keyFlatList [keyIndex] + "\n" + allModesList[_scale][index]; // "Notation image 2";
     if(_scale < 5){
         img1.innerHTML = _images[_scale][index*7+_mode];
         if(offset) 
             img2.innerHTML = _images[_scale][offset*7+_mode];
     }
-    // img1.parent('img1');
+
     // img1.elt.title = alt1;
     // if(offset){
-        // img2.parent('img2');
         // img2.elt.title = alt2;
     // }
+}
+
+function modeCheck(t){
+    let _scale = scale_Select.selectedIndex;
+    let majorModeIndex          = (_0rot < 0) ? (_0rot / -30) % 12 : 11-((_0rot / 30)+11) % 12;
+    let melodicMinorModeIndex   = (_1rot < 0) ? (_1rot / -30) % 12 : 11-((_1rot / 30)+11) % 12;
+    let harmonicMinorModeIndex  = (_2rot < 0) ? (_2rot / -30) % 12 : 11-((_2rot / 30)+11) % 12;
+    let harmonicMajorModeIndex  = (_3rot < 0) ? (_3rot / -30) % 12 : 11-((_3rot / 30)+11) % 12;
+    let doubleHarmonicModeIndex = (_4rot < 0) ? (_4rot / -30) % 12 : 11-((_4rot / 30)+11) % 12;
+    if     (t == 1){ // 0
+        return 0;
+    }
+    else if(t == 2){ // 1
+        if     (_scale == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 2 ||
+               majorModeIndex == 3 || 
+               majorModeIndex == 5 || 
+               majorModeIndex == 7 || 
+               majorModeIndex == 9 || 
+               majorModeIndex ==10 )
+                return 2;
+            else
+                return 1;
+        }
+        else if(_scale == 1){
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 1 ||
+               melodicMinorModeIndex == 3 || 
+               melodicMinorModeIndex == 5 || 
+               melodicMinorModeIndex == 7 || 
+               melodicMinorModeIndex == 9 || 
+               melodicMinorModeIndex ==10 )
+                return 2;
+            else
+                return 1;
+        }
+        else if(_scale == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               harmonicMinorModeIndex == 1 ||
+               harmonicMinorModeIndex == 3 || 
+               harmonicMinorModeIndex == 5 || 
+               harmonicMinorModeIndex == 6 || 
+               harmonicMinorModeIndex == 9 || 
+               harmonicMinorModeIndex ==10 )
+                return 2;
+            else {
+                if(harmonicMinorModeIndex == 8)
+                    return 3;
+                else
+                    return 1;
+            }
+        }
+        else if(_scale == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 2 ||
+               harmonicMajorModeIndex == 3 || 
+               harmonicMajorModeIndex == 5 || 
+               harmonicMajorModeIndex == 6 || 
+               harmonicMajorModeIndex == 9 || 
+               harmonicMajorModeIndex ==10 )
+                return 2;
+            else {
+                if(harmonicMajorModeIndex == 8)
+                    return 3;
+                else
+                    return 1;
+            }
+        }
+        else if(_scale == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 3 ||
+               doubleHarmonicModeIndex == 4 || 
+               doubleHarmonicModeIndex == 6 || 
+               doubleHarmonicModeIndex == 7 || 
+               doubleHarmonicModeIndex ==10 || 
+               doubleHarmonicModeIndex ==11 )
+                return 1;
+            else {
+                if(doubleHarmonicModeIndex == 1 || 
+                   doubleHarmonicModeIndex == 8)
+                    return 3;
+                else
+                    return 2;
+            }
+        }
+    }
+    else if(t == 3){ // 2
+        if     (_scale == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 1 ||
+               majorModeIndex == 3 || 
+               majorModeIndex == 5 || 
+               majorModeIndex == 7 || 
+               majorModeIndex == 8 || 
+               majorModeIndex ==10 )
+                return 4;
+            else
+                return 3;
+        }
+        else if(_scale == 1){
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 2 ||
+               melodicMinorModeIndex == 4 || 
+               melodicMinorModeIndex == 6 || 
+               melodicMinorModeIndex == 8 || 
+               melodicMinorModeIndex == 9 || 
+               melodicMinorModeIndex ==11 )
+                return 3;
+            else
+                return 4;
+        }
+        else if(_scale == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               harmonicMinorModeIndex == 2 ||
+               harmonicMinorModeIndex == 4 || 
+               harmonicMinorModeIndex == 5 || 
+               // harmonicMinorModeIndex == 8 || 
+               harmonicMinorModeIndex == 9 || 
+               harmonicMinorModeIndex ==11 )
+                return 3;
+            else
+                return 4;
+        }
+        else if(_scale == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 1 ||
+               harmonicMajorModeIndex == 3 || 
+               // harmonicMajorModeIndex == 4 || 
+               harmonicMajorModeIndex == 7 || 
+               harmonicMajorModeIndex == 8 || 
+               harmonicMajorModeIndex ==10 )
+                return 4;
+            else
+                return 3;
+        }
+        else if(_scale == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 1 ||
+               doubleHarmonicModeIndex == 3 || 
+               // doubleHarmonicModeIndex == 4 || 
+               doubleHarmonicModeIndex == 7 || 
+               doubleHarmonicModeIndex == 8 || 
+               doubleHarmonicModeIndex == 9 )
+                return 4;
+            else {
+                if(doubleHarmonicModeIndex == 11)
+                    return 2;
+                else
+                    return 3;
+            }
+        }
+    }
+    else if(t == 4){ // 3
+        if     (_scale == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 2 ||
+               majorModeIndex == 4 || 
+               majorModeIndex == 6 || 
+               majorModeIndex == 7 || 
+               majorModeIndex == 9 || 
+               majorModeIndex ==11 )
+                return 5;
+            else
+                return 6;
+        }
+        else if(_scale == 1){
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 2 ||
+               melodicMinorModeIndex == 4 || 
+               melodicMinorModeIndex == 6 || 
+               melodicMinorModeIndex == 7 || 
+               melodicMinorModeIndex == 9 || 
+               melodicMinorModeIndex ==10 )
+                return 5;
+            else {
+                if(melodicMinorModeIndex == 11)
+                    return 4;
+                else
+                    return 6;
+            }
+        }
+        else if(_scale == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               harmonicMinorModeIndex == 2 ||
+               harmonicMinorModeIndex == 3 || 
+               harmonicMinorModeIndex == 6 || 
+               harmonicMinorModeIndex == 7 || 
+               harmonicMinorModeIndex == 9 || 
+               harmonicMinorModeIndex ==10 )
+                return 5;
+            else {
+                if(harmonicMinorModeIndex == 11)
+                    return 4;
+                else
+                    return 6;
+            }
+        }
+        else if(_scale == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 2 ||
+               harmonicMajorModeIndex == 3 || 
+               harmonicMajorModeIndex == 6 || 
+               harmonicMajorModeIndex == 7 || 
+               harmonicMajorModeIndex == 9 || 
+               harmonicMajorModeIndex ==11 )
+                return 5;
+            else {
+                if(harmonicMajorModeIndex == 4)
+                    return 4;
+                else
+                    return 6;
+            }
+        }
+        else if(_scale == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 2 ||
+               doubleHarmonicModeIndex == 3 || 
+               doubleHarmonicModeIndex == 6 || 
+               doubleHarmonicModeIndex == 7 || 
+               doubleHarmonicModeIndex == 8 || 
+               doubleHarmonicModeIndex == 11 )
+                return 5;
+            else {
+                if(doubleHarmonicModeIndex == 4)
+                    return 4;
+                else
+                    return 6;
+            }
+        }
+    }
+    else if(t == 5){ // 4
+        if     (_scale == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 2 ||
+               majorModeIndex == 4 || 
+               majorModeIndex == 5 || 
+               majorModeIndex == 7 || 
+               majorModeIndex == 9 || 
+               majorModeIndex ==10 )
+                return 7;
+            else
+                return 6;
+        }
+        else if(_scale == 1){ 
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 2 ||
+               melodicMinorModeIndex == 4 || 
+               melodicMinorModeIndex == 5 || 
+               melodicMinorModeIndex == 7 || 
+               melodicMinorModeIndex == 8 || 
+               melodicMinorModeIndex ==10 )
+                return 7;
+            else {
+                if(melodicMinorModeIndex == 9 ||
+                   melodicMinorModeIndex ==11 )
+                    return 6;
+                else
+                    return 8;
+            }
+        }
+        else if(_scale == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               harmonicMinorModeIndex == 1 ||
+               harmonicMinorModeIndex == 4 || 
+               harmonicMinorModeIndex == 5 || 
+               harmonicMinorModeIndex == 7 || 
+               harmonicMinorModeIndex == 8 || 
+               harmonicMinorModeIndex ==10 )
+                return 7;
+            else {
+                if(harmonicMinorModeIndex == 2 ||
+                   harmonicMinorModeIndex ==11 )
+                    return 6;
+                else
+                    return 8;
+            }
+        }
+        else if(_scale == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 1 ||
+               harmonicMajorModeIndex == 4 || 
+               harmonicMajorModeIndex == 5 || 
+               harmonicMajorModeIndex == 7 || 
+               harmonicMajorModeIndex == 9 || 
+               harmonicMajorModeIndex ==10 )
+                return 7;
+            else {
+                if(harmonicMajorModeIndex == 2 ||
+                   harmonicMajorModeIndex ==11 )
+                    return 6;
+                else
+                    return 8;
+            }
+        }
+        else if(_scale == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 1 ||
+               doubleHarmonicModeIndex == 4 || 
+               doubleHarmonicModeIndex == 5 || 
+               doubleHarmonicModeIndex == 6 || 
+               doubleHarmonicModeIndex == 9 || 
+               doubleHarmonicModeIndex == 10 )
+                return 7;
+            else {
+                if(doubleHarmonicModeIndex == 7 ||
+                   doubleHarmonicModeIndex ==11 )
+                    return 6;
+                else
+                    return 8;
+            }
+        }
+    }
+    else if(t == 6){ // 5
+        if     (_scale == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 2 ||
+               majorModeIndex == 3 || 
+               majorModeIndex == 5 || 
+               majorModeIndex == 7 || 
+               majorModeIndex == 8 || 
+               majorModeIndex ==10 )
+                return 9;
+            else
+                return 8;
+        }
+        else if(_scale == 1){
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 2 ||
+               melodicMinorModeIndex == 3 || 
+               melodicMinorModeIndex == 5 || 
+               melodicMinorModeIndex == 6 || 
+               melodicMinorModeIndex == 8 || 
+               melodicMinorModeIndex ==10 )
+                return 9;
+            else
+                return 8;
+        }
+        else if(_scale == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               // harmonicMinorModeIndex == 3 ||
+               harmonicMinorModeIndex == 4 || 
+               harmonicMinorModeIndex == 6 || 
+               harmonicMinorModeIndex == 7 || 
+               harmonicMinorModeIndex == 9 || 
+               harmonicMinorModeIndex ==11 )
+                return 8;
+            else
+                return 9;
+        }
+        else if(_scale == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 3 ||
+               harmonicMajorModeIndex == 4 || 
+               harmonicMajorModeIndex == 6 || 
+               // harmonicMajorModeIndex == 8 || 
+               harmonicMajorModeIndex == 9 || 
+               harmonicMajorModeIndex ==11 )
+                return 8;
+            else
+                return 9;
+        }
+        else if(_scale == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 3 ||
+               doubleHarmonicModeIndex == 4 || 
+               doubleHarmonicModeIndex == 5 || 
+               // doubleHarmonicModeIndex == 8 || 
+               doubleHarmonicModeIndex == 9 || 
+               doubleHarmonicModeIndex == 11 )
+                return 8;
+            else {
+                if(doubleHarmonicModeIndex == 1 )
+                    return 10;
+                else
+                    return 9;
+            }
+        }
+    }
+    else if(t == 7){ // 6
+        if     (_scale == 0){
+            if(majorModeIndex == 0 || 
+               majorModeIndex == 1 ||
+               majorModeIndex == 3 || 
+               majorModeIndex == 5 || 
+               majorModeIndex == 6 || 
+               majorModeIndex == 8 || 
+               majorModeIndex ==10 )
+                return 11;
+            else
+                return 10;
+        }
+        else if(_scale == 1){
+            if(melodicMinorModeIndex == 0 || 
+               melodicMinorModeIndex == 1 ||
+               melodicMinorModeIndex == 3 || 
+               melodicMinorModeIndex == 4 || 
+               melodicMinorModeIndex == 6 || 
+               melodicMinorModeIndex == 8 || 
+               melodicMinorModeIndex ==10 )
+                return 11;
+            else
+                return 10;
+        }
+        else if(_scale == 2){
+            if(harmonicMinorModeIndex == 0 || 
+               harmonicMinorModeIndex == 1 ||
+               harmonicMinorModeIndex == 3 || 
+               harmonicMinorModeIndex == 4 || 
+               // harmonicMinorModeIndex == 5 || 
+               harmonicMinorModeIndex == 8 || 
+               harmonicMinorModeIndex == 9 )
+                return 11;
+            else {
+                if(harmonicMinorModeIndex ==11 )
+                    return 9;
+                else
+                    return 10;
+            }
+        }
+        else if(_scale == 3){
+            if(harmonicMajorModeIndex == 0 || 
+               harmonicMajorModeIndex == 1 ||
+               harmonicMajorModeIndex == 3 || 
+               harmonicMajorModeIndex == 5 || 
+               harmonicMajorModeIndex == 6 || 
+               harmonicMajorModeIndex == 8 || 
+               harmonicMajorModeIndex == 9 )
+                return 11;
+            else {
+                if(harmonicMajorModeIndex ==11 )
+                    return 9;
+                else
+                    return 10;
+            }
+        }
+        else if(_scale == 4){
+            if(doubleHarmonicModeIndex == 0 || 
+               doubleHarmonicModeIndex == 1 ||
+               doubleHarmonicModeIndex == 2 || 
+               doubleHarmonicModeIndex == 5 || 
+               doubleHarmonicModeIndex == 6 || 
+               doubleHarmonicModeIndex == 8 || 
+               doubleHarmonicModeIndex == 9 )
+                return 11;
+            else {
+                if(doubleHarmonicModeIndex == 4 ||
+                   doubleHarmonicModeIndex ==11 )
+                    return 9;
+                else
+                    return 10;
+            }
+        }
+    }
+    else if(t == 8){ // 7
+        return 12;
+    }
+    else
+        return 0;
 }
