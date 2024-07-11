@@ -234,7 +234,7 @@ function rotateNotes(){
 
 function playNote(event){
     let _id = parseInt(event.srcElement.id.slice(5));
-    console.info(_id);
+    console.info(event.srcElement);
     let transpose = 1;
     for(let i = 0; i < keyIndex; i++){
         transpose *= root12_2;
