@@ -64,7 +64,7 @@ key_Select.addEventListener("change", event => {
     let _t = key_Select.selectedOptions[0].innerHTML + " | ";
 
     x.innerHTML = _t + allModesList[scale_Select.selectedIndex][mode_Select.selectedIndex];
-    if(!lockNotes) drawNotes();
+    drawNotes();
 });
 
 scale_Select.addEventListener("wheel", event => {
@@ -87,6 +87,7 @@ scale_Select.addEventListener("change", event => {
     let x = document.getElementById("modeSelectText");
     let y = document.getElementById("modeSelect");
     let z = document.getElementById("lockNotes").parentElement;
+    document.getElementById("img").style.display = "";
     x.style.display = '';
     y.style.display = '';
     z.style.display = '';
@@ -116,6 +117,7 @@ scale_Select.addEventListener("change", event => {
         x.style.display = 'none';
         y.style.display = 'none';
         z.style.display = 'none';
+        document.getElementById("img").style.display = "none";
         y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
     }
     drawNotes();
