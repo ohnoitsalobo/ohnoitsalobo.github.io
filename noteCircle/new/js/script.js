@@ -32,7 +32,7 @@ noteCircle.addEventListener("load", function(){
     // console.info(touchArray[0]);
     for(let i = 0; i < touchArray.length; i++){
         touchArray[i].addEventListener("click", playNote, false);
-        touchArray[i].addEventListener("mouseover", playNote, false);
+        // touchArray[i].addEventListener("mouseover", playNote, false);
     }
 }, false);
 
