@@ -43,14 +43,3 @@ table{
     max-width: 200px;
     background-color: #bbb;
 }
-@keyframes touch_anim {
-    0%   { opacity: 1; }
-    100% { opacity: 0; }
-}
-.touchanim{
-    animation-name: touch_anim;
-    animation-duration: 500ms;
-}
-.touchanim:hover{
-    opacity: 1;
-}

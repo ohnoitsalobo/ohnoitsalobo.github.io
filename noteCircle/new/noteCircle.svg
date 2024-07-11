@@ -33,7 +33,18 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="allModes" />
   <defs
-     id="defs1" />
+     id="defs1">
+     <style>
+        @keyframes touch_anim {
+            0%   { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        .touchanim:hover{
+            animation-name: touch_anim;
+            animation-duration: 500ms;
+        }
+     </style>
+     </defs>
   <g
      inkscape:groupmode="layer"
      id="noteCircle"
