@@ -365,7 +365,7 @@ function loadScales(){
 
 function drawNotes(){
     img1.innerHTML = "";
-    img2.innerHTML = "";
+    img2.innerHTML = ""; img2.parentElement.parentElement.style.display = 'none';
 
     let index = keyIndex;
     let _scale = scale_Select.selectedIndex;
@@ -380,8 +380,10 @@ function drawNotes(){
     // let alt2 = "Pattern: " + modeList[_scale] + "\nKey: " + keyFlatList [keyIndex] + "\n" + allModesList[_scale][index]; // "Notation image 2";
     if(_scale < 5){
         img1.innerHTML = _images[_scale][index*7+_mode];
-        if(offset) 
+        if(offset) {
             img2.innerHTML = _images[_scale][offset*7+_mode];
+            img2.parentElement.parentElement.style.display = '';
+        }
     }
 
     // img1.elt.title = alt1;
