@@ -35,8 +35,8 @@ table{
     max-width: 600px;
 }
 
-#lockNotes {
-    display: ;
+#otherModeSelect {
+    display: none;
 }
 #img{
     display: none;
