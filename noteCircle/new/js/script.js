@@ -64,6 +64,7 @@ key_Select.addEventListener("change", event => {
     let _t = key_Select.selectedOptions[0].innerHTML + " | ";
 
     x.innerHTML = _t + allModesList[scale_Select.selectedIndex][mode_Select.selectedIndex];
+    if(!lockNotes) drawNotes();
 });
 
 scale_Select.addEventListener("wheel", event => {
@@ -117,6 +118,7 @@ scale_Select.addEventListener("change", event => {
         z.style.display = 'none';
         y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
     }
+    drawNotes();
 });
 
 mode_Select.addEventListener("wheel", event => {
@@ -174,6 +176,7 @@ mode_Select.addEventListener("change", event => {
     let _t = key_Select.selectedOptions[0].innerHTML + " | ";
 
     x.innerHTML = _t + allModesList[a.selectedIndex][event.srcElement.selectedIndex];
+    drawNotes();
 });
 
 document.addEventListener('keydown', event => {
@@ -282,3 +285,30 @@ function loadScales(){
     // console.info(_img2);
 }
 
+function drawNotes(){
+    img1.innerHTML = "";
+    img2.innerHTML = "";
+
+    let index = keyIndex;
+    let _scale = scale_Select.selectedIndex;
+    let _mode  = mode_Select.selectedIndex;
+    let offset = 0;
+    if     (index == 1 ) offset = 12;
+    else if(index == 3 ) offset = 13;
+    else if(index == 6 ) offset = 14;
+    else if(index == 8 ) offset = 15;
+    else if(index == 10) offset = 16;
+    // let alt1 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keySharpList[keyIndex] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 1";
+    // let alt2 = "Pattern: " + modeList[majorMinorOther] + "\nKey: " + keyFlatList [keyIndex] + "\n" + allModesList[majorMinorOther][currentlySelectedMode]; // "Notation image 2";
+    if(_scale < 5){
+        img1.innerHTML = _images[_scale][index*7+_mode];
+        if(offset) 
+            img2.innerHTML = _images[_scale][offset*7+_mode];
+    }
+    // img1.parent('img1');
+    // img1.elt.title = alt1;
+    // if(offset){
+        // img2.parent('img2');
+        // img2.elt.title = alt2;
+    // }
+}

@@ -38,7 +38,7 @@ table{
 #otherModeSelect {
     display: none;
 }
-#img{
+.img{
     display: ;
     max-width: 200px;
     background-color: #bbb;
