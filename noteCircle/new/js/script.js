@@ -23,7 +23,7 @@ document.addEventListener('keydown', event => {
 
 noteCircle.addEventListener("load", function(){
     noteCircleDOM = noteCircle.contentDocument;
-    noteCircleDOM.addEventListener('dragstart', event => {
+    noteCircleDOM.addEventListener("wheel", event => {
         event.preventDefault();
     });
     noteCircleDOM.addEventListener('keydown', event => {
@@ -352,9 +352,9 @@ const imageOrder = [ 0, 1, 3, 4, 6, 7, 8, 10, 11, 13, 14, 16, 2, 5, 9, 12, 15];
 
 function loadScales(){
     // let begin = "<object width='50%' type='image/svg+xml' data='modes/svg/";
-    let mid = "<div id='img'><div class='imgText'><div style='margin-top: 7px;'>Treble (G clef)</div><div style='margin-top: 59px;'>Alto (C clef)</div><div style='margin-top: 59px;'>Bass (F clef)</div><div style='margin-top: 61px;'>Mandolin tablature</div><div style='margin-top: 69px;'>Guitar tablature</div></div>";
-    let begin = mid + "<object class='img' type='image/svg+xml' data='../modes/svg/";
-    let end = ".svg' style='filter: invert(1);'>Please use a web browser with SVG image support to see the image.</object>";
+    let mid = "<div style='max-width: 350px;'><div class='imgText'><div style='margin-top: 7px;'>Treble (G clef)</div><div style='margin-top: 59px;'>Alto (C clef)</div><div style='margin-top: 59px;'>Bass (F clef)</div><div style='margin-top: 61px;'>Mandolin TAB</div><div style='margin-top: 69px;'>Guitar TAB</div></div>";
+    let begin = mid + "<object type='image/svg+xml' data='../modes/svg/";
+    let end = ".svg' style='max-width: 350px; filter: invert(1);'>Please use a web browser with SVG image support to see the image.</object>";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             let index = i+( j*7);

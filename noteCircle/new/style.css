@@ -38,11 +38,7 @@ table{
 #otherModeSelect {
     display: none;
 }
-.img{
-    display: ;
-    max-width: 350px;
-    /* background-color: #111; */
-}
+
 .imgText{
     position: absolute;
     text-align: left;
