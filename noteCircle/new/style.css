@@ -46,3 +46,13 @@ table{
     font-size: 12px;
     margin-left: 38px;
 }
+#img{
+    display:flex;
+    justify-content: center;
+}
+@media (max-width: 600px) {
+    #img{
+        display:flex;
+        flex-wrap: wrap;
+    }
+}
