@@ -343,9 +343,9 @@ let _images = [majorScale, melodicMinorScale, harmonicMinorScale, harmonicMajorS
 const imageOrder = [ 0, 1, 3, 4, 6, 7, 8, 10, 11, 13, 14, 16, 2, 5, 9, 12, 15];
 
 function loadScales(){
-    // let begin = "<object width=\"50%\" type=\"image/svg+xml\" data=\"modes/svg/";
-    let begin = "<object class=\"img\" type=\"image/svg+xml\" data=\"../modes/svg/";
-    let end = ".svg\">Please use a web browser with SVG image support to see the image.</object>";
+    // let begin = "<object width='50%' type='image/svg+xml' data='modes/svg/";
+    let begin = "<object class='img' type='image/svg+xml' data='../modes/svg/";
+    let end = ".svg' style='filter: invert(1); background-color: white;'>Please use a web browser with SVG image support to see the image.</object>";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             let index = i+( j*7);
