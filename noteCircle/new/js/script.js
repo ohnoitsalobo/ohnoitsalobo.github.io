@@ -27,9 +27,9 @@ noteCircle.addEventListener("load", function(){
     noteCircleDOM.addEventListener('mousewheel', event => {
         event.preventDefault();
     }, { passive: false });
-    noteCircleDOM.addEventListener('dragstart', event => {
-        event.preventDefault();
-    }, { passive: false });
+    // noteCircleDOM.addEventListener('dragstart', event => {
+        // event.preventDefault();
+    // }, { passive: false });
     noteCircleDOM.addEventListener('keydown', event => {
         playKeyboard(event);
     });
