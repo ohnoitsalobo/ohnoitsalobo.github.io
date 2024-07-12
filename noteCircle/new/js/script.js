@@ -17,8 +17,15 @@ const optionChanged = new CustomEvent("change");
 
 \*-----------------------------------*/
 
+document.addEventListener('keydown', event => {
+    playKeyboard(event);
+});
+
 noteCircle.addEventListener("load", function(){
     noteCircleDOM = noteCircle.contentDocument;
+    noteCircleDOM.addEventListener('dragstart', event => {
+        event.preventDefault();
+    });
     noteCircleDOM.addEventListener('keydown', event => {
         playKeyboard(event);
     });
@@ -75,7 +82,7 @@ key_Select.addEventListener("change", event => {
     rotateNotes();
     
     let x = document.getElementById("modeSelectText");
-    let _t = key_Select.selectedOptions[0].innerHTML + " | ";
+    let _t = key_Select.selectedOptions[0].innerHTML + " • ";
 
     x.innerHTML = _t + allModesList[scale_Select.selectedIndex][mode_Select.selectedIndex];
     drawNotes();
@@ -110,7 +117,7 @@ scale_Select.addEventListener("change", event => {
     _3.style.display = 'none';
     _4.style.display = 'none';
     
-    let _t = key_Select.selectedOptions[0].innerHTML + " | ";
+    let _t = key_Select.selectedOptions[0].innerHTML + " • ";
     if(a.selectedIndex == 0){
         x.innerHTML = _t + majorModeList[y.selectedIndex];
         _0.style.display = '';
@@ -188,15 +195,12 @@ mode_Select.addEventListener("change", event => {
         rotateNotes();
     }
     let x = document.getElementById("modeSelectText");
-    let _t = key_Select.selectedOptions[0].innerHTML + " | ";
+    let _t = key_Select.selectedOptions[0].innerHTML + " • ";
 
     x.innerHTML = _t + allModesList[a.selectedIndex][event.srcElement.selectedIndex];
     drawNotes();
 });
 
-document.addEventListener('keydown', event => {
-    playKeyboard(event);
-});
 /*-----------------------------------*\
 
 \*-----------------------------------*/
