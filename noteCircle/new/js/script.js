@@ -33,8 +33,9 @@ noteCircle.addEventListener("load", function(){
     });
     noteCircleDOM.getElementById("lockRotation").addEventListener("click", function (){
         lockNotes = !lockNotes;
-        noteCircleDOM.getElementById("lockRotation").style.opacity = lockNotes ? '1' : '0.2' ;
+        // noteCircleDOM.getElementById("lockRotation").style.opacity = lockNotes ? '1' : '0.2' ;
         noteCircleDOM.getElementById("lock").style.opacity = lockNotes ? '1' : '0' ;
+        noteCircleDOM.getElementById("arrows").style.opacity = lockNotes ? '1' : '0.2' ;
         // console.info(event.srcElement.parentElement);
     });
     noteCircle_base = noteCircleDOM.getElementById("noteCircle_base");
