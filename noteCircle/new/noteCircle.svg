@@ -43,6 +43,9 @@
             animation-name: touch_anim;
             animation-duration: 500ms;
         }
+        #lockRotation{
+            transition: opacity 500ms;
+        }
      </style>
      </defs>
   <g
