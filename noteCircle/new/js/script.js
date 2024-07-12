@@ -84,7 +84,7 @@ key_Select.addEventListener("change", event => {
     rotateNotes();
     
     let x = document.getElementById("modeSelectText");
-    let _t = key_Select.selectedOptions[0].innerHTML + " \u25B7 ";
+    let _t = key_Select.selectedOptions[0].innerHTML + " &#9654; ";
 
     x.innerHTML = _t + allModesList[scale_Select.selectedIndex][mode_Select.selectedIndex];
     drawNotes();
@@ -119,7 +119,7 @@ scale_Select.addEventListener("change", event => {
     _3.style.display = 'none';
     _4.style.display = 'none';
     
-    let _t = key_Select.selectedOptions[0].innerHTML + " \u25B7 ";
+    let _t = key_Select.selectedOptions[0].innerHTML + " &#9654; ";
     if(a.selectedIndex == 0){
         x.innerHTML = _t + majorModeList[y.selectedIndex];
         _0.style.display = '';
@@ -197,7 +197,7 @@ mode_Select.addEventListener("change", event => {
         rotateNotes();
     }
     let x = document.getElementById("modeSelectText");
-    let _t = key_Select.selectedOptions[0].innerHTML + " \u25B7 ";
+    let _t = key_Select.selectedOptions[0].innerHTML + " &#9654; ";
 
     x.innerHTML = _t + allModesList[a.selectedIndex][event.srcElement.selectedIndex];
     drawNotes();

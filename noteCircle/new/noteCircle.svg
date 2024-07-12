@@ -40,11 +40,13 @@
             100% { opacity: 0; }
         }
         .touchanim:hover{
+            cursor: pointer;
             animation-name: touch_anim;
             animation-duration: 500ms;
         }
         #lockRotation{
             transition: opacity 500ms, transform 500ms;
+            cursor: pointer;
         }
      </style>
      </defs>
