@@ -245,9 +245,9 @@ function loadSelectors(){
         opt.innerHTML = otherModeList[x][0];
         _o.appendChild(opt);
     }
-    let _x = document.getElementById("modeSelectText");
-    _x.innerHTML = "C | " + majorModeList[0];
     scale_Select.dispatchEvent(optionChanged);
+    let _x = document.getElementById("modeSelectText");
+    _x.innerHTML = "<p style='font-size:75%; margin-top:-0.1em; opacity: 0.5;'>Tap note names or use keyboard keys 1-8 to hear the scale.<br />Tap the center to lock the visible notes in the scale.</p>";
     // document.getElementById("lockNotes").addEventListener("click", function (){
         // lockNotes = event.srcElement.checked;
         // console.log(lockNotes);
