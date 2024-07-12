@@ -21,11 +21,12 @@ document.addEventListener('keydown', event => {
     playKeyboard(event);
 });
 
+
 noteCircle.addEventListener("load", function(){
     noteCircleDOM = noteCircle.contentDocument;
-    noteCircleDOM.addEventListener("wheel", event => {
+    noteCircleDOM.addEventListener('mousewheel', event => {
         event.preventDefault();
-    });
+    }, { passive: false });
     noteCircleDOM.addEventListener('keydown', event => {
         playKeyboard(event);
     });
