@@ -20,16 +20,14 @@ const optionChanged = new CustomEvent("change");
 document.addEventListener('keydown', event => {
     playKeyboard(event);
 });
-
+document.getElementById("modeSelectText").addEventListener("click", playScale);
 
 noteCircle.addEventListener("load", function(){
     noteCircleDOM = noteCircle.contentDocument;
     noteCircleDOM.addEventListener('mousewheel', event => {
         event.preventDefault();
     }, { passive: false });
-    // noteCircleDOM.addEventListener('dragstart', event => {
-        // event.preventDefault();
-    // }, { passive: false });
+
     noteCircleDOM.addEventListener('keydown', event => {
         playKeyboard(event);
     });
@@ -37,7 +35,7 @@ noteCircle.addEventListener("load", function(){
         lockNotes = !lockNotes;
         noteCircleDOM.getElementById("lockRotation").style.opacity = lockNotes ? '1' : '0.2' ;
         noteCircleDOM.getElementById("lock").style.opacity = lockNotes ? '1' : '0' ;
-        console.info(event.srcElement.parentElement);
+        // console.info(event.srcElement.parentElement);
     });
     noteCircle_base = noteCircleDOM.getElementById("noteCircle_base");
     noteCircle_base.style.transition = "transform 500ms";
@@ -86,7 +84,7 @@ key_Select.addEventListener("change", event => {
     rotateNotes();
     
     let x = document.getElementById("modeSelectText");
-    let _t = key_Select.selectedOptions[0].innerHTML + " • ";
+    let _t = key_Select.selectedOptions[0].innerHTML + " \u25B7 ";
 
     x.innerHTML = _t + allModesList[scale_Select.selectedIndex][mode_Select.selectedIndex];
     drawNotes();
@@ -121,7 +119,7 @@ scale_Select.addEventListener("change", event => {
     _3.style.display = 'none';
     _4.style.display = 'none';
     
-    let _t = key_Select.selectedOptions[0].innerHTML + " • ";
+    let _t = key_Select.selectedOptions[0].innerHTML + " \u25B7 ";
     if(a.selectedIndex == 0){
         x.innerHTML = _t + majorModeList[y.selectedIndex];
         _0.style.display = '';
@@ -199,7 +197,7 @@ mode_Select.addEventListener("change", event => {
         rotateNotes();
     }
     let x = document.getElementById("modeSelectText");
-    let _t = key_Select.selectedOptions[0].innerHTML + " • ";
+    let _t = key_Select.selectedOptions[0].innerHTML + " \u25B7 ";
 
     x.innerHTML = _t + allModesList[a.selectedIndex][event.srcElement.selectedIndex];
     drawNotes();
@@ -247,7 +245,7 @@ function loadSelectors(){
     }
     scale_Select.dispatchEvent(optionChanged);
     let _x = document.getElementById("modeSelectText");
-    _x.innerHTML = "<p style='font-size:75%; margin-top:-0.1em; opacity: 0.5;'>Tap note names or use keyboard keys 1-8 to hear the scale.<br />Tap the center to lock the visible notes in the scale.</p>";
+    _x.innerHTML = "<p style='font-size:75%; margin-top:-0.1em; opacity: 0.5;'>Tap here or press spacebar to play the scale.<br />Tap the center to lock the visible notes in the scale.</p>";
     // document.getElementById("lockNotes").addEventListener("click", function (){
         // lockNotes = event.srcElement.checked;
         // console.log(lockNotes);
@@ -337,9 +335,75 @@ function playKeyboard(e){
             touchArray[0].style.opacity = "0";
         }, 500);
     }
-    
+    if(e.key == ' ') {
+        e.preventDefault();
+        playScale();
+    }
 }
 
+function playScale(){
+    let _tt = 200;
+    setTimeout( function(){
+     playNote(modeCheck(1));
+     touchArray[1].style.opacity = "1"; setTimeout(function(){ touchArray[1].style.opacity = "0"; }, _tt);
+     setTimeout( function(){
+      playNote(modeCheck(2));
+      touchArray[modeCheck(2)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(2)+1].style.opacity = "0"; }, _tt);
+      setTimeout( function(){
+       playNote(modeCheck(3));
+       touchArray[modeCheck(3)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(3)+1].style.opacity = "0"; }, _tt);
+       setTimeout( function(){
+        playNote(modeCheck(4));
+        touchArray[modeCheck(4)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(4)+1].style.opacity = "0"; }, _tt);
+        setTimeout( function(){
+         playNote(modeCheck(5));
+         touchArray[modeCheck(5)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(5)+1].style.opacity = "0"; }, _tt);
+         setTimeout( function(){
+          playNote(modeCheck(6));
+          touchArray[modeCheck(6)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(6)+1].style.opacity = "0"; }, _tt);
+          setTimeout( function(){
+           playNote(modeCheck(7));
+           touchArray[modeCheck(7)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(7)+1].style.opacity = "0"; }, _tt);
+           setTimeout( function(){
+            playNote(modeCheck(8));
+            touchArray[0].style.opacity = "1"; setTimeout(function(){ touchArray[0].style.opacity = "0"; }, _tt);
+            setTimeout( function(){
+             playNote(modeCheck(7));
+             touchArray[modeCheck(7)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(7)+1].style.opacity = "0"; }, _tt);
+             setTimeout( function(){
+              playNote(modeCheck(6));
+              touchArray[modeCheck(6)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(6)+1].style.opacity = "0"; }, _tt);
+              setTimeout( function(){
+               playNote(modeCheck(5));
+               touchArray[modeCheck(5)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(5)+1].style.opacity = "0"; }, _tt);
+               setTimeout( function(){
+                playNote(modeCheck(4));
+                touchArray[modeCheck(4)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(4)+1].style.opacity = "0"; }, _tt);
+                setTimeout( function(){
+                 playNote(modeCheck(3));
+                 touchArray[modeCheck(3)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(3)+1].style.opacity = "0"; }, _tt);
+                 setTimeout( function(){
+                  playNote(modeCheck(2));
+                  touchArray[modeCheck(2)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(2)+1].style.opacity = "0"; }, _tt);
+                  setTimeout( function(){
+                   playNote(modeCheck(1));
+                    touchArray[1].style.opacity = "1"; setTimeout(function(){ touchArray[1].style.opacity = "0"; }, _tt);
+                  }, _tt);
+                 }, _tt);
+                }, _tt);
+               }, _tt);
+              }, _tt);
+             }, _tt);
+            }, _tt);
+           }, _tt);
+          }, _tt);
+         }, _tt);
+        }, _tt);
+       }, _tt);
+      }, _tt);
+     }, _tt);
+    }, _tt);
+}
 /*-----------------------------------*\
 
 \*-----------------------------------*/
