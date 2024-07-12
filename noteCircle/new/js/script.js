@@ -22,7 +22,12 @@ noteCircle.addEventListener("load", function(){
     noteCircleDOM.addEventListener('keydown', event => {
         playKeyboard(event);
     });
-
+    noteCircleDOM.getElementById("lockRotation").addEventListener("click", function (){
+        lockNotes = !lockNotes;
+        let _t = event.srcElement.parentElement.parentElement;
+        _t.style.opacity = lockNotes ? '1' : '0.2' ;
+        console.log();
+    });
     noteCircle_base = noteCircleDOM.getElementById("noteCircle_base");
     noteCircle_base.style.transition = "transform 500ms";
 
@@ -92,14 +97,13 @@ scale_Select.addEventListener("wheel", event => {
 });
 scale_Select.addEventListener("change", event => {
     // console.info(event.srcElement.selectedOptions[0]);
+    noteCircleDOM.getElementById("allModes").style.display = '';
     let a = event.srcElement;
     let x = document.getElementById("modeSelectText");
     let y = document.getElementById("modeSelect");
-    let z = document.getElementById("lockNotes").parentElement;
     document.getElementById("img").style.display = "";
     x.style.display = '';
     y.style.display = '';
-    z.style.display = '';
     _0.style.display = 'none';
     _1.style.display = 'none';
     _2.style.display = 'none';
@@ -125,8 +129,8 @@ scale_Select.addEventListener("change", event => {
     } else {
         x.style.display = 'none';
         y.style.display = 'none';
-        z.style.display = 'none';
         document.getElementById("img").style.display = "none";
+        noteCircleDOM.getElementById("allModes").style.display = 'none';
         y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
     }
     drawNotes();
@@ -236,10 +240,10 @@ function loadSelectors(){
     let _x = document.getElementById("modeSelectText");
     _x.innerHTML = "C | " + majorModeList[0];
     scale_Select.dispatchEvent(optionChanged);
-    document.getElementById("lockNotes").addEventListener("click", function (){
-        lockNotes = event.srcElement.checked;
+    // document.getElementById("lockNotes").addEventListener("click", function (){
+        // lockNotes = event.srcElement.checked;
         // console.log(lockNotes);
-    });
+    // });
 }
 function rotateNotes(){
     keyIndex = (currentNoteRotation < 0) ? (currentNoteRotation / -30) % 12 : 11-((currentNoteRotation / 30)+11) % 12;
