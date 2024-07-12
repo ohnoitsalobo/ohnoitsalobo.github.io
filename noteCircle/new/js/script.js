@@ -344,8 +344,9 @@ const imageOrder = [ 0, 1, 3, 4, 6, 7, 8, 10, 11, 13, 14, 16, 2, 5, 9, 12, 15];
 
 function loadScales(){
     // let begin = "<object width='50%' type='image/svg+xml' data='modes/svg/";
-    let begin = "<object class='img' type='image/svg+xml' data='../modes/svg/";
-    let end = ".svg' style='filter: invert(1); background-color: white;'>Please use a web browser with SVG image support to see the image.</object>";
+    let mid = "<div id='img'><div class='imgText'><div style='margin-top: 5px;'>Treble (G clef)</div><div style='margin-top: 55px;'>Alto (C clef)</div><div style='margin-top: 57px;'>Bass (F clef)</div><div style='margin-top: 58px;'>Mandolin tablature</div><div style='margin-top: 66px;'>Guitar tablature</div></div>";
+    let begin = mid + "<object class='img' type='image/svg+xml' data='../modes/svg/";
+    let end = ".svg' style='filter: invert(1);'>Please use a web browser with SVG image support to see the image.</object>";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
             let index = i+( j*7);
@@ -365,7 +366,7 @@ function loadScales(){
 
 function drawNotes(){
     img1.innerHTML = "";
-    img2.innerHTML = ""; img2.parentElement.parentElement.style.display = 'none';
+    img2.innerHTML = ""; // img2.parentElement.parentElement.style.display = 'none';
 
     let index = keyIndex;
     let _scale = scale_Select.selectedIndex;
@@ -385,7 +386,7 @@ function drawNotes(){
         // }, 100);
         if(offset) {
             img2.innerHTML = _images[_scale][offset*7+_mode];
-            img2.parentElement.parentElement.style.display = '';
+            //img2.parentElement.parentElement.style.display = '';
             // setTimeout(function(){
                 // img2.childNodes[0].contentDocument.childNodes[0].style.filter = 'invert(1)';
             // }, 100);
