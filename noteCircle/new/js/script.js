@@ -40,7 +40,7 @@ noteCircle.addEventListener("load", function(){
     touchArray = noteCircleDOM.getElementById("touch").getElementsByTagName("rect");
     // console.info(touchArray);
     for(let i = 0; i < touchArray.length; i++){
-        touchArray[i].addEventListener("click", playNote, false);
+        touchArray[i].addEventListener("mousedown", playNote, false);
         touchArray[i].addEventListener("mouseover", event => {
             // console.log(event);
             if(event.buttons == 1)
