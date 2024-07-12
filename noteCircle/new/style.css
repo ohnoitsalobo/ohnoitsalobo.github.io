@@ -56,3 +56,7 @@ table{
         flex-wrap: wrap;
     }
 }
+
+footer{
+    opacity: 0.2;
+}
