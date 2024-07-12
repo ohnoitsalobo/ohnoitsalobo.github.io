@@ -35,9 +35,9 @@ noteCircle.addEventListener("load", function(){
     });
     noteCircleDOM.getElementById("lockRotation").addEventListener("click", function (){
         lockNotes = !lockNotes;
-        let _t = event.srcElement.parentElement.parentElement;
-        _t.style.opacity = lockNotes ? '1' : '0.2' ;
-        console.log();
+        noteCircleDOM.getElementById("lockRotation").style.opacity = lockNotes ? '1' : '0.2' ;
+        noteCircleDOM.getElementById("lock").style.opacity = lockNotes ? '1' : '0' ;
+        console.info(event.srcElement.parentElement);
     });
     noteCircle_base = noteCircleDOM.getElementById("noteCircle_base");
     noteCircle_base.style.transition = "transform 500ms";
