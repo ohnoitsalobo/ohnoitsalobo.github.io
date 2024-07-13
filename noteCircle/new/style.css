@@ -7,6 +7,7 @@ body{
     color: #ccc;
     background-color: #111;
     font-family: Ubuntu, Georgia;
+    width: 96%;
 }
 select{
     padding: 0px;
@@ -23,13 +24,14 @@ table{
     max-width: 600px;
     font-size: 1.2em;
 }
-#container{
+.container{
     margin: 0px;
 }
 #modeSelectText{
     font-size: 1.3em;
     /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" style="font-size: 3em;"><text y="15">\u23F5</text></svg>'),pointer; */
     cursor: pointer;
+    display: none;
 }
 #noteCircle{
     font-family: Ubuntu, Georgia;

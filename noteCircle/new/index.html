@@ -16,27 +16,19 @@
         <div>
             <object data="noteCircle.svg" type="image/svg+xml" id="noteCircle"> </object>
         </div>
-        <div style="height: 2em;">
+        <div style="height: 0.5em;">
             <span id="modeSelectText" ></span>
         </div>
         <div id="options-select-bar">
             <table>
-                <tr style="font-size: 80%;">
-                    <td>Root: </td>
-                    <td>Scale:</td>
+                <tr>
+                    <td colspan=3><select id="scaleSelect"></select></td>
                 </tr>
                 <tr>
                     <td><select id="keySelect"></select></td>
-                    <td><select id="scaleSelect"></select></td>
+                    <td style="font-size: 70%; width: 15%">← Root |<br />| Mode →</td>
+                    <td><select id="modeSelect"></select></td>
                 </tr>
-                <tr>
-                    <td colspan=2><select id="modeSelect"></select></td>
-                </tr>
-                <!--  -- >
-                <tr>
-                    <td colspan=2><input id="lockNotes" type="checkbox" value=""><label for="lockNotes">Lock the visible notes in the pattern</label></td>
-                </tr>
-                <!--  -->
                 <tr>
                     <td colspan=2><select id="otherModeSelect"></select></td>
                 </tr>
@@ -57,13 +49,13 @@
         </tr>
     </table>
     </div>
-    </center>
     <script src="js/script.js"></script>
     <footer>
     <center>
             <p>Created by <a href="https://ohnoitsalobo.github.io/" style="color: white;">Anand Lobo</a>
     </center>
     </footer>
+    </center>
 </body>
 </html>
 

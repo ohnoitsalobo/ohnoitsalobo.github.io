@@ -31,13 +31,16 @@ noteCircle.addEventListener("load", function(){
     noteCircleDOM.addEventListener('keydown', event => {
         playKeyboard(event);
     });
-    noteCircleDOM.getElementById("lockRotation").addEventListener("click", function (){
-        lockNotes = !lockNotes;
-        // noteCircleDOM.getElementById("lockRotation").style.opacity = lockNotes ? '1' : '0.2' ;
-        noteCircleDOM.getElementById("lock").style.opacity = lockNotes ? '1' : '0' ;
-        noteCircleDOM.getElementById("arrows").style.opacity = lockNotes ? '1' : '0.2' ;
-        // console.info(event.srcElement.parentElement);
+    noteCircleDOM.getElementById("playScale").addEventListener("click", function (){
+        playScale();
     });
+    // noteCircleDOM.getElementById("lockRotation").addEventListener("click", function (){
+        // lockNotes = !lockNotes;
+        // noteCircleDOM.getElementById("lockRotation").style.opacity = lockNotes ? '1' : '0.2' ;
+        // noteCircleDOM.getElementById("lock").style.opacity = lockNotes ? '1' : '0' ;
+        // noteCircleDOM.getElementById("arrows").style.opacity = lockNotes ? '1' : '0.2' ;
+        // console.info(event.srcElement.parentElement);
+    // });
     noteCircle_base = noteCircleDOM.getElementById("noteCircle_base");
     noteCircle_base.style.transition = "transform 500ms";
 
@@ -110,16 +113,24 @@ scale_Select.addEventListener("change", event => {
     noteCircleDOM.getElementById("allModes").style.display = '';
     let a = event.srcElement;
     let x = document.getElementById("modeSelectText");
-    let y = document.getElementById("modeSelect");
+    let y = document.getElementById("modeSelect"); let _y = y.selectedIndex;
     document.getElementById("img").style.display = "";
-    x.style.display = '';
-    y.style.display = '';
+    x.style.opacity = '1';
+    y.style.opacity = '1';
+    let yy = y.parentElement.previousElementSibling; yy.style.opacity = '1';
     _0.style.display = 'none';
     _1.style.display = 'none';
     _2.style.display = 'none';
     _3.style.display = 'none';
     _4.style.display = 'none';
-    
+    y.innerHTML="";
+    for(let i = 0; i < 7; i++){
+        let opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = allModesList[a.selectedIndex][i];
+        mode_Select.appendChild(opt);
+    }
+    y.selectedIndex = _y;
     let _t = key_Select.selectedOptions[0].innerHTML + " &#9654; ";
     if(a.selectedIndex == 0){
         x.innerHTML = _t + majorModeList[y.selectedIndex];
@@ -137,8 +148,8 @@ scale_Select.addEventListener("change", event => {
         x.innerHTML = _t + doubleHarmonicModeList[y.selectedIndex];
         _4.style.display = '';
     } else {
-        x.style.display = 'none';
-        y.style.display = 'none';
+        x.style.opacity = '0';
+        y.style.opacity = '0'; yy.style.opacity = '0'; console.info(yy);
         document.getElementById("img").style.display = "none";
         noteCircleDOM.getElementById("allModes").style.display = 'none';
         y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
@@ -234,7 +245,7 @@ function loadSelectors(){
     for(let x = 0; x < 7; x++){
         let opt = document.createElement('option');
         opt.value = x;
-        opt.innerHTML = "Mode : " + (x+1);
+        opt.innerHTML = "Mode : " + allModesList[0][x];
         mode_Select.appendChild(opt);
     }
     let _o = document.getElementById("otherModeSelect");
@@ -246,7 +257,7 @@ function loadSelectors(){
     }
     scale_Select.dispatchEvent(optionChanged);
     let _x = document.getElementById("modeSelectText");
-    _x.innerHTML = "<p style='font-size:75%; margin-top:-0.1em; opacity: 0.5;'>Tap here or press spacebar to play the scale.<br />Tap the center to lock the visible notes in the scale.</p>";
+    _x.innerHTML = key_Select.selectedOptions[0].innerHTML + " &#9654; " + allModesList[0][0];
     // document.getElementById("lockNotes").addEventListener("click", function (){
         // lockNotes = event.srcElement.checked;
         // console.log(lockNotes);
