@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.54065625"
-     inkscape:cx="151.66753"
-     inkscape:cy="254.32056"
+     inkscape:zoom="1.0813125"
+     inkscape:cx="183.1108"
+     inkscape:cy="281.60222"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
@@ -47,7 +47,13 @@
             animation-name: touch_anim;
             animation-duration: 500ms;
         }
+        g{
+            transition: opacity 500ms, transform 500ms;
+        }
         #playScale{
+            cursor: pointer;
+        }
+        #lockRotation{
             cursor: pointer;
         }
      </style>
@@ -642,11 +648,11 @@
                sodipodi:role="line"
                id="tspan36"
                x="0.46145588"
-               y="-65.768173">C♯</tspan><tspan
+               y="-65.768173">C♯   </tspan><tspan
                sodipodi:role="line"
                id="tspan40"
                x="0.46145588"
-               y="-55.255032">D♭</tspan></text>
+               y="-55.255032">   D♭</tspan></text>
         </g>
         <g
            id="note3"
@@ -689,11 +695,11 @@
                sodipodi:role="line"
                id="tspan50"
                x="0.46145588"
-               y="-65.768173">D♯</tspan><tspan
+               y="-65.768173">D♯   </tspan><tspan
                sodipodi:role="line"
                id="tspan51"
                x="0.46145588"
-               y="-55.255032">E♭</tspan></text>
+               y="-55.255032">   E♭</tspan></text>
         </g>
         <g
            id="note5"
@@ -757,11 +763,11 @@
                sodipodi:role="line"
                id="tspan54"
                x="0.46145588"
-               y="-65.768173">F♯</tspan><tspan
+               y="-65.768173">F♯   </tspan><tspan
                sodipodi:role="line"
                id="tspan55"
                x="0.46145588"
-               y="-55.255032">G♭</tspan></text>
+               y="-55.255032">   G♭</tspan></text>
         </g>
         <g
            id="note8"
@@ -804,11 +810,11 @@
                sodipodi:role="line"
                id="tspan57"
                x="0.46145588"
-               y="-65.768173">G♯</tspan><tspan
+               y="-65.768173">G♯   </tspan><tspan
                sodipodi:role="line"
                id="tspan58"
                x="0.46145588"
-               y="-55.255032">A♭</tspan></text>
+               y="-55.255032">   A♭</tspan></text>
         </g>
         <g
            id="note10"
@@ -851,11 +857,11 @@
                sodipodi:role="line"
                id="tspan60"
                x="0.46145588"
-               y="-65.768173">A♯</tspan><tspan
+               y="-65.768173">A♯   </tspan><tspan
                sodipodi:role="line"
                id="tspan61"
                x="0.46145588"
-               y="-55.255032">B♭</tspan></text>
+               y="-55.255032">   B♭</tspan></text>
         </g>
         <g
            id="note12"
@@ -1510,25 +1516,57 @@
         </g>
       </g>
       <g
+         id="lockRotation"
+         style="display:inline"
+         transform="translate(0,-7.5)">
+        <g
+           id="arrows"
+           style="display:inline;opacity:0.2"
+           transform="matrix(-0.02406237,0,0,-0.02406237,7.3631554,7.3631565)">
+          <path
+             d="m 67.079,299.982 c 1.255,0.245 2.526,0.342 3.78,0.342 4.367,0 8.636,-1.434 12.139,-4.122 l 81.826,-62.942 c 8.717,-6.729 10.346,-19.243 3.666,-27.943 -6.746,-8.815 -19.259,-10.379 -27.943,-3.666 l -40.343,31.055 c 30.664,-85.834 113.044,-146.495 207.09,-146.495 102.535,0 190.635,69.557 214.243,169.143 2.526,10.705 13.149,17.401 23.968,14.794 10.688,-2.525 17.304,-13.263 14.778,-23.967 C 532.422,128.542 428.388,46.374 307.294,46.374 194.397,46.374 95.479,120.249 60.741,224.283 L 37.05,184.348 c -5.605,-9.483 -17.841,-12.53 -27.275,-6.974 -9.466,5.621 -12.611,17.841 -6.974,27.292 l 50.934,85.899 c 2.884,4.904 7.756,8.326 13.344,9.417 z"
+             id="path103" />
+          <path
+             d="m 609.196,407.356 -50.934,-85.899 c -2.867,-4.904 -7.739,-8.325 -13.344,-9.417 -5.605,-1.092 -11.405,0.325 -15.919,3.779 l -81.826,62.942 c -8.717,6.713 -10.347,19.21 -3.666,27.943 6.696,8.749 19.227,10.33 27.943,3.649 l 40.425,-31.104 C 481.227,465.1 398.798,525.793 304.703,525.793 202.184,525.793 114.085,456.236 90.46,356.65 87.935,345.945 77.295,339.297 66.492,341.855 55.804,344.38 49.172,355.119 51.698,365.823 79.56,483.464 183.61,565.632 304.704,565.632 c 112.849,0 211.816,-73.842 246.602,-177.812 l 23.642,39.854 c 3.715,6.289 10.363,9.776 17.125,9.776 3.471,0 6.974,-0.896 10.167,-2.786 9.449,-5.621 12.611,-17.857 6.956,-27.308 z"
+             id="path104" />
+        </g>
+        <g
+           id="lock"
+           style="display:inline;opacity:0"
+           transform="matrix(0.02374718,0,0,0.02374718,-3.9182847,-3.9182847)">
+          <path
+             d="m 65,330 h 200 c 8.284,0 15,-6.716 15,-15 V 145 c 0,-8.284 -6.716,-15 -15,-15 H 250 V 85 C 250,38.131 211.869,0 165,0 118.131,0 80.001,38.131 80.001,85 v 45 H 65 c -8.284,0 -15,6.716 -15,15 v 170 c 0,8.284 6.716,15 15,15 z M 110.001,85 c 0,-30.327 24.673,-55 54.999,-55 30.327,0 55,24.673 55,55 v 45 H 110.001 Z"
+             id="path105" />
+        </g>
+        <rect
+           style="display:inline;opacity:0;fill:#000000;stroke:#000000;stroke-width:0.33"
+           id="rect105"
+           width="15"
+           height="15"
+           x="-7.5"
+           y="-7.5" />
+      </g>
+      <g
          id="playScale"
-         style="display:inline;transform:scale(0.7);">
+         style="display:inline"
+         transform="matrix(0.7,0,0,0.7,0,6.9682389)">
         <text
            xml:space="preserve"
            style="font-weight:bold;font-size:20.5644px;line-height:10.2822px;font-family:'Book Antiqua';text-align:center;text-anchor:middle;display:inline;opacity:0.2;fill:#ffffff;fill-opacity:1;stroke-width:0.308466"
-           x="-0.11813262"
-           y="7.0244932"
+           x="-0.11134347"
+           y="5.2483191"
            id="text27"><tspan
              id="tspan27"
              style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.7301px;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.272477;stroke-dasharray:none"
-             x="-0.11813247"
-             y="7.0244932">♫</tspan></text>
+             x="-0.11134332"
+             y="5.2483191">♫</tspan></text>
         <rect
-           style="display:inline;opacity:0;fill:#000000;stroke:#000000;stroke-width:0.309077"
-           id="rect105"
-           width="14.048986"
-           height="14.048986"
-           x="-7.0244932"
-           y="-7.0244932" />
+           style="display:inline;opacity:0;fill:#000000;stroke:#000000;stroke-width:0.438003"
+           id="rect25"
+           width="19.909254"
+           height="19.909254"
+           x="-9.954627"
+           y="-9.954627" />
       </g>
     </g>
   </g>
