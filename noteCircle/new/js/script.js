@@ -345,6 +345,7 @@ function playKeyboard(e){
 function playScale(){
     let _tt = 250;
     let _scale = scale_Select.selectedIndex;
+    let _mode = mode_Select.selectedIndex;
     
     setTimeout( function(){
      playNote(modeCheck(1));
@@ -371,10 +372,10 @@ function playScale(){
             playNote(modeCheck(8));
             touchArray[0].style.opacity = "1"; setTimeout(function(){ touchArray[0].style.opacity = "0"; }, _tt);
             setTimeout( function(){
-             if(_scale == 1) playNote(modeCheck(7) - 1); else playNote(modeCheck(7));
+             if(_scale == 1 && _mode == 0) playNote(modeCheck(7) - 1); else playNote(modeCheck(7));
              touchArray[modeCheck(7)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(7)+1].style.opacity = "0"; }, _tt);
              setTimeout( function(){
-              if(_scale == 1) playNote(modeCheck(6) - 1); else playNote(modeCheck(6));
+              if(_scale == 1 && _mode == 0) playNote(modeCheck(6) - 1); else playNote(modeCheck(6));
               touchArray[modeCheck(6)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(6)+1].style.opacity = "0"; }, _tt);
               setTimeout( function(){
                playNote(modeCheck(5));
