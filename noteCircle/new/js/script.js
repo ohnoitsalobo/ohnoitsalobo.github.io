@@ -456,14 +456,14 @@ function drawNotes(){
     else if(index == 6 ) offset = 14;
     else if(index == 8 ) offset = 15;
     else if(index == 10) offset = 16;
-    let alt1 = "Pattern: " + modeList[_scale] + "\nKey: " + keySharpList[keyIndex] + "\n" + allModesList[_scale][index]; // "Notation image 1";
-    let alt2 = "Pattern: " + modeList[_scale] + "\nKey: " + keyFlatList [keyIndex] + "\n" + allModesList[_scale][index]; // "Notation image 2";
     if(_scale < 5){
         img1.innerHTML = _images[_scale][index*7+_mode];
         if(offset) {
             img2.innerHTML = _images[_scale][offset*7+_mode];
         }
     }
+    // let alt1 = "Pattern: " + modeList[_scale] + "\nKey: " + keySharpList[keyIndex] + "\n" + allModesList[_scale][index]; // "Notation image 1";
+    // let alt2 = "Pattern: " + modeList[_scale] + "\nKey: " + keyFlatList [keyIndex] + "\n" + allModesList[_scale][index]; // "Notation image 2";
 
     // img1.elt.title = alt1;
     // if(offset){
