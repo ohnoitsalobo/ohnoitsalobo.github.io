@@ -52,6 +52,7 @@ table{
 #img{
     display:flex;
     justify-content: center;
+    height: 370px;
 }
 @media (max-width: 600px) {
     #img{
