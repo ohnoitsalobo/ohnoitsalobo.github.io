@@ -1518,11 +1518,11 @@
       </g>
       <g
          id="playScale"
-         style="display:inline"
+         style="display:inline;opacity:0.2;"
          transform="matrix(0.7,0,0,0.7,0,8.0349055)">
         <text
            xml:space="preserve"
-           style="font-weight:bold;font-size:20.5644px;line-height:10.2822px;font-family:'Book Antiqua';text-align:center;text-anchor:middle;display:inline;opacity:0.2;fill:#ffffff;fill-opacity:1;stroke-width:0.308466"
+           style="font-weight:bold;font-size:20.5644px;line-height:10.2822px;font-family:'Book Antiqua';text-align:center;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.308466"
            x="-0.11134347"
            y="5.2483191"
            id="text27"><tspan

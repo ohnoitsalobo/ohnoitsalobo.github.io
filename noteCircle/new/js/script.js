@@ -31,12 +31,12 @@ noteCircle.addEventListener("load", function(){
     noteCircleDOM.addEventListener('keydown', event => {
         playKeyboard(event);
     });
-    noteCircleDOM.getElementById("playScale").addEventListener("click", function (){
+    let _ps = noteCircleDOM.getElementById("playScale");
+    _ps.addEventListener("click", function (){
         playScale();
     });
     noteCircleDOM.getElementById("lockRotation").addEventListener("click", function (){
         lockNotes = !lockNotes;
-        // noteCircleDOM.getElementById("lockRotation").style.opacity = lockNotes ? '1' : '0.2' ;
         noteCircleDOM.getElementById("lock").style.opacity = lockNotes ? '1' : '0.1' ;
         noteCircleDOM.getElementById("arrows").style.opacity = lockNotes ? '1' : '0.2' ;
         // console.info(event.srcElement.parentElement);
@@ -152,7 +152,7 @@ scale_Select.addEventListener("change", event => {
         y.style.opacity = '0'; yy.style.opacity = '0'; console.info(yy);
         document.getElementById("img").style.display = "none";
         noteCircleDOM.getElementById("allModes").style.display = 'none';
-        y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
+        // y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
     }
     drawNotes();
 });
