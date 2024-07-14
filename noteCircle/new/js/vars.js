@@ -199,29 +199,28 @@ for(let i = 0; i < notes_highlight.length; i++){
     notes_highlight[i].setAttribute("y", "0");
     notes_highlight[i].style = ("transition: opacity 500ms; opacity: 0.2;");
     notes_highlight[i].setAttribute("id", "rect"+i);
-    if(i == 0 || i == notes_highlight.length - 1){
-        notes_highlight[i].setAttribute("x", "100");
+    if(i == 0 || i == 14){
+        notes_highlight[i].setAttribute("x", "90");
     }
-    if(i == 1 || i == notes_highlight.length - 2){
-        notes_highlight[i].setAttribute("x", "164");
+    if(i == 1 || i == 13){
+        notes_highlight[i].setAttribute("x", "150");
     }
-    if(i == 2 || i == notes_highlight.length - 3){
-        notes_highlight[i].setAttribute("x", "228");
+    if(i == 2 || i == 12){
+        notes_highlight[i].setAttribute("x", "210");
     }
-    if(i == 3 || i == notes_highlight.length - 4){
-        notes_highlight[i].setAttribute("x", "292");
+    if(i == 3 || i == 11){
+        notes_highlight[i].setAttribute("x", "270");
     }
-    if(i == 4 || i == notes_highlight.length - 5){
-        notes_highlight[i].setAttribute("x", "358");
+    if(i == 4 || i == 10){
+        notes_highlight[i].setAttribute("x", "330");
     }
-    if(i == 5 || i == notes_highlight.length - 6){
-        notes_highlight[i].setAttribute("x", "422");
+    if(i == 5 || i == 9){
+        notes_highlight[i].setAttribute("x", "415");
     }
-    if(i == 6 || i == notes_highlight.length - 7){
-        notes_highlight[i].setAttribute("x", "486");
+    if(i == 6 || i == 8){
+        notes_highlight[i].setAttribute("x", "480");
     }
     if(i == 7){
-        notes_highlight[i].setAttribute("x", "550");
+        notes_highlight[i].setAttribute("x", "545");
     }
 }
-

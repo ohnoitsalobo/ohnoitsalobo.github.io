@@ -358,52 +358,66 @@ function playScale(){
     let _tt = 250;
     let _scale = scale_Select.selectedIndex;
     let _mode = mode_Select.selectedIndex;
-    highlightNote(0);
     
     setTimeout( function(){
      playNote(modeCheck(1));
+     highlightNote(0);
      touchArray[1].style.opacity = "1"; setTimeout(function(){ touchArray[1].style.opacity = "0"; }, _tt);
      setTimeout( function(){
       playNote(modeCheck(2));
+      highlightNote(1);
       touchArray[modeCheck(2)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(2)+1].style.opacity = "0"; }, _tt);
       setTimeout( function(){
        playNote(modeCheck(3));
+       highlightNote(2);
        touchArray[modeCheck(3)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(3)+1].style.opacity = "0"; }, _tt);
        setTimeout( function(){
         playNote(modeCheck(4));
+        highlightNote(3);
         touchArray[modeCheck(4)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(4)+1].style.opacity = "0"; }, _tt);
         setTimeout( function(){
          playNote(modeCheck(5));
+         highlightNote(4);
          touchArray[modeCheck(5)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(5)+1].style.opacity = "0"; }, _tt);
          setTimeout( function(){
           playNote(modeCheck(6));
+          highlightNote(5);
           touchArray[modeCheck(6)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(6)+1].style.opacity = "0"; }, _tt);
           setTimeout( function(){
            playNote(modeCheck(7));
+           highlightNote(6);
            touchArray[modeCheck(7)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(7)+1].style.opacity = "0"; }, _tt);
            setTimeout( function(){
             playNote(modeCheck(8));
+            highlightNote(7);
             touchArray[0].style.opacity = "1"; setTimeout(function(){ touchArray[0].style.opacity = "0"; }, _tt);
             setTimeout( function(){
              if(_scale == 1 && _mode == 0) playNote(modeCheck(7) - 1); else playNote(modeCheck(7));
+             highlightNote(8);
              touchArray[modeCheck(7)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(7)+1].style.opacity = "0"; }, _tt);
              setTimeout( function(){
               if(_scale == 1 && _mode == 0) playNote(modeCheck(6) - 1); else playNote(modeCheck(6));
+              highlightNote(9);
               touchArray[modeCheck(6)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(6)+1].style.opacity = "0"; }, _tt);
               setTimeout( function(){
                playNote(modeCheck(5));
+               highlightNote(10);
                touchArray[modeCheck(5)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(5)+1].style.opacity = "0"; }, _tt);
                setTimeout( function(){
                 playNote(modeCheck(4));
+                highlightNote(11);
                 touchArray[modeCheck(4)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(4)+1].style.opacity = "0"; }, _tt);
                 setTimeout( function(){
                  playNote(modeCheck(3));
+                 highlightNote(12);
                  touchArray[modeCheck(3)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(3)+1].style.opacity = "0"; }, _tt);
                  setTimeout( function(){
                   playNote(modeCheck(2));
+                  highlightNote(13);
                   touchArray[modeCheck(2)+1].style.opacity = "1"; setTimeout(function(){ touchArray[modeCheck(2)+1].style.opacity = "0"; }, _tt);
                   setTimeout( function(){
                    playNote(modeCheck(1));
+                   highlightNote(14);
                     touchArray[1].style.opacity = "1"; setTimeout(function(){ touchArray[1].style.opacity = "0"; }, _tt);
                   }, _tt);
                  }, _tt);
@@ -488,13 +502,12 @@ function drawNotes(){
 function highlightNote(x){
     let svg = document.getElementById("img1").childNodes[0].childNodes[1].contentDocument;
     let _svg = svg.childNodes[0];
-    // console.info(svg);
-    // for(var i = 0; i < notes_highlight.length; i++){
-        // _svg.appendChild(notes_highlight[i]);
-        // setTimeout( function(){
-            // _svg.lastChild
-        // }, 300;
-    // }
+        let _t = _svg.appendChild(notes_highlight[x]);
+        _t.style.opacity = '0.2';
+        // console.info(_t);
+        setTimeout( function(){
+            _t.style.opacity = '0';
+        }, 100);
 }
 
 function modeCheck(t){
