@@ -285,6 +285,7 @@ function playNote(event){
         transpose *= root12_2;
     }
     synth.triggerAttackRelease(tone[_id]*transpose, "8n");
+    
 }
 
 function playKeyboard(e){
@@ -357,6 +358,7 @@ function playScale(){
     let _tt = 250;
     let _scale = scale_Select.selectedIndex;
     let _mode = mode_Select.selectedIndex;
+    highlightNote(0);
     
     setTimeout( function(){
      playNote(modeCheck(1));
@@ -480,6 +482,18 @@ function drawNotes(){
     // img1.elt.title = alt1;
     // if(offset){
         // img2.elt.title = alt2;
+    // }
+}
+
+function highlightNote(x){
+    let svg = document.getElementById("img1").childNodes[0].childNodes[1].contentDocument;
+    let _svg = svg.childNodes[0];
+    // console.info(svg);
+    // for(var i = 0; i < notes_highlight.length; i++){
+        // _svg.appendChild(notes_highlight[i]);
+        // setTimeout( function(){
+            // _svg.lastChild
+        // }, 300;
     // }
 }
 
