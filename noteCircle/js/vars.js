@@ -236,7 +236,7 @@ for(var x = 0; x < 15; x++){
 for(let i = 0; i < notes_highlight.length; i++){
     notes_highlight[i].setAttribute("style", "fill:#000000;stroke:#000000;");
     notes_highlight[i].setAttribute("width", "60");
-    notes_highlight[i].setAttribute("height", "717");
+    notes_highlight[i].setAttribute("height", "740");
     notes_highlight[i].setAttribute("y", "0");
     notes_highlight[i].style = ("transition: opacity 500ms; opacity: 0.2;");
     notes_highlight[i].setAttribute("id", "rect"+i);

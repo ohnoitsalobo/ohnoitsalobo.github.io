@@ -508,21 +508,23 @@ function highlightNote(x){
     setTimeout( function(){
         _t.style.opacity = '0';
     }, 100);
-    setTimeout( function(){
-        while(_svg.lastChild.tagName == "rect"){
-            _svg.removeChild(_svg.lastChild);
-        }
-    }, 4000);
 
-    // if(document.getElementById("img2").childNodes.length){
-        // let svg1 = document.getElementById("img2").childNodes[0].childNodes[1].contentDocument;
-        // let _svg1 = svg1.childNodes[0];
-        // let _t1 = _svg1.appendChild(notes_highlight[x]);
-        // _t1.style.opacity = '0.2';
-        // setTimeout( function(){
-            // _t1.style.opacity = '0';
-        // }, 100);
-    // }
+    if(document.getElementById("img2").childNodes.length){
+        let svg1 = document.getElementById("img2").childNodes[0].childNodes[1].contentDocument;
+        let _svg1 = svg1.childNodes[0];
+        let _t1 = _svg1.appendChild(notes_highlight[x]);
+        _t1.style.opacity = '0.2';
+        setTimeout( function(){
+            _t1.style.opacity = '0';
+        }, 100);
+    }
+
+    // setTimeout( function(){
+        // while(_svg.lastChild.tagName == "rect"){
+            // _svg.removeChild(_svg.lastChild);
+        // }
+    // }, 4000);
+
 }
 
 function modeCheck(t){
