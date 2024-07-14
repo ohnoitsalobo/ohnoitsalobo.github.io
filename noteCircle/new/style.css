@@ -37,7 +37,7 @@ table{
     font-family: Ubuntu, Georgia;
     margin-top: 0.1em;
     width: 90%;
-    max-width: 500px;
+    max-width: 400px;
 }
 
 #otherModeSelect {
@@ -60,6 +60,22 @@ table{
     #img{
         display:flex;
         flex-wrap: wrap;
+    }
+    #noteCircle{
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1025px) {
+    #img1{
+        position: absolute;
+        top: 40px;
+        left: 10px;
+    }
+    #img2{
+        position: absolute;
+        top: 40px;
+        right: 10px;
     }
 }
 
