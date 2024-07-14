@@ -66,16 +66,17 @@ table{
     }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     #img1{
         position: absolute;
         top: 40px;
-        left: 10px;
+        left: 5px;
+        /* margin-left: -5px */
     }
     #img2{
         position: absolute;
         top: 40px;
-        right: 10px;
+        right: 20px;
     }
 }
 

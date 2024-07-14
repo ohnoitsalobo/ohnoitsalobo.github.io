@@ -34,7 +34,7 @@ let _images = [majorScale, melodicMinorScale, harmonicMinorScale, harmonicMajorS
 
 function loadScales(){
     // let begin = "<object width=\"50%\" type=\"image/svg+xml\" data=\"modes/svg/";
-    let begin = "<object type=\"image/svg+xml\" data=\"modes/svg/";
+    let begin = "<object type=\"image/svg+xml\" data=\"../modes/svg/";
     let end = ".svg\">Please use a web browser with SVG image support to see the image.</object>";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){

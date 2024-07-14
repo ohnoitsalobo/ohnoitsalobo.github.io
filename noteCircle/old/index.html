@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+        <title>Circle of Notes (modes cheat sheet)</title>
+        
+        <script src="js/tone.js"></script>
+        <script src="js/p5.js"></script>
+        <script src="js/vars.js"></script>
+        <script src="js/elements.js"></script>
+        <script src="js/playTone.js"></script>
+        <script src="js/noteCircle.js"></script>
+        <script src="js/text.js"></script>
+    </head>
+    <body style="background-color:#888;">
+        <!-- If you find this app useful, please consider helping me out by <a href="https://ko-fi.com/ohnoitsalobo">buying me a coffee, or five</a>. :-) <br/ ><br/ > -->
+        <div id="menus">
+            <div><small>
+                Coded using <a href="https://p5js.org/">p5.js</a> for graphics and <a href="https://tonejs.github.io/">Tone.js</a> for sound. Notation and tablature generated using <a href="https://musescore.org">MuseScore</a>.
+            </small></div>
+        </div>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="noteCircle">
+                                </div>
+                            </td>
+                            <td>
+                                <div id="mouseOverText" style="background-color: grey; font-size: 75%;">
+                                </div>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <br />
+                                            Related viewing:
+                                            <a href="https://www.youtube.com/watch?v=VPWQC4pdEco&list=PLMvVESrbjBWplAcg3pG0TesncGT7qvO06&index=14">12ToneVideos</a>, 
+                                            <!-- <br /> -->
+                                            <a href="https://www.youtube.com/watch?v=T5SmcH11kUk">Rick Beato</a>,   
+                                            <!-- <br /> -->
+                                            <a href="https://www.youtube.com/watch?v=oGeBem72R3Y">Clock diagrams</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <br />
+                                            If you find this app useful, please consider supporting my work.
+                                            <br />
+                                            <br />
+                                            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support me on Ko-fi', '#222222', 'ohnoitsalobo');kofiwidget2.draw();</script> 
+                                            <!-- If you find this app useful, you could <a href='https://ko-fi.com/ohnoitsalobo' target='_blank'><img height='36' style='border:0px; height:30px;' src='https://cdn.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> -->
+                                        </td>
+                                    </tr>
+                               </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="transform: scale(0.6); transform-origin: top left;">
+                    <!-- <div style="width:50%;"> -->
+                        <table id="img" style="display:none;">
+                            <tr>
+                                <td>
+                                    <div style="text-align: right; font-family: Georgia; font-size: 1.5em;">
+                                        Treble clef<br />(G clef)<br /><br /><br /><br />
+                                        Alto clef<br />(C clef)  <br /><br /><br /><br />
+                                        Bass clef<br />(F clef)  <br /><br /><br /><br />
+                                        Mandolin<br />tablature  <br /><br /><br /><br /><br />
+                                        Guitar<br />tablature    <br /><br /><br />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="img1" style="background-color:#BBB;">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="img2" style="background-color:#BBB;">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        &copy; <script>document.write(new Date().getFullYear())</script> <a href="../index.html">Anand Lobo</a> All rights reserved.<br /><br />
+    </body>
+</html>
+

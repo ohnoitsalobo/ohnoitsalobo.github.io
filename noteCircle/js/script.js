@@ -452,7 +452,7 @@ const imageOrder = [ 0, 1, 3, 4, 6, 7, 8, 10, 11, 13, 14, 16, 2, 5, 9, 12, 15];
 function loadScales(){
     // let begin = "<object width='50%' type='image/svg+xml' data='modes/svg/";
     let mid = "<div style='max-width: 350px;'><div class='imgText'><div style='margin-top: 4px;'>Treble (G clef)</div><div style='margin-top: 48px;'>Alto (C clef)</div><div style='margin-top: 49px;'>Bass (F clef)</div><div style='margin-top: 51px;'>Mandolin TAB</div><div style='margin-top: 57px;'>Guitar TAB</div></div>";
-    let begin = mid + "<object type='image/svg+xml' data='../modes/svg/";
+    let begin = mid + "<object type='image/svg+xml' data='modes/svg/";
     let end = ".svg' style='max-width: 300px; filter: invert(1);'>Please use a web browser with SVG image support to see the image.</object>";
     for(let j = 0; j < 17; j++){
         for(let i = 0; i < 7; i++){
@@ -504,10 +504,15 @@ function highlightNote(x){
     let _svg = svg.childNodes[0];
     let _t = _svg.appendChild(notes_highlight[x]);
     _t.style.opacity = '0.2';
-    // console.info(_t);
+    console.info(_svg);
     setTimeout( function(){
         _t.style.opacity = '0';
     }, 100);
+    setTimeout( function(){
+        while(_svg.lastChild.tagName == "rect"){
+            _svg.removeChild(_svg.lastChild);
+        }
+    }, 4000);
 
     // if(document.getElementById("img2").childNodes.length){
         // let svg1 = document.getElementById("img2").childNodes[0].childNodes[1].contentDocument;
