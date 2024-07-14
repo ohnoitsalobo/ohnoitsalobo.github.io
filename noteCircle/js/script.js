@@ -127,7 +127,7 @@ scale_Select.addEventListener("change", event => {
     for(let i = 0; i < 7; i++){
         let opt = document.createElement('option');
         opt.value = i;
-        opt.innerHTML = allModesList[a.selectedIndex][i];
+        opt.innerHTML = (i+1) + ": " + allModesList[a.selectedIndex][i];
         mode_Select.appendChild(opt);
     }
     y.selectedIndex = _y;
