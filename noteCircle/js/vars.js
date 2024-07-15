@@ -9,11 +9,11 @@ let keyFlatterList = [ "D\u{1D12B}", "D\u266D", "E\u{1D12B}", "E\u266D", "F\u266
 
 let modeSelect;
 let modeList = [
-"Major",
-"Melodic minor"   ,
-"Harmonic minor"  ,
-"Harmonic major"  ,
-"Double harmonic" ,
+"Major scale",
+"Melodic minor scale"   ,
+"Harmonic minor scale"  ,
+"Harmonic major scale"  ,
+"Double harmonic scale" ,
 "Other scales"    
 ];
 
