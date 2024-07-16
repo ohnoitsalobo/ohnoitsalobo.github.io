@@ -62,11 +62,25 @@ noteCircle.addEventListener("load", function(){
     }
     noteCircleDOM.getElementById("questionMark").addEventListener("click", function (){
         helpOverlay = !helpOverlay;
-        console.log(event.srcElement);
-        event.srcElement.parentElement.style.opacity = helpOverlay ? '1': '0.3';
+        let _t = event.srcElement.parentElement;
+        _t.style.opacity = helpOverlay ? '1': '0.1';
+        _t.childNodes[1].style.fill = helpOverlay ? 'gold': 'white';
         showHelp();
     });
-}, false);
+    
+    noteCircleDOM.getElementById("root_cw").addEventListener("click", function (){
+        key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+    });
+    noteCircleDOM.getElementById("root_ccw").addEventListener("click", function (){
+        key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+    });
+    noteCircleDOM.getElementById("mode_cw").addEventListener("click", function (){
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+    });
+    noteCircleDOM.getElementById("mode_ccw").addEventListener("click", function (){
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+    });
+}, {passive : false});
 
 key_Select.addEventListener("wheel", event => { // down +, up -
     event.preventDefault(); // prevent page scroll
@@ -87,7 +101,7 @@ key_Select.addEventListener("wheel", event => { // down +, up -
         x.selected = true;
     }
     event.srcElement.dispatchEvent(optionChanged);
-});
+}, {passive : false});
 key_Select.addEventListener("change", event => {
     // keyIndex = event.srcElement.selectedOptions[0].value;
     currentNoteRotation = (key_Select.selectedOptions[0].value * -30) + (numOfRotations * 360);
@@ -113,7 +127,7 @@ scale_Select.addEventListener("wheel", event => {
         x.selected = true;
     }
     event.srcElement.dispatchEvent(optionChanged);
-});
+}, {passive : false});
 scale_Select.addEventListener("change", event => {
     // console.info(event.srcElement.selectedOptions[0]);
     noteCircleDOM.getElementById("allModes").style.display = '';
@@ -183,7 +197,7 @@ mode_Select.addEventListener("wheel", event => {
         x.selected = true;
     }
     event.srcElement.dispatchEvent(optionChanged);
-});
+}, {passive : false});
 mode_Select.addEventListener("change", event => {
     // console.info(event.srcElement.selectedOptions[0]);
     // calculate rotation for each mode 'mask'
