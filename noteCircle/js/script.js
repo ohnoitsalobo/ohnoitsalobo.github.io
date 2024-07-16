@@ -1038,7 +1038,7 @@ function showHelp(){
             You can also tap individual note names.<br /><br />             \
             3. Change your starting note (root or tonic) <br />            \
             by rotating the lower circle. <br /><br />                      \
-            4.Change the mode (the distribution of intervals) <br />      \
+            4. Change the mode (the distribution of intervals) <br />      \
             by rotating the upper circle.<br /><br />                       \
             5. Change the base pattern of notes (the scale). <br /><br />  \
             See the written representation of the<br />             \
