@@ -67,6 +67,9 @@ table{
 }
 
 @media (min-width: 1024px) {
+    body {
+        /* overflow: hidden; */
+    }
     #img1{
         position: absolute;
         top: 40px;
@@ -77,6 +80,10 @@ table{
         position: absolute;
         top: 40px;
         right: 20px;
+    }
+    #img{
+        /* position: absolute; */
+        /* height: 0px; */
     }
 }
 

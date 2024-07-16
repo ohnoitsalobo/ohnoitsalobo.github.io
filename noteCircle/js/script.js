@@ -1040,7 +1040,7 @@ function showHelp(){
             by rotating the lower circle. <br /><br />                      \
             (5) Change the mode (the distribution of intervals) <br />      \
             by rotating the upper circle.<br /><br />                       \
-            (Below) See the written representation of the<br />             \
+            See the written representation of the<br />             \
             selected notes in notation and tablature. <br /><br />          \
         ";
     }else{
