@@ -364,12 +364,9 @@ function playKeyboard(e){
     }
     else if(e.key == '8' ) { 
         playNote(12); 
-        playNote(0); 
         touchArray[0].style.opacity = "1";
-        touchArray[1].style.opacity = "1";
         setTimeout(function(){
             touchArray[0].style.opacity = "0";
-            touchArray[1].style.opacity = "0";
         }, 500);
     }
     /*
