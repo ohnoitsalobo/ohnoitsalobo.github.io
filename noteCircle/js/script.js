@@ -40,7 +40,7 @@ noteCircle.addEventListener("load", function(){
         noteCircleDOM.getElementById("arrows").style.opacity = lockNotes ? '1' : '0.2' ;
         // console.info(event.srcElement.parentElement);
     });
-    noteCircle_base = noteCircleDOM.getElementById("noteCircle_base"); let _tr = "transform 1000ms";
+    noteCircle_base = noteCircleDOM.getElementById("noteCircle_base"); let _tr = "transform 750ms";
     noteCircle_base.style.transition = _tr;
 
     _0 = noteCircleDOM.getElementById("major");          _0.style.transition = _tr;

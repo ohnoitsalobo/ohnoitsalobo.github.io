@@ -86,7 +86,7 @@ a {
 }
 */
 footer{
-    /* display: none; */
+    display: none;
     /* position: absolute; */
     bottom: 0px;
     /* opacity: 0.2; */
