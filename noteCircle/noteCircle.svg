@@ -56,6 +56,9 @@
         #lockRotation{
             cursor: pointer;
         }
+        #questionMark{
+            cursor: help;
+        }
      </style>
   </defs>
   <g
@@ -71,7 +74,7 @@
          cx="0"
          cy="0"
          r="80"
-         style="fill:#818181;fill-opacity:1;stroke:#000000;stroke-width:0.11" />
+         style="fill:#666;fill-opacity:1;stroke:#000000;stroke-width:0.11" />
       <g
          id="note_names_flat"
          style="opacity:0">
@@ -1541,7 +1544,7 @@
     </g>
   </g>
   <g
-     style="display:;font-size:495px;font-style:normal;font-weight:normal;line-height:125%;fill:#aeaeae;fill-opacity:1;stroke:none;font-family:Balkeno"
+     style="opacity: 0.5;display:;font-size:495px;font-style:normal;font-weight:normal;line-height:125%;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Balkeno"
      id="questionMark"
      transform="matrix(0.03409365,0,0,0.03409365,150.47303,1.9734455)">
     <path

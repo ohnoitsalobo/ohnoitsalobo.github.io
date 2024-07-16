@@ -62,6 +62,8 @@ noteCircle.addEventListener("load", function(){
     }
     noteCircleDOM.getElementById("questionMark").addEventListener("click", function (){
         helpOverlay = !helpOverlay;
+        console.log(event.srcElement);
+        event.srcElement.parentElement.style.opacity = helpOverlay ? '1': '0.3';
         showHelp();
     });
 }, false);
