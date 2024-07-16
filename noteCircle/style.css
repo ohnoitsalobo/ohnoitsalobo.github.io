@@ -68,28 +68,23 @@ a {
         max-width: 500px;
     }
 }
-
+/*
 @media (min-width: 1024px) {
-    body {
-        /* overflow: hidden; */
-    }
+
     #img1{
         position: absolute;
         top: 40px;
         left: 5px;
-        /* margin-left: -5px */
+
     }
     #img2{
         position: absolute;
         top: 40px;
         right: 20px;
     }
-    #img{
-        /* position: absolute; */
-        /* height: 0px; */
-    }
-}
 
+}
+*/
 footer{
     /* position: absolute; */
     bottom: 0px;
