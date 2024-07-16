@@ -159,6 +159,7 @@ scale_Select.addEventListener("change", event => {
         // y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
     }
     drawNotes();
+    showHelp();
 });
 
 mode_Select.addEventListener("wheel", event => {
@@ -998,20 +999,20 @@ function showHelp(){
     let _t0 = document.getElementById("noteCircle").getBoundingClientRect();
     let _t1 = noteCircleDOM.getElementById("lockRotation").getBoundingClientRect();
     let _t2 = noteCircleDOM.getElementById("playScale").getBoundingClientRect();
-    let _t3 = scale_Select.getBoundingClientRect();
-    let _t4 = key_Select.getBoundingClientRect();
-    let _t5 = mode_Select.getBoundingClientRect();
+    let _t3 = key_Select.getBoundingClientRect();
+    let _t4 = mode_Select.getBoundingClientRect();
+    let _t5 = scale_Select.getBoundingClientRect();
     let _t6 = document.getElementById("img1").getBoundingClientRect();
     
     let _help1 = document.getElementById("help1"); let _h1x = _t0.left+_t1.x-15, _h1y = _t0.top+_t1.y+5;
     let _help2 = document.getElementById("help2"); let _h2x = _t0.left+_t2.x-15, _h2y = _t0.top+_t2.y+5;
     let _help3 = document.getElementById("help3"); let _h3x = _t3.x+10, _h3y = _t3.y-_t3.height;
-    let _help4 = document.getElementById("help4"); let _h4x = _t4.x+10, _h4y = _t4.y+_t4.height;
-    let _help5 = document.getElementById("help5"); let _h5x = _t5.x+_t5.width-20, _h5y = _t5.y+_t5.height;
+    let _help4 = document.getElementById("help4"); let _h4x = _t4.x+_t4.width-20, _h4y = _t4.y-_t4.height;
+    let _help5 = document.getElementById("help5"); let _h5x = _t5.x+10, _h5y = _t5.y+_t5.height;
     // let _help6 = document.getElementById("help6"); let _h6x = _t6.x+_t6.width, _h6y = _t6.y;
     let _htext = document.getElementById("helpText");
     
-    if(helpOverlay){
+    if(helpOverlay && scale_Select.selectedIndex < 5){
         _help1.innerHTML  =  "1";
         _help1.style.left = _h1x+"px";
         _help1.style.top  = _h1y+"px";
@@ -1035,11 +1036,11 @@ function showHelp(){
             (1) Lock the visible notes in the pattern.<br /><br />          \
             (2) Listen to the selected notes. <br />                        \
             You can also tap individual note names.<br /><br />             \
-            (3) Change the base pattern of notes (the scale). <br /><br />  \
-            (4) Change your starting note (root or tonic) <br />            \
+            (3) Change your starting note (root or tonic) <br />            \
             by rotating the lower circle. <br /><br />                      \
-            (5) Change the mode (the distribution of intervals) <br />      \
+            (4) Change the mode (the distribution of intervals) <br />      \
             by rotating the upper circle.<br /><br />                       \
+            (5) Change the base pattern of notes (the scale). <br /><br />  \
             See the written representation of the<br />             \
             selected notes in notation and tablature. <br /><br />          \
         ";
