@@ -40,14 +40,14 @@ noteCircle.addEventListener("load", function(){
         noteCircleDOM.getElementById("arrows").style.opacity = lockNotes ? '1' : '0.2' ;
         // console.info(event.srcElement.parentElement);
     });
-    noteCircle_base = noteCircleDOM.getElementById("noteCircle_base");
-    noteCircle_base.style.transition = "transform 500ms";
+    noteCircle_base = noteCircleDOM.getElementById("noteCircle_base"); let _tr = "transform 1000ms";
+    noteCircle_base.style.transition = _tr;
 
-    _0 = noteCircleDOM.getElementById("major");          _0.style.transition = "transform 500ms";
-    _1 = noteCircleDOM.getElementById("melodicMinor");   _1.style.transition = "transform 500ms";
-    _2 = noteCircleDOM.getElementById("harmonicMinor");  _2.style.transition = "transform 500ms";
-    _3 = noteCircleDOM.getElementById("harmonicMajor");  _3.style.transition = "transform 500ms";
-    _4 = noteCircleDOM.getElementById("doubleHarmonic"); _4.style.transition = "transform 500ms";
+    _0 = noteCircleDOM.getElementById("major");          _0.style.transition = _tr;
+    _1 = noteCircleDOM.getElementById("melodicMinor");   _1.style.transition = _tr;
+    _2 = noteCircleDOM.getElementById("harmonicMinor");  _2.style.transition = _tr;
+    _3 = noteCircleDOM.getElementById("harmonicMajor");  _3.style.transition = _tr;
+    _4 = noteCircleDOM.getElementById("doubleHarmonic"); _4.style.transition = _tr;
 
     touchArray = noteCircleDOM.getElementById("touch").getElementsByTagName("rect");
     // console.info(touchArray);
