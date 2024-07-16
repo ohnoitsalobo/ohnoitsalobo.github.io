@@ -88,10 +88,10 @@ table{
 }
 
 footer{
-    position: absolute;
-    top: 0px;
+    /* position: absolute; */
+    bottom: 0px;
     opacity: 0.2;
-    margin: -20px;
+    /* margin: -20px; */
 }
 .helpOverlay{
     position: absolute;
