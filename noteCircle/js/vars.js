@@ -1,5 +1,6 @@
 let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0;
 let numOfRotations = 0;
+let helpOverlay = 0;
 
 let keyList = [ "C", "C\u266F/D\u266D", "D", "D\u266F/E\u266D", "E", "F", "F\u266F/G\u266D", "G", "G\u266F/A\u266D", "A", "A\u266F/B\u266D", "B" ];
 let keySharpList = [ "C", "C\u266F", "D", "D\u266F", "E", "F", "F\u266F", "G", "G\u266F", "A", "A\u266F", "B" ];
