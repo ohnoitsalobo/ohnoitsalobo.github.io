@@ -86,12 +86,12 @@ footer{
 }
 .helpOverlay{
     position: absolute;
-    color: blue;
+    color: gold;
     font-size: 1.5em;
     font-weight: bold;
 }
 #helpText{
-    color: white;
+    color: gold;
     font-size: 0.8em;
     /* font-weight: bold; */
 }
