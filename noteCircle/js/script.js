@@ -1,5 +1,5 @@
 /*-----------------------------------*\
-
+                VARS
 \*-----------------------------------*/
 let noteCircle = document.getElementById('noteCircle');
 let noteCircleDOM, _0, _1, _2, _3, _4, noteCircle_base;
@@ -14,13 +14,12 @@ let other_Mode_Select  = document.getElementById("otherModeSelect");   // get mo
 const optionChanged = new CustomEvent("change");
 
 /*-----------------------------------*\
-
+            eventlisteners
 \*-----------------------------------*/
 
 document.addEventListener('keydown', event => {
     playKeyboard(event);
 });
-document.getElementById("modeSelectText").addEventListener("click", playScale);
 
 noteCircle.addEventListener("load", function(){
     noteCircleDOM = noteCircle.contentDocument;
@@ -55,7 +54,7 @@ noteCircle.addEventListener("load", function(){
     for(let i = 0; i < touchArray.length; i++){
         touchArray[i].addEventListener("mousedown", playNote, false);
         touchArray[i].addEventListener("mouseover", event => {
-            // console.log(event);
+            // console.info(event);
             if(event.buttons == 1)
                 playNote(event);
         });
@@ -68,11 +67,17 @@ noteCircle.addEventListener("load", function(){
         showHelp();
     });
     
+    noteCircleDOM.getElementById("keyScroll").addEventListener("wheel", function (){
+        key_Select.dispatchEvent(new event.constructor(event.type, event));
+    });
     noteCircleDOM.getElementById("root_cw").addEventListener("click", function (){
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
     });
     noteCircleDOM.getElementById("root_ccw").addEventListener("click", function (){
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+    });
+    noteCircleDOM.getElementById("modeScroll").addEventListener("wheel", function (){
+        mode_Select.dispatchEvent(new event.constructor(event.type, event));
     });
     noteCircleDOM.getElementById("mode_cw").addEventListener("click", function (){
         mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
@@ -105,12 +110,9 @@ key_Select.addEventListener("wheel", event => { // down +, up -
 key_Select.addEventListener("change", event => {
     // keyIndex = event.srcElement.selectedOptions[0].value;
     currentNoteRotation = (key_Select.selectedOptions[0].value * -30) + (numOfRotations * 360);
+    
     rotateNotes();
     
-    let x = document.getElementById("modeSelectText");
-    let _t = key_Select.selectedOptions[0].innerHTML + " &#9654; ";
-
-    x.innerHTML = _t + allModesList[scale_Select.selectedIndex][mode_Select.selectedIndex];
     drawNotes();
 });
 
@@ -132,10 +134,8 @@ scale_Select.addEventListener("change", event => {
     // console.info(event.srcElement.selectedOptions[0]);
     noteCircleDOM.getElementById("allModes").style.display = '';
     let a = event.srcElement;
-    let x = document.getElementById("modeSelectText");
     let y = document.getElementById("modeSelect"); let _y = y.selectedIndex;
     document.getElementById("img").style.display = "";
-    x.style.opacity = '1';
     y.style.opacity = '1';
     let yy = y.parentElement.previousElementSibling; yy.style.opacity = '1';
     _0.style.display = 'none';
@@ -151,25 +151,19 @@ scale_Select.addEventListener("change", event => {
         mode_Select.appendChild(opt);
     }
     y.selectedIndex = _y;
-    let _t = key_Select.selectedOptions[0].innerHTML + " &#9654; ";
+
     if(a.selectedIndex == 0){
-        x.innerHTML = _t + majorModeList[y.selectedIndex];
         _0.style.display = '';
     } else if(a.selectedIndex == 1){
-        x.innerHTML = _t + melodicMinorModeList[y.selectedIndex];
         _1.style.display = '';
     } else if(a.selectedIndex == 2){
-        x.innerHTML = _t + harmonicMinorModeList[y.selectedIndex];
         _2.style.display = '';
     } else if(a.selectedIndex == 3){
-        x.innerHTML = _t + harmonicMajorModeList[y.selectedIndex];
         _3.style.display = '';
     } else if(a.selectedIndex == 4){
-        x.innerHTML = _t + doubleHarmonicModeList[y.selectedIndex];
         _4.style.display = '';
     } else {
-        x.style.opacity = '0';
-        y.style.opacity = '0'; yy.style.opacity = '0'; console.info(yy);
+        y.style.opacity = '0'; yy.style.opacity = '0'; // console.info(yy);
         document.getElementById("img").style.display = "none";
         noteCircleDOM.getElementById("allModes").style.display = 'none';
         // y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
@@ -229,15 +223,12 @@ mode_Select.addEventListener("change", event => {
         numOfRotations = Math.floor(currentNoteRotation/360)+1;
         rotateNotes();
     }
-    let x = document.getElementById("modeSelectText");
-    let _t = key_Select.selectedOptions[0].innerHTML + " &#9654; ";
-
-    x.innerHTML = _t + allModesList[a.selectedIndex][event.srcElement.selectedIndex];
+    
     drawNotes();
 });
 
 /*-----------------------------------*\
-
+            FUNCTIONS
 \*-----------------------------------*/
 
 function process(){
@@ -266,7 +257,7 @@ function loadSelectors(){
     for(let x = 0; x < 7; x++){
         let opt = document.createElement('option');
         opt.value = x;
-        opt.innerHTML = "Mode : " + allModesList[0][x];
+        opt.innerHTML = (x+1) + allModesList[0][x];
         mode_Select.appendChild(opt);
     }
     let _o = document.getElementById("otherModeSelect");
@@ -277,12 +268,6 @@ function loadSelectors(){
         _o.appendChild(opt);
     }
     scale_Select.dispatchEvent(optionChanged);
-    let _x = document.getElementById("modeSelectText");
-    _x.innerHTML = key_Select.selectedOptions[0].innerHTML + " &#9654; " + allModesList[0][0];
-    // document.getElementById("lockNotes").addEventListener("click", function (){
-        // lockNotes = event.srcElement.checked;
-        // console.log(lockNotes);
-    // });
 }
 function rotateNotes(){
     keyIndex = (currentNoteRotation < 0) ? (currentNoteRotation / -30) % 12 : 11-((currentNoteRotation / 30)+11) % 12;
@@ -487,7 +472,7 @@ function playScale(){
     }, _tt);
 }
 /*-----------------------------------*\
-
+        IMAGE LOADING
 \*-----------------------------------*/
 
 let _img1 = document.getElementById("img1");
@@ -1038,7 +1023,7 @@ function modeCheck(t){
 }
 
 /*-----------------------------------*\
-
+            HELP OVERLAY
 \*-----------------------------------*/
 
 function showHelp(){
@@ -1048,13 +1033,13 @@ function showHelp(){
     let _t3 = key_Select.getBoundingClientRect();
     let _t4 = mode_Select.getBoundingClientRect();
     let _t5 = scale_Select.getBoundingClientRect();
-    let _t6 = document.getElementById("img1").getBoundingClientRect();
+    // let _t6 = document.getElementById("img1").getBoundingClientRect();
     
-    let _help1 = document.getElementById("help1"); let _h1x = _t0.left+_t1.x-15, _h1y = _t0.top+_t1.y+5;
-    let _help2 = document.getElementById("help2"); let _h2x = _t0.left+_t2.x-15, _h2y = _t0.top+_t2.y+5;
-    let _help3 = document.getElementById("help3"); let _h3x = _t3.x+10, _h3y = _t3.y-_t3.height;
+    let _help1 = document.getElementById("help1"); let _h1x = _t0.left+_t1.x-15 , _h1y = _t0.top+_t1.y+5;
+    let _help2 = document.getElementById("help2"); let _h2x = _t0.left+_t2.x-15 , _h2y = _t0.top+_t2.y+5;
+    let _help3 = document.getElementById("help3"); let _h3x = _t3.x+10          , _h3y = _t3.y-_t3.height;
     let _help4 = document.getElementById("help4"); let _h4x = _t4.x+_t4.width-20, _h4y = _t4.y-_t4.height;
-    let _help5 = document.getElementById("help5"); let _h5x = _t5.x+10, _h5y = _t5.y+_t5.height;
+    let _help5 = document.getElementById("help5"); let _h5x = _t5.x+10          , _h5y = _t5.y+_t5.height;
     // let _help6 = document.getElementById("help6"); let _h6x = _t6.x+_t6.width, _h6y = _t6.y;
     let _htext = document.getElementById("helpText");
     
