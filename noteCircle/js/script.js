@@ -1033,15 +1033,15 @@ function showHelp(){
         // _help6.style.top  = _h6y+"px";
         // console.info(_help5);
         _htext.innerHTML= " <br \>\
-            1. Lock the visible notes in the pattern.<br /><br />           \
-            2. Listen to the selected notes. <br />                         \
-            You can also tap individual note names.<br />                   \
+            1. <u>Lock the visible notes in the pattern</u>.<br /><br />           \
+            2. <u>Listen to the selected notes</u>. <br />                         \
+            You can also tap individual note names</u>.<br />                   \
             Desktop users can use 'space' and numbers 1-8.<br /><br />  \
-            3. Change your starting note (root or tonic) <br />             \
+            3. <u>Change your starting note</u> (root or tonic) <br />             \
             by rotating the lower circle. <br /><br />                      \
-            4. Change the mode (the distribution of intervals) <br />       \
+            4. <u>Change the mode</u> (the distribution of intervals) <br />       \
             by rotating the upper circle.<br /><br />                       \
-            5. Change the base pattern of notes (the scale). <br /><br />   \
+            5. <u>Change the base pattern of notes</u> (the scale). <br /><br />   \
             See the written representation of the<br />                     \
             selected notes in notation and tablature. <br /><br />          \
         ";
