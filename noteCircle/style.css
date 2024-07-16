@@ -88,6 +88,8 @@ table{
 }
 
 footer{
+    position: absolute;
+    top: 0px;
     opacity: 0.2;
     margin: -20px;
 }
