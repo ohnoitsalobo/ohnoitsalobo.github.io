@@ -24,6 +24,9 @@ table{
     max-width: 600px;
     font-size: 1.2em;
 }
+a {
+    color: gold;
+}
 .container{
     margin: 0px;
 }
@@ -90,8 +93,8 @@ table{
 footer{
     /* position: absolute; */
     bottom: 0px;
-    opacity: 0.2;
-    /* margin: -20px; */
+    /* opacity: 0.2; */
+    padding: 20px;
 }
 .helpOverlay{
     position: absolute;
