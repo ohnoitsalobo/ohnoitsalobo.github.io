@@ -28,7 +28,7 @@
             animation-duration: 500ms;
         }
         g{
-            /*transition: opacity 500ms, transform 500ms;*/
+            transition: opacity 500ms, transform 750ms;
         }
         #playScale{
             cursor: pointer;

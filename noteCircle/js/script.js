@@ -40,7 +40,7 @@ noteCircle.addEventListener("load", function(){
         noteCircleDOM.getElementById("arrows").style.opacity = lockNotes ? '1' : '0.2' ;
         // console.info(event.srcElement.parentElement);
     });
-    noteCircle_base = noteCircleDOM.getElementById("noteCircle_base"); let _tr = "transform 750ms";
+    noteCircle_base = noteCircleDOM.getElementById("noteCircle_base"); let _tr = ""; //"transform 750ms";
     noteCircle_base.style.transition = _tr;
 
     _0 = noteCircleDOM.getElementById("major");          _0.style.transition = _tr;
@@ -62,7 +62,7 @@ noteCircle.addEventListener("load", function(){
     noteCircleDOM.getElementById("questionMark").addEventListener("click", function (){
         helpOverlay = !helpOverlay;
         let _t = event.srcElement.parentElement;
-        _t.style.opacity = helpOverlay ? '1': '0.1';
+        _t.style.opacity = helpOverlay ? '1': '0.3';
         _t.childNodes[1].style.fill = helpOverlay ? 'gold': 'white';
         showHelp();
     });
