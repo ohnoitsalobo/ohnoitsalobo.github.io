@@ -1033,14 +1033,14 @@ function showHelp(){
     let _t3 = key_Select.getBoundingClientRect();
     let _t4 = mode_Select.getBoundingClientRect();
     let _t5 = scale_Select.getBoundingClientRect();
-    // let _t6 = document.getElementById("img1").getBoundingClientRect();
+
     
     let _help1 = document.getElementById("help1"); let _h1x = _t0.left+_t1.x-15 , _h1y = _t0.top+_t1.y+5;
     let _help2 = document.getElementById("help2"); let _h2x = _t0.left+_t2.x-15 , _h2y = _t0.top+_t2.y+5;
     let _help3 = document.getElementById("help3"); let _h3x = _t3.x+_t3.width-20, _h3y = _t3.y-_t3.height;
     let _help4 = document.getElementById("help4"); let _h4x = _t4.x+_t4.width-20, _h4y = _t4.y-_t4.height;
     let _help5 = document.getElementById("help5"); let _h5x = _t5.x+_t5.width-20, _h5y = _t5.y+_t5.height;
-    // let _help6 = document.getElementById("help6"); let _h6x = _t6.x+_t6.width, _h6y = _t6.y;
+
     let _htext = document.getElementById("helpText");
     
     if(helpOverlay && scale_Select.selectedIndex < 5){
@@ -1059,10 +1059,7 @@ function showHelp(){
         _help5.innerHTML  =  "5";
         _help5.style.left = _h5x+"px";
         _help5.style.top  = _h5y+"px";
-        // _help6.innerHTML  =  "6.";  _help6.style = "color: lightblue;";
-        // _help6.style.left = _h6x+"px";
-        // _help6.style.top  = _h6y+"px";
-        // console.info(_help5);
+
         _htext.innerHTML= " <br \>\
             <b>1.</b> <u>Lock the visible notes in the pattern</u>.<br /><br />           \
             <b>2.</b> <u>Listen to the selected notes</u>. <br />                         \
