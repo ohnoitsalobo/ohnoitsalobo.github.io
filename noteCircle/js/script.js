@@ -1037,9 +1037,9 @@ function showHelp(){
     
     let _help1 = document.getElementById("help1"); let _h1x = _t0.left+_t1.x-15 , _h1y = _t0.top+_t1.y+5;
     let _help2 = document.getElementById("help2"); let _h2x = _t0.left+_t2.x-15 , _h2y = _t0.top+_t2.y+5;
-    let _help3 = document.getElementById("help3"); let _h3x = _t3.x+10          , _h3y = _t3.y-_t3.height;
+    let _help3 = document.getElementById("help3"); let _h3x = _t3.x+_t3.width-20, _h3y = _t3.y-_t3.height;
     let _help4 = document.getElementById("help4"); let _h4x = _t4.x+_t4.width-20, _h4y = _t4.y-_t4.height;
-    let _help5 = document.getElementById("help5"); let _h5x = _t5.x+10          , _h5y = _t5.y+_t5.height;
+    let _help5 = document.getElementById("help5"); let _h5x = _t5.x+_t5.width-20, _h5y = _t5.y+_t5.height;
     // let _help6 = document.getElementById("help6"); let _h6x = _t6.x+_t6.width, _h6y = _t6.y;
     let _htext = document.getElementById("helpText");
     
@@ -1064,15 +1064,15 @@ function showHelp(){
         // _help6.style.top  = _h6y+"px";
         // console.info(_help5);
         _htext.innerHTML= " <br \>\
-            1. <u>Lock the visible notes in the pattern</u>.<br /><br />           \
-            2. <u>Listen to the selected notes</u>. <br />                         \
+            <b>1</b>. <u>Lock the visible notes in the pattern</u>.<br /><br />           \
+            <b>2</b>. <u>Listen to the selected notes</u>. <br />                         \
             You can also tap individual note names</u>.<br />                   \
             Desktop users can use 'space' and numbers 1-8.<br /><br />  \
-            3. <u>Change your starting note</u> (root or tonic) <br />             \
+            <b>3</b>. <u>Change your starting note</u> (root or tonic) <br />             \
             by rotating the lower circle. <br /><br />                      \
-            4. <u>Change the mode</u> (the distribution of intervals) <br />       \
+            <b>4</b>. <u>Change the mode</u> (the distribution of intervals) <br />       \
             by rotating the upper circle.<br /><br />                       \
-            5. <u>Change the base pattern of notes</u> (the scale). <br /><br />   \
+            <b>5</b>. <u>Change the base pattern of notes</u> (the scale). <br /><br />   \
             See the written representation of the<br />                     \
             selected notes in notation and tablature. <br /><br />          \
         ";
