@@ -1066,15 +1066,15 @@ function showHelp(){
         _htext.innerHTML= " <br \>\
             <b>1</b>. <u>Lock the visible notes in the pattern</u>.<br /><br />           \
             <b>2</b>. <u>Listen to the selected notes</u>. <br />                         \
-            You can also tap individual note names</u>.<br />                   \
-            Desktop users can use 'space' and numbers 1-8.<br /><br />  \
+            You can also tap individual note names</u>.<br />                             \
+            Desktop users can use 'space' and numbers 1-8.<br /><br />                    \
             <b>3</b>. <u>Change your starting note</u> (root or tonic) <br />             \
-            by rotating the lower circle. <br /><br />                      \
+            by rotating the lower circle. <br /><br />                                    \
             <b>4</b>. <u>Change the mode</u> (the distribution of intervals) <br />       \
-            by rotating the upper circle.<br /><br />                       \
+            by rotating the upper circle.<br /><br />                                     \
             <b>5</b>. <u>Change the base pattern of notes</u> (the scale). <br /><br />   \
-            See the written representation of the<br />                     \
-            selected notes in notation and tablature. <br /><br />          \
+            See the written representation of the<br />                                   \
+            selected notes in notation and tablature. <br /><br />                        \
         ";
     }else{
         _help1.innerHTML = "";
