@@ -52,10 +52,12 @@ noteCircle.addEventListener("load", function(){
         _a.style.fill = lockNotes ? '#000000' : '#ffffff' ;
         
         if(rot_not < 2){
-            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
             noteCircleDOM.childNodes[1].style.pointerEvents = "none";
             setTimeout(function(){
-                mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+                mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+                mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
                 noteCircleDOM.childNodes[1].style.pointerEvents = "";
                 rot_not++;
             }, 600);
@@ -408,7 +410,8 @@ function playKeyboard(e){
     */
     if(e.key == ' ') {
         e.preventDefault();
-        playScale();
+        noteCircleDOM.getElementById("playScale").dispatchEvent(new event.constructor("click"));
+        // playScale();
     }
 }
 
