@@ -21,6 +21,7 @@ document.addEventListener('keydown', event => {
     playKeyboard(event);
 });
 
+let rot_not = 0;
 noteCircle.addEventListener("load", function(){
     noteCircleDOM = noteCircle.contentDocument;
     noteCircleDOM.addEventListener('mousewheel', event => {
@@ -32,12 +33,14 @@ noteCircle.addEventListener("load", function(){
     });
     let _ps = noteCircleDOM.getElementById("playScale");
     _ps.addEventListener("click", function (){
-        playScale();
+        playScale(_ps);
+        _ps.style.pointerEvents = "none";
         _ps.childNodes[1].style.fill = "#000000"
         _ps.style.opacity = "1"
         setTimeout(function(){
             _ps.childNodes[1].style.fill = "#ffffff"
             _ps.style.opacity = "0.5"
+            _ps.style.pointerEvents = "";
         }, 3750);
     });
     noteCircleDOM.getElementById("lockRotation").addEventListener("click", function (){
@@ -47,6 +50,16 @@ noteCircle.addEventListener("load", function(){
         _l.style.opacity = lockNotes ? '1' : '0.3' ;
         _a.style.opacity = lockNotes ? '1' : '0.3' ;
         _a.style.fill = lockNotes ? '#000000' : '#ffffff' ;
+        
+        if(rot_not < 2){
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+            noteCircleDOM.childNodes[1].style.pointerEvents = "none";
+            setTimeout(function(){
+                mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+                noteCircleDOM.childNodes[1].style.pointerEvents = "";
+                rot_not++;
+            }, 600);
+        }
         // console.info(event.srcElement.parentElement);
     });
     noteCircle_base = noteCircleDOM.getElementById("noteCircle_base"); let _tr = ""; //"transform 750ms";
