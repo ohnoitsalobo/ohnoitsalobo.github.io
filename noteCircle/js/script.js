@@ -33,11 +33,20 @@ noteCircle.addEventListener("load", function(){
     let _ps = noteCircleDOM.getElementById("playScale");
     _ps.addEventListener("click", function (){
         playScale();
+        _ps.childNodes[1].style.fill = "#000000"
+        _ps.style.opacity = "1"
+        setTimeout(function(){
+            _ps.childNodes[1].style.fill = "#ffffff"
+            _ps.style.opacity = "0.5"
+        }, 3750);
     });
     noteCircleDOM.getElementById("lockRotation").addEventListener("click", function (){
         lockNotes = !lockNotes;
-        noteCircleDOM.getElementById("lock").style.opacity = lockNotes ? '1' : '0.1' ;
-        noteCircleDOM.getElementById("arrows").style.opacity = lockNotes ? '1' : '0.2' ;
+        let _l = noteCircleDOM.getElementById("lock");
+        let _a = noteCircleDOM.getElementById("arrows");
+        _l.style.opacity = lockNotes ? '1' : '0.3' ;
+        _a.style.opacity = lockNotes ? '1' : '0.3' ;
+        _a.style.fill = lockNotes ? '#000000' : '#ffffff' ;
         // console.info(event.srcElement.parentElement);
     });
     noteCircle_base = noteCircleDOM.getElementById("noteCircle_base"); let _tr = ""; //"transform 750ms";

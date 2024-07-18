@@ -28,7 +28,7 @@
             animation-duration: 500ms;
         }
         g{
-            transition: opacity 500ms, transform 600ms;
+            transition: opacity 500ms, transform 600ms, fill 500ms;
         }
         #playScale{
             cursor: pointer;
@@ -1474,7 +1474,7 @@
          transform="translate(0,-7.5)">
         <g
            id="arrows"
-           style="display:inline;opacity:0.2"
+           style="display:inline;opacity:0.3;fill:#ffffff;stroke:#ffffff;stroke-width:0.33"
            transform="matrix(-0.02406237,0,0,-0.02406237,7.3631554,7.3631565)">
           <path
              d="m 67.079,299.982 c 1.255,0.245 2.526,0.342 3.78,0.342 4.367,0 8.636,-1.434 12.139,-4.122 l 81.826,-62.942 c 8.717,-6.729 10.346,-19.243 3.666,-27.943 -6.746,-8.815 -19.259,-10.379 -27.943,-3.666 l -40.343,31.055 c 30.664,-85.834 113.044,-146.495 207.09,-146.495 102.535,0 190.635,69.557 214.243,169.143 2.526,10.705 13.149,17.401 23.968,14.794 10.688,-2.525 17.304,-13.263 14.778,-23.967 C 532.422,128.542 428.388,46.374 307.294,46.374 194.397,46.374 95.479,120.249 60.741,224.283 L 37.05,184.348 c -5.605,-9.483 -17.841,-12.53 -27.275,-6.974 -9.466,5.621 -12.611,17.841 -6.974,27.292 l 50.934,85.899 c 2.884,4.904 7.756,8.326 13.344,9.417 z"
@@ -1485,7 +1485,7 @@
         </g>
         <g
            id="lock"
-           style="display:inline;opacity:0.1"
+           style="display:inline;opacity:0.3;fill:#000000;stroke:#ffffff;stroke-width:0.33"
            transform="matrix(0.02374718,0,0,0.02374718,-3.9182847,-3.9182847)">
           <path
              d="m 65,330 h 200 c 8.284,0 15,-6.716 15,-15 V 145 c 0,-8.284 -6.716,-15 -15,-15 H 250 V 85 C 250,38.131 211.869,0 165,0 118.131,0 80.001,38.131 80.001,85 v 45 H 65 c -8.284,0 -15,6.716 -15,15 v 170 c 0,8.284 6.716,15 15,15 z M 110.001,85 c 0,-30.327 24.673,-55 54.999,-55 30.327,0 55,24.673 55,55 v 45 H 110.001 Z"
@@ -1501,16 +1501,16 @@
       </g>
       <g
          id="playScale"
-         style="display:inline;opacity:0.2;"
+         style="display:inline;opacity:0.5;"
          transform="matrix(0.7,0,0,0.7,0,8.0349055)">
         <text
            xml:space="preserve"
-           style="font-weight:bold;font-size:20.5644px;line-height:10.2822px;font-family:'Book Antiqua';text-align:center;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.308466"
+           style="font-weight:bold;font-size:20.5644px;line-height:10.2822px;font-family:'Book Antiqua';text-align:center;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.308466;transition:fill 500ms;"
            x="-0.11134347"
            y="5.2483191"
            id="text27"><tspan
              id="tspan27"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.7301px;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua, Bold';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.272477;stroke-dasharray:none"
+             style="font-weight:bold;font-size:20.7301px;font-family:'Book Antiqua';fill-opacity:1;stroke-width:0.272477;"
              x="-0.11134332"
              y="5.2483191">♫</tspan></text>
         <rect
