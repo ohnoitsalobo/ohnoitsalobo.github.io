@@ -319,7 +319,7 @@ function playNote(event){
 }
 
 function playKeyboard(e){
-    console.info(e.key);
+    // console.info(e);
     if(scale_Select.selectedIndex > 4) return;
 
          if(e.key == '1' ) { 
@@ -423,11 +423,27 @@ function playKeyboard(e){
     }
     if(e.key == 'ArrowLeft') {
         e.preventDefault();
-        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+        if(e.shiftKey && scale_Select.selectedIndex == 0){
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+            if(mode_Select.selectedIndex == 3)
+                key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+        }else{
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+        }
     }
     if(e.key == 'ArrowRight') {
         e.preventDefault();
-        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+        if(e.shiftKey && scale_Select.selectedIndex == 0){
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+            if(mode_Select.selectedIndex == 6)
+                key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+        }else{
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+        }
     }
 }
 
