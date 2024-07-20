@@ -322,92 +322,63 @@ function playKeyboard(e){
     // console.info(e);
     if(scale_Select.selectedIndex > 4) return;
 
-         if(e.key == '1' ) { 
+    if(e.key == '1') { 
         playNote(0);
         touchArray[1].style.opacity = "1";
         setTimeout(function(){
             touchArray[1].style.opacity = "0";
         }, 500);
     }
-    else if(e.key == '2' ) { 
+    else if(e.key == '2') { 
         playNote(modeCheck(2)); 
         touchArray[modeCheck(2)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(2)+1].style.opacity = "0";
         }, 500);
     }
-    else if(e.key == '3' ) { 
+    else if(e.key == '3') { 
         playNote(modeCheck(3)); 
         touchArray[modeCheck(3)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(3)+1].style.opacity = "0";
         }, 500);
     }
-    else if(e.key == '4' ) { 
+    else if(e.key == '4') { 
         playNote(modeCheck(4)); 
         touchArray[modeCheck(4)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(4)+1].style.opacity = "0";
         }, 500);
     }
-    else if(e.key == '5' ) { 
+    else if(e.key == '5') { 
         playNote(modeCheck(5)); 
         touchArray[modeCheck(5)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(5)+1].style.opacity = "0";
         }, 500);
     }
-    else if(e.key == '6' ) { 
+    else if(e.key == '6') { 
         playNote(modeCheck(6)); 
         touchArray[modeCheck(6)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(6)+1].style.opacity = "0";
         }, 500);
     }
-    else if(e.key == '7' ) { 
+    else if(e.key == '7') { 
         playNote(modeCheck(7)); 
         touchArray[modeCheck(7)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(7)+1].style.opacity = "0";
         }, 500);
     }
-    else if(e.key == '8' ) { 
+    else if(e.key == '8') { 
         playNote(12); 
         touchArray[0].style.opacity = "1";
         setTimeout(function(){
             touchArray[0].style.opacity = "0";
         }, 500);
     }
-    /*
-    else if(e.key == '9' ) { 
-        playNote(modeCheck(2)); 
-        touchArray[modeCheck(2)+1].style.opacity = "1";
-        setTimeout(function(){
-            touchArray[modeCheck(2)+1].style.opacity = "0";
-        }, 500);
-    }
-    else if(e.key == '0' ) { 
-        playNote(modeCheck(3)); 
-        touchArray[modeCheck(3)+1].style.opacity = "1";
-        setTimeout(function(){
-            touchArray[modeCheck(3)+1].style.opacity = "0";
-        }, 500);
-    }
-    else if(e.key == '-' ) { 
-        playNote(modeCheck(4)); 
-        touchArray[modeCheck(4)+1].style.opacity = "1";
-        setTimeout(function(){
-            touchArray[modeCheck(4)+1].style.opacity = "0";
-        }, 500);
-    }
-    else if(e.key == '=' ) { 
-        playNote(modeCheck(5)); 
-        touchArray[modeCheck(5)+1].style.opacity = "1";
-        setTimeout(function(){
-            touchArray[modeCheck(5)+1].style.opacity = "0";
-        }, 500);
-    }
-    */
+    
     if(e.key == ' ') {
         e.preventDefault();
         noteCircleDOM.getElementById("playScale").dispatchEvent(new event.constructor("click"));
@@ -423,26 +394,24 @@ function playKeyboard(e){
     }
     if(e.key == 'ArrowLeft') {
         e.preventDefault();
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+        
         if(e.shiftKey && scale_Select.selectedIndex == 0){
-            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
             if(mode_Select.selectedIndex == 3)
                 key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-        }else{
-            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
         }
     }
     if(e.key == 'ArrowRight') {
         e.preventDefault();
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+        
         if(e.shiftKey && scale_Select.selectedIndex == 0){
-            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
             if(mode_Select.selectedIndex == 6)
                 key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-        }else{
-            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
         }
     }
 }
