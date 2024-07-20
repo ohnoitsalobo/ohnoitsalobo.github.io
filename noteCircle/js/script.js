@@ -319,7 +319,7 @@ function playNote(event){
 }
 
 function playKeyboard(e){
-    // console.info(e.key);
+    console.info(e.key);
     if(scale_Select.selectedIndex > 4) return;
 
          if(e.key == '1' ) { 
@@ -412,6 +412,22 @@ function playKeyboard(e){
         e.preventDefault();
         noteCircleDOM.getElementById("playScale").dispatchEvent(new event.constructor("click"));
         // playScale();
+    }
+    if(e.key == 'ArrowUp') {
+        e.preventDefault();
+        key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+    }
+    if(e.key == 'ArrowDown') {
+        e.preventDefault();
+        key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+    }
+    if(e.key == 'ArrowLeft') {
+        e.preventDefault();
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+    }
+    if(e.key == 'ArrowRight') {
+        e.preventDefault();
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
     }
 }
 
