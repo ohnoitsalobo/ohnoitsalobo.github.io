@@ -86,7 +86,7 @@ noteCircle.addEventListener("load", function(){
     noteCircleDOM.getElementById("questionMark").addEventListener("click", function (){
         helpOverlay = !helpOverlay;
         let _t = event.srcElement.parentElement;
-        _t.style.opacity = helpOverlay ? '1': '0.5';
+        _t.style.opacity = helpOverlay ? '1': '0.8';
         _t.childNodes[1].style.fill = helpOverlay ? 'gold': 'white';
         showHelp();
     });
@@ -104,10 +104,10 @@ noteCircle.addEventListener("load", function(){
         mode_Select.dispatchEvent(new event.constructor(event.type, event));
     });
     noteCircleDOM.getElementById("mode_cw").addEventListener("click", function (){
-        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
     });
     noteCircleDOM.getElementById("mode_ccw").addEventListener("click", function (){
-        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
     });
 }, {passive : false});
 

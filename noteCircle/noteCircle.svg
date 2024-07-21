@@ -14,6 +14,26 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.7566667"
+     inkscape:cx="235.67362"
+     inkscape:cy="36.148008"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
   <defs
      id="defs1">
     <style
@@ -31,7 +51,7 @@
             transition: opacity 500ms, transform 600ms, fill 500ms;
         }
         text{
-            transition: fill 500ms;
+            transition:fill 500ms;
         }
         #playScale{
             cursor: pointer;
@@ -1525,70 +1545,9 @@
            y="-9.954627" />
       </g>
     </g>
-    <g
-       id="gModeScroll"
-       sodipodi:insensitive="true"
-       transform="rotate(-90,85,164)">
-      <text
-         xml:space="preserve"
-         style="font-weight:bold;font-size:7px;line-height:1;font-family:'Book Antiqua';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.8;stroke-width:0.3"
-         x="79.330215"
-         y="-162.41544"
-         id="modeScroll"
-         transform="rotate(90)"><tspan
-           sodipodi:role="line"
-           id="tspan28"
-           x="79.330215"
-           y="-162.41544">←       MODE       →</tspan></text>
-      <rect
-         style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.418461;stroke-linecap:square;stroke-opacity:0"
-         id="mode_ccw"
-         width="9.8624249"
-         height="49.591896"
-         x="159.21062"
-         y="14.658356" />
-      <rect
-         style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.418462;stroke-linecap:square;stroke-opacity:0"
-         id="mode_cw"
-         width="9.8624249"
-         height="49.591896"
-         x="159.21062"
-         y="94.626839" />
-    </g>
-    <g
-       id="gKeyScroll"
-       sodipodi:insensitive="true"
-       style="user-select:none"
-       transform="translate(-80,-80)">
-      <text
-         xml:space="preserve"
-         style="font-weight:bold;font-size:7px;line-height:1;font-family:'Book Antiqua';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.8;stroke-width:0.3"
-         x="-79.419785"
-         y="-1.865339"
-         id="keyScroll"
-         transform="rotate(-90)"><tspan
-           sodipodi:role="line"
-           id="tspan1"
-           x="-79.419785"
-           y="-1.865339">←       ROOT       →</tspan></text>
-      <rect
-         style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.416469;stroke-linecap:square;stroke-opacity:0"
-         id="root_cw"
-         width="9.864418"
-         height="49.110855"
-         x="-8.4112616"
-         y="15.25736" />
-      <rect
-         style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.416968;stroke-linecap:square;stroke-opacity:0"
-         id="root_ccw"
-         width="9.8639183"
-         height="49.231113"
-         x="-8.4110126"
-         y="95.588364" />
-    </g>
   </g>
   <g
-     style="opacity: 0.7;display:;font-size:495px;font-style:normal;font-weight:normal;line-height:125%;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Balkeno"
+     style="opacity: 0.8;display:;font-size:495px;font-style:normal;font-weight:normal;line-height:125%;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Balkeno"
      id="questionMark"
      transform="matrix(0.03409365,0,0,0.03409365,150.47303,1.9734455)">
     <path
@@ -1610,10 +1569,69 @@
      x="-0.044785149"
      y="-72.84034"
      id="text0"
-     sodipodi:insensitive="true"
-     transform="translate(79.375,79.375)"><tspan
+     transform="translate(79.375,79.375)"
+     sodipodi:insensitive="true"><tspan
        sodipodi:role="line"
        id="tspan2"
        x="-0.044785149"
        y="-72.84034">ROOT</tspan></text>
+  <g
+     id="gKeyScroll"
+     transform="rotate(90,79.521101,79.481309)"
+     sodipodi:insensitive="true">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:7px;line-height:1;font-family:'Book Antiqua';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.6;stroke-width:0.3"
+       x="-79.419785"
+       y="-1.865339"
+       id="keyScroll"
+       transform="rotate(-90)"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="-79.419785"
+         y="-1.865339">←       ROOT       →</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.416469;stroke-linecap:square;stroke-opacity:0"
+       id="root_cw"
+       width="9.864418"
+       height="49.110855"
+       x="-8.4112616"
+       y="15.25736" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.416968;stroke-linecap:square;stroke-opacity:0"
+       id="root_ccw"
+       width="9.8639183"
+       height="49.231113"
+       x="-8.4110126"
+       y="95.588364" />
+  </g>
+  <g
+     id="gModeScroll"
+     sodipodi:insensitive="true">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:7px;line-height:1;font-family:'Book Antiqua';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.6;stroke-width:0.3"
+       x="79.330215"
+       y="-162.41544"
+       id="modeScroll"
+       transform="rotate(90)"><tspan
+         sodipodi:role="line"
+         id="tspan28"
+         x="79.330215"
+         y="-162.41544">←       MODE       →</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.418461;stroke-linecap:square;stroke-opacity:0"
+       id="mode_ccw"
+       width="9.8624249"
+       height="49.591896"
+       x="159.21062"
+       y="14.658356" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.418462;stroke-linecap:square;stroke-opacity:0"
+       id="mode_cw"
+       width="9.8624249"
+       height="49.591896"
+       x="159.21062"
+       y="94.626839" />
+  </g>
 </svg>
