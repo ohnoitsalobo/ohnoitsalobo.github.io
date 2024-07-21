@@ -384,30 +384,38 @@ function playKeyboard(e){
         noteCircleDOM.getElementById("playScale").dispatchEvent(new event.constructor("click"));
         // playScale();
     }
-    if(e.key == 'ArrowUp') {
+    if(e.key == 'ArrowLeft') {
         e.preventDefault();
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+        if(e.shiftKey && scale_Select.selectedIndex == 0){
+            for(var i = 0; i < 6; i++)
+                key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+        }
     }
-    if(e.key == 'ArrowDown') {
+    if(e.key == 'ArrowRight') {
         e.preventDefault();
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+        if(e.shiftKey && scale_Select.selectedIndex == 0){
+            for(var i = 0; i < 6; i++)
+                key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+        }
     }
-    if(e.key == 'ArrowLeft') {
+    if(e.key == 'ArrowUp') {
         e.preventDefault();
         mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
         
-        if(e.shiftKey && scale_Select.selectedIndex == 0){
+        if(e.shiftKey && scale_Select.selectedIndex == 0 && !lockNotes){
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
             if(mode_Select.selectedIndex == 3)
                 key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
         }
     }
-    if(e.key == 'ArrowRight') {
+    if(e.key == 'ArrowDown') {
         e.preventDefault();
         mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
         
-        if(e.shiftKey && scale_Select.selectedIndex == 0){
+        if(e.shiftKey && scale_Select.selectedIndex == 0 && !lockNotes){
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
             if(mode_Select.selectedIndex == 6)
