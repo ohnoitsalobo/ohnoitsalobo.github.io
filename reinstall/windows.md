@@ -1,4 +1,6 @@
+# Restart to UEFI
 shutdown /r /fw /t 1
+
 # Super God Mode - ThioJoe
 Set-ExecutionPolicy Bypass -Scope Process -Force; irm "https://github.com/ThioJoe/Windows-Super-God-Mode/releases/latest/download/Super_God_Mode.ps1" | iex
 
@@ -6,7 +8,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; irm "https://github.com/ThioJo
 irm https://get.activated.win | iex
 
 # WinUtil - Chris Titus
-irm "https://christitus.com/win" | iex
+irm https://christitus.com/win | iex
 
 # win11 de-blaot
 & ([scriptblock]::Create((irm "https://win11debloat.raphi.re/")))
