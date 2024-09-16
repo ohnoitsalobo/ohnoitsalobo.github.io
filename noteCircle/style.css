@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 @import url("https://fonts.googleapis.com/css?family=Book+Antiqua");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 html{
 
 }
@@ -49,8 +50,8 @@ a {
 }
 
 #sliders{
-    font-size: 1.1em;
-    font-family: Book Antiqua;
+    font-size: 1.2em;
+    font-family: Open Sans;
     font-weight: bold;
 }
 .imgText{
