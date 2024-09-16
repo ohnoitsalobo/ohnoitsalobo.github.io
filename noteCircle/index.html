@@ -24,9 +24,16 @@
         <div>
             <object data="noteCircle.svg" type="image/svg+xml" id="noteCircle"> </object>
         </div>
+        <div id="sliders">
+            <input class="slider" type="range" id="modeSlider" min="0" max="6" value="0" list="_keySlider"><br />
+            Mode - <span class="sliderText" id="modeSliderText">1. Ionian</span><br />
+            <input class="slider" type="range" id="keySlider" min="0" max="11" value="0" list="_keySlider"><br />
+            Root: <span class="sliderText" id="keySliderText">C</span><br /><br />
+            <datalist id="_keySlider"><option value="0" ><option value="1" ><option value="2" ><option value="3" ><option value="4" ><option value="5" ><option value="6" ><option value="7" ><option value="8" ><option value="9" ><option value="10"><option value="11"></datalist>
+        </div>
         <div id="options-select-bar">
             <table>
-                <tr>
+                <tr style="display: none;">
                     <td><select id="keySelect"></select></td>
                     <td style="font-size: 70%; width: 15%">← Root |<br />| Mode →</td>
                     <td><select id="modeSelect"></select></td>
@@ -47,28 +54,10 @@
         <div id="img2"> </div>
     </div>
     <br />
-    <!--  -- >
-    <table>
-        <tr id="img">
-            <td>
-                <div id="img1">
-                </div>
-            </td>
-            <td>
-                <div id="img2">
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            </td>
-        </tr>
-    </table>
-    <!--  -->
     <div id="spacer"></div>
     </div>
     <footer>
-        <!-- <p style="opacity:0.2">Created by <a href="https://ohnoitsalobo.github.io/" style="color: white;">Anand Lobo</a> -->
+        <p style="opacity:0.2">Created by <a href="https://ohnoitsalobo.github.io/" style="color: white;">Anand Lobo</a>
         <div style="margin-bottom: 10px;">
             Related viewing:<br /> • 
             <a href="https://www.youtube.com/watch?v=VPWQC4pdEco&list=PLMvVESrbjBWplAcg3pG0TesncGT7qvO06&index=14">12ToneVideos</a> • 

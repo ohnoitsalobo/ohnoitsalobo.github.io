@@ -7,10 +7,16 @@ let _0rot = 0, _1rot = 0, _2rot = 0, _3rot = 0, _4rot = 0, num_rot = 0;
 let touchArray, currentNotesIndex;
 let transpose;
 
-let key_Select   = document.getElementById("keySelect");    // get key selector
-let scale_Select = document.getElementById("scaleSelect");  // get scale selector
-let mode_Select  = document.getElementById("modeSelect");   // get mode selector
-let other_Mode_Select  = document.getElementById("otherModeSelect");   // get mode selector
+const  key_Select   = document.getElementById("keySelect");    // get key selector
+const  scale_Select = document.getElementById("scaleSelect");  // get scale selector
+const  mode_Select  = document.getElementById("modeSelect");   // get mode selector
+const  other_Mode_Select  = document.getElementById("otherModeSelect");   // get mode selector
+
+const key_Slider = document.getElementById('keySlider');
+const key_SliderText = document.getElementById('keySliderText');
+const mode_Slider = document.getElementById('modeSlider');
+const mode_SliderText = document.getElementById('modeSliderText');
+
 const optionChanged = new CustomEvent("change");
 
 /*-----------------------------------*\
@@ -156,26 +162,28 @@ scale_Select.addEventListener("wheel", event => {
 }, {passive : false});
 scale_Select.addEventListener("change", event => {
     // console.info(event.srcElement.selectedOptions[0]);
+    document.getElementById("sliders").style.display = '';
     noteCircleDOM.getElementById("allModes").style.display = '';
     let a = event.srcElement;
-    let y = document.getElementById("modeSelect"); let _y = y.selectedIndex;
+    let _y = mode_Select.selectedIndex;
     document.getElementById("img").style.display = "";
-    y.style.opacity = '1';
-    let yy = y.parentElement.previousElementSibling; yy.style.opacity = '1';
+    mode_Select.style.opacity = '1';
+    let yy = mode_Select.parentElement.previousElementSibling; yy.style.opacity = '1';
     _0.style.display = 'none';
     _1.style.display = 'none';
     _2.style.display = 'none';
     _3.style.display = 'none';
     _4.style.display = 'none';
-    y.innerHTML="";
+    mode_Select.innerHTML="";
     for(let i = 0; i < 7; i++){
         let opt = document.createElement('option');
         opt.value = i;
         opt.innerHTML = (i+1) + ": " + allModesList[a.selectedIndex][i];
         mode_Select.appendChild(opt);
     }
-    y.selectedIndex = _y;
-
+    mode_Select.selectedIndex = _y;
+    mode_SliderText.textContent = mode_Select.selectedOptions[0].textContent;
+    
     if(a.selectedIndex == 0){
         _0.style.display = '';
     } else if(a.selectedIndex == 1){
@@ -187,10 +195,10 @@ scale_Select.addEventListener("change", event => {
     } else if(a.selectedIndex == 4){
         _4.style.display = '';
     } else {
-        y.style.opacity = '0'; yy.style.opacity = '0'; // console.info(yy);
+        mode_Select.style.opacity = '0'; yy.style.opacity = '0'; // console.info(yy);
         document.getElementById("img").style.display = "none";
         noteCircleDOM.getElementById("allModes").style.display = 'none';
-        // y.selectedIndex = 0; y.dispatchEvent(new CustomEvent("change"));
+        document.getElementById("sliders").style.display = 'none';
     }
     drawNotes();
     showHelp();
@@ -251,6 +259,20 @@ mode_Select.addEventListener("change", event => {
     drawNotes();
 });
 
+
+key_Slider.addEventListener('input', function() {
+    const index = parseInt(this.value);
+    key_Select.selectedIndex = index;
+    key_Select.dispatchEvent(optionChanged);
+    document.getElementById("keySliderText").textContent = key_Select.options[index].textContent;
+});
+
+mode_Slider.addEventListener('input', function() {
+    const index = parseInt(this.value);
+    mode_Select.selectedIndex = index;
+    mode_Select.dispatchEvent(optionChanged);
+    document.getElementById("modeSliderText").textContent = mode_Select.options[index].textContent;
+});
 /*-----------------------------------*\
             FUNCTIONS
 \*-----------------------------------*/
@@ -297,6 +319,8 @@ function rotateNotes(){
     keyIndex = (currentNoteRotation < 0) ? (currentNoteRotation / -30) % 12 : 11-((currentNoteRotation / 30)+11) % 12;
     if(lockNotes){
         key_Select.selectedIndex = keyIndex;
+        key_Slider.value = keyIndex;
+        key_SliderText.textContent = key_Select.options[keyIndex].textContent;
     }
     noteCircle_base.style.transform = "rotate(" + currentNoteRotation + "deg)";
     // console.info(currentNoteRotation);
@@ -535,10 +559,9 @@ function loadScales(){
             doubleHarmonicScale [index] = begin + "doubleharmonic-" + (filenum < 100 ? "0" : "") + (filenum < 10 ? "0" : "") + filenum + end;
         }
     }
-    // console.info(_images[0][0]);
+
     _img1.innerHTML = _images[0][0];
-    // console.info(_img1);
-    // console.info(_img2);
+
 }
 
 function drawNotes(){
@@ -560,13 +583,6 @@ function drawNotes(){
             img2.innerHTML = _images[_scale][offset*7+_mode];
         }
     }
-    // let alt1 = "Pattern: " + modeList[_scale] + "\nKey: " + keySharpList[keyIndex] + "\n" + allModesList[_scale][index]; // "Notation image 1";
-    // let alt2 = "Pattern: " + modeList[_scale] + "\nKey: " + keyFlatList [keyIndex] + "\n" + allModesList[_scale][index]; // "Notation image 2";
-
-    // img1.elt.title = alt1;
-    // if(offset){
-        // img2.elt.title = alt2;
-    // }
 }
 
 function highlightNote(x){
@@ -574,26 +590,10 @@ function highlightNote(x){
     let _svg = svg.childNodes[0];
     let _t = _svg.appendChild(notes_highlight[x]);
     _t.style.opacity = '0.2';
-    // console.info(_svg);
+
     setTimeout( function(){
         _t.style.opacity = '0';
     }, 100);
-
-    // if(document.getElementById("img2").childNodes.length){
-        // let svg1 = document.getElementById("img2").childNodes[0].childNodes[1].contentDocument;
-        // let _svg1 = svg1.childNodes[0];
-        // let _t1 = _svg1.appendChild(notes_highlight[x]);
-        // _t1.style.opacity = '0.2';
-        // setTimeout( function(){
-            // _t1.style.opacity = '0';
-        // }, 100);
-    // }
-
-    // setTimeout( function(){
-        // while(_svg.lastChild.tagName == "rect"){
-            // _svg.removeChild(_svg.lastChild);
-        // }
-    // }, 4000);
 
 }
 
@@ -1064,16 +1064,16 @@ function showHelp(){
     let _t0 = document.getElementById("noteCircle").getBoundingClientRect();
     let _t1 = noteCircleDOM.getElementById("lockRotation").getBoundingClientRect();
     let _t2 = noteCircleDOM.getElementById("playScale").getBoundingClientRect();
-    let _t3 = key_Select.getBoundingClientRect();
-    let _t4 = mode_Select.getBoundingClientRect();
+    let _t3 = mode_Slider.getBoundingClientRect();
+    let _t4 = key_Slider.getBoundingClientRect();
     let _t5 = scale_Select.getBoundingClientRect();
 
     
     let _help1 = document.getElementById("help1"); let _h1x = _t0.left+_t1.x-15 , _h1y = _t0.top+_t1.y+5;
     let _help2 = document.getElementById("help2"); let _h2x = _t0.left+_t2.x-15 , _h2y = _t0.top+_t2.y+5;
-    let _help3 = document.getElementById("help3"); let _h3x = _t3.x+_t3.width-20, _h3y = _t3.y-_t3.height;
-    let _help4 = document.getElementById("help4"); let _h4x = _t4.x+_t4.width-20, _h4y = _t4.y-_t4.height;
-    let _help5 = document.getElementById("help5"); let _h5x = _t5.x+_t5.width-20, _h5y = _t5.y+_t5.height;
+    let _help3 = document.getElementById("help3"); let _h3x = _t3.x-15, _h3y = _t3.y-_t3.height/2;
+    let _help4 = document.getElementById("help4"); let _h4x = _t4.x-15, _h4y = _t4.y-_t4.height/2;
+    let _help5 = document.getElementById("help5"); let _h5x = _t5.x, _h5y = _t5.y-_t5.height;
 
     let _htext = document.getElementById("helpText");
     

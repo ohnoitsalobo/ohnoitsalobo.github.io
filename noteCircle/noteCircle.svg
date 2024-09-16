@@ -1577,6 +1577,7 @@
        y="-72.84034">ROOT</tspan></text>
   <g
      id="gKeyScroll"
+     style="display: none;"
      transform="rotate(90,79.521101,79.481309)"
      sodipodi:insensitive="true">
     <text
@@ -1607,6 +1608,7 @@
   </g>
   <g
      id="gModeScroll"
+     style="display: none;"
      sodipodi:insensitive="true">
     <text
        xml:space="preserve"
