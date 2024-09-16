@@ -6,7 +6,7 @@ html{
 body{
     color: #ccc;
     background-color: #111;
-    font-family: Ubuntu, Georgia !important;
+    font-family: Ubuntu, Georgia;
     width: 96%;
     
 }
@@ -50,6 +50,8 @@ a {
 
 #sliders{
     font-size: 1.1em;
+    font-family: Book Antiqua;
+    font-weight: bold;
 }
 .imgText{
     position: absolute;
@@ -126,7 +128,7 @@ input[type=range]:focus {
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 14px;
-  cursor: pointer;
+  cursor: e-resize;
   animate: 0.2s;
   box-shadow: 1px 1px 1px #50555C;
   background: #50555C;
@@ -136,11 +138,11 @@ input[type=range]::-webkit-slider-runnable-track {
 input[type=range]::-webkit-slider-thumb {
   box-shadow: 0px 0px 0px #000000;
   border: 0px solid #000000;
-  height: 39px;
+  height: 40px;
   width: 40px;
   border-radius: 12px;
   background: #529DE1;
-  cursor: pointer;
+  cursor: e-resize;
   -webkit-appearance: none;
   margin-top: -12.5px;
 }
@@ -150,7 +152,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 input[type=range]::-moz-range-track {
   width: 100%;
   height: 14px;
-  cursor: pointer;
+  cursor: e-resize;
   animate: 0.2s;
   box-shadow: 1px 1px 1px #50555C;
   background: #50555C;
@@ -160,16 +162,16 @@ input[type=range]::-moz-range-track {
 input[type=range]::-moz-range-thumb {
   box-shadow: 0px 0px 0px #000000;
   border: 0px solid #000000;
-  height: 39px;
+  height: 40px;
   width: 40px;
   border-radius: 12px;
   background: #529DE1;
-  cursor: pointer;
+  cursor: e-resize;
 }
 input[type=range]::-ms-track {
   width: 100%;
   height: 14px;
-  cursor: pointer;
+  cursor: e-resize;
   animate: 0.2s;
   background: transparent;
   border-color: transparent;
@@ -191,17 +193,36 @@ input[type=range]::-ms-thumb {
   margin-top: 1px;
   box-shadow: 0px 0px 0px #000000;
   border: 0px solid #000000;
-  height: 39px;
+  height: 40px;
   width: 40px;
   border-radius: 12px;
   background: #529DE1;
-  cursor: pointer;
+  cursor: e-resize;
 }
 input[type=range]:focus::-ms-fill-lower {
   background: #50555C;
 }
 input[type=range]:focus::-ms-fill-upper {
   background: #50555C;
+}
+
+#keySlider::-moz-range-thumb{
+  background: #529DE1;
+}
+#keySlider::-ms-thumb{
+  background: #529DE1;
+}
+#keySlider::--webkit-slider-thumb{
+  background: #529DE1;
+}
+#modeSlider::-moz-range-thumb{
+  background: #529DE1;
+}
+#modeSlider::-ms-thumb{
+  background: #529DE1;
+}
+#modeSlider::--webkit-slider-thumb{
+  background: #529DE1;
 }
 
 @media (max-width: 600px) {

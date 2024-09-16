@@ -178,7 +178,7 @@ scale_Select.addEventListener("change", event => {
     for(let i = 0; i < 7; i++){
         let opt = document.createElement('option');
         opt.value = i;
-        opt.innerHTML = (i+1) + ": " + allModesList[a.selectedIndex][i];
+        opt.innerHTML = allModesList[a.selectedIndex][i];
         mode_Select.appendChild(opt);
     }
     mode_Select.selectedIndex = _y;
@@ -1064,16 +1064,16 @@ function showHelp(){
     let _t0 = document.getElementById("noteCircle").getBoundingClientRect();
     let _t1 = noteCircleDOM.getElementById("lockRotation").getBoundingClientRect();
     let _t2 = noteCircleDOM.getElementById("playScale").getBoundingClientRect();
-    let _t3 = mode_Slider.getBoundingClientRect();
-    let _t4 = key_Slider.getBoundingClientRect();
+    let _t3 = key_Slider.getBoundingClientRect();
+    let _t4 = mode_Slider.getBoundingClientRect();
     let _t5 = scale_Select.getBoundingClientRect();
 
     
     let _help1 = document.getElementById("help1"); let _h1x = _t0.left+_t1.x-15 , _h1y = _t0.top+_t1.y+5;
     let _help2 = document.getElementById("help2"); let _h2x = _t0.left+_t2.x-15 , _h2y = _t0.top+_t2.y+5;
-    let _help3 = document.getElementById("help3"); let _h3x = _t3.x-15, _h3y = _t3.y-_t3.height/2;
-    let _help4 = document.getElementById("help4"); let _h4x = _t4.x-15, _h4y = _t4.y-_t4.height/2;
-    let _help5 = document.getElementById("help5"); let _h5x = _t5.x, _h5y = _t5.y-_t5.height;
+    let _help3 = document.getElementById("help3"); let _h3x = _t3.x-20, _h3y = _t3.y+5;
+    let _help4 = document.getElementById("help4"); let _h4x = _t4.x-20, _h4y = _t4.y+5;
+    let _help5 = document.getElementById("help5"); let _h5x = _t5.x-20, _h5y = _t5.y;
 
     let _htext = document.getElementById("helpText");
     
@@ -1099,10 +1099,10 @@ function showHelp(){
             <b>2.</b> <u>Listen to the selected notes</u>. <br />                         \
             You can also tap individual note names</u>.<br />                             \
             Desktop users can use 'space' and numbers 1-8.<br /><br />                    \
-            <b>3.</b> <u>Change the mode</u> (the distribution of intervals) <br />       \
-            by rotating the upper circle.<br /><br />                                     \
-            <b>4.</b> <u>Change your starting note</u> (root or tonic) <br />             \
+            <b>3.</b> <u>Change your starting note</u> (root or tonic) <br />             \
             by rotating the lower circle. <br /><br />                                    \
+            <b>4.</b> <u>Change the mode</u> (the distribution of intervals) <br />       \
+            by rotating the upper circle.<br /><br />                                     \
             <b>5.</b> <u>Change the base pattern of notes</u> (the scale). <br /><br />   \
             See the written representation of the<br />                                   \
             selected notes in notation and tablature. <br /><br />                        \
