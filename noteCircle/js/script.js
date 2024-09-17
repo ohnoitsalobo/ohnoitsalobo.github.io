@@ -260,6 +260,7 @@ mode_Select.addEventListener("change", event => {
 });
 
 key_Slider.addEventListener('input', function() {
+    
     let index = parseInt(this.value);
     if(index < 0) {
         key_Slider.value = 11;
@@ -279,6 +280,7 @@ key_Slider.addEventListener('input', function() {
 });
 
 mode_Slider.addEventListener('input', function() {
+    
     let index = parseInt(this.value);
     if(index < 0) {
         index = 6; mode_Slider.value = index;
