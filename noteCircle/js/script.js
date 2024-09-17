@@ -265,12 +265,14 @@ key_Slider.addEventListener('input', function() {
         key_Slider.value = 11;
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
     }
-    if(key_Select.selectedIndex - key_Slider.value == 11){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
     if(index > 11) {
         key_Slider.value = 0;
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
     }
-    if(key_Select.selectedIndex - key_Slider.value == -11){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} )); }
+    let _d = key_Select.selectedIndex - key_Slider.value; console.log(_d);
+    if(_d >  6){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
+    if(_d < -6){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} )); }
+
     key_Select.selectedIndex = key_Slider.value;
     key_Select.dispatchEvent(optionChanged);
     document.getElementById("keySliderText").textContent = key_Select.options[key_Slider.value].textContent;
@@ -282,13 +284,14 @@ mode_Slider.addEventListener('input', function() {
         index = 6; mode_Slider.value = index;
         mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
     }
-    console.log(mode_Select.selectedIndex - mode_Slider.value);
-    if(mode_Select.selectedIndex - mode_Slider.value == 6){ mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
     if(index > 6) {
         index = 0; mode_Slider.value = index;
         mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
     }
-    if(mode_Select.selectedIndex - mode_Slider.value == -6){ mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} )); }
+    let _d = mode_Select.selectedIndex - mode_Slider.value;
+    if(_d >  3){ mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY:  1} )); }
+    if(_d < -3){ mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} )); }
+
     mode_Select.selectedIndex = index;
     mode_Select.dispatchEvent(optionChanged);
     document.getElementById("modeSliderText").textContent = mode_Select.options[index].textContent;
