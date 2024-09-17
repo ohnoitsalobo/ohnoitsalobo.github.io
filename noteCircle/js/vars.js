@@ -1,4 +1,4 @@
-let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0;
+let keyIndex = 0, currentNoteRotation = 0, lockNotes = 0, lockedIndex = 0, modeIndex = 0;
 let numOfRotations = 0;
 let helpOverlay = 0;
 

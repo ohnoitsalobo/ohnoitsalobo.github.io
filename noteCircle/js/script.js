@@ -7,10 +7,10 @@ let _0rot = 0, _1rot = 0, _2rot = 0, _3rot = 0, _4rot = 0, num_rot = 0;
 let touchArray, currentNotesIndex;
 let transpose;
 
-const  key_Select   = document.getElementById("keySelect");    // get key selector
-const  scale_Select = document.getElementById("scaleSelect");  // get scale selector
-const  mode_Select  = document.getElementById("modeSelect");   // get mode selector
-const  other_Mode_Select  = document.getElementById("otherModeSelect");   // get mode selector
+const key_Select   = document.getElementById("keySelect");    // get key selector
+const scale_Select = document.getElementById("scaleSelect");  // get scale selector
+const mode_Select  = document.getElementById("modeSelect");   // get mode selector
+const other_Mode_Select  = document.getElementById("otherModeSelect");   // get mode selector
 
 const key_Slider = document.getElementById('keySlider');
 const key_SliderText = document.getElementById('keySliderText');
@@ -259,20 +259,21 @@ mode_Select.addEventListener("change", event => {
     drawNotes();
 });
 
-
 key_Slider.addEventListener('input', function() {
     let index = parseInt(this.value);
     if(index < 0) {
-        index = 11; key_Slider.value = index;
+        key_Slider.value = 11;
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
     }
+    if(key_Select.selectedIndex - key_Slider.value == 11){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
     if(index > 11) {
-        index = 0; key_Slider.value = index;
+        key_Slider.value = 0;
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
     }
-    key_Select.selectedIndex = index;
+    if(key_Select.selectedIndex - key_Slider.value == -11){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} )); }
+    key_Select.selectedIndex = key_Slider.value;
     key_Select.dispatchEvent(optionChanged);
-    document.getElementById("keySliderText").textContent = key_Select.options[index].textContent;
+    document.getElementById("keySliderText").textContent = key_Select.options[key_Slider.value].textContent;
 });
 
 mode_Slider.addEventListener('input', function() {
@@ -281,10 +282,13 @@ mode_Slider.addEventListener('input', function() {
         index = 6; mode_Slider.value = index;
         mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
     }
+    console.log(mode_Select.selectedIndex - mode_Slider.value);
+    if(mode_Select.selectedIndex - mode_Slider.value == 6){ mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
     if(index > 6) {
         index = 0; mode_Slider.value = index;
         mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
     }
+    if(mode_Select.selectedIndex - mode_Slider.value == -6){ mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} )); }
     mode_Select.selectedIndex = index;
     mode_Select.dispatchEvent(optionChanged);
     document.getElementById("modeSliderText").textContent = mode_Select.options[index].textContent;
