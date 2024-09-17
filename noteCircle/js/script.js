@@ -261,14 +261,30 @@ mode_Select.addEventListener("change", event => {
 
 
 key_Slider.addEventListener('input', function() {
-    const index = parseInt(this.value);
+    let index = parseInt(this.value);
+    if(index < 0) {
+        index = 11; key_Slider.value = index;
+        key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
+    }
+    if(index > 11) {
+        index = 0; key_Slider.value = index;
+        key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
+    }
     key_Select.selectedIndex = index;
     key_Select.dispatchEvent(optionChanged);
     document.getElementById("keySliderText").textContent = key_Select.options[index].textContent;
 });
 
 mode_Slider.addEventListener('input', function() {
-    const index = parseInt(this.value);
+    let index = parseInt(this.value);
+    if(index < 0) {
+        index = 6; mode_Slider.value = index;
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
+    }
+    if(index > 6) {
+        index = 0; mode_Slider.value = index;
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
+    }
     mode_Select.selectedIndex = index;
     mode_Select.dispatchEvent(optionChanged);
     document.getElementById("modeSliderText").textContent = mode_Select.options[index].textContent;
