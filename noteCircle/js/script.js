@@ -269,7 +269,7 @@ key_Slider.addEventListener('input', function() {
         key_Slider.value = 0;
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
     }
-    let _d = key_Select.selectedIndex - key_Slider.value; console.log(_d);
+    let _d = key_Select.selectedIndex - key_Slider.value;
     if(_d >  6){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
     if(_d < -6){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} )); }
 
