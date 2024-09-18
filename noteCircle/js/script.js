@@ -278,6 +278,13 @@ key_Slider.addEventListener('input', function() {
     key_Select.dispatchEvent(optionChanged);
     document.getElementById("keySliderText").textContent = key_Select.options[key_Slider.value].textContent;
 });
+key_Slider.addEventListener("wheel", event => {
+    event.preventDefault();
+    let _t = parseInt(key_Slider.value)
+    if(event.deltaY > 0){ key_Slider.value = _t+1; }
+    if(event.deltaY < 0){ key_Slider.value = _t-1; }
+    key_Slider.dispatchEvent(new Event("input", {} ));
+}, {passive : false});
 
 mode_Slider.addEventListener('input', function() {
     
@@ -298,6 +305,13 @@ mode_Slider.addEventListener('input', function() {
     mode_Select.dispatchEvent(optionChanged);
     document.getElementById("modeSliderText").textContent = mode_Select.options[index].textContent;
 });
+mode_Slider.addEventListener("wheel", event => {
+    event.preventDefault();
+    let _t = parseInt(mode_Slider.value)
+    if(event.deltaY > 0){ mode_Slider.value = _t+1; }
+    if(event.deltaY < 0){ mode_Slider.value = _t-1; }
+    mode_Slider.dispatchEvent(new Event("input", {} ));
+}, {passive : false});
 /*-----------------------------------*\
             FUNCTIONS
 \*-----------------------------------*/
