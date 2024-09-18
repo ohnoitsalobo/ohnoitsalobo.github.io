@@ -1,11 +1,11 @@
 /*-----------------------------------*\
                 VARS
 \*-----------------------------------*/
-let noteCircle = document.getElementById('noteCircle');
-let noteCircleDOM, _0, _1, _2, _3, _4, noteCircle_base;
-let _0rot = 0, _1rot = 0, _2rot = 0, _3rot = 0, _4rot = 0, num_rot = 0;
-let touchArray, currentNotesIndex;
-let transpose;
+let noteCircle = document.getElementById('noteCircle');     // SVG div
+let noteCircleDOM, _0, _1, _2, _3, _4, noteCircle_base;     // vars for each layer of SVG
+let _0rot = 0, _1rot = 0, _2rot = 0, _3rot = 0, _4rot = 0, num_rot = 0;     // rotation of each layer
+let touchArray;     // touch the note names to play
+let transpose;      // transpose 
 
 const key_Select   = document.getElementById("keySelect");    // get key selector
 const scale_Select = document.getElementById("scaleSelect");  // get scale selector
@@ -271,7 +271,6 @@ key_Slider.addEventListener('input', function() {
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
     }
     let _d = key_Select.selectedIndex - key_Slider.value;
-    console.log(_d);
     if(_d >  5){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
     if(_d < -5){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} )); }
 
