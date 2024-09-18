@@ -271,8 +271,9 @@ key_Slider.addEventListener('input', function() {
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
     }
     let _d = key_Select.selectedIndex - key_Slider.value;
-    if(_d >  6){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
-    if(_d < -6){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} )); }
+    console.log(_d);
+    if(_d >  5){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
+    if(_d < -5){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} )); }
 
     key_Select.selectedIndex = key_Slider.value;
     key_Select.dispatchEvent(optionChanged);
@@ -310,7 +311,7 @@ mode_Slider.addEventListener("wheel", event => {
     let _t = parseInt(mode_Slider.value)
     if(event.deltaY > 0){ mode_Slider.value = _t+1; }
     if(event.deltaY < 0){ mode_Slider.value = _t-1; }
-    mode_Slider.dispatchEvent(new Event("input", {} ));
+    mode_Slider.dispatchEvent(new Event("input"));
 }, {passive : false});
 /*-----------------------------------*\
             FUNCTIONS
