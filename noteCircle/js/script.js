@@ -307,7 +307,6 @@ mode_Slider.addEventListener('input', function() {
 });
 mode_Slider.addEventListener("wheel", event => {
     event.preventDefault();
-    console.log(event);
     let _t = parseInt(mode_Slider.value)
     if(event.deltaY > 0){ mode_Slider.value = _t+1; }
     if(event.deltaY < 0){ mode_Slider.value = _t-1; }
