@@ -5,39 +5,39 @@ let noteCircle = document.getElementById('noteCircle');     // SVG div
 let noteCircleDOM, _0, _1, _2, _3, _4, noteCircle_base;     // vars for each layer of SVG
 let _0rot = 0, _1rot = 0, _2rot = 0, _3rot = 0, _4rot = 0, num_rot = 0;     // rotation of each layer
 let touchArray;     // touch the note names to play
-let transpose;      // transpose 
+let transpose;      // keep track of which note is root and transpose tones accordingly
 
 const key_Select   = document.getElementById("keySelect");    // get key selector
 const scale_Select = document.getElementById("scaleSelect");  // get scale selector
 const mode_Select  = document.getElementById("modeSelect");   // get mode selector
 const other_Mode_Select  = document.getElementById("otherModeSelect");   // get mode selector
 
-const key_Slider = document.getElementById('keySlider');
-const key_SliderText = document.getElementById('keySliderText');
-const mode_Slider = document.getElementById('modeSlider');
-const mode_SliderText = document.getElementById('modeSliderText');
+const key_Slider = document.getElementById('keySlider');        // get key range slider
+const mode_Slider = document.getElementById('modeSlider');      // get mode range slider
+const key_SliderText = document.getElementById('keySliderText');    // get key text field
+const mode_SliderText = document.getElementById('modeSliderText');  // get mode text field
 
-const optionChanged = new CustomEvent("change");
+const optionChanged = new CustomEvent("change");    // to 'cause' options to change
 
 /*-----------------------------------*\
             eventlisteners
 \*-----------------------------------*/
 
 document.addEventListener('keydown', event => {
-    playKeyboard(event);
+    playKeyboard(event);    // handle keyboard events on the page
 });
 
-let rot_not = 0;
-noteCircle.addEventListener("load", function(){
+let rot_not = 0;    // handles the "notes (un)locked" animation and limits to once
+noteCircle.addEventListener("load", function(){     // handle interactions on the SVG itself
     noteCircleDOM = noteCircle.contentDocument;
-    noteCircleDOM.addEventListener('mousewheel', event => {
+    noteCircleDOM.addEventListener('mousewheel', event => {     // prevent scrolling the page while mouse is on the SVG
         event.preventDefault();
     }, { passive: false });
 
     noteCircleDOM.addEventListener('keydown', event => {
-        playKeyboard(event);
+        playKeyboard(event);    // handle keyboard events on the SVG
     });
-    let _ps = noteCircleDOM.getElementById("playScale");
+    let _ps = noteCircleDOM.getElementById("playScale");    // handle 
     _ps.addEventListener("click", function (){
         playScale(_ps);
         _ps.style.pointerEvents = "none";
@@ -307,6 +307,7 @@ mode_Slider.addEventListener('input', function() {
 });
 mode_Slider.addEventListener("wheel", event => {
     event.preventDefault();
+    console.log(event);
     let _t = parseInt(mode_Slider.value)
     if(event.deltaY > 0){ mode_Slider.value = _t+1; }
     if(event.deltaY < 0){ mode_Slider.value = _t-1; }
@@ -380,7 +381,13 @@ function playNote(event){
     synth.triggerAttackRelease(tone[_id]*transpose, "8n");
     
 }
-
+function updateKeyModeSlider(x){
+    if(x){
+        mode_Slider.value = mode_Select.selectedIndex; mode_Slider.dispatchEvent(new Event("input"));
+    }else{
+        key_Slider.value = key_Select.selectedIndex; key_Slider.dispatchEvent(new Event("input"));
+    }
+}
 function playKeyboard(e){
     // console.info(e);
     if(scale_Select.selectedIndex > 4) return;
@@ -451,17 +458,21 @@ function playKeyboard(e){
         e.preventDefault();
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
         if(e.shiftKey && scale_Select.selectedIndex == 0){
-            for(var i = 0; i < 6; i++)
+            for(var i = 0; i < 6; i++){
                 key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+            }
         }
+        updateKeyModeSlider(0);
     }
     if(e.key == 'ArrowRight') {
         e.preventDefault();
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
         if(e.shiftKey && scale_Select.selectedIndex == 0){
-            for(var i = 0; i < 6; i++)
+            for(var i = 0; i < 6; i++){
                 key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+            }
         }
+        updateKeyModeSlider(0);
     }
     if(e.key == 'ArrowUp') {
         e.preventDefault();
@@ -470,9 +481,12 @@ function playKeyboard(e){
         if(e.shiftKey && scale_Select.selectedIndex == 0 && !lockNotes){
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-            if(mode_Select.selectedIndex == 3)
+            if(mode_Select.selectedIndex == 3){
                 key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+                updateKeyModeSlider(0);
+            }
         }
+        updateKeyModeSlider(1);
     }
     if(e.key == 'ArrowDown') {
         e.preventDefault();
@@ -481,9 +495,12 @@ function playKeyboard(e){
         if(e.shiftKey && scale_Select.selectedIndex == 0 && !lockNotes){
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-            if(mode_Select.selectedIndex == 6)
+            if(mode_Select.selectedIndex == 6){
                 key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+                updateKeyModeSlider(0);
+            }
         }
+        updateKeyModeSlider(1);
     }
 }
 
