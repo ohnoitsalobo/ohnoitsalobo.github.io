@@ -1178,3 +1178,13 @@ function showHelp(){
         _htext.innerHTML = "";
     }
 }
+/*
+function sliders_thumb(){
+    let _k = document.getElementById("t_keySlider");
+    let _m = document.getElementById("t_modeSlider");
+    let _kr = key_Slider.getBoundingClientRect();
+    let _mr = mode_Slider.getBoundingClientRect();
+    
+    _k.style.left = _kr.x+"px"; _k.style.top = _kr.y+"px";
+}
+*/
