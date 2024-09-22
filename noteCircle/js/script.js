@@ -264,11 +264,11 @@ key_Slider.addEventListener('input', function() {
     let index = parseInt(this.value);
     if(index < 0) {
         key_Slider.value = 11;
-        key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
+        if(!lockNotes) key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
     }
     if(index > 11) {
         key_Slider.value = 0;
-        key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
+        if(!lockNotes) key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
     }
     let _d = key_Select.selectedIndex - key_Slider.value;
     if(_d >  5){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
