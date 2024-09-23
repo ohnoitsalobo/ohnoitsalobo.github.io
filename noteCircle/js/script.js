@@ -280,10 +280,12 @@ key_Slider.addEventListener('input', function() {
 });
 key_Slider.addEventListener("wheel", event => {
     event.preventDefault();
-    let _t = parseInt(key_Slider.value)
-    if(event.deltaY > 0){ key_Slider.value = _t+1; }
-    if(event.deltaY < 0){ key_Slider.value = _t-1; }
-    key_Slider.dispatchEvent(new Event("input", {} ));
+    // let _t = parseInt(key_Slider.value);
+    // if(event.deltaY > 0){ key_Slider.value = _t+1; }
+    // if(event.deltaY < 0){ key_Slider.value = _t-1; }
+    // key_Slider.dispatchEvent(new Event("input", {} ));
+    if(event.deltaY > 0){ document.dispatchEvent(new KeyboardEvent('keydown', {key : 'ArrowRight',  shiftKey : event.shiftKey})); }
+    if(event.deltaY < 0){ document.dispatchEvent(new KeyboardEvent('keydown', {key : 'ArrowLeft', shiftKey : event.shiftKey})); }
 }, {passive : false});
 
 mode_Slider.addEventListener('input', function() {
@@ -307,10 +309,12 @@ mode_Slider.addEventListener('input', function() {
 });
 mode_Slider.addEventListener("wheel", event => {
     event.preventDefault();
-    let _t = parseInt(mode_Slider.value)
-    if(event.deltaY > 0){ mode_Slider.value = _t+1; }
-    if(event.deltaY < 0){ mode_Slider.value = _t-1; }
-    mode_Slider.dispatchEvent(new Event("input"));
+    // let _t = parseInt(mode_Slider.value);
+    // if(event.deltaY > 0){ mode_Slider.value = _t+1; }
+    // if(event.deltaY < 0){ mode_Slider.value = _t-1; }
+    // mode_Slider.dispatchEvent(new Event("input"));
+    if(event.deltaY > 0){ document.dispatchEvent(new KeyboardEvent('keydown', {key : 'ArrowUp',   shiftKey : event.shiftKey})); }
+    if(event.deltaY < 0){ document.dispatchEvent(new KeyboardEvent('keydown', {key : 'ArrowDown', shiftKey : event.shiftKey})); }
 }, {passive : false});
 /*-----------------------------------*\
             FUNCTIONS
@@ -475,20 +479,6 @@ function playKeyboard(e){
     }
     if(e.key == 'ArrowUp') {
         e.preventDefault();
-        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-        
-        if(e.shiftKey && scale_Select.selectedIndex == 0 && !lockNotes){
-            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-            if(mode_Select.selectedIndex == 3){
-                key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-                updateKeyModeSlider(0);
-            }
-        }
-        updateKeyModeSlider(1);
-    }
-    if(e.key == 'ArrowDown') {
-        e.preventDefault();
         mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
         
         if(e.shiftKey && scale_Select.selectedIndex == 0 && !lockNotes){
@@ -496,6 +486,20 @@ function playKeyboard(e){
             mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
             if(mode_Select.selectedIndex == 6){
                 key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+                updateKeyModeSlider(0);
+            }
+        }
+        updateKeyModeSlider(1);
+    }
+    if(e.key == 'ArrowDown') {
+        e.preventDefault();
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+        
+        if(e.shiftKey && scale_Select.selectedIndex == 0 && !lockNotes){
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+            if(mode_Select.selectedIndex == 3){
+                key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
                 updateKeyModeSlider(0);
             }
         }
@@ -1178,13 +1182,3 @@ function showHelp(){
         _htext.innerHTML = "";
     }
 }
-/*
-function sliders_thumb(){
-    let _k = document.getElementById("t_keySlider");
-    let _m = document.getElementById("t_modeSlider");
-    let _kr = key_Slider.getBoundingClientRect();
-    let _mr = mode_Slider.getBoundingClientRect();
-    
-    _k.style.left = _kr.x+"px"; _k.style.top = _kr.y+"px";
-}
-*/

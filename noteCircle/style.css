@@ -112,10 +112,6 @@ footer{
     /* font-weight: bold; */
 }
 
-.s_thumb{
-    position: absolute;
-}
-
 input[type=range] {
   height: 40px;
   -webkit-appearance: none;
