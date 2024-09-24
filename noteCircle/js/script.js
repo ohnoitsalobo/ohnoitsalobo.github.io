@@ -284,8 +284,10 @@ key_Slider.addEventListener("wheel", event => {
     // if(event.deltaY > 0){ key_Slider.value = _t+1; }
     // if(event.deltaY < 0){ key_Slider.value = _t-1; }
     // key_Slider.dispatchEvent(new Event("input", {} ));
-    if(event.deltaY > 0){ document.dispatchEvent(new KeyboardEvent('keydown', {key : 'ArrowRight',  shiftKey : event.shiftKey})); }
-    if(event.deltaY < 0){ document.dispatchEvent(new KeyboardEvent('keydown', {key : 'ArrowLeft', shiftKey : event.shiftKey})); }
+    let _t= '';
+    if(event.deltaY > 0) _t = 'ArrowRight';
+    if(event.deltaY < 0) _t = 'ArrowLeft';
+    document.dispatchEvent(new KeyboardEvent('keydown', {key : _t, shiftKey : event.shiftKey}));
 }, {passive : false});
 
 mode_Slider.addEventListener('input', function() {
