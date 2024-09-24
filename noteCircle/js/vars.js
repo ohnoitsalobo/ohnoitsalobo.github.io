@@ -20,7 +20,7 @@ let modeList = [
 
 let majorModeSelect;
 let majorModeList = [          // let majorModeList = [                  // _0_1_2_3_4_5_6_
-"Major (Ionian)"           ,   // "\u2160\nIonian (major)"           ,   // 0 2 4 5 7 9 11  q
+"Ionian (major)"           ,   // "\u2160\nIonian (major)"           ,   // 0 2 4 5 7 9 11  q
 "Dorian"                   ,   // "\u2161\nDorian"                   ,   // 0 2 3 5 7 9 10  w
 "Phrygian"                 ,   // "\u2162\nPhrygian"                 ,   // 0 1 3 5 7 8 10  e
 "Lydian"                   ,   // "\u2163\nLydian"                   ,   // 0 2 4 6 7 9 11  r
