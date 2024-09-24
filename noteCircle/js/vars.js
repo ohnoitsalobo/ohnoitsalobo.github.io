@@ -37,7 +37,7 @@ let melodicMinorModeList = [                        // let melodicMinorModeList 
 "Dorian \u266D2\n(Phrygian \u266E6)"           ,    // "\u2161\nDorian \u266D2\n(Phrygian \u266E6)"           ,    // 0 1 3 5 7 9 10  w
 "Lydian (\u266F5)"                             ,    // "\u2162\nLydian augmented (\u266F5)"                   ,    // 0 2 4 6 8 9 11  e
 "Lydian \u266D7\n(overtone scale)"             ,    // "\u2163\nLydian dominant (\u266D7)\n(overtone scale)"  ,    // 0 2 4 6 7 9 10  r
-"Mixolydian \u266D6\n(Aeolian major (\u266E3))",    // "\u2164\nAeolian major (\u266E3)\n(Mixolydian \u266D6)",    // 0 2 4 5 7 8 10  t
+"Mixolydian \u266D6\n(Aeolian major [\u266E3])",    // "\u2164\nAeolian major (\u266E3)\n(Mixolydian \u266D6)",    // 0 2 4 5 7 8 10  t
 "Half-diminished\n(Aeolian \u266D5)"           ,    // "\u2165\nHalf-diminished\n(Aeolian \u266D5)"           ,    // 0 2 3 5 6 8 10  y
 "Altered dominant\n(Super-Locrian)"                 // "\u2166\nAltered dominant\n(Super Locrian)"                 // 0 1 3 4 6 8 10  u
 ];

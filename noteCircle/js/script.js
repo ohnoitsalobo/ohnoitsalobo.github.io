@@ -1124,11 +1124,11 @@ function showHelp(){
     let _t5 = scale_Select.getBoundingClientRect();
 
     
-    let _help1 = document.getElementById("help1"); let _h1x = _t0.left+_t1.x-15 , _h1y = _t0.top+_t1.y+5;
-    let _help2 = document.getElementById("help2"); let _h2x = _t0.left+_t2.x-15 , _h2y = _t0.top+_t2.y+5;
-    let _help3 = document.getElementById("help3"); let _h3x = _t3.x-20, _h3y = _t3.y+5;
-    let _help4 = document.getElementById("help4"); let _h4x = _t4.x-20, _h4y = _t4.y+5;
-    let _help5 = document.getElementById("help5"); let _h5x = _t5.x-20, _h5y = _t5.y;
+    let _help4 = document.getElementById("help4"); let _h4x = _t0.left+_t1.x-15 , _h4y = _t0.top+_t1.y+5;
+    let _help5 = document.getElementById("help5"); let _h5x = _t0.left+_t2.x-15 , _h5y = _t0.top+_t2.y+5;
+    let _help1 = document.getElementById("help1"); let _h1x = _t3.x-20, _h1y = _t3.y+5;
+    let _help2 = document.getElementById("help2"); let _h2x = _t4.x-20, _h2y = _t4.y+5;
+    let _help3 = document.getElementById("help3"); let _h3x = _t5.x-20, _h3y = _t5.y;
 
     let _htext = document.getElementById("helpText");
     
@@ -1150,17 +1150,22 @@ function showHelp(){
         _help5.style.top  = _h5y+"px";
 
         _htext.innerHTML= " <br \>\
-            <b>1.</b> <u>Lock the visible notes in the pattern</u>.<br /><br />           \
-            <b>2.</b> <u>Listen to the selected notes</u>. <br />                         \
+            <b>1.</b> <u>Change your starting note</u> (root or tonic) <br />             \
+            by rotating the lower circle.<br />                                           \
+            <i>Desktop users can use ◄ and ► or mouse scroll wheel.<br />                 \
+            Hold 'Shift' to rotate by 7 half-steps (a fifth interval).</i><br /><br />    \
+            <b>2.</b> <u>Change the mode</u> (the distribution of intervals) <br />       \
+            by rotating the upper circle.<br />                                           \
+            <i>Desktop users can use ▲ and ▼ or mouse scroll wheel.<br />                 \
+            Hold 'Shift' to rotate by 3 scale intervals.</i><br /><br />                  \
+            <b>3.</b> <u>Change the base pattern of notes</u> (the scale). <br /><br />   \
+            <b>4.</b> <u>Lock the visible notes in the pattern</u>.<br />                 \
+            This keeps the same notes visible as the 'mode' pattern rotates.<br /><br />  \
+            <b>5.</b> <u>Listen to the selected notes</u>. <br />                         \
             You can also tap individual note names</u>.<br />                             \
-            Desktop users can use 'space' and numbers 1-8.<br /><br />                    \
-            <b>3.</b> <u>Change your starting note</u> (root or tonic) <br />             \
-            by rotating the lower circle. <br /><br />                                    \
-            <b>4.</b> <u>Change the mode</u> (the distribution of intervals) <br />       \
-            by rotating the upper circle.<br /><br />                                     \
-            <b>5.</b> <u>Change the base pattern of notes</u> (the scale). <br /><br />   \
+            <i>Desktop users can use 'space' and numbers 1-8.</i><br /><br />             \
             See the written representation of the<br />                                   \
-            selected notes in notation and tablature. <br /><br />                        \
+            selected notes in notation and tablature below. <br /><br />                  \
         ";
     }else{
         _help1.innerHTML = "";
