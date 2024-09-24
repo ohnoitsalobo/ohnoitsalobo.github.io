@@ -280,10 +280,6 @@ key_Slider.addEventListener('input', function() {
 });
 key_Slider.addEventListener("wheel", event => {
     event.preventDefault();
-    // let _t = parseInt(key_Slider.value);
-    // if(event.deltaY > 0){ key_Slider.value = _t+1; }
-    // if(event.deltaY < 0){ key_Slider.value = _t-1; }
-    // key_Slider.dispatchEvent(new Event("input", {} ));
     let _t= '';
     if(event.deltaY > 0) _t = 'ArrowRight';
     if(event.deltaY < 0) _t = 'ArrowLeft';
@@ -311,12 +307,10 @@ mode_Slider.addEventListener('input', function() {
 });
 mode_Slider.addEventListener("wheel", event => {
     event.preventDefault();
-    // let _t = parseInt(mode_Slider.value);
-    // if(event.deltaY > 0){ mode_Slider.value = _t+1; }
-    // if(event.deltaY < 0){ mode_Slider.value = _t-1; }
-    // mode_Slider.dispatchEvent(new Event("input"));
-    if(event.deltaY > 0){ document.dispatchEvent(new KeyboardEvent('keydown', {key : 'ArrowUp',   shiftKey : event.shiftKey})); }
-    if(event.deltaY < 0){ document.dispatchEvent(new KeyboardEvent('keydown', {key : 'ArrowDown', shiftKey : event.shiftKey})); }
+    let _t= '';
+    if(event.deltaY > 0) _t = 'ArrowUp';
+    if(event.deltaY < 0) _t = 'ArrowDown';
+    document.dispatchEvent(new KeyboardEvent('keydown', {key : _t, shiftKey : event.shiftKey}));
 }, {passive : false});
 /*-----------------------------------*\
             FUNCTIONS
