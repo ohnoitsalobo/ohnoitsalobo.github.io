@@ -1164,8 +1164,8 @@ function showHelp(){
             <b>5.</b> <u>Listen to the selected notes</u>. <br />                         \
             You can also tap individual note names</u>.<br />                             \
             <i>Desktop users can use 'space' and numbers 1-8.</i><br /><br />             \
-            <b>See the written representation of the<br />                                   \
-            selected notes in notation and tablature below.</b><br /><br />                  \
+            <b>See the written representation of the<br />                                \
+            selected notes in notation and tablature below.</b><br /><br />               \
         ";
     }else{
         _help1.innerHTML = "";
