@@ -48,7 +48,7 @@
             animation-duration: 500ms;
         }
         g{
-            transition: opacity 500ms, transform 600ms, fill 500ms;
+            transition: opacity 500ms, transform 300ms, fill 500ms;
         }
         text{
             transition:fill 500ms;
