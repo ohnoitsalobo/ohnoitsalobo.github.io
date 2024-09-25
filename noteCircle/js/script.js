@@ -456,7 +456,7 @@ function playKeyboard(e){
     if(e.key == 'ArrowLeft') {
         e.preventDefault();
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-        if(e.shiftKey && scale_Select.selectedIndex == 0){
+        if(e.shiftKey){
             for(var i = 0; i < 6; i++){
                 key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
             }
@@ -466,7 +466,7 @@ function playKeyboard(e){
     if(e.key == 'ArrowRight') {
         e.preventDefault();
         key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-        if(e.shiftKey && scale_Select.selectedIndex == 0){
+        if(e.shiftKey){
             for(var i = 0; i < 6; i++){
                 key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
             }
