@@ -505,6 +505,12 @@ function playKeyboard(e){
         let _x = noteCircleDOM.getElementById("lockRotation");
         _x.dispatchEvent(new MouseEvent("click"));
     }
+    if(e.key == '=' || e.key == '+'){
+        scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+    }
+    if(e.key == '-' || e.key == '_'){
+        scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+    }
 }
 
 function playScale(){

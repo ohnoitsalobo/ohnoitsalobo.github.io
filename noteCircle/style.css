@@ -204,6 +204,9 @@ input[type=range]:focus::-ms-fill-upper {
   background: #50555C;
 }
 
+#keySliderText{
+    color: #529DE1;
+}
 #keySlider::-moz-range-thumb{
   background: #529DE1;
 }
@@ -213,14 +216,21 @@ input[type=range]:focus::-ms-fill-upper {
 #keySlider::--webkit-slider-thumb{
   background: #529DE1;
 }
+#modeSliderText{
+    color: #eec600;
+}
 #modeSlider::-moz-range-thumb{
-  background: #529DE1;
+  background: #eec600;
 }
 #modeSlider::-ms-thumb{
-  background: #529DE1;
+  background: #eec600;
 }
 #modeSlider::--webkit-slider-thumb{
-  background: #529DE1;
+  background: #eec600;
+}
+
+.sliderText{
+    margin-bottom: -15px;
 }
 
 @media (max-width: 600px) {
