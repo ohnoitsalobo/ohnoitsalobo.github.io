@@ -139,7 +139,6 @@ input[type=range]::-webkit-slider-thumb {
   height: 40px;
   width: 40px;
   border-radius: 12px;
-  background: #529DE1;
   cursor: e-resize;
   -webkit-appearance: none;
   margin-top: -12.5px;
@@ -163,7 +162,6 @@ input[type=range]::-moz-range-thumb {
   height: 40px;
   width: 40px;
   border-radius: 12px;
-  background: #529DE1;
   cursor: e-resize;
 }
 input[type=range]::-ms-track {
@@ -194,7 +192,6 @@ input[type=range]::-ms-thumb {
   height: 40px;
   width: 40px;
   border-radius: 12px;
-  background: #529DE1;
   cursor: e-resize;
 }
 input[type=range]:focus::-ms-fill-lower {
