@@ -111,7 +111,10 @@ footer{
     font-size: 0.9em;
     /* font-weight: bold; */
 }
-
+:root {
+  --blue: #529DE1;
+  --gold: #eec600;
+}
 input[type=range] {
   height: 40px;
   -webkit-appearance: none;
@@ -202,28 +205,28 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #keySliderText{
-    color: #eec600;
+    color: var(--gold);
 }
 #keySlider::-moz-range-thumb{
-  background: #eec600;
+  background: var(--gold);
 }
 #keySlider::-ms-thumb{
-  background: #eec600;
+  background: var(--gold);
 }
 #keySlider::-webkit-slider-thumb{
-  background: #eec600;
+  background: var(--gold);
 }
 #modeSliderText{
-    color: #529DE1;
+    color: var(--blue);
 }
 #modeSlider::-moz-range-thumb{
-  background: #529DE1;
+  background: var(--blue);
 }
 #modeSlider::-ms-thumb{
-  background: #529DE1;
+  background: var(--blue);
 }
 #modeSlider::-webkit-slider-thumb{
-  background: #529DE1;
+  background: var(--blue);
 }
 
 .sliderText{
