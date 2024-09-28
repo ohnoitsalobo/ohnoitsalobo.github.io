@@ -227,7 +227,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .sliderText{
-    margin-bottom: -15px;
+    margin: -15px 0px;
 }
 
 @media (max-width: 600px) {
