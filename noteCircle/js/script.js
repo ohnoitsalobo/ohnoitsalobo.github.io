@@ -391,7 +391,8 @@ function playKeyboard(e){
 
     if(!e.ctrlKey){
         if(e.key == '=' || e.key == '+'){
-            scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+            if(scale_Select.selectedIndex < 4)
+                scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
         }
         if(e.key == '-' || e.key == '_'){
             scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
