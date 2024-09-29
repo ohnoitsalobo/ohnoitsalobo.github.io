@@ -388,7 +388,15 @@ function updateKeyModeSlider(x){
     }
 }
 function playKeyboard(e){
-    // console.info(e);
+
+    if(!e.ctrlKey){
+        if(e.key == '=' || e.key == '+'){
+            scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+        }
+        if(e.key == '-' || e.key == '_'){
+            scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+        }
+    }
     if(scale_Select.selectedIndex > 4) return;
 
     if(e.key == '1') { 
@@ -504,12 +512,6 @@ function playKeyboard(e){
     if(e.key == 'l' || e.key == 'L'){
         let _x = noteCircleDOM.getElementById("lockRotation");
         _x.dispatchEvent(new MouseEvent("click"));
-    }
-    if(e.key == '=' || e.key == '+'){
-        scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-    }
-    if(e.key == '-' || e.key == '_'){
-        scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
     }
 }
 
