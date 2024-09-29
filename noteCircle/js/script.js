@@ -58,12 +58,12 @@ noteCircle.addEventListener("load", function(){     // handle interactions on th
         _a.style.fill = lockNotes ? '#000000' : '#ffffff' ;
         
         if(rot_not < 2){
-            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
-            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
+            mode_Slider.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
+            mode_Slider.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
             noteCircleDOM.childNodes[1].style.pointerEvents = "none";
             setTimeout(function(){
-                mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
-                mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
+                mode_Slider.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
+                mode_Slider.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
                 noteCircleDOM.childNodes[1].style.pointerEvents = "";
                 rot_not++;
             }, 600);
