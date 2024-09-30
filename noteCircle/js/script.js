@@ -37,19 +37,19 @@ noteCircle.addEventListener("load", function(){     // handle interactions on th
     noteCircleDOM.addEventListener('keydown', event => {
         playKeyboard(event);    // handle keyboard events on the SVG
     });
-    let _ps = noteCircleDOM.getElementById("playScale");    // handle 
+    let _ps = noteCircleDOM.getElementById("playScale");    // handle clicking the 'play' icon
     _ps.addEventListener("click", function (){
-        playScale();
-        _ps.style.pointerEvents = "none";
-        _ps.childNodes[1].style.fill = "#000000"
-        _ps.style.opacity = "1"
+        playScale();                                    // play the scale
+        _ps.style.pointerEvents = "none";               // 
+        _ps.childNodes[1].style.fill = "#000000"        // change the icon color
+        _ps.style.opacity = "1"                         // 
         setTimeout(function(){
-            _ps.childNodes[1].style.fill = "#ffffff"
-            _ps.style.opacity = "0.5"
-            _ps.style.pointerEvents = "";
+            _ps.childNodes[1].style.fill = "#ffffff"    // 
+            _ps.style.opacity = "0.5"                   // change the icon color
+            _ps.style.pointerEvents = "";               // 
         }, 3750);
     });
-    noteCircleDOM.getElementById("lockRotation").addEventListener("click", function (){
+    noteCircleDOM.getElementById("lockRotation").addEventListener("click", function (){ // handle clicking the 'lock'
         lockNotes = !lockNotes;
         let _l = noteCircleDOM.getElementById("lock");
         let _a = noteCircleDOM.getElementById("arrows");
@@ -97,24 +97,6 @@ noteCircle.addEventListener("load", function(){     // handle interactions on th
         showHelp();
     });
     
-    // noteCircleDOM.getElementById("keyScroll").addEventListener("wheel", function (){
-    //     key_Select.dispatchEvent(new event.constructor(event.type, event));
-    // });
-    // noteCircleDOM.getElementById("root_cw").addEventListener("click", function (){
-    //     key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-    // });
-    // noteCircleDOM.getElementById("root_ccw").addEventListener("click", function (){
-    //     key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-    // });
-    // noteCircleDOM.getElementById("modeScroll").addEventListener("wheel", function (){
-    //     mode_Select.dispatchEvent(new event.constructor(event.type, event));
-    // });
-    // noteCircleDOM.getElementById("mode_cw").addEventListener("click", function (){
-    //     mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-    // });
-    // noteCircleDOM.getElementById("mode_ccw").addEventListener("click", function (){
-    //     mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-    // });
 }, {passive : false});
 
 key_Select.addEventListener("wheel", event => { // down +, up -
