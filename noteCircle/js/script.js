@@ -356,6 +356,10 @@ function playNote(event){
     else 
         _id = event;
     let transpose = 1;
+    if(_id>12){
+        transpose *= 2;
+        _id %= 13;
+    }
     for(let i = 0; i < keyIndex; i++){
         transpose *= root12_2;
     }
@@ -440,28 +444,28 @@ function playKeyboard(e){
         }, 500);
     }
     else if(e.key == '9') { 
-        playNote(modeCheck(2)); 
+        playNote(modeCheck(2)+13); 
         touchArray[modeCheck(2)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(2)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '0') { 
-        playNote(modeCheck(3)); 
+        playNote(modeCheck(3)+13); 
         touchArray[modeCheck(3)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(3)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '-') { 
-        playNote(modeCheck(4)); 
+        playNote(modeCheck(4)+13); 
         touchArray[modeCheck(4)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(4)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '=') { 
-        playNote(modeCheck(5)); 
+        playNote(modeCheck(5)+13); 
         touchArray[modeCheck(5)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(5)+1].style.opacity = "0";

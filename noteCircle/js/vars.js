@@ -266,13 +266,3 @@ for(let i = 0; i < notes_highlight.length; i++){
         notes_highlight[i].setAttribute("x", "545");
     }
 }
-
-let help_array = [
-"Use the upper slider to change the starting note (root), by rotating the circle of notes.<br />On desktop, use right/left arrow keys.<br />Hold the Shift key to rotate by 7 half-steps (a fifth interval), emulating the circle of fifths.", // change key/root
-"Use the lower slider to change the mode, by rotating the pattern on top.<br />On desktop, use up/down arrow keys.<br />Hold the Shift key to rotate by 3 steps of the pattern.", // change mode
-"Choice of 5 scale patterns -<br \> • Major<br \> • Melodic minor<br \> • Harmonic minor<br \> • Harmonic major<br \> • Double harmonic", // change scale pattern
-"Tap the icon to play the sound of the visible notes.", // play sounds
-"", // lock mode/notes together
-"",
-""
-];
