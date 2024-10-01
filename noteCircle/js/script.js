@@ -432,7 +432,7 @@ function playKeyboard(e){
         }, 500);
     }
     else if(e.key == '8') { 
-        playNote(0);
+        // playNote(0);
         playNote(12);
         touchArray[0].style.opacity = "1";
         setTimeout(function(){
