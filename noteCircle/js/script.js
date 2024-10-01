@@ -372,11 +372,11 @@ function updateKeyModeSlider(x){
 function playKeyboard(e){
 
     if(!e.ctrlKey){
-        if(e.key == '=' || e.key == '+'){
+        if(e.key == '+'){
             if(scale_Select.selectedIndex < 4)
                 scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
         }
-        if(e.key == '-' || e.key == '_'){
+        if(e.key == '_'){
             scale_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
         }
     }
@@ -432,10 +432,39 @@ function playKeyboard(e){
         }, 500);
     }
     else if(e.key == '8') { 
-        playNote(12); 
+        playNote(0);
+        playNote(12);
         touchArray[0].style.opacity = "1";
         setTimeout(function(){
             touchArray[0].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '9') { 
+        playNote(modeCheck(2)); 
+        touchArray[modeCheck(2)+1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[modeCheck(2)+1].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '0') { 
+        playNote(modeCheck(3)); 
+        touchArray[modeCheck(3)+1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[modeCheck(3)+1].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '-') { 
+        playNote(modeCheck(4)); 
+        touchArray[modeCheck(4)+1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[modeCheck(4)+1].style.opacity = "0";
+        }, 500);
+    }
+    else if(e.key == '=') { 
+        playNote(modeCheck(5)); 
+        touchArray[modeCheck(5)+1].style.opacity = "1";
+        setTimeout(function(){
+            touchArray[modeCheck(5)+1].style.opacity = "0";
         }, 500);
     }
     
