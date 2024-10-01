@@ -474,7 +474,7 @@ function playKeyboard(e){
     
     if(e.key == ' ') {
         e.preventDefault(); 
-        noteCircleDOM.getElementById("playScale").dispatchEvent(new event.constructor("click"));
+        noteCircleDOM.getElementById("playScale").dispatchEvent(new MouseEvent("click"));
         // playScale();
     }
     if(e.key == 'ArrowLeft') {
@@ -528,6 +528,13 @@ function playKeyboard(e){
     if(e.key == 'l' || e.key == 'L'){
         let _x = noteCircleDOM.getElementById("lockRotation");
         _x.dispatchEvent(new MouseEvent("click"));
+    }
+    if(e.key == '?') {
+        helpOverlay = !helpOverlay;
+        let _t = noteCircleDOM.getElementById("questionMark");
+        _t.style.opacity = helpOverlay ? '1': '0.8';
+        _t.childNodes[1].style.fill = helpOverlay ? 'gold': 'white';
+        showHelp();
     }
 }
 
@@ -1178,22 +1185,23 @@ function showHelp(){
         _help5.style.top  = _h5y+"px";
 
         _htext.innerHTML= " <br \>\
-            <b>1.</b> <u>Change your starting note</u> (root or tonic) <br />             \
-            by rotating the lower circle.<br />                                           \
-            <i>Desktop users can use ◄ and ► or mouse scroll wheel.<br />                 \
-            Hold 'Shift' to rotate by 7 half-steps (a fifth interval).</i><br /><br />    \
-            <b>2.</b> <u>Change the mode</u> (the distribution of intervals) <br />       \
-            by rotating the upper circle.<br />                                           \
-            <i>Desktop users can use ▲ and ▼ or mouse scroll wheel.<br />                 \
-            Hold 'Shift' to rotate by 3 scale intervals.</i><br /><br />                  \
-            <b>3.</b> <u>Change the base pattern of notes</u> (the scale). <br /><br />   \
-            <b>4.</b> <u>Lock the visible notes in the pattern</u>.<br />                 \
-            This keeps the same notes visible as the 'mode' pattern rotates.<br /><br />  \
-            <b>5.</b> <u>Listen to the selected notes</u>. <br />                         \
-            You can also tap individual note names</u>.<br />                             \
-            <i>Desktop users can use 'space' and numbers 1-8.</i><br /><br />             \
-            <b>See the written representation of the<br />                                \
-            selected notes in notation and tablature below.</b><br /><br />               \
+            <b>1.</b> <u>Change your starting note</u> (root or tonic) <br />                   \
+            by rotating the lower circle.<br />                                                 \
+            <i>Desktop users can use ◄ and ► or mouse scroll wheel.<br />                       \
+            Hold 'Shift' to rotate by 7 half-steps (a fifth interval).</i><br /><br />          \
+            <b>2.</b> <u>Change the mode</u> (the distribution of intervals) <br />             \
+            by rotating the upper circle.<br />                                                 \
+            <i>Desktop users can use ▲ and ▼ or mouse scroll wheel.<br />                       \
+            Hold 'Shift' to rotate by 3 scale intervals.</i><br /><br />                        \
+            <b>3.</b> <u>Change the base pattern of notes</u> (the scale). <br /><br />         \
+            <b>4.</b> <u>Lock the visible notes in the pattern</u>.<br />                       \
+            This keeps the same notes visible as the 'mode' pattern rotates.<br /><br />        \
+            <b>5.</b> <u>Listen to the selected notes</u>. <br />                               \
+            You can also tap individual note names</u>.<br />                                   \
+            <i>Desktop users can use 'space' for autoplay, or the number line<br />             \
+            of the keyboard to manually play the notes.</i><br /><br />                         \
+            <b>See the written representation of the<br />                                      \
+            selected notes in notation and tablature below.</b><br /><br />                     \
         ";
     }else{
         _help1.innerHTML = "";
