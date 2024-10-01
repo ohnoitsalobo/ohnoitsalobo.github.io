@@ -469,7 +469,7 @@ function playKeyboard(e){
     }
     
     if(e.key == ' ') {
-        e.preventDefault();
+        e.preventDefault(); 
         noteCircleDOM.getElementById("playScale").dispatchEvent(new event.constructor("click"));
         // playScale();
     }
