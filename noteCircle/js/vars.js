@@ -208,25 +208,25 @@ var tone = [
 
 \*-----------------------------------*/
 
-let notes_highlight0 = " \
-    <g id=\"notes_highlight \"> \
-      <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect1\" width=\"30\" height=\"717\" x=\"100\" y=\"0\" /> \
-      <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect2\" width=\"30\" height=\"717\" x=\"164\" y=\"0\" /> \
-      <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect3\" width=\"30\" height=\"717\" x=\"228\" y=\"0\" /> \
-      <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect4\" width=\"30\" height=\"717\" x=\"292\" y=\"0\" /> \
-      <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect5\" width=\"30\" height=\"717\" x=\"358\" y=\"0\" /> \
-      <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect6\" width=\"30\" height=\"717\" x=\"422\" y=\"0\" /> \
-      <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect7\" width=\"30\" height=\"717\" x=\"486\" y=\"0\" /> \
-      <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect8\" width=\"30\" height=\"717\" x=\"550\" y=\"0\" /> \
-    </g>";
+// let notes_highlight0 = " \
+    // <g id=\"notes_highlight \"> \
+      // <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect1\" width=\"30\" height=\"717\" x=\"100\" y=\"0\" /> \
+      // <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect2\" width=\"30\" height=\"717\" x=\"164\" y=\"0\" /> \
+      // <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect3\" width=\"30\" height=\"717\" x=\"228\" y=\"0\" /> \
+      // <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect4\" width=\"30\" height=\"717\" x=\"292\" y=\"0\" /> \
+      // <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect5\" width=\"30\" height=\"717\" x=\"358\" y=\"0\" /> \
+      // <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect6\" width=\"30\" height=\"717\" x=\"422\" y=\"0\" /> \
+      // <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect7\" width=\"30\" height=\"717\" x=\"486\" y=\"0\" /> \
+      // <rect style=\"fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5\" id=\"rect8\" width=\"30\" height=\"717\" x=\"550\" y=\"0\" /> \
+    // </g>";
     
-var notes_highlight1 = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
-notes_highlight1.setAttribute("style", "fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5");
-notes_highlight1.setAttribute("width", "30");
-notes_highlight1.setAttribute("height", "717");
-notes_highlight1.setAttribute("y", "0");
-notes_highlight1.setAttribute("id", "rect1");
-notes_highlight1.setAttribute("x", "100");
+// var notes_highlight1 = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+// notes_highlight1.setAttribute("style", "fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:2;stroke-opacity:0.5");
+// notes_highlight1.setAttribute("width", "30");
+// notes_highlight1.setAttribute("height", "717");
+// notes_highlight1.setAttribute("y", "0");
+// notes_highlight1.setAttribute("id", "rect1");
+// notes_highlight1.setAttribute("x", "100");
 
 var notes_highlight = [];
 
@@ -264,5 +264,43 @@ for(let i = 0; i < notes_highlight.length; i++){
     }
     if(i == 7){
         notes_highlight[i].setAttribute("x", "545");
+    }
+}
+var notes_highlight1 = [];
+
+for(var x = 0; x < 15; x++){
+    notes_highlight1.push( document.createElementNS("http://www.w3.org/2000/svg", 'rect'));
+}
+
+for(let i = 0; i < notes_highlight1.length; i++){
+    notes_highlight1[i].setAttribute("style", "fill:#000000;stroke:#000000;");
+    notes_highlight1[i].setAttribute("width", "60");
+    notes_highlight1[i].setAttribute("height", "740");
+    notes_highlight1[i].setAttribute("y", "0");
+    notes_highlight1[i].style = ("transition: opacity 500ms; opacity: 0.2;");
+    notes_highlight1[i].setAttribute("id", "rect"+i);
+    if(i == 0 || i == 14){
+        notes_highlight1[i].setAttribute("x", "90");
+    }
+    if(i == 1 || i == 13){
+        notes_highlight1[i].setAttribute("x", "150");
+    }
+    if(i == 2 || i == 12){
+        notes_highlight1[i].setAttribute("x", "210");
+    }
+    if(i == 3 || i == 11){
+        notes_highlight1[i].setAttribute("x", "270");
+    }
+    if(i == 4 || i == 10){
+        notes_highlight1[i].setAttribute("x", "330");
+    }
+    if(i == 5 || i == 9){
+        notes_highlight1[i].setAttribute("x", "415");
+    }
+    if(i == 6 || i == 8){
+        notes_highlight1[i].setAttribute("x", "480");
+    }
+    if(i == 7){
+        notes_highlight1[i].setAttribute("x", "545");
     }
 }

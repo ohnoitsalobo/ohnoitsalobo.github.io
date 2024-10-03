@@ -387,49 +387,49 @@ function playKeyboard(e){
     if(scale_Select.selectedIndex > 4) return;
 
     if(e.key == '1') { 
-        playNote(0);
+        playNote(0); highlightNote(0);
         touchArray[1].style.opacity = "1";
         setTimeout(function(){
             touchArray[1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '2') { 
-        playNote(modeCheck(2)); 
+        playNote(modeCheck(2)); highlightNote(1);
         touchArray[modeCheck(2)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(2)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '3') { 
-        playNote(modeCheck(3)); 
+        playNote(modeCheck(3)); highlightNote(2);
         touchArray[modeCheck(3)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(3)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '4') { 
-        playNote(modeCheck(4)); 
+        playNote(modeCheck(4)); highlightNote(3);
         touchArray[modeCheck(4)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(4)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '5') { 
-        playNote(modeCheck(5)); 
+        playNote(modeCheck(5)); highlightNote(4);
         touchArray[modeCheck(5)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(5)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '6') { 
-        playNote(modeCheck(6)); 
+        playNote(modeCheck(6)); highlightNote(5);
         touchArray[modeCheck(6)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(6)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '7') { 
-        playNote(modeCheck(7)); 
+        playNote(modeCheck(7)); highlightNote(6);
         touchArray[modeCheck(7)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(7)+1].style.opacity = "0";
@@ -437,35 +437,35 @@ function playKeyboard(e){
     }
     else if(e.key == '8') { 
         // playNote(0);
-        playNote(12);
+        playNote(12); highlightNote(7); highlightNote(0);
         touchArray[0].style.opacity = "1";
         setTimeout(function(){
             touchArray[0].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '9') { 
-        playNote(modeCheck(2)+13); 
+        playNote(modeCheck(2)+13); highlightNote(1);
         touchArray[modeCheck(2)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(2)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '0') { 
-        playNote(modeCheck(3)+13); 
+        playNote(modeCheck(3)+13); highlightNote(3);
         touchArray[modeCheck(3)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(3)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '-') { 
-        playNote(modeCheck(4)+13); 
+        playNote(modeCheck(4)+13); highlightNote(4);
         touchArray[modeCheck(4)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(4)+1].style.opacity = "0";
         }, 500);
     }
     else if(e.key == '=') { 
-        playNote(modeCheck(5)+13); 
+        playNote(modeCheck(5)+13); highlightNote(5);
         touchArray[modeCheck(5)+1].style.opacity = "1";
         setTimeout(function(){
             touchArray[modeCheck(5)+1].style.opacity = "0";
@@ -684,7 +684,19 @@ function highlightNote(x){
     setTimeout( function(){
         _t.style.opacity = '0';
     }, 100);
+    highlightNote1(x);
+}
+function highlightNote1(x){
+    if(document.getElementById("img2").childNodes.length){
+        let svg = document.getElementById("img2").childNodes[0].childNodes[1].contentDocument;
+        let _svg = svg.childNodes[0];
+        let _t = _svg.appendChild(notes_highlight1[x]);
+        _t.style.opacity = '0.2';
 
+        setTimeout( function(){
+            _t.style.opacity = '0';
+        }, 100);
+    }
 }
 
 function modeCheck(t){
