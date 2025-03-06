@@ -1166,17 +1166,17 @@ function showHelp(){
     let _t0 = document.getElementById("noteCircle").getBoundingClientRect();
     let _t1 = noteCircleDOM.getElementById("lockRotation").getBoundingClientRect();
     let _t2 = noteCircleDOM.getElementById("playScale").getBoundingClientRect();
-    let _t3 = key_Slider.getBoundingClientRect();
-    let _t4 = mode_Slider.getBoundingClientRect();
-    // let _t3 = document.getElementById("keyDial").getBoundingClientRect();
-    // let _t4 = document.getElementById("modeDial").getBoundingClientRect();
+    // let _t3 = key_Slider.getBoundingClientRect();
+    // let _t4 = mode_Slider.getBoundingClientRect();
+    let _t3 = document.getElementById("keyDial").getBoundingClientRect();
+    let _t4 = document.getElementById("modeDial").getBoundingClientRect();
     let _t5 = scale_Select.getBoundingClientRect();
 
     
-    let _help1 = document.getElementById("help1"); let _h1x = _t3.x-20, _h1y = _t3.y+5;
-    let _help2 = document.getElementById("help2"); let _h2x = _t4.x-20, _h2y = _t4.y+5;
-    // let _help1 = document.getElementById("help1"); let _h1x = _t3.x+110, _h1y = _t3.y+70;
-    // let _help2 = document.getElementById("help2"); let _h2x = _t4.x-20, _h2y = _t4.y+70;
+    // let _help1 = document.getElementById("help1"); let _h1x = _t3.x-20, _h1y = _t3.y+5;
+    // let _help2 = document.getElementById("help2"); let _h2x = _t4.x-20, _h2y = _t4.y+5;
+    let _help1 = document.getElementById("help1"); let _h1x = _t3.x+110, _h1y = _t3.y+70;
+    let _help2 = document.getElementById("help2"); let _h2x = _t4.x-20, _h2y = _t4.y+70;
     let _help3 = document.getElementById("help3"); let _h3x = _t5.x-20, _h3y = _t5.y;
     let _help4 = document.getElementById("help4"); let _h4x = _t0.left+_t1.x-15 , _h4y = _t0.top+_t1.y+5;
     let _help5 = document.getElementById("help5"); let _h5x = _t0.left+_t2.x-15 , _h5y = _t0.top+_t2.y+5;
@@ -1266,7 +1266,6 @@ YUI().use('dial', function (Y) {
 function changeKey(e){
     let val = (e.newVal < 0) ? 11+(e.newVal%12) : e.newVal%12;
     val = 11-val;
-    console.info(val);
     key_Slider.value = val;
     key_Slider.dispatchEvent(new Event("input"));
     // if(e.newVal < 0){
@@ -1279,7 +1278,6 @@ function changeKey(e){
 function changeMode(e){
     let val = (e.newVal < 0) ? 6+(e.newVal%7) : e.newVal%7;
     val = 6-val;
-    console.info(val);
     mode_Slider.value = val;
     mode_Slider.dispatchEvent(new Event("input"));
     // if(e.newVal < 0){
