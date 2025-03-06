@@ -204,7 +204,7 @@ input[type=range]:focus::-ms-fill-upper {
   background: #50555C;
 }
 #keySlider{
-    display: none;
+    /* display: none; */
 }
 #keySliderText{
     color: var(--gold);
@@ -219,7 +219,7 @@ input[type=range]:focus::-ms-fill-upper {
   background: var(--gold);
 }
 #modeSlider{
-    display: none;
+    /* display: none; */
 }
 #modeSliderText{
     color: var(--blue);
