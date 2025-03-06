@@ -268,7 +268,8 @@ input[type=range]:focus::-ms-fill-upper {
     display: none;
 }
 .yui3-dial-center-button{
-    display: none;
+    /* display: none; */
+    transform: scale(0.7);
 }
 
 input-knob{
