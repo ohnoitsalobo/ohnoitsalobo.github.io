@@ -246,13 +246,19 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #keyDial {
-    margin: 0px 50px;
+    margin: -40px 50px;
+    /* position: absolute; */
+    /* top: 340px; */
+    /* left: 250px; */
 }
 #keyDial .yui3-dial-label{
     color: var(--gold) !important;
 }
 #modeDial {
-    margin: 0px 50px;
+    margin: -40px 50px;
+    /* position: absolute; */
+    /* top: 340px; */
+    /* right: 250px; */
 }
 #modeDial .yui3-dial-label{
     color: var(--blue) !important;
