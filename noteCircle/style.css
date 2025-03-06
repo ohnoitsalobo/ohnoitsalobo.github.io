@@ -267,16 +267,16 @@ input[type=range]:focus::-ms-fill-upper {
     color: gray !important;
     display: none;
 }
-.yui3-dial-center-button{
-    /* display: none; */
-    transform: scale(0.7);
+.yui3-dial-center-button {
+    display: none;
+    /* transform: scale(0.3); */
 }
 
-.yui3-dial-ring{
-    touch-action: auto !important;
+.yui3-dial-rinG {
+    /* touch-action: auto !important; */
 }
 
-input-knob{
+input-knob {
     width: 150px;
     padding: 10px;
     border: 2px dashed green;

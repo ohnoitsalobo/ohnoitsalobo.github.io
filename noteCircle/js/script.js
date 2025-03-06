@@ -1239,6 +1239,7 @@ function showHelp(){
 var keyDial, modeDial;
 YUI().use('dial', function (Y) {
     keyDial = new Y.Dial({
+        diameter: 150,
         min:-99999,
         max:99999,
         stepsPerRevolution:12,
@@ -1251,6 +1252,7 @@ YUI().use('dial', function (Y) {
     keyDial.render("#keyDial");
     
     modeDial = new Y.Dial({
+        diameter: 150,
         min:-99999,
         max:99999,
         stepsPerRevolution:7,
