@@ -9,6 +9,8 @@
     <script src="js/tone.js"></script>
     <script src="js/vars.js"></script>
     <!-- <script src="../js/playTone.js"></script> -->
+    <script src="assets/NexusUI.js"></script>
+    
 </head>
 <body onload="process();">
     <center>
@@ -25,6 +27,10 @@
             <object data="noteCircle.svg" type="image/svg+xml" id="noteCircle"> </object>
         </div>
         <div id="sliders">
+            <div id="knobs" style="display: flex; justify-content: center;">
+                <div id="keyKnob"></div>
+                <div id="modeKnob"></div>
+            </div>
             <div class="sliderText"><div id="keySliderText">C</div> &#10070; <div id="modeSliderText">1. Ionian</div></div><br />
             <input class="slider" type="range" id="keySlider" min="-1" max="12" value="0"><br />
             <input class="slider" type="range" id="modeSlider" min="-1" max="7" value="0"><br /><br />

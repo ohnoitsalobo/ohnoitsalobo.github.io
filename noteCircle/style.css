@@ -238,3 +238,13 @@ input[type=range]:focus::-ms-fill-upper {
       max-width: 300px;
     }
 }
+
+#keyKnob{
+    /* transform: rotate(180deg); */
+    margin: -30px 70px;
+    opacity: 0.5;
+}
+#modeKnob{
+    /* transform: rotate(180deg); */
+    margin: -30px 70px;
+}

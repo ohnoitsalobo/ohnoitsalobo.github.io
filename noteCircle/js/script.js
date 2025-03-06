@@ -259,6 +259,7 @@ key_Slider.addEventListener('input', function() {
     key_Select.selectedIndex = key_Slider.value;
     key_Select.dispatchEvent(optionChanged);
     document.getElementById("keySliderText").textContent = key_Select.options[key_Slider.value].textContent;
+    document.getElementById("keyKnob").value = key_Slider.value; keyKnob.dispatchEvent(new Event("change"));
 });
 key_Slider.addEventListener("wheel", event => {
     event.preventDefault();
@@ -1231,3 +1232,42 @@ function showHelp(){
         _htext.innerHTML = "";
     }
 }
+
+
+var keyKnob = new Nexus.Dial('#keyKnob',{
+  'size': [100 ,100],
+  'interaction': 'radial', // "radial", "vertical", or "horizontal"
+  'mode': 'absolute', // "absolute" or "relative"
+  'min': 0,
+  'max': 12,
+  'step': 1,
+  'value': 0
+});
+    
+keyKnob.on('change', function(e){
+    console.info(keyKnob.value);
+    key_Slider.value = 12-keyKnob.value;
+    key_Slider.dispatchEvent(new Event("input"));
+});
+
+keyKnob.colorize("accent","gold");
+keyKnob.colorize("fill","#222");
+
+var modeKnob = new Nexus.Dial('#modeKnob',{
+  'size': [100 ,100],
+  'interaction': 'radial', // "radial", "vertical", or "horizontal"
+  'mode': 'absolute', // "absolute" or "relative"
+  'min': 0,
+  'max': 7,
+  'step': 1,
+  'value': 0
+});
+    
+modeKnob.on('change', function(e){
+    console.info(modeKnob.value);
+    mode_Slider.value = 7-modeKnob.value;
+    mode_Slider.dispatchEvent(new Event("input"));
+});
+
+modeKnob.colorize("accent","#529de1");
+modeKnob.colorize("fill","#222");
