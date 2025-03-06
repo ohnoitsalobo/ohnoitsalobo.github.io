@@ -267,6 +267,9 @@ input[type=range]:focus::-ms-fill-upper {
     color: gray !important;
     display: none;
 }
+.yui3-dial-center-button{
+    display: none;
+}
 
 input-knob{
     width: 150px;
