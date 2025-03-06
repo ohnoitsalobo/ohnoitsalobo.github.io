@@ -204,6 +204,9 @@ input[type=range]:focus::-ms-fill-upper {
   background: #50555C;
 }
 
+#keySlider{
+    display: none;
+}
 #keySliderText{
     color: var(--gold);
 }
@@ -215,6 +218,9 @@ input[type=range]:focus::-ms-fill-upper {
 }
 #keySlider::-webkit-slider-thumb{
   background: var(--gold);
+}
+#modeSlider{
+    display: none;
 }
 #modeSliderText{
     color: var(--blue);
@@ -230,7 +236,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .sliderText{
-    margin: -15px 0px;
+    margin: -25px 0px;
 }
 
 @media (max-width: 600px) {

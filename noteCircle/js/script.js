@@ -246,11 +246,15 @@ key_Slider.addEventListener('input', function() {
     let index = parseInt(this.value);
     if(index < 0) {
         key_Slider.value = 11;
-        if(!lockNotes) key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
+        if(!lockNotes) {
+            key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
+        }
     }
     if(index > 11) {
         key_Slider.value = 0;
-        if(!lockNotes) key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
+        if(!lockNotes) {
+            key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
+        }
     }
     let _d = key_Select.selectedIndex - key_Slider.value;
     if(_d >  5){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
@@ -259,7 +263,6 @@ key_Slider.addEventListener('input', function() {
     key_Select.selectedIndex = key_Slider.value;
     key_Select.dispatchEvent(optionChanged);
     document.getElementById("keySliderText").textContent = key_Select.options[key_Slider.value].textContent;
-    document.getElementById("keyKnob").value = key_Slider.value; keyKnob.dispatchEvent(new Event("change"));
 });
 key_Slider.addEventListener("wheel", event => {
     event.preventDefault();
@@ -1245,7 +1248,7 @@ var keyKnob = new Nexus.Dial('#keyKnob',{
 });
     
 keyKnob.on('change', function(e){
-    console.info(keyKnob.value);
+    // console.info(keyKnob.value);
     key_Slider.value = 12-keyKnob.value;
     key_Slider.dispatchEvent(new Event("input"));
 });
@@ -1264,9 +1267,12 @@ var modeKnob = new Nexus.Dial('#modeKnob',{
 });
     
 modeKnob.on('change', function(e){
-    console.info(modeKnob.value);
+    // console.info(modeKnob.value);
     mode_Slider.value = 7-modeKnob.value;
     mode_Slider.dispatchEvent(new Event("input"));
+    // if(lockNotes){
+        // setTimeout(function(){ keyKnob.value = key_Slider.value }, 10);
+    // }
 });
 
 modeKnob.colorize("accent","#529de1");
