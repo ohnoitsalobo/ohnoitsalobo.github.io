@@ -203,9 +203,7 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #50555C;
 }
-#keySlider{
-    display: none;
-}
+
 #keySliderText{
     color: var(--gold);
 }
@@ -218,12 +216,8 @@ input[type=range]:focus::-ms-fill-upper {
 #keySlider::-webkit-slider-thumb{
   background: var(--gold);
 }
-#modeSlider{
-    display: none;
-}
 #modeSliderText{
     color: var(--blue);
-    width: 325px;
 }
 #modeSlider::-moz-range-thumb{
   background: var(--blue);
@@ -236,7 +230,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .sliderText{
-    margin: auto 30px;
+    margin: -15px 0px;
 }
 
 @media (max-width: 600px) {
@@ -245,7 +239,6 @@ input[type=range]:focus::-ms-fill-upper {
     }
 }
 
-<<<<<<< HEAD
 #keyKnob{
     /* transform: rotate(180deg); */
     margin: -30px 70px;
@@ -255,58 +248,3 @@ input[type=range]:focus::-ms-fill-upper {
     /* transform: rotate(180deg); */
     margin: -30px 70px;
 }
-=======
-#keyDial {
-    margin: -40px 50px;
-    /* position: absolute; */
-    /* top: 340px; */
-    /* left: 250px; */
-}
-#keyDial .yui3-dial-label{
-    color: var(--gold) !important;
-}
-#modeDial {
-    margin: -40px 50px;
-    /* position: absolute; */
-    /* top: 340px; */
-    /* right: 250px; */
-}
-#modeDial .yui3-dial-label{
-    color: var(--blue) !important;
-}
-.yui3-dial-value-string{
-    color: gray !important;
-    display: none;
-}
-.yui3-dial-center-button {
-    display: none;
-    /* transform: scale(0.3); */
-}
-
-.yui3-dial-rinG {
-    /* touch-action: auto !important; */
-}
-
-input-knob {
-    width: 150px;
-    padding: 10px;
-    border: 2px dashed green;
-    background: lightgreen;
-}
-input-knob::part(rotator) {
-    box-sizing: border-box;
-    background: lightblue;
-    border: 2px dashed blue;
-    border-radius: 100%;
-    width: 150px;
-    height: 150px;
-}
-
-.mark {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    font: bold 200% monospace;
-    color: blue;
-}
->>>>>>> 4ae1a827f56b612d9483317ed9caf15134835bb1
