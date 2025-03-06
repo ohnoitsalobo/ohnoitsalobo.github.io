@@ -1243,7 +1243,7 @@ YUI().use('dial', function (Y) {
         max:99999,
         stepsPerRevolution:12,
         value: 0,
-        strings:{label:'Key', resetStr: 'Reset', tooltipHandle:'Drag to change'},
+        strings:{label:'Key', resetStr: '', tooltipHandle:'Drag to change'},
         after : {
             valueChange: Y.bind( changeKey, keyDial )
         }
@@ -1255,7 +1255,7 @@ YUI().use('dial', function (Y) {
         max:99999,
         stepsPerRevolution:7,
         value: 0,
-        strings:{label:'Mode', resetStr: 'Reset', tooltipHandle:'Drag to change'},
+        strings:{label:'Mode', resetStr: '', tooltipHandle:'Drag to change'},
         after : {
             valueChange: Y.bind( changeMode, modeDial )
         }
@@ -1264,8 +1264,9 @@ YUI().use('dial', function (Y) {
 });
 
 function changeKey(e){
-    let val = (e.newVal < 0) ? 11+(e.newVal%12) : e.newVal%12;
-    val = 11-val;
+    let val = (e.newVal < 0) ? 12+(e.newVal%12) : e.newVal%12;
+    val = 12-val;
+    console.info(val);
     key_Slider.value = val;
     key_Slider.dispatchEvent(new Event("input"));
     // if(e.newVal < 0){
@@ -1276,8 +1277,9 @@ function changeKey(e){
     // }
 }
 function changeMode(e){
-    let val = (e.newVal < 0) ? 6+(e.newVal%7) : e.newVal%7;
-    val = 6-val;
+    let val = (e.newVal < 0) ? 7+(e.newVal%7) : e.newVal%7;
+    val = 7-val;
+    console.info(val);
     mode_Slider.value = val;
     mode_Slider.dispatchEvent(new Event("input"));
     // if(e.newVal < 0){
