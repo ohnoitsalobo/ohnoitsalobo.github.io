@@ -1266,27 +1266,13 @@ YUI().use('dial', function (Y) {
 function changeKey(e){
     let val = (e.newVal < 0) ? 12+(e.newVal%12) : e.newVal%12;
     val = 12-val;
-    console.info(val);
     key_Slider.value = val;
     key_Slider.dispatchEvent(new Event("input"));
-    // if(e.newVal < 0){
-        // keyDial.set('value', 11);
-    // }
-    // if(e.newVal > 11){
-        // keyDial.set('value', 0);
-    // }
 }
 function changeMode(e){
     let val = (e.newVal < 0) ? 7+(e.newVal%7) : e.newVal%7;
     val = 7-val;
-    console.info(val);
     mode_Slider.value = val;
     mode_Slider.dispatchEvent(new Event("input"));
-    // if(e.newVal < 0){
-        // modeDial.set('value', 6);
-    // }
-    // if(e.newVal > 6){
-        // modeDial.set('value', 0);
-    // }
 }
 
