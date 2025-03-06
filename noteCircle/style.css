@@ -272,6 +272,10 @@ input[type=range]:focus::-ms-fill-upper {
     transform: scale(0.7);
 }
 
+.yui3-dial-ring{
+    touch-action: auto !important;
+}
+
 input-knob{
     width: 150px;
     padding: 10px;
