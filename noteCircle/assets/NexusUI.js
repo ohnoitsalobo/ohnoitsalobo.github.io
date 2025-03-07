@@ -3888,7 +3888,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	        this.screw.setAttribute("cx", center.x);
 	        this.screw.setAttribute("cy", center.y);
-	        this.screw.setAttribute("r", diameter / 20);
+	        this.screw.setAttribute("r", diameter / 40);
 	
 	        var value = this.value;
 	
