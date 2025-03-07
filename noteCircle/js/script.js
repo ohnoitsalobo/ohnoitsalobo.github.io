@@ -344,7 +344,7 @@ function rotateNotes(){
     keyIndex = (currentNoteRotation < 0) ? (currentNoteRotation / -30) % 12 : 11-((currentNoteRotation / 30)+11) % 12;
     if(lockNotes){
         key_Select.selectedIndex = keyIndex;
-        key_Slider.value = keyIndex;
+        key_Slider.value = keyIndex;    if (lockNotes) keyKnob.value = 12-keyIndex;
         key_SliderText.textContent = key_Select.options[keyIndex].textContent;
     }
     noteCircle_base.style.transform = "rotate(" + currentNoteRotation + "deg)";
@@ -1260,9 +1260,11 @@ var keyKnob = new Nexus.Dial('#keyKnob',{
 });
     
 keyKnob.on('change', function(e){
-    // console.info(keyIndex);
-    key_Slider.value = 12-keyKnob.value;
-    key_Slider.dispatchEvent(new Event("input"));
+    // console.info(12-e);
+    if(keyIndex != 12-e){
+        key_Slider.value = 12-keyKnob.value;
+        key_Slider.dispatchEvent(new Event("input"));
+    }
 });
 
 keyKnob.colorize("accent","gold");
@@ -1279,10 +1281,9 @@ var modeKnob = new Nexus.Dial('#modeKnob',{
 });
     
 modeKnob.on('change', function(e){
-    mode_Slider.value = 7-modeKnob.value;
-    mode_Slider.dispatchEvent(new Event("input"));
-    // if(lockNotes){
-        // setTimeout(function(){ keyKnob.value = key_Slider.value }, 10);
+    // if(modeIndex != 7-e){
+        mode_Slider.value = 7-modeKnob.value;
+        mode_Slider.dispatchEvent(new Event("input"));
     // }
 });
 
