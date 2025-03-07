@@ -236,7 +236,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .sliderText{
-    margin: -25px 0px;
+    margin: -15px 0px;
 }
 
 @media (max-width: 600px) {
@@ -246,12 +246,12 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #keyKnob{
-    /* transform: rotate(180deg); */
+    transform: rotate(180deg);
     margin: -30px 70px;
     opacity: 0.7;
 }
 #modeKnob{
-    /* transform: rotate(180deg); */
+    transform: rotate(180deg);
     margin: -30px 70px;
     opacity: 0.7;
 }

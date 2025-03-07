@@ -1838,7 +1838,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        switch (this.direction) {
 	          case "radial":
 	            var position = math.toPolar(current.x - this.boundary.center.x, current.y - this.boundary.center.y);
-	            position = position.angle / (Math.PI * 2);
+	            // position = position.angle / (Math.PI * 2);        // original
+	            position = (position.angle+Math.PI) / (Math.PI * 2); // modified
 	            position = (position - 0.25 + 1) % 1;
 	            return position;
 	          case "vertical":
@@ -3861,10 +3862,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.handleLine = svg.create("path");
 	
 	        this.element.appendChild(this.background);
-	        this.element.appendChild(this.handle);
-	        this.element.appendChild(this.handle2);
-	        this.element.appendChild(this.handleFill);
-	        this.element.appendChild(this.handle2Fill);
+	        // this.element.appendChild(this.handle);
+	        // this.element.appendChild(this.handle2);
+	        // this.element.appendChild(this.handleFill);
+	        // this.element.appendChild(this.handle2Fill);
 	        this.element.appendChild(this.handleLine);
 	        this.element.appendChild(this.screw);
 	      }
@@ -3887,7 +3888,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	        this.screw.setAttribute("cx", center.x);
 	        this.screw.setAttribute("cy", center.y);
-	        this.screw.setAttribute("r", diameter / 12);
+	        this.screw.setAttribute("r", diameter / 20);
 	
 	        var value = this.value;
 	
