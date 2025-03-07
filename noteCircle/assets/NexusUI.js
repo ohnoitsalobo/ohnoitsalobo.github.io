@@ -3862,12 +3862,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.handleLine = svg.create("path");
 	
 	        this.element.appendChild(this.background);
+	        // this.element.appendChild(this.screw);
 	        // this.element.appendChild(this.handle);
 	        // this.element.appendChild(this.handle2);
 	        // this.element.appendChild(this.handleFill);
 	        // this.element.appendChild(this.handle2Fill);
 	        this.element.appendChild(this.handleLine);
-	        this.element.appendChild(this.screw);
 	      }
 	    },
 	    sizeInterface: {
@@ -3888,7 +3888,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	        this.screw.setAttribute("cx", center.x);
 	        this.screw.setAttribute("cy", center.y);
-	        this.screw.setAttribute("r", diameter / 40);
+	        this.screw.setAttribute("r", diameter / 20);
 	
 	        var value = this.value;
 	
@@ -3934,6 +3934,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	        this.handleLine.setAttribute("d", "M " + center.x + " " + center.y + " L " + arcEndingX + " " + arcEndingY);
 	        this.handleLine.setAttribute("stroke-width", diameter / 20);
+	        this.handleLine.setAttribute("stroke-linecap", "round");
 	      }
 	    },
 	    colorInterface: {
@@ -3988,8 +3989,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          arcEndingA = handle2Points.end;
 	        }
 	
-	        var arcEndingX = center.x + Math.cos(arcEndingA) * (diameter / 2);
-	        var arcEndingY = center.y + Math.sin(arcEndingA) * (diameter / 2) * -1;
+	        var arcEndingX = center.x + Math.cos(arcEndingA) * (diameter / 2.5);
+	        var arcEndingY = center.y + Math.sin(arcEndingA) * (diameter / 2.5) * -1;
 	
 	        this.handleLine.setAttribute("d", "M " + center.x + " " + center.y + " L " + arcEndingX + " " + arcEndingY);
 	      }
