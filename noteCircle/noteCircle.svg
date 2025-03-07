@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    style="user-select: none"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    sodipodi:docname="noteCircle.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -27,13 +27,13 @@
      showgrid="false"
      inkscape:zoom="1.7566667"
      inkscape:cx="235.67362"
-     inkscape:cy="36.148008"
+     inkscape:cy="263.85199"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
+     inkscape:current-layer="allModes" />
   <defs
      id="defs1">
     <style
@@ -1494,7 +1494,7 @@
       <g
          id="lockRotation"
          style="display:inline"
-         transform="translate(0,-7.5)">
+         transform="scale(1.5)">
         <g
            id="arrows"
            style="display:inline;opacity:0.3;fill:#ffffff;stroke:#ffffff;stroke-width:0.33"
@@ -1524,7 +1524,7 @@
       </g>
       <g
          id="playScale"
-         style="display:inline;opacity:0.5;"
+         style="display:none;opacity:0.5"
          transform="matrix(0.7,0,0,0.7,0,8.0349055)">
         <text
            xml:space="preserve"
