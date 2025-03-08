@@ -3853,6 +3853,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	    buildInterface: {
 	      value: function buildInterface() {
 	
+            const style = document.createElementNS("http://www.w3.org/2000/svg", "style");
+
+            style.textContent = `
+                path {
+                    transition: all 50ms;
+                }
+            `;
+
+            this.element.appendChild(style);
+            
 	        this.background = svg.create("circle");
 	        this.screw = svg.create("circle");
 	        this.handle = svg.create("path");
@@ -3869,7 +3879,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // this.element.appendChild(this.handle2Fill);
 	        this.element.appendChild(this.handleLine);
 	      }
-	    },
+        },
 	    sizeInterface: {
 	      value: function sizeInterface() {
 	
