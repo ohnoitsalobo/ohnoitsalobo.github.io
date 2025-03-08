@@ -247,7 +247,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 #keyKnob{
     transform: rotate(180deg);
-    margin: -40px 70px;
+    /* margin: -40px 70px; */
     opacity: 0.7;
 }
 #modeKnob{

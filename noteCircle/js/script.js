@@ -144,11 +144,13 @@ scale_Select.addEventListener("wheel", event => {
 }, {passive : false});
 scale_Select.addEventListener("change", event => {
     // console.info(event.srcElement.selectedOptions[0]);
-    document.getElementById("sliders").style.display = '';
+    document.getElementById("img").style.display = "";
     noteCircleDOM.getElementById("allModes").style.display = '';
+    document.getElementById("sliderText").style.display = '';
+    document.getElementById("modeKnob").style.display = '';
+    document.getElementById("keyKnob").style.margin = '-40px 70px';
     let a = event.srcElement;
     let _y = mode_Select.selectedIndex;
-    document.getElementById("img").style.display = "";
     mode_Select.style.opacity = '1';
     let yy = mode_Select.parentElement.previousElementSibling; yy.style.opacity = '1';
     _0.style.display = 'none';
@@ -180,7 +182,9 @@ scale_Select.addEventListener("change", event => {
         mode_Select.style.opacity = '0'; yy.style.opacity = '0'; // console.info(yy);
         document.getElementById("img").style.display = "none";
         noteCircleDOM.getElementById("allModes").style.display = 'none';
-        document.getElementById("sliders").style.display = 'none';
+        document.getElementById("sliderText").style.display = 'none';
+        document.getElementById("modeKnob").style.display = 'none';
+        document.getElementById("keyKnob").style.margin = '';
     }
     drawNotes();
     showHelp();
