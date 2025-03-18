@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Scales/Modes Cheat Sheet</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="style.css">
 
-    <script src="assets/tone.js"></script>
-    <script src="assets/vars.js"></script>
+    <script src="js/tone.js"></script>
+    <script src="js/vars.js"></script>
     <!-- <script src="../js/playTone.js"></script> -->
-    <script src="assets/NexusUI.js"></script>
-    
 </head>
 <body onload="process();">
     <center>
@@ -26,20 +24,12 @@
         <div>
             <object data="noteCircle.svg" type="image/svg+xml" id="noteCircle"> </object>
         </div>
-            <div id="knobs" style="display: flex; justify-content: center;">
-                <div id="keyKnob"></div>
-                <div id="modeKnob"></div>
-            </div>
         <div id="sliders">
-            <div id="sliderText" onclick="playScale();" >
-                <div style="font-weight: normal; font-size: 60%; margin: -30px 0px 5px 0px;">Tap to play</div>
-                <div id="keySliderText">C</div>
-                &#10070;
-                <div id="modeSliderText">1. Ionian</div>
-            </div>
-            <br />
-            <input class="slider" type="range" id="keySlider" min="-1" max="12" value="0">
-            <input class="slider" type="range" id="modeSlider" min="-1" max="7" value="0">
+            <div class="sliderText"><div id="keySliderText">C</div> &#10070; <div id="modeSliderText">1. Ionian</div></div><br />
+            <input class="slider" type="range" id="keySlider" min="-1" max="12" value="0"><br />
+            <input class="slider" type="range" id="modeSlider" min="-1" max="7" value="0"><br /><br />
+            <!-- Mode - <span class="sliderText" id="modeSliderText">1. Ionian</span><br /> -->
+            <!-- Root: <span class="sliderText" id="keySliderText">C</span><br /><br /> -->
         </div>
         <div id="options-select-bar">
             <table>
@@ -81,7 +71,7 @@
         </div>
         <div style="font-size:0.8em; margin-bottom: 5px; opacity: 0.7;">Old version of this page moved to<br /><a href="https://ohnoitsalobo.github.io/noteCircle/old/">https://ohnoitsalobo.github.io/noteCircle/old/</a></div>
     </footer>
-    <script src="assets/script.js"></script>
+    <script src="js/script.js"></script>
     </center>
 </body>
 </html>

@@ -65,7 +65,7 @@ noteCircle.addEventListener("load", function(){     // handle interactions on th
                 mode_Slider.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
                 mode_Slider.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
                 noteCircleDOM.childNodes[1].style.pointerEvents = "";
-                // rot_not++;
+                rot_not++;
             }, 600);
         }
         // console.info(event.srcElement.parentElement);
@@ -144,13 +144,11 @@ scale_Select.addEventListener("wheel", event => {
 }, {passive : false});
 scale_Select.addEventListener("change", event => {
     // console.info(event.srcElement.selectedOptions[0]);
-    document.getElementById("img").style.display = "";
+    document.getElementById("sliders").style.display = '';
     noteCircleDOM.getElementById("allModes").style.display = '';
-    document.getElementById("sliderText").style.display = '';
-    document.getElementById("modeKnob").style.display = '';
-    document.getElementById("keyKnob").style.margin = '-40px 70px';
     let a = event.srcElement;
     let _y = mode_Select.selectedIndex;
+    document.getElementById("img").style.display = "";
     mode_Select.style.opacity = '1';
     let yy = mode_Select.parentElement.previousElementSibling; yy.style.opacity = '1';
     _0.style.display = 'none';
@@ -182,9 +180,7 @@ scale_Select.addEventListener("change", event => {
         mode_Select.style.opacity = '0'; yy.style.opacity = '0'; // console.info(yy);
         document.getElementById("img").style.display = "none";
         noteCircleDOM.getElementById("allModes").style.display = 'none';
-        document.getElementById("sliderText").style.display = 'none';
-        document.getElementById("modeKnob").style.display = 'none';
-        document.getElementById("keyKnob").style.margin = '';
+        document.getElementById("sliders").style.display = 'none';
     }
     drawNotes();
     showHelp();
@@ -250,15 +246,11 @@ key_Slider.addEventListener('input', function() {
     let index = parseInt(this.value);
     if(index < 0) {
         key_Slider.value = 11;
-        if(!lockNotes) {
-            key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
-        }
+        if(!lockNotes) key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
     }
     if(index > 11) {
         key_Slider.value = 0;
-        if(!lockNotes) {
-            key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
-        }
+        if(!lockNotes) key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
     }
     let _d = key_Select.selectedIndex - key_Slider.value;
     if(_d >  5){ key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} )); }
@@ -348,7 +340,7 @@ function rotateNotes(){
     keyIndex = (currentNoteRotation < 0) ? (currentNoteRotation / -30) % 12 : 11-((currentNoteRotation / 30)+11) % 12;
     if(lockNotes){
         key_Select.selectedIndex = keyIndex;
-        key_Slider.value = keyIndex;    if (lockNotes) keyKnob.value = 12-keyIndex;
+        key_Slider.value = keyIndex;
         key_SliderText.textContent = key_Select.options[keyIndex].textContent;
     }
     noteCircle_base.style.transform = "rotate(" + currentNoteRotation + "deg)";
@@ -487,58 +479,48 @@ function playKeyboard(e){
     }
     if(e.key == 'ArrowLeft') {
         e.preventDefault();
-        // key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-        keyKnob.value = (keyKnob.value+11)%12;
+        key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
         if(e.shiftKey){
             for(var i = 0; i < 6; i++){
-                // key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-                keyKnob.value = (keyKnob.value+11)%12;
+                key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
             }
         }
         updateKeyModeSlider(0);
     }
     if(e.key == 'ArrowRight') {
         e.preventDefault();
-        // key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-        keyKnob.value = (keyKnob.value+1)%12;
+        key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
         if(e.shiftKey){
             for(var i = 0; i < 6; i++){
-                // key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-                keyKnob.value = (keyKnob.value+1)%12;
+                key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
             }
         }
         updateKeyModeSlider(0);
     }
     if(e.key == 'ArrowUp') {
         e.preventDefault();
-        // mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-        modeKnob.value = (modeKnob.value+1)%7;
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+        
         if(e.shiftKey && scale_Select.selectedIndex == 0 && !lockNotes){
-            // mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-            // mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-            modeKnob.value = (modeKnob.value+1)%7;
-            modeKnob.value = (modeKnob.value+1)%7;
-            if(mode_Select.selectedIndex == 3){
-                // key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
-                keyKnob.value = (keyKnob.value+1)%12;
-                // updateKeyModeSlider(0);
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+            if(mode_Select.selectedIndex == 6){
+                key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: 100} ));
+                updateKeyModeSlider(0);
             }
         }
         updateKeyModeSlider(1);
     }
     if(e.key == 'ArrowDown') {
         e.preventDefault();
-        // mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-        modeKnob.value = (modeKnob.value+6)%7;
+        mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+        
         if(e.shiftKey && scale_Select.selectedIndex == 0 && !lockNotes){
-            // mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-            // mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-            modeKnob.value = (modeKnob.value+6)%7;
-            modeKnob.value = (modeKnob.value+6)%7;
-            if(mode_Select.selectedIndex == 6){
-                keyKnob.value = (keyKnob.value+11)%12;
-                // key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
-                // updateKeyModeSlider(0);
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+            mode_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+            if(mode_Select.selectedIndex == 3){
+                key_Select.dispatchEvent(new WheelEvent("wheel", {deltaY: -100} ));
+                updateKeyModeSlider(0);
             }
         }
         updateKeyModeSlider(1);
@@ -1183,21 +1165,17 @@ function modeCheck(t){
 function showHelp(){
     let _t0 = document.getElementById("noteCircle").getBoundingClientRect();
     let _t1 = noteCircleDOM.getElementById("lockRotation").getBoundingClientRect();
-    // let _t2 = noteCircleDOM.getElementById("playScale").getBoundingClientRect();
-    let _t2 = document.getElementById("keySliderText").getBoundingClientRect();
-    // let _t3 = key_Slider.getBoundingClientRect();
-    // let _t4 = mode_Slider.getBoundingClientRect();
-    let _t3 = document.getElementById("keyKnob").getBoundingClientRect();
-    let _t4 = document.getElementById("modeKnob").getBoundingClientRect();
+    let _t2 = noteCircleDOM.getElementById("playScale").getBoundingClientRect();
+    let _t3 = key_Slider.getBoundingClientRect();
+    let _t4 = mode_Slider.getBoundingClientRect();
     let _t5 = scale_Select.getBoundingClientRect();
 
     
+    let _help4 = document.getElementById("help4"); let _h4x = _t0.left+_t1.x-15 , _h4y = _t0.top+_t1.y+5;
+    let _help5 = document.getElementById("help5"); let _h5x = _t0.left+_t2.x-15 , _h5y = _t0.top+_t2.y+5;
     let _help1 = document.getElementById("help1"); let _h1x = _t3.x-20, _h1y = _t3.y+5;
-    let _help2 = document.getElementById("help2"); let _h2x = _t4.x+110, _h2y = _t4.y+5;
+    let _help2 = document.getElementById("help2"); let _h2x = _t4.x-20, _h2y = _t4.y+5;
     let _help3 = document.getElementById("help3"); let _h3x = _t5.x-20, _h3y = _t5.y;
-    let _help4 = document.getElementById("help4"); let _h4x = _t0.left+_t1.x-15, _h4y = _t0.top+_t1.y+5;
-    // let _help5 = document.getElementById("help5"); let _h5x = _t0.left+_t2.x-15 , _h5y = _t0.top+_t2.y+5;
-    let _help5 = document.getElementById("help5"); let _h5x = _t2.x+_t2.width/2-30, _h5y = _t2.y+_t2.height/2+10;
 
     let _htext = document.getElementById("helpText");
     
@@ -1253,45 +1231,3 @@ function showHelp(){
         _htext.innerHTML = "";
     }
 }
-
-
-var keyKnob = new Nexus.Dial('#keyKnob',{
-  'size': [100 ,100],
-  'interaction': 'radial', // "radial", "vertical", or "horizontal"
-  'mode': 'absolute', // "absolute" or "relative"
-  'min': 0,
-  'max': 12,
-  'step': 1,
-  'value': 0
-});
-    
-keyKnob.on('change', function(e){
-    // console.info(12-e);
-    if(keyIndex != 12-e){
-        key_Slider.value = 12-keyKnob.value;
-        key_Slider.dispatchEvent(new Event("input"));
-    }
-});
-
-keyKnob.colorize("accent","gold");
-keyKnob.colorize("fill","#222");
-
-var modeKnob = new Nexus.Dial('#modeKnob',{
-  'size': [100 ,100],
-  'interaction': 'radial', // "radial", "vertical", or "horizontal"
-  'mode': 'absolute', // "absolute" or "relative"
-  'min': 0,
-  'max': 7,
-  'step': 1,
-  'value': 0
-});
-    
-modeKnob.on('change', function(e){
-    // if(modeIndex != 7-e){
-        mode_Slider.value = 7-modeKnob.value;
-        mode_Slider.dispatchEvent(new Event("input"));
-    // }
-});
-
-modeKnob.colorize("accent","#529de1");
-modeKnob.colorize("fill","#222");
