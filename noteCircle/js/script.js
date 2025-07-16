@@ -1177,8 +1177,8 @@ function showHelp(){
     let _t0 = document.getElementById("noteCircle").getBoundingClientRect();
     let _t1 = noteCircleDOM.getElementById("lockRotation").getBoundingClientRect();
     let _t2 = noteCircleDOM.getElementById("playScale").getBoundingClientRect();
-    let _t3 = key_Slider.getBoundingClientRect();
-    let _t4 = mode_Slider.getBoundingClientRect();
+    let _t3 = keyDial.getBoundingClientRect();
+    let _t4 = modeDial.getBoundingClientRect();
     let _t5 = scale_Select.getBoundingClientRect();
 
     
