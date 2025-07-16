@@ -238,7 +238,7 @@ input[type=range]:focus::-ms-fill-upper {
     input[type=range] {
       max-width: 300px;
     }
-    #dials{
+    .dials {
         transform: scale(0.8);
     }
 }
