@@ -1288,12 +1288,12 @@ $("#keyDial").roundSlider({
 	drag: null,
 	change: null,
 	// 'update' event is the combination of 'drag' and 'change'
-	update: null,
-	// 'valueChange' event is similar to 'update' event, in addition it will trigger
-	// even the value was changed through programmatically also.
-	valueChange: function (e) {
+	update: function (e) {
         key_Slider.value = e.value; key_Slider.dispatchEvent(new Event("input"));
     },
+	// 'valueChange' event is similar to 'update' event, in addition it will trigger
+	// even the value was changed through programmatically also.
+	valueChange: null,
 	stop: null,
 	tooltipFormat: "returnKeys"
 });
@@ -1345,12 +1345,12 @@ $("#modeDial").roundSlider({
 	drag: null,
 	change: null,
 	// 'update' event is the combination of 'drag' and 'change'
-	update: null,
-	// 'valueChange' event is similar to 'update' event, in addition it will trigger
-	// even the value was changed through programmatically also.
-	valueChange: function (e) {
+	update: function (e) {
         mode_Slider.value = e.value; mode_Slider.dispatchEvent(new Event("input"));
     },
+	// 'valueChange' event is similar to 'update' event, in addition it will trigger
+	// even the value was changed through programmatically also.
+	valueChange: null,
 	stop: null,
 	tooltipFormat: "returnModes"
 });
