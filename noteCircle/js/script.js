@@ -1292,7 +1292,6 @@ $("#keyDial").roundSlider({
 	// 'valueChange' event is similar to 'update' event, in addition it will trigger
 	// even the value was changed through programmatically also.
 	valueChange: function (e) {
-        console.log(e.value);
         key_Slider.value = e.value; key_Slider.dispatchEvent(new Event("input"));
     },
 	stop: null,
@@ -1350,7 +1349,6 @@ $("#modeDial").roundSlider({
 	// 'valueChange' event is similar to 'update' event, in addition it will trigger
 	// even the value was changed through programmatically also.
 	valueChange: function (e) {
-        console.log(e.value);
         mode_Slider.value = e.value; mode_Slider.dispatchEvent(new Event("input"));
     },
 	stop: null,
