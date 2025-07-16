@@ -178,8 +178,8 @@ var synth = new Tone.PolySynth(6, Tone.Synth,
     envelope: {
         attack  : 0.1,
         decay   : 0.1,
-        sustain : 0.9,
-        release : 0.1
+        sustain : 1.5,
+        release : 2
     }
 }
 ).toMaster()

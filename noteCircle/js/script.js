@@ -370,7 +370,8 @@ function playNote(event){
     for(let i = 0; i < keyIndex; i++){
         transpose *= root12_2;
     }
-    synth.triggerAttackRelease(tone[_id]*transpose, "8n");
+    let _t = tone[_id]*transpose;
+    synth.triggerAttackRelease([_t/4, _t/2, _t], "8n");
     
 }
 function updateKeyModeSlider(x){
