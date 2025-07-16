@@ -250,13 +250,14 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 0px 20px 20px 20px;
     margin-top: -20px;
 }
+.rs-handle{
+    
+}
 #keyDial .rs-handle {
     background: var(--gold) !important;
-    /* margin-left: 0 !important; */
 }
 #modeDial .rs-handle {
     background: var(--blue) !important;
-    /* margin-left: 0 !important; */
 }
 .rs-tooltip-text{
     font-size: 1em !important;
