@@ -120,6 +120,7 @@ key_Select.addEventListener("wheel", event => { // down +, up -
     event.srcElement.dispatchEvent(optionChanged);
 }, {passive : false});
 key_Select.addEventListener("change", event => {
+    // console.info(key_Select.value);
     // keyIndex = event.srcElement.selectedOptions[0].value;
     currentNoteRotation = (key_Select.selectedOptions[0].value * -30) + (numOfRotations * 360);
     
@@ -143,8 +144,10 @@ scale_Select.addEventListener("wheel", event => {
     event.srcElement.dispatchEvent(optionChanged);
 }, {passive : false});
 scale_Select.addEventListener("change", event => {
+    // console.info(scale_Select.value);
     // console.info(event.srcElement.selectedOptions[0]);
     document.getElementById("sliders").style.display = '';
+    document.getElementById("dials").style.display = '';
     noteCircleDOM.getElementById("allModes").style.display = '';
     let a = event.srcElement;
     let _y = mode_Select.selectedIndex;
@@ -181,7 +184,9 @@ scale_Select.addEventListener("change", event => {
         document.getElementById("img").style.display = "none";
         noteCircleDOM.getElementById("allModes").style.display = 'none';
         document.getElementById("sliders").style.display = 'none';
+        document.getElementById("dials").style.display = 'none';
     }
+    $("#modeDial").roundSlider("setValue", mode_Slider.value);
     drawNotes();
     showHelp();
 });
@@ -207,6 +212,7 @@ mode_Select.addEventListener("wheel", event => {
     event.srcElement.dispatchEvent(optionChanged);
 }, {passive : false});
 mode_Select.addEventListener("change", event => {
+    // console.info(mode_Select.value);
     // console.info(event.srcElement.selectedOptions[0]);
     // calculate rotation for each mode 'mask'
     let _0rot_p = _0rot, _1rot_p = _1rot, _2rot_p = _2rot, _3rot_p = _3rot, _4rot_p = _4rot;
@@ -342,6 +348,7 @@ function rotateNotes(){
         key_Select.selectedIndex = keyIndex;
         key_Slider.value = keyIndex;
         key_SliderText.textContent = key_Select.options[keyIndex].textContent;
+        $("#keyDial").roundSlider("setValue", keyIndex);
     }
     noteCircle_base.style.transform = "rotate(" + currentNoteRotation + "deg)";
     // console.info(currentNoteRotation);
@@ -368,9 +375,13 @@ function playNote(event){
 }
 function updateKeyModeSlider(x){
     if(x){
-        mode_Slider.value = mode_Select.selectedIndex; mode_Slider.dispatchEvent(new Event("input"));
+        mode_Slider.value = mode_Select.selectedIndex;
+        mode_Slider.dispatchEvent(new Event("input"));
+        $("#modeDial").roundSlider("setValue", mode_Slider.value);
     }else{
-        key_Slider.value = key_Select.selectedIndex; key_Slider.dispatchEvent(new Event("input"));
+        key_Slider.value = key_Select.selectedIndex;
+        key_Slider.dispatchEvent(new Event("input"));
+        $("#keyDial").roundSlider("setValue", key_Slider.value);
     }
 }
 function playKeyboard(e){
@@ -1230,4 +1241,124 @@ function showHelp(){
         // _help6.style = "";
         _htext.innerHTML = "";
     }
+}
+
+$("#keyDial").roundSlider({
+
+	min: 12,
+	max: 0,
+	step: 1,
+	value: 0,
+	radius: 100,
+	width: 15,
+	handleSize: "+30",
+	startAngle: 90,
+	endAngle: "+360",
+	animation: false,
+	showTooltip: true,
+	editableTooltip: false,
+	readOnly: false,
+	disabled: false,
+	keyboardAction: false,
+	mouseScrollAction: false,
+	sliderType: "default",
+	circleShape: "full",
+	handleShape: "round",
+	// lineCap: "butt",
+
+	// the 'startValue' property decides at which point the slider should start.
+	// otherwise, by default the slider starts with min value. this is mainly used
+	// for min-range slider, where you can customize the min-range start position.
+	startValue: null,
+
+	// SVG related properties
+	svgMode: true,
+	borderWidth: 0,
+	borderColor: "#111",
+	pathColor: "#50555C",
+	rangeColor: null,
+	tooltipColor: "#eec600",
+
+	// events
+	beforeCreate: null,
+	create: null,
+	start: null,
+	// 'beforeValueChange' will be triggered before 'valueChange', and it can be cancellable
+	beforeValueChange: null,
+	drag: null,
+	change: null,
+	// 'update' event is the combination of 'drag' and 'change'
+	update: null,
+	// 'valueChange' event is similar to 'update' event, in addition it will trigger
+	// even the value was changed through programmatically also.
+	valueChange: function (e) {
+        console.log(e.value);
+        key_Slider.value = e.value; key_Slider.dispatchEvent(new Event("input"));
+    },
+	stop: null,
+	tooltipFormat: "returnKeys"
+});
+function returnKeys(x){
+    return keyList[x.value%12];
+}
+
+$("#modeDial").roundSlider({
+	min: 7,
+	max: 0,
+	step: 1,
+	value: 0,
+	radius: 100,
+	width: 15,
+	handleSize: "+30",
+	startAngle: 90,
+	endAngle: "+360",
+	animation: false,
+	showTooltip: true,
+	editableTooltip: false,
+	readOnly: false,
+	disabled: false,
+	keyboardAction: false,
+	mouseScrollAction: false,
+	sliderType: "default",
+	circleShape: "full",
+	handleShape: "round",
+	// lineCap: "butt",
+
+	// the 'startValue' property decides at which point the slider should start.
+	// otherwise, by default the slider starts with min value. this is mainly used
+	// for min-range slider, where you can customize the min-range start position.
+	startValue: null,
+
+	// SVG related properties
+	svgMode: true,
+	borderWidth: 0,
+	borderColor: "#111",
+	pathColor: "#50555C",
+	rangeColor: null,
+	tooltipColor: "#529DE1",
+
+	// events
+	beforeCreate: null,
+	create: null,
+	start: null,
+	// 'beforeValueChange' will be triggered before 'valueChange', and it can be cancellable
+	beforeValueChange: null,
+	drag: null,
+	change: null,
+	// 'update' event is the combination of 'drag' and 'change'
+	update: null,
+	// 'valueChange' event is similar to 'update' event, in addition it will trigger
+	// even the value was changed through programmatically also.
+	valueChange: function (e) {
+        console.log(e.value);
+        mode_Slider.value = e.value; mode_Slider.dispatchEvent(new Event("input"));
+    },
+	stop: null,
+	tooltipFormat: "returnModes"
+});
+function returnModes(x){
+    if(scale_Select.selectedIndex < 1)
+        return allModesList[0][x.value%7];
+    else
+        return allModesList[scale_Select.selectedIndex][x.value%7];
 }

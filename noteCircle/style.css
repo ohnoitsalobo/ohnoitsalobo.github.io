@@ -44,6 +44,7 @@ a {
 }
 
 #sliders{
+    display: none;
     font-size: 1.2em;
     font-family: Open Sans;
     font-weight: bold;
@@ -237,4 +238,32 @@ input[type=range]:focus::-ms-fill-upper {
     input[type=range] {
       max-width: 300px;
     }
+    #dials{
+        transform: scale(0.8);
+    }
+}
+
+#dials{
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    padding: 0px 20px 20px 20px;
+    margin-top: -20px;
+}
+#keyDial .rs-handle {
+    background: var(--gold) !important;
+    /* margin-left: 0 !important; */
+}
+#modeDial .rs-handle {
+    background: var(--blue) !important;
+    /* margin-left: 0 !important; */
+}
+.rs-tooltip-text{
+    font-size: 1em !important;
+    font-family: Open Sans !important;
+    font-weight: bold !important;
+}
+
+#keyDial .rs-tooltip-text{
+    font-size: 2em !important;
 }
