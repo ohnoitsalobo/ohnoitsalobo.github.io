@@ -1356,7 +1356,7 @@ $("#modeDial").roundSlider({
 	tooltipFormat: "returnModes"
 });
 function returnModes(x){
-    if(scale_Select.selectedIndex < 1)
+    if(scale_Select.selectedIndex < 0)
         return allModesList[0][x.value%7];
     else
         return allModesList[scale_Select.selectedIndex][x.value%7];
