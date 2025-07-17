@@ -19,25 +19,25 @@ let modeList = [
 ];
 
 let majorModeSelect;
-let majorModeList = [          // let majorModeList = [                  // _0_1_2_3_4_5_6_
-"Ionian (major)"           ,   // "\u2160\nIonian (major)"           ,   // 0 2 4 5 7 9 11  q
-"Dorian"                   ,   // "\u2161\nDorian"                   ,   // 0 2 3 5 7 9 10  w
-"Phrygian"                 ,   // "\u2162\nPhrygian"                 ,   // 0 1 3 5 7 8 10  e
-"Lydian"                   ,   // "\u2163\nLydian"                   ,   // 0 2 4 6 7 9 11  r
-"Mixolydian"               ,   // "\u2164\nMixolydian"               ,   // 0 2 4 5 7 9 10  t
-"Aeolian<br />\n(natural minor)" ,   // "\u2165\nAeolian\n(natural minor)" ,   // 0 2 3 5 7 8 10  y
-"Locrian"                      // "\u2166\nLocrian"                      // 0 1 3 5 6 8 10  u
+let majorModeList = [                 // let majorModeList = [                  // _0_1_2_3_4_5_6_
+"Ionian (major)"                  ,   // "\u2160\nIonian (major)"           ,   // 0 2 4 5 7 9 11  q
+"Dorian"                          ,   // "\u2161\nDorian"                   ,   // 0 2 3 5 7 9 10  w
+"Phrygian"                        ,   // "\u2162\nPhrygian"                 ,   // 0 1 3 5 7 8 10  e
+"Lydian"                          ,   // "\u2163\nLydian"                   ,   // 0 2 4 6 7 9 11  r
+"Mixolydian"                      ,   // "\u2164\nMixolydian"               ,   // 0 2 4 5 7 9 10  t
+"Aeolian<br />\n(natural minor)"  ,   // "\u2165\nAeolian\n(natural minor)" ,   // 0 2 3 5 7 8 10  y
+"Locrian"                             // "\u2166\nLocrian"                      // 0 1 3 5 6 8 10  u
 ];
 // let majorIntervals = [2, 2, 1, 2, 2, 2, 1]
 let majorIntervals = [0, 2, 4, 5, 7, 9, 11];
 
 let melodicMinorModeSelect;
-let melodicMinorModeList = [                        // let melodicMinorModeList = [                                // _0_1_2_3_4_5_6_
+let melodicMinorModeList = [                              // let melodicMinorModeList = [                                // _0_1_2_3_4_5_6_
 "Melodic minor<br />\n(ascending)"                   ,    // "\u2160\nMelodic minor\n(ascending)"                   ,    // 0 2 3 5 7 9 11  q
 "Dorian \u266D2<br />\n(Phrygian \u266E6)"           ,    // "\u2161\nDorian \u266D2\n(Phrygian \u266E6)"           ,    // 0 1 3 5 7 9 10  w
-"Lydian (\u266F5)"                             ,    // "\u2162\nLydian augmented (\u266F5)"                   ,    // 0 2 4 6 8 9 11  e
+"Lydian (\u266F5)"                                   ,    // "\u2162\nLydian augmented (\u266F5)"                   ,    // 0 2 4 6 8 9 11  e
 "Lydian \u266D7<br />\n(overtone scale)"             ,    // "\u2163\nLydian dominant (\u266D7)\n(overtone scale)"  ,    // 0 2 4 6 7 9 10  r
-"Mixolydian \u266D6<br />\n(Aeolian major [\u266E3])",    // "\u2164\nAeolian major (\u266E3)\n(Mixolydian \u266D6)",    // 0 2 4 5 7 8 10  t
+"Mixolydian \u266D6<br />\n(Aeolian major \u266E3)"  ,    // "\u2164\nAeolian major (\u266E3)\n(Mixolydian \u266D6)",    // 0 2 4 5 7 8 10  t
 "Half-diminished<br />\n(Aeolian \u266D5)"           ,    // "\u2165\nHalf-diminished\n(Aeolian \u266D5)"           ,    // 0 2 3 5 6 8 10  y
 "Altered dominant<br />\n(Super-Locrian)"                 // "\u2166\nAltered dominant\n(Super Locrian)"                 // 0 1 3 4 6 8 10  u
 ];
