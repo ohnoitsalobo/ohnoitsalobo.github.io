@@ -239,7 +239,7 @@ input[type=range]:focus::-ms-fill-upper {
       max-width: 300px;
     }
     .dials {
-        transform: scale(0.8);
+        transform: scale(0.7);
     }
 }
 
@@ -247,8 +247,9 @@ input[type=range]:focus::-ms-fill-upper {
     display: flex;
     justify-content: space-between;
     max-width: 500px;
-    padding: 0px 20px 20px 20px;
+    /* padding: 0px 20px 20px 20px; */
     margin-top: -20px;
+    margin-bottom: 20px;
 }
 .rs-handle{
     

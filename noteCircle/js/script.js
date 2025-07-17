@@ -57,7 +57,7 @@ noteCircle.addEventListener("load", function(){     // handle interactions on th
         _a.style.opacity = lockNotes ? '1' : '0.3' ;
         _a.style.fill = lockNotes ? '#000000' : '#ffffff' ;
         
-        if(rot_not < 2){
+        if(rot_not < 10){
             mode_Slider.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
             mode_Slider.dispatchEvent(new WheelEvent("wheel", {deltaY: 1} ));
             noteCircleDOM.childNodes[1].style.pointerEvents = "none";
@@ -300,6 +300,10 @@ mode_Slider.addEventListener("wheel", event => {
     if(event.deltaY < 0) _t = 'ArrowDown';
     document.dispatchEvent(new KeyboardEvent('keydown', {key : _t, shiftKey : event.shiftKey}));
 }, {passive : false});
+
+document.getElementById("tapToPlay").addEventListener("click", event => {
+    noteCircleDOM.getElementById("playScale").dispatchEvent(new MouseEvent("click"));
+});
 /*-----------------------------------*\
             FUNCTIONS
 \*-----------------------------------*/
@@ -1177,17 +1181,18 @@ function modeCheck(t){
 function showHelp(){
     let _t0 = document.getElementById("noteCircle").getBoundingClientRect();
     let _t1 = noteCircleDOM.getElementById("lockRotation").getBoundingClientRect();
-    let _t2 = noteCircleDOM.getElementById("playScale").getBoundingClientRect();
+    // let _t2 = noteCircleDOM.getElementById("playScale").getBoundingClientRect();
+    let _t2 = document.getElementById("tapToPlay").getBoundingClientRect();
     let _t3 = keyDial.getBoundingClientRect();
     let _t4 = modeDial.getBoundingClientRect();
     let _t5 = scale_Select.getBoundingClientRect();
 
     
-    let _help4 = document.getElementById("help4"); let _h4x = _t0.left+_t1.x-15 , _h4y = _t0.top+_t1.y+5;
-    let _help5 = document.getElementById("help5"); let _h5x = _t0.left+_t2.x-15 , _h5y = _t0.top+_t2.y+5;
-    let _help1 = document.getElementById("help1"); let _h1x = _t3.x-20, _h1y = _t3.y+5;
-    let _help2 = document.getElementById("help2"); let _h2x = _t4.x-20, _h2y = _t4.y+5;
-    let _help3 = document.getElementById("help3"); let _h3x = _t5.x-20, _h3y = _t5.y;
+    let _help4 = document.getElementById("help4"); let _h4x = _t0.left+_t1.x+_t1.width/2-8      , _h4y = _t0.top+_t1.y+_t1.height/2-8;
+    let _help5 = document.getElementById("help5"); let _h5x = _t2.x+_t2.width/2-10            , _h5y = _t2.y-30;
+    let _help1 = document.getElementById("help1"); let _h1x = _t3.x+_t3.width-20              , _h1y = _t3.y+_t3.height-30;
+    let _help2 = document.getElementById("help2"); let _h2x = _t4.x                           , _h2y = _t4.y+_t3.height-30;
+    let _help3 = document.getElementById("help3"); let _h3x = _t5.x-20                        , _h3y = _t5.y;
 
     let _htext = document.getElementById("helpText");
     
