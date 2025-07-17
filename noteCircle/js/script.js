@@ -65,8 +65,8 @@ noteCircle.addEventListener("load", function(){     // handle interactions on th
                 mode_Slider.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
                 mode_Slider.dispatchEvent(new WheelEvent("wheel", {deltaY: -1} ));
                 noteCircleDOM.childNodes[1].style.pointerEvents = "";
-                rot_not++;
-            }, 600);
+                // rot_not++;
+            }, 500);
         }
         // console.info(event.srcElement.parentElement);
     });
