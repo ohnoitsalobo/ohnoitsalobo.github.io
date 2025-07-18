@@ -72,7 +72,7 @@ let harmonicMajorIntervals = [0, 2, 4, 5, 7, 8, 11];
 
 let doubleHarmonicModeSelect;
 let doubleHarmonicModeList = [                                   // let doubleHarmonicModeList = [                                     // _0_1_2_3_4_5__6_
-"Double harmonic"                                            ,   // "\u2160\nDouble harmonic"                                      ,   // 0 1 4 5 7 8  11  q
+"Double harmonic<br />\n(Byzantine scale)"                   ,   // "\u2160\nDouble harmonic"                                      ,   // 0 1 4 5 7 8  11  q
 "Lydian \u266F2 \u266F6"                                     ,   // "\u2161\nLydian \u266F2 \u266F6"                               ,   // 0 3 4 6 7 10 11  w
 "Phrygian \u266D4 \u{1D12B}7"                                ,   // "\u2162\nPhrygian \u266D4 \u{1D12B}7"                          ,   // 0 1 3 4 7 8  9   e
 "Hungarian minor"                                            ,   // "\u2163\nHungarian minor"                                      ,   // 0 2 3 6 7 8  11  r
