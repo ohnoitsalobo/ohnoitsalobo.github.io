@@ -559,7 +559,9 @@ function playScale(){
     let _scale = scale_Select.selectedIndex;
     let _mode = mode_Select.selectedIndex;
     
-    document.getElementById("tapToPlay").style.pointerEvents = "none"
+    document.getElementById("tapToPlay").style.pointerEvents = "none";
+    setTimeout( function(){ document.getElementById("tapToPlay").style.pointerEvents = "" }, _tt*15);
+
     setTimeout( function(){
      playNote(modeCheck(1));
      highlightNote(0);
@@ -620,7 +622,6 @@ function playScale(){
                    playNote(modeCheck(1));
                    highlightNote(14);
                     touchArray[1].style.opacity = "1"; setTimeout(function(){ touchArray[1].style.opacity = "0"; }, _tt);
-                    document.getElementById("tapToPlay").style.pointerEvents = ""
                   }, _tt);
                  }, _tt);
                 }, _tt);
