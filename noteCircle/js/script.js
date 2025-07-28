@@ -621,7 +621,7 @@ function playScale(){
                   setTimeout( function(){
                    playNote(modeCheck(1));
                    highlightNote(14);
-                    touchArray[1].style.opacity = "1"; setTimeout(function(){ touchArray[1].style.opacity = "0"; }, _tt);
+                   touchArray[1].style.opacity = "1"; setTimeout(function(){ touchArray[1].style.opacity = "0"; }, _tt);
                   }, _tt);
                  }, _tt);
                 }, _tt);
