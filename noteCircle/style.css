@@ -251,8 +251,8 @@ input[type=range]:focus::-ms-fill-upper {
     margin-top: -20px;
     margin-bottom: 20px;
 }
-.rs-handle{
-    
+.rs-path{
+    stroke: #888 !important
 }
 #keyDial .rs-handle {
     background: var(--gold) !important;
