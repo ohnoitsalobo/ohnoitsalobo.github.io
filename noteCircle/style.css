@@ -257,8 +257,19 @@ input[type=range]:focus::-ms-fill-upper {
 #keyDial .rs-handle {
     background: var(--gold) !important;
 }
+#keyDial .rs-path {
+    /* stroke: var(--blue) !important; */
+    stroke-dasharray: 0 48.4 !important;
+    stroke-linecap: round !important;
+    
+}
 #modeDial .rs-handle {
     background: var(--blue) !important;
+}
+#modeDial .rs-path {
+    /* stroke: var(--blue) !important; */
+    stroke-dasharray: 0 83 !important;
+    stroke-linecap: round !important;
 }
 .rs-tooltip-text{
     font-size: 1em !important;
