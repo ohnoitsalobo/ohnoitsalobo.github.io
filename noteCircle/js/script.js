@@ -147,7 +147,8 @@ scale_Select.addEventListener("change", event => {
     // console.info(scale_Select.value);
     // console.info(event.srcElement.selectedOptions[0]);
     document.getElementById("sliders").style.display = '';
-    document.getElementById("dials").style.display = '';
+    document.getElementById("modeDial").style.display = '';
+    document.getElementById("tapToPlay").style.display = '';
     noteCircleDOM.getElementById("allModes").style.display = '';
     let a = event.srcElement;
     let _y = mode_Select.selectedIndex;
@@ -184,7 +185,8 @@ scale_Select.addEventListener("change", event => {
         document.getElementById("img").style.display = "none";
         noteCircleDOM.getElementById("allModes").style.display = 'none';
         document.getElementById("sliders").style.display = 'none';
-        document.getElementById("dials").style.display = 'none';
+        document.getElementById("modeDial").style.display = 'none';
+        document.getElementById("tapToPlay").style.display = 'none';
     }
     $("#modeDial").roundSlider("setValue", mode_Slider.value);
     drawNotes();

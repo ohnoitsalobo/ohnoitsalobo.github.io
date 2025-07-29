@@ -173,7 +173,7 @@ var synth = new Tone.PolySynth(6, Tone.Synth,
 {
     oscillator: {
         type    : 'triangle4',
-        volume  : -20,
+        volume  : -30,
     },
     envelope: {
         attack  : 0.1,
