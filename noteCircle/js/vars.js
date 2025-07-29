@@ -38,8 +38,8 @@ let melodicMinorModeList = [                      // let melodicMinorModeList = 
 "Lydian \u266F5"                             ,    // "\u2162\nLydian augmented (\u266F5)"                   ,    // 0 2 4 6 8 9 11  e
 "Lydian \u266D7<br />\n(overtone scale)"     ,    // "\u2163\nLydian dominant (\u266D7)\n(overtone scale)"  ,    // 0 2 4 6 7 9 10  r
 "Mixolydian \u266D6<br />\n(Aeolian \u266E3)",    // "\u2164\nAeolian major (\u266E3)\n(Mixolydian \u266D6)",    // 0 2 4 5 7 8 10  t
-"Half-diminished<br />\n(Aeolian \u266D5)"   ,    // "\u2165\nHalf-diminished\n(Aeolian \u266D5)"           ,    // 0 2 3 5 6 8 10  y
-"Altered dominant<br />\n(Super-Locrian)"         // "\u2166\nAltered dominant\n(Super Locrian)"                 // 0 1 3 4 6 8 10  u
+"Aeolian \u266D5<br />\n(Half-diminished)"   ,    // "\u2165\nHalf-diminished\n(Aeolian \u266D5)"           ,    // 0 2 3 5 6 8 10  y
+"Super-Locrian<br />\n(Altered dominant)"         // "\u2166\nAltered dominant\n(Super Locrian)"                 // 0 1 3 4 6 8 10  u
 ];
 // let melodicMinorIntervals = [2, 1, 2, 2, 2, 2, 1];
 let melodicMinorIntervals = [0, 2, 3, 5, 7, 9, 11];
@@ -48,11 +48,11 @@ let harmonicMinorModeSelect;
 let harmonicMinorModeList = [                  // let harmonicMinorModeList = [                    // _0_1_2_3_4_5_6_
 "Harmonic minor"                           ,   // "\u2160\nHarmonic minor"                     ,   // 0 2 3 5 7 8 11  q
 "Locrian \u266E6"                          ,   // "\u2161\nLocrian \u266E6"                    ,   // 0 1 3 5 6 9 10  w
-"Augmented major<br />\n(Ionian \u266F5)"  ,   // "\u2162\nAugmented major\n(Ionian \u266F5)"  ,   // 0 2 4 5 8 9 11  e
-"Ukrainian Dorian<br />\n(Dorian \u266F4)" ,   // "\u2163\nUkrainian Dorian\n(Dorian \u266F4)" ,   // 0 2 3 6 7 9 10  r
+"Ionian \u266F5<br />\n(Augmented major)"  ,   // "\u2162\nAugmented major\n(Ionian \u266F5)"  ,   // 0 2 4 5 8 9 11  e
+"Dorian \u266F4<br />\n(Ukrainian Dorian)" ,   // "\u2163\nUkrainian Dorian\n(Dorian \u266F4)" ,   // 0 2 3 6 7 9 10  r
 "Phrygian dominant"                        ,   // "\u2164\nPhrygian dominant"                  ,   // 0 1 4 5 7 8 10  t
 "Lydian \u266F2"                           ,   // "\u2165\nLydian \u266F2"                     ,   // 0 3 4 6 7 9 11  y
-"Altered diminished<br />\n(Ultra-Locrian)"    // "\u2166\nAltered diminished\n(Ultra-Locrian)"    // 0 1 3 4 6 8 9   u
+"Ultra-Locrian<br />\n(Altered diminished)"    // "\u2166\nAltered diminished\n(Ultra-Locrian)"    // 0 1 3 4 6 8 9   u
 ];
 // let harmonicMinorIntervals = [2, 1, 2, 2, 1, 3, 1];
 let harmonicMinorIntervals = [0, 2, 3, 5, 7, 8, 11];
