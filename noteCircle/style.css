@@ -234,15 +234,6 @@ input[type=range]:focus::-ms-fill-upper {
     margin: -15px 0px;
 }
 
-@media (max-width: 600px) {
-    input[type=range] {
-      max-width: 300px;
-    }
-    .dials {
-        transform: scale(0.7);
-    }
-}
-
 #dials{
     display: flex;
     justify-content: space-between;
@@ -252,7 +243,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin-bottom: 20px;
 }
 .rs-path{
-    stroke: #888 !important
+    stroke: #888 !important;
 }
 #keyDial .rs-handle {
     background: var(--gold) !important;
@@ -280,3 +271,23 @@ input[type=range]:focus::-ms-fill-upper {
 #keyDial .rs-tooltip-text{
     font-size: 2em !important;
 }
+
+#tapToPlay{
+    margin: 60px 10px 0px 10px;
+}
+@media (max-width: 600px) {
+    input[type=range] {
+      max-width: 300px;
+    }
+    #dials {
+        /* transform: scale(0.7); */
+        display: unset;
+    }
+    #tapToPlay{
+        margin: 0px;
+    }
+    .rs-container{
+        margin: 20px 0px 20px 0px;
+    }
+}
+
