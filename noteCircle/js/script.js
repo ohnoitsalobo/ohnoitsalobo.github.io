@@ -1202,6 +1202,7 @@ function showHelp(){
     let _htext = document.getElementById("helpText");
     
     if(helpOverlay && scale_Select.selectedIndex < 5){
+/* * /
         _help1.innerHTML  =  "1";
         _help1.style.left = _h1x+"px";
         _help1.style.top  = _h1y+"px";
@@ -1217,7 +1218,7 @@ function showHelp(){
         _help5.innerHTML  =  "5";
         _help5.style.left = _h5x+"px";
         _help5.style.top  = _h5y+"px";
-
+/* */
         _htext.innerHTML= " <br \>\
             <b>1.</b> <u>Change your starting note</u> (root or tonic) <br />                   \
             by rotating the lower circle.<br />                                                 \
