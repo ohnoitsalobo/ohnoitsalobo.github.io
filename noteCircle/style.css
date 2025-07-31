@@ -281,13 +281,16 @@ input[type=range]:focus::-ms-fill-upper {
     }
     #dials {
         /* transform: scale(0.7); */
-        display: unset;
+        display: none;
     }
     #tapToPlay{
         margin: 0px;
     }
     .rs-container{
         margin: 20px 0px 20px 0px;
+    }
+    #sliders{
+        display: unset;
     }
 }
 
