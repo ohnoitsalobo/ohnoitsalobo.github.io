@@ -1230,10 +1230,10 @@ function showHelp(){
             Hold 'Shift' to rotate by 3 scale intervals.</i><br /><br />                        \
             <b>3.</b> <u>Change the base pattern of notes</u> (the scale) <br />                \
             using the dropdown menu. <br /><br />                                               \
-            <b>4.</b> <u>Lock the visible notes in the pattern by</u><br />                     \
-            clicking the center of the circle.<br />                                            \
+            <b>4.</b> <u>Lock the visible notes in the pattern</u><br />                        \
+            by clicking the center of the circle.<br />                                         \
             This keeps the same notes visible as the 'mode' pattern rotates.<br /><br />        \
-            <b>5.</b> <u>Listen to the selected notes by tapping play</u>. <br />               \
+            <b>5.</b> <u>Listen to the selected notes</u> by tapping play. <br />               \
             You can also tap individual note names</u>.<br />                                   \
             <i>Desktop users can use 'space' for autoplay, or the number line<br />             \
             of the keyboard to manually play the notes.</i><br /><br />                         \
